@@ -1,0 +1,8 @@
+# Needed to run BibleAsk
+pypdfium2>=4.30
+certifi
+llama-cpp-python>=0.3.2
+
+# Only needed for building the Windows/Mac app and running tests
+pyinstaller>=6.6
+reportlab

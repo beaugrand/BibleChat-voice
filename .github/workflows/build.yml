@@ -1,0 +1,78 @@
+name: Build BibleChat (Windows + Mac + Linux)
+
+# How to run: on GitHub open the "Actions" tab, choose "Build BibleChat", click "Run workflow".
+# About 10 minutes later the finished apps appear under "Artifacts" at the bottom of that run.
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            label: Windows
+            wheel_index: https://abetlen.github.io/llama-cpp-python/whl/cpu
+          - os: macos-14            # Apple Silicon (M1/M2/M3/M4) Macs
+            label: Mac
+            wheel_index: https://abetlen.github.io/llama-cpp-python/whl/metal
+          - os: ubuntu-22.04        # older base = runs on Linux Mint 21 and newer
+            label: Linux
+            wheel_index: https://abetlen.github.io/llama-cpp-python/whl/cpu
+          - os: ubuntu-22.04        # same, but the AI engine is compiled for OLDER processors (no AVX2)
+            label: Linux-OldCPU
+            compat: "1"
+    runs-on: ${{ matrix.os }}
+    env:
+      BIBLECHAT_COMPAT: ${{ matrix.compat }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python packages
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          pip install pypdfium2 certifi pyinstaller reportlab
+          if [ -n "${{ matrix.compat }}" ]; then
+            CMAKE_ARGS="-DGGML_NATIVE=OFF -DGGML_AVX=OFF -DGGML_AVX2=OFF -DGGML_AVX512=OFF -DGGML_FMA=OFF -DGGML_F16C=OFF -DGGML_BMI2=OFF" \
+              pip install --no-cache-dir --no-binary=llama-cpp-python llama-cpp-python==0.3.35
+          else
+            pip install llama-cpp-python --only-binary=llama-cpp-python --extra-index-url ${{ matrix.wheel_index }}
+          fi
+
+      - name: Run tests
+        run: python -W ignore -m unittest discover -s tests
+
+      - name: Build the app
+        run: pyinstaller --noconfirm BibleChat.spec
+
+      - name: Zip (Windows)
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: Compress-Archive -Path dist/BibleChat -DestinationPath BibleChat-Windows.zip
+
+      - name: Package (Linux)
+        if: matrix.os == 'ubuntu-22.04'
+        run: |
+          D=BibleChat-${{ matrix.label }}
+          mkdir -p $D
+          cp -r dist/BibleChat $D/BibleChat
+          cp packaging/install_linux.sh $D/install.sh
+          printf 'Run ./install.sh in this folder, then open BibleChat from your applications menu.\nOr run without installing: ./BibleChat/BibleChat\n' > $D/READ_ME_FIRST.txt
+          tar czf $D.tar.gz $D
+
+      - name: Zip (Mac)
+        if: matrix.os == 'macos-14'
+        run: ditto -c -k --keepParent dist/BibleChat.app BibleChat-Mac.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BibleChat-${{ matrix.label }}
+          path: BibleChat-${{ matrix.label }}.*

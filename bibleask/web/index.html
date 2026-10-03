@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BibleChat</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232f5d8a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5C4.7 20 4 19.3 4 18.5z'/%3E%3Cpath d='M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5z'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#faf9f7; --panel:#f1efea; --panel2:#e8e5de; --text:#27251f; --muted:#6f6b60; --line:#ddd9cf;
+  --accent:#2f5d8a; --accent-text:#fff; --user:#ebe8e0; --card:#fff; --danger:#b3382c; --ok:#2f7d4f;
+  --shadow:0 1px 2px rgba(0,0,0,.06),0 4px 14px rgba(0,0,0,.06);
+}
+:root[data-theme="dark"]{
+  --bg:#1f1e1b; --panel:#181714; --panel2:#2a2824; --text:#ebe8e0; --muted:#9c978a; --line:#35332e;
+  --accent:#6fa3d6; --accent-text:#10202f; --user:#2c2a26; --card:#262420; --danger:#ef7d70; --ok:#6bc28d;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 14px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;display:flex;overflow:hidden}
+button,select,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+/* sidebar */
+#side{width:300px;flex:none;background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;height:100%;transition:margin .2s}
+#side .top{padding:14px 14px 8px}
+.brand{font-weight:650;font-size:18px;letter-spacing:.2px;display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.brand svg{width:22px;height:22px}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:8px 12px;display:inline-flex;align-items:center;gap:8px;justify-content:center}
+.btn:hover{background:var(--panel2)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-text)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.block{width:100%}
+.btn:disabled{opacity:.5;cursor:default}
+#side .scroll{flex:1;overflow:auto;padding:0 10px 10px}
+.sec{margin:14px 4px 6px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+.chat-item,.bible-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:9px;cursor:pointer;font-size:14.5px}
+.chat-item:hover,.bible-item:hover{background:var(--panel2)}
+.chat-item.active{background:var(--panel2);font-weight:600}
+.chat-item .t{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.x{border:0;background:none;color:var(--muted);padding:0 4px;font-size:18px;line-height:1;border-radius:6px;opacity:0}
+.chat-item:hover .x,.bible-item:hover .x{opacity:1}
+.x:hover{color:var(--danger)}
+.bible-item{cursor:default}
+.bible-item label{flex:1;display:flex;gap:8px;align-items:flex-start;cursor:pointer;min-width:0}
+.bible-item .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}
+.bible-item small{color:var(--muted);display:block;font-size:12px}
+.bible-item input{margin-top:5px}
+.empty-note{color:var(--muted);font-size:13.5px;padding:4px 8px}
+.progress{height:5px;background:var(--panel2);border-radius:5px;overflow:hidden;margin:4px 8px}
+.progress>i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.job{font-size:13px;color:var(--muted);padding:2px 8px}
+.job.err{color:var(--danger)}
+.model-box{padding:0 4px;font-size:14px}
+.model-box select,.model-box input[type=text]{width:100%;padding:7px 8px;border:1px solid var(--line);border-radius:9px;background:var(--card);margin-bottom:6px}
+.pill{display:inline-block;font-size:12.5px;padding:2px 9px;border-radius:99px;background:var(--panel2);color:var(--muted)}
+.pill.ready{color:var(--ok)} .pill.error{color:var(--danger)}
+#side .bottom{border-top:1px solid var(--line);padding:10px 14px;display:flex;gap:8px}
+#side .bottom .btn{flex:1;font-size:14px;padding:6px 8px}
+/* main */
+#main{flex:1;min-width:0;display:flex;flex-direction:column;height:100%;position:relative}
+#bar{display:none;align-items:center;gap:10px;padding:8px 12px;border-bottom:1px solid var(--line)}
+#bar .menu{border:0;background:none;font-size:22px;line-height:1}
+#scroll{flex:1;overflow:auto;scroll-behavior:smooth}
+#thread{max-width:780px;margin:0 auto;padding:28px 20px 12px}
+.msg{margin:0 0 26px}
+.msg.user{display:flex;justify-content:flex-end}
+.msg.user .bubble{background:var(--user);padding:10px 16px;border-radius:18px;max-width:85%;white-space:pre-wrap;word-wrap:break-word}
+.msg.bot .body{word-wrap:break-word}
+.msg.bot .body p{margin:.1em 0 .8em}
+.msg.bot .body ul{margin:.2em 0 .8em;padding-left:1.3em}
+.notice{font-size:14px;color:var(--muted);margin:8px 0}
+.err{color:var(--danger)}
+.typing{display:inline-flex;gap:4px;padding:6px 0}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:b 1.2s infinite ease-in-out}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes b{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+details.src{margin:10px 0;border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+details.src>summary{cursor:pointer;padding:9px 14px;font-size:14px;color:var(--muted);list-style:none;display:flex;justify-content:space-between;gap:10px;user-select:none}
+details.src>summary::-webkit-details-marker{display:none}
+details.src>summary b{color:var(--text);font-weight:600}
+details.src>summary::after{content:"▾";transition:transform .15s}
+details.src[open]>summary::after{transform:rotate(180deg)}
+.verses{padding:2px 14px 10px;border-top:1px solid var(--line);max-height:420px;overflow:auto}
+.verse{padding:7px 0;border-bottom:1px dashed var(--line);font-size:15.5px}
+.verse:last-child{border-bottom:0}
+.verse .ref{font-weight:650;color:var(--accent);margin-right:6px;font-size:14px;white-space:nowrap}
+.verse mark{background:rgba(255,205,60,.35);color:inherit;border-radius:3px;padding:0 1px}
+.verse{font-family:Georgia,"Times New Roman",serif}
+/* welcome */
+.welcome{text-align:center;padding:9vh 0 20px}
+.welcome h1{font-family:Georgia,serif;font-weight:500;font-size:34px;margin:0 0 8px}
+.welcome p{color:var(--muted);margin:0 auto 22px;max-width:520px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:8px 16px;font-size:14.5px}
+.chip:hover{background:var(--panel2)}
+/* composer */
+#composer{max-width:780px;width:100%;margin:0 auto;padding:6px 20px 14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:10px 12px 8px 18px;display:flex;flex-direction:column}
+.box:focus-within{border-color:var(--accent)}
+#q{border:0;outline:0;resize:none;background:none;width:100%;max-height:200px;padding:4px 0;line-height:1.5}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:2px}
+.row .tools{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted);min-width:0;flex-wrap:wrap}
+.tog{display:inline-flex;align-items:center;gap:6px;cursor:pointer;user-select:none}
+#send{width:38px;height:38px;border-radius:50%;border:0;background:var(--accent);color:var(--accent-text);display:grid;place-items:center;flex:none}
+#send:disabled{opacity:.4;cursor:default}
+#send svg{width:18px;height:18px}
+#mic{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;flex:none;font-size:16px}
+#mic.rec{background:var(--danger);border-color:var(--danger);color:#fff;animation:pulse 1.2s infinite}
+#mic:disabled{opacity:.5;cursor:default}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+.spk{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:3px 10px;font-size:13px;color:var(--muted);margin-top:4px}
+.spk:hover{background:var(--panel2)}
+.spk:disabled{opacity:.5;cursor:default}
+.foot{text-align:center;font-size:12px;color:var(--muted);margin-top:8px}
+#drop{display:none;position:absolute;inset:0;background:rgba(47,93,138,.12);border:3px dashed var(--accent);z-index:9;place-items:center;font-size:22px;color:var(--accent);backdrop-filter:blur(2px)}
+#drop.on{display:grid}
+@media (max-width:820px){
+  #side{position:fixed;z-index:20;left:0;top:0;margin-left:-310px;box-shadow:var(--shadow)}
+  body.open #side{margin-left:0}
+  #bar{display:flex}
+}
+</style>
+</head>
+<body>
+<aside id="side">
+  <div class="top">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5C4.7 20 4 19.3 4 18.5z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5z"/></svg>
+      BibleChat
+    </div>
+    <button class="btn primary block" id="newChat">＋ New chat</button>
+  </div>
+  <div class="scroll">
+    <div class="sec">Your Bibles</div>
+    <div id="bibles"></div>
+    <div id="upjob"></div>
+    <div style="padding:6px 8px"><button class="btn block" id="addBible">＋ Add Bible (PDF, XML, TXT)</button></div>
+    <input type="file" id="file" accept=".pdf,.xml,.osis,.zef,.txt,.json" multiple hidden>
+
+    <div class="sec">AI helper</div>
+    <div class="model-box">
+      <select id="modelSel"></select>
+      <input type="text" id="modelCustom" placeholder="owner/model-name-GGUF" hidden>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="btn" id="loadModel">Get / load</button>
+        <span class="pill" id="modelPill">not loaded</span>
+      </div>
+      <div class="progress" id="modelProg" hidden><i></i></div>
+      <div class="job" id="modelMsg"></div>
+    </div>
+
+    <div class="sec">Chats</div>
+    <div id="chats"></div>
+  </div>
+  <div class="bottom">
+    <button class="btn" id="theme">☾ Theme</button>
+    <button class="btn" id="quit">Quit</button>
+  </div>
+</aside>
+
+<section id="main">
+  <div id="bar"><button class="menu" id="menu" aria-label="Menu">☰</button><b>BibleChat</b></div>
+  <div id="scroll"><div id="thread"></div></div>
+  <div id="composer">
+    <div class="box">
+      <textarea id="q" rows="1" placeholder="Ask about the Bible…" autofocus></textarea>
+      <div class="row">
+        <div class="tools">
+          <label class="tog"><input type="checkbox" id="useAi" checked> Explain with AI</label>
+          <span id="scope"></span>
+        </div>
+        <button id="mic" aria-label="Ask by voice" title="Ask by voice" hidden>🎙️</button>
+        <button id="send" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+      </div>
+    </div>
+    <div class="foot">Answers come only from the Bibles you've added, on your own computer. Small AI models can make mistakes, so check the verses.</div>
+  </div>
+  <div id="drop">Drop a Bible file to add it</div>
+</section>
+
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+};
+
+let state = {bibles:[], models:[], model:{status:"none"}, engine:true, cpu_problem:null, selected_model:""};
+let chats = store.get("bc.chats", []);
+let activeId = store.get("bc.active", null);
+let selected = store.get("bc.sel", null);   // array of bible ids, or null = all
+let busy = false, abortCtl = null;
+
+function save(){ store.set("bc.chats", chats.slice(0, 80)); store.set("bc.active", activeId); }
+function activeChat(){ return chats.find(c => c.id === activeId); }
+function newChat(){
+  const c = {id: Date.now().toString(36), title: "New chat", messages: []};
+  chats.unshift(c); activeId = c.id; save(); renderChats(); renderThread(); $("#q").focus();
+}
+function selectedIds(){
+  const all = state.bibles.map(b => b.id);
+  return selected ? all.filter(i => selected.includes(i)) : all;
+}
+
+/* ---------------- tiny markdown ---------------- */
+function md(text){
+  const lines = esc(text).split("\n"); let out = "", list = false, para = [];
+  const inline = s => s.replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/(^|[^*])\*([^*\n]+)\*/g, "$1<i>$2</i>");
+  const flush = () => { if(para.length){ out += "<p>" + inline(para.join("<br>")) + "</p>"; para = []; } };
+  for(const ln of lines){
+    const li = ln.match(/^\s*(?:[-*•]|\d+[.)])\s+(.*)/);
+    if(li){ flush(); if(!list){ out += "<ul>"; list = true; } out += "<li>" + inline(li[1]) + "</li>"; continue; }
+    if(list){ out += "</ul>"; list = false; }
+    if(!ln.trim()){ flush(); } else para.push(ln.replace(/^#{1,4}\s*(.*)$/, "<b>$1</b>"));
+  }
+  flush(); if(list) out += "</ul>";
+  return out;
+}
+
+/* ---------------- rendering ---------------- */
+function highlight(text, words){
+  let h = esc(text);
+  for(const w of words){ if(w.length > 2) h = h.replace(new RegExp("\\b(" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\w*)", "ig"), "<mark>$1</mark>"); }
+  return h;
+}
+function sourcesHtml(src, question){
+  if(!src) return "";
+  const STOP = new Set("where what when does there will which their about with from that this have been were they them then than into your says said say who whom how why shall would could should only also".split(" "));
+  const words = src.kind === "search" ? (question || "").toLowerCase().split(/[^a-z']+/).filter(w => w.length > 3 && !STOP.has(w)) : [];
+  return src.groups.map((g, gi) => {
+    const open = (src.groups.length === 1 || gi === 0) ? " open" : "";
+    const vs = g.verses.map(v => `<div class="verse"><span class="ref">${esc(v.ref)}</span>${highlight(v.text, words)}</div>`).join("");
+    return `<details class="src"${open}><summary><span><b>${esc(g.bible)}</b></span><span>${g.verses.length} verse${g.verses.length===1?"":"s"}</span></summary><div class="verses">${vs}</div></details>`;
+  }).join("");
+}
+function speakable(m){
+  if(m.text) return m.text;
+  if(m.sources) return m.sources.groups.map(g => g.verses.map(v => v.ref + ". " + v.text).join(" ")).join(" ");
+  return "";
+}
+function botHtml(m, question){
+  let h = "";
+  if(m.sources) h += sourcesHtml(m.sources, question);
+  if(m.notice) h += `<div class="notice">${esc(m.notice)}</div>`;
+  if(m.text) h += `<div class="body">${md(m.text)}</div>`;
+  if(!m.pending && state.tts && speakable(m)) h += `<button class="spk" data-say>🔊 Listen</button>`;
+  if(m.error) h += `<div class="notice err">${esc(m.error)}</div>`;
+  if(m.pending && !m.text && !m.sources) h += `<div class="typing"><i></i><i></i><i></i></div>`;
+  else if(m.pending && m.waiting) h += `<div class="typing"><i></i><i></i><i></i></div>`;
+  return h;
+}
+function renderThread(){
+  const c = activeChat(), t = $("#thread");
+  if(!c || !c.messages.length){ t.innerHTML = welcomeHtml(); bindWelcome(); return; }
+  t.innerHTML = c.messages.map((m, i) => m.role === "user"
+    ? `<div class="msg user"><div class="bubble">${esc(m.text)}</div></div>`
+    : `<div class="msg bot" data-i="${i}">${botHtml(m, c.messages[i-1] ? c.messages[i-1].text : "")}</div>`).join("");
+  scrollDown(true);
+}
+function welcomeHtml(){
+  const has = state.bibles.length > 0;
+  const ex = ["Daniel 7:25", "Where does it say there will be a falling away?", "What does it say about the last days?", "John 3:16"];
+  return `<div class="welcome"><h1>${has ? "What would you like to find?" : "Add a Bible to begin"}</h1>
+    <p>${has ? "Ask a question or type a reference. I answer only from your Bibles." : "Use <b>Add Bible</b> on the left, or drop a PDF, XML or TXT file here. Try the Ethiopian Orthodox Bible, a King James text from Project Gutenberg, or any Zefania/OSIS XML Bible."}</p>
+    ${has ? `<div class="chips">${ex.map(e => `<button class="chip">${esc(e)}</button>`).join("")}</div>` : `<button class="btn primary" id="wAdd">Add a Bible</button>`}</div>`;
+}
+function bindWelcome(){
+  document.querySelectorAll(".chip").forEach(b => b.onclick = () => { $("#q").value = b.textContent; send(); });
+  const a = $("#wAdd"); if(a) a.onclick = () => $("#file").click();
+}
+let stick = true;
+$("#scroll").addEventListener("scroll", e => { const s = e.target; stick = s.scrollHeight - s.scrollTop - s.clientHeight < 80; });
+function scrollDown(force){ const s = $("#scroll"); if(force || stick){ s.style.scrollBehavior = "auto"; s.scrollTop = s.scrollHeight; s.style.scrollBehavior = ""; } }
+
+function renderChats(){
+  $("#chats").innerHTML = chats.length ? chats.map(c =>
+    `<div class="chat-item${c.id === activeId ? " active" : ""}" data-id="${c.id}"><span class="t">${esc(c.title)}</span><button class="x" data-del="${c.id}" title="Delete">×</button></div>`).join("")
+    : `<div class="empty-note">Your conversations will appear here.</div>`;
+  document.querySelectorAll(".chat-item").forEach(el => el.onclick = e => {
+    if(e.target.dataset.del){
+      chats = chats.filter(c => c.id !== e.target.dataset.del);
+      if(activeId === e.target.dataset.del) activeId = chats[0] ? chats[0].id : null;
+      save(); if(!activeId) return newChat(); renderChats(); renderThread(); return;
+    }
+    activeId = el.dataset.id; save(); renderChats(); renderThread(); document.body.classList.remove("open");
+  });
+}
+function renderBibles(){
+  const ids = selectedIds();
+  $("#bibles").innerHTML = state.bibles.length ? state.bibles.map(b =>
+    `<div class="bible-item"><label><input type="checkbox" data-id="${esc(b.id)}" ${ids.includes(b.id) ? "checked" : ""}><span style="min-width:0"><span class="nm" title="${esc(b.name)}">${esc(b.name)}</span><small>${b.books} books · ${b.verses.toLocaleString()} verses</small></span></label><button class="x" data-rm="${esc(b.id)}" title="Remove">×</button></div>`).join("")
+    : `<div class="empty-note">No Bibles yet.</div>`;
+  document.querySelectorAll("#bibles input").forEach(cb => cb.onchange = () => {
+    const now = [...document.querySelectorAll("#bibles input:checked")].map(i => i.dataset.id);
+    selected = now; store.set("bc.sel", selected); renderScope();
+  });
+  document.querySelectorAll("#bibles [data-rm]").forEach(b => b.onclick = async () => {
+    if(!confirm("Remove this Bible from BibleChat? (Your original file isn't touched.)")) return;
+    await fetch("/api/bibles/" + encodeURIComponent(b.dataset.rm), {method:"DELETE"});
+    await refresh();
+  });
+  renderScope();
+}
+function renderScope(){
+  const n = selectedIds().length, total = state.bibles.length;
+  $("#scope").textContent = total ? (n === total ? (total === 1 ? "Searching 1 Bible" : `Searching all ${total} Bibles`) : `Searching ${n} of ${total} Bibles`) : "No Bibles added";
+}
+function renderModel(){
+  const sel = $("#modelSel"), cur = sel.value;
+  if(!sel.options.length){
+    sel.innerHTML = state.models.map(m => `<option value="${esc(m.repo)}">${esc(m.label)}</option>`).join("") + `<option value="__custom">Other (Hugging Face name)…</option>`;
+    sel.value = state.selected_model && [...sel.options].some(o => o.value === state.selected_model) ? state.selected_model : state.models[0].repo;
+  } else if(cur){ sel.value = cur; }
+  $("#modelCustom").hidden = sel.value !== "__custom";
+  const m = state.model, pill = $("#modelPill");
+  const names = {none:"not loaded", downloading:"downloading…", loading:"loading…", ready:"ready", error:"problem"};
+  pill.textContent = names[m.status] || m.status; pill.className = "pill " + (m.status === "ready" ? "ready" : m.status === "error" ? "error" : "");
+  const prog = $("#modelProg"); prog.hidden = m.status !== "downloading";
+  prog.firstElementChild.style.width = Math.round((m.progress || 0) * 100) + "%";
+  const msg = $("#modelMsg");
+  msg.className = "job" + (m.status === "error" ? " err" : "");
+  msg.textContent = m.status === "ready" ? "" : (m.message || (state.cpu_problem || (!state.engine ? "AI engine not included in this build." : "")));
+  $("#loadModel").disabled = ["downloading", "loading"].includes(m.status) || !state.engine || !!state.cpu_problem;
+  if(state.cpu_problem && m.status !== "ready") msg.className = "job err";
+  if(m.status === "ready") $("#loadModel").textContent = "Switch"; else $("#loadModel").textContent = "Get / load";
+}
+
+/* ---------------- server state ---------------- */
+let pollTimer = null;
+async function refresh(){
+  try{ state = await (await fetch("/api/state")).json(); }catch(e){ return; }
+  renderBibles(); renderModel();
+  $("#mic").hidden = !state.stt;
+  if(!(activeChat() || {messages:[1]}).messages.length) renderThread();
+  clearTimeout(pollTimer);
+  if(["downloading", "loading"].includes(state.model.status)) pollTimer = setTimeout(refresh, 900);
+}
+$("#modelSel").onchange = renderModel;
+$("#loadModel").onclick = async () => {
+  let repo = $("#modelSel").value; if(repo === "__custom") repo = $("#modelCustom").value.trim();
+  if(!repo) return;
+  await fetch("/api/model/load", {method:"POST", body: JSON.stringify({repo})});
+  refresh();
+};
+
+/* ---------------- adding Bibles ---------------- */
+$("#addBible").onclick = () => $("#file").click();
+$("#file").onchange = e => { uploadFiles([...e.target.files]); e.target.value = ""; };
+async function uploadFiles(files){
+  for(const f of files){
+    const box = $("#upjob");
+    box.innerHTML = `<div class="job">${esc(f.name)}: uploading…</div><div class="progress"><i style="width:3%"></i></div>`;
+    try{
+      const r = await fetch("/api/bibles", {method:"POST", headers:{"X-Filename": encodeURIComponent(f.name)}, body: f});
+      const j = await r.json(); if(j.error) throw new Error(j.error);
+      for(;;){
+        await new Promise(res => setTimeout(res, 700));
+        const s = await (await fetch("/api/jobs/" + j.job)).json();
+        if(s.status === "running"){ box.innerHTML = `<div class="job">${esc(f.name)}: ${esc(s.message)}</div><div class="progress"><i style="width:${Math.max(3, Math.round(s.progress*100))}%"></i></div>`; continue; }
+        if(s.status === "error") throw new Error(s.error);
+        break;
+      }
+      box.innerHTML = "";
+    }catch(err){ box.innerHTML = `<div class="job err">${esc(f.name)}: ${esc(err.message)}</div>`; await refresh(); return; }
+  }
+  selected = null; store.set("bc.sel", null);
+  await refresh(); if(!(activeChat() || {messages:[1]}).messages.length) renderThread();
+}
+const drop = $("#drop");
+let dragN = 0;
+addEventListener("dragenter", e => { e.preventDefault(); dragN++; drop.classList.add("on"); });
+addEventListener("dragleave", e => { dragN = Math.max(0, dragN - 1); if(!dragN) drop.classList.remove("on"); });
+addEventListener("dragover", e => e.preventDefault());
+addEventListener("drop", e => { e.preventDefault(); dragN = 0; drop.classList.remove("on"); if(e.dataTransfer.files.length) uploadFiles([...e.dataTransfer.files]); });
+
+/* ---------------- chatting ---------------- */
+function setBusy(b){
+  busy = b; $("#send").innerHTML = b
+    ? `<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>`
+    : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>`;
+  $("#send").title = b ? "Stop" : "Send";
+}
+async function send(){
+  if(busy){ if(abortCtl) abortCtl.abort(); return; }
+  const q = $("#q").value.trim(); if(!q) return;
+  if(!activeChat()) newChat();
+  const c = activeChat();
+  const prevUser = [...c.messages].reverse().find(m => m.role === "user");
+  c.messages.push({role:"user", text:q});
+  if(c.title === "New chat"){ c.title = q.length > 40 ? q.slice(0, 40) + "…" : q; renderChats(); }
+  const bot = {role:"bot", text:"", pending:true};
+  c.messages.push(bot);
+  $("#q").value = ""; autosize(); stick = true; renderThread(); setBusy(true);
+  abortCtl = new AbortController();
+  const useAi = $("#useAi").checked;
+  try{
+    const r = await fetch("/api/chat", {method:"POST", signal: abortCtl.signal,
+      body: JSON.stringify({question:q, previous: prevUser ? prevUser.text : null, bibles: selectedIds(), use_ai: useAi})});
+    if(!r.ok){ const j = await r.json().catch(() => ({})); throw new Error(j.error || "Request failed"); }
+    const reader = r.body.getReader(), dec = new TextDecoder(); let buf = "";
+    const node = () => document.querySelector(`.msg.bot[data-i="${c.messages.indexOf(bot)}"]`);
+    const paint = () => { const n = node(); if(n){ n.innerHTML = botHtml(bot, q); scrollDown(); } };
+    for(;;){
+      const {value, done} = await reader.read(); if(done) break;
+      buf += dec.decode(value, {stream:true});
+      let idx;
+      while((idx = buf.indexOf("\n\n")) >= 0){
+        const block = buf.slice(0, idx); buf = buf.slice(idx + 2);
+        const ev = (block.match(/^event: (.*)$/m) || [])[1], data = JSON.parse((block.match(/^data: (.*)$/m) || [,"null"])[1]);
+        if(ev === "sources"){ bot.sources = data; bot.waiting = useAi; }
+        else if(ev === "token"){ bot.text += data; bot.waiting = false; }
+        else if(ev === "notice"){ bot.notice = data; bot.waiting = false; }
+        else if(ev === "error"){ bot.error = data; bot.waiting = false; }
+        else if(ev === "done"){ bot.pending = false; bot.waiting = false; }
+        paint();
+      }
+    }
+  }catch(err){
+    if(err.name === "AbortError"){ bot.notice = "Stopped."; }
+    else bot.error = "Couldn't reach BibleChat: " + err.message + ". If you closed it, open the app again.";
+  }
+  bot.pending = false; bot.waiting = false; abortCtl = null; setBusy(false);
+  save(); renderThread();
+}
+$("#send").onclick = send;
+$("#q").addEventListener("keydown", e => { if(e.key === "Enter" && !e.shiftKey && !e.isComposing){ e.preventDefault(); send(); } });
+function autosize(){ const q = $("#q"); q.style.height = "auto"; q.style.height = Math.min(q.scrollHeight, 200) + "px"; }
+$("#q").addEventListener("input", autosize);
+$("#newChat").onclick = () => { if(activeChat() && !activeChat().messages.length){ $("#q").focus(); return; } newChat(); document.body.classList.remove("open"); };
+$("#menu").onclick = () => document.body.classList.toggle("open");
+$("#main").addEventListener("click", () => document.body.classList.remove("open"));
+
+/* ---------------- voice: speaker button on answers ---------------- */
+$("#thread").addEventListener("click", async e => {
+  const btn = e.target.closest("[data-say]"); if(!btn) return;
+  if(btn.dataset.say === "playing"){ btn._audio && btn._audio.pause(); btn.dataset.say = ""; btn.textContent = "🔊 Listen"; return; }
+  const wrap = btn.closest(".msg.bot"), i = +wrap.dataset.i, m = activeChat().messages[i];
+  btn.disabled = true; btn.textContent = "…";
+  try{
+    const r = await fetch("/api/speak", {method:"POST", body: JSON.stringify({text: speakable(m).slice(0, 2000)})});
+    if(!r.ok){ const j = await r.json().catch(() => ({})); throw new Error(j.error || "Couldn't speak that."); }
+    const audio = new Audio(URL.createObjectURL(await r.blob()));
+    btn._audio = audio; btn.dataset.say = "playing"; btn.textContent = "⏸ Stop";
+    audio.onended = () => { btn.dataset.say = ""; btn.textContent = "🔊 Listen"; };
+    audio.play();
+  }catch(err){ alert(err.message); btn.textContent = "🔊 Listen"; }
+  btn.disabled = false;
+});
+
+/* ---------------- voice: mic button asks a question by speaking ---------------- */
+let micStream = null, micCtx = null, micProc = null, micChunks = [], micOn = false;
+function wavFromFloat32(chunks, sampleRate){
+  let len = 0; for(const c of chunks) len += c.length;
+  const pcm = new Int16Array(len);
+  let off = 0;
+  for(const c of chunks) for(let i = 0; i < c.length; i++){ const s = Math.max(-1, Math.min(1, c[i])); pcm[off++] = s < 0 ? s * 32768 : s * 32767; }
+  const buf = new ArrayBuffer(44 + pcm.length * 2), view = new DataView(buf);
+  const str = (o, s) => { for(let i = 0; i < s.length; i++) view.setUint8(o + i, s.charCodeAt(i)); };
+  str(0, "RIFF"); view.setUint32(4, 36 + pcm.length * 2, true); str(8, "WAVE");
+  str(12, "fmt "); view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 1, true);
+  view.setUint32(24, sampleRate, true); view.setUint32(28, sampleRate * 2, true); view.setUint16(32, 2, true); view.setUint16(34, 16, true);
+  str(36, "data"); view.setUint32(40, pcm.length * 2, true);
+  new Int16Array(buf, 44).set(pcm);
+  return new Blob([buf], {type: "audio/wav"});
+}
+async function micStart(){
+  try{ micStream = await navigator.mediaDevices.getUserMedia({audio: true}); }
+  catch(e){ alert("Couldn't access the microphone: " + e.message); return; }
+  micCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const src = micCtx.createMediaStreamSource(micStream);
+  micProc = micCtx.createScriptProcessor(4096, 1, 1);
+  micChunks = [];
+  micProc.onaudioprocess = e => micChunks.push(new Float32Array(e.inputBuffer.getChannelData(0)));
+  src.connect(micProc); micProc.connect(micCtx.destination);
+  micOn = true; $("#mic").classList.add("rec"); $("#mic").title = "Stop recording";
+}
+async function micStop(){
+  micOn = false; $("#mic").classList.remove("rec"); $("#mic").title = "Ask by voice";
+  const sampleRate = micCtx.sampleRate;
+  try{ micProc.disconnect(); micStream.getTracks().forEach(t => t.stop()); micCtx.close(); }catch(e){}
+  const blob = wavFromFloat32(micChunks, sampleRate); micChunks = [];
+  if(blob.size < 4000) return;  // too short to be real speech
+  $("#mic").disabled = true; $("#mic").title = "Listening…";
+  try{
+    const r = await fetch("/api/listen", {method: "POST", headers: {"Content-Type": "audio/wav"}, body: blob});
+    const j = await r.json(); if(j.error) throw new Error(j.error);
+    if(j.text){ $("#q").value = j.text; autosize(); send(); }
+  }catch(e){ alert("Couldn't understand that: " + e.message); }
+  $("#mic").disabled = false; $("#mic").title = "Ask by voice";
+}
+$("#mic").onclick = () => micOn ? micStop() : micStart();
+
+/* ---------------- theme, quit, heartbeat ---------------- */
+function applyTheme(t){ document.documentElement.dataset.theme = t; $("#theme").textContent = t === "dark" ? "☀ Light" : "☾ Dark"; }
+applyTheme(store.get("bc.theme", matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+$("#theme").onclick = () => { const t = document.documentElement.dataset.theme === "dark" ? "light" : "dark"; store.set("bc.theme", t); applyTheme(t); };
+$("#quit").onclick = async () => {
+  if(!confirm("Quit BibleChat? Your Bibles and chats are saved.")) return;
+  try{ await fetch("/api/quit", {method:"POST"}); }catch(e){}
+  document.body.innerHTML = '<div style="margin:20vh auto;text-align:center;font-family:system-ui;color:#777">BibleChat has stopped. You can close this tab.</div>';
+};
+const ping = () => fetch("/api/ping").catch(() => {});
+setInterval(ping, 15000); ping();
+document.addEventListener("visibilitychange", () => { if(!document.hidden) ping(); });
+
+/* ---------------- start ---------------- */
+(async () => {
+  await refresh();
+  if(!chats.length || !chats.some(c => c.id === activeId)){ if(chats.length) activeId = chats[0].id; else return newChat(); }
+  renderChats(); renderThread();
+})();
+</script>
+</body>
+</html>
