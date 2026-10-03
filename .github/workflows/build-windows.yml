@@ -31,6 +31,8 @@ jobs:
           pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 
       - name: Pre-fetch AI models (so the finished app needs no internet)
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python packaging/fetch_models.py
 
       - name: Build with PyInstaller
