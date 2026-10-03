@@ -38,11 +38,10 @@ jobs:
       - name: Build with PyInstaller
         run: pyinstaller --noconfirm BibleChat.spec
 
-      - name: Zip the app
-        run: Compress-Archive -Path dist/BibleChat -DestinationPath BibleChat-Windows.zip
-
+      # PowerShell's Compress-Archive runs out of memory on a payload this big (multi-GB, many
+      # files from torch/transformers) - let upload-artifact zip it instead, it handles this fine.
       - uses: actions/upload-artifact@v4
         with:
           name: BibleChat-Windows
-          path: BibleChat-Windows.zip
+          path: dist/BibleChat
           retention-days: 30
