@@ -3,7 +3,9 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import socket
+import subprocess
 import sys
 import threading
 import time
@@ -35,6 +37,33 @@ def _tts_available() -> bool:
             return True
     except Exception:
         return False
+
+
+def _ensure_tts_helper() -> None:
+    """Starts Pocket TTS in the background if it isn't already running - bundled builds ship it
+    as a sibling helper program (PocketTTS); a from-source run falls back to the pocket-tts command
+    on PATH, if installed. Either way, the person never has to start it themselves."""
+    if _tts_available():
+        return
+    try:
+        if getattr(sys, "frozen", False):
+            name = "PocketTTS.exe" if sys.platform.startswith("win") else "PocketTTS"
+            exe = os.path.join(os.path.dirname(sys.executable), name)
+            if not os.path.exists(exe):
+                return
+            flags = subprocess.CREATE_NO_WINDOW if sys.platform.startswith("win") else 0
+            subprocess.Popen([exe], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=flags)
+        elif shutil.which("pocket-tts"):
+            subprocess.Popen(["pocket-tts", "serve", "--port", "8000"],
+                              stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        else:
+            return  # nothing to launch; the Listen button just won't appear
+    except Exception:
+        return
+    for _ in range(45):  # give the voice model a little while to load
+        time.sleep(1)
+        if _tts_available():
+            return
 
 
 def _tts_speak(text: str) -> bytes:
@@ -128,7 +157,8 @@ class App:
             "model": dict(self.model_state),
             "engine": llm.engine_available(),
             "cpu_problem": llm.cpu_problem(),
-            "selected_model": storage.load_settings().get("model") or llm.MODELS[0].repo,
+            "selected_model": (storage.load_settings().get("model")
+                               or (llm.DEFAULT_BUNDLED_REPO if llm.local_path(llm.DEFAULT_BUNDLED_REPO) else llm.MODELS[0].repo)),
             "tts": _tts_available(),
             "stt": stt.available(),
         }
@@ -328,10 +358,12 @@ def main(open_browser: bool = True) -> int:
     httpd.daemon_threads = True
     threading.Thread(target=app.watch_idle, args=(httpd,), daemon=True).start()
 
-    # if the AI helper was already downloaded, wake it up in the background
-    repo = storage.load_settings().get("model")
-    if repo and llm.local_path(repo) and llm.engine_available() and not llm.cpu_problem():
+    # if the AI helper was already downloaded (or came bundled with the app), wake it up now
+    repo = storage.load_settings().get("model") or llm.DEFAULT_BUNDLED_REPO
+    if llm.local_path(repo) and llm.engine_available() and not llm.cpu_problem():
         app.load_model(repo)
+
+    threading.Thread(target=_ensure_tts_helper, daemon=True).start()
 
     url = f"http://127.0.0.1:{port}/"
     try:  # there is no console when the app is double-clicked on Windows/Mac

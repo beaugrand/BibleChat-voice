@@ -91,12 +91,24 @@ def pick_gguf_file(repo: str) -> str:
     return sorted(files, key=len)[0]
 
 
+def _bundle_dir() -> str:
+    if getattr(sys, "frozen", False):
+        return getattr(sys, "_MEIPASS", os.path.dirname(sys.executable))
+    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+# The model someone chose and downloaded themselves always wins; a copy baked into the app
+# (see packaging/fetch_models.py) is only used as a ready-to-go fallback for a brand new install.
+DEFAULT_BUNDLED_REPO = "bartowski/Llama-3.2-1B-Instruct-GGUF"
+
+
 def local_path(repo: str) -> Optional[str]:
-    d = os.path.join(models_dir(), repo.replace("/", "__"))
-    if os.path.isdir(d):
-        for f in os.listdir(d):
-            if f.lower().endswith(".gguf"):
-                return os.path.join(d, f)
+    for base in (models_dir(), os.path.join(_bundle_dir(), "bundled_models")):
+        d = os.path.join(base, repo.replace("/", "__"))
+        if os.path.isdir(d):
+            for f in os.listdir(d):
+                if f.lower().endswith(".gguf"):
+                    return os.path.join(d, f)
     return None
 
 
