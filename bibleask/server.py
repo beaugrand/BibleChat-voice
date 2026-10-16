@@ -16,7 +16,7 @@ import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Optional
 
-from . import catalog, chat, llm, storage, study, stt
+from . import catalog, chat, llm, storage, study, stt, updates
 from .library import Library
 
 PORT = 8765
@@ -197,6 +197,7 @@ class App:
                                or (llm.DEFAULT_BUNDLED_REPO if llm.local_path(llm.DEFAULT_BUNDLED_REPO) else llm.MODELS[0].repo)),
             "tts": _tts_available(),
             "stt": stt.available(),
+            **updates.status(),
         }
 
     # ---- idle watcher -----------------------------------------------------------------
@@ -446,6 +447,7 @@ def main(open_browser: bool = True) -> int:
         app.load_model(repo)
 
     threading.Thread(target=_ensure_tts_helper, daemon=True).start()
+    updates.check_in_background()
 
     from . import shortcuts
     shortcuts.ensure_in_background()   # Windows: a BibleChat icon on the desktop and in the Start menu

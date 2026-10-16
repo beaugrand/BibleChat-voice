@@ -213,6 +213,10 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 .cat .err{font-size:12.5px}
 .cat .progress{margin:6px 0 0;width:120px}
 /* older-processor notice */
+.upd{margin:0 12px 8px;border:1px solid #6aa36f;background:rgba(106,163,111,.14);border-radius:11px;padding:9px 11px;font-size:13.5px;line-height:1.45}
+.upd b{display:block;font-size:14px}
+.upd a.btn{display:inline-block;margin-top:7px;text-decoration:none;padding:5px 10px;font-size:13.5px}
+.upd small{display:block;color:var(--muted);margin-top:5px}
 .cpu{border:1px solid #d9b45a;background:rgba(217,180,90,.13);border-radius:11px;padding:9px 11px;margin:8px 0 4px;font-size:13.5px;line-height:1.45}
 .cpu>button.head{all:unset;cursor:pointer;display:flex;gap:8px;align-items:flex-start;width:100%}
 .cpu .head b{display:block;font-size:14px}
@@ -273,6 +277,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
     <div id="chats"></div>
    </div>
   </div>
+  <div class="upd" id="updBox" hidden></div>
   <div class="bottom" style="flex-wrap:wrap">
     <button class="btn love" id="love">♥ Love Donations</button>
     <button class="btn" id="theme">☾ Theme</button>
@@ -583,9 +588,19 @@ $("#getList").addEventListener("click", async e => {
 
 /* ---------------- server state ---------------- */
 let pollTimer = null;
+function renderUpdate(){
+  const u = state.update, box = $("#updBox");
+  if(!u){ box.hidden = true; return; }
+  const win = /Windows\.zip$/.test(u.url), mac = /Mac\.zip$/.test(u.url);
+  box.innerHTML = `<b>✨ BibleChat ${esc(u.version)} is out</b>You have ${esc(state.version)}.
+    <a class="btn primary" href="${esc(u.url)}" target="_blank" rel="noopener">⬇ Download the update</a>
+    <small>${win ? "Quit BibleChat, unzip the download and put its BibleChat folder where the old one was. "
+      : mac ? "Quit BibleChat, unzip the download and drag the new BibleChat into Applications, replacing the old one. " : ""}Your Bibles, chats and AI helper stay. <a href="${esc(u.page)}" target="_blank" rel="noopener">What's new</a></small>`;
+  box.hidden = false;
+}
 async function refresh(){
   try{ state = await (await fetch("/api/state")).json(); }catch(e){ return; }
-  renderBibles(); renderModel();
+  renderBibles(); renderModel(); renderUpdate();
   $("#mic").hidden = !state.stt;
   if(!(activeChat() || {messages:[1]}).messages.length) renderThread();
   const sig = state.bibles.map(b => b.id + ":" + b.verses).join("|");
@@ -1119,6 +1134,7 @@ document.addEventListener("visibilitychange", () => { if(!document.hidden) ping(
   renderChats(); renderThread();
   applyReadLook();
   if(mode === "read") setMode("read");
+  setTimeout(refresh, 8000);   // the update check runs in the background at start-up
 })();
 </script>
 </body>

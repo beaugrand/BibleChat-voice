@@ -63,6 +63,14 @@ jobs:
             tail -n 3 step.log
           fi
 
+      - name: Check the version number
+        if: startsWith(inputs.version, 'v') || startsWith(github.ref, 'refs/tags/v')
+        shell: bash
+        run: |
+          want="${{ inputs.version || github.ref_name }}"
+          have="v$(python -c 'import bibleask; print(bibleask.__version__)')"
+          [ "$want" = "$have" ] || { echo "::error title=Version::Releasing $want but bibleask/__init__.py says $have"; exit 1; }
+
       - name: Run tests
         run: python -W ignore -m unittest discover -s tests
 
@@ -121,6 +129,8 @@ jobs:
           | Mac with Apple Silicon (M1 and newer) | `BibleChat-Mac.zip` (unzip, drag BibleChat to Applications) |
           | Linux (Mint 21+, Ubuntu 22.04+) | `BibleChat-Linux.tar.gz` (unpack, run `./install.sh`) |
           | Linux, processor from before about 2014 | `BibleChat-Linux-OldCPU.tar.gz` |
+
+          **Already have BibleChat?** Quit it, then put the new BibleChat folder (or app) where the old one was. Your Bibles, chats and AI helper stay. From now on BibleChat tells you when a newer version is out.
 
           After it opens, click **Get free Bibles** to download a Bible (KJV, ASV, WEB, BSB, Luther 1912 and 40 more, all public domain or freely licensed).
 
