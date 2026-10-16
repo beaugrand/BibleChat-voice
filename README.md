@@ -57,8 +57,8 @@ Project Gutenberg's well-known 1455 "Gutenberg Bible" is in Latin, so the Englis
 A Windows program can only be built on Windows and a Mac program only on a Mac, so GitHub builds them.
 
 1. Save the changes on GitHub (the `main` branch).
-2. Add a version tag such as `v1.0.1` (on GitHub: **Releases** → **Draft a new release** → type the new tag → **Publish**, or `git tag v1.0.1 && git push origin v1.0.1`).
-3. **Build BibleChat (Windows + Mac + Linux)** starts by itself. About 15–25 minutes later the four download files are attached to the release with that tag.
+2. Open **Actions** → **Build BibleChat (Windows + Mac + Linux)** → **Run workflow**, type the new version (such as `v1.0.1`) and press **Run workflow**. (Pushing a `v…` tag works too.)
+3. About 15–25 minutes later the four download files are attached to the release with that tag.
 
 To try a build without publishing, open **Actions** → **Build BibleChat (Windows + Mac + Linux)** → **Run workflow**; the files appear under **Artifacts** at the bottom of the finished run.
 
