@@ -368,7 +368,7 @@ function botHtml(m, question){
   if(m.sources) h += sourcesHtml(m.sources, question);
   if(m.notice) h += `<div class="notice">${esc(m.notice)}</div>`;
   if(m.text) h += `<div class="body">${md(m.text)}</div>`;
-  if(!m.pending && state.tts && speakable(m)) h += `<button class="spk" data-say>🔊 Listen</button>`;
+  if(!m.pending && (state.tts || HAS_LOCAL_VOICE) && speakable(m)) h += `<button class="spk" data-say>🔊 Listen</button>`;
   if(m.error) h += `<div class="notice err">${esc(m.error)}</div>`;
   if(m.pending && !m.text && !m.sources) h += `<div class="typing"><i></i><i></i><i></i></div>`;
   else if(m.pending && m.waiting) h += `<div class="typing"><i></i><i></i><i></i></div>`;
@@ -655,8 +655,16 @@ $("#main").addEventListener("click", e => { if(!e.target.closest("#menu")) docum
 /* ---------------- voice: speaker button on answers ---------------- */
 $("#thread").addEventListener("click", async e => {
   const btn = e.target.closest("[data-say]"); if(!btn) return;
-  if(btn.dataset.say === "playing"){ btn._audio && btn._audio.pause(); btn.dataset.say = ""; btn.textContent = "🔊 Listen"; return; }
+  if(btn.dataset.say === "playing"){ btn._audio && btn._audio.pause(); try{ speechSynthesis.cancel(); }catch(e){} btn.dataset.say = ""; btn.textContent = "🔊 Listen"; return; }
   const wrap = btn.closest(".msg.bot"), i = +wrap.dataset.i, m = activeChat().messages[i];
+  loadSysVoices();
+  const pick = voiceFor(speakable(m));
+  if(!pick.ok){ alert(noVoiceMessage(pick.lang)); return; }
+  if(pick.local){   // not English, or the cloned voice isn't running: the computer's own voice
+    btn.dataset.say = "playing"; btn.textContent = "⏸ Stop";
+    try{ await speakLocal(speakable(m).slice(0, 4000), pick.lang); }catch(err){ alert(err.message); }
+    btn.dataset.say = ""; btn.textContent = "🔊 Listen"; return;
+  }
   btn.disabled = true; btn.textContent = "…";
   try{
     const r = await fetch("/api/speak", {method:"POST", body: JSON.stringify({text: speakable(m).slice(0, 2000)})});
@@ -787,7 +795,7 @@ async function showChapter(book, chapter, hitVerse){
   t.innerHTML = j.verses.map(v => `<span class="v" id="v${v.verse}" data-v="${v.verse}"><sup>${v.verse}</sup>${esc(v.text)} </span>`).join("");
   for(const id of ["#rPrev", "#rPrev2"]) $(id).disabled = !j.prev;
   for(const id of ["#rNext", "#rNext2"]) $(id).disabled = !j.next;
-  $("#rSay").hidden = !state.tts;
+  $("#rSay").hidden = !(state.tts || HAS_LOCAL_VOICE);
   renderBooks();
   const curBtn = document.querySelector(".book.cur .chs .cur") || document.querySelector(".book.cur"); if(curBtn) curBtn.scrollIntoView({block: "center"});
   const r = $("#reader");
@@ -813,11 +821,98 @@ $("#rAsk").onclick = () => {
   $("#q").value = `${rChap.book} ${rChap.chapter}`; autosize(); $("#q").focus();
 };
 
+/* ---------------- the computer's own voices, for Bibles that aren't in English ----------------
+   The cloned voice (Pocket TTS) only speaks English. For German, Chinese and other Bibles, and whenever
+   Pocket TTS isn't running, Listen uses the voices built into this computer (free, nothing leaves it). */
+const HAS_LOCAL_VOICE = "speechSynthesis" in window;
+let sysVoices = [];
+function loadSysVoices(){ try{ sysVoices = speechSynthesis.getVoices() || []; }catch(e){ sysVoices = []; } }
+if(HAS_LOCAL_VOICE){ loadSysVoices(); try{ speechSynthesis.addEventListener("voiceschanged", loadSysVoices); }catch(e){} }
+const STOPWORDS = {
+  "en-US": "the and of to that in he shall unto for his is not they with them be".split(" "),
+  "de-DE": "und der die das zu nicht ich ist den sie er von mit dem ein sich auf".split(" "),
+  "es-ES": "el la de que y los se del las en por no con su para".split(" "),
+  "fr-FR": "et le la les de des que il qui en ne pas vous est dans".split(" "),
+  "it-IT": "e il di che la non per è le del si una con gli".split(" "),
+  "pt-BR": "e o de que a do da os não se para em com uma".split(" "),
+  "nl-NL": "en de het van die een niet zijn hij ik met op dat".split(" "),
+  "sv-SE": "och att det som en är på för han av med till inte".split(" "),
+  "nb-NO": "og at det som en er på for han av med til ikke".split(" "),
+  "da-DK": "og at det som en er på for han af med til ikke".split(" "),
+  "fi-FI": "ja on että hän se ei ne niin oli kuin".split(" "),
+  "pl-PL": "i w się nie na to że z jest do ich".split(" "),
+  "ro-RO": "și în de la a nu cu se pe că este".split(" "),
+  "hu-HU": "és a az hogy nem is meg ő azt mert".split(" "),
+  "cs-CZ": "a v se na že je to jako ne by".split(" "),
+  "la": "et in est non ad qui cum quod enim autem".split(" "),
+  "tr-TR": "ve bir bu da de için ile ne o ki onlar".split(" "),
+  "vi-VN": "và của là không người các có cho đã ta".split(" "),
+  "sw-KE": "na ya wa kwa ni katika la za yake hao".split(" "),
+  "fil-PH": "ang ng sa at na mga si ay kay kanila".split(" "),
+  "hr-HR": "i je u se da na su to ne od mu".split(" "),
+  "sq-AL": "e të në dhe që për një me nga ai".split(" "),
+  "lv-LV": "un ir tas ka no uz lai viņš to viņi".split(" "),
+  "mi-NZ": "te i ki a ka ko o nga kia ia".split(" "),
+};
+/* languages of the free-catalog Bibles, as the server reports them */
+const CAT_LANG = {English: "en-US", "English (UK)": "en-GB", "English (US)": "en-US", German: "de-DE", Spanish: "es-ES", French: "fr-FR",
+  Italian: "it-IT", Portuguese: "pt-BR", Dutch: "nl-NL", Russian: "ru-RU", Swedish: "sv-SE", Norwegian: "nb-NO", Danish: "da-DK",
+  Finnish: "fi-FI", Polish: "pl-PL", Czech: "cs-CZ", Hungarian: "hu-HU", Romanian: "ro-RO", Bulgarian: "bg-BG", Croatian: "hr-HR",
+  Turkish: "tr-TR", Vietnamese: "vi-VN", Thai: "th-TH", Japanese: "ja-JP", Korean: "ko-KR", "Chinese (Simplified)": "zh-CN",
+  "Chinese (Traditional)": "zh-TW", Latin: "la", Tagalog: "fil-PH", Swahili: "sw-KE", Latvian: "lv-LV", Albanian: "sq-AL",
+  Maori: "mi-NZ", Cherokee: "chr"};
+function bibleLangById(id){ const b = state.bibles.find(x => x.id === id); return b && b.language ? (CAT_LANG[b.language] || "") : ""; }
+function detectLang(text){
+  const t = (text || "").slice(0, 6000);
+  if(/[぀-ヿ]/.test(t)) return "ja-JP";
+  if(/[가-힯]/.test(t)) return "ko-KR";
+  if(/[一-鿿]/.test(t)) return /[們這說來會為個國]/.test(t) ? "zh-TW" : "zh-CN";
+  if(/[฀-๿]/.test(t)) return "th-TH";
+  if(/[Ѐ-ӿ]/.test(t)) return /[ыэ]/.test(t) ? "ru-RU" : "bg-BG";
+  const words = t.toLowerCase().match(/\p{L}+/gu) || [], freq = new Map();
+  for(const w of words) freq.set(w, (freq.get(w) || 0) + 1);
+  let best = "en-US", top = 0;
+  for(const [lang, list] of Object.entries(STOPWORDS)){ let n = 0; for(const w of list) n += freq.get(w) || 0; if(n > top){ top = n; best = lang; } }
+  return best;
+}
+function pickSysVoice(lang){
+  const norm = x => (x || "").toLowerCase().replace("_", "-"), want = norm(lang), base = want.split("-")[0];
+  let same = sysVoices.filter(v => norm(v.lang).split("-")[0] === base);
+  if(base === "nb") same = same.concat(sysVoices.filter(v => /^no\b|^nn\b/.test(norm(v.lang))));
+  if(base === "zh" && want === "zh-tw") same.sort((a, b) => (/tw|hk|hant/.test(norm(b.lang)) ? 1 : 0) - (/tw|hk|hant/.test(norm(a.lang)) ? 1 : 0));
+  return same.find(v => norm(v.lang) === want) || same.find(v => v.default) || same[0] || null;
+}
+const LANG_NAME = {"de":"German","es":"Spanish","fr":"French","it":"Italian","pt":"Portuguese","nl":"Dutch","sv":"Swedish","nb":"Norwegian",
+  "da":"Danish","fi":"Finnish","pl":"Polish","ro":"Romanian","hu":"Hungarian","cs":"Czech","la":"Latin","ja":"Japanese","ko":"Korean",
+  "zh":"Chinese","th":"Thai","ru":"Russian","bg":"Bulgarian","en":"English"};
+function noVoiceMessage(lang){
+  const name = LANG_NAME[lang.split("-")[0]] || Object.keys(CAT_LANG).find(k => CAT_LANG[k] === lang) || "this language's", ua = navigator.userAgent;
+  const how = /Windows/.test(ua) ? "Windows: Settings → Time & language → Speech → Add voices → " + name + "."
+    : /Mac/.test(ua) ? "Mac: System Settings → Accessibility → Spoken Content → System voice → Manage Voices → " + name + "."
+    : "Linux: open a Terminal, type  sudo apt install speech-dispatcher espeak-ng  and press Enter, then restart your browser.";
+  return "This computer has no " + name + " voice yet, so Listen can't read this aloud.\n\n" + how + "\n\nThen press Listen again.";
+}
+const CHAPTER_WORD = {en: "chapter", de: "Kapitel", es: "capítulo", fr: "chapitre", it: "capitolo", pt: "capítulo", nl: "hoofdstuk",
+  sv: "kapitel", nb: "kapittel", da: "kapitel", fi: "luku", pl: "rozdział", cs: "kapitola", ro: "capitolul", hu: "fejezet", ru: "глава", bg: "глава"};
+function speakLocal(text, lang, me){
+  return new Promise((res, rej) => {
+    const v = pickSysVoice(lang), u = new SpeechSynthesisUtterance(text);
+    u.lang = v ? v.lang : lang; try{ if(v) u.voice = v; }catch(e){} u.rate = .95;
+    u.onend = res; u.onerror = e => (me && me.stop) ? res() : rej(new Error("The computer's voice couldn't read that."));
+    speechSynthesis.speak(u);
+  });
+}
+/* which voice to use: the cloned English voice when it's running and the text is English, else the computer's own */
+function voiceFor(text, bibleId){
+  const lang = (bibleId && bibleLangById(bibleId)) || detectLang(text), local = !lang.startsWith("en") || !state.tts;
+  return {lang, local, ok: !local || (HAS_LOCAL_VOICE && (!sysVoices.length || !!pickSysVoice(lang)))};
+}
+
 /* read the chapter aloud, a few verses at a time, carrying on into the next chapter */
 let say = null;
 function sayStop(){
   if(!say) return;
-  say.stop = true; if(say.audio) say.audio.pause();
+  say.stop = true; if(say.audio) say.audio.pause(); if(say.local) try{ speechSynthesis.cancel(); }catch(e){}
   document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say"));
   say = null; $("#rSay").textContent = "🔊 Listen";
 }
@@ -838,8 +933,28 @@ async function fetchAudio(text){
 }
 async function sayStart(){
   if(!rChap) return;
-  const me = say = {stop: false, audio: null};
+  loadSysVoices();
+  const pick = voiceFor(rChap.verses.slice(0, 40).map(v => v.text).join(" "), rChap.bid);
+  if(!pick.ok){ alert(noVoiceMessage(pick.lang)); return; }
+  const me = say = {stop: false, audio: null, local: pick.local};
   $("#rSay").textContent = "⏸ Stop";
+  if(pick.local){   // the computer's own voice, one verse at a time
+    const w = CHAPTER_WORD[pick.lang.split("-")[0]];
+    try{
+      for(let i = 0; i < rChap.verses.length; i++){
+        if(me.stop) return;
+        const v = rChap.verses[i];
+        document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say"));
+        const el = document.getElementById("v" + v.verse); if(el){ el.classList.add("say"); el.scrollIntoView({block: "center", behavior: "smooth"}); }
+        const lead = i === 0 && w ? (pick.lang.startsWith("en") ? rChap.book + ", " : "") + w + " " + rChap.chapter + ". " : "";
+        await speakLocal(lead + v.text, pick.lang, me);
+      }
+    }catch(err){ if(!me.stop){ sayStop(); alert(err.message); } return; }
+    if(me.stop) return;
+    const n = rChap.next; sayStop();
+    if(n){ await showChapter(n.book, n.chapter); sayStart(); }
+    return;
+  }
   const chunks = sayChunks();
   let next = fetchAudio(chunks[0].text);
   try{
@@ -886,7 +1001,7 @@ document.addEventListener("visibilitychange", () => { if(!document.hidden) ping(
 /* ---------------- start ---------------- */
 (async () => {
   await refresh();
-  if(!chats.length || !chats.some(c => c.id === activeId)){ if(chats.length) activeId = chats[0].id; else return newChat(); }
+  if(!chats.length || !chats.some(c => c.id === activeId)){ if(chats.length) activeId = chats[0].id; else newChat(); }
   renderChats(); renderThread();
   applyReadLook();
   if(mode === "read") setMode("read");

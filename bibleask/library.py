@@ -13,6 +13,15 @@ from .search import Index
 Progress = Optional[Callable[[str, float], None]]
 
 
+def _catalog_language(name: str) -> str:
+    """The language of a Bible downloaded from the free catalog (empty for the person's own files)."""
+    from . import catalog
+    for e in catalog.entries():
+        if e["name"] == name:
+            return e["language"]
+    return ""
+
+
 class Library:
     def __init__(self) -> None:
         self._cache: dict[str, tuple[Bible, Index]] = {}
@@ -36,7 +45,8 @@ class Library:
             except Exception:  # a damaged file should not break the whole list
                 continue
             out.append({"id": bid, "name": b.name, "verses": len(b.verses),
-                        "books": len({v.book for v in b.verses})})
+                        "books": len({v.book for v in b.verses}),
+                        "language": _catalog_language(b.name)})
         return out
 
     # ---- reading view -----------------------------------------------------------------
