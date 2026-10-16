@@ -111,6 +111,17 @@ a{color:var(--accent)}
 .about{border-top:1px solid var(--line);margin-top:24px;padding-top:16px;font-size:14px;color:var(--muted);text-align:left}
 .welcome{padding:28px 0;text-align:center}
 .welcome h1{font-family:Georgia,serif;font-weight:500;font-size:28px;margin:0 0 6px}
+#rtext .v{cursor:pointer}
+#rtext .v.sel{background:rgba(47,93,138,.16)}
+.quote{font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.6;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:4px 0 12px}
+.quote b{display:block;font-family:system-ui,sans-serif;font-size:13.5px;color:var(--accent);margin-top:6px}
+.sendrow{display:flex;gap:8px}
+.sendrow input{flex:1;min-width:0}
+.alt{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.alt .btn{font-size:14px;padding:7px 11px}
+.small{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+.welcomecard .btn{width:100%;margin-top:8px;padding:11px}
+.welcomecard h2{margin:0;font-size:19px;flex:1;font-family:Georgia,serif;font-weight:500}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--tabh) + 16px + env(safe-area-inset-bottom));background:var(--text);color:var(--bg);padding:8px 14px;border-radius:99px;font-size:14px;z-index:60}
 </style>
 </head>
@@ -170,6 +181,30 @@ a{color:var(--accent)}
     </div>
   </div></div></section>
 </main>
+
+<div class="sheet" id="shareSheet" hidden><div class="card">
+  <header><h2>Share this verse</h2><button class="iconbtn" id="shareClose" aria-label="Close">✕</button></header>
+  <div class="body">
+    <div class="quote" id="shareQuote"></div>
+    <form id="shareForm" class="sendrow">
+      <input class="find" id="shareTo" type="text" inputmode="email" autocomplete="email tel" placeholder="Phone number or email address">
+      <button class="btn primary">Share</button>
+    </form>
+    <p class="small" id="shareHint">Type a phone number to send it as a text, or an email address to send it as an email. Your Messages or Mail app opens with everything filled in; just press Send.</p>
+    <div class="alt"><button class="btn" id="shareOther">↗ Other apps</button><button class="btn" id="shareCopy">⧉ Copy link</button></div>
+  </div>
+</div></div>
+
+<div class="sheet" id="welcome" hidden><div class="card welcomecard">
+  <header><h2 id="welcomeTitle">A verse for you</h2><button class="iconbtn" id="welcomeClose" aria-label="Close">✕</button></header>
+  <div class="body">
+    <div class="quote" id="welcomeQuote"></div>
+    <button class="btn primary" id="welcomeRead">📖 Keep reading here</button>
+    <a class="btn" id="dlWin" href="https://github.com/beaugrand/BibleChat-voice/releases/latest/download/BibleChat-Windows.zip">⬇ Download for Windows</a>
+    <a class="btn" id="dlMac" href="https://github.com/beaugrand/BibleChat-voice/releases/latest/download/BibleChat-Mac.zip">⬇ Download for Mac <span class="muted" style="font-size:12.5px">(M1 and newer)</span></a>
+    <p class="small">BibleChat is free: read and search 44 Bibles right here, or download the app for your computer, which adds AI explanations. <a href="https://github.com/beaugrand/BibleChat-voice/releases/latest" target="_blank" rel="noopener">Linux and more</a></p>
+  </div>
+</div></div>
 
 <div class="sheet" id="pick" hidden><div class="card">
   <header><h2>Choose a chapter</h2><button class="iconbtn" id="pickClose" aria-label="Close">✕</button></header>
@@ -483,10 +518,57 @@ $("#blist").addEventListener("click", async e => {
   catch(err){ delete busy[id]; renderBibles(); toast(err.message || "Couldn't open it. Check the internet connection."); }
 });
 
+/* ---------- share one verse (tap it) ---------- */
+let shareV = null;
+function openApp(url){ location.href = url; }   // hands the message to the phone's Messages or Mail app
+function verseLink(v){ return location.origin + location.pathname + "#/" + encodeURIComponent(place.bible) + "/" + encodeURIComponent(place.book) + "/" + place.ch + "/" + v + "/s"; }
+function bibleAbbr(){ const m = catalog.find(c => c.id === place.bible); return m ? (m.abbr || m.name) : bible.name; }
+function verseText(v){ const x = (bible.byName[place.book].map.get(place.ch) || []).find(e => e[0] === v); return x ? x[1] : ""; }
+function shareMessage(v){ return "\u201C" + verseText(v) + "\u201D \u2014 " + place.book + " " + place.ch + ":" + v + " (" + bibleAbbr() + ")\n\nRead it in BibleChat: " + verseLink(v); }
+function openShare(v){
+  shareV = v;
+  document.querySelectorAll("#rtext .v.sel").forEach(n => n.classList.remove("sel"));
+  const el = document.getElementById("v" + v); if(el) el.classList.add("sel");
+  $("#shareQuote").innerHTML = esc(verseText(v)) + `<b>${esc(place.book)} ${place.ch}:${v} · ${esc(bibleAbbr())}</b>`;
+  $("#shareTo").value = store.get("lastTo", ""); $("#shareSheet").hidden = false;
+}
+function closeShare(){ $("#shareSheet").hidden = true; document.querySelectorAll("#rtext .v.sel").forEach(n => n.classList.remove("sel")); }
+$("#rtext").addEventListener("click", e => { const el = e.target.closest(".v"); if(!el || saying) return; openShare(+el.id.slice(1)); });
+$("#shareClose").onclick = closeShare;
+$("#shareSheet").addEventListener("click", e => { if(e.target.id === "shareSheet") closeShare(); });
+$("#shareForm").onsubmit = e => {
+  e.preventDefault();
+  const to = $("#shareTo").value.trim(), msg = shareMessage(shareV), subj = place.book + " " + place.ch + ":" + shareV + " \u2014 a verse for you";
+  if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)){
+    store.set("lastTo", to);
+    openApp("mailto:" + encodeURIComponent(to) + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(msg));
+  } else if(/^\+?[\d\s().-]{7,}$/.test(to)){
+    store.set("lastTo", to);
+    const num = to.replace(/[^\d+]/g, ""), ios = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) && "ontouchend" in document;
+    openApp("sms:" + num + (ios ? "&" : "?") + "body=" + encodeURIComponent(msg));
+  } else { toast("Type a phone number or an email address"); $("#shareTo").focus(); return; }
+  closeShare();
+};
+$("#shareOther").onclick = async () => {
+  const msg = shareMessage(shareV);
+  try{ if(navigator.share){ await navigator.share({title: place.book + " " + place.ch + ":" + shareV, text: msg}); closeShare(); return; } }catch(e){ return; }
+  try{ await navigator.clipboard.writeText(msg); toast("Verse and link copied"); }catch(e){ prompt("Copy this:", msg); }
+};
+$("#shareCopy").onclick = async () => { const u = verseLink(shareV); try{ await navigator.clipboard.writeText(u); toast("Link copied"); }catch(e){ prompt("Copy this link:", u); } };
+
+/* someone opened a shared verse: say hello and offer the app */
+function showWelcome(v){
+  $("#welcomeQuote").innerHTML = esc(verseText(v)) + `<b>${esc(place.book)} ${place.ch}:${v} · ${esc(bibleAbbr())}</b>`;
+  $("#welcomeTitle").textContent = "A friend shared a verse with you";
+  $("#welcome").hidden = false;
+}
+$("#welcomeRead").onclick = $("#welcomeClose").onclick = () => { $("#welcome").hidden = true; const h = document.querySelector("#rtext .v.hit") || document.getElementById("v" + (parseHash() || {}).v); if(h) h.scrollIntoView({block: "center"}); };
+$("#welcome").addEventListener("click", e => { if(e.target.id === "welcome") $("#welcome").hidden = true; });
+
 /* ---------- start ---------- */
 function parseHash(){
   const p = location.hash.replace(/^#\/?/, "").split("/").map(decodeURIComponent);
-  if(p.length >= 3 && p[0]) return {bible: p[0], book: p[1], ch: +p[2] || 1, v: +p[3] || null};
+  if(p.length >= 3 && p[0]) return {bible: p[0], book: p[1], ch: +p[2] || 1, v: +p[3] || null, shared: p[4] === "s"};
   return null;
 }
 (async () => {
@@ -501,6 +583,8 @@ function parseHash(){
   if(!catalog.some(c => c.id === place.bible)) place.bible = catalog[0].id;
   try{ await useBible(place.bible, true); }catch(e){ $("#rtext").innerHTML = `<div class="notice err">${esc(e.message)}</div>`; return; }
   render(h && h.v);
+  if(h && h.shared && h.v && verseText(h.v)) showWelcome(h.v);
+  else if(!store.get("tip", false)){ store.set("tip", true); setTimeout(() => toast("Tip: tap any verse to share it"), 1200); }
   addEventListener("hashchange", () => { const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]) go(x.book, x.ch, x.v); });
 })();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
