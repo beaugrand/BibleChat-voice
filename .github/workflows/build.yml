@@ -117,7 +117,7 @@ jobs:
 
           | Computer | File |
           |---|---|
-          | Windows 10/11 | `BibleChat-Windows.zip` (unzip, open `BibleChat\BibleChat.exe`) |
+          | Windows 10/11 | `BibleChat-Windows.zip` (unzip, open `BibleChat\BibleChat.exe` once; after that use the **BibleChat** icon it puts on your desktop) |
           | Mac with Apple Silicon (M1 and newer) | `BibleChat-Mac.zip` (unzip, drag BibleChat to Applications) |
           | Linux (Mint 21+, Ubuntu 22.04+) | `BibleChat-Linux.tar.gz` (unpack, run `./install.sh`) |
           | Linux, processor from before about 2014 | `BibleChat-Linux-OldCPU.tar.gz` |
