@@ -327,7 +327,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
   <div id="getDlg" hidden><div class="card" role="dialog" aria-label="Get free Bibles">
     <header>
       <h2>Get free Bibles <button class="x" id="getClose" style="opacity:1;font-size:24px" title="Close">×</button></h2>
-      <p>Public-domain and freely licensed Bibles, most from the <a href="https://github.com/seven1m/open-bibles" target="_blank" rel="noopener">open-bibles</a> collection, plus the Ethiopian canon and the Amharic Bible. Click Download and it's added to Your Bibles.</p>
+      <p>Public-domain and freely licensed Bibles, most from the <a href="https://github.com/seven1m/open-bibles" target="_blank" rel="noopener">open-bibles</a> collection, plus the Ethiopian canon and the Amharic New Testament. Click Download and it's added to Your Bibles.</p>
       <div class="filters"><input type="search" id="getFind" placeholder="Search by name or language…"><select id="getLang"></select></div>
     </header>
     <div id="getList"></div>
@@ -546,7 +546,7 @@ function renderCatalog(){
     else if(g && !g.err) act = `<small>${esc(g.msg)}</small><div class="progress"><i style="width:${Math.max(4, Math.round(g.frac * 100))}%"></i></div>`;
     else act = `<button class="btn primary" data-get="${esc(i.file)}">Download</button>${g && g.err ? `<div class="err">${esc(g.err)}</div>` : ""}`;
     const mb = (i.bytes / 1048576).toFixed(1);
-    return `<div class="cat"><div class="info"><b>${esc(i.name)}</b><small>${esc(i.language)}${i.verses ? ` · ${i.verses.toLocaleString()} verses · ${mb} MB` : ""} · ${esc(i.license)}${i.note ? " · " + esc(i.note) : ""}</small></div><div class="act">${act}</div></div>`;
+    return `<div class="cat"><div class="info"><b>${esc(i.name)}</b><small>${esc(i.language)}${i.verses ? ` · ${i.verses.toLocaleString()} verses` : ""}${i.bytes ? ` · ${mb} MB` : ""} · ${esc(i.license)}${i.note ? " · " + esc(i.note) : ""}</small></div><div class="act">${act}</div></div>`;
   }).join("") : `<div class="empty-note">Nothing matches.</div>`;
 }
 $("#getBibles").onclick = openCatalog;

@@ -74,8 +74,9 @@ EXTRA: list[tuple[str, str, str, str, str, int, int, str, str]] = [
      6244619, 38590, '84 books of the Ethiopian Orthodox canon, incl. 1 Enoch, Jubilees, 2 Enoch, 1 Clement. '
      'Meqabyan I-III and 4 Baruch have no public-domain English translation yet',
      OWN + 'eng-ethiopian-canon.zefania.xml'),
-    ('amh_usfx.zip', 'Amharic', 'AMH', 'Amharic Bible (1962)', AMHARIC_NOTICE, 0, 0,
-     'The 1962 Haile Selassie Amharic Bible', 'https://ebible.org/Scriptures/amh_usfx.zip'),
+    ('amh_usfx.zip', 'Amharic', 'AMH', 'Amharic New Testament (1962)', AMHARIC_NOTICE, 0, 7369,
+     'New Testament only (27 books); from the 1962 Haile Selassie Amharic Bible',
+     'https://ebible.org/Scriptures/amh_usfx.zip'),
 ]
 
 

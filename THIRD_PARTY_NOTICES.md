@@ -42,7 +42,7 @@ clicks to get it, and stays under its own license.
   public-domain texts: the World English Bible; R. H. Charles's *1 Enoch* (1917) and *Jubilees* (1917);
   Morfill and Charles's *2 Enoch* (1896); *1 Clement* from the Ante-Nicene Fathers (1885), as transcribed by
   the [Scrollmapper](https://github.com/scrollmapper/bible_databases_deuterocanonical) project.
-- **Amharic Bible (1962)** from [eBible.org](https://ebible.org/amh/copyright.htm): copyright © 1962, 2003
+- **Amharic New Testament (1962)** from [eBible.org](https://ebible.org/amh/copyright.htm): copyright © 1962, 2003
   United Bible Societies, used with the kind permission of the Bible Society of Ethiopia. Free for
   non-commercial use with this notice; commercial use needs written permission of the Bible Society of Ethiopia.
 - **Bibles people add from their own files** are the person's own business; BibleChat ships none.
