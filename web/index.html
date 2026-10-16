@@ -206,6 +206,11 @@ a{color:var(--accent)}
   </div>
 </div></div>
 
+<div class="sheet" id="voiceSheet" hidden><div class="card">
+  <header><h2>🔊 A voice for this language</h2><button class="iconbtn" id="voiceClose" aria-label="Close">✕</button></header>
+  <div class="body"><p id="voiceMsg" style="margin:6px 4px 14px"></p><button class="btn primary" id="voiceOk" style="width:100%">OK</button></div>
+</div></div>
+
 <div class="sheet" id="pick" hidden><div class="card">
   <header><h2>Choose a chapter</h2><button class="iconbtn" id="pickClose" aria-label="Close">✕</button></header>
   <div class="body"><input class="find" id="bookFind" type="search" placeholder="Find a book"><div id="books"></div></div>
@@ -336,12 +341,28 @@ $("#books").addEventListener("click", e => {
 });
 
 /* ---------- listen (the phone's own voice: free, nothing sent anywhere) ---------- */
-const LANG = {English: "en", German: "de", Spanish: "es", French: "fr", Italian: "it", Portuguese: "pt", Dutch: "nl", Russian: "ru",
-  Swedish: "sv", Norwegian: "nb", Danish: "da", Finnish: "fi", Polish: "pl", Czech: "cs", Hungarian: "hu", Romanian: "ro",
-  Bulgarian: "bg", Croatian: "hr", Turkish: "tr", Vietnamese: "vi", Thai: "th", Japanese: "ja", Korean: "ko", Chinese: "zh",
-  Latin: "la", Tagalog: "fil", Swahili: "sw", Latvian: "lv", Albanian: "sq", Maori: "mi"};
-let saying = false;
-function bibleLang(){ const m = catalog.find(c => c.id === place.bible); const l = m ? m.language.split(" ")[0] : "English"; return LANG[l] || "en"; }
+const LANG = {English: "en-US", "English (UK)": "en-GB", "English (US)": "en-US", German: "de-DE", Spanish: "es-ES", French: "fr-FR",
+  Italian: "it-IT", Portuguese: "pt-BR", Dutch: "nl-NL", Russian: "ru-RU", Swedish: "sv-SE", Norwegian: "nb-NO", Danish: "da-DK",
+  Finnish: "fi-FI", Polish: "pl-PL", Czech: "cs-CZ", Hungarian: "hu-HU", Romanian: "ro-RO", Bulgarian: "bg-BG", Croatian: "hr-HR",
+  Turkish: "tr-TR", Vietnamese: "vi-VN", Thai: "th-TH", Japanese: "ja-JP", Korean: "ko-KR", "Chinese (Simplified)": "zh-CN",
+  "Chinese (Traditional)": "zh-TW", Latin: "la", Tagalog: "fil-PH", Swahili: "sw-KE", Latvian: "lv-LV", Albanian: "sq-AL",
+  Maori: "mi-NZ", Cherokee: "chr"};
+const CHAPTER = {en: "chapter", de: "Kapitel", es: "capítulo", fr: "chapitre", it: "capitolo", pt: "capítulo", nl: "hoofdstuk",
+  sv: "kapitel", nb: "kapittel", da: "kapitel", fi: "luku", pl: "rozdział", cs: "kapitola", ro: "capitolul", hr: "poglavlje",
+  hu: "fejezet", ru: "глава", bg: "глава", tr: "bölüm"};
+let saying = false, voices = [];
+function loadVoices(){ try{ voices = speechSynthesis.getVoices() || []; }catch(e){ voices = []; } }
+function bibleMeta(){ return catalog.find(c => c.id === place.bible) || {language: "English"}; }
+function bibleLang(){ const l = bibleMeta().language; return LANG[l] || LANG[l.split(" ")[0]] || "en-US"; }
+function pickVoice(lang){
+  const norm = x => (x || "").toLowerCase().replace("_", "-"), want = norm(lang), base = want.split("-")[0];
+  let same = voices.filter(v => norm(v.lang).split("-")[0] === base);
+  if(base === "nb") same = same.concat(voices.filter(v => /^no\b|^nn\b/.test(norm(v.lang))));   // Norwegian is filed under several codes
+  if(base === "fil") same = same.concat(voices.filter(v => norm(v.lang).startsWith("tl")));
+  if(base === "zh" && want === "zh-tw") same.sort((a, b) => (/tw|hk|hant/.test(norm(b.lang)) ? 1 : 0) - (/tw|hk|hant/.test(norm(a.lang)) ? 1 : 0));
+  return same.find(v => norm(v.lang) === want) || same.find(v => v.default) || same[0] || null;
+}
+function intro(lang){ const w = CHAPTER[lang.split("-")[0]]; if(!w) return ""; return (lang.startsWith("en") ? place.book + ", " : "") + w + " " + place.ch + ". "; }
 function sayStop(){ saying = false; try{ speechSynthesis.cancel(); }catch(e){} document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say")); $("#say").textContent = "🔊 Listen"; }
 function sayFrom(i){
   const vs = bible.byName[place.book].map.get(place.ch);
@@ -349,13 +370,31 @@ function sayFrom(i){
   if(i >= vs.length){ const n = neighbours().next; if(n){ place.book = n[0]; place.ch = n[1]; render(); saying = true; $("#say").textContent = "⏸ Stop"; sayFrom(0); } else sayStop(); return; }
   document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say"));
   const el = document.getElementById("v" + vs[i][0]); if(el){ el.classList.add("say"); el.scrollIntoView({block: "center", behavior: "smooth"}); }
-  const u = new SpeechSynthesisUtterance((i === 0 ? place.book + ", chapter " + place.ch + ". " : "") + vs[i][1]);
-  u.lang = bibleLang(); u.rate = .95;
+  const lang = bibleLang(), voice = pickVoice(lang);
+  const u = new SpeechSynthesisUtterance((i === 0 ? intro(lang) : "") + vs[i][1]);
+  u.lang = voice ? voice.lang : lang; try{ if(voice) u.voice = voice; }catch(e){} u.rate = .95;
   u.onend = () => sayFrom(i + 1); u.onerror = () => sayStop();
   speechSynthesis.speak(u);
 }
-if("speechSynthesis" in window){ $("#say").hidden = false; }
-$("#say").onclick = () => { if(saying){ sayStop(); return; } saying = true; $("#say").textContent = "⏸ Stop"; speechSynthesis.cancel(); sayFrom(0); };
+function voiceHelp(){
+  const lang = bibleMeta().language.replace(/ \(.*\)$/, ""), ua = navigator.userAgent;
+  const where = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && "ontouchend" in document)
+      ? "On iPhone: Settings → Accessibility → Spoken Content → Voices → " + lang + " → tap a voice to download it."
+    : /Android/.test(ua) ? "On Android: Settings → search for \u201CText-to-speech\u201D → tap the gear next to the speech engine → Install voice data → " + lang + "."
+    : /Windows/.test(ua) ? "On Windows: Settings → Time & language → Speech → Add voices → " + lang + "."
+    : /Mac/.test(ua) ? "On a Mac: System Settings → Accessibility → Spoken Content → System voice → Manage Voices → " + lang + "."
+    : "Add a " + lang + " voice in your device's text-to-speech settings.";
+  $("#voiceMsg").innerHTML = `This device has no ${esc(lang)} voice yet, so Listen can't read this Bible aloud.<br><br>${esc(where)}<br><br>Then come back and press Listen again.`;
+  $("#voiceSheet").hidden = false;
+}
+if("speechSynthesis" in window){ $("#say").hidden = false; loadVoices(); try{ speechSynthesis.addEventListener("voiceschanged", loadVoices); }catch(e){} }
+$("#say").onclick = () => {
+  if(saying){ sayStop(); return; }
+  loadVoices();
+  const lang = bibleLang();
+  if(voices.length && !lang.startsWith("en") && !pickVoice(lang)){ voiceHelp(); return; }   // don't read German with an English voice
+  saying = true; $("#say").textContent = "⏸ Stop"; speechSynthesis.cancel(); sayFrom(0);
+};
 
 /* ---------- search (same method as the desktop app: word matching, no AI) ---------- */
 const STOP = new Set(("a about above after again all also am an and any are as at be because been before being below between both but by " +
@@ -564,6 +603,9 @@ function showWelcome(v){
 }
 $("#welcomeRead").onclick = $("#welcomeClose").onclick = () => { $("#welcome").hidden = true; const h = document.querySelector("#rtext .v.hit") || document.getElementById("v" + (parseHash() || {}).v); if(h) h.scrollIntoView({block: "center"}); };
 $("#welcome").addEventListener("click", e => { if(e.target.id === "welcome") $("#welcome").hidden = true; });
+
+$("#voiceClose").onclick = $("#voiceOk").onclick = () => $("#voiceSheet").hidden = true;
+$("#voiceSheet").addEventListener("click", e => { if(e.target.id === "voiceSheet") $("#voiceSheet").hidden = true; });
 
 /* ---------- start ---------- */
 function parseHash(){
