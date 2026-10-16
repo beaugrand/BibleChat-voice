@@ -61,7 +61,12 @@ def main() -> None:
             path = os.path.join(tempfile.gettempdir(), e["file"])
             if not os.path.exists(path):
                 print("downloading", e["file"], flush=True)
-                urllib.request.urlretrieve(catalog.url(e["file"]), path)
+                from bibleask.llm import _open   # the same download the app does
+                try:
+                    with _open(catalog.url(e["file"])) as r, open(path, "wb") as f:
+                        f.write(r.read())
+                except Exception as err:
+                    raise SystemExit(f"Download failed: {catalog.url(e['file'])}: {err}")
         if path.endswith(".zip"):   # eBible.org: the USFX XML is inside the zip
             with open(path, "rb") as f:
                 inner, data = catalog.unpack(e["file"], f.read())
