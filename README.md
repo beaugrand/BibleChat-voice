@@ -38,7 +38,7 @@ Project Gutenberg's well-known 1455 "Gutenberg Bible" is in Latin, so the Englis
 
 ## On a phone: BibleChat for the web
 
-**[beaugrand.github.io/biblechat-voice](https://beaugrand.github.io/biblechat-voice/)** opens BibleChat in any phone or computer browser. No sign-up, nothing to install. It has reading, search (same method as the app), the 44 free Bibles, read-aloud with the phone's own voice, links to any verse, and Love Donations. Bibles you open are kept on the phone, so it also works offline. **Share → Add to Home Screen** keeps it like an app.
+**[beaugrand.github.io/BibleChat-voice](https://beaugrand.github.io/BibleChat-voice/)** opens BibleChat in any phone or computer browser. No sign-up, nothing to install. It has reading, search (same method as the app), the 44 free Bibles, read-aloud with the phone's own voice, links to any verse, and Love Donations. Bibles you open are kept on the phone, so it also works offline. **Share → Add to Home Screen** keeps it like an app.
 
 The AI explanations and voice questions need the computer app, because they run an AI model on your own machine.
 

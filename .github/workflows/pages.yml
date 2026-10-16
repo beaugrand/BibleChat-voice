@@ -1,7 +1,7 @@
 name: Publish phone version (GitHub Pages)
 
 # Builds the phone/web version of BibleChat (the web/ folder plus the 44 free Bibles, converted with
-# BibleChat's own readers) and publishes it on GitHub Pages, e.g. https://beaugrand.github.io/biblechat-voice/
+# BibleChat's own readers) and publishes it on GitHub Pages, e.g. https://beaugrand.github.io/BibleChat-voice/
 # One-time setup on GitHub: Settings -> Pages -> Source: "GitHub Actions".
 on:
   workflow_dispatch:
