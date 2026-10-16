@@ -1,7 +1,6 @@
 """The 'Update available' box: shown only when GitHub's newest release is newer than this copy."""
 import io
 import json
-import os
 import tempfile
 import unittest
 from unittest import mock
@@ -12,7 +11,8 @@ from bibleask import __version__, updates
 class Updates(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
-        self.env = mock.patch.dict(os.environ, {"XDG_DATA_HOME": self.tmp.name, "APPDATA": self.tmp.name})
+        # its own settings folder on every system (macOS ignores XDG_DATA_HOME)
+        self.env = mock.patch("bibleask.storage.data_dir", return_value=self.tmp.name)
         self.env.start()
 
     def tearDown(self):
