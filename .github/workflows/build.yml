@@ -48,6 +48,10 @@ jobs:
           if [ -n "${{ matrix.compat }}" ]; then
             CMAKE_ARGS="-DGGML_NATIVE=OFF -DGGML_AVX=OFF -DGGML_AVX2=OFF -DGGML_AVX512=OFF -DGGML_FMA=OFF -DGGML_F16C=OFF -DGGML_BMI2=OFF" \
               pip install --no-cache-dir --no-binary=llama-cpp-python llama-cpp-python==0.3.35
+          elif [ "$RUNNER_OS" = "macOS" ]; then
+            # the ready-made Mac (metal) wheels for 0.3.35/0.3.36 are corrupt (Bad CRC-32), so compile it here
+            CMAKE_ARGS="-DGGML_METAL=on" pip install --no-cache-dir --no-binary=llama-cpp-python llama-cpp-python==0.3.35 > step.log 2>&1 || report "AI engine build (Mac)"
+            tail -n 3 step.log
           else
             # pinned: the 0.3.36 Mac (metal) wheel on that index is corrupt (Bad CRC-32); keep in step with llm.LLAMA_CPP_VERSION
             pip install llama-cpp-python==0.3.35 --only-binary=llama-cpp-python --extra-index-url ${{ matrix.wheel_index }} > step.log 2>&1 || report "AI engine install"
