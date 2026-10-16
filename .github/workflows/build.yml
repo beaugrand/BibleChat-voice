@@ -72,7 +72,12 @@ jobs:
           [ "$want" = "$have" ] || { echo "::error title=Version::Releasing $want but bibleask/__init__.py says $have"; exit 1; }
 
       - name: Run tests
-        run: python -W ignore -m unittest discover -s tests
+        shell: bash
+        run: |
+          python -W ignore -m unittest discover -s tests > tests.log 2>&1 && { tail -n 3 tests.log; exit 0; }
+          cat tests.log
+          echo "::error title=Tests failed::$(grep -A 12 -E '^(FAIL|ERROR):' tests.log | head -n 40 | sed 's/%/%25/g' | tr '\n' '\r' | sed 's/\r/%0A/g')"
+          exit 1
 
       - name: Build the app
         run: pyinstaller --noconfirm BibleChat.spec
