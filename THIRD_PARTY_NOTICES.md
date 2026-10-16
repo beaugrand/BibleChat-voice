@@ -45,4 +45,6 @@ clicks to get it, and stays under its own license.
 - **Amharic New Testament (1962)** from [eBible.org](https://ebible.org/amh/copyright.htm): copyright © 1962, 2003
   United Bible Societies, used with the kind permission of the Bible Society of Ethiopia. Free for
   non-commercial use with this notice; commercial use needs written permission of the Bible Society of Ethiopia.
+- **Septuagint in English** from [eBible.org](https://ebible.org): Brenton's *Translation of the Greek
+  Septuagint into English* (1851, public domain) and LXX2012, its update to modern English (public domain).
 - **Bibles people add from their own files** are the person's own business; BibleChat ships none.
