@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BibleChat</title>
+<meta name="description" content="Read and search free Bibles on your phone. No sign-up, nothing to install.">
+<meta name="theme-color" content="#2f5d8a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+:root{
+  --bg:#faf9f7; --panel:#f1efea; --panel2:#e8e5de; --text:#27251f; --muted:#6f6b60; --line:#ddd9cf;
+  --accent:#2f5d8a; --accent-text:#fff; --card:#fff; --danger:#b3382c; --ok:#2f7d4f; --hl:rgba(255,205,60,.35);
+  --shadow:0 1px 2px rgba(0,0,0,.06),0 4px 14px rgba(0,0,0,.06);
+  --rs:1; --tabh:58px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1f1e1b; --panel:#181714; --panel2:#2a2824; --text:#ebe8e0; --muted:#9c978a; --line:#35332e;
+    --accent:#6fa3d6; --accent-text:#10202f; --card:#262420; --danger:#ef7d70; --ok:#6bc28d; --hl:rgba(255,205,60,.22);
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 14px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1f1e1b; --panel:#181714; --panel2:#2a2824; --text:#ebe8e0; --muted:#9c978a; --line:#35332e;
+  --accent:#6fa3d6; --accent-text:#10202f; --card:#262420; --danger:#ef7d70; --ok:#6bc28d; --hl:rgba(255,205,60,.22);
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 14px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--text)}
+body{font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding-bottom:calc(var(--tabh) + env(safe-area-inset-bottom))}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:var(--accent)}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+/* top bar */
+#top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+#top .wrap{display:flex;align-items:center;gap:10px;height:54px}
+.brand{font-weight:650;font-size:18px;display:flex;align-items:center;gap:7px;flex:1;min-width:0}
+.brand svg{width:22px;height:22px;flex:none;color:var(--accent)}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:5px 12px;font-size:14px;font-weight:600;max-width:52vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.iconbtn{border:0;background:none;font-size:19px;padding:6px;border-radius:9px;line-height:1}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:8px 13px;display:inline-flex;align-items:center;gap:6px;justify-content:center;text-decoration:none;color:inherit;font-size:15px}
+.btn:disabled{opacity:.45}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-text)}
+.muted{color:var(--muted)}
+.notice{color:var(--muted);font-size:14.5px;padding:14px 0}
+.err{color:var(--danger)}
+/* tab bar */
+#tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--panel);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+#tabs .wrap{display:flex;height:var(--tabh);padding:0 6px}
+#tabs button{flex:1;border:0;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font-size:11.5px;color:var(--muted);border-radius:10px}
+#tabs button b{font-size:20px;line-height:1.1;font-weight:400}
+#tabs button.on{color:var(--accent);font-weight:650}
+#tabs button.love b{color:#c2455a}
+/* reader */
+#rbar{position:sticky;top:calc(55px + env(safe-area-inset-top));z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+#rbar .wrap{display:flex;align-items:center;gap:6px;padding-top:8px;padding-bottom:8px}
+#where{flex:1;min-width:0;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:6px 11px;font-family:Georgia,"Times New Roman",serif;font-size:19px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#where::after{content:" ▾";font-family:system-ui;font-size:13px;color:var(--muted)}
+#rbar .btn{padding:7px 11px}
+#rtools{display:flex;gap:6px;flex-wrap:wrap;padding:10px 0 0}
+#rtools .btn{font-size:14px;padding:6px 10px}
+#rtext{font-family:Georgia,"Times New Roman",serif;font-size:calc(19px * var(--rs));line-height:1.75;padding:14px 0 10px}
+#rtext .v{border-radius:4px;transition:background .3s;scroll-margin-top:130px}
+#rtext.lines .v{display:block;margin:0 0 .45em}
+#rtext sup{font-family:system-ui,sans-serif;font-size:.6em;font-weight:650;color:var(--accent);margin:0 3px 0 1px;vertical-align:.45em}
+#rtext .v.hit{background:rgba(47,93,138,.16)}
+#rtext .v.say{background:var(--hl)}
+.pager{display:flex;justify-content:space-between;gap:10px;padding:8px 0 26px}
+/* picker sheet */
+.sheet{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.35);display:flex;align-items:flex-end;justify-content:center}
+.sheet .card{background:var(--bg);width:min(760px,100%);max-height:86vh;border-radius:16px 16px 0 0;display:flex;flex-direction:column;box-shadow:var(--shadow);padding-bottom:env(safe-area-inset-bottom)}
+.sheet header{display:flex;align-items:center;gap:10px;padding:14px 16px 10px;border-bottom:1px solid var(--line)}
+.sheet header h2{margin:0;font-size:18px;flex:1;font-family:Georgia,serif;font-weight:500}
+.sheet .body{overflow:auto;padding:8px 12px 16px}
+.find{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:16px}
+.bk>button{width:100%;display:flex;justify-content:space-between;border:0;background:none;padding:10px 6px;font-size:16px;text-align:left;border-bottom:1px solid var(--line)}
+.bk.cur>button{color:var(--accent);font-weight:650}
+.bk>button::after{content:"▾";color:var(--muted);font-size:13px}
+.chs{display:none;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:6px;padding:10px 2px 14px}
+.bk.open .chs{display:grid}
+.chs button{border:1px solid var(--line);background:var(--card);border-radius:9px;padding:9px 0;font-size:15px}
+.chs button.cur{background:var(--accent);border-color:var(--accent);color:var(--accent-text)}
+/* search */
+#sform{display:flex;gap:8px;padding:14px 0 6px}
+#sform input{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:16px}
+.hint{font-size:13.5px;color:var(--muted);padding:2px 0 8px}
+.hint button{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:4px 11px;margin:4px 4px 0 0;font-size:13.5px}
+.res{padding:11px 2px;border-bottom:1px solid var(--line);font-family:Georgia,"Times New Roman",serif;font-size:calc(17px * var(--rs))}
+.res a{font-family:system-ui,sans-serif;font-weight:650;font-size:14px;text-decoration:none;margin-right:6px;white-space:nowrap}
+.res mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 1px}
+/* bibles */
+.bl{display:flex;gap:10px;align-items:center;padding:11px 2px;border-bottom:1px solid var(--line)}
+.bl .i{flex:1;min-width:0}
+.bl .i b{display:block;font-size:15.5px}
+.bl .i small{color:var(--muted);font-size:12.5px;display:block}
+.bl .btn{font-size:14px;padding:6px 11px;flex:none}
+.bl.cur .i b{color:var(--accent)}
+.progress{height:5px;background:var(--panel2);border-radius:5px;overflow:hidden;margin-top:6px}
+.progress>i{display:block;height:100%;background:var(--accent);width:30%;animation:slide 1.1s infinite ease-in-out}
+@keyframes slide{0%{margin-left:-30%}100%{margin-left:100%}}
+/* love */
+.lovecard{text-align:center;padding:22px 0 30px}
+.lovecard h2{font-family:Georgia,serif;font-weight:500;font-size:24px;margin:0 0 6px}
+.lovecard img{width:min(270px,78vw);border-radius:14px;background:#fff;padding:6px;box-shadow:var(--shadow)}
+.lovecard .tag{font-weight:650;font-size:17px;margin:10px 0 14px}
+.about{border-top:1px solid var(--line);margin-top:24px;padding-top:16px;font-size:14px;color:var(--muted);text-align:left}
+.welcome{padding:28px 0;text-align:center}
+.welcome h1{font-family:Georgia,serif;font-weight:500;font-size:28px;margin:0 0 6px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--tabh) + 16px + env(safe-area-inset-bottom));background:var(--text);color:var(--bg);padding:8px 14px;border-radius:99px;font-size:14px;z-index:60}
+</style>
+</head>
+<body>
+<header id="top"><div class="wrap">
+  <div class="brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5C4.7 20 4 19.3 4 18.5z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5z"/></svg>BibleChat</div>
+  <button class="chip" id="bibleChip" title="Choose a Bible">…</button>
+  <button class="iconbtn" id="themeBtn" title="Light or dark">☾</button>
+</div></header>
+
+<main>
+  <!-- READ -->
+  <section id="v-read">
+    <div id="rbar"><div class="wrap">
+      <button class="btn" id="prev" aria-label="Previous chapter">‹</button>
+      <button id="where">…</button>
+      <button class="btn" id="next" aria-label="Next chapter">›</button>
+    </div></div>
+    <div class="wrap">
+      <div id="rtools">
+        <button class="btn" id="say" hidden>🔊 Listen</button>
+        <button class="btn" id="share">↗ Share</button>
+        <button class="btn" id="lines" title="One verse per line or flowing text">¶</button>
+        <button class="btn" id="small" aria-label="Smaller text">A−</button>
+        <button class="btn" id="big" aria-label="Larger text">A+</button>
+      </div>
+      <div id="rtext"><div class="notice">Loading…</div></div>
+      <div class="pager"><button class="btn" id="prev2">‹ Previous</button><button class="btn" id="next2">Next ›</button></div>
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <section id="v-search" hidden><div class="wrap">
+    <form id="sform"><input type="search" id="q" placeholder="Words or a verse, e.g. John 3:16" enterkeyhint="search" autocomplete="off"><button class="btn primary">Find</button></form>
+    <div class="hint">Try: <button data-q="John 3:16">John 3:16</button><button data-q="Psalm 23">Psalm 23</button><button data-q="love is patient">love is patient</button><button data-q="the Lord is my shepherd">the Lord is my shepherd</button></div>
+    <div id="results"></div>
+  </div></section>
+
+  <!-- BIBLES -->
+  <section id="v-bibles" hidden><div class="wrap">
+    <div style="display:flex;gap:8px;padding:14px 0 6px"><input class="find" id="bfind" type="search" placeholder="Search by name or language"><select id="blang" class="find" style="width:auto;max-width:44%"></select></div>
+    <p class="hint">Free, public-domain and openly licensed Bibles from the <a href="https://github.com/seven1m/open-bibles" target="_blank" rel="noopener">open-bibles</a> collection. A Bible you open is kept on this phone, so it also works offline.</p>
+    <div id="blist"></div>
+  </div></section>
+
+  <!-- LOVE -->
+  <section id="v-love" hidden><div class="wrap"><div class="lovecard">
+    <h2>♥ Love Donations</h2>
+    <p class="muted">BibleChat is free for everyone. If it blesses you, a gift helps keep it growing. Thank you!</p>
+    <img alt="Cash App QR code for $HansBeaugrand" src="cashapp-qr.jpg">
+    <div class="tag">Cash App: $HansBeaugrand</div>
+    <a class="btn primary" href="https://cash.app/$HansBeaugrand" target="_blank" rel="noopener">Open Cash App</a>
+    <div class="about">
+      <p><b>About BibleChat.</b> Read and search free Bibles right here, with no sign-up and nothing to install. Tap your browser's <b>Share → Add to Home Screen</b> to keep it like an app.</p>
+      <p>On a computer, the full <a href="https://github.com/beaugrand/biblechat-voice/releases/latest" target="_blank" rel="noopener">BibleChat app</a> adds AI explanations, voice questions and your own Bible files.</p>
+      <p>Free and open source (MIT License). Each Bible keeps its own license, shown in the Bibles tab.</p>
+    </div>
+  </div></div></section>
+</main>
+
+<div class="sheet" id="pick" hidden><div class="card">
+  <header><h2>Choose a chapter</h2><button class="iconbtn" id="pickClose" aria-label="Close">✕</button></header>
+  <div class="body"><input class="find" id="bookFind" type="search" placeholder="Find a book"><div id="books"></div></div>
+</div></div>
+
+<nav id="tabs"><div class="wrap">
+  <button data-tab="read" class="on"><b>📖</b>Read</button>
+  <button data-tab="search"><b>🔍</b>Search</button>
+  <button data-tab="bibles"><b>📚</b>Bibles</button>
+  <button data-tab="love" class="love"><b>♥</b>Love</button>
+</div></nav>
+
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem("bcw." + k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem("bcw." + k, JSON.stringify(v)); }catch(e){} }
+};
+function toast(msg){ const t = document.createElement("div"); t.className = "toast"; t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 2200); }
+
+/* ---------- state ---------- */
+let catalog = [], bible = null, flat = null, idx = null;
+let place = store.get("place", {bible: "eng-kjv", book: "Genesis", ch: 1});
+let rScale = store.get("rs", 1), rLines = store.get("lines", true);
+
+/* ---------- theme ---------- */
+function applyTheme(t){ if(t) document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme;
+  const dark = t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; $("#themeBtn").textContent = dark ? "☀" : "☾"; }
+applyTheme(store.get("theme", null));
+$("#themeBtn").onclick = () => { const dark = $("#themeBtn").textContent === "☀"; const t = dark ? "light" : "dark"; store.set("theme", t); applyTheme(t); };
+
+/* ---------- tabs ---------- */
+let tab = "read";
+function show(t){
+  tab = t;
+  for(const n of ["read", "search", "bibles", "love"]) $("#v-" + n).hidden = n !== t;
+  document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === t));
+  if(t === "bibles") renderBibles();
+  if(t === "search") setTimeout(() => $("#q").focus(), 50);
+  scrollTo(0, 0);
+}
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => { if(b.dataset.tab !== "read") sayStop(); show(b.dataset.tab); });
+$("#bibleChip").onclick = () => show("bibles");
+
+/* ---------- loading a Bible ---------- */
+const loaded = {};
+async function loadBible(id){
+  if(loaded[id]) return loaded[id];
+  const r = await fetch("data/" + id + ".json");
+  if(!r.ok) throw new Error("Couldn't load that Bible (" + r.status + ").");
+  const b = await r.json();
+  b.list = []; b.byName = {};
+  for(const bk of b.books){ b.byName[bk.n] = bk; b.list.push(bk.n); bk.map = new Map(bk.c.map(c => [c[0], c[1]])); }
+  loaded[id] = b; return b;
+}
+async function useBible(id, keepPlace){
+  $("#rtext").innerHTML = `<div class="notice">Opening the Bible…<div class="progress"><i></i></div></div>`;
+  const b = await loadBible(id);
+  bible = b; flat = null; idx = null;
+  const meta = catalog.find(c => c.id === id);
+  $("#bibleChip").textContent = meta ? (meta.abbr || meta.name) : b.name;
+  if(!keepPlace || !b.byName[place.book]){ place = {bible: id, book: b.list[0], ch: b.books[0].c[0][0]}; }
+  place.bible = id; store.set("place", place);
+}
+
+/* ---------- reading ---------- */
+function chapterSeq(){ const s = []; for(const bk of bible.books) for(const c of bk.c) s.push([bk.n, c[0]]); return s; }
+function neighbours(){
+  const s = chapterSeq(), i = s.findIndex(x => x[0] === place.book && x[1] === place.ch);
+  return {prev: i > 0 ? s[i - 1] : null, next: i >= 0 && i < s.length - 1 ? s[i + 1] : null};
+}
+function render(hitVerse){
+  const bk = bible.byName[place.book]; let vs = bk && bk.map.get(place.ch);
+  if(!vs){ place.book = bible.list[0]; place.ch = bible.books[0].c[0][0]; vs = bible.books[0].c[0][1]; }
+  $("#where").textContent = place.book + " " + place.ch;
+  const t = $("#rtext"); t.className = rLines ? "lines" : ""; t.style.setProperty("--rs", rScale);
+  t.innerHTML = vs.map(([n, x]) => `<span class="v" id="v${n}"><sup>${n}</sup>${esc(x)} </span>`).join("");
+  const nb = neighbours();
+  $("#prev").disabled = $("#prev2").disabled = !nb.prev; $("#next").disabled = $("#next2").disabled = !nb.next;
+  document.title = place.book + " " + place.ch + " · BibleChat";
+  store.set("place", place);
+  history.replaceState(null, "", "#/" + encodeURIComponent(place.bible) + "/" + encodeURIComponent(place.book) + "/" + place.ch + (hitVerse ? "/" + hitVerse : ""));
+  const h = hitVerse && document.getElementById("v" + hitVerse);
+  if(h){ h.classList.add("hit"); setTimeout(() => h.scrollIntoView({block: "center"}), 30); setTimeout(() => h.classList.remove("hit"), 2600); }
+  else scrollTo(0, 0);
+}
+function go(book, ch, verse){ sayStop(); place.book = book; place.ch = ch; show("read"); render(verse); }
+function step(which){ const n = neighbours()[which]; if(n) go(n[0], n[1]); }
+$("#prev").onclick = $("#prev2").onclick = () => step("prev");
+$("#next").onclick = $("#next2").onclick = () => step("next");
+$("#lines").onclick = () => { rLines = !rLines; store.set("lines", rLines); $("#rtext").classList.toggle("lines", rLines); };
+$("#small").onclick = () => { rScale = Math.max(.75, +(rScale - .1).toFixed(2)); store.set("rs", rScale); $("#rtext").style.setProperty("--rs", rScale); document.documentElement.style.setProperty("--rs", rScale); };
+$("#big").onclick = () => { rScale = Math.min(1.9, +(rScale + .1).toFixed(2)); store.set("rs", rScale); $("#rtext").style.setProperty("--rs", rScale); document.documentElement.style.setProperty("--rs", rScale); };
+document.documentElement.style.setProperty("--rs", rScale);
+$("#share").onclick = async () => {
+  const url = location.href, title = place.book + " " + place.ch;
+  try{ if(navigator.share){ await navigator.share({title, url}); return; } }catch(e){ return; }
+  try{ await navigator.clipboard.writeText(url); toast("Link copied"); }catch(e){ prompt("Copy this link:", url); }
+};
+/* swipe left/right to turn chapters */
+let sx = null, sy = null;
+$("#rtext").addEventListener("touchstart", e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, {passive: true});
+$("#rtext").addEventListener("touchend", e => {
+  if(sx === null) return; const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; sx = null;
+  if(Math.abs(dx) > 80 && Math.abs(dx) > 2 * Math.abs(dy)) step(dx < 0 ? "next" : "prev");
+}, {passive: true});
+
+/* ---------- chapter picker ---------- */
+function openPicker(){ $("#pick").hidden = false; $("#bookFind").value = ""; renderBooks(); const c = document.querySelector(".bk.cur"); if(c) c.scrollIntoView({block: "center"}); }
+function renderBooks(){
+  const f = $("#bookFind").value.trim().toLowerCase();
+  const list = bible.books.filter(b => !f || b.n.toLowerCase().includes(f));
+  $("#books").innerHTML = list.map(b => {
+    const cur = b.n === place.book;
+    return `<div class="bk${cur ? " cur open" : ""}${f && list.length <= 3 ? " open" : ""}" data-b="${esc(b.n)}"><button>${esc(b.n)}</button><div class="chs">${b.c.map(c => `<button data-c="${c[0]}"${cur && c[0] === place.ch ? ' class="cur"' : ""}>${c[0]}</button>`).join("")}</div></div>`;
+  }).join("") || `<div class="notice">No book matches.</div>`;
+}
+$("#where").onclick = openPicker;
+$("#pickClose").onclick = () => $("#pick").hidden = true;
+$("#pick").addEventListener("click", e => { if(e.target.id === "pick") $("#pick").hidden = true; });
+$("#bookFind").addEventListener("input", renderBooks);
+$("#books").addEventListener("click", e => {
+  const box = e.target.closest(".bk"); if(!box) return;
+  if(e.target.dataset.c){ $("#pick").hidden = true; go(box.dataset.b, +e.target.dataset.c); return; }
+  box.classList.toggle("open");
+});
+
+/* ---------- listen (the phone's own voice: free, nothing sent anywhere) ---------- */
+const LANG = {English: "en", German: "de", Spanish: "es", French: "fr", Italian: "it", Portuguese: "pt", Dutch: "nl", Russian: "ru",
+  Swedish: "sv", Norwegian: "nb", Danish: "da", Finnish: "fi", Polish: "pl", Czech: "cs", Hungarian: "hu", Romanian: "ro",
+  Bulgarian: "bg", Croatian: "hr", Turkish: "tr", Vietnamese: "vi", Thai: "th", Japanese: "ja", Korean: "ko", Chinese: "zh",
+  Latin: "la", Tagalog: "fil", Swahili: "sw", Latvian: "lv", Albanian: "sq", Maori: "mi"};
+let saying = false;
+function bibleLang(){ const m = catalog.find(c => c.id === place.bible); const l = m ? m.language.split(" ")[0] : "English"; return LANG[l] || "en"; }
+function sayStop(){ saying = false; try{ speechSynthesis.cancel(); }catch(e){} document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say")); $("#say").textContent = "🔊 Listen"; }
+function sayFrom(i){
+  const vs = bible.byName[place.book].map.get(place.ch);
+  if(!saying) return;
+  if(i >= vs.length){ const n = neighbours().next; if(n){ place.book = n[0]; place.ch = n[1]; render(); saying = true; $("#say").textContent = "⏸ Stop"; sayFrom(0); } else sayStop(); return; }
+  document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say"));
+  const el = document.getElementById("v" + vs[i][0]); if(el){ el.classList.add("say"); el.scrollIntoView({block: "center", behavior: "smooth"}); }
+  const u = new SpeechSynthesisUtterance((i === 0 ? place.book + ", chapter " + place.ch + ". " : "") + vs[i][1]);
+  u.lang = bibleLang(); u.rate = .95;
+  u.onend = () => sayFrom(i + 1); u.onerror = () => sayStop();
+  speechSynthesis.speak(u);
+}
+if("speechSynthesis" in window){ $("#say").hidden = false; }
+$("#say").onclick = () => { if(saying){ sayStop(); return; } saying = true; $("#say").textContent = "⏸ Stop"; speechSynthesis.cancel(); sayFrom(0); };
+
+/* ---------- search (same method as the desktop app: word matching, no AI) ---------- */
+const STOP = new Set(("a about above after again all also am an and any are as at be because been before being below between both but by " +
+"can could did do does doing down during each few for from further had has have having he her here hers herself him himself " +
+"his how i if in into is it its itself just me more most my myself no nor not now of off on once only or other our ours " +
+"ourselves out over own same she should so some such than that the their theirs them themselves then there these they this " +
+"those through to too under until up very was we were what when where which while who whom why will with would you your " +
+"yours yourself yourselves say says said saying tell tells told mention mentions mentioned written write bible verse verses passage passages " +
+"scripture scriptures where whats what's find show give please want know person people someone anyone anything thing things " +
+"about regarding concerning").split(/\s+/));
+function stem(w){
+  if(w.length <= 3) return w;
+  if(w.endsWith("ies") && w.length > 4) w = w.slice(0, -3) + "y";
+  else if(w.endsWith("ing") && w.length > 5) w = w.slice(0, -3);
+  else if(w.endsWith("ed") && w.length > 4) w = w.slice(0, -2);
+  else if(w.endsWith("es") && w.length > 4) w = w.slice(0, -1);
+  else if(w.endsWith("s") && !w.endsWith("ss") && w.length > 3) w = w.slice(0, -1);
+  if(w.endsWith("e") && w.length > 3) w = w.slice(0, -1);
+  if(w.length > 3 && w[w.length - 1] === w[w.length - 2] && !"lsz".includes(w[w.length - 1])) w = w.slice(0, -1);
+  return w;
+}
+const WORD = /[\p{L}\p{N}]+(?:['’]\p{L}+)?/gu;
+function tokenize(text, keepStop){
+  const out = [];
+  for(let w of (text.toLowerCase().replace(/’/g, "'").match(WORD) || [])){
+    w = (w.endsWith("'s") || w.endsWith("s'")) ? w.split("'")[0] : w.replace(/'/g, "");
+    if(!keepStop && STOP.has(w)) continue;
+    out.push(/^[a-z0-9]+$/.test(w) ? stem(w) : w);
+  }
+  return out;
+}
+function buildIndex(){
+  flat = []; for(const bk of bible.books) for(const [c, vs] of bk.c) for(const [v, t] of vs) flat.push({b: bk.n, c, v, t});
+  const post = new Map(), dlen = [], toks = [];
+  flat.forEach((x, i) => {
+    const ts = tokenize(x.t); toks.push(ts); dlen.push(Math.max(ts.length, 1));
+    const tf = new Map(); for(const w of ts) tf.set(w, (tf.get(w) || 0) + 1);
+    for(const [w, n] of tf){ let p = post.get(w); if(!p) post.set(w, p = []); p.push([i, n]); }
+  });
+  idx = {post, dlen, toks, avg: dlen.reduce((a, b) => a + b, 0) / Math.max(flat.length, 1), n: flat.length, keys: bible.list.map(bookKeys)};
+}
+const idf = w => { const df = (idx.post.get(w) || []).length; return Math.log(1 + (idx.n - df + .5) / (df + .5)); };
+function search(q, k){
+  let qs = tokenize(q); if(!qs.length) qs = tokenize(q, true); if(!qs.length) return [];
+  if(qs.includes("lord") && !qs.includes("yahweh")) qs.push("yahweh");
+  const k1 = 1.4, b = .75, scores = new Map();
+  for(const w of new Set(qs)){
+    const p = idx.post.get(w); if(!p) continue; const f = idf(w);
+    for(const [i, tf] of p){ const d = tf + k1 * (1 - b + b * idx.dlen[i] / idx.avg); scores.set(i, (scores.get(i) || 0) + f * tf * (k1 + 1) / d); }
+  }
+  const top = [...scores].sort((a, b) => b[1] - a[1]).slice(0, 400);
+  const bigr = new Set(); for(let j = 0; j < qs.length - 1; j++) bigr.add(qs[j] + " " + qs[j + 1]);
+  const qset = new Set(qs), out = [];
+  for(const [i, sc] of top){
+    const ts = idx.toks[i]; let bonus = 0;
+    if(bigr.size){ const have = new Set(); for(let j = 0; j < ts.length - 1; j++) have.add(ts[j] + " " + ts[j + 1]); for(const g of bigr) if(have.has(g)) bonus += 1.5; }
+    const own = new Set(ts.filter(w => qset.has(w))), cov = own.size / qset.size;
+    const near = new Set(), v = flat[i];   // a story spans several verses: credit the asked-for words around this one
+    for(let j = Math.max(0, i - 3); j < Math.min(flat.length, i + 4); j++){
+      if(j !== i && flat[j].b === v.b && flat[j].c === v.c) for(const w of idx.toks[j]) if(qset.has(w)) near.add(w);
+    }
+    for(const w of near) if(!own.has(w)) bonus += .6 * idf(w);
+    out.push([i, sc * (.6 + .8 * cov) + bonus]);
+  }
+  out.sort((a, b) => b[1] - a[1]);
+  const seen = new Set(), res = [];
+  for(const [i] of out){ const key = flat[i].t.toLowerCase().replace(/[^\p{L}\p{N}]/gu, "").slice(0, 160); if(seen.has(key)) continue; seen.add(key); res.push(i); if(res.length >= k) break; }
+  return res;
+}
+/* references like "John 3:16", "1 Cor 13:4-7", "Psalm 23" */
+const ORD = {first: 1, second: 2, third: 3, fourth: 4, "1st": 1, "2nd": 2, "3rd": 3, i: 1, ii: 2, iii: 3, "1": 1, "2": 2, "3": 3, "4": 4};
+const NOISE = new Set("the book of first second third fourth fifth good news according to letter from epistle prophet and or with greek portions a in".split(" "));
+function bookKeys(title){
+  const t = title.toLowerCase(); let num = null; const m = t.match(/^([1-4])\s/);
+  if(m) num = +m[1]; else for(const w of (t.match(/[a-z0-9]+/g) || []).slice(0, 4)) if(["first", "second", "third", "fourth"].includes(w)){ num = ORD[w]; break; }
+  let toks = (t.match(/\p{L}+/gu) || []).filter(w => !NOISE.has(w) && w.length > 1);
+  if(!toks.length) toks = (t.match(/\p{L}+/gu) || []).filter(w => w.length > 1);
+  return [num, toks];
+}
+function resolveBooks(text){
+  let t = text.toLowerCase().trim().replace(/\.$/, ""), num = null;
+  const m = t.match(/^(first|second|third|fourth|1st|2nd|3rd|iii|ii|i|[1-4])\s*\.?\s*(.+)$/);
+  if(m){ num = ORD[m[1]]; t = m[2].trim(); }
+  t = t.replace(/^(the book of|book of|the)\s+/, "").trim(); if(t.length < 2) return [];
+  const scored = [];
+  bible.list.forEach((name, pos) => {
+    const [bn, toks] = idx.keys[pos]; if(num !== null && bn !== num) return;
+    for(const tok of toks){
+      if(tok === t || tok.startsWith(t) || (t.length >= 4 && t.startsWith(tok) && tok.length >= 4)){
+        let s = tok === t ? 3 : 2; if(num === null && bn === null) s += 1; scored.push([-s, pos, name]); break;
+      }
+    }
+  });
+  scored.sort((a, b) => a[0] - b[0] || a[1] - b[1]); return scored.map(x => x[2]);
+}
+const REF_FULL = /^\s*((?:(?:[1-4]|i{1,3}|first|second|third|1st|2nd|3rd)\s*\.?\s*)?\p{L}[\p{L} ]*?)\.?\s+(\d{1,3})(?:\s*[:.]\s*(\d{1,3})(?:\s*[-–]\s*(\d{1,3}))?)?\s*$/iu;
+const REF_INLINE = /((?:(?:[1-4]|i{1,3}|first|second|third)\s*\.?\s*)?\p{L}{2,}(?:\s+of\s+\p{L}+)?)\.?\s+(\d{1,3})\s*[:.]\s*(\d{1,3})(?:\s*[-–]\s*(\d{1,3}))?/giu;
+const REF_CH = /((?:(?:[1-4]|i{1,3}|first|second|third)\s*\.?\s*)?\p{L}{3,})\s+(\d{1,3})(?!\d)/giu;
+function resolveRef(book, ch, v1, v2){
+  for(const title of resolveBooks(book)){
+    const vs = bible.byName[title].map.get(+ch); if(!vs) continue;
+    const lo = v1 ? +v1 : 0, hi = v2 ? +v2 : (v1 ? +v1 : 1e9);
+    const pick = vs.filter(([n]) => n >= lo && n <= hi);
+    if(pick.length) return {book: title, ch: +ch, verses: pick, whole: !v1};
+  }
+  return null;
+}
+function lookupRef(q){
+  let m = q.match(REF_FULL); if(m){ const r = resolveRef(m[1], m[2], m[3], m[4]); if(r) return r; }
+  for(const x of q.matchAll(REF_INLINE)){ const r = resolveRef(x[1], x[2], x[3], x[4]); if(r) return r; }
+  if(q.split(/\s+/).length <= 8) for(const x of q.matchAll(REF_CH)){ const r = resolveRef(x[1], x[2]); if(r) return r; }
+  return null;
+}
+function highlight(text, words){
+  let h = esc(text);
+  for(const w of words) if(w.length > 2) h = h.replace(new RegExp("(^|[^\\p{L}])(" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\p{L}*)", "giu"), "$1<mark>$2</mark>");
+  return h;
+}
+function runSearch(q){
+  q = q.trim(); if(!q) return;
+  if(!idx) buildIndex();
+  const out = $("#results");
+  const ref = lookupRef(q);
+  if(ref){
+    out.innerHTML = `<div class="hint">${esc(ref.book)} ${ref.ch}${ref.whole ? "" : ":" + ref.verses[0][0] + (ref.verses.length > 1 ? "-" + ref.verses[ref.verses.length - 1][0] : "")}</div>` +
+      ref.verses.slice(0, 200).map(([n, t]) => `<div class="res"><a href="#" data-b="${esc(ref.book)}" data-c="${ref.ch}" data-v="${n}">${esc(ref.book)} ${ref.ch}:${n}</a>${esc(t)}</div>`).join("") +
+      `<p><button class="btn" data-open="1">Open ${esc(ref.book)} ${ref.ch}</button></p>`;
+    out.querySelector("[data-open]").onclick = () => go(ref.book, ref.ch, ref.whole ? null : ref.verses[0][0]);
+    return;
+  }
+  const hits = search(q, 30);
+  const words = tokenize(q).concat(tokenize(q).length ? [] : tokenize(q, true));
+  const raw = (q.toLowerCase().match(WORD) || []).filter(w => w.length > 3 && !STOP.has(w));
+  out.innerHTML = hits.length
+    ? `<div class="hint">${hits.length} verses, best match first. Tap one to read it in its chapter.</div>` + hits.map(i => { const x = flat[i];
+        return `<div class="res"><a href="#" data-b="${esc(x.b)}" data-c="${x.c}" data-v="${x.v}">${esc(x.b)} ${x.c}:${x.v}</a>${highlight(x.t, raw.length ? raw : words)}</div>`; }).join("")
+    : `<div class="notice">Nothing found in this Bible. Try other words, or a reference like John 3:16.</div>`;
+}
+$("#sform").onsubmit = e => { e.preventDefault(); $("#q").blur(); runSearch($("#q").value); };
+document.querySelectorAll(".hint [data-q]").forEach(b => b.onclick = () => { $("#q").value = b.dataset.q; runSearch(b.dataset.q); });
+$("#results").addEventListener("click", e => { const a = e.target.closest("a[data-b]"); if(!a) return; e.preventDefault(); go(a.dataset.b, +a.dataset.c, +a.dataset.v); });
+
+/* ---------- Bibles list ---------- */
+const busy = {};
+function renderBibles(){
+  const f = $("#bfind").value.trim().toLowerCase(), lang = $("#blang").value;
+  const list = catalog.filter(c => (!lang || c.language === lang || c.language.startsWith(lang + " (")) && (!f || (c.name + " " + c.language).toLowerCase().includes(f)));
+  $("#blist").innerHTML = list.map(c => {
+    const cur = c.id === place.bible;
+    const act = cur ? `<span class="muted" style="font-size:14px">✓ Reading</span>` : busy[c.id] ? `<span class="muted" style="font-size:14px">Opening…</span>` : `<button class="btn" data-id="${esc(c.id)}">Open</button>`;
+    return `<div class="bl${cur ? " cur" : ""}"><div class="i"><b>${esc(c.name)}</b><small>${esc(c.language)} · ${c.verses.toLocaleString()} verses · ${(c.bytes / 3.4e6).toFixed(1)} MB download · ${esc(c.license)}${c.note ? " · " + esc(c.note) : ""}</small>${busy[c.id] ? '<div class="progress"><i></i></div>' : ""}</div>${act}</div>`;
+  }).join("") || `<div class="notice">Nothing matches.</div>`;
+}
+$("#bfind").addEventListener("input", renderBibles);
+$("#blang").onchange = () => { store.set("lang", $("#blang").value); renderBibles(); };
+$("#blist").addEventListener("click", async e => {
+  const id = e.target.dataset && e.target.dataset.id; if(!id) return;
+  busy[id] = true; renderBibles();
+  try{ sayStop(); await useBible(id, true); delete busy[id]; render(); show("read"); toast(bible.name + " is ready"); }
+  catch(err){ delete busy[id]; renderBibles(); toast(err.message || "Couldn't open it. Check the internet connection."); }
+});
+
+/* ---------- start ---------- */
+function parseHash(){
+  const p = location.hash.replace(/^#\/?/, "").split("/").map(decodeURIComponent);
+  if(p.length >= 3 && p[0]) return {bible: p[0], book: p[1], ch: +p[2] || 1, v: +p[3] || null};
+  return null;
+}
+(async () => {
+  try{
+    catalog = (await (await fetch("data/catalog.json")).json()).bibles;
+  }catch(e){ $("#rtext").innerHTML = `<div class="notice err">Couldn't reach BibleChat. Check the internet connection and try again.</div>`; return; }
+  const langs = [...new Set(catalog.map(c => c.language.replace(/ \(.*\)$/, "")))];
+  $("#blang").innerHTML = `<option value="">All languages</option>` + langs.map(l => `<option>${esc(l)}</option>`).join("");
+  $("#blang").value = store.get("lang", "English");
+  const h = parseHash();
+  if(h && catalog.some(c => c.id === h.bible)) place = {bible: h.bible, book: h.book, ch: h.ch};
+  if(!catalog.some(c => c.id === place.bible)) place.bible = catalog[0].id;
+  try{ await useBible(place.bible, true); }catch(e){ $("#rtext").innerHTML = `<div class="notice err">${esc(e.message)}</div>`; return; }
+  render(h && h.v);
+  addEventListener("hashchange", () => { const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]) go(x.book, x.ch, x.v); });
+})();
+if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+</body>
+</html>

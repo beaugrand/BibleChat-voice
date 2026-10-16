@@ -1,0 +1,52 @@
+name: Publish phone version (GitHub Pages)
+
+# Builds the phone/web version of BibleChat (the web/ folder plus the 44 free Bibles, converted with
+# BibleChat's own readers) and publishes it on GitHub Pages, e.g. https://beaugrand.github.io/biblechat-voice/
+# One-time setup on GitHub: Settings -> Pages -> Source: "GitHub Actions".
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - "bibleask/catalog.py"
+      - "bibleask/loaders.py"
+      - ".github/workflows/pages.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Convert the free Bibles for the web
+        run: |
+          mkdir -p site
+          cp web/index.html web/sw.js web/manifest.webmanifest web/icon.svg web/icon-192.png web/icon-512.png web/cashapp-qr.jpg site/
+          python web/build_data.py site
+          touch site/.nojekyll
+          du -sh site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
