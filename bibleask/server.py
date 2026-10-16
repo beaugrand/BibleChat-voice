@@ -129,7 +129,9 @@ class App:
                 if total:
                     progress(f"Downloading {name}… {got * 100 // total}%", 0.02 + 0.6 * got / total)
         progress("Reading the verses…", 0.65)
-        return self.lib.add_file(name + os.path.splitext(file)[1], b"".join(chunks),
+        inner, data = catalog.unpack(file, b"".join(chunks))
+        ext = ".usfx.xml" if inner != file and "usfx" in inner.lower() else os.path.splitext(inner)[1]
+        return self.lib.add_file(name + ext, data,
                                  lambda m, f: progress(m, 0.65 + 0.35 * f))
 
     # ---- model ------------------------------------------------------------------------

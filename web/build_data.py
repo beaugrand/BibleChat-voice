@@ -25,7 +25,7 @@ from bibleask.loaders import load_bible  # noqa: E402
 
 
 def bible_id(file: str) -> str:
-    return re.sub(r"\.(osis|usfx|zefania)\.xml$", "", file)
+    return re.sub(r"(\.(osis|usfx|zefania)\.xml|_usfx\.zip)$", "", file)
 
 
 def to_web(bible, bid: str, name: str) -> dict:
@@ -62,6 +62,12 @@ def main() -> None:
             if not os.path.exists(path):
                 print("downloading", e["file"], flush=True)
                 urllib.request.urlretrieve(catalog.url(e["file"]), path)
+        if path.endswith(".zip"):   # eBible.org: the USFX XML is inside the zip
+            with open(path, "rb") as f:
+                inner, data = catalog.unpack(e["file"], f.read())
+            path = path[:-4] + ".usfx.xml"
+            with open(path, "wb") as f:
+                f.write(data)
         b = load_bible(path)
         web = to_web(b, bid, e["name"])
         n = sum(len(vs) for bk in web["books"] for _, vs in bk["c"])

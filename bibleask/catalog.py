@@ -60,13 +60,36 @@ CATALOG: list[tuple[str, str, str, str, str, int, int, str]] = [
 ]
 
 
+# Bibles from other places: (file, language, abbreviation, title, license, bytes, verses, note, address).
+# The Ethiopian canon is assembled from public-domain texts by packaging/build_ethiopian.py and kept in
+# BibleChat's own repository. The Amharic Bible comes straight from eBible.org, whose terms allow free,
+# non-commercial use when the copyright notice is shown in full (it is, as the license text).
+OWN = "https://raw.githubusercontent.com/beaugrand/BibleChat-voice/main/bibles/"
+AMHARIC_NOTICE = ("Copyright © 1962, 2003 United Bible Societies. Used with the kind permission of the Bible "
+                  "Society of Ethiopia; electronic text by the Lapsley/Brooks Foundation (1994) and Dirk Röckmann "
+                  "(2003), via eBible.org. Free for non-commercial use with this notice; any commercial use needs "
+                  "written permission of the Bible Society of Ethiopia.")
+EXTRA: list[tuple[str, str, str, str, str, int, int, str, str]] = [
+    ('eng-ethiopian-canon.zefania.xml', 'English', 'ETH', 'Ethiopian Canon (public-domain English)', 'Public Domain',
+     6244619, 38590, '84 books of the Ethiopian Orthodox canon, incl. 1 Enoch, Jubilees, 2 Enoch, 1 Clement. '
+     'Meqabyan I-III and 4 Baruch have no public-domain English translation yet',
+     OWN + 'eng-ethiopian-canon.zefania.xml'),
+    ('amh_usfx.zip', 'Amharic', 'AMH', 'Amharic Bible (1962)', AMHARIC_NOTICE, 0, 0,
+     'The 1962 Haile Selassie Amharic Bible', 'https://ebible.org/Scriptures/amh_usfx.zip'),
+]
+
+
+def _all():
+    return [(*row, BASE + row[0]) for row in CATALOG] + EXTRA
+
+
 def entries() -> list[dict]:
     return [{"file": f, "language": lang, "abbr": ab, "title": t, "license": lic, "bytes": size, "verses": n,
-             "note": note, "name": display_name(f)} for f, lang, ab, t, lic, size, n, note in CATALOG]
+             "note": note, "name": display_name(f)} for f, lang, ab, t, lic, size, n, note, _u in _all()]
 
 
 def display_name(file: str) -> str:
-    for f, _lang, ab, t, *_ in CATALOG:
+    for f, _lang, ab, t, *_ in _all():
         if f == file:
             name = f"{ab} - {t}" if ab else t
             return name.replace("/", "-")  # the name doubles as a file name
@@ -74,5 +97,22 @@ def display_name(file: str) -> str:
 
 
 def url(file: str) -> str:
-    display_name(file)  # only files on the list
-    return BASE + file
+    for row in _all():   # only files on the list
+        if row[0] == file:
+            return row[-1]
+    raise KeyError(file)
+
+
+def unpack(file: str, data: bytes) -> tuple[str, bytes]:
+    """A download that is a .zip (eBible.org) holds the Bible as USFX XML: return (file name, XML bytes)."""
+    if not data[:2] == b"PK":
+        return file, data
+    import io
+    import zipfile
+    with zipfile.ZipFile(io.BytesIO(data)) as z:
+        xml = [n for n in z.namelist() if n.lower().endswith(".xml") and "metadata" not in n.lower()
+               and not n.lower().endswith(("vernacularparms.xml", "bookNames.xml".lower()))]
+        if not xml:
+            raise ValueError("That download didn't contain a Bible.")
+        best = max(xml, key=lambda n: z.getinfo(n).file_size)
+        return best, z.read(best)

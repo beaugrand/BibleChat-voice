@@ -51,7 +51,8 @@ def _stem(w: str) -> str:
     return w
 
 
-_WORD = re.compile(r"[a-z0-9]+(?:['’][a-z]+)?")
+_WORD = re.compile(r"[^\W_]+(?:['’][^\W\d_]+)?")   # letters of any alphabet (ü, é, Ethiopic, Greek ...)
+_ASCII = re.compile(r"[a-z0-9]+")
 
 
 def tokenize(text: str, keep_stop: bool = False) -> list[str]:
@@ -60,7 +61,7 @@ def tokenize(text: str, keep_stop: bool = False) -> list[str]:
         w = w.split("'")[0] if w.endswith(("'s", "s'")) else w.replace("'", "")
         if not keep_stop and w in _STOP:
             continue
-        out.append(_stem(w))
+        out.append(_stem(w) if _ASCII.fullmatch(w) else w)   # English word endings only for plain a-z words
     return out
 
 
@@ -93,6 +94,8 @@ def guess_language(text: str) -> Optional[str]:
         return "zh"
     if re.search(r"[\u0e00-\u0e7f]", t):
         return "th"
+    if re.search(r"[\u1200-\u137f]", t):
+        return "am"   # Ethiopic script (Amharic, Ge'ez)
     if re.search(r"[\u0400-\u04ff]", t):
         return "ru" if re.search(r"[ыэ]", t) else "bg"
     words = Counter(re.findall(r"[^\W\d_]+", t.lower()))
@@ -311,6 +314,9 @@ class Index:
                         if v.book == title and v.chapter == chapter and lo <= v.verse <= hi]
             if idxs:
                 return idxs
+        if chapter == 151 and any(t == "Psalms" for t in self.books.resolve_all(book)):
+            # "Psalm 151" is its own one-chapter book in Bibles that have it
+            return self._resolve("Psalm 151", "1", v1, v2) if book.strip().lower() != "psalm 151" else None
         return None
 
     def context(self, i: int, before: int = 1, after: int = 1) -> list[int]:

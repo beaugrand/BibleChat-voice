@@ -81,9 +81,40 @@ class Catalog(unittest.TestCase):
         self.assertGreaterEqual(len(items), 40)
         self.assertEqual(len({i["name"] for i in items}), len(items))  # names are unique
         for i in items:
-            self.assertTrue(catalog.url(i["file"]).startswith(catalog.BASE))
+            self.assertTrue(catalog.url(i["file"]).startswith((catalog.BASE, catalog.OWN, "https://ebible.org/")))
             self.assertNotIn("/", i["name"])
-            self.assertGreater(i["verses"], 1000)
+            if not i["file"].endswith(".zip"):   # eBible.org zips: counted by the phone build
+                self.assertGreater(i["verses"], 1000)
+
+    def test_ethiopian_canon(self):
+        import os
+        from bibleask import catalog
+        from bibleask.loaders import load_bible
+        path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "bibles",
+                            "eng-ethiopian-canon.zefania.xml")
+        b = load_bible(path)
+        books = list(dict.fromkeys(v.book for v in b.verses))
+        self.assertEqual(len(books), 84)
+        self.assertEqual(books[15:18], ["Jubilees", "1 Enoch", "2 Enoch"])
+        self.assertEqual(books[-1], "1 Clement")
+        self.assertEqual({v.chapter for v in b.verses if v.book == "1 Enoch"}, set(range(1, 109)))
+        jude = [v.text for v in b.verses if (v.book, v.chapter, v.verse) == ("1 Enoch", 1, 9)]
+        self.assertIn("ten thousands of His holy ones", jude[0])
+        entry = next(e for e in catalog.entries() if e["file"] == "eng-ethiopian-canon.zefania.xml")
+        self.assertEqual(entry["verses"], len(b.verses))
+
+    def test_zip_download_is_unpacked(self):
+        import io
+        import zipfile
+        from bibleask import catalog
+        buf = io.BytesIO()
+        with zipfile.ZipFile(buf, "w") as z:
+            z.writestr("amh_metadata.xml", "<x/>")
+            z.writestr("amh_usfx.xml", "<usfx>" + "x" * 100 + "</usfx>")
+        name, data = catalog.unpack("amh_usfx.zip", buf.getvalue())
+        self.assertEqual(name, "amh_usfx.xml")
+        self.assertTrue(data.startswith(b"<usfx>"))
+        self.assertEqual(catalog.unpack("a.xml", b"<x/>"), ("a.xml", b"<x/>"))
 
     def test_unknown_file_is_refused(self):
         from bibleask import catalog

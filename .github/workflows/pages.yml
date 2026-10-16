@@ -12,6 +12,7 @@ on:
       - "bibleask/catalog.py"
       - "bibleask/loaders.py"
       - "bibleask/data/**"
+      - "bibles/**"
       - ".github/workflows/pages.yml"
 
 permissions:

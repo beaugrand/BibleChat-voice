@@ -38,4 +38,11 @@ clicks to get it, and stays under its own license.
   Creative Commons (CC BY 4.0 / CC BY-SA 4.0). The license of each one is shown next to it in the app.
 - **AI models** from Hugging Face. Bible Assistant 4B and Qwen2.5 1.5B are Apache-2.0; Llama 3.2 uses
   Meta's Llama 3.2 Community License; Qwen2.5 3B is research-only. The model's own page has its terms.
+- **Ethiopian Canon (public-domain English)**, assembled by BibleChat (`packaging/build_ethiopian.py`) from
+  public-domain texts: the World English Bible; R. H. Charles's *1 Enoch* (1917) and *Jubilees* (1917);
+  Morfill and Charles's *2 Enoch* (1896); *1 Clement* from the Ante-Nicene Fathers (1885), as transcribed by
+  the [Scrollmapper](https://github.com/scrollmapper/bible_databases_deuterocanonical) project.
+- **Amharic Bible (1962)** from [eBible.org](https://ebible.org/amh/copyright.htm): copyright © 1962, 2003
+  United Bible Societies, used with the kind permission of the Bible Society of Ethiopia. Free for
+  non-commercial use with this notice; commercial use needs written permission of the Bible Society of Ethiopia.
 - **Bibles people add from their own files** are the person's own business; BibleChat ships none.
