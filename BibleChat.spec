@@ -23,7 +23,8 @@ for pkg in ("llama_cpp", "pypdfium2", "pypdfium2_raw", "certifi", "torch", "tran
 a = Analysis(["chat_app.py"], datas=datas, binaries=binaries, hiddenimports=hiddenimports,
              excludes=["tkinter", "matplotlib", "PIL.ImageTk"])
 pyz = PYZ(a.pure)
-exe = EXE(pyz, a.scripts, [], exclude_binaries=True, name="BibleChat",
+ICON = "packaging/biblechat.ico" if sys.platform.startswith("win") and os.path.isfile("packaging/biblechat.ico") else None
+exe = EXE(pyz, a.scripts, [], exclude_binaries=True, name="BibleChat", icon=ICON,
           console=sys.platform.startswith("linux"))   # no black window on Windows/Mac; Linux prints the address
 
 # A second, hidden helper: Pocket TTS's own server, bundled right alongside so BibleChat can speak

@@ -429,6 +429,9 @@ def main(open_browser: bool = True) -> int:
 
     threading.Thread(target=_ensure_tts_helper, daemon=True).start()
 
+    from . import shortcuts
+    shortcuts.ensure_in_background()   # Windows: a BibleChat icon on the desktop and in the Start menu
+
     url = f"http://127.0.0.1:{port}/"
     try:  # there is no console when the app is double-clicked on Windows/Mac
         print(f"BibleChat is running at {url}  (close the browser tab or press Quit to stop it)", flush=True)

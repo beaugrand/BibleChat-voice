@@ -50,7 +50,7 @@ The site is built from the `web/` folder by **Publish phone version (GitHub Page
 
 | Computer | File | How to open it |
 |---|---|---|
-| Windows | `BibleChat-Windows.zip` | Unzip, open `BibleChat\BibleChat.exe` |
+| Windows | `BibleChat-Windows.zip` | Unzip, open `BibleChat\BibleChat.exe`. A **BibleChat** icon then appears on the desktop and in the Start menu; use that from now on. |
 | Mac (Apple Silicon, M1 and newer) | `BibleChat-Mac.zip` | Unzip, drag `BibleChat.app` to Applications |
 | Linux | `BibleChat-Linux.tar.gz` | Unpack, run `./install.sh`, open BibleChat from the menu |
 | Linux, older processor (no AVX2) | `BibleChat-Linux-OldCPU.tar.gz` | Same steps. Use this if the AI helper says your processor is too old. Slower. |
