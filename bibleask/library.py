@@ -39,6 +39,38 @@ class Library:
                         "books": len({v.book for v in b.verses})})
         return out
 
+    # ---- reading view -----------------------------------------------------------------
+    def books(self, bible_id: str) -> list[dict]:
+        """Books in file order, each with its chapter numbers."""
+        b, _ = self.get(bible_id)
+        order: dict[str, list[int]] = {}
+        for v in b.verses:
+            chs = order.setdefault(v.book, [])
+            if not chs or chs[-1] != v.chapter:
+                if v.chapter not in chs:
+                    chs.append(v.chapter)
+        return [{"name": k, "chapters": sorted(c)} for k, c in order.items()]
+
+    def chapter(self, bible_id: str, book: str, chapter: int) -> dict:
+        """All verses of one chapter (long verses that were split for search are joined again),
+        plus the chapters before and after it."""
+        b, _ = self.get(bible_id)
+        verses: list[dict] = []
+        for v in b.verses:
+            if v.book == book and v.chapter == chapter:
+                if verses and verses[-1]["verse"] == v.verse:
+                    verses[-1]["text"] += " " + v.text
+                else:
+                    verses.append({"verse": v.verse, "text": v.text})
+        seq = [(bk["name"], c) for bk in self.books(bible_id) for c in bk["chapters"]]
+        try:
+            i = seq.index((book, chapter))
+        except ValueError:
+            raise ValueError(f"{book} {chapter} isn't in this Bible.")
+        nav = lambda j: {"book": seq[j][0], "chapter": seq[j][1]} if 0 <= j < len(seq) else None
+        return {"bible": b.name, "book": book, "chapter": chapter, "verses": verses,
+                "prev": nav(i - 1), "next": nav(i + 1)}
+
     def add_file(self, filename: str, data: bytes, progress: Progress = None) -> str:
         ext = os.path.splitext(filename)[1].lower() or ".txt"
         fd, tmp = tempfile.mkstemp(suffix=ext)

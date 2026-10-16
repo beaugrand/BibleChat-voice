@@ -8,6 +8,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import sqlite3
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, asdict
 from typing import Callable, Iterable, Optional
@@ -66,8 +67,14 @@ def load_bible(path: str, progress: Progress = None) -> Bible:
         verses = _load_txt(path, progress)
     elif ext == ".pdf":
         verses = _load_pdf(path, progress)
+    elif ext == ".spb":
+        verses = _load_spb(path, progress)
+    elif ext == ".tsv":
+        verses = _load_tsv(path, progress)
+    elif ext in (".sqlite3", ".sqlite", ".mybible"):
+        verses = _load_mybible(path, progress)
     else:
-        raise ValueError(f"Unsupported file type: {ext or '(none)'}. Use PDF, XML or TXT.")
+        raise ValueError(f"Unsupported file type: {ext or '(none)'}. Use PDF, XML, TXT, SPB, TSV or MyBible SQLite3.")
     if not verses:
         raise ValueError("I could not find any Bible text in that file.")
     return Bible(name, _split_long(verses))
@@ -97,8 +104,162 @@ def _strip_ns(tag: str) -> str:
     return tag.rsplit("}", 1)[-1].upper()
 
 
+# Book codes used by OSIS (osisID="Gen.1.1") and USFX/Paratext (<book id="GEN">), with English names.
+_BOOK_CODES = [
+    ("Gen", "GEN", "Genesis"), ("Exod", "EXO", "Exodus"), ("Lev", "LEV", "Leviticus"), ("Num", "NUM", "Numbers"),
+    ("Deut", "DEU", "Deuteronomy"), ("Josh", "JOS", "Joshua"), ("Judg", "JDG", "Judges"), ("Ruth", "RUT", "Ruth"),
+    ("1Sam", "1SA", "1 Samuel"), ("2Sam", "2SA", "2 Samuel"), ("1Kgs", "1KI", "1 Kings"), ("2Kgs", "2KI", "2 Kings"),
+    ("1Chr", "1CH", "1 Chronicles"), ("2Chr", "2CH", "2 Chronicles"), ("Ezra", "EZR", "Ezra"), ("Neh", "NEH", "Nehemiah"),
+    ("Esth", "EST", "Esther"), ("Job", "JOB", "Job"), ("Ps", "PSA", "Psalms"), ("Prov", "PRO", "Proverbs"),
+    ("Eccl", "ECC", "Ecclesiastes"), ("Song", "SNG", "Song of Solomon"), ("Isa", "ISA", "Isaiah"), ("Jer", "JER", "Jeremiah"),
+    ("Lam", "LAM", "Lamentations"), ("Ezek", "EZK", "Ezekiel"), ("Dan", "DAN", "Daniel"), ("Hos", "HOS", "Hosea"),
+    ("Joel", "JOL", "Joel"), ("Amos", "AMO", "Amos"), ("Obad", "OBA", "Obadiah"), ("Jonah", "JON", "Jonah"),
+    ("Mic", "MIC", "Micah"), ("Nah", "NAM", "Nahum"), ("Hab", "HAB", "Habakkuk"), ("Zeph", "ZEP", "Zephaniah"),
+    ("Hag", "HAG", "Haggai"), ("Zech", "ZEC", "Zechariah"), ("Mal", "MAL", "Malachi"), ("Matt", "MAT", "Matthew"),
+    ("Mark", "MRK", "Mark"), ("Luke", "LUK", "Luke"), ("John", "JHN", "John"), ("Acts", "ACT", "Acts"),
+    ("Rom", "ROM", "Romans"), ("1Cor", "1CO", "1 Corinthians"), ("2Cor", "2CO", "2 Corinthians"), ("Gal", "GAL", "Galatians"),
+    ("Eph", "EPH", "Ephesians"), ("Phil", "PHP", "Philippians"), ("Col", "COL", "Colossians"),
+    ("1Thess", "1TH", "1 Thessalonians"), ("2Thess", "2TH", "2 Thessalonians"), ("1Tim", "1TI", "1 Timothy"),
+    ("2Tim", "2TI", "2 Timothy"), ("Titus", "TIT", "Titus"), ("Phlm", "PHM", "Philemon"), ("Heb", "HEB", "Hebrews"),
+    ("Jas", "JAS", "James"), ("1Pet", "1PE", "1 Peter"), ("2Pet", "2PE", "2 Peter"), ("1John", "1JN", "1 John"),
+    ("2John", "2JN", "2 John"), ("3John", "3JN", "3 John"), ("Jude", "JUD", "Jude"), ("Rev", "REV", "Revelation"),
+    ("Tob", "TOB", "Tobit"), ("Jdt", "JDT", "Judith"), ("EsthGr", "ESG", "Esther (Greek)"), ("AddEsth", "ADE", "Additions to Esther"),
+    ("Wis", "WIS", "Wisdom"), ("Sir", "SIR", "Sirach"), ("Bar", "BAR", "Baruch"), ("EpJer", "LJE", "Letter of Jeremiah"),
+    ("PrAzar", "S3Y", "Prayer of Azariah"), ("Sus", "SUS", "Susanna"), ("Bel", "BEL", "Bel and the Dragon"),
+    ("1Macc", "1MA", "1 Maccabees"), ("2Macc", "2MA", "2 Maccabees"), ("3Macc", "3MA", "3 Maccabees"),
+    ("4Macc", "4MA", "4 Maccabees"), ("1Esd", "1ES", "1 Esdras"), ("2Esd", "2ES", "2 Esdras"),
+    ("PrMan", "MAN", "Prayer of Manasseh"), ("AddPs", "PS2", "Psalm 151"), ("DanGr", "DAG", "Daniel (Greek)"),
+]
+_OSIS_NAME = {o: n for o, _, n in _BOOK_CODES}
+_USFX_NAME = {u: n for _, u, n in _BOOK_CODES}
+
+
+def _root_tag(path: str) -> str:
+    for _event, el in ET.iterparse(path, events=("start",)):
+        return _strip_ns(el.tag)
+    return ""
+
+
+class _MilestoneReader:
+    """Collects verse text for OSIS and USFX, where a verse may be an element or a pair of start/end markers.
+    Footnotes, cross references and headings are left out."""
+    SKIP = {"NOTE", "TITLE", "F", "X", "FE", "H", "TOC", "S", "S1", "S2", "IDE", "ID", "REFERENCE"}
+
+    def __init__(self) -> None:
+        self.verses: list[Verse] = []
+        self.cur: Optional[tuple[str, int, int]] = None
+        self.buf: list[str] = []
+        self.skip = 0
+
+    def open(self, ref: tuple[str, int, int]) -> None:
+        self.close()
+        self.cur, self.buf = ref, []
+
+    def close(self) -> None:
+        if self.cur:
+            text = _clean("".join(self.buf))
+            if text:
+                self.verses.append(Verse(*self.cur, text))
+        self.cur, self.buf = None, []
+
+    def text(self, s: Optional[str]) -> None:
+        if s and self.cur and not self.skip:
+            self.buf.append(s)
+
+
+def _walk(path: str, on_start, on_end, reader: "_MilestoneReader") -> None:
+    """Depth-first walk that hands every element's text and tail to the reader in document order."""
+    import xml.sax
+
+    class H(xml.sax.ContentHandler):
+        def startElement(self, name, attrs):
+            on_start(name.rsplit(":", 1)[-1].upper(), attrs)
+
+        def endElement(self, name):
+            on_end(name.rsplit(":", 1)[-1].upper())
+
+        def characters(self, content):
+            reader.text(content)
+
+    xml.sax.parse(path, H())
+    reader.close()
+
+
+def _load_osis(path: str, progress: Progress) -> list[Verse]:
+    r = _MilestoneReader()
+    container: list[bool] = []
+
+    def start(tag, a):
+        if tag in r.SKIP:
+            r.skip += 1
+        elif tag == "VERSE":
+            if a.get("eID"):
+                r.close()
+                return
+            oid = (a.get("osisID") or "").split()[0] if a.get("osisID") else ""
+            parts = oid.split(".")
+            if len(parts) >= 3 and parts[1].isdigit() and parts[2].isdigit():
+                r.open((_OSIS_NAME.get(parts[0], parts[0]), int(parts[1]), int(parts[2])))
+            container.append(not a.get("sID"))
+        elif tag == "CHAPTER" and a.get("eID"):
+            r.close()
+
+    def end(tag):
+        if tag in r.SKIP:
+            r.skip -= 1
+        elif tag == "VERSE" and container:
+            if container.pop():
+                r.close()
+        elif tag in ("CHAPTER", "DIV", "BOOK"):
+            pass
+
+    _tick(progress, "Reading OSIS XML…", 0.1)
+    _walk(path, start, end, r)
+    return r.verses
+
+
+def _load_usfx(path: str, progress: Progress) -> list[Verse]:
+    r = _MilestoneReader()
+    st = {"book": "", "chapter": 0}
+
+    def start(tag, a):
+        if tag in r.SKIP:
+            r.skip += 1
+        elif tag == "BOOK":
+            r.close()
+            code = (a.get("id") or "").upper()
+            st["book"], st["chapter"] = _USFX_NAME.get(code, code), 0
+        elif tag == "C":
+            r.close()
+            try:
+                st["chapter"] = int((a.get("id") or "0").split("-")[0])
+            except ValueError:
+                st["chapter"] += 1
+        elif tag == "V":
+            vid = (a.get("id") or "").split("-")[0]
+            if st["book"] and st["chapter"] and vid.isdigit():
+                r.open((st["book"], st["chapter"], int(vid)))
+        elif tag == "VE":
+            r.close()
+
+    def end(tag):
+        if tag in r.SKIP:
+            r.skip -= 1
+        elif tag == "BOOK":
+            r.close()
+
+    _tick(progress, "Reading USFX XML…", 0.1)
+    _walk(path, start, end, r)
+    return r.verses
+
+
 def _load_xml(path: str, progress: Progress) -> list[Verse]:
-    """Zefania XML (BIBLEBOOK/CHAPTER/VERS) and OSIS (<verse osisID="Gen.1.1">)."""
+    """Zefania XML (BIBLEBOOK/CHAPTER/VERS), OSIS (<verse osisID="Gen.1.1">) and USFX (<book id="GEN"><c/><v/>)."""
+    root = _root_tag(path)
+    if root == "USFX":
+        return _load_usfx(path, progress)
+    if root == "OSIS":
+        return _load_osis(path, progress)
     _tick(progress, "Reading XML…", 0.05)
     verses: list[Verse] = []
     book = ""
@@ -140,6 +301,129 @@ def _load_xml(path: str, progress: Progress) -> list[Verse]:
         elif tag == "BIBLEBOOK":
             el.clear()
     _tick(progress, "Done reading XML", 1.0)
+    return verses
+
+
+# --------------------------------------------------------------------------- SPB / TSV / MyBible
+# These three readers follow the file layouts handled by "Bible" (net.lugsole.bible_gui),
+# Copyright (c) 2020 Lugsole, MIT License: https://github.com/Lugsole/net.lugsole.bible_gui
+def _read_lines(path: str) -> list[str]:
+    with open(path, encoding="utf-8-sig", errors="replace") as f:
+        return f.read().splitlines()
+
+
+def _load_spb(path: str, progress: Progress) -> list[Verse]:
+    """SoftProjector Bible: '##' header lines (the book list follows '##RightToLeft:'),
+    a '-----' line, then one verse per line: id, book no., chapter, verse, text (tab separated)."""
+    _tick(progress, "Reading SoftProjector file…", 0.05)
+    lines = _read_lines(path)
+    names: dict[int, str] = {}
+    i, in_books = 0, False
+    while i < len(lines) and not lines[i].startswith("--"):
+        ln = lines[i]
+        if ln.startswith("##"):
+            in_books = ln.startswith("##RightToLeft:")
+        elif in_books:
+            parts = ln.split("\t")
+            if len(parts) >= 2 and parts[0].strip().isdigit():
+                names[int(parts[0])] = parts[1].strip()
+        i += 1
+    verses: list[Verse] = []
+    for ln in lines[i + 1:]:
+        parts = ln.split("\t")
+        if len(parts) == 5 and parts[1].strip().isdigit() and parts[2].strip().isdigit() and parts[3].strip().isdigit():
+            b = int(parts[1])
+            text = _clean(parts[4])
+            if text:
+                verses.append(Verse(names.get(b, f"Book {b}"), int(parts[2]), int(parts[3]), text))
+    _tick(progress, "Done", 1.0)
+    return verses
+
+
+def _load_tsv(path: str, progress: Progress) -> list[Verse]:
+    """Six tab-separated columns: book name, abbreviation, book no., chapter, verse, text."""
+    _tick(progress, "Reading TSV file…", 0.05)
+    verses: list[Verse] = []
+    for ln in _read_lines(path):
+        parts = ln.split("\t")
+        if len(parts) >= 6 and parts[3].strip().isdigit() and parts[4].strip().isdigit():
+            text = _clean("\t".join(parts[5:]))
+            if text:
+                verses.append(Verse(parts[0].strip(), int(parts[3]), int(parts[4]), text))
+    _tick(progress, "Done", 1.0)
+    return verses
+
+
+_MB_DROP = re.compile(r"<(S|f|n|m)>.*?</\1>", re.S)  # Strong's numbers, footnotes, notes, morphology
+_MB_TAG = re.compile(r"<[^>]+>")
+
+
+PROTESTANT_BOOKS = ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth",
+    "1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah", "Esther",
+    "Job", "Psalms", "Proverbs", "Ecclesiastes", "Song of Solomon", "Isaiah", "Jeremiah", "Lamentations",
+    "Ezekiel", "Daniel", "Hosea", "Joel", "Amos", "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah",
+    "Haggai", "Zechariah", "Malachi", "Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians",
+    "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians",
+    "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John",
+    "3 John", "Jude", "Revelation"]
+# MySword markup: footnotes <RF>..<Rf>, headings <TS>..<Ts>, Strong's/morphology tags like <WH430>
+_MS_DROP = re.compile(r"<RF[^>]*>.*?<Rf>|<TS[^>]*>.*?<Ts>|<RX[^>]*>.*?<Rx>", re.S)
+_MS_TAG = re.compile(r"<[^>]*>")
+
+
+def _load_mysword(conn, progress: Progress) -> list[Verse]:
+    """MySword Bible (.bbl.mybible): table 'Bible' (Book 1-66, Chapter, Verse, Scripture) and 'Details'."""
+    try:
+        enc = conn.execute("SELECT * FROM Details").fetchone()
+        cols = [d[0].lower() for d in conn.execute("SELECT * FROM Details").description]
+        info = dict(zip(cols, enc or ()))
+    except sqlite3.DatabaseError:
+        info = {}
+    if str(info.get("encryption") or "0").strip() not in ("", "0"):
+        title = info.get("description") or info.get("title") or "This Bible"
+        raise ValueError(f"{title} is locked (encrypted) by its publisher, so it only opens inside MySword. "
+                         "BibleChat can read unlocked MySword Bibles, but not locked ones.")
+    verses: list[Verse] = []
+    for b, c, v, t in conn.execute("SELECT Book, Chapter, Verse, Scripture FROM Bible ORDER BY Book, Chapter, Verse"):
+        if isinstance(t, bytes):
+            try:
+                import zlib
+                t = zlib.decompress(t).decode("utf-8")
+            except Exception:
+                t = t.decode("utf-8", errors="replace")
+        text = _clean(_MS_TAG.sub("", _MS_DROP.sub("", t or "")))
+        b = int(b)
+        if text:
+            verses.append(Verse(PROTESTANT_BOOKS[b - 1] if 1 <= b <= 66 else f"Book {b}", int(c), int(v), text))
+    return verses
+
+
+def _load_mybible(path: str, progress: Progress) -> list[Verse]:
+    """MyBible module (SQLite3): tables 'books' (book_number, long_name) and 'verses'.
+    MySword Bibles (.bbl.mybible) use a different layout and are handled by _load_mysword."""
+    _tick(progress, "Reading MyBible / MySword file…", 0.05)
+    conn = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+    try:
+        try:
+            tables = {r[0].lower() for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+        except sqlite3.DatabaseError as e:
+            raise ValueError("That file isn't a MyBible or MySword Bible.") from e
+        if "bible" in tables:
+            verses = _load_mysword(conn, progress)
+            _tick(progress, "Done", 1.0)
+            return verses
+        names = {int(r[0]): (r[1] or "").strip() for r in conn.execute("SELECT book_number, long_name FROM books")}
+        verses: list[Verse] = []
+        for b, c, v, t in conn.execute("SELECT book_number, chapter, verse, text FROM verses ORDER BY book_number, chapter, verse"):
+            t = re.sub(r"<(br|pb)\s*/?>", " ", _MB_DROP.sub("", t or ""), flags=re.I)
+            text = _clean(_MB_TAG.sub("", t).replace("¶", ""))
+            if text:
+                verses.append(Verse(names.get(int(b)) or f"Book {b}", int(c), int(v), text))
+    except sqlite3.DatabaseError as e:
+        raise ValueError("That file isn't a MyBible or MySword Bible.") from e
+    finally:
+        conn.close()
+    _tick(progress, "Done", 1.0)
     return verses
 
 

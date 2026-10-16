@@ -17,6 +17,7 @@
   --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 14px rgba(0,0,0,.3);
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{height:100%;margin:0}
 body{background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;display:flex;overflow:hidden}
 button,select,input,textarea{font:inherit;color:inherit}
@@ -115,6 +116,72 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 .foot{text-align:center;font-size:12px;color:var(--muted);margin-top:8px}
 #drop{display:none;position:absolute;inset:0;background:rgba(47,93,138,.12);border:3px dashed var(--accent);z-index:9;place-items:center;font-size:22px;color:var(--accent);backdrop-filter:blur(2px)}
 #drop.on{display:grid}
+/* mode switch */
+.modes{display:flex;background:var(--panel2);border-radius:11px;padding:3px;margin-bottom:10px}
+.modes button{flex:1;border:0;background:none;border-radius:8px;padding:6px 8px;font-size:14.5px;color:var(--muted)}
+.modes button.on{background:var(--card);color:var(--text);font-weight:600;box-shadow:var(--shadow)}
+/* reading: sidebar */
+#readSide select,#bookFind{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:9px;background:var(--card);margin:2px 0 8px;font-size:14.5px}
+#readSide .stick{position:sticky;top:0;z-index:1;background:var(--panel);padding-bottom:2px}
+.book{border-radius:9px}
+.book>button{width:100%;display:flex;justify-content:space-between;align-items:center;border:0;background:none;padding:7px 8px;border-radius:9px;font-size:14.5px;text-align:left}
+.book>button:hover{background:var(--panel2)}
+.book>button::after{content:"▾";color:var(--muted);font-size:12px;transition:transform .15s}
+.book.open>button::after{transform:rotate(180deg)}
+.book.cur>button{font-weight:650;color:var(--accent)}
+.chs{display:none;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:4px;padding:2px 6px 10px}
+.book.open .chs{display:grid}
+.chs button{border:1px solid var(--line);background:var(--card);border-radius:7px;padding:4px 0;font-size:13.5px}
+.chs button:hover{background:var(--panel2)}
+.chs button.cur{background:var(--accent);border-color:var(--accent);color:var(--accent-text)}
+/* reading: page */
+#reader{flex:1;overflow:auto;display:flex;flex-direction:column}
+#rhead{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line)}
+#rhead .in{max-width:780px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#rtitle{flex:1;min-width:150px}
+#rtitle b{font-family:Georgia,serif;font-weight:500;font-size:24px;display:block;line-height:1.2}
+#rtitle small{color:var(--muted);font-size:13px}
+#rhead .btn{padding:6px 11px;font-size:14px}
+#rtext{max-width:780px;margin:0 auto;padding:22px 20px 40px;font-family:Georgia,"Times New Roman",serif;font-size:calc(18px * var(--rs,1));line-height:1.75;width:100%}
+#rtext .v{scroll-margin-top:90px;border-radius:4px;transition:background .3s}
+#rtext sup{font-family:system-ui,sans-serif;font-size:.62em;font-weight:650;color:var(--accent);margin:0 3px 0 2px;vertical-align:.45em;cursor:pointer}
+#rtext.lines .v{display:block;margin:0 0 .45em}
+#rtext .v.say{background:rgba(255,205,60,.28)}
+#rtext .v.hit{background:rgba(47,93,138,.16)}
+#rfoot{max-width:780px;margin:0 auto;padding:0 20px 40px;display:flex;justify-content:space-between;gap:10px;width:100%}
+/* free Bibles catalog */
+#getDlg{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.35);display:grid;place-items:center;padding:16px}
+#getDlg .card{background:var(--bg);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);width:min(760px,100%);max-height:min(86vh,900px);display:flex;flex-direction:column}
+#getDlg header{padding:16px 18px 10px;border-bottom:1px solid var(--line)}
+#getDlg header h2{margin:0 0 4px;font-size:20px;font-family:Georgia,serif;font-weight:500;display:flex;justify-content:space-between;align-items:center}
+#getDlg header p{margin:0 0 10px;color:var(--muted);font-size:13.5px}
+#getDlg header .filters{display:flex;gap:8px;flex-wrap:wrap}
+#getDlg input,#getDlg select{padding:7px 9px;border:1px solid var(--line);border-radius:9px;background:var(--card);font-size:14.5px}
+#getDlg input{flex:1;min-width:160px}
+#getList{overflow:auto;padding:6px 10px 14px}
+.cat{display:flex;gap:12px;align-items:center;padding:10px 8px;border-bottom:1px solid var(--line)}
+.cat:last-child{border-bottom:0}
+.cat .info{flex:1;min-width:0}
+.cat .info b{display:block;font-size:15px}
+.cat .info small{color:var(--muted);font-size:12.5px;display:block}
+.cat .act{flex:none;text-align:right;min-width:120px}
+.cat .act .btn{font-size:13.5px;padding:6px 12px}
+.cat .done{color:var(--ok);font-size:13.5px}
+.cat .err{font-size:12.5px}
+.cat .progress{margin:6px 0 0;width:120px}
+/* older-processor notice */
+.cpu{border:1px solid #d9b45a;background:rgba(217,180,90,.13);border-radius:11px;padding:9px 11px;margin:8px 0 4px;font-size:13.5px;line-height:1.45}
+.cpu>button.head{all:unset;cursor:pointer;display:flex;gap:8px;align-items:flex-start;width:100%}
+.cpu .head b{display:block;font-size:14px}
+.cpu .head small{color:var(--muted)}
+.cpu .head::after{content:"▾";margin-left:auto;color:var(--muted);transition:transform .15s}
+.cpu.open .head::after{transform:rotate(180deg)}
+.cpu .more{display:none;margin-top:8px;border-top:1px solid rgba(217,180,90,.5);padding-top:8px}
+.cpu.open .more{display:block}
+.cpu ul{margin:4px 0 8px;padding-left:1.1em}
+.cpu .ok{color:var(--ok)} .cpu .no{color:var(--danger)}
+.cpu .btn{font-size:13.5px;padding:6px 10px;margin-top:4px}
+.verse .ref.go{cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px}
 @media (max-width:820px){
   #side{position:fixed;z-index:20;left:0;top:0;margin-left:-310px;box-shadow:var(--shadow)}
   body.open #side{margin-left:0}
@@ -129,14 +196,22 @@ details.src[open]>summary::after{transform:rotate(180deg)}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v16H5.5C4.7 20 4 19.3 4 18.5z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13v16h5.5c.8 0 1.5-.7 1.5-1.5z"/></svg>
       BibleChat
     </div>
+    <div class="modes" role="tablist"><button id="modeChat" class="on">💬 Chat</button><button id="modeRead">📖 Read</button></div>
     <button class="btn primary block" id="newChat">＋ New chat</button>
   </div>
   <div class="scroll">
+   <div id="readSide" hidden>
+    <div class="stick"><div class="sec">Bible</div>
+    <select id="rBible"></select>
+    <input type="search" id="bookFind" placeholder="Find a book…"></div>
+    <div id="books"></div>
+   </div>
+   <div id="chatSide">
     <div class="sec">Your Bibles</div>
     <div id="bibles"></div>
     <div id="upjob"></div>
-    <div style="padding:6px 8px"><button class="btn block" id="addBible">＋ Add Bible (PDF, XML, TXT)</button></div>
-    <input type="file" id="file" accept=".pdf,.xml,.osis,.zef,.txt,.json" multiple hidden>
+    <div style="padding:6px 8px;display:flex;flex-direction:column;gap:6px"><button class="btn block" id="getBibles">⬇ Get free Bibles</button><button class="btn block" id="addBible">＋ Add Bible from a file</button></div>
+    <input type="file" id="file" accept=".pdf,.xml,.osis,.zef,.txt,.json,.spb,.tsv,.sqlite3,.sqlite,.mybible" multiple hidden>
 
     <div class="sec">AI helper</div>
     <div class="model-box">
@@ -148,10 +223,12 @@ details.src[open]>summary::after{transform:rotate(180deg)}
       </div>
       <div class="progress" id="modelProg" hidden><i></i></div>
       <div class="job" id="modelMsg"></div>
+      <div class="cpu" id="cpuBox" hidden></div>
     </div>
 
     <div class="sec">Chats</div>
     <div id="chats"></div>
+   </div>
   </div>
   <div class="bottom">
     <button class="btn" id="theme">☾ Theme</button>
@@ -176,7 +253,29 @@ details.src[open]>summary::after{transform:rotate(180deg)}
     </div>
     <div class="foot">Answers come only from the Bibles you've added, on your own computer. Small AI models can make mistakes, so check the verses.</div>
   </div>
+  <div id="reader" hidden>
+    <div id="rhead"><div class="in">
+      <div id="rtitle"><b>&nbsp;</b><small></small></div>
+      <button class="btn" id="rPrev" title="Previous chapter (←)">‹ Prev</button>
+      <button class="btn" id="rNext" title="Next chapter (→)">Next ›</button>
+      <button class="btn" id="rSay" hidden>🔊 Listen</button>
+      <button class="btn" id="rAsk" title="Ask about this chapter in Chat">💬 Ask</button>
+      <button class="btn" id="rLines" title="One verse per line, or flowing text">¶</button>
+      <button class="btn" id="rSmall" title="Smaller text">A−</button>
+      <button class="btn" id="rBig" title="Larger text">A+</button>
+    </div></div>
+    <div id="rtext"></div>
+    <div id="rfoot"><button class="btn" id="rPrev2">‹ Previous chapter</button><button class="btn" id="rNext2">Next chapter ›</button></div>
+  </div>
   <div id="drop">Drop a Bible file to add it</div>
+  <div id="getDlg" hidden><div class="card" role="dialog" aria-label="Get free Bibles">
+    <header>
+      <h2>Get free Bibles <button class="x" id="getClose" style="opacity:1;font-size:24px" title="Close">×</button></h2>
+      <p>Public-domain and freely licensed Bibles from the <a href="https://github.com/seven1m/open-bibles" target="_blank" rel="noopener">open-bibles</a> collection. Click Download and it's added to Your Bibles.</p>
+      <div class="filters"><input type="search" id="getFind" placeholder="Search by name or language…"><select id="getLang"></select></div>
+    </header>
+    <div id="getList"></div>
+  </div></div>
 </section>
 
 <script>
@@ -232,7 +331,10 @@ function sourcesHtml(src, question){
   const words = src.kind === "search" ? (question || "").toLowerCase().split(/[^a-z']+/).filter(w => w.length > 3 && !STOP.has(w)) : [];
   return src.groups.map((g, gi) => {
     const open = (src.groups.length === 1 || gi === 0) ? " open" : "";
-    const vs = g.verses.map(v => `<div class="verse"><span class="ref">${esc(v.ref)}</span>${highlight(v.text, words)}</div>`).join("");
+    const vs = g.verses.map(v => {
+      const go = g.id && v.book ? ` go" title="Open ${esc(v.book)} ${v.chapter} in the reader" data-bid="${esc(g.id)}" data-book="${esc(v.book)}" data-ch="${v.chapter}" data-v="${(String(v.ref).match(/:(\d+)/) || [,""])[1]}` : "";
+      return `<div class="verse"><span class="ref${go}">${esc(v.ref)}</span>${highlight(v.text, words)}</div>`;
+    }).join("");
     return `<details class="src"${open}><summary><span><b>${esc(g.bible)}</b></span><span>${g.verses.length} verse${g.verses.length===1?"":"s"}</span></summary><div class="verses">${vs}</div></details>`;
   }).join("");
 }
@@ -264,7 +366,7 @@ function welcomeHtml(){
   const has = state.bibles.length > 0;
   const ex = ["Daniel 7:25", "Where does it say there will be a falling away?", "What does it say about the last days?", "John 3:16"];
   return `<div class="welcome"><h1>${has ? "What would you like to find?" : "Add a Bible to begin"}</h1>
-    <p>${has ? "Ask a question or type a reference. I answer only from your Bibles." : "Use <b>Add Bible</b> on the left, or drop a PDF, XML or TXT file here. Try the Ethiopian Orthodox Bible, a King James text from Project Gutenberg, or any Zefania/OSIS XML Bible."}</p>
+    <p>${has ? "Ask a question or type a reference. I answer only from your Bibles." : "Use <b>Add Bible</b> on the left, or drop a Bible file here (PDF, XML, TXT, SPB, TSV, MyBible or MySword). Or use <b>Get free Bibles</b> to download one. Try the Ethiopian Orthodox Bible, a King James text from Project Gutenberg, or any Zefania/OSIS XML Bible."}</p>
     ${has ? `<div class="chips">${ex.map(e => `<button class="chip">${esc(e)}</button>`).join("")}</div>` : `<button class="btn primary" id="wAdd">Add a Bible</button>`}</div>`;
 }
 function bindWelcome(){
@@ -324,9 +426,99 @@ function renderModel(){
   msg.className = "job" + (m.status === "error" ? " err" : "");
   msg.textContent = m.status === "ready" ? "" : (m.message || (state.cpu_problem || (!state.engine ? "AI engine not included in this build." : "")));
   $("#loadModel").disabled = ["downloading", "loading"].includes(m.status) || !state.engine || !!state.cpu_problem;
-  if(state.cpu_problem && m.status !== "ready") msg.className = "job err";
+  renderCpuBox();
+  if(state.cpu_problem && m.status !== "ready"){ msg.textContent = ""; }
   if(m.status === "ready") $("#loadModel").textContent = "Switch"; else $("#loadModel").textContent = "Get / load";
 }
+
+/* ---------------- older processor: explain, and offer the fix ---------------- */
+let cpuOpen = store.get("bc.cpuOpen", true);
+function renderCpuBox(){
+  const box = $("#cpuBox"), fix = state.cpu_fix || {status: "none"};
+  const almost = state.cpu_problem && /^Almost done/.test(state.cpu_problem);
+  box.hidden = !state.cpu_problem;
+  if(box.hidden) return;
+  const running = fix.status === "running";
+  let action;
+  if(almost) action = `<p><b>The AI helper is rebuilt.</b> Press <b>Quit</b> below, then open BibleChat again from your menu. After that, choose a model and press <b>Get / load</b>.</p>`;
+  else if(running) action = `<p><b>Rebuilding…</b> ${esc(fix.message)}</p><div class="progress"><i style="width:${Math.max(5, Math.round(fix.progress * 100))}%"></i></div><p>Keep BibleChat open until this finishes.</p>`;
+  else if(fix.can) action = `<p><b>Fix it:</b> rebuild the AI helper for your processor. It takes about 10–40 minutes and runs in the background, so you can keep reading and searching.</p>
+      ${fix.status === "error" ? `<p class="no">${esc(fix.message)}</p>` : ""}
+      <button class="btn primary" id="cpuFix">${fix.status === "error" ? "Try again" : "Rebuild the AI helper"}</button>`;
+  else action = `<p><b>Fix it:</b> use the <b>BibleChat-Linux-OldCPU</b> download, which is built for older processors (slower answers).</p>`;
+  box.className = "cpu" + (cpuOpen || running || almost ? " open" : "");
+  box.innerHTML = `<button class="head" id="cpuHead"><span>⚠️</span><span><b>${almost ? "Restart to finish" : "Older processor: AI explanations are off"}</b><small>${almost ? "One more step." : "Search, reading and Listen still work. Click for details."}</small></span></button>
+    <div class="more">
+      ${almost ? "" : `<ul><li class="ok">✓ Finding verses by words or reference</li><li class="ok">✓ Reading whole chapters, Listen</li><li class="no">✗ The AI's explanation under the verses</li></ul>
+      <p>Your computer's processor is missing a feature called <b>AVX2</b> (most processors made before about 2014). The AI helper's engine was built to use it.</p>`}
+      ${action}
+    </div>`;
+  $("#cpuHead").onclick = () => { cpuOpen = !box.classList.contains("open"); store.set("bc.cpuOpen", cpuOpen); box.classList.toggle("open", cpuOpen); };
+  const f = $("#cpuFix");
+  if(f) f.onclick = async () => {
+    f.disabled = true; f.textContent = "Starting…";
+    try{ await fetch("/api/cpu-fix", {method: "POST"}); }catch(e){}
+    refresh();
+  };
+}
+
+/* ---------------- free Bibles catalog ---------------- */
+let catalog = null;
+const getting = {};   // file -> {msg, frac, err}
+async function openCatalog(){
+  $("#getDlg").hidden = false; document.body.classList.remove("open");
+  if(!catalog){
+    $("#getList").innerHTML = `<div class="empty-note">Loading the list…</div>`;
+    try{ catalog = await (await fetch("/api/catalog")).json(); }catch(e){ $("#getList").innerHTML = `<div class="notice err">Couldn't load the list.</div>`; return; }
+    const langs = [...new Set(catalog.items.map(i => i.language))];
+    $("#getLang").innerHTML = `<option value="">All languages</option>` + langs.map(l => `<option>${esc(l)}</option>`).join("");
+    $("#getLang").value = store.get("bc.getLang", "English");
+    if(![...$("#getLang").options].some(o => o.value === $("#getLang").value)) $("#getLang").value = "";
+  }
+  renderCatalog(); $("#getFind").focus();
+}
+function renderCatalog(){
+  if(!catalog) return;
+  const f = $("#getFind").value.trim().toLowerCase(), lang = $("#getLang").value;
+  const have = new Set(state.bibles.map(b => b.name));
+  const list = catalog.items.filter(i => (!lang || i.language === lang || i.language.startsWith(lang + " (")) && (!f || (i.name + " " + i.language).toLowerCase().includes(f)));
+  $("#getList").innerHTML = list.length ? list.map(i => {
+    const g = getting[i.file];
+    let act;
+    if(have.has(i.name)) act = `<span class="done">✓ Added</span>`;
+    else if(g && !g.err) act = `<small>${esc(g.msg)}</small><div class="progress"><i style="width:${Math.max(4, Math.round(g.frac * 100))}%"></i></div>`;
+    else act = `<button class="btn primary" data-get="${esc(i.file)}">Download</button>${g && g.err ? `<div class="err">${esc(g.err)}</div>` : ""}`;
+    const mb = (i.bytes / 1048576).toFixed(1);
+    return `<div class="cat"><div class="info"><b>${esc(i.name)}</b><small>${esc(i.language)} · ${i.verses.toLocaleString()} verses · ${mb} MB · ${esc(i.license)}${i.note ? " · " + esc(i.note) : ""}</small></div><div class="act">${act}</div></div>`;
+  }).join("") : `<div class="empty-note">Nothing matches.</div>`;
+}
+$("#getBibles").onclick = openCatalog;
+$("#getClose").onclick = () => { $("#getDlg").hidden = true; };
+$("#getDlg").addEventListener("click", e => { if(e.target.id === "getDlg") $("#getDlg").hidden = true; });
+addEventListener("keydown", e => { if(e.key === "Escape" && !$("#getDlg").hidden) $("#getDlg").hidden = true; });
+$("#getFind").addEventListener("input", renderCatalog);
+$("#getLang").onchange = () => { store.set("bc.getLang", $("#getLang").value); renderCatalog(); };
+$("#getList").addEventListener("click", async e => {
+  const file = e.target.dataset && e.target.dataset.get; if(!file) return;
+  getting[file] = {msg: "Starting…", frac: 0}; renderCatalog();
+  try{
+    const j = await (await fetch("/api/catalog/get", {method: "POST", body: JSON.stringify({file})})).json();
+    if(j.error) throw new Error(j.error);
+    for(;;){
+      await new Promise(r => setTimeout(r, 700));
+      const s = await (await fetch("/api/jobs/" + j.job)).json();
+      if(s.status === "running"){ getting[file] = {msg: s.message, frac: s.progress}; renderCatalog(); continue; }
+      if(s.status === "error") throw new Error(s.error);
+      break;
+    }
+    delete getting[file];
+    selected = null; store.set("bc.sel", null);
+    await refresh();
+  }catch(err){
+    getting[file] = {err: /urlopen|getaddrinfo|timed out|Network|resolve/i.test(err.message) ? "Couldn't download. Is the internet on?" : err.message};
+  }
+  renderCatalog();
+});
 
 /* ---------------- server state ---------------- */
 let pollTimer = null;
@@ -335,8 +527,11 @@ async function refresh(){
   renderBibles(); renderModel();
   $("#mic").hidden = !state.stt;
   if(!(activeChat() || {messages:[1]}).messages.length) renderThread();
+  const sig = state.bibles.map(b => b.id + ":" + b.verses).join("|");
+  if(sig !== refresh.sig){ refresh.sig = sig; rBooksFor = null; if(mode === "read") openReader(); }
   clearTimeout(pollTimer);
   if(["downloading", "loading"].includes(state.model.status)) pollTimer = setTimeout(refresh, 900);
+  else if(state.cpu_fix && state.cpu_fix.status === "running") pollTimer = setTimeout(refresh, 3000);
 }
 $("#modelSel").onchange = renderModel;
 $("#loadModel").onclick = async () => {
@@ -431,7 +626,7 @@ function autosize(){ const q = $("#q"); q.style.height = "auto"; q.style.height 
 $("#q").addEventListener("input", autosize);
 $("#newChat").onclick = () => { if(activeChat() && !activeChat().messages.length){ $("#q").focus(); return; } newChat(); document.body.classList.remove("open"); };
 $("#menu").onclick = () => document.body.classList.toggle("open");
-$("#main").addEventListener("click", () => document.body.classList.remove("open"));
+$("#main").addEventListener("click", e => { if(!e.target.closest("#menu")) document.body.classList.remove("open"); });
 
 /* ---------------- voice: speaker button on answers ---------------- */
 $("#thread").addEventListener("click", async e => {
@@ -493,6 +688,164 @@ async function micStop(){
 }
 $("#mic").onclick = () => micOn ? micStop() : micStart();
 
+/* ---------------- reading view (book list + whole chapters) ---------------- */
+let mode = store.get("bc.mode", "chat");
+let rd = store.get("bc.read", {});          // last place read: {bible, book, chapter}
+let rBooks = [], rBooksFor = null, rChap = null, rToken = 0;
+let rLinesOn = store.get("bc.rlines", true), rScale = store.get("bc.rscale", 1);
+
+function setMode(m){
+  mode = m; store.set("bc.mode", m);
+  $("#modeChat").classList.toggle("on", m === "chat"); $("#modeRead").classList.toggle("on", m === "read");
+  $("#chatSide").hidden = $("#newChat").hidden = m !== "chat";
+  $("#readSide").hidden = m !== "read";
+  $("#scroll").hidden = $("#composer").hidden = m !== "chat";
+  $("#reader").hidden = m !== "read";
+  if(m === "read") openReader(); else { sayStop(); $("#q").focus(); }
+}
+$("#modeChat").onclick = () => setMode("chat");
+$("#modeRead").onclick = () => setMode("read");
+
+async function openReader(){
+  const sel = $("#rBible");
+  sel.innerHTML = state.bibles.map(b => `<option value="${esc(b.id)}">${esc(b.name)}</option>`).join("");
+  if(!state.bibles.length){
+    $("#books").innerHTML = `<div class="empty-note">No Bibles yet. Switch to Chat and use Add Bible.</div>`;
+    $("#rtitle").innerHTML = "<b>Add a Bible to read</b><small></small>"; $("#rtext").innerHTML = ""; return;
+  }
+  if(!state.bibles.some(b => b.id === rd.bible)) rd = {bible: state.bibles[0].id};
+  sel.value = rd.bible;
+  await loadBooks(rd.bible);
+  const book = rBooks.find(b => b.name === rd.book) || rBooks[0];
+  if(!book) return;
+  const ch = book.chapters.includes(rd.chapter) ? rd.chapter : book.chapters[0];
+  if(!rChap || rChap.book !== book.name || rChap.chapter !== ch || rChap.bid !== rd.bible) showChapter(book.name, ch);
+}
+async function loadBooks(bid){
+  if(rBooksFor === bid) return;
+  const j = await (await fetch("/api/books?bible=" + encodeURIComponent(bid))).json();
+  rBooks = j.books || []; rBooksFor = bid; renderBooks();
+}
+function renderBooks(){
+  const f = $("#bookFind").value.trim().toLowerCase();
+  const list = rBooks.filter(b => !f || b.name.toLowerCase().includes(f));
+  $("#books").innerHTML = list.length ? list.map(b => {
+    const cur = rChap && rChap.book === b.name;
+    return `<div class="book${cur ? " cur open" : ""}${f && list.length <= 3 ? " open" : ""}" data-b="${esc(b.name)}"><button>${esc(b.name)}</button><div class="chs">${
+      b.chapters.map(c => `<button data-c="${c}"${cur && rChap.chapter === c ? ' class="cur"' : ""}>${c}</button>`).join("")}</div></div>`;
+  }).join("") : `<div class="empty-note">No book matches “${esc(f)}”.</div>`;
+}
+$("#books").addEventListener("click", e => {
+  const box = e.target.closest(".book"); if(!box) return;
+  if(e.target.dataset.c){ showChapter(box.dataset.b, +e.target.dataset.c); document.body.classList.remove("open"); return; }
+  box.classList.toggle("open");
+});
+$("#bookFind").addEventListener("input", renderBooks);
+$("#rBible").onchange = async () => {
+  sayStop();
+  const keep = rChap ? {book: rChap.book, chapter: rChap.chapter} : {};
+  rd = {bible: $("#rBible").value, ...keep}; rChap = null; store.set("bc.read", rd); openReader();
+};
+
+async function showChapter(book, chapter, hitVerse){
+  const my = ++rToken, bid = rd.bible;
+  let j;
+  try{
+    j = await (await fetch(`/api/chapter?bible=${encodeURIComponent(bid)}&book=${encodeURIComponent(book)}&chapter=${chapter}`)).json();
+  }catch(err){ $("#rtext").innerHTML = `<p class="notice err">Couldn't reach BibleChat. If you closed it, open the app again.</p>`; return; }
+  if(my !== rToken) return;
+  if(j.error){ $("#rtext").innerHTML = `<p class="notice err">${esc(j.error)}</p>`; return; }
+  rChap = {...j, bid};
+  rd = {bible: bid, book, chapter}; store.set("bc.read", rd);
+  $("#rtitle").innerHTML = `<b>${esc(book)} ${chapter}</b><small>${esc(j.bible)} · ${j.verses.length} verses</small>`;
+  const t = $("#rtext");
+  t.className = rLinesOn ? "lines" : "";
+  t.innerHTML = j.verses.map(v => `<span class="v" id="v${v.verse}" data-v="${v.verse}"><sup>${v.verse}</sup>${esc(v.text)} </span>`).join("");
+  for(const id of ["#rPrev", "#rPrev2"]) $(id).disabled = !j.prev;
+  for(const id of ["#rNext", "#rNext2"]) $(id).disabled = !j.next;
+  $("#rSay").hidden = !state.tts;
+  renderBooks();
+  const curBtn = document.querySelector(".book.cur .chs .cur") || document.querySelector(".book.cur"); if(curBtn) curBtn.scrollIntoView({block: "center"});
+  const r = $("#reader");
+  const hit = hitVerse && document.getElementById("v" + hitVerse);
+  if(hit){ hit.classList.add("hit"); hit.scrollIntoView({block: "center"}); setTimeout(() => hit.classList.remove("hit"), 2500); }
+  else r.scrollTop = 0;
+}
+function goChapter(which){ const n = rChap && rChap[which]; if(n){ sayStop(); showChapter(n.book, n.chapter); } }
+$("#rPrev").onclick = $("#rPrev2").onclick = () => goChapter("prev");
+$("#rNext").onclick = $("#rNext2").onclick = () => goChapter("next");
+addEventListener("keydown", e => {
+  if(mode !== "read" || e.altKey || e.ctrlKey || e.metaKey || /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+  if(e.key === "ArrowLeft"){ e.preventDefault(); goChapter("prev"); }
+  if(e.key === "ArrowRight"){ e.preventDefault(); goChapter("next"); }
+});
+function applyReadLook(){ $("#rtext").style.setProperty("--rs", rScale); $("#rtext").classList.toggle("lines", rLinesOn); }
+$("#rLines").onclick = () => { rLinesOn = !rLinesOn; store.set("bc.rlines", rLinesOn); applyReadLook(); };
+$("#rSmall").onclick = () => { rScale = Math.max(.75, +(rScale - .1).toFixed(2)); store.set("bc.rscale", rScale); applyReadLook(); };
+$("#rBig").onclick = () => { rScale = Math.min(1.8, +(rScale + .1).toFixed(2)); store.set("bc.rscale", rScale); applyReadLook(); };
+$("#rAsk").onclick = () => {
+  if(!rChap) return;
+  setMode("chat"); if(!activeChat() || activeChat().messages.length) newChat();
+  $("#q").value = `${rChap.book} ${rChap.chapter}`; autosize(); $("#q").focus();
+};
+
+/* read the chapter aloud, a few verses at a time, carrying on into the next chapter */
+let say = null;
+function sayStop(){
+  if(!say) return;
+  say.stop = true; if(say.audio) say.audio.pause();
+  document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say"));
+  say = null; $("#rSay").textContent = "🔊 Listen";
+}
+function sayChunks(){
+  const out = []; let cur = {nums: [], text: ""};
+  for(const v of rChap.verses){
+    if(cur.text && cur.text.length + v.text.length > 450){ out.push(cur); cur = {nums: [], text: ""}; }
+    if(!cur.nums.length && !out.length) cur.text = `${rChap.book}, chapter ${rChap.chapter}. `;
+    cur.nums.push(v.verse); cur.text += v.text + " ";
+  }
+  if(cur.nums.length) out.push(cur);
+  return out;
+}
+async function fetchAudio(text){
+  const r = await fetch("/api/speak", {method: "POST", body: JSON.stringify({text: text.slice(0, 2000)})});
+  if(!r.ok){ const j = await r.json().catch(() => ({})); throw new Error(j.error || "Couldn't speak that."); }
+  return URL.createObjectURL(await r.blob());
+}
+async function sayStart(){
+  if(!rChap) return;
+  const me = say = {stop: false, audio: null};
+  $("#rSay").textContent = "⏸ Stop";
+  const chunks = sayChunks();
+  let next = fetchAudio(chunks[0].text);
+  try{
+    for(let i = 0; i < chunks.length; i++){
+      const url = await next;
+      if(me.stop) return;
+      if(i + 1 < chunks.length) next = fetchAudio(chunks[i + 1].text);   // fetch the next part while this one plays
+      document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say"));
+      chunks[i].nums.forEach(n => { const el = document.getElementById("v" + n); if(el) el.classList.add("say"); });
+      const first = document.getElementById("v" + chunks[i].nums[0]); if(first) first.scrollIntoView({block: "center", behavior: "smooth"});
+      me.audio = new Audio(url);
+      await new Promise((res, rej) => { me.audio.onended = res; me.audio.onerror = () => rej(new Error("Couldn't play the audio.")); me.audio.play().catch(rej); });
+      if(me.stop) return;
+    }
+  }catch(err){ if(!me.stop){ sayStop(); alert(err.message); } return; }
+  if(me.stop) return;
+  const n = rChap.next; sayStop();
+  if(n){ await showChapter(n.book, n.chapter); sayStart(); }
+}
+$("#rSay").onclick = () => say ? sayStop() : sayStart();
+
+/* a verse reference in a chat answer opens that chapter in the reader */
+$("#thread").addEventListener("click", e => {
+  const r = e.target.closest(".ref.go"); if(!r) return;
+  sayStop(); rd = {bible: r.dataset.bid, book: r.dataset.book, chapter: +r.dataset.ch}; store.set("bc.read", rd);
+  rChap = null; setMode("read");
+  rToken++;  // let the jump below win over openReader's own load
+  (async () => { await loadBooks(rd.bible); showChapter(rd.book, rd.chapter, +r.dataset.v); })();
+});
+
 /* ---------------- theme, quit, heartbeat ---------------- */
 function applyTheme(t){ document.documentElement.dataset.theme = t; $("#theme").textContent = t === "dark" ? "☀ Light" : "☾ Dark"; }
 applyTheme(store.get("bc.theme", matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
@@ -511,6 +864,8 @@ document.addEventListener("visibilitychange", () => { if(!document.hidden) ping(
   await refresh();
   if(!chats.length || !chats.some(c => c.id === activeId)){ if(chats.length) activeId = chats[0].id; else return newChat(); }
   renderChats(); renderThread();
+  applyReadLook();
+  if(mode === "read") setMode("read");
 })();
 </script>
 </body>

@@ -2,7 +2,9 @@
 import os, sys
 from PyInstaller.utils.hooks import collect_all
 
-datas = [("bibleask/web", "bibleask/web")]
+import importlib.util
+
+datas = [("bibleask/web", "bibleask/web"), ("LICENSE", "."), ("THIRD_PARTY_NOTICES.md", ".")]
 if os.environ.get("BIBLECHAT_COMPAT"):  # engine compiled without AVX2, for older processors
     open("bibleask/compat_build.flag", "w").write("1")
     datas.append(("bibleask/compat_build.flag", "bibleask"))
@@ -27,7 +29,7 @@ exe = EXE(pyz, a.scripts, [], exclude_binaries=True, name="BibleChat",
 # A second, hidden helper: Pocket TTS's own server, bundled right alongside so BibleChat can speak
 # its answers with no separate install step. bibleask/server.py launches it automatically.
 exes, all_binaries, all_zipfiles, all_datas = [exe], a.binaries, a.zipfiles, a.datas
-if os.path.isfile("pocket_tts_entry.py"):
+if os.path.isfile("pocket_tts_entry.py") and importlib.util.find_spec("pocket_tts"):  # only when the voice is installed
     a2 = Analysis(["pocket_tts_entry.py"], hiddenimports=hiddenimports, excludes=["tkinter", "matplotlib"])
     pyz2 = PYZ(a2.pure)
     exe2 = EXE(pyz2, a2.scripts, [], exclude_binaries=True, name="PocketTTS", console=False)

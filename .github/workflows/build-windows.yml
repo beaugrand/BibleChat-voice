@@ -1,16 +1,9 @@
 name: Build Windows app
 
+# Manual only: this heavier Windows build bakes the AI models (incl. the gated Pocket TTS voice) into
+# the app, so it is for private use and is NOT part of the public release (see build.yml for that).
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "bibleask/**"
-      - "chat_app.py"
-      - "pocket_tts_entry.py"
-      - "BibleChat.spec"
-      - "packaging/fetch_models.py"
-      - ".github/workflows/build-windows.yml"
 
 jobs:
   build:

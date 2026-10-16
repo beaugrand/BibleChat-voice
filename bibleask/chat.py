@@ -11,7 +11,7 @@ from . import llm
 from .library import Library
 from .search import short_ref, tokenize
 
-MAX_VERSES = 8
+MAX_VERSES = 12
 MAX_PASSAGE = 60
 FOLLOW_UP_CUES = {"verse", "verses", "more", "that", "it", "this", "why", "how", "explain", "next", "previous",
                   "and", "also", "other", "else", "chapter", "them", "those", "what", "about", "again", "continue"}
@@ -29,11 +29,17 @@ class Retrieval:
     for_model: list[tuple[str, str]]  # (reference, text) pairs to hand to the AI
 
 
+def _vd(v) -> dict:
+    return {"ref": short_ref(v), "text": v.text, "book": v.book, "chapter": v.chapter}
+
+
 def retrieve(question: str, previous_question: Optional[str], lib: Library, bible_ids: list[str]) -> Optional[Retrieval]:
     loaded = []
+    id_of: dict[str, str] = {}  # bible name -> id, so the page can open a verse in the reader
     for bid in bible_ids:
         try:
             loaded.append(lib.get(bid))
+            id_of.setdefault(loaded[-1][0].name, bid)
         except Exception:
             continue
     if not loaded:
@@ -44,8 +50,8 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
     for bible, ix in loaded:
         idx = ix.lookup_reference(question)
         if idx:
-            groups.append({"bible": bible.name,
-                           "verses": [{"ref": short_ref(ix.verses[i]), "text": ix.verses[i].text} for i in idx[:MAX_PASSAGE]]})
+            groups.append({"bible": bible.name, "id": id_of.get(bible.name),
+                           "verses": [_vd(ix.verses[i]) for i in idx[:MAX_PASSAGE]]})
     if groups:
         first = groups[0]["verses"][:MAX_VERSES]
         return Retrieval("passage", groups, [(v["ref"], v["text"][:600]) for v in first])
@@ -60,19 +66,19 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
     follow_up = len(words) <= 4 and (any(w in FOLLOW_UP_CUES for w in words) or any(w.isdigit() for w in words))
     if not any(h for _, _, h in per_bible) and previous_question and follow_up:
         per_bible = run(previous_question + " " + question)
-    chosen: list[tuple[str, str, str]] = []  # (bible name, ref, text)
+    chosen: list[tuple[str, dict]] = []  # (bible name, verse)
     for rank in range(MAX_VERSES):  # interleave so every Bible gets a say
         for bible, ix, hits in per_bible:
             if rank < len(hits) and len(chosen) < MAX_VERSES:
                 v = ix.verses[hits[rank].index]
-                chosen.append((bible.name, short_ref(v), v.text))
+                chosen.append((bible.name, _vd(v)))
     if not chosen:
         return None
     by_bible: dict[str, list[dict]] = {}
-    for name, ref, text in chosen:
-        by_bible.setdefault(name, []).append({"ref": ref, "text": text})
-    groups = [{"bible": n, "verses": vs} for n, vs in by_bible.items()]
-    return Retrieval("search", groups, [(ref, text[:600]) for _, ref, text in chosen])
+    for name, vd in chosen:
+        by_bible.setdefault(name, []).append(vd)
+    groups = [{"bible": n, "id": id_of.get(n), "verses": vs} for n, vs in by_bible.items()]
+    return Retrieval("search", groups, [(vd["ref"], vd["text"][:600]) for _, vd in chosen])
 
 
 def respond(question: str, previous_question: Optional[str], lib: Library, bible_ids: list[str],

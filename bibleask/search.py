@@ -205,7 +205,16 @@ class Index:
             if bigrams:
                 have = {(toks[j], toks[j + 1]) for j in range(len(toks) - 1)}
                 bonus += 1.5 * len(bigrams & have)
-            coverage = len(qset & set(toks)) / len(qset)
+            own = qset & set(toks)
+            coverage = len(own) / len(qset)
+            # a story spans several verses: credit the other asked-for words found in the verses
+            # just around this one (same chapter), weighted by how rare each word is
+            v = self.verses[i]
+            near: set[str] = set()
+            for j in range(max(0, i - 3), min(len(self.verses), i + 4)):
+                if j != i and self.verses[j].book == v.book and self.verses[j].chapter == v.chapter:
+                    near |= qset & set(self.tokens[j])
+            bonus += 0.6 * sum(self._idf(t) for t in near - own)
             rescored.append(Hit(i, sc * (0.6 + 0.8 * coverage) + bonus))
         rescored.sort(key=lambda h: -h.score)
         # drop verses whose text is a duplicate of one already listed (some Bibles print a book twice)

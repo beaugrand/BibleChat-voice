@@ -16,7 +16,7 @@ import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Optional
 
-from . import chat, llm, storage, stt
+from . import catalog, chat, llm, storage, stt
 from .library import Library
 
 PORT = 8765
@@ -87,6 +87,7 @@ class App:
         self.busy = 0  # running jobs + chats; keeps the app alive
         self.lock = threading.Lock()
         self.stop = threading.Event()
+        self.cpu_fix_job: Optional[str] = None  # rebuilding the AI engine for an older processor
 
     # ---- jobs -------------------------------------------------------------------------
     def start_job(self, fn) -> str:
@@ -112,12 +113,31 @@ class App:
         threading.Thread(target=run, daemon=True).start()
         return jid
 
+    # ---- free Bibles from the catalog ------------------------------------------------------
+    def fetch_bible(self, file: str, progress) -> str:
+        name = catalog.display_name(file)
+        progress(f"Downloading {name}…", 0.02)
+        chunks, got = [], 0
+        with llm._open(catalog.url(file)) as r:
+            total = int(r.headers.get("Content-Length") or 0)
+            while True:
+                b = r.read(256 * 1024)
+                if not b:
+                    break
+                chunks.append(b)
+                got += len(b)
+                if total:
+                    progress(f"Downloading {name}… {got * 100 // total}%", 0.02 + 0.6 * got / total)
+        progress("Reading the verses…", 0.65)
+        return self.lib.add_file(name + os.path.splitext(file)[1], b"".join(chunks),
+                                 lambda m, f: progress(m, 0.65 + 0.35 * f))
+
     # ---- model ------------------------------------------------------------------------
     def load_model(self, repo: str) -> None:
         st = self.model_state
         if st["status"] in ("downloading", "loading"):
             return
-        problem = llm.cpu_problem()
+        problem = self.cpu_problem()
         if problem or not llm.engine_available():
             st.update(status="error", repo=repo, message=problem or "The AI engine isn't available in this build.")
             return
@@ -145,6 +165,19 @@ class App:
 
         threading.Thread(target=work, daemon=True).start()
 
+    def cpu_problem(self) -> Optional[str]:
+        job = self.jobs.get(self.cpu_fix_job or "")
+        if job and job["status"] == "done":
+            return "Almost done: press Quit, then open BibleChat again to switch on the AI helper."
+        return llm.cpu_problem()
+
+    def cpu_fix(self) -> dict:
+        job = self.jobs.get(self.cpu_fix_job or "")
+        return {"can": llm.can_rebuild_for_old_cpu(),
+                "status": job["status"] if job else "none",
+                "message": (job["error"] if job["status"] == "error" else job["message"]) if job else "",
+                "progress": job["progress"] if job else 0.0}
+
     def state(self) -> dict:
         models = []
         for m in llm.MODELS:
@@ -156,7 +189,8 @@ class App:
             "models": models,
             "model": dict(self.model_state),
             "engine": llm.engine_available(),
-            "cpu_problem": llm.cpu_problem(),
+            "cpu_problem": self.cpu_problem(),
+            "cpu_fix": self.cpu_fix(),
             "selected_model": (storage.load_settings().get("model")
                                or (llm.DEFAULT_BUNDLED_REPO if llm.local_path(llm.DEFAULT_BUNDLED_REPO) else llm.MODELS[0].repo)),
             "tts": _tts_available(),
@@ -226,6 +260,22 @@ def make_handler(app: App, port: int):
                 self._json({"app": SIGNATURE, "ok": True})
             elif path == "/api/state":
                 self._json(app.state())
+            elif path in ("/api/books", "/api/chapter"):
+                q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
+                bid = (q.get("bible") or [""])[0]
+                try:
+                    if path == "/api/books":
+                        self._json({"books": app.lib.books(bid)})
+                    else:
+                        self._json(app.lib.chapter(bid, (q.get("book") or [""])[0], int((q.get("chapter") or ["1"])[0])))
+                except Exception as e:
+                    self._json({"error": str(e) or "That Bible isn't available."}, 404)
+            elif path == "/api/catalog":
+                have = {b["name"] for b in app.lib.summary()}
+                items = catalog.entries()
+                for it in items:
+                    it["have"] = it["name"] in have
+                self._json({"source": catalog.SOURCE, "items": items})
             elif path.startswith("/api/jobs/"):
                 job = app.jobs.get(path.rsplit("/", 1)[1])
                 self._json(job or {"status": "error", "error": "Unknown job"}, 200 if job else 404)
@@ -260,6 +310,20 @@ def make_handler(app: App, port: int):
                         return
                     app.load_model(repo)
                     self._json({"ok": True})
+                elif path == "/api/catalog/get":
+                    req = json.loads(self._body() or b"{}")
+                    file = req.get("file") or ""
+                    try:
+                        catalog.display_name(file)
+                    except KeyError:
+                        self._json({"error": "That Bible isn't on the list."}, 400)
+                        return
+                    self._json({"job": app.start_job(lambda progress: app.fetch_bible(file, progress))})
+                elif path == "/api/cpu-fix":
+                    cur = app.jobs.get(app.cpu_fix_job or "")
+                    if not (cur and cur["status"] == "running"):
+                        app.cpu_fix_job = app.start_job(llm.rebuild_for_old_cpu)
+                    self._json({"job": app.cpu_fix_job})
                 elif path == "/api/chat":
                     self._chat(json.loads(self._body() or b"{}"))
                 elif path == "/api/speak":
@@ -360,7 +424,7 @@ def main(open_browser: bool = True) -> int:
 
     # if the AI helper was already downloaded (or came bundled with the app), wake it up now
     repo = storage.load_settings().get("model") or llm.DEFAULT_BUNDLED_REPO
-    if llm.local_path(repo) and llm.engine_available() and not llm.cpu_problem():
+    if llm.local_path(repo) and llm.engine_available() and not app.cpu_problem():
         app.load_model(repo)
 
     threading.Thread(target=_ensure_tts_helper, daemon=True).start()

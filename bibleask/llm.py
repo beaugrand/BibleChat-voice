@@ -171,11 +171,66 @@ def build_messages(question: str, passages: list[tuple[str, str]]) -> list[dict]
     ]
 
 
+# Set by rebuild_for_old_cpu(): lives inside the Python environment, next to the rebuilt engine.
+_COMPAT_FLAG_VENV = os.path.join(sys.prefix, "biblechat_compat.flag")
+LLAMA_CPP_VERSION = "0.3.35"  # same version the GitHub "OldCPU" build compiles
+_COMPAT_CMAKE = ("-DGGML_NATIVE=OFF -DGGML_AVX=OFF -DGGML_AVX2=OFF -DGGML_AVX512=OFF "
+                 "-DGGML_FMA=OFF -DGGML_F16C=OFF -DGGML_BMI2=OFF")
+
+
+def can_rebuild_for_old_cpu() -> bool:
+    """Only a from-source run on Linux, inside its own virtual environment, can rebuild the engine itself."""
+    return (sys.platform.startswith("linux") and not getattr(sys, "frozen", False)
+            and sys.prefix != getattr(sys, "base_prefix", sys.prefix))
+
+
+def rebuild_for_old_cpu(progress: ProgressCB) -> str:
+    """Recompile the AI engine without AVX2 (and newer) instructions, in BibleChat's own environment.
+    Takes 10-40 minutes on an older processor. BibleChat must be restarted afterwards."""
+    import shutil
+    import subprocess
+
+    if not can_rebuild_for_old_cpu():
+        raise RuntimeError("This copy of BibleChat can't rebuild itself. Download the Linux-OldCPU version instead.")
+    missing = [n for n, cands in (("C compiler", ("gcc", "cc")), ("C++ compiler", ("g++", "c++")))
+               if not any(shutil.which(c) for c in cands)]
+    if missing:
+        raise RuntimeError("Your computer needs its build tools first. Open a Terminal, type "
+                           "sudo apt install build-essential  then press Enter and give your password. "
+                           "Then press this button again.")
+    env = dict(os.environ, CMAKE_ARGS=_COMPAT_CMAKE, FORCE_CMAKE="1")
+    cmd = [sys.executable, "-m", "pip", "install", "--no-cache-dir", "--force-reinstall", "--no-deps",
+           "--no-binary=llama-cpp-python", f"llama-cpp-python=={LLAMA_CPP_VERSION}"]
+    progress("Downloading the AI engine's source code…", 0.05)
+    proc = subprocess.Popen(cmd, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)
+    tail: list[str] = []
+    frac = 0.1
+    for line in proc.stdout:  # type: ignore[union-attr]
+        line = line.rstrip()
+        if line:
+            tail = (tail + [line])[-15:]
+        low = line.lower()
+        if "building wheel" in low or "cmake" in low:
+            frac = max(frac, 0.2)
+            progress("Building the AI engine for your processor… this takes 10–40 minutes. You can keep using BibleChat.", frac)
+        elif "successfully installed" in low:
+            progress("Finishing…", 0.97)
+    if proc.wait() != 0:
+        raise RuntimeError("The rebuild didn't finish. Last messages: " + " | ".join(tail[-4:]))
+    # dependencies of the engine (numpy etc.) - only fetched if missing
+    subprocess.run([sys.executable, "-m", "pip", "install", f"llama-cpp-python=={LLAMA_CPP_VERSION}"],
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, env=env)
+    with open(_COMPAT_FLAG_VENV, "w") as f:
+        f.write("1")
+    return "done"
+
+
 def cpu_problem() -> Optional[str]:
     """The AI engine needs a CPU with AVX2 (any PC from about 2014 on). Return a friendly message if it lacks it."""
     if not sys.platform.startswith("linux"):
         return None
-    if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), "compat_build.flag")):
+    if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), "compat_build.flag")) \
+            or os.path.exists(_COMPAT_FLAG_VENV):
         return None  # this build of the AI engine was compiled for older processors
     try:
         with open("/proc/cpuinfo", encoding="utf-8", errors="replace") as f:
