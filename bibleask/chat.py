@@ -9,7 +9,8 @@ from typing import Iterator, Optional
 
 from . import llm
 from .library import Library
-from .search import short_ref, tokenize
+from .search import guess_language, short_ref, tokenize
+from .topics import TOPICS
 
 MAX_VERSES = 12
 MAX_PASSAGE = 60
@@ -27,6 +28,7 @@ class Retrieval:
     kind: str  # "passage" (a typed reference) or "search"
     groups: list[dict]  # [{"bible": name, "verses": [{"ref":..., "text":...}]}]
     for_model: list[tuple[str, str]]  # (reference, text) pairs to hand to the AI
+    note: str = ""  # shown under the verses, e.g. which Bibles weren't searched
 
 
 def _vd(v) -> dict:
@@ -58,8 +60,15 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
 
     # 2) otherwise search by words; a very short follow-up ("and verse 4?") that finds nothing on its own
     #    borrows the earlier question
+    # Words only mean something in their own language: an English question must not match the German
+    # "Angel" (a fishing hook). Search only the Bibles in the question's language (if that's unclear,
+    # the language most of the ticked Bibles are in).
+    q_lang = _question_language(question, loaded)
+    same = [(b, ix) for b, ix in loaded if not (q_lang and ix.lang and ix.lang != q_lang)] or loaded
+    skipped = [b.name for b, ix in loaded if (b, ix) not in same]
+
     def run(query: str):
-        return [(bible, ix, ix.search(query, k=MAX_VERSES)) for bible, ix in loaded]
+        return [(bible, ix, ix.search(query, k=MAX_VERSES)) for bible, ix in same]
 
     per_bible = run(question)
     words = question.lower().replace("?", " ").replace(".", " ").split()
@@ -72,13 +81,69 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
             if rank < len(hits) and len(chosen) < MAX_VERSES:
                 v = ix.verses[hits[rank].index]
                 chosen.append((bible.name, _vd(v)))
-    if not chosen:
+    topic = _topic_group(question, same, id_of)
+    if not chosen and not topic:
         return None
     by_bible: dict[str, list[dict]] = {}
     for name, vd in chosen:
         by_bible.setdefault(name, []).append(vd)
     groups = [{"bible": n, "id": id_of.get(n), "verses": vs} for n, vs in by_bible.items()]
-    return Retrieval("search", groups, [(vd["ref"], vd["text"][:600]) for _, vd in chosen])
+    for_model = [(vd["ref"], vd["text"][:600]) for _, vd in chosen]
+    if topic:
+        groups.insert(0, topic)
+        for_model = [(vd["ref"], vd["text"][:600]) for vd in topic["verses"]] + for_model
+    note = ""
+    if skipped:
+        one = len(skipped) == 1
+        note = (", ".join(skipped) + (" is" if one else " are") + " in another language, so " +
+                ("it wasn't" if one else "they weren't") + " searched with these words. Ask in " +
+                ("that language" if one else "their language") + " to search " + ("it." if one else "them."))
+    return Retrieval("search", groups, for_model[:MAX_VERSES + 6], note)
+
+
+def _question_language(question: str, loaded: list) -> Optional[str]:
+    """Which language the question is in: the language of the ticked Bible that knows the most of its words
+    (a German question's words are in the Luther Bible, not the KJV); else common little words; else the
+    language most of the ticked Bibles are in."""
+    import re
+    words = [w for w in re.findall(r"[^\W\d_]+", question.lower()) if len(w) > 2]
+    best: dict[str, float] = {}
+    for _, ix in loaded:
+        if ix.lang and words:
+            cov = sum(w in ix.vocab for w in words) / len(words)
+            best[ix.lang] = max(best.get(ix.lang, 0.0), cov)
+    if best:
+        ranked = sorted(best.items(), key=lambda kv: -kv[1])
+        if ranked[0][1] > 0 and (len(ranked) == 1 or ranked[0][1] > ranked[1][1]):
+            return ranked[0][0]
+    langs = [ix.lang for _, ix in loaded if ix.lang]
+    return guess_language(question) or (max(set(langs), key=langs.count) if langs else None)
+
+
+def _topic_group(question: str, bibles: list, id_of: dict) -> Optional[dict]:
+    """Verses that Nave's Topical Bible lists for the question's topic, shown from the first Bible that has them."""
+    try:
+        hits = TOPICS.find(question, k=1)
+    except Exception:
+        return None
+    if not hits:
+        return None
+    h = hits[0]
+    for bible, ix in bibles:
+        verses = []
+        for book, ch, v1, v2 in h.refs:
+            title = book if (book, ch, v1) in ix.by_ref else ix.books.resolve(book)
+            if not title:
+                continue
+            for vn in range(v1, v2 + 1):
+                for i in ix.by_ref.get((title, ch, vn), [])[:1]:
+                    verses.append(_vd(ix.verses[i]))
+            if len(verses) >= MAX_VERSES:
+                break
+        if verses:
+            return {"bible": f"Topic: {h.title} · {bible.name}", "id": id_of.get(bible.name), "topic": True,
+                    "verses": verses[:MAX_VERSES]}
+    return None
 
 
 def respond(question: str, previous_question: Optional[str], lib: Library, bible_ids: list[str],
@@ -93,7 +158,7 @@ def respond(question: str, previous_question: Optional[str], lib: Library, bible
         yield ("token", NOTHING_FOUND)
         yield ("done", None)
         return
-    yield ("sources", {"kind": r.kind, "groups": r.groups})
+    yield ("sources", {"kind": r.kind, "groups": r.groups, "note": r.note})
     if use_ai:
         if model.loaded:
             for piece in model.stream(question, r.for_model[:llm.passages_wanted(model.style)]):

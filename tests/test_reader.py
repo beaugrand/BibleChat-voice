@@ -153,3 +153,29 @@ class OtherFormats(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TopicsAndLanguage(unittest.TestCase):
+    def test_fallen_angels_finds_the_topic(self):
+        from bibleask.topics import TOPICS
+        h = TOPICS.find("where does it talk about the fallen angels")[0]
+        refs = {(b, c, v) for b, c, v, _ in h.refs}
+        self.assertIn(("2 Peter", 2, 4), refs)
+        self.assertIn(("Jude", 1, 6), refs)   # the module's broken one-chapter references are repaired
+
+    def test_word_forms(self):
+        from bibleask.search import tokenize
+        self.assertEqual(tokenize("the fallen angels fell"), ["fall", "angel", "fall"])
+        self.assertEqual(tokenize("he loveth"), ["lov"])
+        self.assertEqual(tokenize("where does it talk about angels"), ["angel"])
+
+    def test_english_question_skips_a_german_bible(self):
+        from bibleask import chat
+        lib = Library()
+        en = lib.add_file("Tiny.xml", ZEF)
+        de = lib.add_file("Klein.xml", ("<XMLBIBLE><BIBLEBOOK bname=\"Hiob\"><CHAPTER cnumber=\"40\"><VERS vnumber=\"26\">"
+                                        "Kannst du ihm eine Angel in die Nase legen und mit einem Stachel ihm die Backen durchbohren? "
+                                        "Und der Herr ist mit dir und mit den Engeln, die nicht gefallen sind.</VERS></CHAPTER></BIBLEBOOK></XMLBIBLE>").encode())
+        r = chat.retrieve("the beginning angel", None, lib, [en, de])
+        self.assertTrue(r and all(g["bible"] != "Klein" for g in r.groups))
+        self.assertIn("Klein", r.note)

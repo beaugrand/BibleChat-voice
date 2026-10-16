@@ -1,0 +1,119 @@
+"""Topic search with Nave's Topical Bible (Orville J. Nave, 1896; public domain).
+
+Word search only finds verses that use the words you typed. Many questions are about a topic whose key
+verses use other words: "fallen angels" is about 2 Peter 2:4 ("the angels that sinned") and Jude 6 ("the
+angels which kept not their first estate"). Nave's lists those verses under its topics, so BibleChat can
+show them. The verse text itself always comes from your own Bibles.
+
+Data: bibleask/data/nave.json.gz, built by packaging/build_nave.py.
+"""
+from __future__ import annotations
+
+import gzip
+import json
+import math
+import os
+import re
+import threading
+from collections import defaultdict
+from dataclasses import dataclass
+from typing import Optional
+
+from .loaders import _OSIS_NAME
+from .search import tokenize
+
+_DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "nave.json.gz")
+
+# Modern ways of naming a topic that Nave files under another name. Each: words that must all be in the
+# question -> (Nave topic, words its heading must contain).
+ALIASES: list[tuple[set[str], str, str]] = [
+    ({"fall", "angel"}, "DEMONS", "punishment"),
+    ({"fall", "angel"}, "DEMONS", "judged"),
+]
+
+
+@dataclass
+class TopicHit:
+    topic: str
+    heading: str
+    refs: list[tuple[str, int, int, int]]  # (book, chapter, first verse, last verse)
+    score: float
+
+    @property
+    def title(self) -> str:
+        t = self.topic.title()
+        return f"{t} — {self.heading}" if self.heading and self.heading.lower() != "see" else t
+
+
+def _parse_ref(r: str) -> Optional[tuple[str, int, int, int]]:
+    a, _, b = r.partition("-")
+    m = re.match(r"(\w+)\.(\d+)\.(\d+)$", a)
+    if not m:
+        return None
+    book, ch, v1 = _OSIS_NAME.get(m[1], m[1]), int(m[2]), int(m[3])
+    v2 = v1
+    m2 = re.match(r"(\w+)\.(\d+)\.(\d+)$", b) if b else None
+    if m2 and int(m2[2]) == ch:
+        v2 = max(v1, int(m2[3]))
+    return book, ch, v1, v2
+
+
+class Topics:
+    def __init__(self, path: str = _DATA) -> None:
+        self.path = path
+        self._rows: Optional[list] = None
+        self._lock = threading.Lock()
+
+    def _load(self) -> list:
+        with self._lock:
+            if self._rows is None:
+                rows = []
+                if os.path.exists(self.path):
+                    with gzip.open(self.path, "rt", encoding="utf-8") as f:
+                        for topic, heading, refs in json.load(f):
+                            if refs and refs[0].startswith("see:"):
+                                continue
+                            toks = set(tokenize(topic.split("(")[0] + " " + heading))
+                            parsed = [p for p in (_parse_ref(r) for r in refs) if p]
+                            if parsed:
+                                rows.append((topic, heading, parsed, toks, set(tokenize(topic.split("(")[0]))))
+                self._rows = rows
+                df: dict[str, int] = defaultdict(int)
+                for *_, toks, _t in rows:
+                    for w in toks:
+                        df[w] += 1
+                n = max(len(rows), 1)
+                self._idf = {w: math.log(1 + n / c) for w, c in df.items()}
+            return self._rows
+
+    def find(self, question: str, k: int = 2) -> list[TopicHit]:
+        """Best topic lines for a question; only lines that cover every word asked about (or a known alias)."""
+        rows = self._load()
+        q = set(tokenize(question))
+        if not q or not rows:
+            return []
+        hits: list[TopicHit] = []
+        for words, topic, need in ALIASES:
+            if words <= q:
+                for t, h, refs, _toks, _tt in rows:
+                    if t == topic and need in h.lower():
+                        hits.append(TopicHit(t, h, refs, 100.0))
+                        break
+        for t, h, refs, toks, ttoks in rows:
+            if not q <= toks:
+                continue
+            score = sum(self._idf.get(w, 0) for w in q) + 2.0 * len(q & ttoks) + 0.25 * min(len(refs), 12)
+            hits.append(TopicHit(t, h, refs, score))
+        hits.sort(key=lambda h: -h.score)
+        out, seen = [], set()
+        for h in hits:
+            key = (h.topic, h.heading)
+            if key not in seen and len(h.refs) <= 40:   # very long lists ("the general judgment") are too broad
+                seen.add(key)
+                out.append(h)
+            if len(out) >= k:
+                break
+        return out
+
+
+TOPICS = Topics()

@@ -80,6 +80,8 @@ details.src{margin:10px 0;border:1px solid var(--line);border-radius:12px;backgr
 details.src>summary{cursor:pointer;padding:9px 14px;font-size:14px;color:var(--muted);list-style:none;display:flex;justify-content:space-between;gap:10px;user-select:none}
 details.src>summary::-webkit-details-marker{display:none}
 details.src>summary b{color:var(--text);font-weight:600}
+details.src.topic{border-color:var(--accent)}
+details.src.topic>summary b{color:var(--accent)}
 details.src>summary::after{content:"▾";transition:transform .15s}
 details.src[open]>summary::after{transform:rotate(180deg)}
 .verses{padding:2px 14px 10px;border-top:1px solid var(--line);max-height:420px;overflow:auto}
@@ -355,8 +357,8 @@ function sourcesHtml(src, question){
       const go = g.id && v.book ? ` go" title="Open ${esc(v.book)} ${v.chapter} in the reader" data-bid="${esc(g.id)}" data-book="${esc(v.book)}" data-ch="${v.chapter}" data-v="${(String(v.ref).match(/:(\d+)/) || [,""])[1]}` : "";
       return `<div class="verse"><span class="ref${go}">${esc(v.ref)}</span>${highlight(v.text, words)}</div>`;
     }).join("");
-    return `<details class="src"${open}><summary><span><b>${esc(g.bible)}</b></span><span>${g.verses.length} verse${g.verses.length===1?"":"s"}</span></summary><div class="verses">${vs}</div></details>`;
-  }).join("");
+    return `<details class="src${g.topic ? " topic" : ""}"${open}><summary><span><b>${esc(g.bible)}</b></span><span>${g.verses.length} verse${g.verses.length===1?"":"s"}</span></summary><div class="verses">${vs}</div></details>`;
+  }).join("") + (src.note ? `<div class="notice">${esc(src.note)}</div>` : "") + (src.groups.some(g => g.topic) ? `<div class="notice" style="font-size:12.5px">Topics from Nave's Topical Bible (public domain).</div>` : "");
 }
 function speakable(m){
   if(m.text) return m.text;

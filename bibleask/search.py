@@ -21,16 +21,22 @@ those through to too under until up very was we were what when where which while
 yours yourself yourselves
 say says said saying tell tells told mention mentions mentioned written write bible verse verses passage passages
 scripture scriptures where whats what's find show give please want know person people someone anyone anything thing things
-about regarding concerning""".split()
+about regarding concerning talk talks talking discuss discusses refer refers""".split()
 )
 
 
+_IRREGULAR = {"fallen": "fall", "fell": "fall"}
+
+
 def _stem(w: str) -> str:
+    w = _IRREGULAR.get(w, w)
     if len(w) <= 3:
         return w
     if w.endswith("ies") and len(w) > 4:
         w = w[:-3] + "y"
     elif w.endswith("ing") and len(w) > 5:
+        w = w[:-3]
+    elif w.endswith("eth") and len(w) > 5:  # King James: "loveth", "falleth"
         w = w[:-3]
     elif w.endswith("ed") and len(w) > 4:
         w = w[:-2]
@@ -56,6 +62,48 @@ def tokenize(text: str, keep_stop: bool = False) -> list[str]:
             continue
         out.append(_stem(w))
     return out
+
+
+# --------------------------------------------------------------------------- language
+_LANG_WORDS = {
+    "en": "the and of to that in he shall unto for his is not they with them be".split(),
+    "de": "und der die das zu nicht ich ist den sie er von mit dem ein sich auf".split(),
+    "es": "el la de que y los se del las en por no con su para".split(),
+    "fr": "et le la les de des que il qui en ne pas vous est dans".split(),
+    "it": "e il di che la non per è le del si una con gli".split(),
+    "pt": "e o de que a do da os não se para em com uma".split(),
+    "nl": "en de het van die een niet zijn hij ik met op dat".split(),
+    "sv": "och att det som en är på för han av med till inte".split(),
+    "no": "og at det som en er på for han av med til ikke".split(),
+    "da": "og at det som en er på for han af med til ikke".split(),
+    "fi": "ja on että hän se ei ne niin oli kuin".split(),
+    "pl": "i w się nie na to że z jest do ich".split(),
+    "la": "et in est non ad qui cum quod enim autem".split(),
+}
+
+
+def guess_language(text: str) -> Optional[str]:
+    """A rough two-letter language code from common little words or the script; None if unsure."""
+    t = text[:8000]
+    if re.search(r"[\u3040-\u30ff]", t):
+        return "ja"
+    if re.search(r"[\uac00-\ud7af]", t):
+        return "ko"
+    if re.search(r"[\u4e00-\u9fff]", t):
+        return "zh"
+    if re.search(r"[\u0e00-\u0e7f]", t):
+        return "th"
+    if re.search(r"[\u0400-\u04ff]", t):
+        return "ru" if re.search(r"[ыэ]", t) else "bg"
+    words = Counter(re.findall(r"[^\W\d_]+", t.lower()))
+    scores = {lang: sum(words[w] for w in ws) for lang, ws in _LANG_WORDS.items()}
+    ranked = sorted(scores, key=scores.get, reverse=True)
+    best, second = ranked[0], scores[ranked[1]]
+    if scores[best] >= 2 and scores[best] > second:
+        return best
+    if scores[best] >= 1 and second == 0:   # a short question: one telltale word is enough
+        return best
+    return None
 
 
 # --------------------------------------------------------------------------- book names
@@ -158,6 +206,8 @@ class Index:
             for term, tf in Counter(toks).items():
                 self.post[term].append((i, tf))
         self.avg = sum(self.dlen) / max(n, 1)
+        self.lang = guess_language(" ".join(v.text for v in self.verses[:400]))
+        self.vocab = {w for v in self.verses for w in re.findall(r"[^\W\d_]+", v.text.lower())}
         self.n = n
         names: list[str] = []
         for v in self.verses:
