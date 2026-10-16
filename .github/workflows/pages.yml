@@ -11,6 +11,7 @@ on:
       - "web/**"
       - "bibleask/catalog.py"
       - "bibleask/loaders.py"
+      - "bibleask/data/**"
       - ".github/workflows/pages.yml"
 
 permissions:
@@ -35,6 +36,7 @@ jobs:
           mkdir -p site
           cp web/index.html web/sw.js web/manifest.webmanifest web/icon.svg web/icon-192.png web/icon-512.png web/cashapp-qr.jpg site/
           python web/build_data.py site
+          python web/build_study.py site
           touch site/.nojekyll
           du -sh site
       - uses: actions/upload-pages-artifact@v3

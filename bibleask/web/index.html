@@ -163,6 +163,35 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 #loveDlg p{color:var(--muted);font-size:14px;margin:0 0 12px}
 #loveDlg img{width:min(260px,80%);border-radius:14px;background:#fff;padding:6px}
 #loveDlg .tag{font-weight:650;font-size:17px;margin:8px 0 12px}
+/* study panel: Strong's + Nave's for one verse */
+@media (min-width:1000px){body.studying #reader{padding-right:min(460px,40vw)}}
+#studyBody a.sn{color:var(--accent);cursor:pointer;font-weight:600}
+#rtext .v{cursor:pointer}
+#rtext .v:hover{background:rgba(47,93,138,.07)}
+#rtext .v.study{background:rgba(47,93,138,.14)}
+#study{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);z-index:40;background:var(--bg);border-left:1px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column}
+#study header{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--line)}
+#study header b{flex:1;font-family:Georgia,serif;font-weight:500;font-size:19px}
+#study header .btn{padding:5px 10px;font-size:14px}
+#study form{display:flex;gap:6px;padding:10px 14px 0}
+#study form input{flex:1;padding:7px 9px;border:1px solid var(--line);border-radius:9px;background:var(--card);font-size:14.5px;min-width:0}
+#studyBody{overflow:auto;padding:6px 14px 30px;flex:1}
+#studyBody h3{font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:16px 0 6px;font-weight:650}
+#studyBody .kjv{font-family:Georgia,serif;font-size:17px;line-height:2}
+#studyBody .w{border:0;background:none;padding:0 1px;font:inherit;color:inherit;border-bottom:2px dotted var(--accent);cursor:pointer;border-radius:3px}
+#studyBody .w:hover{background:var(--panel2)}
+#studyBody .w sub{font-family:system-ui,sans-serif;font-size:.55em;color:var(--accent);margin-left:1px}
+#studyBody .tp{display:flex;justify-content:space-between;gap:8px;width:100%;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:9px;padding:7px 10px;margin:0 0 5px;font-size:14px;cursor:pointer}
+#studyBody .tp:hover{background:var(--panel2)}
+#studyBody .tp span{color:var(--muted);white-space:nowrap}
+#studyBody .orig{font-size:30px;margin:6px 0 0}
+#studyBody .orig.he{direction:rtl;text-align:left}
+#studyBody .sub{color:var(--muted);font-size:14px;margin:2px 0 10px}
+#studyBody .sv{padding:7px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.5}
+#studyBody .sv a{color:var(--accent);font-weight:650;cursor:pointer;text-decoration:none;margin-right:6px}
+#studyBody .sv i{color:var(--muted);font-size:12.5px;font-style:normal;margin-left:4px}
+#studyBody p{font-size:14.5px;line-height:1.55;margin:4px 0}
+#studyBody .muted{color:var(--muted);font-size:13.5px}
 /* free Bibles catalog */
 #getDlg{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.35);display:grid;place-items:center;padding:16px}
 #getDlg .card{background:var(--bg);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);width:min(760px,100%);max-height:min(86vh,900px);display:flex;flex-direction:column}
@@ -282,6 +311,11 @@ details.src[open]>summary::after{transform:rotate(180deg)}
     <div id="rtext"></div>
     <div id="rfoot"><button class="btn" id="rPrev2">‹ Previous chapter</button><button class="btn" id="rNext2">Next chapter ›</button></div>
   </div>
+  <div id="study" hidden>
+    <header><button class="btn" id="studyBack" title="Back" hidden>‹</button><b id="studyTitle">Study</b><button class="btn" id="studyClose" title="Close (Esc)">✕</button></header>
+    <form id="studyFind"><input id="studyQ" placeholder="Strong's number (G25, H430) or a topic (prayer)"><button class="btn">Look up</button></form>
+    <div id="studyBody"></div>
+  </div>
   <div id="drop">Drop a Bible file to add it</div>
   <div id="loveDlg" hidden><div class="card" role="dialog" aria-label="Love Donations">
     <h2>♥ Love Donations <button class="x" id="loveClose" style="opacity:1;font-size:24px" title="Close">×</button></h2>
@@ -358,7 +392,8 @@ function sourcesHtml(src, question){
       return `<div class="verse"><span class="ref${go}">${esc(v.ref)}</span>${highlight(v.text, words)}</div>`;
     }).join("");
     return `<details class="src${g.topic ? " topic" : ""}"${open}><summary><span><b>${esc(g.bible)}</b></span><span>${g.verses.length} verse${g.verses.length===1?"":"s"}</span></summary><div class="verses">${vs}</div></details>`;
-  }).join("") + (src.note ? `<div class="notice">${esc(src.note)}</div>` : "") + (src.groups.some(g => g.topic) ? `<div class="notice" style="font-size:12.5px">Topics from Nave's Topical Bible (public domain).</div>` : "");
+  }).join("") + (src.note ? `<div class="notice">${esc(src.note)}</div>` : "") + (src.groups.some(g => g.strongs) ? `<div class="notice" style="font-size:12.5px">From Strong's Exhaustive Concordance (public domain). In Read mode, click any verse to see its Hebrew or Greek words.</div>`
+    : src.groups.some(g => g.topic) ? `<div class="notice" style="font-size:12.5px">Topics from Nave's Topical Bible (public domain).</div>` : "");
 }
 function speakable(m){
   if(m.text) return m.text;
@@ -735,7 +770,7 @@ function setMode(m){
   $("#readSide").hidden = m !== "read";
   $("#scroll").hidden = $("#composer").hidden = m !== "chat";
   $("#reader").hidden = m !== "read";
-  if(m === "read") openReader(); else { sayStop(); $("#q").focus(); }
+  if(m === "read") openReader(); else { sayStop(); studyClose(); $("#q").focus(); }
 }
 $("#modeChat").onclick = () => setMode("chat");
 $("#modeRead").onclick = () => setMode("read");
@@ -791,10 +826,10 @@ async function showChapter(book, chapter, hitVerse){
   if(j.error){ $("#rtext").innerHTML = `<p class="notice err">${esc(j.error)}</p>`; return; }
   rChap = {...j, bid};
   rd = {bible: bid, book, chapter}; store.set("bc.read", rd);
-  $("#rtitle").innerHTML = `<b>${esc(book)} ${chapter}</b><small>${esc(j.bible)} · ${j.verses.length} verses</small>`;
+  $("#rtitle").innerHTML = `<b>${esc(book)} ${chapter}</b><small>${esc(j.bible)} · ${j.verses.length} verses · click a verse to study it</small>`;
   const t = $("#rtext");
   t.className = rLinesOn ? "lines" : "";
-  t.innerHTML = j.verses.map(v => `<span class="v" id="v${v.verse}" data-v="${v.verse}"><sup>${v.verse}</sup>${esc(v.text)} </span>`).join("");
+  t.innerHTML = j.verses.map(v => `<span class="v" id="v${v.verse}" data-v="${v.verse}" title="Click to study this verse: original Hebrew/Greek words and topics"><sup>${v.verse}</sup>${esc(v.text)} </span>`).join("");
   for(const id of ["#rPrev", "#rPrev2"]) $(id).disabled = !j.prev;
   for(const id of ["#rNext", "#rNext2"]) $(id).disabled = !j.next;
   $("#rSay").hidden = !(state.tts || HAS_LOCAL_VOICE);
@@ -986,6 +1021,83 @@ $("#thread").addEventListener("click", e => {
   rToken++;  // let the jump below win over openReader's own load
   (async () => { await loadBooks(rd.bible); showChapter(rd.book, rd.chapter, +r.dataset.v); })();
 });
+
+/* ---------------- study: Strong's (original words) and Nave's (topics) ---------------- */
+let studyStack = [];
+const BIBLE_ORDER = ["Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Solomon","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi"];
+async function studyGet(url){
+  try{ const r = await fetch(url); return await r.json(); }catch(e){ return {error: "Couldn't reach BibleChat. If you closed it, open the app again."}; }
+}
+function studyShow(view, push = true){
+  if(push) studyStack.push(view);
+  $("#study").hidden = false; document.body.classList.add("studying");
+  $("#studyBack").hidden = studyStack.length < 2;
+  $("#studyTitle").textContent = view.title;
+  $("#studyBody").innerHTML = view.html; $("#studyBody").scrollTop = 0;
+}
+function studyVerses(vs){
+  return vs.map(v => `<div class="sv"><a data-book="${esc(v.book)}" data-ch="${v.chapter}" data-v="${v.verse}">${esc(v.ref)}</a>${esc(v.text)}${v.kjv_word ? `<i>KJV: “${esc(v.kjv_word)}”</i>` : ""}</div>`).join("");
+}
+async function studyVerse(book, chapter, verse){
+  document.querySelectorAll("#rtext .v.study").forEach(n => n.classList.remove("study"));
+  const el = document.getElementById("v" + verse); if(el && rChap && rChap.book === book) el.classList.add("study");
+  studyStack = [];
+  const j = await studyGet(`/api/study/verse?bible=${encodeURIComponent(rd.bible)}&book=${encodeURIComponent(book)}&chapter=${chapter}&verse=${verse}`);
+  if(j.error) return studyShow({title: `${book} ${chapter}:${verse}`, html: `<p class="notice err">${esc(j.error)}</p>`});
+  const ot = BIBLE_ORDER.includes(book);
+  const words = j.words.length
+    ? `<h3>Original words (Strong's${ot ? ", Hebrew" : ", Greek"})</h3><div class="kjv">${j.words.map(w => typeof w === "string" ? esc(w)
+        : `<button class="w" data-n="${esc(w[1].split(" ")[0])}" title="${esc(w[1])}">${esc(w[0])}<sub>${esc(w[1].split(" ")[0])}</sub></button>`).join("")}</div>
+       <p class="muted">The King James wording, because Strong's numbers are attached to it. Click an underlined word.</p>`
+    : `<h3>Original words</h3><p class="muted">Strong's numbers aren't available for this verse.</p>`;
+  const topics = j.topics.length
+    ? `<h3>Topics (Nave's Topical Bible)</h3>` + j.topics.map(t => `<button class="tp" data-t="${t.id}"><b>${esc(t.title)}</b><span>${t.count} verse${t.count === 1 ? "" : "s"}</span></button>`).join("")
+    : `<h3>Topics</h3><p class="muted">Nave's doesn't list this verse under a topic.</p>`;
+  studyShow({title: `${book} ${chapter}:${verse}`, html: words + topics});
+}
+async function studyStrongs(n){
+  const j = await studyGet(`/api/study/strongs?bible=${encodeURIComponent(rd.bible || "")}&number=${encodeURIComponent(n)}`);
+  if(j.error) return studyShow({title: n, html: `<p class="notice err">No Strong's entry “${esc(n)}”. Hebrew numbers go from H1 to H8674, Greek from G1 to G5624.</p>`});
+  const he = j.language === "Hebrew";
+  studyShow({title: `Strong's ${j.number}`, html:
+    `<div class="orig${he ? " he" : ""}" lang="${he ? "he" : "el"}">${esc(j.word)}</div>
+     <div class="sub">${esc(j.language)} · ${esc(j.translit)} · say “${esc(j.pron)}”</div>
+     <h3>Meaning</h3><p>${snLinks(j.meaning)}</p>
+     ${j.kjv ? `<h3>How the KJV translates it</h3><p>${snLinks(j.kjv)}</p>` : ""}
+     <h3>Every verse with this word (${j.count})</h3>${studyVerses(j.verses)}${j.more ? `<p class="muted">…and ${j.more} more.</p>` : ""}`});
+}
+function snLinks(t){ return esc(t).replace(/\b([HG]\d{1,4})\b/g, '<a class="sn" data-n="$1">$1</a>'); }
+async function studyTopic(id){
+  const j = await studyGet(`/api/study/topic?bible=${encodeURIComponent(rd.bible || "")}&id=${id}`);
+  if(j.error) return studyShow({title: "Topic", html: `<p class="notice err">${esc(j.error)}</p>`});
+  studyShow({title: j.title.split(" — ")[0], html: `<h3>${esc(j.title)}</h3>${studyVerses(j.verses)}`});
+}
+async function studyFind(q){
+  q = q.trim(); if(!q) return;
+  if(/^\s*(strong'?s\s*)?[hg]\s*0*\d{1,4}\s*$/i.test(q)) return studyStrongs(q.replace(/strong'?s/i, "").replace(/\s/g, ""));
+  const j = await studyGet(`/api/study/topics?q=${encodeURIComponent(q)}`);
+  const list = (j.topics || []);
+  studyShow({title: "Topics", html: list.length
+    ? `<h3>Nave's topics for “${esc(q)}”</h3>` + list.map(t => `<button class="tp" data-t="${t.id}"><b>${esc(t.title)}</b><span>${t.count}</span></button>`).join("")
+    : `<p class="muted">No Nave's topic named “${esc(q)}”. Try one word, like “prayer”, “faith” or “angels”.</p>`});
+}
+$("#rtext").addEventListener("click", e => {
+  const v = e.target.closest(".v"); if(!v || !rChap) return;
+  if(getSelection && String(getSelection()).length > 2) return;  // selecting text, not clicking
+  studyVerse(rChap.book, rChap.chapter, +v.dataset.v);
+});
+$("#studyBody").addEventListener("click", e => {
+  const w = e.target.closest(".w, a.sn"); if(w) return studyStrongs(w.dataset.n);
+  const t = e.target.closest(".tp"); if(t) return studyTopic(+t.dataset.t);
+  const a = e.target.closest(".sv a");
+  if(a){ sayStop(); rToken++; const bk = a.dataset.book, ch = +a.dataset.ch, vn = +a.dataset.v;
+    (async () => { await loadBooks(rd.bible); await showChapter(bk, ch, vn); })(); }
+});
+$("#studyFind").onsubmit = e => { e.preventDefault(); studyFind($("#studyQ").value); };
+$("#studyBack").onclick = () => { if(studyStack.length > 1){ studyStack.pop(); studyShow(studyStack[studyStack.length - 1], false); } };
+function studyClose(){ $("#study").hidden = true; document.body.classList.remove("studying"); document.querySelectorAll("#rtext .v.study").forEach(n => n.classList.remove("study")); }
+$("#studyClose").onclick = studyClose;
+addEventListener("keydown", e => { if(e.key === "Escape" && !$("#study").hidden && $("#getDlg").hidden) studyClose(); });
 
 /* ---------------- theme, quit, heartbeat ---------------- */
 function applyTheme(t){ document.documentElement.dataset.theme = t; $("#theme").textContent = t === "dark" ? "☀ Light" : "☾ Dark"; }

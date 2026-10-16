@@ -18,6 +18,8 @@ You can type references: `Daniel 7:25`, `1 Cor 13:4-7`, `Psalm 23`, `Rev 22`.
 
 **Reading a whole chapter.** Press **📖 Read** at the top of the sidebar. Pick a Bible, click a book to show its chapters, and click a chapter. Use **‹ Prev / Next ›** (or the ← → keys) to turn chapters, **🔊 Listen** to have it read aloud (it carries on into the next chapter until you press Stop), **¶** to switch between one verse per line and flowing text, and **A− / A+** for text size. **💬 Ask** takes you back to Chat with that chapter filled in. In a chat answer, click a verse reference to open it in the reader. BibleChat remembers where you stopped.
 
+**Studying a verse (Strong's and Nave's).** In Read mode, click any verse. A panel shows the verse word by word with **Strong's numbers**. Click a word to see the original Hebrew or Greek word, how to say it, what it means, how the KJV translates it, and **every verse that uses it**. Underneath are the verse's **topics from Nave's Topical Bible**. Click a topic to see all of its verses. The box at the top looks up a number (`G25`, `H430`) or a topic (`prayer`). In Chat, typing a Strong's number such as `G26` lists the verses that use that word. The Strong's numbers belong to the King James wording, so the word-by-word view always shows the KJV; the verse lists use the Bible you are reading.
+
 The chat only talks about the Bibles you added. If nothing matches, it says so instead of guessing, and the AI is not asked.
 
 **Supported Bible files**
@@ -38,7 +40,7 @@ Project Gutenberg's well-known 1455 "Gutenberg Bible" is in Latin, so the Englis
 
 ## On a phone: BibleChat for the web
 
-**[beaugrand.github.io/BibleChat-voice](https://beaugrand.github.io/BibleChat-voice/)** opens BibleChat in any phone or computer browser. No sign-up, nothing to install. It has reading, search (same method as the app), the 44 free Bibles, read-aloud with the phone's own voice, links to any verse, and Love Donations. Bibles you open are kept on the phone, so it also works offline. **Share → Add to Home Screen** keeps it like an app.
+**[beaugrand.github.io/BibleChat-voice](https://beaugrand.github.io/BibleChat-voice/)** opens BibleChat in any phone or computer browser. No sign-up, nothing to install. It has reading, search (same method as the app), the 44 free Bibles, read-aloud with the phone's own voice, links to any verse, Strong's Hebrew/Greek words and Nave's topics (tap a verse, then **Study it**), and Love Donations. Bibles you open are kept on the phone, so it also works offline. **Share → Add to Home Screen** keeps it like an app.
 
 The AI explanations and voice questions need the computer app, because they run an AI model on your own machine.
 

@@ -15,7 +15,9 @@ following work by others. Each keeps its own license.
 
 | Data | Used for | License |
 |---|---|---|
-| **Nave's Topical Bible** (Orville J. Nave, 1896), from the CrossWire SWORD module "Nave" (text from [CCEL](https://ccel.org/ccel/n/nave/bible.xml)) | Topic results in chat, e.g. "fallen angels" | Public domain |
+| **Nave's Topical Bible** (Orville J. Nave, 1896), from the CrossWire SWORD module "Nave" (text from [CCEL](https://ccel.org/ccel/n/nave/bible.xml)) | Topic results in chat, e.g. "fallen angels", and the topics of a verse in Read mode | Public domain |
+| **Strong's Exhaustive Concordance** Hebrew and Greek dictionaries (James Strong, 1890), from the CrossWire SWORD modules "StrongsHebrew" and "StrongsGreek" | The original Hebrew/Greek word, its meaning and pronunciation | Public domain |
+| **King James Version with Strong's numbers**, from the CrossWire SWORD module "KJV" (engKJV2006eb) | Which Hebrew/Greek word stands behind each English word, and every verse that uses it | Public domain |
 
 ## Libraries packed into the downloadable app
 

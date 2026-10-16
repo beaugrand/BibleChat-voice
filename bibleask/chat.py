@@ -47,6 +47,11 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
     if not loaded:
         return None
 
+    # 0) a Strong's number such as "G25" or "H430": the word's meaning and every verse that uses it
+    st = _strongs_group(question, loaded, id_of)
+    if st:
+        return st
+
     # 1) a typed reference such as "Daniel 7:25" shows that passage in every selected Bible
     groups = []
     for bible, ix in loaded:
@@ -144,6 +149,37 @@ def _topic_group(question: str, bibles: list, id_of: dict) -> Optional[dict]:
             return {"bible": f"Topic: {h.title} · {bible.name}", "id": id_of.get(bible.name), "topic": True,
                     "verses": verses[:MAX_VERSES]}
     return None
+
+
+def _strongs_group(question: str, loaded: list, id_of: dict) -> Optional[Retrieval]:
+    import re
+    from .strongs import STRONGS, normalize
+    m = re.search(r"(?<![\w])([HhGg])0*(\d{1,4})(?![\w])", question)
+    if not m or not STRONGS.available():
+        return None
+    n = normalize(m[0])
+    if not n or len(tokenize(question.replace(m[0], " "))) > 3:   # "G25" yes; a long sentence that happens to contain "g7" no
+        return None
+    e = STRONGS.entry(n)
+    if not e:
+        return None
+    uses = STRONGS.verses_with(n)
+    bible, ix = next(((b, x) for b, x in loaded if x.lang == "en"), loaded[0])   # the numbers are on English words
+    verses = []
+    for (book, ch, vn), _w in uses[:MAX_PASSAGE]:
+        title = book if (book, ch, vn) in ix.by_ref else ix.books.resolve(book)
+        idx = ix.by_ref.get((title, ch, vn), []) if title else []
+        if idx:
+            verses.append(_vd(ix.verses[idx[0]]))
+        else:
+            verses.append({"ref": f"{book} {ch}:{vn}", "text": STRONGS.kjv_text(book, ch, vn), "book": book, "chapter": ch})
+    head = f"Strong's {n} · {e['word']} ({e['translit']}, {e['pron']}) · {bible.name}"
+    note = f"{e['language']} {e['word']}: {e['meaning']}" + (f". KJV: {e['kjv']}" if e["kjv"] else "") + \
+        f". Used in {e['count']} verses" + (f"; the first {MAX_PASSAGE} are shown." if e["count"] > MAX_PASSAGE else ".")
+    group = {"bible": head, "id": id_of.get(bible.name), "topic": True, "strongs": n, "verses": verses}
+    for_model = [(f"Strong's {n}", f"{e['word']} ({e['translit']}): {e['meaning']}. KJV renders it: {e['kjv']}")] + \
+        [(v["ref"], v["text"][:600]) for v in verses[:MAX_VERSES]]
+    return Retrieval("strongs", [group], for_model, note)
 
 
 def respond(question: str, previous_question: Optional[str], lib: Library, bible_ids: list[str],

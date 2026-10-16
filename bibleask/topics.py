@@ -78,6 +78,14 @@ class Topics:
                             if parsed:
                                 rows.append((topic, heading, parsed, toks, set(tokenize(topic.split("(")[0]))))
                 self._rows = rows
+                by_verse: dict = defaultdict(list)
+                for i, (_t, _h, refs, _toks, _tt) in enumerate(rows):
+                    for book, ch, v1, v2 in refs:
+                        for v in range(v1, v2 + 1):
+                            lst = by_verse[(book, ch, v)]
+                            if not lst or lst[-1] != i:
+                                lst.append(i)
+                self._by_verse = dict(by_verse)
                 df: dict[str, int] = defaultdict(int)
                 for *_, toks, _t in rows:
                     for w in toks:
@@ -114,6 +122,32 @@ class Topics:
             if len(out) >= k:
                 break
         return out
+
+    def for_verse(self, book: str, chapter: int, verse: int) -> list[dict]:
+        """The Nave's topic lines that list this verse (shortest lists first: they are the most specific)."""
+        rows = self._load()
+        ids = self._by_verse.get((book, chapter, verse), [])
+        out = [{"id": i, "title": TopicHit(rows[i][0], rows[i][1], rows[i][2], 0).title, "count": len(rows[i][2])}
+               for i in ids]
+        return sorted(out, key=lambda t: (t["count"], t["title"]))
+
+    def get(self, topic_id: int) -> Optional[TopicHit]:
+        rows = self._load()
+        if 0 <= topic_id < len(rows):
+            t, h, refs, _toks, _tt = rows[topic_id]
+            return TopicHit(t, h, refs, 0)
+        return None
+
+    def search_titles(self, words: str, k: int = 30) -> list[dict]:
+        """Topic lines whose name contains every word typed (for browsing Nave's by name)."""
+        rows = self._load()
+        q = set(tokenize(words))
+        if not q:
+            return []
+        out = [{"id": i, "title": TopicHit(r[0], r[1], r[2], 0).title, "count": len(r[2])}
+               for i, r in enumerate(rows) if q <= r[4] or q <= r[3]]
+        out.sort(key=lambda t: (not (q <= set(tokenize(t["title"].split(" — ")[0]))), t["title"]))
+        return out[:k]
 
 
 TOPICS = Topics()

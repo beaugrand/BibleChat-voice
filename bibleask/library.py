@@ -25,6 +25,7 @@ def _catalog_language(name: str) -> str:
 class Library:
     def __init__(self) -> None:
         self._cache: dict[str, tuple[Bible, Index]] = {}
+        self._lookup: dict[str, dict] = {}
         self._lock = threading.Lock()
 
     def ids(self) -> list[str]:
@@ -81,6 +82,19 @@ class Library:
         return {"bible": b.name, "book": book, "chapter": chapter, "verses": verses,
                 "prev": nav(i - 1), "next": nav(i + 1)}
 
+    def verse_text(self, bible_id: str, book: str, chapter: int, verse: int) -> Optional[str]:
+        """One verse of one Bible (None if that Bible doesn't have it)."""
+        b, _ = self.get(bible_id)
+        with self._lock:
+            look = self._lookup.get(bible_id)
+            if look is None:
+                look = {}
+                for v in b.verses:
+                    k = (v.book, v.chapter, v.verse)
+                    look[k] = look[k] + " " + v.text if k in look else v.text
+                self._lookup[bible_id] = look
+        return look.get((book, chapter, verse))
+
     def add_file(self, filename: str, data: bytes, progress: Progress = None) -> str:
         ext = os.path.splitext(filename)[1].lower() or ".txt"
         fd, tmp = tempfile.mkstemp(suffix=ext)
@@ -102,4 +116,5 @@ class Library:
     def remove(self, bible_id: str) -> None:
         with self._lock:
             self._cache.pop(bible_id, None)
+            self._lookup.pop(bible_id, None)
         storage.remove_bible(bible_id)

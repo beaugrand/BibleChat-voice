@@ -16,7 +16,7 @@ import webbrowser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Optional
 
-from . import catalog, chat, llm, storage, stt
+from . import catalog, chat, llm, storage, study, stt
 from .library import Library
 
 PORT = 8765
@@ -270,6 +270,22 @@ def make_handler(app: App, port: int):
                         self._json(app.lib.chapter(bid, (q.get("book") or [""])[0], int((q.get("chapter") or ["1"])[0])))
                 except Exception as e:
                     self._json({"error": str(e) or "That Bible isn't available."}, 404)
+            elif path in ("/api/study/verse", "/api/study/strongs", "/api/study/topic", "/api/study/topics"):
+                q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
+                g = lambda k, d="": (q.get(k) or [d])[0]
+                try:
+                    bid = g("bible")
+                    if path == "/api/study/verse":
+                        res = study.verse(app.lib, bid, g("book"), int(g("chapter", "1")), int(g("verse", "1")))
+                    elif path == "/api/study/strongs":
+                        res = study.strongs(app.lib, bid, g("number"))
+                    elif path == "/api/study/topic":
+                        res = study.topic(app.lib, bid, int(g("id", "-1")))
+                    else:
+                        res = {"topics": study.find_topics(g("q"))}
+                    self._json(res if res is not None else {"error": "Not found."}, 200 if res is not None else 404)
+                except Exception as e:
+                    self._json({"error": str(e) or "Something went wrong."}, 400)
             elif path == "/api/catalog":
                 have = {b["name"] for b in app.lib.summary()}
                 items = catalog.entries()

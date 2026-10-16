@@ -71,6 +71,18 @@ a{color:var(--accent)}
 #rtext .v.hit{background:rgba(47,93,138,.16)}
 #rtext .v.say{background:var(--hl)}
 .pager{display:flex;justify-content:space-between;gap:10px;padding:8px 0 26px}
+/* study sheet */
+#studyBody h3{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:14px 2px 6px;font-weight:650;font-family:system-ui,sans-serif}
+#studyBody .kjv{font-family:Georgia,serif;font-size:18px;line-height:2.1}
+#studyBody .w{border:0;background:none;padding:0 1px;font:inherit;color:inherit;border-bottom:2px dotted var(--accent);border-radius:3px}
+#studyBody .w sub{font-family:system-ui,sans-serif;font-size:.55em;color:var(--accent);margin-left:1px}
+#studyBody .tp{display:flex;justify-content:space-between;gap:8px;width:100%;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:10px;padding:9px 11px;margin:0 0 6px;font-size:14.5px;color:inherit}
+#studyBody .tp span{color:var(--muted);white-space:nowrap}
+#studyBody .orig{font-size:32px;margin:6px 2px 0}
+#studyBody .orig.he{direction:rtl;text-align:left}
+#studyBody p{font-size:15px;line-height:1.55;margin:4px 2px}
+#studyBody a.sn{color:var(--accent);font-weight:600}
+#studyBody .res i{font-family:system-ui,sans-serif;color:var(--muted);font-size:12.5px;font-style:normal;margin-left:4px}
 /* picker sheet */
 .sheet{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.35);display:flex;align-items:flex-end;justify-content:center}
 .sheet .card{background:var(--bg);width:min(760px,100%);max-height:86vh;border-radius:16px 16px 0 0;display:flex;flex-direction:column;box-shadow:var(--shadow);padding-bottom:env(safe-area-inset-bottom)}
@@ -183,9 +195,10 @@ a{color:var(--accent)}
 </main>
 
 <div class="sheet" id="shareSheet" hidden><div class="card">
-  <header><h2>Share this verse</h2><button class="iconbtn" id="shareClose" aria-label="Close">✕</button></header>
+  <header><h2>This verse</h2><button class="iconbtn" id="shareClose" aria-label="Close">✕</button></header>
   <div class="body">
     <div class="quote" id="shareQuote"></div>
+    <button class="btn" id="shareStudy" style="width:100%;margin:0 0 12px">📖 Study it: original Hebrew/Greek words and topics</button>
     <form id="shareForm" class="sendrow">
       <input class="find" id="shareTo" type="text" inputmode="email" autocomplete="email tel" placeholder="Phone number or email address">
       <button class="btn primary">Share</button>
@@ -193,6 +206,11 @@ a{color:var(--accent)}
     <p class="small" id="shareHint">Type a phone number to send it as a text, or an email address to send it as an email. Your Messages or Mail app opens with everything filled in; just press Send.</p>
     <div class="alt"><button class="btn" id="shareOther">↗ Other apps</button><button class="btn" id="shareCopy">⧉ Copy link</button></div>
   </div>
+</div></div>
+
+<div class="sheet" id="studySheet" hidden><div class="card">
+  <header><button class="iconbtn" id="studyBack" aria-label="Back" hidden>‹</button><h2 id="studyTitle">Study</h2><button class="iconbtn" id="studyClose" aria-label="Close">✕</button></header>
+  <div class="body" id="studyBody"></div>
 </div></div>
 
 <div class="sheet" id="welcome" hidden><div class="card welcomecard">
@@ -595,6 +613,78 @@ $("#shareOther").onclick = async () => {
 };
 $("#shareCopy").onclick = async () => { const u = verseLink(shareV); try{ await navigator.clipboard.writeText(u); toast("Link copied"); }catch(e){ prompt("Copy this link:", u); } };
 
+/* ---------- study one verse: Strong's (Hebrew/Greek words) and Nave's topics ---------- */
+const SD = "data/study/", sCache = {};
+async function sGet(path){
+  if(!(path in sCache)) sCache[path] = fetch(SD + path).then(r => { if(!r.ok) throw 0; return r.json(); }).catch(e => { delete sCache[path]; throw e; });
+  return sCache[path];
+}
+let sBooks = null, sTopics = null, sByVerse = null, sStack = [];
+async function sLoadTopics(){
+  if(sTopics) return;
+  const t = await sGet("topics.json"); sByVerse = new Map();
+  t.forEach(([title, refs], id) => { for(const [b, c, v1, v2] of refs) for(let v = v1; v <= v2; v++){ const k = b + ":" + c + ":" + v; const a = sByVerse.get(k); if(a){ if(a[a.length - 1] !== id) a.push(id); } else sByVerse.set(k, [id]); } });
+  sTopics = t;
+}
+function sShow(view, push = true){
+  if(push) sStack.push(view);
+  $("#studySheet").hidden = false; $("#studyBack").hidden = sStack.length < 2;
+  $("#studyTitle").textContent = view.title; $("#studyBody").innerHTML = view.html; $("#studyBody").scrollTop = 0;
+}
+function sText(book, ch, v){ const bk = bible.byName[book], vs = bk && bk.map.get(ch), x = vs && vs.find(e => e[0] === v); return x ? x[1] : ""; }
+function sVerses(list){ return list.map(([b, c, v, w]) => { const book = sBooks[b];
+  return `<div class="res"><a href="#" data-b="${esc(book)}" data-c="${c}" data-v="${v}">${esc(book)} ${c}:${v}</a>${esc(sText(book, c, v) || "(not in this Bible)")}${w ? `<i>KJV: “${esc(w)}”</i>` : ""}</div>`; }).join(""); }
+function sLinks(t){ return esc(t).replace(/\b([HG]\d{1,4})\b/g, '<a class="sn" href="#" data-n="$1">$1</a>'); }
+const sFail = () => sShow({title: "Study", html: `<p>Couldn't load the study data. Check the internet connection and try again.</p>`});
+async function studyVerse(book, ch, v){
+  sStack = [];
+  try{
+    sBooks = sBooks || await sGet("books.json");
+    const bi = sBooks.indexOf(book);
+    const [kjv] = await Promise.all([bi >= 0 ? sGet("kjv/" + bi + ".json") : {}, sLoadTopics()]);
+    const words = kjv[ch + ":" + v] || [];
+    const topics = (sByVerse.get(bi + ":" + ch + ":" + v) || []).map(id => [id, sTopics[id][0], sTopics[id][1].reduce((n, r) => n + r[3] - r[2] + 1, 0)]).sort((a, b) => a[2] - b[2]);
+    const ot = bi >= 0 && bi < 39;
+    sShow({title: `${book} ${ch}:${v}`, html:
+      (words.length ? `<h3>Original words (Strong's, ${ot ? "Hebrew" : "Greek"})</h3><div class="kjv">${words.map(w => typeof w === "string" ? esc(w)
+          : `<button class="w" data-n="${esc(w[1].split(" ")[0])}">${esc(w[0])}<sub>${esc(w[1].split(" ")[0])}</sub></button>`).join("")}</div>
+          <p class="small">King James wording, because Strong's numbers are attached to it. Tap an underlined word.</p>`
+        : `<h3>Original words</h3><p class="small">Strong's numbers aren't available for this verse.</p>`) +
+      (topics.length ? `<h3>Topics (Nave's Topical Bible)</h3>` + topics.slice(0, 40).map(([id, t, n]) => `<button class="tp" data-t="${id}"><b>${esc(t)}</b><span>${n}</span></button>`).join("")
+        : `<h3>Topics</h3><p class="small">Nave's doesn't list this verse under a topic.</p>`)});
+  }catch(e){ sFail(); }
+}
+async function studyStrongs(n){
+  const m = /^([HG])0*(\d{1,4})$/i.exec(n.trim()); if(!m) return;
+  const L = m[1].toUpperCase(), num = +m[2], key = L + num;
+  try{
+    sBooks = sBooks || await sGet("books.json");
+    const [d, w] = await Promise.all([sGet("dict/" + L + Math.floor(num / 500) + ".json"), sGet("where/" + L + Math.floor(num / 100) + ".json")]);
+    const e = d[key]; if(!e) return sShow({title: key, html: `<p>No Strong's entry ${esc(key)}.</p>`});
+    const uses = w[key] || [], he = L === "H";
+    sShow({title: "Strong's " + key, html:
+      `<div class="orig${he ? " he" : ""}" lang="${he ? "he" : "el"}">${esc(e.w)}</div>
+       <p class="muted">${he ? "Hebrew" : "Greek"} · ${esc(e.t)} · say “${esc(e.p)}”</p>
+       <h3>Meaning</h3><p>${sLinks(e.d)}</p>${e.k ? `<h3>How the KJV translates it</h3><p>${sLinks(e.k)}</p>` : ""}
+       <h3>Every verse with this word (${uses.length})</h3>${sVerses(uses.slice(0, 300))}${uses.length > 300 ? `<p class="small">…and ${uses.length - 300} more.</p>` : ""}`});
+  }catch(err){ sFail(); }
+}
+function studyTopic(id){
+  const [title, refs] = sTopics[id], list = [];
+  for(const [b, c, v1, v2] of refs) for(let v = v1; v <= v2; v++) list.push([b, c, v]);
+  sShow({title: title.split(" — ")[0], html: `<h3>${esc(title)}</h3>${sVerses(list)}`});
+}
+function studyClose(){ $("#studySheet").hidden = true; }
+$("#shareStudy").onclick = () => { const v = shareV; closeShare(); studyVerse(place.book, place.ch, v); };
+$("#studyClose").onclick = studyClose;
+$("#studySheet").addEventListener("click", e => { if(e.target.id === "studySheet") studyClose(); });
+$("#studyBack").onclick = () => { if(sStack.length > 1){ sStack.pop(); sShow(sStack[sStack.length - 1], false); } };
+$("#studyBody").addEventListener("click", e => {
+  const w = e.target.closest(".w, a.sn"); if(w){ e.preventDefault(); return studyStrongs(w.dataset.n); }
+  const t = e.target.closest(".tp"); if(t) return studyTopic(+t.dataset.t);
+  const a = e.target.closest(".res a"); if(a){ e.preventDefault(); studyClose(); go(a.dataset.b, +a.dataset.c, +a.dataset.v); }
+});
+
 /* someone opened a shared verse: say hello and offer the app */
 function showWelcome(v){
   $("#welcomeQuote").innerHTML = esc(verseText(v)) + `<b>${esc(place.book)} ${place.ch}:${v} · ${esc(bibleAbbr())}</b>`;
@@ -626,7 +716,7 @@ function parseHash(){
   try{ await useBible(place.bible, true); }catch(e){ $("#rtext").innerHTML = `<div class="notice err">${esc(e.message)}</div>`; return; }
   render(h && h.v);
   if(h && h.shared && h.v && verseText(h.v)) showWelcome(h.v);
-  else if(!store.get("tip", false)){ store.set("tip", true); setTimeout(() => toast("Tip: tap any verse to share it"), 1200); }
+  else if(!store.get("tip", false)){ store.set("tip", true); setTimeout(() => toast("Tip: tap any verse to share or study it"), 1200); }
   addEventListener("hashchange", () => { const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]) go(x.book, x.ch, x.v); });
 })();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
