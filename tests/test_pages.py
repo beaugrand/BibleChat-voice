@@ -55,6 +55,7 @@ class LanguagesTest(unittest.TestCase):
         for part in ('id="langBtn"', 'src="i18n.js"', "function setLang", "const bName"):
             self.assertIn(part, s)
         self.assertIn("i18n.js", read(os.path.join(ROOT, "web", "sw.js")))
+        self.assertIn("web/i18n.js", read(os.path.join(ROOT, ".github", "workflows", "pages.yml")))  # the phone build must publish it
 
     def test_book_names_table(self):
         import json
