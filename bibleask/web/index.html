@@ -199,6 +199,19 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 #studyBody .scof p{font-size:14.5px;line-height:1.6;margin:0 0 8px}
 #studyBody .scof b{color:var(--accent)}
 #studyBody a.nref,#studyBody a.sv-go{color:var(--accent);cursor:pointer;text-decoration:underline dotted}
+#studyBody .hebtap{cursor:pointer}
+#rtext .v.bm > sup:first-child::after{content:"🔖";font-size:.85em;margin-left:1px}
+#studyBody .bmdel{border:0;background:none;color:var(--muted);cursor:pointer;float:right}
+#studyBody a.bmgo{color:var(--accent);font-weight:650;cursor:pointer;margin-right:6px}
+.votd{margin:22px auto 0;max-width:560px;text-align:left;background:linear-gradient(135deg,rgba(47,93,138,.10),rgba(199,154,75,.16));border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.votd .lab{font:600 12px system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.votd .vt{font-family:Georgia,serif;font-size:18px;line-height:1.55;margin:6px 0}
+.votd .rf{font-size:13.5px;font-weight:600;color:var(--accent)}
+.votd .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.votd .row .btn{font-size:13.5px;padding:6px 10px}
+#studyBody .heb .hl{display:flex;gap:12px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.45}
+#studyBody .heb .hc{font-size:34px;min-width:44px;text-align:center;font-family:"SBL Hebrew","Ezra SIL","Times New Roman",serif;color:var(--accent)}
+#studyBody .small{font-size:12.5px}
 #studyBody .xbook{width:100%;padding:6px 8px;border:1px solid var(--line);border-radius:9px;background:var(--card);font-size:14px;margin:0 0 6px}
 /* free Bibles catalog */
 #getDlg{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.35);display:grid;place-items:center;padding:16px}
@@ -316,6 +329,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
       <button class="btn" id="rPrev" title="Previous chapter (←)">‹ Prev</button>
       <button class="btn" id="rNext" title="Next chapter (→)">Next ›</button>
       <button class="btn" id="rSay" hidden>🔊 Listen</button>
+      <button class="btn" id="rBm" title="Your bookmarks">🔖</button>
       <button class="btn" id="rAsk" title="Ask about this chapter in Chat">💬 Ask</button>
       <button class="btn" id="rLines" title="One verse per line, or flowing text">¶</button>
       <button class="btn" id="rSmall" title="Smaller text">A−</button>
@@ -438,9 +452,10 @@ function welcomeHtml(){
   const ex = ["Daniel 7:25", "Where does it say there will be a falling away?", "What does it say about the last days?", "John 3:16"];
   return `<div class="welcome"><h1>${has ? "What would you like to find?" : "Add a Bible to begin"}</h1>
     <p>${has ? "Ask a question or type a reference. I answer only from your Bibles." : "Use <b>Add Bible</b> on the left, or drop a Bible file here (PDF, XML, TXT, SPB, TSV, MyBible or MySword). Or use <b>Get free Bibles</b> to download one. Try the Ethiopian Orthodox Bible, a King James text from Project Gutenberg, or any Zefania/OSIS XML Bible."}</p>
-    ${has ? `<div class="chips">${ex.map(e => `<button class="chip">${esc(e)}</button>`).join("")}</div>` : `<button class="btn primary" id="wAdd">Add a Bible</button>`}</div>`;
+    ${has ? `<div class="chips">${ex.map(e => `<button class="chip">${esc(e)}</button>`).join("")}</div><div id="votd"></div>` : `<button class="btn primary" id="wAdd">Add a Bible</button>`}</div>`;
 }
 function bindWelcome(){
+  fillVotd();
   document.querySelectorAll(".chip").forEach(b => b.onclick = () => { $("#q").value = b.textContent; send(); });
   const a = $("#wAdd"); if(a) a.onclick = () => $("#file").click();
 }
@@ -912,6 +927,7 @@ async function showChapter(book, chapter, hitVerse){
   if(my !== rToken) return;
   const letters = {n: 0};
   t.innerHTML = j.verses.map(v => `<span class="v" id="v${v.verse}" data-v="${v.verse}" title="Click to study this verse: Hebrew/Greek words, cross-references, topics, Matthew Henry"><sup>${v.verse}</sup>${markVerse(v.text, (j.scofield || {})[v.verse], letters, v.verse)} </span>`).join("");
+  bmMark();
   for(const id of ["#rPrev", "#rPrev2"]) $(id).disabled = !j.prev;
   for(const id of ["#rNext", "#rNext2"]) $(id).disabled = !j.next;
   $("#rSay").hidden = !(state.tts || HAS_LOCAL_VOICE);
@@ -1104,6 +1120,51 @@ $("#thread").addEventListener("click", e => {
   (async () => { await loadBooks(rd.bible); showChapter(rd.book, rd.chapter, +r.dataset.v); })();
 });
 
+/* Hebrew letters: name, sound, number, and the ancient picture each letter grew out of.
+   The picture meanings follow the ancient (paleo-) Hebrew letter pictures as taught by Jeff A. Benner,
+   Ancient Hebrew Research Center; scholars debate how much the pictures shaped word meanings. */
+const HEB_LETTERS = {
+  "א": ["Aleph", "silent / a", 1, "ox head", "strength, leader, first"],
+  "ב": ["Bet", "b / v", 2, "tent (floor plan)", "house, family, in"],
+  "ג": ["Gimel", "g", 3, "foot", "walk, gather, carry"],
+  "ד": ["Dalet", "d", 4, "tent door", "door, path, move"],
+  "ה": ["Hey", "h", 5, "man with arms raised", "behold, look, reveal, breath"],
+  "ו": ["Vav", "v / w", 6, "tent peg (nail)", "nail, secure, add, and"],
+  "ז": ["Zayin", "z", 7, "mattock / weapon", "cut, weapon, harvest"],
+  "ח": ["Chet", "ch", 8, "tent wall", "wall, outside, separate, protect"],
+  "ט": ["Tet", "t", 9, "basket", "surround, contain, mud"],
+  "י": ["Yod", "y", 10, "arm and closed hand", "hand, work, deed, make"],
+  "כ": ["Kaf", "k / kh", 20, "open palm", "palm, open, bend, allow"],
+  "ל": ["Lamed", "l", 30, "shepherd's staff", "teach, lead, toward, authority"],
+  "מ": ["Mem", "m", 40, "water", "water, chaos, mighty, blood"],
+  "נ": ["Nun", "n", 50, "sprouting seed", "seed, offspring, life, continue"],
+  "ס": ["Samekh", "s", 60, "thorn", "grab, support, protect"],
+  "ע": ["Ayin", "silent", 70, "eye", "see, watch, know"],
+  "פ": ["Pey", "p / f", 80, "mouth", "mouth, speak, word, open"],
+  "צ": ["Tsade", "ts", 90, "man on his side", "hunt, desire, need"],
+  "ק": ["Qof", "q", 100, "sun at the horizon", "behind, last, gather, time"],
+  "ר": ["Resh", "r", 200, "head of a man", "head, first, top, person"],
+  "ש": ["Shin", "sh / s", 300, "two front teeth", "teeth, sharp, press, consume"],
+  "ת": ["Tav", "t", 400, "crossed sticks (a mark)", "mark, sign, covenant"]
+};
+const HEB_FINAL = {"ך": "כ", "ם": "מ", "ן": "נ", "ף": "פ", "ץ": "צ"};
+function hebLetters(word){
+  const out = [];
+  for(const ch of (word || "").normalize("NFD").replace(/[֑-ׇ]/g, "")){   // drop vowel points and accents
+    const base = HEB_FINAL[ch] || ch, L = HEB_LETTERS[base];
+    if(L) out.push({ch, final: base !== ch, name: L[0], sound: L[1], value: L[2], picture: L[3], meaning: L[4]});
+  }
+  return out;
+}
+function hebLettersHtml(word){
+  const ls = hebLetters(word); if(!ls.length) return "";
+  const total = ls.reduce((n, l) => n + l.value, 0);
+  return `<h3>Letter by letter (read right to left)</h3><div class="heb">` + ls.map(l =>
+      `<div class="hl"><span class="hc" lang="he">${l.ch}</span><div><b>${l.name}${l.final ? " (final form)" : ""}</b> · “${l.sound}” · ${l.value}<br>picture: <i>${l.picture}</i> — ${l.meaning}</div></div>`).join("") +
+    `</div><p><b>The pictures together:</b> ${ls.map(l => l.meaning.split(",")[0]).join(" · ")}</p>` +
+    `<p class="muted small">Number value of the word: ${total}. Picture meanings follow the ancient Hebrew letter pictures (as taught by Jeff A. Benner, Ancient Hebrew Research Center); scholars debate how far the pictures shaped what words mean.</p>`;
+}
+
 /* ---------------- study: Strong's (original words) and Nave's (topics) ---------------- */
 let studyStack = [];
 const BIBLE_ORDER = ["Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Solomon","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi"];
@@ -1144,7 +1205,8 @@ async function studyVerse(book, chapter, verse){
   const henry = `<h3>Matthew Henry's Commentary</h3>` + (h
       ? (h.from_verse !== verse ? `<p class="muted">On the passage from verse ${h.from_verse}:</p>` : "") + `<div class="scof">${noteHtml(h.text)}</div>`
       : `<p class="muted">No comment on this verse.</p>`);
-  studyShow({title: `${book} ${chapter}:${verse}`, html: words + xrefs + topics + henry, xr});
+  const bmBtn = `<button class="tp bmtoggle" data-book="${esc(book)}" data-ch="${chapter}" data-v="${verse}"><b>${bmHas(book, chapter, verse) ? "🔖 Bookmarked ✓ (click to remove)" : "🔖 Bookmark this verse"}</b><span></span></button>`;
+  studyShow({title: `${book} ${chapter}:${verse}`, html: bmBtn + words + xrefs + topics + henry, xr});
 }
 const ALL_BOOKS = BIBLE_ORDER.concat(["Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation"]);
 const REF_IN_NOTE = new RegExp("\\b(" + ALL_BOOKS.map(b => b.replace(/ /g, "\\s")).sort((a, b) => b.length - a.length).join("|") + ")\\s(\\d+):(\\d+)", "g");
@@ -1161,7 +1223,8 @@ async function studyStrongs(n){
   if(j.error) return studyShow({title: n, html: `<p class="notice err">No Strong's entry “${esc(n)}”. Hebrew numbers go from H1 to H8674, Greek from G1 to G5624.</p>`});
   const he = j.language === "Hebrew";
   studyShow({title: `Strong's ${j.number}`, html:
-    `<div class="orig${he ? " he" : ""}" lang="${he ? "he" : "el"}">${esc(j.word)}</div>
+    `<div class="orig${he ? " he hebtap" : ""}" lang="${he ? "he" : "el"}" ${he ? 'title="Click: letter by letter"' : ""}>${esc(j.word)}</div>
+     ${he ? `<button class="tp hebbtn"><b>א Letter by letter: names, pictures, meanings</b><span>›</span></button><div class="hebbox" hidden>${hebLettersHtml(j.word)}</div>` : ""}
      <div class="sub">${esc(j.language)} · ${esc(j.translit)} · say “${esc(j.pron)}”</div>
      <h3>Meaning</h3><p>${snLinks(j.meaning)}</p>
      ${j.kjv ? `<h3>How the KJV translates it</h3><p>${snLinks(j.kjv)}</p>` : ""}
@@ -1194,6 +1257,15 @@ $("#studyBody").addEventListener("change", e => {
   const cur = studyStack[studyStack.length - 1]; if(cur && cur.xr) $("#studyBody .xlist").innerHTML = xrefList(cur.xr, e.target.value, false);
 });
 $("#studyBody").addEventListener("click", e => {
+  const bt = e.target.closest(".bmtoggle");
+  if(bt){ const t = (document.getElementById("v" + bt.dataset.v) || {}).innerText || "";
+    bmToggle(bt.dataset.book, +bt.dataset.ch, +bt.dataset.v, t.replace(/^\d+\s*/, "").trim()).then(on => { bt.querySelector("b").textContent = on ? "🔖 Bookmarked ✓ (click to remove)" : "🔖 Bookmark this verse"; }); return; }
+  const bd = e.target.closest(".bmdel"); if(bd){ const b = bookmarks[+bd.dataset.i]; rd.bible = b.bible;
+    fetch("/api/bookmarks", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({op: "remove", item: b})}).then(() => bmShowList()).then(bmMark); return; }
+  const bg = e.target.closest(".bmgo"); if(bg){ const b = bookmarks[+bg.dataset.i];
+    if(state.bibles.some(x => x.id === b.bible)){ rd = {bible: b.bible, book: b.book, chapter: b.chapter}; $("#rBible").value = b.bible; }
+    sayStop(); rToken++; (async () => { await loadBooks(rd.bible); await showChapter(b.book, b.chapter, b.verse); })(); return; }
+  if(e.target.closest(".hebtap, .hebbtn")){ const b = $("#studyBody .hebbox"); if(b){ b.hidden = !b.hidden; if(!b.hidden) b.scrollIntoView({block: "nearest"}); } return; }
   if(e.target.closest(".xmore")){ const cur = studyStack[studyStack.length - 1], sel = $("#studyBody .xbook");
     $("#studyBody .xlist").innerHTML = xrefList(cur.xr, sel ? sel.value : "", true); return; }
   const w = e.target.closest(".w, a.sn"); if(w) return studyStrongs(w.dataset.n);
@@ -1208,6 +1280,90 @@ $("#studyBack").onclick = () => { if(studyStack.length > 1){ studyStack.pop(); s
 function studyClose(){ $("#study").hidden = true; document.body.classList.remove("studying"); document.querySelectorAll("#rtext .v.study").forEach(n => n.classList.remove("study")); }
 $("#studyClose").onclick = studyClose;
 addEventListener("keydown", e => { if(e.key === "Escape" && !$("#study").hidden && $("#getDlg").hidden) studyClose(); });
+
+/* Verse of the day: one well-known verse per day, the same for everyone on that date */
+const VOTD = ["John 3:16","Psalms 23:1","Philippians 4:13","Jeremiah 29:11","Romans 8:28","Isaiah 40:31","Proverbs 3:5","Joshua 1:9","Matthew 11:28","Psalms 46:1",
+"Romans 12:2","2 Timothy 1:7","Isaiah 41:10","Psalms 119:105","Matthew 6:33","Hebrews 11:1","Galatians 2:20","Ephesians 2:8","1 Corinthians 13:4","Psalms 37:4",
+"John 14:6","Romans 5:8","Psalms 27:1","Lamentations 3:22","Micah 6:8","John 1:1","Psalms 121:1","Matthew 5:14","2 Corinthians 5:17","Psalms 91:1",
+"Proverbs 18:10","Isaiah 53:5","John 10:10","Romans 10:9","Philippians 4:6","1 Peter 5:7","Psalms 139:14","Hebrews 13:8","James 1:5","Matthew 28:20",
+"Psalms 34:8","Isaiah 26:3","John 15:5","Romans 15:13","Colossians 3:23","1 John 4:19","Psalms 51:10","Deuteronomy 31:6","Nahum 1:7","Zephaniah 3:17",
+"John 16:33","Psalms 16:11","Galatians 5:22","Ephesians 6:10","2 Corinthians 12:9","Psalms 103:2","Matthew 7:7","James 4:8","Revelation 21:4","1 Thessalonians 5:16",
+"Psalms 118:24","Isaiah 9:6","John 11:25","Romans 6:23","Hebrews 4:12","Psalms 19:14","Proverbs 16:3","Matthew 5:9","Luke 1:37","Psalms 55:22",
+"Isaiah 43:2","John 13:34","Romans 8:38","Philippians 1:6","1 John 1:9","Psalms 62:1","Exodus 14:14","Matthew 22:37","Psalms 100:4","2 Chronicles 7:14",
+"Daniel 2:22","Daniel 12:3","Revelation 3:20","Revelation 22:13","Psalms 145:18","Isaiah 55:8","John 8:12","Acts 1:8","Ephesians 3:20","Colossians 3:2",
+"Hebrews 12:1","1 Corinthians 10:13","Psalms 4:8","Proverbs 4:23","Matthew 6:34","Luke 6:31","Psalms 30:5","Isaiah 12:2","Romans 1:16","1 Peter 2:9"];
+function votdRef(date){
+  const d = date || new Date(), day = Math.floor((Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) - Date.UTC(2026, 0, 1)) / 864e5);
+  const r = VOTD[((day % VOTD.length) + VOTD.length) % VOTD.length], m = r.match(/^(.+) (\d+):(\d+)$/);
+  return {ref: r, book: m[1], ch: +m[2], v: +m[3]};
+}
+/* a lock-screen / wallpaper picture of a verse (phone screen size) */
+function verseImage(text, ref, bibleName){
+  const W = 1170, H = 2532, c = document.createElement("canvas"); c.width = W; c.height = H;
+  const g = c.getContext("2d"), grad = g.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, "#1b2b44"); grad.addColorStop(0.6, "#2f4a6b"); grad.addColorStop(1, "#c79a4b");
+  g.fillStyle = grad; g.fillRect(0, 0, W, H);
+  g.fillStyle = "rgba(255,255,255,.95)"; g.textAlign = "center";
+  let size = 74; const maxW = W - 220, words = text.split(/\s+/);
+  let lines;
+  for(;;){   // shrink until the verse fits in the middle of the screen
+    g.font = `500 ${size}px Georgia, "Times New Roman", serif`; lines = []; let cur = "";
+    for(const w of words){ const t = cur ? cur + " " + w : w; if(g.measureText(t).width > maxW && cur){ lines.push(cur); cur = w; } else cur = t; }
+    if(cur) lines.push(cur);
+    if(lines.length * size * 1.4 < 1150 || size < 40) break; size -= 4;
+  }
+  const top = 1250 - lines.length * size * 1.4 / 2;
+  lines.forEach((l, i) => g.fillText((i === 0 ? "“" : "") + l + (i === lines.length - 1 ? "”" : ""), W / 2, top + i * size * 1.4));
+  g.font = `600 52px system-ui, sans-serif`; g.fillStyle = "#f3c77a";
+  g.fillText(ref, W / 2, top + lines.length * size * 1.4 + 70);
+  g.font = `400 34px system-ui, sans-serif`; g.fillStyle = "rgba(255,255,255,.7)";
+  g.fillText(bibleName || "", W / 2, top + lines.length * size * 1.4 + 125);
+  g.font = `600 36px system-ui, sans-serif`; g.fillStyle = "rgba(255,255,255,.75)";
+  g.fillText("BibleChat · beaugrand.github.io/BibleChat-voice", W / 2, H - 150);
+  return c;
+}
+async function saveVerseImage(text, ref, bibleName){
+  const c = verseImage(text, ref, bibleName);
+  const blob = await new Promise(r => c.toBlob(r, "image/png"));
+  const name = "BibleChat " + ref.replace(/[: ]/g, "-") + ".png";
+  try{
+    const f = new File([blob], name, {type: "image/png"});
+    if(navigator.canShare && navigator.canShare({files: [f]})){ await navigator.share({files: [f], title: ref}); return; }
+  }catch(e){ if(e && e.name === "AbortError") return; }
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove();
+}
+
+/* verse of the day on the welcome screen */
+async function fillVotd(){
+  const box = $("#votd"); if(!box || !state.bibles.length) return;
+  const r = votdRef(), b = state.bibles.find(x => x.language && x.language.startsWith("English")) || state.bibles[0];
+  let j; try{ j = await (await fetch(`/api/chapter?bible=${encodeURIComponent(b.id)}&book=${encodeURIComponent(r.book)}&chapter=${r.ch}`)).json(); }catch(e){ return; }
+  const x = (j.verses || []).find(v => v.verse === r.v); if(!x || !$("#votd")) return;
+  $("#votd").innerHTML = `<div class="votd"><div class="lab">☀ Verse of the day</div><div class="vt">${esc(x.text)}</div><div class="rf">${esc(r.ref)} · ${esc(b.name)}</div>
+    <div class="row"><button class="btn" id="votdRead">📖 Read the chapter</button><button class="btn" id="votdImg">🖼 Lock-screen picture</button><button class="btn" id="votdAsk">💬 Ask about it</button></div></div>`;
+  $("#votdRead").onclick = () => { rd = {bible: b.id, book: r.book, chapter: r.ch}; rChap = null; setMode("read"); rToken++; (async () => { await loadBooks(b.id); showChapter(r.book, r.ch, r.v); })(); };
+  $("#votdImg").onclick = () => saveVerseImage(x.text, r.ref, b.name);
+  $("#votdAsk").onclick = () => { $("#q").value = `Explain ${r.ref}`; send(); };
+}
+
+/* bookmarks: kept by the app on this computer */
+let bookmarks = [];
+async function bmLoad(){ try{ bookmarks = (await (await fetch("/api/bookmarks")).json()).items || []; }catch(e){} }
+function bmHas(book, ch, v){ return bookmarks.some(b => b.bible === rd.bible && b.book === book && b.chapter === ch && b.verse === v); }
+async function bmToggle(book, ch, v, text){
+  const op = bmHas(book, ch, v) ? "remove" : "add", bn = (state.bibles.find(x => x.id === rd.bible) || {}).name || "";
+  try{ bookmarks = (await (await fetch("/api/bookmarks", {method: "POST", headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({op, item: {bible: rd.bible, bible_name: bn, book, chapter: ch, verse: v, text}})})).json()).items; }catch(e){}
+  bmMark(); return op === "add";
+}
+function bmMark(){ if(!rChap) return; document.querySelectorAll("#rtext .v").forEach(el => el.classList.toggle("bm", bmHas(rChap.book, rChap.chapter, +el.dataset.v))); }
+async function bmShowList(){
+  await bmLoad(); studyStack = [];
+  studyShow({title: "🔖 Bookmarks", html: bookmarks.length
+    ? bookmarks.map((b, i) => `<div class="sv"><a class="bmgo" data-i="${i}">${esc(b.book)} ${b.chapter}:${b.verse}</a>${esc(b.text || "")} <i>${esc(b.bible_name || "")}</i> <button class="bmdel" data-i="${i}" title="Remove">✕</button></div>`).join("")
+    : `<p class="muted">No bookmarks yet. Click a verse, then 🔖 Bookmark this verse.</p>`});
+}
+$("#rBm").onclick = bmShowList;
 
 /* ---------------- theme, quit, heartbeat ---------------- */
 function applyTheme(t){ document.documentElement.dataset.theme = t; $("#theme").textContent = t === "dark" ? "☀ Light" : "☾ Dark"; }
@@ -1225,6 +1381,7 @@ document.addEventListener("visibilitychange", () => { if(!document.hidden) ping(
 /* ---------------- start ---------------- */
 (async () => {
   await refresh();
+  bmLoad();
   if(!chats.length || !chats.some(c => c.id === activeId)){ if(chats.length) activeId = chats[0].id; else newChat(); }
   renderChats(); renderThread();
   applyReadLook();

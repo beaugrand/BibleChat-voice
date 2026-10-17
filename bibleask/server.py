@@ -275,6 +275,8 @@ def make_handler(app: App, port: int):
                         self._json(res)
                 except Exception as e:
                     self._json({"error": str(e) or "That Bible isn't available."}, 404)
+            elif path == "/api/bookmarks":
+                self._json({"items": storage.load_settings().get("bookmarks", [])})
             elif path == "/api/easton/names":
                 self._json({"names": study.EASTON.names()})
             elif path == "/api/easton":
@@ -337,6 +339,17 @@ def make_handler(app: App, port: int):
                         return
                     app.load_model(repo)
                     self._json({"ok": True})
+                elif path == "/api/bookmarks":
+                    req = json.loads(self._body() or b"{}")
+                    it = req.get("item") or {}
+                    key = lambda x: (x.get("bible"), x.get("book"), x.get("chapter"), x.get("verse"))
+                    st = storage.load_settings()
+                    items = [x for x in st.get("bookmarks", []) if key(x) != key(it)]
+                    if req.get("op") == "add":
+                        items.insert(0, {k: it.get(k) for k in ("bible", "bible_name", "book", "chapter", "verse", "text")} | {"at": time.time()})
+                    st["bookmarks"] = items[:1000]
+                    storage.save_settings(st)
+                    self._json({"items": st["bookmarks"]})
                 elif path == "/api/catalog/get":
                     req = json.loads(self._body() or b"{}")
                     file = req.get("file") or ""

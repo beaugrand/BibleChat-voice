@@ -82,6 +82,21 @@ a{color:var(--accent)}
 #studyBody .orig.he{direction:rtl;text-align:left}
 #studyBody p{font-size:15px;line-height:1.55;margin:4px 2px}
 #studyBody a.sn{color:var(--accent);font-weight:600}
+#studyBody .heb .hl{display:flex;gap:12px;align-items:center;padding:8px 2px;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.45;font-family:system-ui,sans-serif}
+#studyBody .heb .hc{font-size:36px;min-width:46px;text-align:center;font-family:"Times New Roman",serif;color:var(--accent)}
+#studyBody .muted{color:var(--muted)}
+#votd{background:linear-gradient(135deg,rgba(47,93,138,.10),rgba(199,154,75,.16));border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:10px 0 4px}
+#votd .lab{font:600 12px system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);display:flex;justify-content:space-between}
+#votd .lab button{border:0;background:none;color:var(--muted);font-size:16px;padding:0 2px}
+#votd .vt{font-family:Georgia,serif;font-size:calc(17px * var(--rs));line-height:1.55;margin:6px 0}
+#votd .rf{font:600 13.5px system-ui,sans-serif;color:var(--accent)}
+#votd .alt{margin-top:8px}
+.aibtns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.aibtns .btn{padding:11px}
+.bmrow{display:flex;gap:8px;align-items:flex-start}
+.bmrow .res{flex:1}
+.bmrow button{border:0;background:none;color:var(--muted);font-size:18px;padding:10px 4px}
+#rtext .v.bm > sup:first-child::after{content:"🔖";font-size:.85em;margin-left:1px}
 #rtext mark.sc{background:rgba(255,214,90,.55);color:inherit;border-radius:3px;padding:0 1px}
 [data-theme="dark"] #rtext mark.sc{background:rgba(214,170,40,.38)}
 #rtext sup.scm{color:#b07a00;font-style:italic;font-weight:700;margin:0 1px;font-size:.6em}
@@ -166,7 +181,10 @@ a{color:var(--accent)}
         <button class="btn" id="lines" title="One verse per line or flowing text">¶</button>
         <button class="btn" id="small" aria-label="Smaller text">A−</button>
         <button class="btn" id="big" aria-label="Larger text">A+</button>
+        <button class="btn" id="bmOpen" title="Your bookmarks">🔖</button>
+        <button class="btn" id="votdOpen" title="Verse of the day">☀</button>
       </div>
+      <div id="votd" hidden></div>
       <div id="rtext"><div class="notice">Loading…</div></div>
       <div class="pager"><button class="btn" id="prev2">‹ Previous</button><button class="btn" id="next2">Next ›</button></div>
     </div>
@@ -205,13 +223,32 @@ a{color:var(--accent)}
   <header><h2>This verse</h2><button class="iconbtn" id="shareClose" aria-label="Close">✕</button></header>
   <div class="body">
     <div class="quote" id="shareQuote"></div>
-    <button class="btn" id="shareStudy" style="width:100%;margin:0 0 12px">📖 Study it: Hebrew/Greek, cross-references, topics, Matthew Henry</button>
+    <button class="btn" id="shareStudy" style="width:100%;margin:0 0 8px">📖 Study it: Hebrew/Greek, cross-references, topics, Matthew Henry</button>
+    <div class="alt" style="margin:0 0 12px"><button class="btn" id="shareBm">🔖 Bookmark</button><button class="btn" id="shareAI">✨ Ask AI</button><button class="btn" id="shareImg">🖼 Lock-screen picture</button></div>
     <form id="shareForm" class="sendrow">
       <input class="find" id="shareTo" type="text" inputmode="email" autocomplete="email tel" placeholder="Phone number or email address">
       <button class="btn primary">Share</button>
     </form>
     <p class="small" id="shareHint">Type a phone number to send it as a text, or an email address to send it as an email. Your Messages or Mail app opens with everything filled in; just press Send.</p>
     <div class="alt"><button class="btn" id="shareOther">↗ Other apps</button><button class="btn" id="shareCopy">⧉ Copy link</button></div>
+  </div>
+</div></div>
+
+<div class="sheet" id="bmSheet" hidden><div class="card">
+  <header><h2>🔖 Bookmarks</h2><button class="iconbtn" id="bmClose" aria-label="Close">✕</button></header>
+  <div class="body" id="bmBody"></div>
+</div></div>
+
+<div class="sheet" id="aiSheet" hidden><div class="card">
+  <header><h2>✨ Ask an AI</h2><button class="iconbtn" id="aiClose" aria-label="Close">✕</button></header>
+  <div class="body">
+    <div class="quote" id="aiPrompt" style="font-size:14.5px;white-space:pre-wrap"></div>
+    <div class="aibtns">
+      <button class="btn" data-ai="claude">Claude</button><button class="btn" data-ai="chatgpt">ChatGPT</button>
+      <button class="btn" data-ai="gemini">Gemini</button><button class="btn" data-ai="grok">Grok</button>
+      <button class="btn" data-ai="perplexity">Perplexity</button><button class="btn" data-ai="copy">⧉ Copy question</button>
+    </div>
+    <p class="small">Opens the AI you pick in your browser or its app, with the verse and question filled in. It uses your own free account there; BibleChat sends nothing anywhere itself. AI can be wrong, so check what it says against the verses.</p>
   </div>
 </div></div>
 
@@ -316,6 +353,7 @@ function render(hitVerse){
   const t = $("#rtext"); t.className = rLines ? "lines" : ""; t.style.setProperty("--rs", rScale);
   t.innerHTML = vs.map(([n, x]) => `<span class="v" id="v${n}"><sup>${n}</sup>${esc(x)} </span>`).join("");
   enhanceChapter(place.bible, place.book, place.ch, vs);
+  bmMark(); votdShow(false);
   const nb = neighbours();
   $("#prev").disabled = $("#prev2").disabled = !nb.prev; $("#next").disabled = $("#next2").disabled = !nb.next;
   document.title = place.book + " " + place.ch + " · BibleChat";
@@ -674,6 +712,11 @@ function runSearch(q){
     ? `<div class="hint">${hits.length} verses, best match first. Tap one to read it in its chapter.</div>` + hits.map(i => { const x = flat[i];
         return `<div class="res"><a href="#" data-b="${esc(x.b)}" data-c="${x.c}" data-v="${x.v}">${esc(x.b)} ${x.c}:${x.v}</a>${highlight(x.t, raw.length ? raw : words)}</div>`; }).join("")
     : `<div class="notice">Nothing found in this Bible. Try other words, or a reference like John 3:16.</div>`;
+  if(hits.length){
+    const b = document.createElement("p"); b.innerHTML = `<button class="btn">✨ Ask AI about this, with these verses</button>`; out.prepend(b);
+    b.querySelector("button").onclick = () => askAI(q + "\n\nVerses BibleChat found (" + bibleAbbr() + "):\n" +
+      hits.slice(0, 8).map(i => `${flat[i].b} ${flat[i].c}:${flat[i].v} ${flat[i].t}`).join("\n") + "\n\nAnswer from these verses and say which verse supports each point.");
+  }
 }
 $("#sform").onsubmit = e => { e.preventDefault(); $("#q").blur(); runSearch($("#q").value); };
 document.querySelectorAll(".hint [data-q]").forEach(b => b.onclick = () => { $("#q").value = b.dataset.q; runSearch(b.dataset.q); });
@@ -711,6 +754,7 @@ function openShare(v){
   document.querySelectorAll("#rtext .v.sel").forEach(n => n.classList.remove("sel"));
   const el = document.getElementById("v" + v); if(el) el.classList.add("sel");
   $("#shareQuote").innerHTML = esc(verseText(v)) + `<b>${esc(place.book)} ${place.ch}:${v} · ${esc(bibleAbbr())}</b>`;
+  $("#shareBm").textContent = bmHas(v) ? "🔖 Bookmarked ✓" : "🔖 Bookmark";
   $("#shareTo").value = store.get("lastTo", ""); $("#shareSheet").hidden = false;
 }
 function closeShare(){ $("#shareSheet").hidden = true; document.querySelectorAll("#rtext .v.sel").forEach(n => n.classList.remove("sel")); }
@@ -740,6 +784,51 @@ $("#shareOther").onclick = async () => {
   try{ await navigator.clipboard.writeText(msg); toast("Verse and link copied"); }catch(e){ prompt("Copy this:", msg); }
 };
 $("#shareCopy").onclick = async () => { const u = verseLink(shareV); try{ await navigator.clipboard.writeText(u); toast("Link copied"); }catch(e){ prompt("Copy this link:", u); } };
+
+/* Hebrew letters: name, sound, number, and the ancient picture each letter grew out of.
+   The picture meanings follow the ancient (paleo-) Hebrew letter pictures as taught by Jeff A. Benner,
+   Ancient Hebrew Research Center; scholars debate how much the pictures shaped word meanings. */
+const HEB_LETTERS = {
+  "א": ["Aleph", "silent / a", 1, "ox head", "strength, leader, first"],
+  "ב": ["Bet", "b / v", 2, "tent (floor plan)", "house, family, in"],
+  "ג": ["Gimel", "g", 3, "foot", "walk, gather, carry"],
+  "ד": ["Dalet", "d", 4, "tent door", "door, path, move"],
+  "ה": ["Hey", "h", 5, "man with arms raised", "behold, look, reveal, breath"],
+  "ו": ["Vav", "v / w", 6, "tent peg (nail)", "nail, secure, add, and"],
+  "ז": ["Zayin", "z", 7, "mattock / weapon", "cut, weapon, harvest"],
+  "ח": ["Chet", "ch", 8, "tent wall", "wall, outside, separate, protect"],
+  "ט": ["Tet", "t", 9, "basket", "surround, contain, mud"],
+  "י": ["Yod", "y", 10, "arm and closed hand", "hand, work, deed, make"],
+  "כ": ["Kaf", "k / kh", 20, "open palm", "palm, open, bend, allow"],
+  "ל": ["Lamed", "l", 30, "shepherd's staff", "teach, lead, toward, authority"],
+  "מ": ["Mem", "m", 40, "water", "water, chaos, mighty, blood"],
+  "נ": ["Nun", "n", 50, "sprouting seed", "seed, offspring, life, continue"],
+  "ס": ["Samekh", "s", 60, "thorn", "grab, support, protect"],
+  "ע": ["Ayin", "silent", 70, "eye", "see, watch, know"],
+  "פ": ["Pey", "p / f", 80, "mouth", "mouth, speak, word, open"],
+  "צ": ["Tsade", "ts", 90, "man on his side", "hunt, desire, need"],
+  "ק": ["Qof", "q", 100, "sun at the horizon", "behind, last, gather, time"],
+  "ר": ["Resh", "r", 200, "head of a man", "head, first, top, person"],
+  "ש": ["Shin", "sh / s", 300, "two front teeth", "teeth, sharp, press, consume"],
+  "ת": ["Tav", "t", 400, "crossed sticks (a mark)", "mark, sign, covenant"]
+};
+const HEB_FINAL = {"ך": "כ", "ם": "מ", "ן": "נ", "ף": "פ", "ץ": "צ"};
+function hebLetters(word){
+  const out = [];
+  for(const ch of (word || "").normalize("NFD").replace(/[֑-ׇ]/g, "")){   // drop vowel points and accents
+    const base = HEB_FINAL[ch] || ch, L = HEB_LETTERS[base];
+    if(L) out.push({ch, final: base !== ch, name: L[0], sound: L[1], value: L[2], picture: L[3], meaning: L[4]});
+  }
+  return out;
+}
+function hebLettersHtml(word){
+  const ls = hebLetters(word); if(!ls.length) return "";
+  const total = ls.reduce((n, l) => n + l.value, 0);
+  return `<h3>Letter by letter (read right to left)</h3><div class="heb">` + ls.map(l =>
+      `<div class="hl"><span class="hc" lang="he">${l.ch}</span><div><b>${l.name}${l.final ? " (final form)" : ""}</b> · “${l.sound}” · ${l.value}<br>picture: <i>${l.picture}</i> — ${l.meaning}</div></div>`).join("") +
+    `</div><p><b>The pictures together:</b> ${ls.map(l => l.meaning.split(",")[0]).join(" · ")}</p>` +
+    `<p class="muted small">Number value of the word: ${total}. Picture meanings follow the ancient Hebrew letter pictures (as taught by Jeff A. Benner, Ancient Hebrew Research Center); scholars debate how far the pictures shaped what words mean.</p>`;
+}
 
 /* ---------- study one verse: Strong's (Hebrew/Greek words) and Nave's topics ---------- */
 const SD = "data/study/", sCache = {};
@@ -810,7 +899,8 @@ async function studyStrongs(n){
     const e = d[key]; if(!e) return sShow({title: key, html: `<p>No Strong's entry ${esc(key)}.</p>`});
     const uses = w[key] || [], he = L === "H";
     sShow({title: "Strong's " + key, html:
-      `<div class="orig${he ? " he" : ""}" lang="${he ? "he" : "el"}">${esc(e.w)}</div>
+      `<div class="orig${he ? " he hebtap" : ""}" lang="${he ? "he" : "el"}">${esc(e.w)}</div>
+       ${he ? `<button class="tp hebbtn"><b>א Letter by letter: names, pictures, meanings</b><span>›</span></button><div class="hebbox" hidden>${hebLettersHtml(e.w)}</div>` : ""}
        <p class="muted">${he ? "Hebrew" : "Greek"} · ${esc(e.t)} · say “${esc(e.p)}”</p>
        <h3>Meaning</h3><p>${sLinks(e.d)}</p>${e.k ? `<h3>How the KJV translates it</h3><p>${sLinks(e.k)}</p>` : ""}
        <h3>Every verse with this word (${uses.length})</h3>${sVerses(uses.slice(0, 300))}${uses.length > 300 ? `<p class="small">…and ${uses.length - 300} more.</p>` : ""}`});
@@ -831,6 +921,7 @@ $("#studyBody").addEventListener("change", e => {
   const cur = sStack[sStack.length - 1]; if(cur && cur.xr) $("#studyBody .xlist").innerHTML = sXrefs(cur.xr, e.target.value, false);
 });
 $("#studyBody").addEventListener("click", e => {
+  if(e.target.closest(".hebtap, .hebbtn")){ const b = $("#studyBody .hebbox"); if(b) b.hidden = !b.hidden; return; }
   if(e.target.closest(".xmore")){ const cur = sStack[sStack.length - 1], sel = $("#studyBody .xbook");
     $("#studyBody .xlist").innerHTML = sXrefs(cur.xr, sel ? sel.value : "", true); return; }
   const w = e.target.closest(".w, a.sn"); if(w){ e.preventDefault(); return studyStrongs(w.dataset.n); }
@@ -838,6 +929,124 @@ $("#studyBody").addEventListener("click", e => {
   const g = e.target.closest(".sv-go"); if(g){ e.preventDefault(); return studyVerse(g.dataset.b, +g.dataset.c, +g.dataset.v); }
   const a = e.target.closest(".res a, a.nref"); if(a){ e.preventDefault(); studyClose(); go(a.dataset.b, +a.dataset.c, +a.dataset.v); }
 });
+
+/* Verse of the day: one well-known verse per day, the same for everyone on that date */
+const VOTD = ["John 3:16","Psalms 23:1","Philippians 4:13","Jeremiah 29:11","Romans 8:28","Isaiah 40:31","Proverbs 3:5","Joshua 1:9","Matthew 11:28","Psalms 46:1",
+"Romans 12:2","2 Timothy 1:7","Isaiah 41:10","Psalms 119:105","Matthew 6:33","Hebrews 11:1","Galatians 2:20","Ephesians 2:8","1 Corinthians 13:4","Psalms 37:4",
+"John 14:6","Romans 5:8","Psalms 27:1","Lamentations 3:22","Micah 6:8","John 1:1","Psalms 121:1","Matthew 5:14","2 Corinthians 5:17","Psalms 91:1",
+"Proverbs 18:10","Isaiah 53:5","John 10:10","Romans 10:9","Philippians 4:6","1 Peter 5:7","Psalms 139:14","Hebrews 13:8","James 1:5","Matthew 28:20",
+"Psalms 34:8","Isaiah 26:3","John 15:5","Romans 15:13","Colossians 3:23","1 John 4:19","Psalms 51:10","Deuteronomy 31:6","Nahum 1:7","Zephaniah 3:17",
+"John 16:33","Psalms 16:11","Galatians 5:22","Ephesians 6:10","2 Corinthians 12:9","Psalms 103:2","Matthew 7:7","James 4:8","Revelation 21:4","1 Thessalonians 5:16",
+"Psalms 118:24","Isaiah 9:6","John 11:25","Romans 6:23","Hebrews 4:12","Psalms 19:14","Proverbs 16:3","Matthew 5:9","Luke 1:37","Psalms 55:22",
+"Isaiah 43:2","John 13:34","Romans 8:38","Philippians 1:6","1 John 1:9","Psalms 62:1","Exodus 14:14","Matthew 22:37","Psalms 100:4","2 Chronicles 7:14",
+"Daniel 2:22","Daniel 12:3","Revelation 3:20","Revelation 22:13","Psalms 145:18","Isaiah 55:8","John 8:12","Acts 1:8","Ephesians 3:20","Colossians 3:2",
+"Hebrews 12:1","1 Corinthians 10:13","Psalms 4:8","Proverbs 4:23","Matthew 6:34","Luke 6:31","Psalms 30:5","Isaiah 12:2","Romans 1:16","1 Peter 2:9"];
+function votdRef(date){
+  const d = date || new Date(), day = Math.floor((Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) - Date.UTC(2026, 0, 1)) / 864e5);
+  const r = VOTD[((day % VOTD.length) + VOTD.length) % VOTD.length], m = r.match(/^(.+) (\d+):(\d+)$/);
+  return {ref: r, book: m[1], ch: +m[2], v: +m[3]};
+}
+/* a lock-screen / wallpaper picture of a verse (phone screen size) */
+function verseImage(text, ref, bibleName){
+  const W = 1170, H = 2532, c = document.createElement("canvas"); c.width = W; c.height = H;
+  const g = c.getContext("2d"), grad = g.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, "#1b2b44"); grad.addColorStop(0.6, "#2f4a6b"); grad.addColorStop(1, "#c79a4b");
+  g.fillStyle = grad; g.fillRect(0, 0, W, H);
+  g.fillStyle = "rgba(255,255,255,.95)"; g.textAlign = "center";
+  let size = 74; const maxW = W - 220, words = text.split(/\s+/);
+  let lines;
+  for(;;){   // shrink until the verse fits in the middle of the screen
+    g.font = `500 ${size}px Georgia, "Times New Roman", serif`; lines = []; let cur = "";
+    for(const w of words){ const t = cur ? cur + " " + w : w; if(g.measureText(t).width > maxW && cur){ lines.push(cur); cur = w; } else cur = t; }
+    if(cur) lines.push(cur);
+    if(lines.length * size * 1.4 < 1150 || size < 40) break; size -= 4;
+  }
+  const top = 1250 - lines.length * size * 1.4 / 2;
+  lines.forEach((l, i) => g.fillText((i === 0 ? "“" : "") + l + (i === lines.length - 1 ? "”" : ""), W / 2, top + i * size * 1.4));
+  g.font = `600 52px system-ui, sans-serif`; g.fillStyle = "#f3c77a";
+  g.fillText(ref, W / 2, top + lines.length * size * 1.4 + 70);
+  g.font = `400 34px system-ui, sans-serif`; g.fillStyle = "rgba(255,255,255,.7)";
+  g.fillText(bibleName || "", W / 2, top + lines.length * size * 1.4 + 125);
+  g.font = `600 36px system-ui, sans-serif`; g.fillStyle = "rgba(255,255,255,.75)";
+  g.fillText("BibleChat · beaugrand.github.io/BibleChat-voice", W / 2, H - 150);
+  return c;
+}
+async function saveVerseImage(text, ref, bibleName){
+  const c = verseImage(text, ref, bibleName);
+  const blob = await new Promise(r => c.toBlob(r, "image/png"));
+  const name = "BibleChat " + ref.replace(/[: ]/g, "-") + ".png";
+  try{
+    const f = new File([blob], name, {type: "image/png"});
+    if(navigator.canShare && navigator.canShare({files: [f]})){ await navigator.share({files: [f], title: ref}); return; }
+  }catch(e){ if(e && e.name === "AbortError") return; }
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove();
+}
+
+/* ---------- bookmarks (kept on this phone) ---------- */
+function bmList(){ return store.get("bookmarks", []); }
+function bmKey(b){ return b.bible + "|" + b.book + "|" + b.ch + "|" + b.v; }
+function bmHas(v){ return bmList().some(b => b.bible === place.bible && b.book === place.book && b.ch === place.ch && b.v === v); }
+function bmToggle(v){
+  let l = bmList();
+  if(bmHas(v)) l = l.filter(b => !(b.bible === place.bible && b.book === place.book && b.ch === place.ch && b.v === v));
+  else l.unshift({bible: place.bible, book: place.book, ch: place.ch, v, text: verseText(v), abbr: bibleAbbr(), at: Date.now()});
+  store.set("bookmarks", l); bmMark();
+  return bmHas(v);
+}
+function bmMark(){ document.querySelectorAll("#rtext .v").forEach(el => el.classList.toggle("bm", bmHas(+el.id.slice(1)))); }
+function bmShow(){
+  const l = bmList();
+  $("#bmBody").innerHTML = l.length ? l.map((b, i) => `<div class="bmrow"><div class="res"><a href="#" data-i="${i}">${esc(b.book)} ${b.ch}:${b.v}</a>${esc(b.text)} <span class="small">${esc(b.abbr || "")}</span></div><button data-del="${i}" aria-label="Remove">✕</button></div>`).join("")
+    : `<p class="small" style="margin:10px 4px">No bookmarks yet. Tap a verse, then 🔖 Bookmark.</p>`;
+  $("#bmSheet").hidden = false;
+}
+$("#bmOpen").onclick = bmShow;
+$("#bmClose").onclick = () => { $("#bmSheet").hidden = true; };
+$("#bmSheet").addEventListener("click", async e => {
+  if(e.target.id === "bmSheet"){ $("#bmSheet").hidden = true; return; }
+  const d = e.target.closest("[data-del]"); if(d){ const l = bmList(); l.splice(+d.dataset.del, 1); store.set("bookmarks", l); bmMark(); return bmShow(); }
+  const a = e.target.closest("a[data-i]"); if(!a) return; e.preventDefault();
+  const b = bmList()[+a.dataset.i]; $("#bmSheet").hidden = true;
+  if(b.bible !== place.bible && catalog.some(c => c.id === b.bible)) await useBible(b.bible, true);
+  go(b.book, b.ch, b.v);
+});
+$("#shareBm").onclick = () => { const on = bmToggle(shareV); $("#shareBm").textContent = on ? "🔖 Bookmarked ✓" : "🔖 Bookmark"; toast(on ? "Bookmarked" : "Bookmark removed"); };
+$("#shareImg").onclick = () => saveVerseImage(verseText(shareV), place.book + " " + place.ch + ":" + shareV, bibleAbbr());
+
+/* ---------- verse of the day ---------- */
+function votdShow(force){
+  const today = new Date().toISOString().slice(0, 10);
+  if(!force && store.get("votdSeen", "") === today) return;
+  const r = votdRef(), bk = bible && bible.byName[r.book], vs = bk && bk.map.get(r.ch), x = vs && vs.find(e => e[0] === r.v);
+  if(!x) return;
+  $("#votd").innerHTML = `<div class="lab">☀ Verse of the day<button id="votdX" aria-label="Close">✕</button></div><div class="vt">${esc(x[1])}</div><div class="rf">${esc(r.ref)} · ${esc(bibleAbbr())}</div>
+    <div class="alt"><button class="btn" id="votdRead">📖 Read the chapter</button><button class="btn" id="votdImg">🖼 Lock-screen picture</button><button class="btn" id="votdAI">✨ Ask AI</button></div>`;
+  $("#votd").hidden = false;
+  $("#votdX").onclick = () => { $("#votd").hidden = true; store.set("votdSeen", today); };
+  $("#votdRead").onclick = () => { $("#votd").hidden = true; store.set("votdSeen", today); go(r.book, r.ch, r.v); };
+  $("#votdImg").onclick = () => saveVerseImage(x[1], r.ref, bibleAbbr());
+  $("#votdAI").onclick = () => askAI(`Help me understand ${r.ref} (${bibleAbbr()}): "${x[1]}" What does it mean, and how can I live it out today?`);
+}
+$("#votdOpen").onclick = () => { votdShow(true); scrollTo(0, 0); };
+
+/* ---------- ask an AI the person already uses (no server, nothing sent by BibleChat) ---------- */
+let aiText = "";
+function askAI(text){ aiText = text; $("#aiPrompt").textContent = text; $("#aiSheet").hidden = false; }
+$("#aiClose").onclick = () => { $("#aiSheet").hidden = true; };
+$("#aiSheet").addEventListener("click", async e => {
+  if(e.target.id === "aiSheet"){ $("#aiSheet").hidden = true; return; }
+  const b = e.target.closest("[data-ai]"); if(!b) return;
+  const q = encodeURIComponent(aiText), which = b.dataset.ai;
+  const url = {claude: "https://claude.ai/new?q=" + q, chatgpt: "https://chatgpt.com/?q=" + q, grok: "https://grok.com/?q=" + q,
+               perplexity: "https://www.perplexity.ai/search?q=" + q, gemini: "https://gemini.google.com/app"}[which];
+  if(which === "copy" || which === "gemini"){
+    try{ await navigator.clipboard.writeText(aiText); toast(which === "gemini" ? "Question copied: paste it into Gemini" : "Question copied"); }
+    catch(err){ prompt("Copy this:", aiText); }
+    if(which === "copy") return;
+  }
+  window.open(url, "_blank", "noopener");
+});
+$("#shareAI").onclick = () => { const v = shareV; closeShare(); askAI(`Explain ${place.book} ${place.ch}:${v} (${bibleAbbr()}): "${verseText(v)}"\n\nWhat does it mean in its context, what do the key words mean in the original Hebrew or Greek, and which other verses connect to it?`); };
 
 /* someone opened a shared verse: say hello and offer the app */
 function showWelcome(v){
