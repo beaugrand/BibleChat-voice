@@ -185,6 +185,34 @@ body.has-church #top .brand{display:none}
 #chLink{font-size:12px;color:var(--muted);word-break:break-all;text-align:center}
 .churchcta{border-top:1px solid var(--line);margin-top:22px;padding-top:16px;text-align:left}
 .churchcta h3{font-family:Georgia,serif;font-weight:500;font-size:19px;margin:0 0 6px}
+
+/* sermon list */
+.smItem{display:grid;grid-template-columns:1fr auto;gap:2px 8px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.smItem .smGo{font-weight:650;color:var(--accent);text-decoration:none}
+.smItem .smT{grid-column:1/-1;color:var(--muted);line-height:1.45}
+.smItem .smBtns{grid-row:1;grid-column:2;display:flex;gap:4px}
+.smItem .smBtns .btn{padding:3px 9px}
+#smDlg h3{font-family:Georgia,serif;font-weight:500;font-size:17px;margin:12px 0 6px}
+#smSeen .btn{display:block;width:100%;text-align:left;margin:0 0 6px}
+#smSeen small{color:var(--muted);font-weight:400}
+#smScreen{position:fixed;inset:0;z-index:70;background:var(--bg);overflow:auto;padding:20px 18px calc(30px + env(safe-area-inset-bottom))}
+#smScreen .in{max-width:1300px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+#smScreen h2{font-family:Georgia,serif;font-weight:500;font-size:28px;margin:0}
+#smsSub{color:var(--muted);font-size:15px}
+.smsKeep{font-size:14px;color:var(--accent);margin:6px 0 0}
+#smScreen:not(.received) .smsKeep{display:none}
+.smsV{font-size:18px;line-height:1.55;margin:0 0 12px;font-family:Georgia,serif}
+.smsV a{font-family:system-ui,sans-serif;font-weight:700;color:var(--accent);text-decoration:none;margin-right:4px}
+#smsQrBox{text-align:center}
+#smsQr{width:min(300px,70vw);background:#fff;padding:8px;border-radius:14px;box-shadow:var(--shadow)}
+#smsQrBox p{margin:6px 0 0;font-weight:600}
+#smsClose{position:fixed;top:calc(10px + env(safe-area-inset-top));right:12px;font-size:24px;z-index:71;background:var(--card);border:1px solid var(--line);border-radius:50%;width:44px;height:44px}
+@media (min-width:900px){#smScreen .in{display:grid;grid-template-columns:1fr 360px;align-items:start}#smScreen .head{grid-column:1/-1}#smsQrBox{position:sticky;top:20px}.smsV{font-size:24px}#smScreen h2{font-size:38px}}
+/* suggestions */
+.suggest{border-top:1px solid var(--line);margin-top:22px;padding-top:16px;text-align:left}
+.suggest h3{font-family:Georgia,serif;font-weight:500;font-size:19px;margin:0 0 6px}
+.suggest textarea{width:100%;box-sizing:border-box;min-height:84px;border:1px solid var(--line);border-radius:12px;padding:10px;font:inherit;background:var(--card);color:inherit}
+.suggest .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 </style>
 </head>
 <body>
@@ -213,6 +241,7 @@ body.has-church #top .brand{display:none}
         <button class="btn" id="big" aria-label="Larger text">A+</button>
         <button class="btn" id="bmOpen" title="Your bookmarks">🔖</button>
         <button class="btn" id="votdOpen" title="Verse of the day">☀</button>
+        <button class="btn smOpen" title="Sermon list: Sunday's verses with a QR code">📋<span class="smCount"></span></button>
       </div>
       <div id="votd" hidden></div>
       <div id="rtext"><div class="notice">Loading…</div></div>
@@ -250,6 +279,15 @@ body.has-church #top .brand{display:none}
       <h3>⛪ For churches</h3>
       <p class="muted">Put your church's name and logo in BibleChat, then show or print a QR code. Everyone who scans it opens the free app with your church's name at the top.</p>
       <button class="btn primary" id="churchSetup">Brand BibleChat for your church</button>
+      <p class="muted" style="margin-top:12px">Pastors: tap a verse, then <b>📋 Add to sermon</b>. On Sunday show the list with its QR code, so people follow along and take the verses home.</p>
+      <button class="btn smOpen">📋 Sermon list<span class="smCount"></span></button>
+    </div>
+    <div class="suggest">
+      <h3>💡 Suggest a feature</h3>
+      <p class="muted">What would make BibleChat better for you or your church? It goes straight to Hans.</p>
+      <textarea id="sgText" maxlength="3000" placeholder="My idea…"></textarea>
+      <div class="row"><button class="btn primary" id="sgMail">✉ Send by email</button><button class="btn" id="sgGit">Post on GitHub</button></div>
+      <p class="muted" style="font-size:13px">Email opens your mail app with the idea filled in. GitHub shows it publicly and needs a free GitHub account.</p>
     </div>
   </div></div></section>
 </main>
@@ -259,7 +297,7 @@ body.has-church #top .brand{display:none}
   <div class="body">
     <div class="quote" id="shareQuote"></div>
     <button class="btn" id="shareStudy" style="width:100%;margin:0 0 8px">📖 Study it: Hebrew/Greek, cross-references, topics, Matthew Henry</button>
-    <div class="alt" style="margin:0 0 12px"><button class="btn" id="shareBm">🔖 Bookmark</button><button class="btn" id="shareAI">✨ Ask AI</button><button class="btn" id="shareImg">🖼 Lock-screen picture</button></div>
+    <div class="alt" style="margin:0 0 12px"><button class="btn" id="shareBm">🔖 Bookmark</button><button class="btn" id="shareAI">✨ Ask AI</button><button class="btn" id="shareImg">🖼 Lock-screen picture</button><button class="btn" id="shareSm">📋 Add to sermon</button></div>
     <form id="shareForm" class="sendrow">
       <input class="find" id="shareTo" type="text" inputmode="email" autocomplete="email tel" placeholder="Phone number or email address">
       <button class="btn primary">Share</button>
@@ -332,6 +370,22 @@ body.has-church #top .brand{display:none}
       <div class="row"><button class="btn primary" id="chSave">Save and show QR code</button><button class="btn" id="chCancel">Cancel</button><button class="btn" id="chRemove" hidden>Remove</button></div>
     </div>
   </div>
+</div></div>
+
+<div class="sheet" id="smDlg" hidden><div class="card">
+  <header><h2>📋 Sermon list</h2><button class="iconbtn" id="smClose" aria-label="Close">✕</button></header>
+  <div class="body">
+    <div id="smSeen"></div>
+    <h3>Your sermon</h3>
+    <input type="text" class="find" id="smTitle" maxlength="120" placeholder="Sermon title, e.g. The Good Shepherd">
+    <div id="smList"></div>
+    <div class="alt" style="margin-top:12px"><button class="btn primary" id="smShow">📺 Show with QR code</button><button class="btn" id="smShare">↗ Share link</button><button class="btn" id="smClear">New list</button></div>
+  </div>
+</div></div>
+<div id="smScreen" hidden><button id="smsClose" aria-label="Close">✕</button><div class="in">
+  <div class="head"><h2 id="smsTitle"></h2><div id="smsSub"></div><p class="smsKeep">Saved on this phone: find it again with the 📋 button in Read.</p></div>
+  <div id="smsList"></div>
+  <div id="smsQrBox"><img id="smsQr" alt="QR code for these verses"><p>Scan to follow along and take the verses home</p></div>
 </div></div>
 
 <nav id="tabs"><div class="wrap">
@@ -1262,6 +1316,101 @@ $("#chShare").onclick = async () => {
 churchHeader();
 
 $("#churchSetup").onclick = () => churchOpen(!church);
+
+const SM_KEY = "sermon", SM_SEEN = "sermonsSeen", SG_FROM = "sent from the BibleChat phone version";
+function smFind(it){
+  if(!bible) return null;
+  const bk = bible.byName[it.book], vs = bk && bk.map.get(it.ch);
+  if(vs) return {book: it.book, verses: vs.filter(([n]) => n >= it.v1 && n <= it.v2)};
+  if(!idx) buildIndex();
+  return resolveRef(it.book, it.ch, it.v1, it.v2);
+}
+async function smText(it){ const r = smFind(it); return r && r.verses.length ? r.verses.map(([n, t]) => (r.verses.length > 1 ? n + " " : "") + t).join(" ") : ""; }
+function smGo(it){ const r = smFind(it); go(r ? r.book : it.book, it.ch, it.v1); }
+const SM_INCOMING = (() => { const p = new URLSearchParams(location.search), refs = p.get("refs");
+  return refs ? {title: (p.get("sermon") || "Sunday sermon").slice(0, 120), bible: (p.get("bible") || "").slice(0, 60), items: smParse(refs), date: new Date().toLocaleDateString()} : null; })();
+/* ---------- sermon list: the pastor collects Sunday's verses and shows them with a QR code ---------- */
+let sermon = store.get(SM_KEY, null) || {title: "", items: []};
+const smRef = it => it.book + " " + it.ch + ":" + it.v1 + (it.v2 > it.v1 ? "-" + it.v2 : "");
+function smSave(){ store.set(SM_KEY, sermon); smCount(); }
+function smCount(){ document.querySelectorAll(".smCount").forEach(e => e.textContent = sermon.items.length ? " " + sermon.items.length : ""); }
+function smAdd(book, ch, v1, v2, bibleId){
+  v2 = v2 || v1;
+  if(sermon.items.some(it => it.book === book && it.ch === ch && it.v1 === v1 && it.v2 === v2)){ chSay("Already in the sermon list"); return; }
+  sermon.items.push({book, ch, v1, v2}); if(bibleId) sermon.bible = bibleId; smSave();
+  chSay("Added to the sermon list (" + sermon.items.length + ")");
+}
+function sermonLink(s){
+  const p = new URLSearchParams({sermon: s.title || "Sunday sermon"});
+  if(s.bible) p.set("bible", s.bible);
+  p.set("refs", s.items.map(smRef).join(";"));
+  return PHONE_URL + "?" + p.toString();
+}
+function smParse(refs){
+  return String(refs || "").split(";").map(r => r.trim().match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+))?$/)).filter(Boolean).slice(0, 60)
+    .map(m => ({book: m[1].slice(0, 40), ch: +m[2], v1: +m[3], v2: +(m[4] || m[3])}));
+}
+async function smOpen(){
+  $("#smDlg").hidden = false;
+  const seen = store.get(SM_SEEN, []);
+  $("#smSeen").innerHTML = seen.length ? `<h3>Sermons you received</h3>` + seen.map((s, i) =>
+    `<button class="btn smSeenGo" data-i="${i}">📋 ${esc(s.title)} <small>${esc(s.date || "")} · ${s.items.length} verses</small></button>`).join("") : "";
+  $("#smTitle").value = sermon.title || "";
+  const box = $("#smList");
+  if(!sermon.items.length){ box.innerHTML = `<p class="muted">No verses yet. Open a verse and press <b>📋 Add to sermon</b>. Then show the list with its QR code on Sunday, so people can follow along and take it home.</p>`; }
+  else{
+    box.innerHTML = sermon.items.map((it, i) => `<div class="smItem" data-i="${i}"><a href="#" class="smGo">${esc(smRef(it))}</a><span class="smT">…</span>
+      <span class="smBtns"><button class="btn" data-mv="-1" title="Move up"${i ? "" : " disabled"}>↑</button><button class="btn" data-mv="1" title="Move down"${i < sermon.items.length - 1 ? "" : " disabled"}>↓</button><button class="btn" data-del="1" title="Remove">✕</button></span></div>`).join("");
+    const texts = await Promise.all(sermon.items.map(it => smText(it, sermon.bible).catch(() => "")));
+    box.querySelectorAll(".smItem .smT").forEach((e, i) => e.textContent = texts[i] || "(not in this Bible)");
+  }
+  $("#smShow").disabled = $("#smShare").disabled = $("#smClear").disabled = !sermon.items.length;
+}
+async function smScreen(s, received){
+  const o = $("#smScreen"); o.hidden = false; o.classList.toggle("received", !!received);
+  $("#smsTitle").textContent = s.title || "Sunday sermon";
+  $("#smsSub").textContent = (church ? church.name + " · " : "") + (s.date || new Date().toLocaleDateString());
+  const texts = await Promise.all(s.items.map(it => smText(it, s.bible).catch(() => "")));
+  $("#smsList").innerHTML = s.items.map((it, i) => `<div class="smsV"><a href="#" data-i="${i}">${esc(smRef(it))}</a> ${esc(texts[i] || "(not in this Bible)")}</div>`).join("");
+  $("#smsList").onclick = e => { const a = e.target.closest("a[data-i]"); if(!a) return; e.preventDefault(); o.hidden = true; $("#smDlg").hidden = true; smGo(s.items[+a.dataset.i]); };
+  const qr = qrCanvas(sermonLink(s), 640); $("#smsQr").src = qr.toDataURL("image/png");
+}
+$("#smTitle").addEventListener("input", () => { sermon.title = $("#smTitle").value; smSave(); });
+$("#smList").addEventListener("click", e => {
+  const row = e.target.closest(".smItem"); if(!row) return; const i = +row.dataset.i;
+  if(e.target.closest(".smGo")){ e.preventDefault(); $("#smDlg").hidden = true; smGo(sermon.items[i]); return; }
+  const b = e.target.closest("button"); if(!b) return;
+  if(b.dataset.del){ sermon.items.splice(i, 1); }
+  else if(b.dataset.mv){ const j = i + +b.dataset.mv; if(j < 0 || j >= sermon.items.length) return; [sermon.items[i], sermon.items[j]] = [sermon.items[j], sermon.items[i]]; }
+  smSave(); smOpen();
+});
+$("#smSeen").addEventListener("click", e => { const b = e.target.closest(".smSeenGo"); if(b) smScreen(store.get(SM_SEEN, [])[+b.dataset.i], true); });
+$("#smShow").onclick = () => smScreen(Object.assign({date: new Date().toLocaleDateString()}, sermon), false);
+$("#smShare").onclick = async () => {
+  const url = sermonLink(sermon), title = sermon.title || "Sunday sermon";
+  try{ if(navigator.share){ await navigator.share({title, text: title + ": the verses to follow along", url}); return; } }catch(e){ return; }
+  try{ await navigator.clipboard.writeText(url); chSay("Link copied"); }catch(e){ prompt("Copy this link:", url); }
+};
+$("#smClear").onclick = () => { if(!confirm("Start a new sermon list? The verses in this one are removed.")) return; sermon = {title: "", items: []}; smSave(); smOpen(); };
+$("#smClose").onclick = () => { $("#smDlg").hidden = true; };
+$("#smDlg").addEventListener("click", e => { if(e.target.id === "smDlg") $("#smDlg").hidden = true; });
+$("#smsClose").onclick = () => { $("#smScreen").hidden = true; };
+addEventListener("keydown", e => { if(e.key === "Escape" && !$("#smScreen").hidden) $("#smScreen").hidden = true; });
+document.querySelectorAll(".smOpen").forEach(b => b.onclick = smOpen);
+smCount();
+/* ---------- suggest a feature: goes to Hans by email or on GitHub ---------- */
+function sgBody(){ return $("#sgText").value.trim() + "\n\n(" + SG_FROM + ")"; }
+function sgCheck(){ if($("#sgText").value.trim().length < 3){ chSay("Type your idea first."); return false; } return true; }
+$("#sgMail").onclick = () => {
+  if(!sgCheck()) return;
+  location.href = "mailto:wbeaugrand@gmail.com?subject=" + encodeURIComponent("BibleChat suggestion") + "&body=" + encodeURIComponent(sgBody());
+};
+$("#sgGit").onclick = () => {
+  if(!sgCheck()) return;
+  const t = $("#sgText").value.trim().split("\n")[0].slice(0, 70);
+  window.open("https://github.com/beaugrand/BibleChat-voice/issues/new?title=" + encodeURIComponent("Suggestion: " + t) + "&body=" + encodeURIComponent(sgBody()), "_blank", "noopener");
+};
+$("#shareSm").onclick = () => { const v = shareV; closeShare(); smAdd(place.book, place.ch, v, v, place.bible); };
 /* opened from a church's QR code: show that church's name (and logo, if it gave a web address) */
 (function churchFromLink(){
   const p = new URLSearchParams(location.search), name = (p.get("church") || "").trim().slice(0, 80);
@@ -1272,6 +1421,7 @@ $("#churchSetup").onclick = () => churchOpen(!church);
   }
   history.replaceState(null, "", location.pathname + location.hash);
 })();
+if(location.search) history.replaceState(null, "", location.pathname + location.hash);
 /* ---------- back / forward: return to where you have been ---------- */
 const hist = {list: [], i: -1, busy: false};
 function navSnap(){ return {tab, bible: place.bible, book: place.book, ch: place.ch, q: tab === "search" ? $("#q").value.trim() : ""}; }
@@ -1318,7 +1468,13 @@ function parseHash(){
   if(!catalog.some(c => c.id === place.bible)) place.bible = catalog[0].id;
   try{ await useBible(place.bible, true); }catch(e){ $("#rtext").innerHTML = `<div class="notice err">${esc(e.message)}</div>`; return; }
   render(h && h.v);
-  if(h && h.shared && h.v && verseText(h.v)) showWelcome(h.v);
+  if(SM_INCOMING && SM_INCOMING.items.length){
+    const s = SM_INCOMING, seen = store.get(SM_SEEN, []).filter(x => sermonLink(x) !== sermonLink(s));
+    seen.unshift(s); store.set(SM_SEEN, seen.slice(0, 20));
+    if(s.bible && s.bible !== place.bible && catalog.some(c => c.id === s.bible)){ try{ await useBible(s.bible, true); render(); }catch(e){} }
+    smScreen(s, true);
+  }
+  else if(h && h.shared && h.v && verseText(h.v)) showWelcome(h.v);
   else if(!store.get("tip", false)){ store.set("tip", true); setTimeout(() => toast("Tip: tap any verse to share or study it"), 1200); }
   addEventListener("hashchange", () => { const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]) go(x.book, x.ch, x.v); });
 })();

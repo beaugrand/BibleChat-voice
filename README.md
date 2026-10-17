@@ -13,8 +13,8 @@
 ## Status
 
 - Published download: **v1.0.1**. Version number lives in `bibleask/__init__.py`.
-- Changes since v1.0.1, already live on the phone version and in `main`, reach computer users with the next release (v1.0.2): Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, church logo with QR code, license changed from MIT to Apache 2.0.
-- Automatic tests: 71 (run `python -m unittest discover -s tests`).
+- Changes since v1.0.1, already live on the phone version and in `main`, reach computer users with the next release (v1.0.2): Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, church logo with QR code, sermon list with QR code, Ask AI on the computer, Suggest a feature, the BibleChat connector for AI apps, license changed from MIT to Apache 2.0.
+- Automatic tests: 76 (run `python -m unittest discover -s tests`).
 
 ## 1. Where everything lives
 
@@ -60,6 +60,8 @@
 | `bibleask/search.py`, `chat.py` | Search, references, languages, spelling help; building each chat answer |
 | `bibleask/study.py`, `strongs.py`, `topics.py`, `xref.py`, `scofield.py`, `henry_easton.py` | Study tools: Strong's, Nave's topics, cross-references, Scofield, Matthew Henry, Easton's |
 | `bibleask/catalog.py` | The list in "Get free Bibles" |
+| `bibleask/mcp_server.py`, `connector/` | The BibleChat connector (MCP server) for Claude and other AI apps; `connector/` has its guide and Dockerfile for hosting |
+| `PRIVACY.md` | Privacy policy (BibleChat collects nothing) |
 | `bibleask/llm.py`, `stt.py`, `updates.py`, `shortcuts.py`, `storage.py` | Local AI, voice input, update check, Windows icon, data folder and settings |
 | `bibleask/data/` | Bundled study data (Strong's, Nave's, cross-references, Scofield, Matthew Henry, Easton's) |
 | `bibles/` | The Ethiopian Canon file BibleChat itself hosts |
@@ -94,16 +96,23 @@
 - Plain questions or references (`Daniel 7:25`, `1 Cor 13:4-7`, `Psalm 23`); topic answers for concept questions (fallen angels, God's name).
 - Cross-reference questions, including between whole books ("Daniel to Revelation cross references"), on the phone too.
 - Strong's numbers in chat; several Bibles side by side, only those in the question's language; typing slips corrected and shown.
-- Optional private AI explanation on the computer; on the phone, **Ask AI** opens Claude, ChatGPT, Gemini, Grok or Perplexity with the verse filled in.
+- Optional private AI explanation on the computer. On both versions, **✨ Ask AI** opens Claude, ChatGPT, Gemini, Grok or Perplexity with the verse (or the chat answer's verses) and question filled in.
 - Voice questions on the computer.
 
 **For churches**
 - A church types its name and adds its logo (a picture, or the logo's web address). The name and logo then show at the top of BibleChat.
 - Clicking the church name shows a QR code card (logo, name, QR code) to save, print or share. Scanning it opens the free phone version with the church's name at the top; with a logo web address, the logo shows there too.
 
+- **Sermon list:** the pastor adds verses (📋 Add to sermon), gives the list a title and shows it full screen with a QR code. People scan it to follow along on their phones; the list stays on their phone to take home (📋 in Read).
+
+**For AI apps: the BibleChat connector**
+- An MCP server (`bibleask/mcp_server.py`) that lets Claude and other AI apps look up passages, search, study a verse (Strong's, topics, cross-references, Matthew Henry), Strong's numbers, Nave's topics, cross-references between books and Easton's dictionary. Every answer quotes real verses and credits BibleChat.
+- Runs on the local computer/device for Claude Desktop or Claude Code (built-in KJV plus the Bibles added in BibleChat), or as a public web service for the Claude directory. See [connector/README.md](connector/README.md).
+
 **Sharing and practical**
 - Share a verse by text or email; the link opens straight to that verse.
 - Love Donations button with Cash App QR code.
+- **💡 Suggest a feature** (Love tab on the phone, Love Donations on the computer): sends the idea to Hans by email, or posts it on GitHub.
 - Works offline (phone after first open; computer except downloads and the daily update check). Windows icon, Linux menu entry, Linux build for older processors.
 
 ## 5. How BibleChat compares with other Bible apps
@@ -143,6 +152,7 @@ Sources: [YouVersion on the App Store](https://apps.apple.com/us/app/bible/id282
 - Not possible as a web page: lock-screen widgets and daily reminders (need a store app); built-in AI on the phone (needs a paid server or a large on-phone model).
 - Ethiopian Canon still missing Meqabyan I–III and 4 Baruch (no public-domain English found); no freely licensed Ge'ez text found.
 - Church logos picked from a device show only on that device and on the QR card; members see the logo only when the church gives a logo web address. Hosting church logos for them would need a server.
+- Connector: choose a host for the public version (Render, Fly.io, Railway or Hugging Face Spaces; needs a free account), add its HTTPS address in Claude as a custom connector, test every tool, then submit at claude.ai/directory/manage (paid Claude plan).
 - Non-English search works but is rougher than English. Code-signing would remove the first-launch warnings (yearly cost).
 
 ---
@@ -166,6 +176,12 @@ You can type references: `Daniel 7:25`, `1 Cor 13:4-7`, `Psalm 23`, `Rev 22`.
 **Back and forward.** The **←** and **→** arrows at the top take you back to where you were (a chapter, a search, a chat) and forward again. On a computer, **Alt+←** and **Alt+→** work too.
 
 **For churches.** Press **⛪ Church** (computer) or **Love → Brand BibleChat for your church** (phone). Type the church's name and pick its logo. The name and logo show at the top of BibleChat; click them to get a QR code card to save, print in the bulletin or show on the screen. People who scan it open the free phone version with your church's name at the top. If you also give the logo's web address (starting with https://), they see the logo too; a logo picked from your device stays on that device and on the QR card.
+
+**Sermon list (for pastors).** Click a verse, then **📋 Add to sermon**. Open the list with **📋** (Read mode), give it a title, move verses up or down, then press **📺 Show with QR code**. The verses and a big QR code fill the screen; people scan it and get the same verses on their phone, saved there to take home.
+
+**Ask an AI.** Click a verse, then **✨ Ask an AI**, or press **✨ Ask another AI** under a chat answer. Pick Claude, ChatGPT, Gemini, Grok or Perplexity; it opens with the verses and question filled in, using your own account there.
+
+**Suggest a feature.** In **Love Donations** (computer) or the **Love** tab (phone), type your idea and press **✉ Send by email** or **Post on GitHub**.
 
 **Notes in the text.** In Read mode, words with a yellow highlight and a small letter have a **Scofield Reference note** (1917): click the word or the letter to read it. Names and places with a dotted underline (Babylon, Michael, Patmos) open their entry in **Easton's Bible Dictionary**.
 
@@ -252,7 +268,8 @@ Your chat history lives in your browser. Delete the folder above to reset the Bi
 ## For developers
 
 ```bash
-python -m unittest discover -s tests -v     # 71 tests
+python -m unittest discover -s tests -v     # 76 tests
+python -m bibleask.mcp_server               # the connector, for Claude Desktop / Claude Code
 ./run_from_source_linux.sh                  # run from source on Linux
 ```
 
