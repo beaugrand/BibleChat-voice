@@ -213,6 +213,10 @@ body.has-church #top .brand{display:none}
 .suggest h3{font-family:Georgia,serif;font-weight:500;font-size:19px;margin:0 0 6px}
 .suggest textarea{width:100%;box-sizing:border-box;min-height:84px;border:1px solid var(--line);border-radius:12px;padding:10px;font:inherit;background:var(--card);color:inherit}
 .suggest .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+#loveChurch{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:18px;text-align:center}
+#loveChurch .lcrow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+#loveChurch img{box-shadow:none}
+#chEdit .row{position:sticky;bottom:-20px;background:var(--bg);padding:10px 0 20px;margin:6px 0 0;border-top:1px solid var(--line);z-index:2}
 </style>
 </head>
 <body>
@@ -265,6 +269,7 @@ body.has-church #top .brand{display:none}
 
   <!-- LOVE -->
   <section id="v-love" hidden><div class="wrap"><div class="lovecard">
+    <div id="loveChurch" hidden></div>
     <h2>♥ Love Donations</h2>
     <p class="muted">BibleChat is free for everyone. If it blesses you, a gift helps keep it growing. Thank you!</p>
     <img alt="Cash App QR code for $HansBeaugrand" src="cashapp-qr.jpg">
@@ -1253,10 +1258,11 @@ async function saveCanvas(cv, name, title){
 function churchHeader(){
   const b = $("#churchBtn"); if(!b) return;
   document.body.classList.toggle("has-church", !!church);
-  if(!church){ b.hidden = true; return; }
+  if(!church){ b.hidden = true; churchLove(); return; }
   const src = churchLogo(church); b.hidden = false;
   b.innerHTML = (src ? `<img alt="" src="${esc(src)}">` : "<i>⛪</i>") + `<span>${esc(church.name)}</span>`;
   b.title = church.name + ": QR code to share BibleChat";
+  churchLove();
   const im = b.querySelector("img"); if(im) im.onerror = () => { im.replaceWith(Object.assign(document.createElement("i"), {textContent: "⛪"})); };
 }
 async function churchOpen(edit){
@@ -1276,12 +1282,27 @@ async function churchOpen(edit){
   chCanvas = await churchCard(church);
   try{ $("#chImg").src = chCanvas.toDataURL("image/png"); }catch(e){ chCanvas = null; }
 }
-function churchClose(){ $("#churchDlg").hidden = true; }
+function churchClose(){
+  if(!$("#chEdit").hidden && $("#chName").value.trim()) churchSaveForm();   // closing with ✕ keeps what was typed
+  $("#churchDlg").hidden = true;
+}
+async function churchLove(){   // the church's QR card at the top of Love, above Cash App
+  const box = $("#loveChurch"); if(!box) return;
+  if(!church){ box.hidden = true; box.innerHTML = ""; return; }
+  box.hidden = false;
+  box.innerHTML = `<h2>⛪ ${esc(church.name)}</h2><p class="muted">Scan to read the Bible with us, free</p><img id="loveChImg" alt="QR code for ${esc(church.name)}">
+    <div class="lcrow"><button class="btn primary" id="loveChSave">⬇ Save picture</button><button class="btn" id="loveChShare">↗ Share link</button><button class="btn" id="loveChEdit">✎ Change</button></div>`;
+  $("#loveChShare").onclick = () => $("#chShare").onclick();
+  $("#loveChEdit").onclick = () => churchOpen(true);
+  const cv = await churchCard(church);
+  try{ $("#loveChImg").src = cv.toDataURL("image/png"); }catch(e){}
+  $("#loveChSave").onclick = () => saveCanvas(cv, "BibleChat " + church.name.replace(/[^\w -]+/g, "") + " QR.png", church.name);
+}
 $("#churchBtn").onclick = () => churchOpen(false);
 $("#chClose").onclick = churchClose;
 $("#churchDlg").addEventListener("click", e => { if(e.target.id === "churchDlg") churchClose(); });
 $("#chChange").onclick = () => churchOpen(true);
-$("#chCancel").onclick = () => church ? churchOpen(false) : churchClose();
+$("#chCancel").onclick = () => church ? churchOpen(false) : ($("#churchDlg").hidden = true);
 $("#chFile").onchange = async () => {
   const f = $("#chFile").files[0]; if(!f) return;
   const url = URL.createObjectURL(f);
@@ -1293,16 +1314,18 @@ $("#chFile").onchange = async () => {
   }catch(e){ chSay("That picture couldn't be opened. Try a PNG or JPG file."); }
   URL.revokeObjectURL(url);
 };
-$("#chSave").onclick = () => {
+function churchSaveForm(){
   const name = $("#chName").value.trim().slice(0, 80);
-  if(!name) return chSay("Type your church's name first.");
+  if(!name){ chSay("Type your church's name first."); return false; }
   const lu = $("#chLogoUrl").value.trim(), su = $("#chSite").value.trim();
-  if((lu && !httpsOnly(lu)) || (su && !httpsOnly(su))) return chSay("Web addresses must start with https://");
+  if((lu && !httpsOnly(lu)) || (su && !httpsOnly(su))){ chSay("Web addresses must start with https://"); return false; }
   church = {name, logo: chPending !== undefined ? chPending : (church && church.logo) || "", logoUrl: lu, site: su, own: true};
   store.set(CH_KEY, church);
   if(!store.get(CH_KEY, null)) chSay("That logo is too large to keep on this device. Try a smaller picture.");
-  churchHeader(); churchOpen(false);
-};
+  else chSay("Saved");
+  churchHeader(); return true;
+}
+$("#chSave").onclick = () => { if(churchSaveForm()) churchOpen(false); };
 $("#chRemove").onclick = () => {
   if(!confirm("Remove the church name and logo from BibleChat on this device?")) return;
   church = null; store.set(CH_KEY, null); churchHeader(); churchClose();

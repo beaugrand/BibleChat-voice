@@ -101,7 +101,7 @@
 
 **For churches**
 - A church types its name and adds its logo (a picture, or the logo's web address). The name and logo then show at the top of BibleChat.
-- Clicking the church name shows a QR code card (logo, name, QR code) to save, print or share. Scanning it opens the free phone version with the church's name at the top; with a logo web address, the logo shows there too.
+- Clicking the church name shows a QR code card (logo, name, QR code) to save, print or share. The same card sits at the top of Love Donations, above the Cash App code. Closing the church form with ✕ keeps what was typed. Scanning it opens the free phone version with the church's name at the top; with a logo web address, the logo shows there too.
 
 - **Sermon list:** the pastor adds verses (📋 Add to sermon), gives the list a title and shows it full screen with a QR code. People scan it to follow along on their phones; the list stays on their phone to take home (📋 in Read).
 
