@@ -4,7 +4,7 @@ from PyInstaller.utils.hooks import collect_all
 
 import importlib.util
 
-datas = [("bibleask/web", "bibleask/web"), ("bibleask/data", "bibleask/data"), ("LICENSE", "."), ("THIRD_PARTY_NOTICES.md", ".")]
+datas = [("bibleask/web", "bibleask/web"), ("bibleask/data", "bibleask/data"), ("LICENSE", "."), ("NOTICE", "."), ("THIRD_PARTY_NOTICES.md", ".")]
 if os.environ.get("BIBLECHAT_COMPAT"):  # engine compiled without AVX2, for older processors
     open("bibleask/compat_build.flag", "w").write("1")
     datas.append(("bibleask/compat_build.flag", "bibleask"))

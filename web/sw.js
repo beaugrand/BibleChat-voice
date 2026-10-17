@@ -1,5 +1,5 @@
 // BibleChat web: keeps the app and every Bible you opened on this phone, so it also works offline.
-const SHELL = "bc-shell-v1", DATA = "bc-data-v1";
+const SHELL = "bc-shell-v2", DATA = "bc-data-v1";
 const FILES = ["./", "index.html", "manifest.webmanifest", "icon.svg", "icon-192.png", "icon-512.png", "cashapp-qr.jpg"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(SHELL).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => {

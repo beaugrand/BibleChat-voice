@@ -141,7 +141,7 @@ jobs:
 
           First launch: Windows may say "Windows protected your PC" (click **More info**, then **Run anyway**); on a Mac, right-click the app and choose **Open**. The app isn't code-signed yet.
 
-          Free and open source under the MIT License. No Bibles are included; each one you download keeps its own license.
+          Free and open source under the Apache License 2.0 (see NOTICE). No Bibles are included; each one you download keeps its own license.
           NOTES
           sed -i 's/^          //' notes.md
           # creates the version tag on this commit if it doesn't exist yet

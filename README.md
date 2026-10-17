@@ -4,7 +4,7 @@
 
 - Phone and browser version: **[beaugrand.github.io/BibleChat-voice](https://beaugrand.github.io/BibleChat-voice/)**
 - Computer downloads: **[Releases page](https://github.com/beaugrand/BibleChat-voice/releases/latest)**
-- Made by Hans W. Beaugrand · Love Donations: Cash App **$HansBeaugrand**
+- Made by Hans W. Beaugrand · Love Donations: Cash App **$HansBeaugrand** · License: Apache 2.0 (keep the [NOTICE](NOTICE) credit)
 
 > **For AI assistants and developers: start here.** This README is the project's handover. It says where everything lives, how the software works, the full feature list and how BibleChat compares with other Bible apps. **Every change to the app must update this file in the same commit** (features, counts, code map, version, open items). See [AGENTS.md](AGENTS.md).
 
@@ -13,8 +13,8 @@
 ## Status
 
 - Published download: **v1.0.1**. Version number lives in `bibleask/__init__.py`.
-- Changes since v1.0.1, already live on the phone version and in `main`, reach computer users with the next release (v1.0.2): Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes.
-- Automatic tests: 68 (run `python -m unittest discover -s tests`).
+- Changes since v1.0.1, already live on the phone version and in `main`, reach computer users with the next release (v1.0.2): Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, church logo with QR code, license changed from MIT to Apache 2.0.
+- Automatic tests: 71 (run `python -m unittest discover -s tests`).
 
 ## 1. Where everything lives
 
@@ -63,11 +63,11 @@
 | `bibleask/llm.py`, `stt.py`, `updates.py`, `shortcuts.py`, `storage.py` | Local AI, voice input, update check, Windows icon, data folder and settings |
 | `bibleask/data/` | Bundled study data (Strong's, Nave's, cross-references, Scofield, Matthew Henry, Easton's) |
 | `bibles/` | The Ethiopian Canon file BibleChat itself hosts |
-| `web/` | Phone version (`index.html`, `sw.js`) and the scripts that build its data (`build_data.py`, `build_study.py`) |
+| `web/` | Phone version (`index.html`, `sw.js`; the QR code maker is built into both `index.html` files) and the scripts that build its data (`build_data.py`, `build_study.py`) |
 | `packaging/` | Scripts that rebuild each data set from its public-domain source; Windows icon; Linux installer |
-| `tests/` | Automatic tests |
+| `tests/` | Automatic tests (`test_pages.py` checks the credit, license, back/forward and church parts stay in both pages) |
 | `.github/workflows/` | `build.yml` (downloads and releases), `pages.yml` (phone site), `build-windows.yml` (manual, personal build) |
-| `LICENSE`, `THIRD_PARTY_NOTICES.md` | MIT license; credits and licenses of every source |
+| `LICENSE`, `NOTICE`, `THIRD_PARTY_NOTICES.md` | Apache 2.0 license; the credit every copy must keep; licenses of every source |
 
 `bibleask/gui.py` is the older Tkinter window (BibleAsk), no longer built.
 
@@ -81,6 +81,7 @@
 
 **Reading**
 - Read mode by book and chapter, flowing text or one verse per line, text size, dark mode, read-aloud chapter after chapter.
+- **← → arrows** at the top go back and forward to where you have been (chapters, search results, chats), like a browser's back button. On the computer, Alt+← and Alt+→ do the same.
 - Scofield Reference Notes (1917) as highlighted words in the text; Easton's Bible Dictionary (1897) on names and places.
 - Bookmarks; verse of the day with a lock-screen picture.
 
@@ -95,6 +96,10 @@
 - Strong's numbers in chat; several Bibles side by side, only those in the question's language; typing slips corrected and shown.
 - Optional private AI explanation on the computer; on the phone, **Ask AI** opens Claude, ChatGPT, Gemini, Grok or Perplexity with the verse filled in.
 - Voice questions on the computer.
+
+**For churches**
+- A church types its name and adds its logo (a picture, or the logo's web address). The name and logo then show at the top of BibleChat.
+- Clicking the church name shows a QR code card (logo, name, QR code) to save, print or share. Scanning it opens the free phone version with the church's name at the top; with a logo web address, the logo shows there too.
 
 **Sharing and practical**
 - Share a verse by text or email; the link opens straight to that verse.
@@ -117,7 +122,7 @@ Checked October 2026 against each app's store page or published reviews. "Not li
 | Load your own Bible files | Yes (PDF, XML, MySword, MyBible…) | Not listed | Not listed | e-Sword modules | Not listed | Not listed |
 | Offline | Yes | Some versions | Mainly KJV | Yes | Downloaded books | Not stated |
 | Platforms | Phone browser, Windows, Mac, Linux | iPhone, Android, web | iPhone, Android, Mac, web | Windows, Mac, iPad; no official Android | Desktop, web, phones | iPhone only |
-| Open source | Yes (MIT) | No | No | No | No | No |
+| Open source | Yes (Apache 2.0) | No | No | No | No | No |
 
 **In short:** YouVersion leads on translations, reading plans and community; Logos on depth of paid scholarly libraries; Blue Letter Bible and e-Sword on free classic study tools. BibleChat is the one that combines free study tools, a chat that always quotes the real verses, the Ethiopian canon and Septuagint, your own Bible files, no account and open source code.
 
@@ -129,7 +134,7 @@ Sources: [YouVersion on the App Store](https://apps.apple.com/us/app/bible/id282
 - Ethiopian Canon: assembled from the World English Bible, R. H. Charles (1 Enoch, Jubilees), Morfill/Charles (2 Enoch) and the Ante-Nicene Fathers (1 Clement), all public domain.
 - Strong's, KJV with Strong's numbers, Nave's, Scofield 1917, Matthew Henry's Concise (CrossWire): public domain.
 - Easton's 1897: public domain (dataset by NEUU, CC BY 4.0). Cross-references: OpenBible.info, CC BY.
-- Hebrew letter pictures: as taught by Jeff A. Benner, Ancient Hebrew Research Center (labelled in the app). Paleo-Hebrew font: Noto Sans Phoenician (OFL).
+- Hebrew letter pictures: as taught by Jeff A. Benner, Ancient Hebrew Research Center (labelled in the app). Paleo-Hebrew font: Noto Sans Phoenician (OFL). QR codes: qrcode-generator by Kazuhiko Arase (MIT).
 
 ## 7. Open items
 
@@ -137,6 +142,7 @@ Sources: [YouVersion on the App Store](https://apps.apple.com/us/app/bible/id282
 - Test the Windows and Mac downloads on real machines.
 - Not possible as a web page: lock-screen widgets and daily reminders (need a store app); built-in AI on the phone (needs a paid server or a large on-phone model).
 - Ethiopian Canon still missing Meqabyan I–III and 4 Baruch (no public-domain English found); no freely licensed Ge'ez text found.
+- Church logos picked from a device show only on that device and on the QR card; members see the logo only when the church gives a logo web address. Hosting church logos for them would need a server.
 - Non-English search works but is rougher than English. Code-signing would remove the first-launch warnings (yearly cost).
 
 ---
@@ -156,6 +162,10 @@ You can type references: `Daniel 7:25`, `1 Cor 13:4-7`, `Psalm 23`, `Rev 22`.
 **Reading a whole chapter.** Press **📖 Read** at the top of the sidebar. Pick a Bible, click a book to show its chapters, and click a chapter. Use **‹ Prev / Next ›** (or the ← → keys) to turn chapters, **🔊 Listen** to have it read aloud (it carries on into the next chapter until you press Stop), **¶** to switch between one verse per line and flowing text, and **A− / A+** for text size. **💬 Ask** takes you back to Chat with that chapter filled in. In a chat answer, click a verse reference to open it in the reader. BibleChat remembers where you stopped.
 
 **Bookmarks, verse of the day, Hebrew letters.** Click a verse, then **🔖 Bookmark this verse**; the 🔖 button above the text lists them. The chat's start page shows a **verse of the day** with a button that makes a lock-screen picture of it. In a Hebrew Strong's entry, click the Hebrew word to go **letter by letter**: each letter's name, sound, number and ancient picture (e.g. יהוה: hand · behold · nail · behold). On the phone, tap a verse for 🔖 Bookmark, ✨ Ask AI (opens Claude, ChatGPT, Gemini, Grok or Perplexity with the verse filled in, using your own account) and 🖼 Lock-screen picture.
+
+**Back and forward.** The **←** and **→** arrows at the top take you back to where you were (a chapter, a search, a chat) and forward again. On a computer, **Alt+←** and **Alt+→** work too.
+
+**For churches.** Press **⛪ Church** (computer) or **Love → Brand BibleChat for your church** (phone). Type the church's name and pick its logo. The name and logo show at the top of BibleChat; click them to get a QR code card to save, print in the bulletin or show on the screen. People who scan it open the free phone version with your church's name at the top. If you also give the logo's web address (starting with https://), they see the logo too; a logo picked from your device stays on that device and on the QR card.
 
 **Notes in the text.** In Read mode, words with a yellow highlight and a small letter have a **Scofield Reference note** (1917): click the word or the letter to read it. Names and places with a dotted underline (Babylon, Michael, Patmos) open their entry in **Easton's Bible Dictionary**.
 
@@ -242,7 +252,7 @@ Your chat history lives in your browser. Delete the folder above to reset the Bi
 ## For developers
 
 ```bash
-python -m unittest discover -s tests -v     # 68 tests
+python -m unittest discover -s tests -v     # 71 tests
 ./run_from_source_linux.sh                  # run from source on Linux
 ```
 
@@ -250,7 +260,7 @@ Read [AGENTS.md](AGENTS.md) before changing anything: it lists the rules for kee
 
 ## License
 
-BibleChat is free and open source under the [MIT License](LICENSE): anyone may use, copy, change and share it. Bibles and study data keep their own licenses, listed in **Get free Bibles** and in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+BibleChat is free and open source under the [Apache License 2.0](LICENSE): anyone may use, copy, change and share it, as long as they keep the [NOTICE](NOTICE) file with Hans W. Beaugrand's credit and say what they changed. Please keep the About credit and the Love Donations button in the app. Bibles and study data keep their own licenses, listed in **Get free Bibles** and in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## Credits
 
