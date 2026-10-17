@@ -175,7 +175,7 @@ a{color:var(--accent)}
   <!-- SEARCH -->
   <section id="v-search" hidden><div class="wrap">
     <form id="sform"><input type="search" id="q" placeholder="Words or a verse, e.g. John 3:16" enterkeyhint="search" autocomplete="off"><button class="btn primary">Find</button></form>
-    <div class="hint">Try: <button data-q="John 3:16">John 3:16</button><button data-q="Psalm 23">Psalm 23</button><button data-q="love is patient">love is patient</button><button data-q="the Lord is my shepherd">the Lord is my shepherd</button></div>
+    <div class="hint">Try: <button data-q="John 3:16">John 3:16</button><button data-q="Psalm 23">Psalm 23</button><button data-q="love is patient">love is patient</button><button data-q="the Lord is my shepherd">the Lord is my shepherd</button><button data-q="Daniel to Revelation cross references">Daniel to Revelation cross references</button></div>
     <div id="results"></div>
   </div></section>
 
@@ -600,9 +600,64 @@ function highlight(text, words){
   for(const w of words) if(w.length > 2) h = h.replace(new RegExp("(^|[^\\p{L}])(" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\p{L}*)", "giu"), "$1<mark>$2</mark>");
   return h;
 }
+/* cross-references in Search: "Daniel to Revelation cross references", "cross references Daniel 7:13" */
+const XREF_CUE = /cross[\s-]*ref\w*|xrefs?|related verses|parallel passages/i;
+const NOT_BOOKS = new Set("give me all the book books of from to and between what are is show list find please any in with im talking about verses where does that there link links connect connections how can you i a an for on do want need see let us tell every".split(" "));
+function booksNamed(text){
+  const found = [];
+  for(const m of text.matchAll(/(?:\b([1-3])\s*)?\b([A-Za-z]{3,})\b/g)){
+    const w = m[2].toLowerCase(); if(NOT_BOOKS.has(w)) continue;
+    const b = resolveBooks((m[1] ? m[1] + " " : "") + w)[0];
+    if(b && (w.length >= 4 || b.toLowerCase().endsWith(w)) && !found.includes(b)) found.push(b);
+  }
+  return found;
+}
+async function xrefSearch(q){
+  const out = $("#results");
+  out.innerHTML = `<div class="hint">Looking up cross-references…</div>`;
+  try{
+    sBooks = sBooks || await sGet("books.json");
+    const rest = q.replace(XREF_CUE, " ");
+    const row = (b, c, v, c2, v2, label) => { const bk = sBooks[b]; let t = sText(bk, c, v);
+      if(c2 === c && v2 > v) t += " " + [...Array(Math.min(v2 - v, 2))].map((_, i) => sText(bk, c, v + i + 1)).join(" ") + (v2 - v > 2 ? " …" : "");
+      return `<div class="res"><a href="#" data-b="${esc(bk)}" data-c="${c}" data-v="${v}">${esc(label)}</a>${esc(t || "(not in this Bible)")}</div>`; };
+    const books = /\d+\s*[:.]\s*\d/.test(rest) ? [] : booksNamed(rest);
+    if(books.length === 2){
+      const [A, B] = books.map(b => sBooks.indexOf(b));
+      if(A >= 0 && B >= 0){
+        const [fa, fb] = await Promise.all([sGet("xref/" + A + ".json").catch(() => ({})), sGet("xref/" + B + ".json").catch(() => ({}))]);
+        const pairs = new Map();
+        const add = (src, dst, votes) => { const k = src.join(".") + ">" + dst.join("."); if(!pairs.has(k) || pairs.get(k).votes < votes) pairs.set(k, {src, dst, votes}); };
+        for(const [k, links] of Object.entries(fa)) for(const [b, c, v, c2, v2, votes] of links) if(b === B){ const [ch, vs] = k.split(":").map(Number); add([A, ch, vs, ch, vs], [b, c, v, c2, v2], votes); }
+        for(const [k, links] of Object.entries(fb)) for(const [b, c, v, c2, v2, votes] of links) if(b === A){ const [ch, vs] = k.split(":").map(Number); add([b, c, v, c2, v2], [B, ch, vs, ch, vs], votes); }
+        const list = [...pairs.values()].sort((x, y) => y.votes - x.votes);
+        out.innerHTML = `<div class="hint">${list.length} cross-references link ${esc(books[0])} and ${esc(books[1])}, strongest first (OpenBible.info). Tap one to read it.</div>` +
+          list.slice(0, 150).map(x => row(...x.dst, sRange(...x.src) + " → " + sRange(...x.dst))).join("") +
+          (list.length > 150 ? `<p class="small">…and ${list.length - 150} more.</p>` : "");
+        return;
+      }
+    }
+    const ref = lookupRef(rest.replace(/\b(show|me|all|the|any|of|for|in|from|give|list|find|please)\b/gi, " ").trim());
+    if(ref){
+      const bi = sBooks.indexOf(ref.book), f = bi >= 0 ? await sGet("xref/" + bi + ".json").catch(() => ({})) : {};
+      const seen = new Set(), list = [];
+      for(const [n] of ref.verses) for(const [b, c, v, c2, v2, votes] of (f[ref.ch + ":" + n] || [])){
+        const key = [b, c, v, c2, v2].join("."); if(seen.has(key)) continue; seen.add(key); list.push({n, x: [b, c, v, c2, v2], votes}); }
+      list.sort((a, b) => b.votes - a.votes);
+      const one = ref.verses.length === 1, src = ref.book + " " + ref.ch + (one ? ":" + ref.verses[0][0] : "");
+      out.innerHTML = list.length
+        ? `<div class="hint">${list.length} cross-references from ${esc(src)}, strongest first (OpenBible.info).</div>` +
+          list.slice(0, 150).map(({n, x}) => row(...x, (one ? "" : ref.book + " " + ref.ch + ":" + n + " → ") + sRange(...x))).join("")
+        : `<div class="notice">No cross-references found for ${esc(src)}.</div>`;
+      return;
+    }
+    out.innerHTML = `<div class="notice">Name a verse or two books, like “cross references Daniel 7:13” or “Daniel to Revelation cross references”.</div>`;
+  }catch(e){ out.innerHTML = `<div class="notice err">Couldn't load the cross-references. Check the internet connection and try again.</div>`; }
+}
 function runSearch(q){
   q = q.trim(); if(!q) return;
   if(!idx) buildIndex();
+  if(XREF_CUE.test(q)) return xrefSearch(q);
   const out = $("#results");
   const ref = lookupRef(q);
   if(ref){
