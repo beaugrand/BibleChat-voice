@@ -32,6 +32,15 @@ ALIASES: list[tuple[set[str], str, str]] = [
 ]
 
 
+# Topics Nave's covers thinly, gathered here from the verses that speak to them directly.
+# Each: words that must all be in the question -> (topic, heading, verse references).
+CURATED: list[tuple[set[str], str, str, list[tuple[str, int, int, int]]]] = [
+    ({"god", "name"}, "GOD", "His name: YHWH, “I AM”, the LORD",
+     [("Exodus", 3, 13, 15), ("Exodus", 6, 2, 3), ("Exodus", 34, 5, 7), ("Psalms", 83, 18, 18), ("Isaiah", 42, 8, 8),
+      ("Jeremiah", 16, 21, 21), ("Psalms", 68, 4, 4), ("Isaiah", 12, 2, 2), ("Exodus", 15, 3, 3), ("Matthew", 6, 9, 9)]),
+]
+
+
 @dataclass
 class TopicHit:
     topic: str
@@ -101,6 +110,9 @@ class Topics:
         if not q or not rows:
             return []
         hits: list[TopicHit] = []
+        for words, topic, heading, refs in CURATED:
+            if set(tokenize(" ".join(words))) <= q:
+                hits.append(TopicHit(topic, heading, refs, 200.0))
         for words, topic, need in ALIASES:
             if words <= q:
                 for t, h, refs, _toks, _tt in rows:
@@ -111,6 +123,8 @@ class Topics:
             if not q <= toks:
                 continue
             score = sum(self._idf.get(w, 0) for w in q) + 2.0 * len(q & ttoks) + 0.25 * min(len(refs), 12)
+            if ttoks and ttoks <= q:      # the topic's own name is all in the question ("God", not "Lamb of God")
+                score += 3.0
             hits.append(TopicHit(t, h, refs, score))
         hits.sort(key=lambda h: -h.score)
         out, seen = [], set()

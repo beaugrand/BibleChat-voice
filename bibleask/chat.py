@@ -10,7 +10,7 @@ from typing import Iterator, Optional
 
 from . import llm
 from .library import Library
-from .search import guess_language, short_ref, tokenize
+from .search import _STOP, guess_language, short_ref, tokenize
 from .topics import TOPICS
 
 MAX_VERSES = 12
@@ -78,6 +78,9 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
     same = [(b, ix) for b, ix in loaded if not (q_lang and ix.lang and ix.lang != q_lang)] or loaded
     skipped = [b.name for b, ix in loaded if (b, ix) not in same]
 
+    # typing slips ("NAMEW" for "name"): a word no Bible here knows is replaced by the closest word they do know
+    question, fixed = _fix_spelling(question, same)
+
     def run(query: str):
         return [(bible, ix, ix.search(query, k=MAX_VERSES)) for bible, ix in same]
 
@@ -104,12 +107,53 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
         groups.insert(0, topic)
         for_model = [(vd["ref"], vd["text"][:600]) for vd in topic["verses"]] + for_model
     note = ""
+    if fixed:
+        note = "Searched for " + ", ".join(f"“{b}” (you typed “{a}”)" for a, b in fixed) + ". "
     if skipped:
         one = len(skipped) == 1
-        note = (", ".join(skipped) + (" is" if one else " are") + " in another language, so " +
+        note += (", ".join(skipped) + (" is" if one else " are") + " in another language, so " +
                 ("it wasn't" if one else "they weren't") + " searched with these words. Ask in " +
                 ("that language" if one else "their language") + " to search " + ("it." if one else "them."))
     return Retrieval("search", groups, for_model[:MAX_VERSES + 6], note)
+
+
+# everyday words a question uses that older Bible English doesn't (never "corrected" to a Bible word)
+_MODERN = {"does", "bible", "bibles", "explain", "tell", "talk", "talks", "verse", "verses", "chapter", "about", "mean",
+           "means", "meaning", "jesus", "god's", "gods", "okay", "please", "story", "stories", "today", "people", "says", "bibel"}
+
+
+def _fix_spelling(question: str, bibles: list) -> tuple[str, list[tuple[str, str]]]:
+    vocab: set = set()
+    for _b, ix in bibles:
+        vocab |= ix.vocab
+    if not vocab:
+        return question, []
+    letters = "abcdefghijklmnopqrstuvwxyz"
+    fixed = []
+
+    def best(w: str):
+        dels = [w[:i] + w[i + 1:] for i in range(len(w))]
+        swaps = [w[:i] + w[i + 1] + w[i] + w[i + 2:] for i in range(len(w) - 1)]
+        adds = [w[:i] + c + w[i:] for i in range(len(w) + 1) for c in letters]
+        # an extra key pressed, or two keys swapped, are the safest slips to undo; a missed letter only in long words
+        for group in (dels, swaps) + ((adds,) if len(w) >= 7 else ()):
+            hits = sorted({x for x in group if x in vocab and len(x) > 2})
+            if hits:
+                return hits[0]
+        return None
+
+    def repl(m):
+        w = m.group(0)
+        lw = w.lower()
+        if (len(lw) < 4 or not lw.isascii() or lw in vocab or lw.rstrip("s") in vocab or lw.endswith("'s")
+                or lw in _STOP or lw in _MODERN):
+            return w
+        b = best(lw)
+        if not b:
+            return w
+        fixed.append((w, b))
+        return b
+    return re.sub(r"[A-Za-z']+", repl, question), fixed
 
 
 def _question_language(question: str, loaded: list) -> Optional[str]:

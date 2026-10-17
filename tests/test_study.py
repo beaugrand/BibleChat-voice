@@ -119,3 +119,21 @@ class NotesAndDictionary(unittest.TestCase):
         self.assertNotIn("god", names)          # too common to mark
         self.assertIn("Dan. 10:13", study.EASTON.entry("Michael")["text"])
         self.assertIsNone(study.EASTON.entry("nothing-like-this"))
+
+
+class ConceptQuestions(unittest.TestCase):
+    def test_gods_name_topic(self):
+        hits = TOPICS.find("what is god's name", k=1)
+        self.assertEqual(hits[0].topic, "GOD")
+        self.assertIn(("Exodus", 3, 13, 15), hits[0].refs)
+
+    def test_spelling_slips_are_fixed_carefully(self):
+        from bibleask.chat import _fix_spelling
+
+        class Ix:
+            vocab = {"name", "god", "forgiveness", "shepherd", "lord", "doth", "babel"}
+        q, fixed = _fix_spelling("WHAT IS GODS NAMEW", [(None, Ix)])
+        self.assertIn("name", q)
+        self.assertEqual(fixed, [("NAMEW", "name")])
+        q, fixed = _fix_spelling("what does the bibel say about forgivness", [(None, Ix)])
+        self.assertEqual(fixed, [("forgivness", "forgiveness")])   # "does" and "bibel" are left alone
