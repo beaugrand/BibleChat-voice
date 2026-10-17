@@ -178,11 +178,11 @@ def _xref_group(question: str, loaded: list, id_of: dict) -> Optional[Retrieval]
                 return ix.verses[idx[0]].text
         return passage_text(None, "", book, c, v, c2, v2)
 
-    # two books: "Daniel to Revelation", "Daniel and Revelation"
-    m = re.search(r"([1-3]?\s*[A-Za-z][A-Za-z ]+?)\s+(?:to|and|&|with|vs\.?|-)\s+([1-3]?\s*[A-Za-z][A-Za-z ]+?)\s*[?.!]*$", rest.strip())
-    if m and not re.search(r"\d+\s*[:.]\s*\d", rest):
-        a, b = ix.books.resolve(m[1].strip()), ix.books.resolve(m[2].strip())
-        if a and b and a != b:
+    # two books: "Daniel to Revelation", "give me all crossreferences between daniel and revelation"
+    if not re.search(r"\d+\s*[:.]\s*\d", rest):
+        books = _books_named(rest, ix)
+        if len(books) == 2:
+            a, b = books
             links = XREFS.between(a, b)
             if links:
                 shown = links[:MAX_PASSAGE]
@@ -190,7 +190,7 @@ def _xref_group(question: str, loaded: list, id_of: dict) -> Optional[Retrieval]
                            "text": text(*x["to_ref"])} for x in shown]
                 note = (f"{len(links)} cross-references link {a} and {b} (OpenBible.info, 3+ reader votes), strongest first"
                         + (f"; the first {MAX_PASSAGE} are shown." if len(links) > MAX_PASSAGE else ".")
-                        + f" Click a verse in Read mode to see its cross-references.")
+                        + " Click a verse in Read mode to see its cross-references.")
                 group = {"bible": f"Cross-references: {a} ↔ {b} · {bible.name}", "id": id_of.get(bible.name),
                          "topic": True, "xref": True, "verses": verses}
                 return Retrieval("xref", [group], [(v["ref"], v["text"][:400]) for v in verses[:MAX_VERSES]], note)
@@ -219,6 +219,25 @@ def _xref_group(question: str, loaded: list, id_of: dict) -> Optional[Retrieval]
     group = {"bible": f"Cross-references for {src} · {bible.name}", "id": id_of.get(bible.name), "topic": True,
              "xref": True, "verses": verses}
     return Retrieval("xref", [group], [(v["ref"], v["text"][:400]) for v in verses[:MAX_VERSES]], note)
+
+
+_NOT_BOOKS = {"give", "me", "all", "the", "book", "books", "of", "from", "to", "and", "between", "what", "are", "is",
+              "show", "list", "find", "please", "any", "in", "with", "im", "talking", "about", "verses", "where",
+              "does", "that", "there", "link", "links", "connect", "connections", "how", "can", "you", "can't",
+              "i", "a", "an", "for", "on", "do", "want", "need", "see", "let", "us", "tell", "every"}
+
+
+def _books_named(text: str, ix) -> list[str]:
+    """Bible books named in free text, in order ("daniel and the book of revelation" -> Daniel, Revelation)."""
+    found: list[str] = []
+    for m in re.finditer(r"(?:\b([1-3])\s*)?\b([A-Za-z]{3,})\b", text):
+        word = m[2].lower()
+        if word in _NOT_BOOKS:
+            continue
+        cand = ix.books.resolve((m[1] + " " if m[1] else "") + word)
+        if cand and (len(word) >= 4 or word == cand.lower()[-len(word):]) and cand not in found:
+            found.append(cand)
+    return found
 
 
 def _strongs_group(question: str, loaded: list, id_of: dict) -> Optional[Retrieval]:

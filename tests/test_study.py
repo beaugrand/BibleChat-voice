@@ -85,3 +85,17 @@ class BookNames(unittest.TestCase):
         self.assertEqual(ix.resolve("I Samuel"), "1 Samuel")
         self.assertEqual(ix.resolve("ii kings"), "2 Kings")
         self.assertEqual(ix.resolve("1john"), "1 John")
+
+
+class CrossReferenceQuestions(unittest.TestCase):
+    def test_natural_wording_finds_both_books(self):
+        from bibleask.chat import _books_named
+        from bibleask.search import BookIndex
+
+        class Ix:
+            books = BookIndex(["Genesis", "Isaiah", "Daniel", "Matthew", "John", "1 John", "Revelation"])
+        for q, want in [("give me all crossreferences between daniel and revelation", ["Daniel", "Revelation"]),
+                        ("what are the cross references from daniel to the book of revelation", ["Daniel", "Revelation"]),
+                        ("show cross references from Isaiah to Matthew", ["Isaiah", "Matthew"]),
+                        ("cross references 1 john and john", ["1 John", "John"])]:
+            self.assertEqual(_books_named(q, Ix), want, q)
