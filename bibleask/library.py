@@ -22,6 +22,24 @@ def _catalog_language(name: str) -> str:
     return ""
 
 
+_BOOKNAMES: Optional[dict] = None
+
+
+def book_names(bible_id: str) -> dict:
+    """Book names in the Bible's own language ("1. Mose" for Genesis), by English name; empty for English."""
+    global _BOOKNAMES
+    if _BOOKNAMES is None:
+        import json
+        try:
+            with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "booknames.json"), encoding="utf-8") as f:
+                _BOOKNAMES = json.load(f)
+        except OSError:
+            _BOOKNAMES = {}
+    bid = bible_id.lower()
+    key = "chi-simp" if bid.startswith("chi-") and "simp" in bid else bid.split("-")[0].split(".")[0]
+    return _BOOKNAMES.get(key, {})
+
+
 class Library:
     def __init__(self) -> None:
         self._cache: dict[str, tuple[Bible, Index]] = {}
@@ -60,7 +78,8 @@ class Library:
             if not chs or chs[-1] != v.chapter:
                 if v.chapter not in chs:
                     chs.append(v.chapter)
-        return [{"name": k, "chapters": sorted(c)} for k, c in order.items()]
+        local = book_names(bible_id)
+        return [{"name": k, "chapters": sorted(c), **({"local": local[k]} if local.get(k) else {})} for k, c in order.items()]
 
     def chapter(self, bible_id: str, book: str, chapter: int) -> dict:
         """All verses of one chapter (long verses that were split for search are joined again),

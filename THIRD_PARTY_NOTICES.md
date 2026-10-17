@@ -7,6 +7,7 @@ following work by others. Each keeps its own license.
 
 | Component | Used for | License |
 |---|---|---|
+| [The SWORD Project](https://crosswire.org/sword/) locale files (libsword-common) | Bible book names in 30 languages (`bibleask/data/booknames.json`); names are facts, files GPL-2 | GPL-2 (source of the name list) |
 | [qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator) by Kazuhiko Arase | Makes the church QR codes; built into both `index.html` files | MIT |
 | [Bible](https://github.com/Lugsole/net.lugsole.bible_gui) by Lugsole | Reading view and the SPB, TSV and MyBible readers are modelled on it | MIT (notice below) |
 

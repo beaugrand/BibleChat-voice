@@ -36,3 +36,32 @@ class PagesTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class LanguagesTest(unittest.TestCase):
+    def test_every_phrase_has_every_language(self):
+        import json, re
+        src = read(os.path.join(ROOT, "web", "i18n.js"))
+        order = json.loads(re.search(r"const I18N_ORDER = (\[[^\]]*\]);", src).group(1))
+        body = src[src.index("const I18N = {") + len("const I18N = "):src.index("\n};", src.index("const I18N = {")) + 2]
+        table = json.loads(re.sub(r",\s*}$", "}", body))
+        self.assertGreater(len(table), 150)
+        for k, v in table.items():
+            self.assertEqual(len(v), len(order), k)
+            self.assertTrue(all(isinstance(x, str) and x for x in v), k)
+
+    def test_phone_has_language_flag_and_book_names(self):
+        s = read(PAGES[0])
+        for part in ('id="langBtn"', 'src="i18n.js"', "function setLang", "const bName"):
+            self.assertIn(part, s)
+        self.assertIn("i18n.js", read(os.path.join(ROOT, "web", "sw.js")))
+
+    def test_book_names_table(self):
+        import json
+        with open(os.path.join(ROOT, "bibleask", "data", "booknames.json"), encoding="utf-8") as f:
+            t = json.load(f)
+        self.assertEqual(t["deu"]["Genesis"], "1. Mose")
+        self.assertIn("kor", t)
+        from bibleask.library import book_names
+        self.assertEqual(book_names("deu-luther1912.osis")["Revelation"], "Offenbarung")
+        self.assertEqual(book_names("eng-kjv"), {})

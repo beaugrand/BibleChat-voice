@@ -14,7 +14,8 @@
 
 - Published download: **v1.0.2** (17 October 2026). Version number lives in `bibleask/__init__.py`.
 - v1.0.2 brought the computer downloads up to date with the phone version: Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, verse image maker with your own photos, church logo with QR code, sermon list with QR code, Ask AI on the computer, Suggest a feature, the BibleChat connector for AI apps, license changed from MIT to Apache 2.0.
-- Automatic tests: 76 (run `python -m unittest discover -s tests`).
+- Changes since v1.0.2, already live on the phone version and in `main`, reach computer users with the next release (v1.0.3): book names in each Bible's own language (computer and phone), app language flag with 8 languages (phone).
+- Automatic tests: 79 (run `python -m unittest discover -s tests`).
 
 ## 1. Where everything lives
 
@@ -65,8 +66,8 @@
 | `bibleask/llm.py`, `stt.py`, `updates.py`, `shortcuts.py`, `storage.py` | Local AI, voice input, update check, Windows icon, data folder and settings |
 | `bibleask/data/` | Bundled study data (Strong's, Nave's, cross-references, Scofield, Matthew Henry, Easton's) |
 | `bibles/` | The Ethiopian Canon file BibleChat itself hosts |
-| `web/` | Phone version (`index.html`, `sw.js`; the QR code maker is built into both `index.html` files) and the scripts that build its data (`build_data.py`, `build_study.py`) |
-| `packaging/` | Scripts that rebuild each data set from its public-domain source; Windows icon; Linux installer |
+| `web/` | Phone version (`index.html`, `sw.js`, `i18n.js` = interface translations; the QR code maker is built into both `index.html` files) and the scripts that build its data (`build_data.py`, `build_study.py`) |
+| `packaging/` | Scripts that rebuild each data set from its public-domain source (`build_booknames.py` makes `bibleask/data/booknames.json`); Windows icon; Linux installer |
 | `tests/` | Automatic tests (`test_pages.py` checks the credit, license, back/forward and church parts stay in both pages) |
 | `.github/workflows/` | `build.yml` (downloads and releases), `pages.yml` (phone site), `build-windows.yml` (manual, personal build) |
 | `LICENSE`, `NOTICE`, `THIRD_PARTY_NOTICES.md` | Apache 2.0 license; the credit every copy must keep; licenses of every source |
@@ -82,6 +83,8 @@
 - Add your own Bible files: PDF, XML (Zefania, OSIS, USFX), TXT, SPB, TSV, MyBible and unlocked MySword.
 
 **Reading**
+- Book names in the Bible's own language ("1. Mose", "创世记", "Génesis"), on the phone and the computer; references can be typed that way too ("Römer 8:28").
+- **App language flag** (phone, top bar): English, Deutsch, Español, Français, Português, 中文, Русский, 한국어. It changes buttons and menus only; the Bible text stays in the Bible you chose. Words live in `web/i18n.js`, one line per phrase.
 - Read mode by book and chapter, flowing text or one verse per line, text size, dark mode, read-aloud chapter after chapter.
 - **← → arrows** at the top go back and forward to where you have been (chapters, search results, chats), like a browser's back button. On the computer, Alt+← and Alt+→ do the same.
 - Scofield Reference Notes (1917) as highlighted words in the text; Easton's Bible Dictionary (1897) on names and places.
@@ -144,7 +147,7 @@ Sources: [YouVersion on the App Store](https://apps.apple.com/us/app/bible/id282
 - Ethiopian Canon: assembled from the World English Bible, R. H. Charles (1 Enoch, Jubilees), Morfill/Charles (2 Enoch) and the Ante-Nicene Fathers (1 Clement), all public domain.
 - Strong's, KJV with Strong's numbers, Nave's, Scofield 1917, Matthew Henry's Concise (CrossWire): public domain.
 - Easton's 1897: public domain (dataset by NEUU, CC BY 4.0). Cross-references: OpenBible.info, CC BY.
-- Hebrew letter pictures: as taught by Jeff A. Benner, Ancient Hebrew Research Center (labelled in the app). Paleo-Hebrew font: Noto Sans Phoenician (OFL). QR codes: qrcode-generator by Kazuhiko Arase (MIT).
+- Hebrew letter pictures: as taught by Jeff A. Benner, Ancient Hebrew Research Center (labelled in the app). Paleo-Hebrew font: Noto Sans Phoenician (OFL). QR codes: qrcode-generator by Kazuhiko Arase (MIT). Book names in 30 languages: The SWORD Project locale files (CrossWire), plus the names printed in each Bible file.
 
 ## 7. Open items
 
@@ -153,6 +156,7 @@ Sources: [YouVersion on the App Store](https://apps.apple.com/us/app/bible/id282
 - Ethiopian Canon still missing Meqabyan I–III and 4 Baruch (no public-domain English found); no freely licensed Ge'ez text found.
 - Church logos picked from a device show only on that device and on the QR card; members see the logo only when the church gives a logo web address. Hosting church logos for them would need a server.
 - Connector: choose a host for the public version (Render, Fly.io, Railway or Hugging Face Spaces; needs a free account), add its HTTPS address in Claude as a custom connector, test every tool, then submit at claude.ai/directory/manage (paid Claude plan).
+- App language flag: the computer version's menus are still English only (phone has 8 languages). Book names fall back to English for Albanian, Maori, Swahili, Tagalog and Cherokee (no name list found).
 - Non-English search works but is rougher than English. Code-signing would remove the first-launch warnings (yearly cost).
 
 ---
@@ -172,6 +176,8 @@ You can type references: `Daniel 7:25`, `1 Cor 13:4-7`, `Psalm 23`, `Rev 22`.
 **Reading a whole chapter.** Press **📖 Read** at the top of the sidebar. Pick a Bible, click a book to show its chapters, and click a chapter. Use **‹ Prev / Next ›** (or the ← → keys) to turn chapters, **🔊 Listen** to have it read aloud (it carries on into the next chapter until you press Stop), **¶** to switch between one verse per line and flowing text, and **A− / A+** for text size. **💬 Ask** takes you back to Chat with that chapter filled in. In a chat answer, click a verse reference to open it in the reader. BibleChat remembers where you stopped.
 
 **Bookmarks, verse of the day, Hebrew letters.** Click a verse, then **🔖 Bookmark this verse**; the 🔖 button above the text lists them. The chat's start page shows a **verse of the day** with a button that makes a lock-screen picture of it. In a Hebrew Strong's entry, click the Hebrew word to go **letter by letter**: each letter's name, sound, number and ancient picture (e.g. יהוה: hand · behold · nail · behold). On the phone, tap a verse for 🔖 Bookmark, ✨ Ask AI (opens Claude, ChatGPT, Gemini, Grok or Perplexity with the verse filled in, using your own account) and 🖼 Lock-screen picture.
+
+**Language.** Tap the flag at the top of the phone version to switch the app's buttons and menus to Deutsch, Español, Français, Português, 中文, Русский or 한국어. Book names always follow the Bible you are reading.
 
 **Back and forward.** The **←** and **→** arrows at the top take you back to where you were (a chapter, a search, a chat) and forward again. On a computer, **Alt+←** and **Alt+→** work too.
 
@@ -270,7 +276,7 @@ Your chat history lives in your browser. Delete the folder above to reset the Bi
 ## For developers
 
 ```bash
-python -m unittest discover -s tests -v     # 76 tests
+python -m unittest discover -s tests -v     # 79 tests
 python -m bibleask.mcp_server               # the connector, for Claude Desktop / Claude Code
 ./run_from_source_linux.sh                  # run from source on Linux
 ```

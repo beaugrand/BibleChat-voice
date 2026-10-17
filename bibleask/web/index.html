@@ -995,10 +995,10 @@ async function loadBooks(bid){
 }
 function renderBooks(){
   const f = $("#bookFind").value.trim().toLowerCase();
-  const list = rBooks.filter(b => !f || b.name.toLowerCase().includes(f));
+  const list = rBooks.filter(b => !f || b.name.toLowerCase().includes(f) || (b.local || "").toLowerCase().includes(f));
   $("#books").innerHTML = list.length ? list.map(b => {
     const cur = rChap && rChap.book === b.name;
-    return `<div class="book${cur ? " cur open" : ""}${f && list.length <= 3 ? " open" : ""}" data-b="${esc(b.name)}"><button>${esc(b.name)}</button><div class="chs">${
+    return `<div class="book${cur ? " cur open" : ""}${f && list.length <= 3 ? " open" : ""}" data-b="${esc(b.name)}"><button>${esc(b.local || b.name)}</button><div class="chs">${
       b.chapters.map(c => `<button data-c="${c}"${cur && rChap.chapter === c ? ' class="cur"' : ""}>${c}</button>`).join("")}</div></div>`;
   }).join("") : `<div class="empty-note">No book matches “${esc(f)}”.</div>`;
 }
@@ -1079,7 +1079,7 @@ async function showChapter(book, chapter, hitVerse){
   if(j.error){ $("#rtext").innerHTML = `<p class="notice err">${esc(j.error)}</p>`; return; }
   rChap = {...j, bid};
   rd = {bible: bid, book, chapter}; store.set("bc.read", rd); navNote();
-  $("#rtitle").innerHTML = `<b>${esc(book)} ${chapter}</b><small>${esc(j.bible)} · ${j.verses.length} verses · click a verse to study it${Object.keys(j.scofield || {}).length ? " · <mark class=\"sc\" style=\"cursor:default\">highlighted</mark> = Scofield note" : ""}</small>`;
+  $("#rtitle").innerHTML = `<b>${esc((rBooks.find(b => b.name === book) || {}).local || book)} ${chapter}</b><small>${esc(j.bible)} · ${j.verses.length} verses · click a verse to study it${Object.keys(j.scofield || {}).length ? " · <mark class=\"sc\" style=\"cursor:default\">highlighted</mark> = Scofield note" : ""}</small>`;
   const t = $("#rtext");
   t.className = rLinesOn ? "lines" : "";
   await loadEastonNames();
