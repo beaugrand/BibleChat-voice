@@ -39,7 +39,7 @@ jobs:
           cp web/index.html web/sw.js web/manifest.webmanifest web/icon.svg web/icon-192.png web/icon-512.png web/cashapp-qr.jpg site/
           report() { cat step.log; echo "::error title=$1 failed::$(tail -n 25 step.log | sed 's/%/%25/g' | tr '\n' '\r' | sed 's/\r/%0A/g')"; exit 1; }
           python web/build_data.py site > step.log 2>&1 || report "Bibles"
-          echo "::notice title=Bibles::$(grep -E 'amh|ethiopian' step.log | tr '\n' ' ')"
+          echo "::notice title=Bibles::$(grep -E -A1 '\.zip|ethiopian' step.log | tr '\n' ' ')"
           python web/build_study.py site > step.log 2>&1 || report "Study data"
           touch site/.nojekyll
           du -sh site
