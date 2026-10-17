@@ -13,7 +13,7 @@
 ## Status
 
 - Published download: **v1.0.1**. Version number lives in `bibleask/__init__.py`.
-- Changes since v1.0.1, already live on the phone version and in `main`, reach computer users with the next release (v1.0.2): Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, church logo with QR code, sermon list with QR code, Ask AI on the computer, Suggest a feature, the BibleChat connector for AI apps, license changed from MIT to Apache 2.0.
+- Changes since v1.0.1, already live on the phone version and in `main`, reach computer users with the next release (v1.0.2): Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, verse image maker with your own photos, church logo with QR code, sermon list with QR code, Ask AI on the computer, Suggest a feature, the BibleChat connector for AI apps, license changed from MIT to Apache 2.0.
 - Automatic tests: 76 (run `python -m unittest discover -s tests`).
 
 ## 1. Where everything lives
@@ -85,7 +85,8 @@
 - Read mode by book and chapter, flowing text or one verse per line, text size, dark mode, read-aloud chapter after chapter.
 - **← → arrows** at the top go back and forward to where you have been (chapters, search results, chats), like a browser's back button. On the computer, Alt+← and Alt+→ do the same.
 - Scofield Reference Notes (1917) as highlighted words in the text; Easton's Bible Dictionary (1897) on names and places.
-- Bookmarks; verse of the day with a lock-screen picture.
+- Bookmarks; verse of the day.
+- **🖼 Verse image:** pick one or more verses (＋ verse / − verse), a background or one of your own photos (it stays on the device), a size (square post, story, lock screen), text size and font, then **↗ Share** (Facebook, Instagram, WhatsApp, Messages…) or **⬇ Save image**.
 
 **Studying a verse** (click or tap a verse)
 - KJV word by word with Strong's numbers; each word opens the Hebrew or Greek word, pronunciation, meaning, KJV renderings and every verse that uses it.
@@ -178,6 +179,8 @@ You can type references: `Daniel 7:25`, `1 Cor 13:4-7`, `Psalm 23`, `Rev 22`.
 **For churches.** Press **⛪ Church** (computer) or **Love → Brand BibleChat for your church** (phone). Type the church's name and pick its logo. The name and logo show at the top of BibleChat; click them to get a QR code card to save, print in the bulletin or show on the screen. People who scan it open the free phone version with your church's name at the top. If you also give the logo's web address (starting with https://), they see the logo too; a logo picked from your device stays on that device and on the QR card.
 
 **Sermon list (for pastors).** Click a verse, then **📋 Add to sermon**. Open the list with **📋** (Read mode), give it a title, move verses up or down, then press **📺 Show with QR code**. The verses and a big QR code fill the screen; people scan it and get the same verses on their phone, saved there to take home.
+
+**Make an image to post.** Tap a verse, then **🖼 Image** (phone) or **🖼 Make an image to post** (computer). Add the next verses with **＋ verse**, pick a background or **📷** one of your photos, choose Post, Story or Lock screen, then **↗ Share** or **⬇ Save image**. On a phone, Share → Save Image puts it in your photos.
 
 **Ask an AI.** Click a verse, then **✨ Ask an AI**, or press **✨ Ask another AI** under a chat answer. Pick Claude, ChatGPT, Gemini, Grok or Perplexity; it opens with the verses and question filled in, using your own account there.
 

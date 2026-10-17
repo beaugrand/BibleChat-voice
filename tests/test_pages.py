@@ -30,7 +30,7 @@ class PagesTest(unittest.TestCase):
             s = read(p)
             for part in ('id="navBack"', 'id="navFwd"', 'id="churchBtn"', 'id="churchDlg"', 'id="chFile"',
                          "var qrcode", "function churchLink", "function navGo", 'id="smDlg"', 'id="smScreen"',
-                         "function sermonLink", 'id="sgText"', "mailto:wbeaugrand@gmail.com", "issues/new", "function askAI"):
+                         "function sermonLink", 'id="sgText"', "mailto:wbeaugrand@gmail.com", "issues/new", "function askAI", 'id="viDlg"', "function viDraw", 'id="viPhoto"'):
                 self.assertIn(part, s, f"{part} missing in {p}")
 
 
