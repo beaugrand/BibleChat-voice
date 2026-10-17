@@ -77,12 +77,12 @@ EXTRA: list[tuple[str, str, str, str, str, int, int, str, str]] = [
     ('amh_usfx.zip', 'Amharic', 'AMH', 'Amharic New Testament (1962)', AMHARIC_NOTICE, 0, 7369,
      'New Testament only (27 books); from the 1962 Haile Selassie Amharic Bible',
      'https://ebible.org/Scriptures/amh_usfx.zip'),
-    ('englxx_usfx.zip', 'English', 'LXX2012', 'Septuagint in modern English (LXX2012)', 'Public Domain', 0, 0,
+    ('eng-lxx2012_usfx.zip', 'English', 'LXX2012', 'Septuagint in modern English (LXX2012)', 'Public Domain', 0, 0,
      "The Greek Old Testament (Septuagint) with the Apocrypha: Brenton's 1851 translation in updated American English",
-     'https://ebible.org/Scriptures/englxx_usfx.zip'),
-    ('engbre_usfx.zip', 'English', 'BRENTON', 'Brenton Septuagint (1851)', 'Public Domain', 0, 0,
+     'https://ebible.org/Scriptures/eng-lxx2012_usfx.zip'),
+    ('eng-Brenton_usfx.zip', 'English', 'BRENTON', 'Brenton Septuagint (1851)', 'Public Domain', 0, 0,
      "Sir Lancelot Brenton's English translation of the Greek Old Testament (Septuagint)",
-     'https://ebible.org/Scriptures/engbre_usfx.zip'),
+     'https://ebible.org/Scriptures/eng-Brenton_usfx.zip'),
 ]
 
 
