@@ -234,6 +234,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 .cat .err{font-size:12.5px}
 .cat .progress{margin:6px 0 0;width:120px}
 /* older-processor notice */
+#verLine{width:100%;text-align:center;font-size:11.5px;color:var(--muted);margin-top:4px}
 .upd{margin:0 12px 8px;border:1px solid #6aa36f;background:rgba(106,163,111,.14);border-radius:11px;padding:9px 11px;font-size:13.5px;line-height:1.45}
 .upd b{display:block;font-size:14px}
 .upd a.btn{display:inline-block;margin-top:7px;text-decoration:none;padding:5px 10px;font-size:13.5px}
@@ -303,6 +304,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
     <button class="btn love" id="love">♥ Love Donations</button>
     <button class="btn" id="theme">☾ Theme</button>
     <button class="btn" id="quit">Quit</button>
+    <div id="verLine" title="BibleChat checks once a day for a newer version"></div>
   </div>
 </aside>
 
@@ -613,7 +615,8 @@ $("#getList").addEventListener("click", async e => {
 /* ---------------- server state ---------------- */
 let pollTimer = null;
 function renderUpdate(){
-  const u = state.update, box = $("#updBox");
+  const u = state.update, box = $("#updBox"), ver = $("#verLine");
+  if(ver) ver.textContent = state.version ? `BibleChat ${state.version}${u ? "" : " · up to date"}` : "";
   if(!u){ box.hidden = true; return; }
   const win = /Windows\.zip$/.test(u.url), mac = /Mac\.zip$/.test(u.url);
   box.innerHTML = `<b>✨ BibleChat ${esc(u.version)} is out</b>You have ${esc(state.version)}.
@@ -1156,6 +1159,30 @@ function hebLetters(word){
   }
   return out;
 }
+/* Greek letters: name, sound, number value, and the Hebrew (Phoenician) letter each one grew out of */
+const GRK_LETTERS = {
+  "α": ["Alpha", "a", 1, "א"], "β": ["Beta", "b", 2, "ב"], "γ": ["Gamma", "g", 3, "ג"], "δ": ["Delta", "d", 4, "ד"],
+  "ε": ["Epsilon", "e (short)", 5, "ה"], "ζ": ["Zeta", "z / dz", 7, "ז"], "η": ["Eta", "ē (long e)", 8, "ח"], "θ": ["Theta", "th", 9, "ט"],
+  "ι": ["Iota", "i", 10, "י"], "κ": ["Kappa", "k", 20, "כ"], "λ": ["Lambda", "l", 30, "ל"], "μ": ["Mu", "m", 40, "מ"],
+  "ν": ["Nu", "n", 50, "נ"], "ξ": ["Xi", "x (ks)", 60, "ס"], "ο": ["Omicron", "o (short)", 70, "ע"], "π": ["Pi", "p", 80, "פ"],
+  "ρ": ["Rho", "r", 100, "ר"], "σ": ["Sigma", "s", 200, "ש"], "ς": ["Sigma (final form)", "s", 200, "ש"], "τ": ["Tau", "t", 300, "ת"],
+  "υ": ["Upsilon", "u / y", 400, "ו"], "φ": ["Phi", "ph (f)", 500, ""], "χ": ["Chi", "ch (kh)", 600, ""], "ψ": ["Psi", "ps", 700, ""],
+  "ω": ["Omega", "ō (long o)", 800, ""]
+};
+function grkLettersHtml(word){
+  const ls = [];
+  for(const ch of (word || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()){
+    const L = GRK_LETTERS[ch]; if(L) ls.push({ch, name: L[0], sound: L[1], value: L[2], heb: L[3]});
+  }
+  if(!ls.length) return "";
+  const total = ls.reduce((n, l) => n + l.value, 0);
+  return `<h3>Letter by letter (read left to right)</h3><div class="heb">` + ls.map(l => {
+      const h = l.heb && HEB_LETTERS[l.heb];
+      return `<div class="hl"><span class="hc" lang="el">${l.ch}</span><div><b>${l.name}</b> · “${l.sound}” · ${l.value}<br>${h
+        ? `from Hebrew <span lang="he">${l.heb}</span> ${h[0]}: <i>${h[3]}</i> — ${h[4]}` : "a Greek addition, no Hebrew ancestor"}</div></div>`; }).join("") +
+    `</div><p class="muted small">Number value of the word: ${total}. The Greek alphabet grew out of the Phoenician (early Hebrew) letters; the pictures shown are those of the Hebrew ancestor, not a meaning of the Greek word itself.</p>`;
+}
+
 function hebLettersHtml(word){
   const ls = hebLetters(word); if(!ls.length) return "";
   const total = ls.reduce((n, l) => n + l.value, 0);
@@ -1223,8 +1250,8 @@ async function studyStrongs(n){
   if(j.error) return studyShow({title: n, html: `<p class="notice err">No Strong's entry “${esc(n)}”. Hebrew numbers go from H1 to H8674, Greek from G1 to G5624.</p>`});
   const he = j.language === "Hebrew";
   studyShow({title: `Strong's ${j.number}`, html:
-    `<div class="orig${he ? " he hebtap" : ""}" lang="${he ? "he" : "el"}" ${he ? 'title="Click: letter by letter"' : ""}>${esc(j.word)}</div>
-     ${he ? `<button class="tp hebbtn"><b>א Letter by letter: names, pictures, meanings</b><span>›</span></button><div class="hebbox" hidden>${hebLettersHtml(j.word)}</div>` : ""}
+    `<div class="orig hebtap${he ? " he" : ""}" lang="${he ? "he" : "el"}" ${he ? 'title="Click: letter by letter"' : ""}>${esc(j.word)}</div>
+     <button class="tp hebbtn"><b>${he ? "א" : "α"} Letter by letter: names, ${he ? "pictures, meanings" : "numbers, Hebrew roots"}</b><span>›</span></button><div class="hebbox" hidden>${he ? hebLettersHtml(j.word) : grkLettersHtml(j.word)}</div>
      <div class="sub">${esc(j.language)} · ${esc(j.translit)} · say “${esc(j.pron)}”</div>
      <h3>Meaning</h3><p>${snLinks(j.meaning)}</p>
      ${j.kjv ? `<h3>How the KJV translates it</h3><p>${snLinks(j.kjv)}</p>` : ""}

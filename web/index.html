@@ -821,6 +821,30 @@ function hebLetters(word){
   }
   return out;
 }
+/* Greek letters: name, sound, number value, and the Hebrew (Phoenician) letter each one grew out of */
+const GRK_LETTERS = {
+  "α": ["Alpha", "a", 1, "א"], "β": ["Beta", "b", 2, "ב"], "γ": ["Gamma", "g", 3, "ג"], "δ": ["Delta", "d", 4, "ד"],
+  "ε": ["Epsilon", "e (short)", 5, "ה"], "ζ": ["Zeta", "z / dz", 7, "ז"], "η": ["Eta", "ē (long e)", 8, "ח"], "θ": ["Theta", "th", 9, "ט"],
+  "ι": ["Iota", "i", 10, "י"], "κ": ["Kappa", "k", 20, "כ"], "λ": ["Lambda", "l", 30, "ל"], "μ": ["Mu", "m", 40, "מ"],
+  "ν": ["Nu", "n", 50, "נ"], "ξ": ["Xi", "x (ks)", 60, "ס"], "ο": ["Omicron", "o (short)", 70, "ע"], "π": ["Pi", "p", 80, "פ"],
+  "ρ": ["Rho", "r", 100, "ר"], "σ": ["Sigma", "s", 200, "ש"], "ς": ["Sigma (final form)", "s", 200, "ש"], "τ": ["Tau", "t", 300, "ת"],
+  "υ": ["Upsilon", "u / y", 400, "ו"], "φ": ["Phi", "ph (f)", 500, ""], "χ": ["Chi", "ch (kh)", 600, ""], "ψ": ["Psi", "ps", 700, ""],
+  "ω": ["Omega", "ō (long o)", 800, ""]
+};
+function grkLettersHtml(word){
+  const ls = [];
+  for(const ch of (word || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()){
+    const L = GRK_LETTERS[ch]; if(L) ls.push({ch, name: L[0], sound: L[1], value: L[2], heb: L[3]});
+  }
+  if(!ls.length) return "";
+  const total = ls.reduce((n, l) => n + l.value, 0);
+  return `<h3>Letter by letter (read left to right)</h3><div class="heb">` + ls.map(l => {
+      const h = l.heb && HEB_LETTERS[l.heb];
+      return `<div class="hl"><span class="hc" lang="el">${l.ch}</span><div><b>${l.name}</b> · “${l.sound}” · ${l.value}<br>${h
+        ? `from Hebrew <span lang="he">${l.heb}</span> ${h[0]}: <i>${h[3]}</i> — ${h[4]}` : "a Greek addition, no Hebrew ancestor"}</div></div>`; }).join("") +
+    `</div><p class="muted small">Number value of the word: ${total}. The Greek alphabet grew out of the Phoenician (early Hebrew) letters; the pictures shown are those of the Hebrew ancestor, not a meaning of the Greek word itself.</p>`;
+}
+
 function hebLettersHtml(word){
   const ls = hebLetters(word); if(!ls.length) return "";
   const total = ls.reduce((n, l) => n + l.value, 0);
@@ -899,8 +923,8 @@ async function studyStrongs(n){
     const e = d[key]; if(!e) return sShow({title: key, html: `<p>No Strong's entry ${esc(key)}.</p>`});
     const uses = w[key] || [], he = L === "H";
     sShow({title: "Strong's " + key, html:
-      `<div class="orig${he ? " he hebtap" : ""}" lang="${he ? "he" : "el"}">${esc(e.w)}</div>
-       ${he ? `<button class="tp hebbtn"><b>א Letter by letter: names, pictures, meanings</b><span>›</span></button><div class="hebbox" hidden>${hebLettersHtml(e.w)}</div>` : ""}
+      `<div class="orig hebtap${he ? " he" : ""}" lang="${he ? "he" : "el"}">${esc(e.w)}</div>
+       <button class="tp hebbtn"><b>${he ? "א" : "α"} Letter by letter: names, ${he ? "pictures, meanings" : "numbers, Hebrew roots"}</b><span>›</span></button><div class="hebbox" hidden>${he ? hebLettersHtml(e.w) : grkLettersHtml(e.w)}</div>
        <p class="muted">${he ? "Hebrew" : "Greek"} · ${esc(e.t)} · say “${esc(e.p)}”</p>
        <h3>Meaning</h3><p>${sLinks(e.d)}</p>${e.k ? `<h3>How the KJV translates it</h3><p>${sLinks(e.k)}</p>` : ""}
        <h3>Every verse with this word (${uses.length})</h3>${sVerses(uses.slice(0, 300))}${uses.length > 300 ? `<p class="small">…and ${uses.length - 300} more.</p>` : ""}`});
