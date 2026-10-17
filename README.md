@@ -12,8 +12,8 @@
 
 ## Status
 
-- Published download: **v1.0.1**. Version number lives in `bibleask/__init__.py`.
-- Changes since v1.0.1, already live on the phone version and in `main`, reach computer users with the next release (v1.0.2): Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, verse image maker with your own photos, church logo with QR code, sermon list with QR code, Ask AI on the computer, Suggest a feature, the BibleChat connector for AI apps, license changed from MIT to Apache 2.0.
+- Published download: **v1.0.2** (17 October 2026). Version number lives in `bibleask/__init__.py`.
+- v1.0.2 brought the computer downloads up to date with the phone version: Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, verse image maker with your own photos, church logo with QR code, sermon list with QR code, Ask AI on the computer, Suggest a feature, the BibleChat connector for AI apps, license changed from MIT to Apache 2.0.
 - Automatic tests: 76 (run `python -m unittest discover -s tests`).
 
 ## 1. Where everything lives
@@ -148,7 +148,6 @@ Sources: [YouVersion on the App Store](https://apps.apple.com/us/app/bible/id282
 
 ## 7. Open items
 
-- Release v1.0.2 so the computer downloads get everything since v1.0.1.
 - Test the Windows and Mac downloads on real machines.
 - Not possible as a web page: lock-screen widgets and daily reminders (need a store app); built-in AI on the phone (needs a paid server or a large on-phone model).
 - Ethiopian Canon still missing Meqabyan I–III and 4 Baruch (no public-domain English found); no freely licensed Ge'ez text found.
