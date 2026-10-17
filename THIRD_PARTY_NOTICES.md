@@ -23,6 +23,12 @@ following work by others. Each keeps its own license.
 | **Cross-references** from [OpenBible.info](https://www.openbible.info/labs/cross-references/) (data of 2024-11-04), via the [Scrollmapper](https://github.com/scrollmapper/bible_databases) project | "Cross-references" when you click a verse, and cross-reference questions in chat | CC BY (attribution: OpenBible.info) |
 | **King James Version with Strong's numbers**, from the CrossWire SWORD module "KJV" (engKJV2006eb) | Which Hebrew/Greek word stands behind each English word, and every verse that uses it | Public domain |
 
+## Font included in BibleChat
+
+| Font | Used for | License |
+|---|---|---|
+| [Noto Sans Phoenician](https://github.com/notofonts/phoenician) (The Noto Project Authors) | Showing Hebrew words in Paleo-Hebrew letters | SIL Open Font License 1.1 |
+
 ## Libraries packed into the downloadable app
 
 | Library | License |
