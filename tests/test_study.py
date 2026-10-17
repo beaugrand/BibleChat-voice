@@ -99,3 +99,23 @@ class CrossReferenceQuestions(unittest.TestCase):
                         ("show cross references from Isaiah to Matthew", ["Isaiah", "Matthew"]),
                         ("cross references 1 john and john", ["1 John", "John"])]:
             self.assertEqual(_books_named(q, Ix), want, q)
+
+
+class NotesAndDictionary(unittest.TestCase):
+    def test_scofield_on_revelation_1_20(self):
+        notes = study.chapter_notes("Revelation", 1)
+        self.assertIn("20", notes)
+        self.assertTrue(notes["20"].startswith("**angels**"))
+
+    def test_matthew_henry_covers_the_passage(self):
+        h = study.verse(None, "", "Daniel", 7, 13)["henry"]
+        self.assertEqual(h["from_verse"], 9)
+        self.assertIn("Verses 9-14", h["text"])
+
+    def test_easton_names_and_entries(self):
+        names = set(study.EASTON.names())
+        self.assertIn("babylon", names)
+        self.assertIn("patmos", names)
+        self.assertNotIn("god", names)          # too common to mark
+        self.assertIn("Dan. 10:13", study.EASTON.entry("Michael")["text"])
+        self.assertIsNone(study.EASTON.entry("nothing-like-this"))

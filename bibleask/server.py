@@ -270,9 +270,17 @@ def make_handler(app: App, port: int):
                     if path == "/api/books":
                         self._json({"books": app.lib.books(bid)})
                     else:
-                        self._json(app.lib.chapter(bid, (q.get("book") or [""])[0], int((q.get("chapter") or ["1"])[0])))
+                        res = app.lib.chapter(bid, (q.get("book") or [""])[0], int((q.get("chapter") or ["1"])[0]))
+                        res["scofield"] = study.chapter_notes(res["book"], res["chapter"])
+                        self._json(res)
                 except Exception as e:
                     self._json({"error": str(e) or "That Bible isn't available."}, 404)
+            elif path == "/api/easton/names":
+                self._json({"names": study.EASTON.names()})
+            elif path == "/api/easton":
+                q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
+                e = study.EASTON.entry((q.get("term") or [""])[0])
+                self._json(e or {"error": "Not in Easton's Bible Dictionary."}, 200 if e else 404)
             elif path in ("/api/study/verse", "/api/study/strongs", "/api/study/topic", "/api/study/topics"):
                 q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
                 g = lambda k, d="": (q.get(k) or [d])[0]

@@ -11,6 +11,8 @@ from typing import Optional
 from .strongs import STRONGS, normalize
 from .topics import TOPICS
 from .xref import XREFS
+from .scofield import SCOFIELD
+from .henry_easton import HENRY, EASTON
 
 MAX_VERSES = 400
 
@@ -46,7 +48,13 @@ def verse(lib, bible_id: str, book: str, ch: int, v: int) -> dict:
     words = STRONGS.verse(book, ch, v) if STRONGS.available() else []
     return {"ref": f"{book} {ch}:{v}", "book": book, "chapter": ch, "verse": v,
             "words": words, "topics": TOPICS.for_verse(book, ch, v)[:40],
-            "xrefs": xrefs(lib, bible_id, book, ch, v)}
+            "xrefs": xrefs(lib, bible_id, book, ch, v),
+            "henry": HENRY.for_verse(book, ch, v)}
+
+
+def chapter_notes(book: str, ch: int) -> dict:
+    """Scofield notes of one chapter, by verse number, for marking the words they explain."""
+    return {str(v): SCOFIELD.note(book, ch, v) for v in SCOFIELD.verses_with_notes(book, ch)}
 
 
 def strongs(lib, bible_id: str, number: str) -> Optional[dict]:
@@ -78,4 +86,4 @@ def find_topics(words: str) -> list[dict]:
     return TOPICS.search_titles(words)
 
 
-__all__ = ["verse", "strongs", "topic", "find_topics", "normalize", "xrefs", "passage_text"]
+__all__ = ["chapter_notes", "EASTON", "verse", "strongs", "topic", "find_topics", "normalize", "xrefs", "passage_text"]

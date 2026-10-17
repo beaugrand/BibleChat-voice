@@ -82,6 +82,13 @@ a{color:var(--accent)}
 #studyBody .orig.he{direction:rtl;text-align:left}
 #studyBody p{font-size:15px;line-height:1.55;margin:4px 2px}
 #studyBody a.sn{color:var(--accent);font-weight:600}
+#rtext mark.sc{background:rgba(255,214,90,.55);color:inherit;border-radius:3px;padding:0 1px}
+[data-theme="dark"] #rtext mark.sc{background:rgba(214,170,40,.38)}
+#rtext sup.scm{color:#b07a00;font-style:italic;font-weight:700;margin:0 1px;font-size:.6em}
+#rtext .ed{text-decoration:underline dotted rgba(47,93,138,.55);text-underline-offset:3px}
+#studyBody .scof p{font-family:Georgia,serif;font-size:16px;line-height:1.6;margin:0 2px 10px}
+#studyBody .scof b{color:var(--accent)}
+#studyBody a.nref,#studyBody a.sv-go{color:var(--accent)}
 #studyBody .res i{font-family:system-ui,sans-serif;color:var(--muted);font-size:12.5px;font-style:normal;margin-left:4px}
 /* picker sheet */
 .sheet{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.35);display:flex;align-items:flex-end;justify-content:center}
@@ -198,7 +205,7 @@ a{color:var(--accent)}
   <header><h2>This verse</h2><button class="iconbtn" id="shareClose" aria-label="Close">✕</button></header>
   <div class="body">
     <div class="quote" id="shareQuote"></div>
-    <button class="btn" id="shareStudy" style="width:100%;margin:0 0 12px">📖 Study it: Hebrew/Greek words, cross-references, topics</button>
+    <button class="btn" id="shareStudy" style="width:100%;margin:0 0 12px">📖 Study it: Hebrew/Greek, cross-references, topics, Matthew Henry</button>
     <form id="shareForm" class="sendrow">
       <input class="find" id="shareTo" type="text" inputmode="email" autocomplete="email tel" placeholder="Phone number or email address">
       <button class="btn primary">Share</button>
@@ -308,6 +315,7 @@ function render(hitVerse){
   $("#where").textContent = place.book + " " + place.ch;
   const t = $("#rtext"); t.className = rLines ? "lines" : ""; t.style.setProperty("--rs", rScale);
   t.innerHTML = vs.map(([n, x]) => `<span class="v" id="v${n}"><sup>${n}</sup>${esc(x)} </span>`).join("");
+  enhanceChapter(place.bible, place.book, place.ch, vs);
   const nb = neighbours();
   $("#prev").disabled = $("#prev2").disabled = !nb.prev; $("#next").disabled = $("#next2").disabled = !nb.next;
   document.title = place.book + " " + place.ch + " · BibleChat";
@@ -316,6 +324,66 @@ function render(hitVerse){
   const h = hitVerse && document.getElementById("v" + hitVerse);
   if(h){ h.classList.add("hit"); setTimeout(() => h.scrollIntoView({block: "center"}), 30); setTimeout(() => h.classList.remove("hit"), 2600); }
   else scrollTo(0, 0);
+}
+/* notes in the text: Scofield keywords highlighted with a small letter, Easton names dotted (tap either) */
+let eNames = null, chNotes = {};
+async function enhanceChapter(bid, book, ch, vs){
+  chNotes = {};
+  try{
+    sBooks = sBooks || await sGet("books.json");
+    const bi = sBooks.indexOf(book);
+    const [sc, names] = await Promise.all([bi >= 0 ? sGet("scofield/" + bi + ".json").catch(() => ({})) : {}, eNames ? null : sGet("easton/names.json").catch(() => [])]);
+    if(names) eNames = new Set(names);
+    if(place.bible !== bid || place.book !== book || place.ch !== ch) return;   // the reader moved on
+    for(const k in sc) if(k.split(":")[0] === String(ch)) chNotes[k.split(":")[1]] = sc[k];
+    const letters = {n: 0};
+    for(const [n, x] of vs){ const el = document.getElementById("v" + n); if(el) el.innerHTML = `<sup>${n}</sup>${markVerse(x, chNotes[n], letters, n)} `; }
+  }catch(e){}
+}
+function noteParts(note){
+  const parts = [], re = /\*\*(.+?)\*\*/g; let m, last = null;
+  while((m = re.exec(note))){ if(last) last.t = note.slice(last.at, m.index).trim(); last = {k: m[1], at: m.index}; parts.push(last); }
+  if(last) last.t = note.slice(last.at).trim();
+  return parts.length ? parts : [{k: "", t: note}];
+}
+function markVerse(text, note, letters, vnum){
+  const marks = [], lower = text.toLowerCase();
+  if(note) noteParts(note).forEach((p, i) => {
+    const L = String.fromCharCode(97 + (letters.n++ % 26)), sup = `<sup class="scm" data-v="${vnum}" data-k="${i}">${L}</sup>`;
+    const k = p.k.toLowerCase().replace(/[^a-z' -]/g, "").trim(); let at = -1;
+    if(k){ const m = new RegExp("\\b" + k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b").exec(lower); if(m) at = m.index; }
+    if(at >= 0 && !marks.some(x => at < x[1] && at + k.length > x[0])) marks.push([at, at + k.length, `<mark class="sc" data-v="${vnum}" data-k="${i}">`, `</mark>${sup}`]);
+    else marks.push([0, 0, sup, ""]);
+  });
+  if(eNames && eNames.size){
+    const re = /[A-Z][a-z]+/g; let m;
+    while((m = re.exec(text))){
+      const w = m[0], at = m.index;
+      if(at === 0 || /[.!?:;¶]\s*["'‘“]?\s*$/.test(text.slice(Math.max(0, at - 3), at)) || !eNames.has(w.toLowerCase())) continue;
+      if(marks.some(x => at < x[1] && at + w.length > x[0])) continue;
+      marks.push([at, at + w.length, `<span class="ed" data-term="${w}">`, `</span>`]);
+    }
+  }
+  marks.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+  let out = "", pos = 0;
+  for(const [s0, e0, pre, post] of marks){ out += esc(text.slice(pos, s0)) + pre + esc(text.slice(s0, e0)) + post; pos = e0; }
+  return out + esc(text.slice(pos));
+}
+async function showScofieldNote(vnum, k){
+  const v = chNotes[vnum]; if(!v) return;
+  const parts = noteParts(v), p = parts[k] || {t: v};
+  sStack = [];
+  sShow({title: `Scofield: ${place.book} ${place.ch}:${vnum}`, html: `<h3>Scofield Reference Notes (1917)</h3><div class="scof">${sNoteHtml(p.t)}</div>`
+    + (parts.length > 1 ? `<p class="small">This verse has ${parts.length} notes; the others are marked in the text too.</p>` : "")});
+}
+async function showEastonEntry(term){
+  const key = term.toLowerCase();
+  try{
+    sBooks = sBooks || await sGet("books.json");
+    const d = await sGet("easton/" + (/[a-z]/.test(key[0]) ? key[0] : "_") + ".json"), e = d[key]; if(!e) return;
+    sStack = [];
+    sShow({title: e[0], html: `<h3>Easton's Bible Dictionary (1897)</h3><div class="scof">${sNoteHtml(e[1])}</div>`});
+  }catch(err){ sFail(); }
 }
 function go(book, ch, verse){ sayStop(); place.book = book; place.ch = ch; show("read"); render(verse); }
 function step(which){ const n = neighbours()[which]; if(n) go(n[0], n[1]); }
@@ -591,7 +659,11 @@ function openShare(v){
   $("#shareTo").value = store.get("lastTo", ""); $("#shareSheet").hidden = false;
 }
 function closeShare(){ $("#shareSheet").hidden = true; document.querySelectorAll("#rtext .v.sel").forEach(n => n.classList.remove("sel")); }
-$("#rtext").addEventListener("click", e => { const el = e.target.closest(".v"); if(!el || saying) return; openShare(+el.id.slice(1)); });
+$("#rtext").addEventListener("click", e => {
+  const sc = e.target.closest(".sc, .scm"); if(sc) return showScofieldNote(sc.dataset.v, +sc.dataset.k);
+  const ed = e.target.closest(".ed"); if(ed) return showEastonEntry(ed.dataset.term);
+  const el = e.target.closest(".v"); if(!el || saying) return; openShare(+el.id.slice(1));
+});
 $("#shareClose").onclick = closeShare;
 $("#shareSheet").addEventListener("click", e => { if(e.target.id === "shareSheet") closeShare(); });
 $("#shareForm").onsubmit = e => {
@@ -643,6 +715,11 @@ function sXrefs(xr, book, all){
       return `<div class="res"><a href="#" data-b="${esc(bk)}" data-c="${c}" data-v="${v}">${esc(sRange(b, c, v, c2, v2))}</a>${esc(t || "(not in this Bible)")}</div>`; }).join("")
     + (shown.length < list.length ? `<button class="tp xmore"><b>Show all ${list.length}</b><span>›</span></button>` : "");
 }
+function sNoteHtml(t){
+  const re = new RegExp("\\b(" + sBooks.map(b => b.replace(/ /g, "\\s")).sort((a, b) => b.length - a.length).join("|") + ")\\s(\\d+):(\\d+)", "g");
+  return t.split(/\n\n+/).map(p => "<p>" + esc(p).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\n/g, "<br>")
+    .replace(re, (m, b, c, v) => `<a href="#" class="nref" data-b="${b.replace(/\s/g, " ")}" data-c="${c}" data-v="${v}">${m}</a>`) + "</p>").join("");
+}
 function sLinks(t){ return esc(t).replace(/\b([HG]\d{1,4})\b/g, '<a class="sn" href="#" data-n="$1">$1</a>'); }
 const sFail = () => sShow({title: "Study", html: `<p>Couldn't load the study data. Check the internet connection and try again.</p>`});
 async function studyVerse(book, ch, v){
@@ -650,7 +727,10 @@ async function studyVerse(book, ch, v){
   try{
     sBooks = sBooks || await sGet("books.json");
     const bi = sBooks.indexOf(book);
-    const [kjv, xrb] = await Promise.all([bi >= 0 ? sGet("kjv/" + bi + ".json") : {}, bi >= 0 ? sGet("xref/" + bi + ".json").catch(() => ({})) : {}, sLoadTopics()]);
+    const [kjv, xrb, scb] = await Promise.all([bi >= 0 ? sGet("kjv/" + bi + ".json") : {}, bi >= 0 ? sGet("xref/" + bi + ".json").catch(() => ({})) : {},
+      bi >= 0 ? sGet("henry/" + bi + ".json").catch(() => ({})) : {}, sLoadTopics()]);
+    let hFrom = v; while(hFrom > 0 && !scb[ch + ":" + hFrom]) hFrom--;
+    const hNote = hFrom > 0 ? scb[ch + ":" + hFrom] : null;
     const xr = (xrb[ch + ":" + v] || []).map(([b, c, vv, c2, v2]) => [b, c, vv, c2, v2]);
     const words = kjv[ch + ":" + v] || [];
     const topics = (sByVerse.get(bi + ":" + ch + ":" + v) || []).map(id => [id, sTopics[id][0], sTopics[id][1].reduce((n, r) => n + r[3] - r[2] + 1, 0)]).sort((a, b) => a[2] - b[2]);
@@ -662,7 +742,8 @@ async function studyVerse(book, ch, v){
         : `<h3>Original words</h3><p class="small">Strong's numbers aren't available for this verse.</p>`) +
       (xr.length ? `<h3>Cross-references (${xr.length})</h3>${new Set(xr.map(x => x[0])).size > 1 ? `<select class="find xbook" style="margin:0 0 6px"><option value="">All books</option>${[...new Set(xr.map(x => x[0]))].map(b => `<option value="${b}">${esc(sBooks[b])}</option>`).join("")}</select>` : ""}<div class="xlist">${sXrefs(xr, "", false)}</div><p class="small">From OpenBible.info, strongest first.</p>` : "") +
       (topics.length ? `<h3>Topics (Nave's Topical Bible)</h3>` + topics.slice(0, 40).map(([id, t, n]) => `<button class="tp" data-t="${id}"><b>${esc(t)}</b><span>${n}</span></button>`).join("")
-        : `<h3>Topics</h3><p class="small">Nave's doesn't list this verse under a topic.</p>`)});
+        : `<h3>Topics</h3><p class="small">Nave's doesn't list this verse under a topic.</p>`) +
+      `<h3>Matthew Henry's Commentary</h3>` + (hNote ? (hFrom !== v ? `<p class="small">On the passage from verse ${hFrom}:</p>` : "") + `<div class="scof">${sNoteHtml(hNote)}</div>` : `<p class="small">No comment on this verse.</p>`)});
   }catch(e){ sFail(); }
 }
 async function studyStrongs(n){
@@ -699,7 +780,8 @@ $("#studyBody").addEventListener("click", e => {
     $("#studyBody .xlist").innerHTML = sXrefs(cur.xr, sel ? sel.value : "", true); return; }
   const w = e.target.closest(".w, a.sn"); if(w){ e.preventDefault(); return studyStrongs(w.dataset.n); }
   const t = e.target.closest(".tp"); if(t) return studyTopic(+t.dataset.t);
-  const a = e.target.closest(".res a"); if(a){ e.preventDefault(); studyClose(); go(a.dataset.b, +a.dataset.c, +a.dataset.v); }
+  const g = e.target.closest(".sv-go"); if(g){ e.preventDefault(); return studyVerse(g.dataset.b, +g.dataset.c, +g.dataset.v); }
+  const a = e.target.closest(".res a, a.nref"); if(a){ e.preventDefault(); studyClose(); go(a.dataset.b, +a.dataset.c, +a.dataset.v); }
 });
 
 /* someone opened a shared verse: say hello and offer the app */

@@ -17,6 +17,9 @@ following work by others. Each keeps its own license.
 |---|---|---|
 | **Nave's Topical Bible** (Orville J. Nave, 1896), from the CrossWire SWORD module "Nave" (text from [CCEL](https://ccel.org/ccel/n/nave/bible.xml)) | Topic results in chat, e.g. "fallen angels", and the topics of a verse in Read mode | Public domain |
 | **Strong's Exhaustive Concordance** Hebrew and Greek dictionaries (James Strong, 1890), from the CrossWire SWORD modules "StrongsHebrew" and "StrongsGreek" | The original Hebrew/Greek word, its meaning and pronunciation | Public domain |
+| **Scofield Reference Notes** (C. I. Scofield, 1917 edition), from the CrossWire SWORD module "Scofield" | The highlighted words in Read mode | Public domain |
+| **Matthew Henry's Concise Commentary**, from the CrossWire SWORD module "MHCC" (text from CCEL) | "Matthew Henry's Commentary" when you click a verse | Public domain |
+| **Easton's Bible Dictionary** (M. G. Easton, 1897), as parsed from CCEL by the [NEUU bible-dictionary-dataset](https://github.com/neuu-org/bible-dictionary-dataset) | The dotted names and places in Read mode | Public domain (dataset: CC BY 4.0, NEUU) |
 | **Cross-references** from [OpenBible.info](https://www.openbible.info/labs/cross-references/) (data of 2024-11-04), via the [Scrollmapper](https://github.com/scrollmapper/bible_databases) project | "Cross-references" when you click a verse, and cross-reference questions in chat | CC BY (attribution: OpenBible.info) |
 | **King James Version with Strong's numbers**, from the CrossWire SWORD module "KJV" (engKJV2006eb) | Which Hebrew/Greek word stands behind each English word, and every verse that uses it | Public domain |
 

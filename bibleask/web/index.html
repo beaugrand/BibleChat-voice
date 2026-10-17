@@ -192,6 +192,13 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 #studyBody .sv i{color:var(--muted);font-size:12.5px;font-style:normal;margin-left:4px}
 #studyBody p{font-size:14.5px;line-height:1.55;margin:4px 0}
 #studyBody .muted{color:var(--muted);font-size:13.5px}
+#rtext mark.sc,#rtitle mark.sc{background:rgba(255,214,90,.55);color:inherit;border-radius:3px;padding:0 1px;cursor:pointer}
+[data-theme="dark"] #rtext mark.sc,#rtitle mark.sc{background:rgba(214,170,40,.38)}
+#rtext sup.scm{color:#b07a00;font-style:italic;font-weight:700;margin:0 1px;cursor:pointer;font-size:.6em}
+#rtext .ed{text-decoration:underline dotted rgba(47,93,138,.55);text-underline-offset:3px;cursor:help}
+#studyBody .scof p{font-size:14.5px;line-height:1.6;margin:0 0 8px}
+#studyBody .scof b{color:var(--accent)}
+#studyBody a.nref,#studyBody a.sv-go{color:var(--accent);cursor:pointer;text-decoration:underline dotted}
 #studyBody .xbook{width:100%;padding:6px 8px;border:1px solid var(--line);border-radius:9px;background:var(--card);font-size:14px;margin:0 0 6px}
 /* free Bibles catalog */
 #getDlg{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.35);display:grid;place-items:center;padding:16px}
@@ -833,6 +840,61 @@ $("#rBible").onchange = async () => {
   rd = {bible: $("#rBible").value, ...keep}; rChap = null; store.set("bc.read", rd); openReader();
 };
 
+/* ---- notes in the text: Scofield keywords (highlighted + a small letter) and Easton names (dotted) ---- */
+let eastonNames = null;
+async function loadEastonNames(){
+  if(eastonNames) return;
+  try{ eastonNames = new Set((await (await fetch("/api/easton/names")).json()).names || []); }catch(e){ eastonNames = new Set(); }
+}
+function noteParts(note){   // "**angels** text **churches** text" -> [{k:"angels", t:"**angels** text"}, ...]
+  const parts = [], re = /\*\*(.+?)\*\*/g; let m, last = null;
+  while((m = re.exec(note))){ if(last) last.t = note.slice(last.at, m.index).trim(); last = {k: m[1], at: m.index}; parts.push(last); }
+  if(last) last.t = note.slice(last.at).trim();
+  return parts.length ? parts : [{k: "", t: note}];
+}
+function markVerse(text, note, letters, vnum){
+  const marks = [];   // [start, end, html-before, html-after] on the raw text
+  const lower = text.toLowerCase();
+  if(note){
+    noteParts(note).forEach((p, i) => {
+      const L = String.fromCharCode(97 + (letters.n++ % 26));
+      const sup = `<sup class="scm" data-v="${vnum}" data-k="${i}" title="Scofield note">${L}</sup>`;
+      const k = p.k.toLowerCase().replace(/[^a-z' -]/g, "").trim();
+      let at = -1;
+      if(k){ const re = new RegExp("\\b" + k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b"); const m = re.exec(lower); if(m) at = m.index; }
+      if(at >= 0 && !marks.some(x => at < x[1] && at + k.length > x[0]))
+        marks.push([at, at + k.length, `<mark class="sc" data-v="${vnum}" data-k="${i}" title="Scofield note: click to read">`, `</mark>${sup}`]);
+      else marks.push([0, 0, sup, ""]);
+    });
+  }
+  if(eastonNames && eastonNames.size){
+    const re = /[A-Z][a-z]+/g; let m;
+    while((m = re.exec(text))){
+      const w = m[0], at = m.index, before = text.slice(Math.max(0, at - 3), at);
+      if(at === 0 || /[.!?:;¶]\s*["'‘“]?\s*$/.test(before) || !eastonNames.has(w.toLowerCase())) continue;   // sentence starts are not names
+      if(marks.some(x => at < x[1] && at + w.length > x[0])) continue;
+      marks.push([at, at + w.length, `<span class="ed" data-term="${w}" title="Easton's Bible Dictionary: ${w}">`, `</span>`]);
+    }
+  }
+  marks.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+  let out = "", pos = 0;
+  for(const [s, e, pre, post] of marks){ out += esc(text.slice(pos, s)) + pre + esc(text.slice(s, e)) + post; pos = e; }
+  return out + esc(text.slice(pos));
+}
+async function showScofield(vnum, k){
+  const v = (rChap.scofield || {})[vnum]; if(!v) return;
+  const p = noteParts(v)[k] || {t: v};
+  studyStack = [];
+  studyShow({title: `Scofield: ${rChap.book} ${rChap.chapter}:${vnum}`,
+    html: `<h3>Scofield Reference Notes (1917)</h3><div class="scof">${noteHtml(p.t)}</div>` +
+          (noteParts(v).length > 1 ? `<p class="muted">This verse has ${noteParts(v).length} notes; the others are marked in the text too.</p>` : "")});
+}
+async function showEaston(term){
+  let j; try{ j = await (await fetch("/api/easton?term=" + encodeURIComponent(term))).json(); }catch(e){ return; }
+  if(j.error) return;
+  studyStack = [];
+  studyShow({title: j.term, html: `<h3>Easton's Bible Dictionary (1897)</h3><div class="scof">${noteHtml(j.text)}</div>`});
+}
 async function showChapter(book, chapter, hitVerse){
   const my = ++rToken, bid = rd.bible;
   let j;
@@ -843,10 +905,13 @@ async function showChapter(book, chapter, hitVerse){
   if(j.error){ $("#rtext").innerHTML = `<p class="notice err">${esc(j.error)}</p>`; return; }
   rChap = {...j, bid};
   rd = {bible: bid, book, chapter}; store.set("bc.read", rd);
-  $("#rtitle").innerHTML = `<b>${esc(book)} ${chapter}</b><small>${esc(j.bible)} · ${j.verses.length} verses · click a verse to study it</small>`;
+  $("#rtitle").innerHTML = `<b>${esc(book)} ${chapter}</b><small>${esc(j.bible)} · ${j.verses.length} verses · click a verse to study it${Object.keys(j.scofield || {}).length ? " · <mark class=\"sc\" style=\"cursor:default\">highlighted</mark> = Scofield note" : ""}</small>`;
   const t = $("#rtext");
   t.className = rLinesOn ? "lines" : "";
-  t.innerHTML = j.verses.map(v => `<span class="v" id="v${v.verse}" data-v="${v.verse}" title="Click to study this verse: original Hebrew/Greek words, cross-references and topics"><sup>${v.verse}</sup>${esc(v.text)} </span>`).join("");
+  await loadEastonNames();
+  if(my !== rToken) return;
+  const letters = {n: 0};
+  t.innerHTML = j.verses.map(v => `<span class="v" id="v${v.verse}" data-v="${v.verse}" title="Click to study this verse: Hebrew/Greek words, cross-references, topics, Matthew Henry"><sup>${v.verse}</sup>${markVerse(v.text, (j.scofield || {})[v.verse], letters, v.verse)} </span>`).join("");
   for(const id of ["#rPrev", "#rPrev2"]) $(id).disabled = !j.prev;
   for(const id of ["#rNext", "#rNext2"]) $(id).disabled = !j.next;
   $("#rSay").hidden = !(state.tts || HAS_LOCAL_VOICE);
@@ -1075,7 +1140,17 @@ async function studyVerse(book, chapter, verse){
     ? `<h3>Cross-references (${xr.length})</h3>${xbooks.length > 1 ? `<select class="xbook"><option value="">All books</option>${xbooks.map(b => `<option>${esc(b)}</option>`).join("")}</select>` : ""}
        <div class="xlist">${xrefList(xr, "", false)}</div><p class="muted">From OpenBible.info, strongest first.</p>`
     : `<h3>Cross-references</h3><p class="muted">No cross-references for this verse.</p>`;
-  studyShow({title: `${book} ${chapter}:${verse}`, html: words + xrefs + topics, xr});
+  const h = j.henry;
+  const henry = `<h3>Matthew Henry's Commentary</h3>` + (h
+      ? (h.from_verse !== verse ? `<p class="muted">On the passage from verse ${h.from_verse}:</p>` : "") + `<div class="scof">${noteHtml(h.text)}</div>`
+      : `<p class="muted">No comment on this verse.</p>`);
+  studyShow({title: `${book} ${chapter}:${verse}`, html: words + xrefs + topics + henry, xr});
+}
+const ALL_BOOKS = BIBLE_ORDER.concat(["Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation"]);
+const REF_IN_NOTE = new RegExp("\\b(" + ALL_BOOKS.map(b => b.replace(/ /g, "\\s")).sort((a, b) => b.length - a.length).join("|") + ")\\s(\\d+):(\\d+)", "g");
+function noteHtml(t){   // **keyword** -> bold, blank line -> paragraph, "• " -> list line, Bible references -> links
+  return t.split(/\n\n+/).map(p => "<p>" + esc(p).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\n/g, "<br>")
+    .replace(REF_IN_NOTE, (m, b, c, v) => `<a class="nref" data-book="${b.replace(/\s/g, " ")}" data-ch="${c}" data-v="${v}">${m}</a>`) + "</p>").join("");
 }
 function xrefList(xr, book, all){
   const list = xr.filter(x => !book || x.book === book), shown = all || book ? list : list.slice(0, 8);
@@ -1108,6 +1183,8 @@ async function studyFind(q){
     : `<p class="muted">No Nave's topic named “${esc(q)}”. Try one word, like “prayer”, “faith” or “angels”.</p>`});
 }
 $("#rtext").addEventListener("click", e => {
+  const sc = e.target.closest(".sc, .scm"); if(sc && rChap) return showScofield(+sc.dataset.v, +sc.dataset.k);
+  const ed = e.target.closest(".ed"); if(ed) return showEaston(ed.dataset.term);
   const v = e.target.closest(".v"); if(!v || !rChap) return;
   if(getSelection && String(getSelection()).length > 2) return;  // selecting text, not clicking
   studyVerse(rChap.book, rChap.chapter, +v.dataset.v);
@@ -1121,7 +1198,8 @@ $("#studyBody").addEventListener("click", e => {
     $("#studyBody .xlist").innerHTML = xrefList(cur.xr, sel ? sel.value : "", true); return; }
   const w = e.target.closest(".w, a.sn"); if(w) return studyStrongs(w.dataset.n);
   const t = e.target.closest(".tp"); if(t) return studyTopic(+t.dataset.t);
-  const a = e.target.closest(".sv a");
+  const g = e.target.closest(".sv-go"); if(g && rChap) return studyVerse(rChap.book, rChap.chapter, +g.dataset.v);
+  const a = e.target.closest(".sv a, a.nref");
   if(a){ sayStop(); rToken++; const bk = a.dataset.book, ch = +a.dataset.ch, vn = +a.dataset.v;
     (async () => { await loadBooks(rd.bible); await showChapter(bk, ch, vn); })(); }
 });
