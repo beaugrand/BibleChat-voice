@@ -55,3 +55,33 @@ class StudyPanel(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CrossReferences(unittest.TestCase):
+    def test_daniel_7_13_links_to_revelation_1_7(self):
+        from bibleask.xref import XREFS
+        refs = [x["ref"] for x in XREFS.for_verse("Daniel", 7, 13, "Revelation")]
+        self.assertEqual(refs[0], "Revelation 1:7")
+
+    def test_between_two_books(self):
+        from bibleask.xref import XREFS
+        links = XREFS.between("Daniel", "Revelation")
+        self.assertGreater(len(links), 200)
+        self.assertTrue(all(x["from"].startswith("Daniel") and x["to"].startswith("Revelation") for x in links))
+        self.assertIn(("Revelation 2:10–11"), {x["to"] for x in links if x["from"] == "Daniel 3:18"})
+
+    def test_study_panel_has_cross_references(self):
+        v = study.verse(None, "", "John", 3, 16)
+        self.assertTrue(any(x["ref"] == "Romans 5:8" for x in v["xrefs"]))
+        self.assertTrue(all(x["text"] for x in v["xrefs"]))
+
+
+class BookNames(unittest.TestCase):
+    def test_isaiah_is_not_first_saiah(self):
+        from bibleask.search import BookIndex
+        ix = BookIndex(["1 Samuel", "Isaiah", "2 Kings", "1 John"])
+        self.assertEqual(ix.resolve("Isaiah"), "Isaiah")
+        self.assertEqual(ix.resolve("Isa"), "Isaiah")
+        self.assertEqual(ix.resolve("I Samuel"), "1 Samuel")
+        self.assertEqual(ix.resolve("ii kings"), "2 Kings")
+        self.assertEqual(ix.resolve("1john"), "1 John")

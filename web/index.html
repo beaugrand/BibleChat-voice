@@ -198,7 +198,7 @@ a{color:var(--accent)}
   <header><h2>This verse</h2><button class="iconbtn" id="shareClose" aria-label="Close">✕</button></header>
   <div class="body">
     <div class="quote" id="shareQuote"></div>
-    <button class="btn" id="shareStudy" style="width:100%;margin:0 0 12px">📖 Study it: original Hebrew/Greek words and topics</button>
+    <button class="btn" id="shareStudy" style="width:100%;margin:0 0 12px">📖 Study it: Hebrew/Greek words, cross-references, topics</button>
     <form id="shareForm" class="sendrow">
       <input class="find" id="shareTo" type="text" inputmode="email" autocomplete="email tel" placeholder="Phone number or email address">
       <button class="btn primary">Share</button>
@@ -494,8 +494,9 @@ function bookKeys(title){
 }
 function resolveBooks(text){
   let t = text.toLowerCase().trim().replace(/\.$/, ""), num = null;
-  const m = t.match(/^(first|second|third|fourth|1st|2nd|3rd|iii|ii|i|[1-4])\s*\.?\s*(.+)$/);
-  if(m){ num = ORD[m[1]]; t = m[2].trim(); }
+  // a Roman numeral needs a space or dot after it, or "Isaiah" reads as "I saiah"
+  const m = t.match(/^(?:([1-4])\s*\.?\s*|(first|second|third|fourth|1st|2nd|3rd|iii|ii|i)(?:\s*\.\s*|\s+))(.+)$/);
+  if(m){ num = ORD[m[1] || m[2]]; t = m[3].trim(); }
   t = t.replace(/^(the book of|book of|the)\s+/, "").trim(); if(t.length < 2) return [];
   const scored = [];
   bible.list.forEach((name, pos) => {
@@ -634,6 +635,14 @@ function sShow(view, push = true){
 function sText(book, ch, v){ const bk = bible.byName[book], vs = bk && bk.map.get(ch), x = vs && vs.find(e => e[0] === v); return x ? x[1] : ""; }
 function sVerses(list){ return list.map(([b, c, v, w]) => { const book = sBooks[b];
   return `<div class="res"><a href="#" data-b="${esc(book)}" data-c="${c}" data-v="${v}">${esc(book)} ${c}:${v}</a>${esc(sText(book, c, v) || "(not in this Bible)")}${w ? `<i>KJV: “${esc(w)}”</i>` : ""}</div>`; }).join(""); }
+function sRange(b, c, v, c2, v2){ const book = sBooks[b]; return book + " " + c + ":" + v + (c2 === c && v2 !== v ? "–" + v2 : c2 !== c ? "–" + c2 + ":" + v2 : ""); }
+function sXrefs(xr, book, all){
+  const list = xr.filter(x => book === "" || x[0] === +book), shown = all || book !== "" ? list : list.slice(0, 8);
+  return shown.map(([b, c, v, c2, v2]) => { const bk = sBooks[b]; let t = sText(bk, c, v);
+      if(c2 === c && v2 > v) t += " " + [...Array(Math.min(v2 - v, 2))].map((_, i) => sText(bk, c, v + i + 1)).join(" ") + (v2 - v > 2 ? " …" : "");
+      return `<div class="res"><a href="#" data-b="${esc(bk)}" data-c="${c}" data-v="${v}">${esc(sRange(b, c, v, c2, v2))}</a>${esc(t || "(not in this Bible)")}</div>`; }).join("")
+    + (shown.length < list.length ? `<button class="tp xmore"><b>Show all ${list.length}</b><span>›</span></button>` : "");
+}
 function sLinks(t){ return esc(t).replace(/\b([HG]\d{1,4})\b/g, '<a class="sn" href="#" data-n="$1">$1</a>'); }
 const sFail = () => sShow({title: "Study", html: `<p>Couldn't load the study data. Check the internet connection and try again.</p>`});
 async function studyVerse(book, ch, v){
@@ -641,15 +650,17 @@ async function studyVerse(book, ch, v){
   try{
     sBooks = sBooks || await sGet("books.json");
     const bi = sBooks.indexOf(book);
-    const [kjv] = await Promise.all([bi >= 0 ? sGet("kjv/" + bi + ".json") : {}, sLoadTopics()]);
+    const [kjv, xrb] = await Promise.all([bi >= 0 ? sGet("kjv/" + bi + ".json") : {}, bi >= 0 ? sGet("xref/" + bi + ".json").catch(() => ({})) : {}, sLoadTopics()]);
+    const xr = (xrb[ch + ":" + v] || []).map(([b, c, vv, c2, v2]) => [b, c, vv, c2, v2]);
     const words = kjv[ch + ":" + v] || [];
     const topics = (sByVerse.get(bi + ":" + ch + ":" + v) || []).map(id => [id, sTopics[id][0], sTopics[id][1].reduce((n, r) => n + r[3] - r[2] + 1, 0)]).sort((a, b) => a[2] - b[2]);
     const ot = bi >= 0 && bi < 39;
-    sShow({title: `${book} ${ch}:${v}`, html:
+    sShow({title: `${book} ${ch}:${v}`, xr, html:
       (words.length ? `<h3>Original words (Strong's, ${ot ? "Hebrew" : "Greek"})</h3><div class="kjv">${words.map(w => typeof w === "string" ? esc(w)
           : `<button class="w" data-n="${esc(w[1].split(" ")[0])}">${esc(w[0])}<sub>${esc(w[1].split(" ")[0])}</sub></button>`).join("")}</div>
           <p class="small">King James wording, because Strong's numbers are attached to it. Tap an underlined word.</p>`
         : `<h3>Original words</h3><p class="small">Strong's numbers aren't available for this verse.</p>`) +
+      (xr.length ? `<h3>Cross-references (${xr.length})</h3>${new Set(xr.map(x => x[0])).size > 1 ? `<select class="find xbook" style="margin:0 0 6px"><option value="">All books</option>${[...new Set(xr.map(x => x[0]))].map(b => `<option value="${b}">${esc(sBooks[b])}</option>`).join("")}</select>` : ""}<div class="xlist">${sXrefs(xr, "", false)}</div><p class="small">From OpenBible.info, strongest first.</p>` : "") +
       (topics.length ? `<h3>Topics (Nave's Topical Bible)</h3>` + topics.slice(0, 40).map(([id, t, n]) => `<button class="tp" data-t="${id}"><b>${esc(t)}</b><span>${n}</span></button>`).join("")
         : `<h3>Topics</h3><p class="small">Nave's doesn't list this verse under a topic.</p>`)});
   }catch(e){ sFail(); }
@@ -679,7 +690,13 @@ $("#shareStudy").onclick = () => { const v = shareV; closeShare(); studyVerse(pl
 $("#studyClose").onclick = studyClose;
 $("#studySheet").addEventListener("click", e => { if(e.target.id === "studySheet") studyClose(); });
 $("#studyBack").onclick = () => { if(sStack.length > 1){ sStack.pop(); sShow(sStack[sStack.length - 1], false); } };
+$("#studyBody").addEventListener("change", e => {
+  if(!e.target.matches(".xbook")) return;
+  const cur = sStack[sStack.length - 1]; if(cur && cur.xr) $("#studyBody .xlist").innerHTML = sXrefs(cur.xr, e.target.value, false);
+});
 $("#studyBody").addEventListener("click", e => {
+  if(e.target.closest(".xmore")){ const cur = sStack[sStack.length - 1], sel = $("#studyBody .xbook");
+    $("#studyBody .xlist").innerHTML = sXrefs(cur.xr, sel ? sel.value : "", true); return; }
   const w = e.target.closest(".w, a.sn"); if(w){ e.preventDefault(); return studyStrongs(w.dataset.n); }
   const t = e.target.closest(".tp"); if(t) return studyTopic(+t.dataset.t);
   const a = e.target.closest(".res a"); if(a){ e.preventDefault(); studyClose(); go(a.dataset.b, +a.dataset.c, +a.dataset.v); }

@@ -6,6 +6,7 @@ every verse with a word) and Nave's topics, split into small files the phone loa
     data/study/dict/<H|G><n//500>.json   {"G25": {w, t, p, d, k}, ...}
     data/study/where/<H|G><n//100>.json  {"G25": [[book#, ch, v, "loved"], ...], ...}
     data/study/topics.json         [[title, [[book#, ch, v1, v2], ...]], ...]
+    data/study/xref/<book#>.json   {"7:13": [[book#, ch, v, ch2, v2, votes], ...], ...}   (OpenBible.info, CC-BY)
 
 Usage:  python web/build_study.py OUT_DIR
 """
@@ -52,6 +53,15 @@ def main(out: str) -> None:
         where[n[0] + str(int(n[1:]) // 100)][n] = [[num[b], c, v, w] for (b, c, v), w in uses if b in num]
     for k, d in where.items():
         dump(os.path.join(base, "where", k + ".json"), d)
+    from bibleask.xref import XREFS
+    xd = XREFS._load()
+    assert xd["books"] == books
+    per: dict = defaultdict(dict)
+    for key, links in xd["refs"].items():
+        b, c, v = key.split(".")
+        per[int(b)][f"{c}:{v}"] = links
+    for i, d in per.items():
+        dump(os.path.join(base, "xref", f"{i}.json"), d)
     rows = TOPICS._load()
     from bibleask.topics import TopicHit
     dump(os.path.join(base, "topics.json"),

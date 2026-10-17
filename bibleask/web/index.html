@@ -192,6 +192,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 #studyBody .sv i{color:var(--muted);font-size:12.5px;font-style:normal;margin-left:4px}
 #studyBody p{font-size:14.5px;line-height:1.55;margin:4px 0}
 #studyBody .muted{color:var(--muted);font-size:13.5px}
+#studyBody .xbook{width:100%;padding:6px 8px;border:1px solid var(--line);border-radius:9px;background:var(--card);font-size:14px;margin:0 0 6px}
 /* free Bibles catalog */
 #getDlg{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.35);display:grid;place-items:center;padding:16px}
 #getDlg .card{background:var(--bg);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);width:min(760px,100%);max-height:min(86vh,900px);display:flex;flex-direction:column}
@@ -393,11 +394,12 @@ function sourcesHtml(src, question){
   return src.groups.map((g, gi) => {
     const open = (src.groups.length === 1 || gi === 0) ? " open" : "";
     const vs = g.verses.map(v => {
-      const go = g.id && v.book ? ` go" title="Open ${esc(v.book)} ${v.chapter} in the reader" data-bid="${esc(g.id)}" data-book="${esc(v.book)}" data-ch="${v.chapter}" data-v="${(String(v.ref).match(/:(\d+)/) || [,""])[1]}` : "";
+      const go = g.id && v.book ? ` go" title="Open ${esc(v.book)} ${v.chapter} in the reader" data-bid="${esc(g.id)}" data-book="${esc(v.book)}" data-ch="${v.chapter}" data-v="${v.verse || (String(v.ref).match(/:(\d+)/) || [,""])[1]}` : "";
       return `<div class="verse"><span class="ref${go}">${esc(v.ref)}</span>${highlight(v.text, words)}</div>`;
     }).join("");
     return `<details class="src${g.topic ? " topic" : ""}"${open}><summary><span><b>${esc(g.bible)}</b></span><span>${g.verses.length} verse${g.verses.length===1?"":"s"}</span></summary><div class="verses">${vs}</div></details>`;
-  }).join("") + (src.note ? `<div class="notice">${esc(src.note)}</div>` : "") + (src.groups.some(g => g.strongs) ? `<div class="notice" style="font-size:12.5px">From Strong's Exhaustive Concordance (public domain). In Read mode, click any verse to see its Hebrew or Greek words.</div>`
+  }).join("") + (src.note ? `<div class="notice">${esc(src.note)}</div>` : "") + (src.groups.some(g => g.xref) ? `<div class="notice" style="font-size:12.5px">Cross-references from OpenBible.info (CC-BY). In Read mode, click any verse to see its cross-references.</div>`
+    : src.groups.some(g => g.strongs) ? `<div class="notice" style="font-size:12.5px">From Strong's Exhaustive Concordance (public domain). In Read mode, click any verse to see its Hebrew or Greek words.</div>`
     : src.groups.some(g => g.topic) ? `<div class="notice" style="font-size:12.5px">Topics from Nave's Topical Bible (public domain).</div>` : "");
 }
 function speakable(m){
@@ -844,7 +846,7 @@ async function showChapter(book, chapter, hitVerse){
   $("#rtitle").innerHTML = `<b>${esc(book)} ${chapter}</b><small>${esc(j.bible)} · ${j.verses.length} verses · click a verse to study it</small>`;
   const t = $("#rtext");
   t.className = rLinesOn ? "lines" : "";
-  t.innerHTML = j.verses.map(v => `<span class="v" id="v${v.verse}" data-v="${v.verse}" title="Click to study this verse: original Hebrew/Greek words and topics"><sup>${v.verse}</sup>${esc(v.text)} </span>`).join("");
+  t.innerHTML = j.verses.map(v => `<span class="v" id="v${v.verse}" data-v="${v.verse}" title="Click to study this verse: original Hebrew/Greek words, cross-references and topics"><sup>${v.verse}</sup>${esc(v.text)} </span>`).join("");
   for(const id of ["#rPrev", "#rPrev2"]) $(id).disabled = !j.prev;
   for(const id of ["#rNext", "#rNext2"]) $(id).disabled = !j.next;
   $("#rSay").hidden = !(state.tts || HAS_LOCAL_VOICE);
@@ -1068,7 +1070,16 @@ async function studyVerse(book, chapter, verse){
   const topics = j.topics.length
     ? `<h3>Topics (Nave's Topical Bible)</h3>` + j.topics.map(t => `<button class="tp" data-t="${t.id}"><b>${esc(t.title)}</b><span>${t.count} verse${t.count === 1 ? "" : "s"}</span></button>`).join("")
     : `<h3>Topics</h3><p class="muted">Nave's doesn't list this verse under a topic.</p>`;
-  studyShow({title: `${book} ${chapter}:${verse}`, html: words + topics});
+  const xr = j.xrefs || [], xbooks = [...new Set(xr.map(x => x.book))];
+  const xrefs = xr.length
+    ? `<h3>Cross-references (${xr.length})</h3>${xbooks.length > 1 ? `<select class="xbook"><option value="">All books</option>${xbooks.map(b => `<option>${esc(b)}</option>`).join("")}</select>` : ""}
+       <div class="xlist">${xrefList(xr, "", false)}</div><p class="muted">From OpenBible.info, strongest first.</p>`
+    : `<h3>Cross-references</h3><p class="muted">No cross-references for this verse.</p>`;
+  studyShow({title: `${book} ${chapter}:${verse}`, html: words + xrefs + topics, xr});
+}
+function xrefList(xr, book, all){
+  const list = xr.filter(x => !book || x.book === book), shown = all || book ? list : list.slice(0, 8);
+  return studyVerses(shown) + (shown.length < list.length ? `<button class="tp xmore"><b>Show all ${list.length}</b><span>›</span></button>` : "");
 }
 async function studyStrongs(n){
   const j = await studyGet(`/api/study/strongs?bible=${encodeURIComponent(rd.bible || "")}&number=${encodeURIComponent(n)}`);
@@ -1101,7 +1112,13 @@ $("#rtext").addEventListener("click", e => {
   if(getSelection && String(getSelection()).length > 2) return;  // selecting text, not clicking
   studyVerse(rChap.book, rChap.chapter, +v.dataset.v);
 });
+$("#studyBody").addEventListener("change", e => {
+  if(!e.target.matches(".xbook")) return;
+  const cur = studyStack[studyStack.length - 1]; if(cur && cur.xr) $("#studyBody .xlist").innerHTML = xrefList(cur.xr, e.target.value, false);
+});
 $("#studyBody").addEventListener("click", e => {
+  if(e.target.closest(".xmore")){ const cur = studyStack[studyStack.length - 1], sel = $("#studyBody .xbook");
+    $("#studyBody .xlist").innerHTML = xrefList(cur.xr, sel ? sel.value : "", true); return; }
   const w = e.target.closest(".w, a.sn"); if(w) return studyStrongs(w.dataset.n);
   const t = e.target.closest(".tp"); if(t) return studyTopic(+t.dataset.t);
   const a = e.target.closest(".sv a");

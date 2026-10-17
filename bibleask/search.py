@@ -147,9 +147,11 @@ class BookIndex:
         t = text.lower().strip(" .")
         t = t.replace("’", "'")
         num = None
-        m = re.match(r"^(first|second|third|fourth|1st|2nd|3rd|iii|ii|i|[1-4])\s*\.?\s*(.+)$", t)
+        # "1 cor", "1cor", "ii kings", "first john" -- a Roman numeral needs a space or dot after it,
+        # or "Isaiah" would read as "I saiah"
+        m = re.match(r"^(?:([1-4])\s*\.?\s*|(first|second|third|fourth|1st|2nd|3rd|iii|ii|i)(?:\s*\.\s*|\s+))(.+)$", t)
         if m:
-            num, t = _ORD[m.group(1)], m.group(2).strip()
+            num, t = _ORD[m.group(1) or m.group(2)], m.group(3).strip()
         t = re.sub(r"^(the book of|book of|the)\s+", "", t).strip()
         if len(t) < 2:
             return []

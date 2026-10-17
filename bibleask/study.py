@@ -10,6 +10,7 @@ from typing import Optional
 
 from .strongs import STRONGS, normalize
 from .topics import TOPICS
+from .xref import XREFS
 
 MAX_VERSES = 400
 
@@ -24,10 +25,28 @@ def _text(lib, bible_id: str, book: str, ch: int, v: int) -> str:
     return t if t is not None else STRONGS.kjv_text(book, ch, v)
 
 
+def passage_text(lib, bible_id: str, book: str, ch: int, v: int, ch2: int, v2: int, most: int = 3) -> str:
+    """A verse, or the first few verses of a passage, in the person's Bible (KJV as fallback)."""
+    if ch2 != ch:
+        v2 = v + most - 1
+    parts = [_text(lib, bible_id, book, ch, n) for n in range(v, min(v2, v + most - 1) + 1)]
+    t = " ".join(x for x in parts if x)
+    return t + (" …" if v2 > v + most - 1 or ch2 != ch else "")
+
+
+def xrefs(lib, bible_id: str, book: str, ch: int, v: int, to_book: Optional[str] = None, limit: int = 60) -> list[dict]:
+    out = []
+    for x in XREFS.for_verse(book, ch, v, to_book)[:limit]:
+        x["text"] = passage_text(lib, bible_id, x["book"], x["chapter"], x["verse"], x["end_chapter"], x["end_verse"])
+        out.append(x)
+    return out
+
+
 def verse(lib, bible_id: str, book: str, ch: int, v: int) -> dict:
     words = STRONGS.verse(book, ch, v) if STRONGS.available() else []
     return {"ref": f"{book} {ch}:{v}", "book": book, "chapter": ch, "verse": v,
-            "words": words, "topics": TOPICS.for_verse(book, ch, v)[:40]}
+            "words": words, "topics": TOPICS.for_verse(book, ch, v)[:40],
+            "xrefs": xrefs(lib, bible_id, book, ch, v)}
 
 
 def strongs(lib, bible_id: str, number: str) -> Optional[dict]:
@@ -59,4 +78,4 @@ def find_topics(words: str) -> list[dict]:
     return TOPICS.search_titles(words)
 
 
-__all__ = ["verse", "strongs", "topic", "find_topics", "normalize"]
+__all__ = ["verse", "strongs", "topic", "find_topics", "normalize", "xrefs", "passage_text"]

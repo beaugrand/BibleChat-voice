@@ -4,6 +4,7 @@ The chat only ever talks about the loaded Bibles. If nothing in them matches, it
 """
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from typing import Iterator, Optional
 
@@ -47,7 +48,12 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
     if not loaded:
         return None
 
-    # 0) a Strong's number such as "G25" or "H430": the word's meaning and every verse that uses it
+    # 0) cross-references: "cross references for Daniel 7:13", "Daniel to Revelation cross references"
+    xr = _xref_group(question, loaded, id_of)
+    if xr:
+        return xr
+
+    # 0b) a Strong's number such as "G25" or "H430": the word's meaning and every verse that uses it
     st = _strongs_group(question, loaded, id_of)
     if st:
         return st
@@ -149,6 +155,70 @@ def _topic_group(question: str, bibles: list, id_of: dict) -> Optional[dict]:
             return {"bible": f"Topic: {h.title} · {bible.name}", "id": id_of.get(bible.name), "topic": True,
                     "verses": verses[:MAX_VERSES]}
     return None
+
+
+_XREF_CUE = re.compile(r"cross[\s-]*ref\w*|xrefs?|related verses|parallel passages", re.I)
+
+
+def _xref_group(question: str, loaded: list, id_of: dict) -> Optional[Retrieval]:
+    """Cross-references (OpenBible.info): from one verse, a chapter, or everything linking two books."""
+    from .xref import XREFS
+    if not _XREF_CUE.search(question) or not XREFS.available():
+        return None
+    bible, ix = next(((b, x) for b, x in loaded if x.lang == "en"), loaded[0])
+    rest = _XREF_CUE.sub(" ", question)
+    rest = re.sub(r"\b(show|me|all|the|any|of|for|in|from|between|with|list|find|what|are|is|there|please|s)\b", " ", rest, flags=re.I)
+
+    def text(book, c, v, c2, v2):
+        from .study import passage_text
+        title = book if (book, c, v) in ix.by_ref else ix.books.resolve(book)
+        if title:
+            idx = ix.by_ref.get((title, c, v), [])
+            if idx and (c2, v2) == (c, v):
+                return ix.verses[idx[0]].text
+        return passage_text(None, "", book, c, v, c2, v2)
+
+    # two books: "Daniel to Revelation", "Daniel and Revelation"
+    m = re.search(r"([1-3]?\s*[A-Za-z][A-Za-z ]+?)\s+(?:to|and|&|with|vs\.?|-)\s+([1-3]?\s*[A-Za-z][A-Za-z ]+?)\s*[?.!]*$", rest.strip())
+    if m and not re.search(r"\d+\s*[:.]\s*\d", rest):
+        a, b = ix.books.resolve(m[1].strip()), ix.books.resolve(m[2].strip())
+        if a and b and a != b:
+            links = XREFS.between(a, b)
+            if links:
+                shown = links[:MAX_PASSAGE]
+                verses = [{"ref": f"{x['from']} → {x['to']}", "book": x["to_ref"][0], "chapter": x["to_ref"][1], "verse": x["to_ref"][2],
+                           "text": text(*x["to_ref"])} for x in shown]
+                note = (f"{len(links)} cross-references link {a} and {b} (OpenBible.info, 3+ reader votes), strongest first"
+                        + (f"; the first {MAX_PASSAGE} are shown." if len(links) > MAX_PASSAGE else ".")
+                        + f" Click a verse in Read mode to see its cross-references.")
+                group = {"bible": f"Cross-references: {a} ↔ {b} · {bible.name}", "id": id_of.get(bible.name),
+                         "topic": True, "xref": True, "verses": verses}
+                return Retrieval("xref", [group], [(v["ref"], v["text"][:400]) for v in verses[:MAX_VERSES]], note)
+    # one verse or chapter: "cross references Daniel 7:13", "Daniel 7 cross references"
+    idx = ix.lookup_reference(rest.strip()) if rest.strip() else None
+    if not idx:
+        return None
+    vs = [ix.verses[i] for i in idx]
+    book, ch = vs[0].book, vs[0].chapter
+    seen, links = set(), []
+    for v in vs:
+        for x in XREFS.for_verse(book, ch, v.verse):
+            k = (x["ref"])
+            if k not in seen:
+                seen.add(k)
+                links.append((x["votes"], v.verse, x))
+    if not links:
+        return None
+    links.sort(key=lambda t: -t[0])
+    one = len({v.verse for v in vs}) == 1
+    src = f"{book} {ch}:{vs[0].verse}" if one else f"{book} {ch}" + (f":{vs[0].verse}–{vs[-1].verse}" if len(vs) < 200 and idx != ix.lookup_reference(f"{book} {ch}") else "")
+    verses = [{"ref": (x["ref"] if one else f"{book} {ch}:{fv} → {x['ref']}"), "book": x["book"], "chapter": x["chapter"], "verse": x["verse"],
+               "text": text(x["book"], x["chapter"], x["verse"], x["end_chapter"], x["end_verse"])} for _vt, fv, x in links[:MAX_PASSAGE]]
+    note = (f"{len(links)} cross-references from {src} (OpenBible.info, 3+ reader votes), strongest first"
+            + (f"; the first {MAX_PASSAGE} are shown." if len(links) > MAX_PASSAGE else "."))
+    group = {"bible": f"Cross-references for {src} · {bible.name}", "id": id_of.get(bible.name), "topic": True,
+             "xref": True, "verses": verses}
+    return Retrieval("xref", [group], [(v["ref"], v["text"][:400]) for v in verses[:MAX_VERSES]], note)
 
 
 def _strongs_group(question: str, loaded: list, id_of: dict) -> Optional[Retrieval]:
