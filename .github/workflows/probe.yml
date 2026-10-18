@@ -1,0 +1,21 @@
+name: Probe (temporary)
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          for id in deu1912 deu1912eb; do
+            code=$(curl -s -A "BibleAsk/1.0" -o $id.zip -w "%{http_code}" "https://ebible.org/Scriptures/${id}_usfx.zip")
+            if [ "$code" = "200" ] && unzip -o -q $id.zip -d $id 2>/dev/null; then
+              books=$(grep -ho '<book id="[A-Z0-9]*"' $id/*.xml | sed 's/<book id="//;s/"//' | tr '\n' ' ')
+              wis=$(grep -o '<book id="WIS">.\{0,300\}' $id/*.xml | head -c 300 | tr '\n' ' ')
+              files=$(ls $id | tr '\n' ' ')
+              echo "::notice title=$id::size $(stat -c%s $id.zip) files: $files | books: $books | WIS: $wis"
+              lic=$(grep -ho -i 'copyright[^<]\{0,200\}\|public domain[^<]\{0,100\}' $id/* 2>/dev/null | head -3 | tr '\n' ' ')
+              echo "::notice title=$id license::$lic"
+            else
+              echo "::notice title=$id::http $code"
+            fi
+          done
