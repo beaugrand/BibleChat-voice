@@ -6,6 +6,7 @@ jobs:
     steps:
       - shell: bash
         run: |
+          set +e +o pipefail
           for id in deu1912 deu1912eb; do
             code=$(curl -s -A "BibleAsk/1.0" -o $id.zip -w "%{http_code}" "https://ebible.org/Scriptures/${id}_usfx.zip")
             if [ "$code" = "200" ] && unzip -o -q $id.zip -d $id 2>/dev/null; then
