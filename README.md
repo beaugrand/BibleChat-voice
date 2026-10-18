@@ -14,7 +14,7 @@
 
 - Published download: **v1.0.2** (17 October 2026). Version number lives in `bibleask/__init__.py`.
 - v1.0.2 brought the computer downloads up to date with the phone version: Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, verse image maker with your own photos, church logo with QR code, sermon list with QR code, Ask AI on the computer, Suggest a feature, the BibleChat connector for AI apps, license changed from MIT to Apache 2.0.
-- Changes since v1.0.2, already live on the phone version and in `main`, reach computer users with the next release (v1.0.3): book names in each Bible's own language (computer and phone), app language flag with 8 languages (phone).
+- Changes since v1.0.2, already live on the phone version and in `main`, reach computer users with the next release (v1.0.3): book names in each Bible's own language (computer and phone), app language flag with 8 languages (phone); **share a verse as a picture** (phone): tapping a verse now offers 🖼 Share as a picture first, the picture carries a small QR code that opens the verse, the link to the verse goes along in the message, and a friend who opens it lands on that verse with it highlighted in gold.
 - Automatic tests: 79 (run `python -m unittest discover -s tests`).
 
 ## 1. Where everything lives
@@ -90,6 +90,7 @@
 - Scofield Reference Notes (1917) as highlighted words in the text; Easton's Bible Dictionary (1897) on names and places.
 - Bookmarks; verse of the day.
 - **🖼 Verse image:** pick one or more verses (＋ verse / − verse), a background or one of your own photos (it stays on the device), a size (square post, story, lock screen), text size and font, then **↗ Share** (Facebook, Instagram, WhatsApp, Messages…) or **⬇ Save image**.
+- **🖼 Share as a picture (phone):** tap a verse → **🖼 Share as a picture**. Pick a background or one of your photos. The picture gets a small **▦ QR code** (tap the button to turn it off) that opens that verse in BibleChat. **↗ Share** sends the picture plus the verse link as text; where a phone can't share pictures, the picture is saved and the link copied. Whoever opens the link or scans the code sees "A friend shared a verse with you" and the verse stays highlighted in gold. Everything happens on the device: no upload, no server, no cost.
 
 **Studying a verse** (click or tap a verse)
 - KJV word by word with Strong's numbers; each word opens the Hebrew or Greek word, pronunciation, meaning, KJV renderings and every verse that uses it.
@@ -152,6 +153,7 @@ Sources: [YouVersion on the App Store](https://apps.apple.com/us/app/bible/id282
 ## 7. Open items
 
 - Test the Windows and Mac downloads on real machines.
+- Share as a picture: test on a real iPhone and Android (some messaging apps drop the text that rides along with a picture; the QR code on the picture covers that). Bring the same QR code and link to the computer version's picture maker.
 - Not possible as a web page: lock-screen widgets and daily reminders (need a store app); built-in AI on the phone (needs a paid server or a large on-phone model).
 - Ethiopian Canon still missing Meqabyan I–III and 4 Baruch (no public-domain English found); no freely licensed Ge'ez text found.
 - Church logos picked from a device show only on that device and on the QR card; members see the logo only when the church gives a logo web address. Hosting church logos for them would need a server.

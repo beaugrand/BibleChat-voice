@@ -147,6 +147,7 @@ a{color:var(--accent)}
 .welcome h1{font-family:Georgia,serif;font-weight:500;font-size:28px;margin:0 0 6px}
 #rtext .v{cursor:pointer}
 #rtext .v.sel{background:rgba(47,93,138,.16)}
+#rtext .v.shared{background:rgba(199,154,75,.30);border-radius:4px;box-shadow:0 0 0 3px rgba(199,154,75,.30)}
 .quote{font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.6;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:4px 0 12px}
 .quote b{display:block;font-family:system-ui,sans-serif;font-size:13.5px;color:var(--accent);margin-top:6px}
 .sendrow{display:flex;gap:8px}
@@ -320,8 +321,9 @@ body.has-church #top .brand{display:none}
   <header><h2>This verse</h2><button class="iconbtn" id="shareClose" aria-label="Close">✕</button></header>
   <div class="body">
     <div class="quote" id="shareQuote"></div>
+    <button class="btn primary" id="shareImg" style="width:100%;margin:0 0 8px">🖼 Share as a picture</button>
     <button class="btn" id="shareStudy" style="width:100%;margin:0 0 8px">📖 Study it: Hebrew/Greek, cross-references, topics, Matthew Henry</button>
-    <div class="alt" style="margin:0 0 12px"><button class="btn" id="shareBm">🔖 Bookmark</button><button class="btn" id="shareAI">✨ Ask AI</button><button class="btn" id="shareImg">🖼 Image</button><button class="btn" id="shareSm">📋 Add to sermon</button></div>
+    <div class="alt" style="margin:0 0 12px"><button class="btn" id="shareBm">🔖 Bookmark</button><button class="btn" id="shareAI">✨ Ask AI</button><button class="btn" id="shareSm">📋 Add to sermon</button></div>
     <form id="shareForm" class="sendrow">
       <input class="find" id="shareTo" type="text" inputmode="email" autocomplete="email tel" placeholder="Phone number or email address">
       <button class="btn primary">Share</button>
@@ -420,9 +422,9 @@ body.has-church #top .brand{display:none}
   <img id="viImg" alt="Preview of the verse image">
   <div id="viBgs"></div><input type="file" id="viPhoto" accept="image/*" hidden>
   <div id="viSizes"></div>
-  <div class="virow"><button class="btn" id="viSmall" title="Smaller text">A−</button><button class="btn" id="viBig" title="Larger text">A+</button><button class="btn" id="viFont">Aa Classic</button></div>
+  <div class="virow"><button class="btn" id="viSmall" title="Smaller text">A−</button><button class="btn" id="viBig" title="Larger text">A+</button><button class="btn" id="viFont">Aa Classic</button><button class="btn" id="viQr" title="A small QR code on the picture opens this verse in BibleChat">▦ QR code</button></div>
   <div class="virow"><button class="btn primary" id="viShare">↗ Share</button><button class="btn" id="viSave">⬇ Save image</button></div>
-  <p class="vinote">Pick a background or 📷 one of your photos (it stays on this device). Share sends it to Facebook, Instagram, WhatsApp, Messages and more; on a phone, Share → Save Image puts it in your photos.</p>
+  <p class="vinote">Pick a background or 📷 one of your photos (it stays on this device). The link to the verse goes along with the picture, and the ▦ QR code on it opens the verse too. Share sends it to Facebook, Instagram, WhatsApp, Messages and more; on a phone, Share → Save Image puts it in your photos.</p>
   </div>
 </div></div>
 
@@ -1240,6 +1242,7 @@ $("#aiSheet").addEventListener("click", async e => {
 $("#shareAI").onclick = () => { const v = shareV; closeShare(); askAI(`Explain ${bName(place.book)} ${place.ch}:${v} (${bibleAbbr()}): "${verseText(v)}"\n\nWhat does it mean in its context, what do the key words mean in the original Hebrew or Greek, and which other verses connect to it?`); };
 
 /* someone opened a shared verse: say hello and offer the app */
+function markShared(v){ const el = document.getElementById("v" + v); if(el) el.classList.add("shared"); }   // stays highlighted until the chapter changes
 function showWelcome(v){
   $("#welcomeQuote").innerHTML = esc(verseText(v)) +  `<b>${esc(bName(place.book))} ${place.ch}:${v} · ${esc(bibleAbbr())}</b>`;
   $("#welcomeTitle").textContent = "A friend shared a verse with you";
@@ -1394,9 +1397,9 @@ const VI_BGS = [
   ["Parchment", ["#f6eedb", "#efe0bd", "#e0c994"], true], ["White", ["#ffffff", "#f7f4ee", "#ebe5d8"], true]];
 const VI_SIZES = {post: [1080, 1080, "Post (square)"], story: [1080, 1920, "Story"], phone: [1170, 2532, "Lock screen"]};
 const vi = {book: "", ch: 0, v1: 0, v2: 0, fixed: null, bg: store.get(VI_KEY + "bg", 0), size: store.get(VI_KEY + "size", "post"),
-            scale: 1, serif: store.get(VI_KEY + "serif", true), photo: null, canvas: null};
+            scale: 1, serif: store.get(VI_KEY + "serif", true), qr: store.get(VI_KEY + "qr", true), link: null, photo: null, canvas: null};
 function viOpen(book, ch, v1, v2, fixed){
-  Object.assign(vi, {book, ch, v1, v2: v2 || v1, fixed: fixed || null, scale: 1});
+  Object.assign(vi, {book, ch, v1, v2: v2 || v1, fixed: fixed || null, scale: 1, link: fixed ? (fixed.link || null) : verseLink(v1)});
   $("#viDlg").hidden = false; viControls(); viDraw();
 }
 function viRef(){ return vi.fixed ? vi.fixed.ref : bName(vi.book) + " " + vi.ch + ":" + vi.v1 + (vi.v2 > vi.v1 ? "-" + vi.v2 : ""); }
@@ -1406,6 +1409,7 @@ function viControls(){
   $("#viSizes").innerHTML = Object.entries(VI_SIZES).map(([k, s]) => `<button class="btn${vi.size === k ? " on" : ""}" data-size="${k}">${s[2]}</button>`).join("");
   $("#viRange").hidden = !!vi.fixed;
   $("#viFont").textContent = vi.serif ? "Aa Classic" : "Aa Modern";
+  $("#viQr").hidden = !vi.link; $("#viQr").classList.toggle("on", vi.qr); $("#viQr").textContent = vi.qr ? "▦ QR code ✓" : "▦ QR code";
 }
 function viLines(g, text, maxW){
   const lines = []; let cur = "";
@@ -1430,7 +1434,7 @@ async function viDraw(){
   }
   const ink = light ? "#2b2118" : "rgba(255,255,255,.96)", accent = light ? "#9a6b1f" : "#f3c77a", soft = light ? "rgba(43,33,24,.6)" : "rgba(255,255,255,.72)";
   const family = vi.serif ? 'Georgia, "Times New Roman", serif' : 'system-ui, "Segoe UI", Roboto, sans-serif';
-  const maxW = W * .8, boxH = H * (vi.size === "post" ? .6 : .52);
+  const qrOn = !!(vi.link && vi.qr), maxW = W * .8, boxH = H * (vi.size === "post" ? (qrOn ? .5 : .6) : .52);
   let size = Math.round(W * .062 * vi.scale), lines;
   for(;;){ g.font = `${vi.serif ? 500 : 600} ${size}px ${family}`; lines = viLines(g, "“" + text + "”", maxW); if(lines.length * size * 1.38 <= boxH || size <= 22) break; size -= 2; }
   const lh = size * 1.38, block = lines.length * lh + size * 1.9, top = (H - block) / 2 + size * .8;
@@ -1442,9 +1446,15 @@ async function viDraw(){
   g.font = `600 ${Math.round(size * .7)}px system-ui, sans-serif`; g.fillStyle = accent; g.fillText(ref, W / 2, y);
   if(label){ g.font = `400 ${Math.round(size * .48)}px system-ui, sans-serif`; g.fillStyle = soft; g.fillText(label, W / 2, y + size * .78); }
   g.font = `600 ${Math.round(W * .024)}px system-ui, sans-serif`; g.fillStyle = soft; g.fillText("BibleChat · free Bible app", W / 2, H - H * .045);
+  if(qrOn){   // a small QR code in the corner: scanning it opens this verse in BibleChat
+    const q = qrCanvas(vi.link, Math.round(W * .15)), qs = Math.round(W * .13), pad = Math.round(W * .03), x = W - qs - pad, yq = H - qs - pad - Math.round(W * .03);
+    g.globalAlpha = .92; g.drawImage(q, x, yq, qs, qs); g.globalAlpha = 1;
+    g.font = `600 ${Math.round(W * .017)}px system-ui, sans-serif`; g.fillStyle = soft; g.fillText("Scan to read", x + qs / 2, yq + qs + Math.round(W * .024));
+  }
   vi.canvas = c;
   $("#viImg").src = c.toDataURL("image/jpeg", .86);
 }
+function viShareText(){ return viRef() + (vi.link ? "\n\nRead it in BibleChat: " + vi.link : " · BibleChat"); }
 function viName(){ return "BibleChat " + viRef().replace(/[:\s]+/g, "-") + ".png"; }
 async function viBlob(){ return new Promise(r => vi.canvas.toBlob(r, "image/png")); }
 $("#viBgs").addEventListener("click", e => {
@@ -1463,6 +1473,7 @@ $("#viSizes").addEventListener("click", e => { const b = e.target.closest("[data
 $("#viSmall").onclick = () => { vi.scale = Math.max(.6, vi.scale - .1); viDraw(); };
 $("#viBig").onclick = () => { vi.scale = Math.min(1.6, vi.scale + .1); viDraw(); };
 $("#viFont").onclick = () => { vi.serif = !vi.serif; store.set(VI_KEY + "serif", vi.serif); viControls(); viDraw(); };
+$("#viQr").onclick = () => { vi.qr = !vi.qr; store.set(VI_KEY + "qr", vi.qr); viControls(); viDraw(); };
 $("#viMore").onclick = () => { vi.v2++; viDraw(); };
 $("#viLess").onclick = () => { if(vi.v2 > vi.v1){ vi.v2--; viDraw(); } };
 $("#viSave").onclick = async () => {
@@ -1473,8 +1484,9 @@ $("#viSave").onclick = async () => {
 $("#viShare").onclick = async () => {
   const blob = await viBlob(), f = new File([blob], viName(), {type: "image/png"});
   try{
-    if(navigator.canShare && navigator.canShare({files: [f]})){ await navigator.share({files: [f], title: viRef(), text: viRef() + " · BibleChat"}); return; }
+    if(navigator.canShare && navigator.canShare({files: [f]})){ await navigator.share({files: [f], title: viRef(), text: viShareText()}); return; }
   }catch(e){ if(e && e.name === "AbortError") return; }
+  if(vi.link){ $("#viSave").onclick(); try{ await navigator.clipboard.writeText(viShareText()); chSay("Picture saved and link copied: attach the picture and paste the link"); }catch(e){ chSay("Picture saved"); } return; }
   try{ await navigator.clipboard.write([new ClipboardItem({"image/png": blob})]); chSay("Image copied: paste it into your post"); return; }catch(e){}
   $("#viSave").onclick(); chSay("Saved: attach the picture to your post");
 };
@@ -1652,9 +1664,9 @@ function parseHash(){
     if(s.bible && s.bible !== place.bible && catalog.some(c => c.id === s.bible)){ try{ await useBible(s.bible, true); render(); }catch(e){} }
     smScreen(s, true);
   }
-  else if(h && h.shared && h.v && verseText(h.v)) showWelcome(h.v);
+  else if(h && h.shared && h.v && verseText(h.v)){ markShared(h.v); showWelcome(h.v); }
   else if(!store.get("tip", false)){ store.set("tip", true); setTimeout(() => toast("Tip: tap any verse to share or study it"), 1200); }
-  addEventListener("hashchange", () => { const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]) go(x.book, x.ch, x.v); });
+  addEventListener("hashchange", () => { const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]){ go(x.book, x.ch, x.v); if(x.shared && x.v) markShared(x.v); } });
 })();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
