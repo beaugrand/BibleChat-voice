@@ -118,7 +118,7 @@
 - Share a verse by text or email; the link opens straight to that verse.
 - Love Donations button with Cash App QR code.
 - **💡 Suggest a feature** (Love tab on the phone, Love Donations on the computer): sends the idea to Hans by email, or posts it on GitHub.
-- Works offline (phone after first open; computer except downloads and the daily update check). Windows icon, Linux menu entry, Linux build for older processors.
+- Works offline (phone after first open; computer except downloads and the daily update check). On a weak phone connection a Bible download is tried 3 times; if it still fails, the app says so and offers Try again, the King James Version or another Bible. Windows icon, Linux menu entry, Linux build for older processors.
 
 ## 5. How BibleChat compares with other Bible apps
 
@@ -159,6 +159,7 @@ Sources: [YouVersion on the App Store](https://apps.apple.com/us/app/bible/id282
 - Church logos picked from a device show only on that device and on the QR card; members see the logo only when the church gives a logo web address. Hosting church logos for them would need a server.
 - Connector: choose a host for the public version (Render, Fly.io, Railway or Hugging Face Spaces; needs a free account), add its HTTPS address in Claude as a custom connector, test every tool, then submit at claude.ai/directory/manage (paid Claude plan).
 - App language flag: the computer version's menus are still English only (phone has 8 languages). Book names fall back to English for Albanian, Maori, Swahili, Tagalog and Cherokee (no name list found).
+- German Luther 1912 (and the Luther 1545 and eBible copies checked) has only the 66 books: no Apocrypha such as Weisheit Salomos. A free German text with the Apocrypha still has to be found.
 - Non-English search works but is rougher than English. Code-signing would remove the first-launch warnings (yearly cost).
 
 ---

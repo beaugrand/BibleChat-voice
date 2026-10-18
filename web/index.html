@@ -483,9 +483,17 @@ $("#bibleChip").onclick = () => show("bibles");
 const loaded = {};
 async function loadBible(id){
   if(loaded[id]) return loaded[id];
-  const r = await fetch("data/" + id + ".json");
-  if(!r.ok) throw new Error("Couldn't load that Bible (" + r.status + ").");
-  const b = await r.json();
+  // a Bible is a few MB: on a weak phone connection the download can break off ("Load failed"), so try up to 3 times
+  let b = null, last = null;
+  for(let t = 0; t < 3 && !b; t++){
+    if(t) await new Promise(ok => setTimeout(ok, 1000 * t));
+    try{
+      const r = await fetch("data/" + id + ".json", t ? {cache: "reload"} : {});
+      if(!r.ok){ last = new Error("Couldn't load that Bible (" + r.status + ")."); if(r.status === 404) break; continue; }
+      b = await r.json();
+    }catch(e){ last = e; }
+  }
+  if(!b){ const e = new Error("The Bible didn't finish downloading. The internet connection may be weak; try again in a moment."); e.cause = last; throw e; }
   b.list = []; b.byName = {};
   for(const bk of b.books){ b.byName[bk.n] = bk; b.list.push(bk.n); bk.map = new Map(bk.c.map(c => [c[0], c[1]])); }
   loaded[id] = b; return b;
@@ -1640,6 +1648,18 @@ $("#langClose").onclick = () => { $("#langSheet").hidden = true; };
 $("#langSheet").addEventListener("click", e => { if(e.target.id === "langSheet") $("#langSheet").hidden = true; });
 setLang(uiLang);
 
+/* a Bible that would not download: say so plainly and offer a way on */
+function bibleFailed(id, e){
+  const meta = catalog.find(c => c.id === id), name = meta ? meta.name : id;
+  $("#where").textContent = name; $("#bibleChip").textContent = meta ? (meta.abbr || meta.name) : id;
+  $("#rtext").innerHTML = `<div class="notice err">${esc(tr(e.message || "Couldn't open that Bible."))}</div>
+    <p style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" id="bfRetry">↻ Try again</button>${id !== "eng-kjv" ? `<button class="btn" id="bfKjv">Open the King James Version</button>` : ""}<button class="btn" id="bfList">📚 Choose another Bible</button></p>`;
+  $("#bfRetry").onclick = async () => { $("#rtext").innerHTML = `<div class="notice">${esc(tr("Opening the Bible…"))}</div>`;
+    try{ await useBible(id, true); render(); }catch(err){ bibleFailed(id, err); } };
+  if($("#bfKjv")) $("#bfKjv").onclick = async () => { try{ await useBible("eng-kjv", true); render(); }catch(err){ bibleFailed("eng-kjv", err); } };
+  $("#bfList").onclick = () => show("bibles");
+}
+
 /* ---------- start ---------- */
 function parseHash(){
   const p = location.hash.replace(/^#\/?/, "").split("/").map(decodeURIComponent);
@@ -1656,7 +1676,8 @@ function parseHash(){
   const h = parseHash();
   if(h && catalog.some(c => c.id === h.bible)) place = {bible: h.bible, book: h.book, ch: h.ch};
   if(!catalog.some(c => c.id === place.bible)) place.bible = catalog[0].id;
-  try{ await useBible(place.bible, true); }catch(e){ $("#rtext").innerHTML = `<div class="notice err">${esc(e.message)}</div>`; return; }
+  try{ await useBible(place.bible, true); }
+  catch(e){ bibleFailed(place.bible, e); return; }
   render(h && h.v);
   if(SM_INCOMING && SM_INCOMING.items.length){
     const s = SM_INCOMING, seen = store.get(SM_SEEN, []).filter(x => sermonLink(x) !== sermonLink(s));
