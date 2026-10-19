@@ -12,9 +12,10 @@
 
 ## Status
 
-- Published download: **v1.0.2** (17 October 2026). Version number lives in `bibleask/__init__.py`.
-- v1.0.2 brought the computer downloads up to date with the phone version: Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, verse image maker with your own photos, church logo with QR code, sermon list with QR code, Ask AI on the computer, Suggest a feature, the BibleChat connector for AI apps, license changed from MIT to Apache 2.0.
-- Changes since v1.0.2, already live on the phone version and in `main`, reach computer users with the next release (v1.0.3): book names in each Bible's own language (computer and phone), app language flag with 8 languages (phone); **share a verse as a picture** (phone): tapping a verse now offers 🖼 Share as a picture first, the picture carries a small QR code that opens the verse, the link to the verse goes along in the message, and a friend who opens it lands on that verse with it highlighted in gold; **search by meaning and by the original Hebrew/Greek word** (computer and phone): "sea monsters" now finds Genesis 1:21 even in the King James, which says "great whales" there, and every verse says why it was found; **Verse button** in Read mode (computer and phone): a grid of the chapter's verse numbers that jumps straight to a verse and makes it glow.
+- Published download: **v1.0.3** (19 October 2026). Version number lives in `bibleask/__init__.py`.
+- v1.0.3 brought the computer downloads up to date with the phone version again: book names in each Bible's own language (computer and phone), app language flag with 8 languages (phone); **share a verse as a picture** (phone): tapping a verse now offers 🖼 Share as a picture first, the picture carries a small QR code that opens the verse, the link to the verse goes along in the message, and a friend who opens it lands on that verse with it highlighted in gold; a broken Bible download on a weak phone connection is retried, with Try again / KJV / another Bible instead of "Load failed"; **search by meaning and by the original Hebrew/Greek word** (computer and phone): "sea monsters" now finds Genesis 1:21 even in the King James, which says "great whales" there, and every verse says why it was found; **Verse button** in Read mode (computer and phone): a grid of the chapter's verse numbers that jumps straight to a verse and makes it glow.
+- v1.0.2 (17 October 2026) brought: Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, verse image maker with your own photos, church logo with QR code, sermon list with QR code, Ask AI on the computer, Suggest a feature, the BibleChat connector for AI apps, license changed from MIT to Apache 2.0.
+- Changes since v1.0.3: none yet.
 - Automatic tests: 92 (run `python -m unittest discover -s tests`).
 
 ## 1. Where everything lives
@@ -48,7 +49,7 @@
 
 **Building and releasing**
 - GitHub Actions does all building. **Build BibleChat** (`build.yml`) makes the four downloads and runs the tests; **Publish phone version** (`pages.yml`) rebuilds the phone site whenever the code changes.
-- To release: set `__version__` in `bibleask/__init__.py` (e.g. `1.0.2`), then run **Build BibleChat** with the same version (`v1.0.2`). The release refuses to publish if the two differ.
+- To release: set `__version__` in `bibleask/__init__.py` (e.g. `1.0.3`), then run **Build BibleChat** with the same version (`v1.0.3`). The release refuses to publish if the two differ.
 - Windows and Mac downloads are not code-signed yet, so the first launch shows a warning.
 
 ## 3. Code map
