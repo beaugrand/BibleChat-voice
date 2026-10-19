@@ -182,7 +182,7 @@ const Smart = (() => {
       w[name] = kind === "i8" ? {q: new Int8Array(blob.buffer, o, n), s: new Float32Array(blob.buffer, so, shape[0]), rows: shape[0], cols: shape[1]} : new Float32Array(blob.buffer, o, n);
     }
     const parts = vj.parts.map((cnt, i) => { const b = bufs[head.parts.length + i]; return {cnt, m: new Int8Array(b, 0, cnt * vj.dim), s: new Float32Array(b, cnt * vj.dim, cnt)}; });
-    const ids = new Map(); vocab.split("\n").forEach((t, i) => { if(!ids.has(t)) ids.set(t, i); });
+    const ids = new Map(); vocab.split(/\r?\n/).forEach((t, i) => { if(!ids.has(t)) ids.set(t, i); });
     M = {ids, w, cfg: head.config, prefix: head.query_prefix, refs: vj.refs, books: vj.books, dim: vj.dim, parts, bytes: total};
     return M;
   }

@@ -1,0 +1,2 @@
+# Keep the meaning-search word list byte-for-byte on every system (Windows would otherwise add \r to each line)
+bibleask/data/meaning/vocab.txt -text
