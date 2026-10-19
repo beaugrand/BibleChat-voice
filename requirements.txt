@@ -1,6 +1,7 @@
 # Needed to run BibleAsk
 pypdfium2>=4.30
 certifi
+numpy            # search by meaning
 llama-cpp-python>=0.3.2
 
 # Only needed for building the Windows/Mac app and running tests

@@ -12,7 +12,7 @@ for extra in ("bundled_models", "hf_cache"):  # AI models pre-fetched by packagi
     if os.path.isdir(extra):                  # baked in so the finished app needs no first-run download
         datas.append((extra, extra))
 
-binaries, hiddenimports = [], []
+binaries, hiddenimports = [], ["numpy"]   # numpy runs the meaning search (bibleask/meaning.py)
 for pkg in ("llama_cpp", "pypdfium2", "pypdfium2_raw", "certifi", "torch", "transformers", "pocket_tts"):
     try:
         d, b, h = collect_all(pkg)

@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 if [ ! -d .venv ]; then
   python3 -m venv --system-site-packages .venv
   .venv/bin/pip install --upgrade pip
-  .venv/bin/pip install pypdfium2 certifi
+  .venv/bin/pip install pypdfium2 certifi numpy
   .venv/bin/pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu || echo "(AI engine could not be installed; search still works)"
   .venv/bin/pip install transformers || echo "(listening helper could not be installed; typed chat still works)"
 fi

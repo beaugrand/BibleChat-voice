@@ -10,6 +10,8 @@ every verse with a word) and Nave's topics, split into small files the phone loa
     data/study/henry/<book#>.json  {"7:9": "note on the passage from 7:9", ...}  (Matthew Henry, Concise)
     data/study/easton/names.json   names marked in the text; easton/<letter>.json {"babylon": ["Babylon", text]}
     data/study/xref/<book#>.json   {"7:13": [[book#, ch, v, ch2, v2, votes], ...], ...}   (OpenBible.info, CC-BY)
+    data/study/gloss.json          English words -> the Hebrew/Greek words that mean them (bibleask/strongs.py)
+    data/meaning/                  the meaning model and verse fingerprints (bibleask/data/meaning, copied as is)
 
 Usage:  python web/build_study.py OUT_DIR
 """
@@ -94,6 +96,14 @@ def main(out: str) -> None:
     dump(os.path.join(base, "topics.json"),
          [[TopicHit(t, h, refs, 0).title, [[num[b], c, v1, v2] for b, c, v1, v2 in refs if b in num]]
           for t, h, refs, _a, _b in rows])
+    from bibleask.strongs import COMMON, VERSES
+    gi = STRONGS.gloss_index()
+    dump(os.path.join(base, "gloss.json"), dict(gi, common=sorted(COMMON), verses=VERSES))
+    import shutil
+    src = os.path.join(ROOT, "bibleask", "data", "meaning")
+    with open(os.path.join(src, "verses.json"), encoding="utf-8") as f:
+        assert json.load(f)["books"] == books
+    shutil.copytree(src, os.path.join(out, "data", "meaning"), dirs_exist_ok=True)
     total = sum(os.path.getsize(os.path.join(dp, f)) for dp, _, fs in os.walk(base) for f in fs)
     nfiles = sum(len(fs) for _, _, fs in os.walk(base))
     print(f"study data: {nfiles} files, {total / 1e6:.1f} MB")

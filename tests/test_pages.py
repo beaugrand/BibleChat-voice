@@ -56,6 +56,8 @@ class LanguagesTest(unittest.TestCase):
             self.assertIn(part, s)
         self.assertIn("i18n.js", read(os.path.join(ROOT, "web", "sw.js")))
         self.assertIn("web/i18n.js", read(os.path.join(ROOT, ".github", "workflows", "pages.yml")))  # the phone build must publish it
+        self.assertIn("web/smart.js", read(os.path.join(ROOT, ".github", "workflows", "pages.yml")))  # the phone search
+        self.assertIn("smart.js", read(os.path.join(ROOT, "web", "sw.js")))   # kept for offline use
 
     def test_book_names_table(self):
         import json

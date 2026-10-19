@@ -24,6 +24,8 @@ following work by others. Each keeps its own license.
 | **Easton's Bible Dictionary** (M. G. Easton, 1897), as parsed from CCEL by the [NEUU bible-dictionary-dataset](https://github.com/neuu-org/bible-dictionary-dataset) | The dotted names and places in Read mode | Public domain (dataset: CC BY 4.0, NEUU) |
 | **Cross-references** from [OpenBible.info](https://www.openbible.info/labs/cross-references/) (data of 2024-11-04), via the [Scrollmapper](https://github.com/scrollmapper/bible_databases) project | "Cross-references" when you click a verse, and cross-reference questions in chat | CC BY (attribution: OpenBible.info) |
 | **King James Version with Strong's numbers**, from the CrossWire SWORD module "KJV" (engKJV2006eb) | Which Hebrew/Greek word stands behind each English word, and every verse that uses it | Public domain |
+| **BGE-small-en v1.5** sentence model ([BAAI](https://huggingface.co/BAAI/bge-small-en-v1.5)), stored with 8-bit weights in `bibleask/data/meaning/` | Search by meaning ("matched by meaning"), on the computer and the phone | MIT (Copyright (c) 2022 staoxiao; full text in `bibleask/data/meaning/LICENSE.txt`) |
+| **Berean Standard Bible** (open-bibles copy) | The verse "meaning fingerprints" in `bibleask/data/meaning/` | Public domain |
 
 ## Font included in BibleChat
 
@@ -39,6 +41,7 @@ following work by others. Each keeps its own license.
 | [llama-cpp-python](https://github.com/abetlen/llama-cpp-python) and [llama.cpp](https://github.com/ggml-org/llama.cpp) | MIT |
 | [pypdfium2](https://github.com/pypdfium2-team/pypdfium2) / PDFium | Apache-2.0 or BSD-3-Clause / BSD-3-Clause |
 | [certifi](https://github.com/certifi/python-certifi) | MPL-2.0 |
+| [NumPy](https://numpy.org) (runs the meaning search) | BSD-3-Clause |
 | [PyInstaller](https://pyinstaller.org) bootloader | GPL-2.0 with an exception that allows distributing apps built with it |
 
 ## Downloaded only when the person asks

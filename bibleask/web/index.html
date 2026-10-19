@@ -89,6 +89,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 .verse:last-child{border-bottom:0}
 .verse .ref{font-weight:650;color:var(--accent);margin-right:6px;font-size:14px;white-space:nowrap}
 .verse mark{background:rgba(255,205,60,.35);color:inherit;border-radius:3px;padding:0 1px}
+.verse .why{font-family:system-ui,sans-serif;font-size:12px;color:var(--muted);margin-top:3px}
 .verse{font-family:Georgia,"Times New Roman",serif}
 /* welcome */
 .welcome{text-align:center;padding:9vh 0 20px}
@@ -572,7 +573,8 @@ function sourcesHtml(src, question){
     const open = (src.groups.length === 1 || gi === 0) ? " open" : "";
     const vs = g.verses.map(v => {
       const go = g.id && v.book ? ` go" title="Open ${esc(v.book)} ${v.chapter} in the reader" data-bid="${esc(g.id)}" data-book="${esc(v.book)}" data-ch="${v.chapter}" data-v="${v.verse || (String(v.ref).match(/:(\d+)/) || [,""])[1]}` : "";
-      return `<div class="verse"><span class="ref${go}">${esc(v.ref)}</span>${highlight(v.text, words)}</div>`;
+      const why = v.why && v.why.length ? `<div class="why">Found by: ${v.why.map(esc).join(" · ")}</div>` : "";
+      return `<div class="verse"><span class="ref${go}">${esc(v.ref)}</span>${highlight(v.text, words)}${why}</div>`;
     }).join("");
     return `<details class="src${g.topic ? " topic" : ""}"${open}><summary><span><b>${esc(g.bible)}</b></span><span>${g.verses.length} verse${g.verses.length===1?"":"s"}</span></summary><div class="verses">${vs}</div></details>`;
   }).join("") + (src.note ? `<div class="notice">${esc(src.note)}</div>` : "") + (src.groups.some(g => g.xref) ? `<div class="notice" style="font-size:12.5px">Cross-references from OpenBible.info (CC-BY). In Read mode, click any verse to see its cross-references.</div>`

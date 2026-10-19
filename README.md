@@ -14,8 +14,8 @@
 
 - Published download: **v1.0.2** (17 October 2026). Version number lives in `bibleask/__init__.py`.
 - v1.0.2 brought the computer downloads up to date with the phone version: Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, verse image maker with your own photos, church logo with QR code, sermon list with QR code, Ask AI on the computer, Suggest a feature, the BibleChat connector for AI apps, license changed from MIT to Apache 2.0.
-- Changes since v1.0.2, already live on the phone version and in `main`, reach computer users with the next release (v1.0.3): book names in each Bible's own language (computer and phone), app language flag with 8 languages (phone); **share a verse as a picture** (phone): tapping a verse now offers 🖼 Share as a picture first, the picture carries a small QR code that opens the verse, the link to the verse goes along in the message, and a friend who opens it lands on that verse with it highlighted in gold.
-- Automatic tests: 79 (run `python -m unittest discover -s tests`).
+- Changes since v1.0.2, already live on the phone version and in `main`, reach computer users with the next release (v1.0.3): book names in each Bible's own language (computer and phone), app language flag with 8 languages (phone); **share a verse as a picture** (phone): tapping a verse now offers 🖼 Share as a picture first, the picture carries a small QR code that opens the verse, the link to the verse goes along in the message, and a friend who opens it lands on that verse with it highlighted in gold; **search by meaning and by the original Hebrew/Greek word** (computer and phone): "sea monsters" now finds Genesis 1:21 even in the King James, which says "great whales" there, and every verse says why it was found.
+- Automatic tests: 91 (run `python -m unittest discover -s tests`).
 
 ## 1. Where everything lives
 
@@ -35,7 +35,7 @@
 
 **Computer app**
 - A small Python program (standard library only) starts a private web server at `127.0.0.1:8765` and opens the browser on it. Nothing is reachable from outside the device.
-- Bibles are read from many file formats and saved as simple JSON in the data folder. Search uses word ranking (BM25) plus topics, cross-references and Strong's numbers.
+- Bibles are read from many file formats and saved as simple JSON in the data folder. Search combines three methods into one ranked list (`bibleask/blend.py`): word ranking (BM25); the Hebrew/Greek words whose meaning matches the question (from the Strong's dictionary, so "sea monsters" finds every verse with *tannin*, H8577); and a small sentence model that compares meanings (BGE-small, 8-bit, run with numpy only, so it also works on older processors without AVX2). Topics, cross-references and Strong's numbers come on top, as before.
 - The optional AI runs on the device itself (llama.cpp) with a model the person picks: Bible Assistant 4B, Qwen2.5 1.5B/3B or Llama 3.2 1B/3B. It only explains verses BibleChat found.
 - Read-aloud uses the system voices in the Bible's own language.
 - On Windows it adds a desktop and Start-menu icon on first launch. Once a day it asks GitHub for a newer version and shows an "update available" box; the version is shown under Quit.
@@ -43,6 +43,7 @@
 **Phone version**
 - A plain web page (`web/index.html`) hosted free on GitHub Pages. No server, no account; everything runs in the phone's browser.
 - Bibles and study data are split into small files that load when needed; a service worker (`web/sw.js`) keeps them for offline use. "Add to Home Screen" makes it look like an app.
+- Search runs `web/smart.js`, the same three methods as the computer in plain JavaScript (an automatic test checks both give the same answers). The meaning model and verse fingerprints (46 MB) load the first time someone searches in an English Bible, with a "Preparing meaning search" note; until then, and if a phone can't load them, the word and Hebrew/Greek search work alone.
 - Bookmarks and settings stay on the phone.
 
 **Building and releasing**
@@ -59,6 +60,9 @@
 | `bibleask/loaders.py` | Reads Bible files: PDF, Zefania/OSIS/USFX XML, TXT, SPB, TSV, MyBible, MySword |
 | `bibleask/library.py` | Keeps the Bibles and serves chapters to the reader |
 | `bibleask/search.py`, `chat.py` | Search, references, languages, spelling help; building each chat answer |
+| `bibleask/blend.py`, `meaning.py` | One ranked list from word search, Hebrew/Greek words and meaning, with the reason for each verse; the meaning model (numpy only) |
+| `bibleask/data/meaning/` | The meaning model (BGE-small-en v1.5, 8-bit, in 8 MB parts), its word list, license, and the meaning fingerprints of every Berean Standard Bible verse (66 books) |
+| `bibleask/data/strongs_gloss.json.gz` | Which Hebrew/Greek words mean each English word or phrase ("sea monster" → H8577), made ahead by `packaging/build_gloss.py` |
 | `bibleask/study.py`, `strongs.py`, `topics.py`, `xref.py`, `scofield.py`, `henry_easton.py` | Study tools: Strong's, Nave's topics, cross-references, Scofield, Matthew Henry, Easton's |
 | `bibleask/catalog.py` | The list in "Get free Bibles" |
 | `bibleask/mcp_server.py`, `connector/` | The BibleChat connector (MCP server) for Claude and other AI apps; `connector/` has its guide and Dockerfile for hosting |
@@ -66,9 +70,9 @@
 | `bibleask/llm.py`, `stt.py`, `updates.py`, `shortcuts.py`, `storage.py` | Local AI, voice input, update check, Windows icon, data folder and settings |
 | `bibleask/data/` | Bundled study data (Strong's, Nave's, cross-references, Scofield, Matthew Henry, Easton's) |
 | `bibles/` | The Ethiopian Canon file BibleChat itself hosts |
-| `web/` | Phone version (`index.html`, `sw.js`, `i18n.js` = interface translations; the QR code maker is built into both `index.html` files) and the scripts that build its data (`build_data.py`, `build_study.py`) |
-| `packaging/` | Scripts that rebuild each data set from its public-domain source (`build_booknames.py` makes `bibleask/data/booknames.json`); Windows icon; Linux installer |
-| `tests/` | Automatic tests (`test_pages.py` checks the credit, license, back/forward and church parts stay in both pages) |
+| `web/` | Phone version (`index.html`, `sw.js`, `i18n.js` = interface translations, `smart.js` = search by words, Hebrew/Greek words and meaning; the QR code maker is built into both `index.html` files) and the scripts that build its data (`build_data.py`, `build_study.py`) |
+| `packaging/` | Scripts that rebuild each data set from its public-domain source (`build_booknames.py` makes `bibleask/data/booknames.json`; `build_meaning.py` makes the meaning model files and fingerprints; `build_gloss.py` the Hebrew/Greek word index); Windows icon; Linux installer |
+| `tests/` | Automatic tests (`test_pages.py` checks the credit, license, back/forward and church parts stay in both pages; `test_meaning.py` checks the meaning and Hebrew/Greek search, and runs the phone's `smart.js` with Node.js to check it gives the computer's answers) |
 | `.github/workflows/` | `build.yml` (downloads and releases), `pages.yml` (phone site), `build-windows.yml` (manual, personal build) |
 | `LICENSE`, `NOTICE`, `THIRD_PARTY_NOTICES.md` | Apache 2.0 license; the credit every copy must keep; licenses of every source |
 
@@ -99,6 +103,7 @@
 
 **Search and chat**
 - Plain questions or references (`Daniel 7:25`, `1 Cor 13:4-7`, `Psalm 23`); topic answers for concept questions (fallen angels, God's name).
+- **Search by meaning and by the original word** (computer and phone, English Bibles): "love is patient" finds 1 Corinthians 13:4 in the King James ("Charity suffereth long"), "sea monsters" finds Genesis 1:21 ("great whales", Hebrew *tannin*), "do not worry about tomorrow" finds Matthew 6:34. Under each verse, **Found by** says why: *matched word*, *matched by meaning*, or the Hebrew/Greek word, e.g. "Hebrew word tannin (H8577): sea monster, dragon, serpent, whale". Everything runs on the device; nothing is sent anywhere. Nonsense words are not guessed at.
 - Cross-reference questions, including between whole books ("Daniel to Revelation cross references"), on the phone too.
 - Strong's numbers in chat; several Bibles side by side, only those in the question's language; typing slips corrected and shown.
 - Optional private AI explanation on the computer. On both versions, **✨ Ask AI** opens Claude, ChatGPT, Gemini, Grok or Perplexity with the verse (or the chat answer's verses) and question filled in.
@@ -148,6 +153,7 @@ Sources: [YouVersion on the App Store](https://apps.apple.com/us/app/bible/id282
 - Ethiopian Canon: assembled from the World English Bible, R. H. Charles (1 Enoch, Jubilees), Morfill/Charles (2 Enoch) and the Ante-Nicene Fathers (1 Clement), all public domain.
 - Strong's, KJV with Strong's numbers, Nave's, Scofield 1917, Matthew Henry's Concise (CrossWire): public domain.
 - Easton's 1897: public domain (dataset by NEUU, CC BY 4.0). Cross-references: OpenBible.info, CC BY.
+- Meaning search: BGE-small-en v1.5 by BAAI (MIT license, stored with 8-bit weights); verse fingerprints from the Berean Standard Bible (public domain). Numpy (BSD) runs it on the computer.
 - Hebrew letter pictures: as taught by Jeff A. Benner, Ancient Hebrew Research Center (labelled in the app). Paleo-Hebrew font: Noto Sans Phoenician (OFL). QR codes: qrcode-generator by Kazuhiko Arase (MIT). Book names in 30 languages: The SWORD Project locale files (CrossWire), plus the names printed in each Bible file.
 
 ## 7. Open items
@@ -160,6 +166,7 @@ Sources: [YouVersion on the App Store](https://apps.apple.com/us/app/bible/id282
 - Connector: choose a host for the public version (Render, Fly.io, Railway or Hugging Face Spaces; needs a free account), add its HTTPS address in Claude as a custom connector, test every tool, then submit at claude.ai/directory/manage (paid Claude plan).
 - App language flag: the computer version's menus are still English only (phone has 8 languages). Book names fall back to English for Albanian, Maori, Swahili, Tagalog and Cherokee (no name list found).
 - German Luther 1912 (and the Luther 1545 and eBible copies checked) has only the 66 books: no Apocrypha such as Weisheit Salomos. A free German text with the Apocrypha still has to be found.
+- Meaning search: English only, 66 books (fingerprints of the Apocrypha, Enoch and Jubilees could be added from the World English Bible, about 2.5 MB more); test speed on a real older phone (one search took under 1 second on a 2012 Intel i7 without AVX2, in Chrome and in Python); the phone's "Found by" words are translated, but the Hebrew/Greek meanings stay English; the BibleChat connector (MCP) still uses word search only; the computer's first question after starting waits 5–10 seconds while the data loads.
 - Non-English search works but is rougher than English. Code-signing would remove the first-launch warnings (yearly cost).
 
 ---
@@ -263,7 +270,7 @@ Use `BibleChat-Linux.tar.gz` as above. It needs Linux Mint 22 or newer (glibc 2.
 - **The verses shown are always real text from your files.** The AI never supplies verses. It only explains the ones found.
 - **Older processors (no AVX2, roughly pre-2014):** BibleChat shows a yellow box in the sidebar. Searching, reading and Listen still work; only the AI explanation is off. When BibleChat runs from source code, the box has a **Rebuild the AI helper** button that recompiles the AI engine for your processor in the background (10–40 minutes; needs `sudo apt install build-essential` once). Then Quit and reopen. The packaged app uses the Linux-OldCPU download instead.
 - **Small AI models make mistakes.** Check the explanation against the verses above it.
-- **Search is by keywords, not meaning.** "Where does it say a ruler would try to change times" works because the words overlap with the verse. Different Bibles word things differently (the Ethiopian text says "rebellion" where the King James says "falling away"), so try another phrase or tick more than one Bible.
+- **Search looks at words, the original Hebrew/Greek words and meaning together** (English Bibles). Under each verse, "Found by" says which of the three found it. Meaning search compares your question with the meaning of each verse of the Berean Standard Bible and then shows that verse from your Bible, so it works for the 66 books (not yet the Apocrypha, Enoch or Jubilees) and only in English. On the phone it needs a one-time 46 MB download the first time you search. In other languages search is by words only: different Bibles word things differently (the Ethiopian text says "rebellion" where the King James says "falling away"), so try another phrase or tick more than one Bible.
 - **PDF reading was tuned on the Ethiopian Orthodox Bible PDF** (89 books, about 40,000 verses). A few verse numbers in some books (Mark, Acts, Sirach) may be off.
 - **The Bible Assistant model was trained on the 66 Protestant books** with an evangelical/Reformed lean. It reads whatever verses it is handed, including Enoch and Jubilees, but its explanations of those may carry that slant.
 - **Model licenses differ.** Bible Assistant 4B and Qwen2.5 1.5B are Apache-2.0; Llama 3.2 uses Meta's community license; Qwen2.5 3B is research-only. Check the license of any model you add.
@@ -279,7 +286,7 @@ Your chat history lives in your browser. Delete the folder above to reset the Bi
 ## For developers
 
 ```bash
-python -m unittest discover -s tests -v     # 79 tests
+python -m unittest discover -s tests -v     # 91 tests (one runs the phone search with Node.js if it is installed)
 python -m bibleask.mcp_server               # the connector, for Claude Desktop / Claude Code
 ./run_from_source_linux.sh                  # run from source on Linux
 ```

@@ -9,6 +9,7 @@ from dataclasses import dataclass
 from typing import Iterator, Optional
 
 from . import llm
+from .blend import blended
 from .library import Library
 from .search import _STOP, guess_language, short_ref, tokenize
 from .topics import TOPICS
@@ -82,19 +83,20 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
     question, fixed = _fix_spelling(question, same)
 
     def run(query: str):
-        return [(bible, ix, ix.search(query, k=MAX_VERSES)) for bible, ix in same]
+        # words, Hebrew/Greek words and meaning together, each verse with the reasons it was found (blend.py)
+        return [(bible, ix, blended(query, ix, k=MAX_VERSES)) for bible, ix in same]
 
     per_bible = run(question)
     words = question.lower().replace("?", " ").replace(".", " ").split()
     follow_up = len(words) <= 4 and (any(w in FOLLOW_UP_CUES for w in words) or any(w.isdigit() for w in words))
-    if not any(h for _, _, h in per_bible) and previous_question and follow_up:
+    if previous_question and follow_up and not any(ix.search(question, k=1) for _, ix in same):
         per_bible = run(previous_question + " " + question)
     chosen: list[tuple[str, dict]] = []  # (bible name, verse)
     for rank in range(MAX_VERSES):  # interleave so every Bible gets a say
         for bible, ix, hits in per_bible:
             if rank < len(hits) and len(chosen) < MAX_VERSES:
                 v = ix.verses[hits[rank].index]
-                chosen.append((bible.name, _vd(v)))
+                chosen.append((bible.name, dict(_vd(v), why=hits[rank].why)))
     topic = _topic_group(question, same, id_of)
     if not chosen and not topic:
         return None
