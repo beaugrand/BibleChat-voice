@@ -151,6 +151,15 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 #rtext.lines .v{display:block;margin:0 0 .45em}
 #rtext .v.say{background:rgba(255,205,60,.28)}
 #rtext .v.hit{background:rgba(47,93,138,.16)}
+#rtext .v.jump{animation:vjump 2.6s ease-out}
+@keyframes vjump{0%,45%{background:rgba(232,176,40,.45);box-shadow:0 0 0 3px rgba(232,176,40,.45)}100%{background:transparent;box-shadow:none}}
+#vpDlg{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.35);display:grid;place-items:center;padding:16px}
+#vpDlg[hidden]{display:none}
+#vpDlg .card{background:var(--bg);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);width:min(640px,100%);padding:18px 20px 20px;max-height:86vh;overflow:auto}
+#vpDlg h2{margin:0 0 12px;font-family:Georgia,serif;font-weight:500;font-size:22px;display:flex;justify-content:space-between;align-items:center}
+.vpgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));gap:8px}
+.vpgrid button{min-height:46px;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;font-size:17px;cursor:pointer}
+.vpgrid button:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 #rfoot{max-width:780px;margin:0 auto;padding:0 20px 40px;display:flex;justify-content:space-between;gap:10px;width:100%}
 /* Love Donations */
 .love{width:100%;border:1px solid #e8b4bc;background:linear-gradient(#fff3f4,#ffe6ea);color:#9b2c3d;font-weight:600}
@@ -421,6 +430,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
   <div id="reader" hidden>
     <div id="rhead"><div class="in">
       <div id="rtitle"><b>&nbsp;</b><small></small></div>
+      <button class="btn" id="rVerse" title="Jump to a verse">Verse</button>
       <button class="btn" id="rPrev" title="Previous chapter (←)">‹ Prev</button>
       <button class="btn" id="rNext" title="Next chapter (→)">Next ›</button>
       <button class="btn" id="rSay" hidden>🔊 Listen</button>
@@ -453,6 +463,10 @@ details.src[open]>summary::after{transform:rotate(180deg)}
       <div class="row"><button class="btn primary" id="sgMail">✉ Send by email</button><button class="btn" id="sgGit">Post on GitHub</button></div>
       <p style="font-size:12.5px;margin:6px 0 0">It goes straight to Hans. Email opens your mail program; GitHub shows it publicly (free account needed).</p>
     </div>
+  </div></div>
+  <div id="vpDlg" hidden><div class="card" role="dialog" aria-label="Choose a verse">
+    <h2><span id="vpTitle">Choose a verse</span> <button class="x" id="vpClose" style="opacity:1;font-size:24px" title="Close">×</button></h2>
+    <div class="vpgrid" id="vpGrid"></div>
   </div></div>
   <div id="smDlg" hidden><div class="card" role="dialog" aria-label="Sermon list">
     <h2>📋 Sermon list <button class="x" id="smClose" style="opacity:1;font-size:24px" title="Close">×</button></h2>
@@ -1101,6 +1115,24 @@ async function showChapter(book, chapter, hitVerse){
 }
 function goChapter(which){ const n = rChap && rChap[which]; if(n){ sayStop(); showChapter(n.book, n.chapter); } }
 $("#rPrev").onclick = $("#rPrev2").onclick = () => goChapter("prev");
+/* verse picker: a grid of the chapter's verse numbers; click one to jump there */
+$("#rVerse").onclick = () => {
+  if(!rChap) return;
+  $("#vpTitle").textContent = ((rBooks.find(b => b.name === rChap.book) || {}).local || rChap.book) + " " + rChap.chapter;
+  $("#vpGrid").innerHTML = [...new Set(rChap.verses.map(v => v.verse))].map(n => `<button data-v="${n}">${n}</button>`).join("");
+  $("#vpDlg").hidden = false;
+};
+function jumpToVerse(n){
+  $("#vpDlg").hidden = true;
+  const el = document.getElementById("v" + n); if(!el) return;
+  el.scrollIntoView({block: "center"});
+  el.classList.remove("jump"); void el.offsetWidth; el.classList.add("jump");   // restart the glow if clicked twice
+  setTimeout(() => el.classList.remove("jump"), 2700);
+}
+$("#vpGrid").onclick = e => { const b = e.target.closest("button[data-v]"); if(b) jumpToVerse(+b.dataset.v); };
+$("#vpClose").onclick = () => { $("#vpDlg").hidden = true; };
+$("#vpDlg").onclick = e => { if(e.target.id === "vpDlg") $("#vpDlg").hidden = true; };
+addEventListener("keydown", e => { if(e.key === "Escape") $("#vpDlg").hidden = true; });
 $("#rNext").onclick = $("#rNext2").onclick = () => goChapter("next");
 addEventListener("keydown", e => {
   if(mode !== "read" || e.altKey || e.ctrlKey || e.metaKey || /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;

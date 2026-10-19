@@ -33,6 +33,23 @@ class PagesTest(unittest.TestCase):
                          "function sermonLink", 'id="sgText"', "mailto:wbeaugrand@gmail.com", "issues/new", "function askAI", 'id="viDlg"', "function viDraw", 'id="viPhoto"'):
                 self.assertIn(part, s, f"{part} missing in {p}")
 
+    def test_verse_picker_in_read_mode(self):
+        # a "Verse" button next to the chapter title opens a grid of the chapter's own verse numbers
+        # (so a Bible that skips or joins verses, like the Ethiopian Canon, shows only real ones); a tap jumps
+        # to the verse and makes it glow; colours come from the theme, so dark mode works
+        for p, button, popup in [(PAGES[0], 'id="vpick"', 'id="vpSheet"'), (PAGES[1], 'id="rVerse"', 'id="vpDlg"')]:
+            s = read(p)
+            for part in (button, popup, 'id="vpGrid"', "function jumpToVerse", "new Set(", "@keyframes vjump",
+                         ".vpgrid button{min-height:", "var(--line)", "var(--text)"):
+                self.assertIn(part, s, f"{part} missing in {p}")
+            self.assertLess(s.index("id=\"rtitle\"" if p == PAGES[1] else "id=\"where\""), s.index(button))
+        i18n = read(os.path.join(ROOT, "web", "i18n.js"))
+        import re
+        for phrase in ("Verse", "Choose a verse", "Jump to a verse"):
+            m = re.search(r'^"' + re.escape(phrase) + r'": \[(.*)\],$', i18n, re.M)
+            self.assertTrue(m, phrase)
+            self.assertEqual(m.group(1).count('", "') + 1, 7, phrase)   # all 7 other app languages
+
 
 if __name__ == "__main__":
     unittest.main()

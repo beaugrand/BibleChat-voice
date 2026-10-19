@@ -14,8 +14,8 @@
 
 - Published download: **v1.0.2** (17 October 2026). Version number lives in `bibleask/__init__.py`.
 - v1.0.2 brought the computer downloads up to date with the phone version: Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, verse image maker with your own photos, church logo with QR code, sermon list with QR code, Ask AI on the computer, Suggest a feature, the BibleChat connector for AI apps, license changed from MIT to Apache 2.0.
-- Changes since v1.0.2, already live on the phone version and in `main`, reach computer users with the next release (v1.0.3): book names in each Bible's own language (computer and phone), app language flag with 8 languages (phone); **share a verse as a picture** (phone): tapping a verse now offers 🖼 Share as a picture first, the picture carries a small QR code that opens the verse, the link to the verse goes along in the message, and a friend who opens it lands on that verse with it highlighted in gold; **search by meaning and by the original Hebrew/Greek word** (computer and phone): "sea monsters" now finds Genesis 1:21 even in the King James, which says "great whales" there, and every verse says why it was found.
-- Automatic tests: 91 (run `python -m unittest discover -s tests`).
+- Changes since v1.0.2, already live on the phone version and in `main`, reach computer users with the next release (v1.0.3): book names in each Bible's own language (computer and phone), app language flag with 8 languages (phone); **share a verse as a picture** (phone): tapping a verse now offers 🖼 Share as a picture first, the picture carries a small QR code that opens the verse, the link to the verse goes along in the message, and a friend who opens it lands on that verse with it highlighted in gold; **search by meaning and by the original Hebrew/Greek word** (computer and phone): "sea monsters" now finds Genesis 1:21 even in the King James, which says "great whales" there, and every verse says why it was found; **Verse button** in Read mode (computer and phone): a grid of the chapter's verse numbers that jumps straight to a verse and makes it glow.
+- Automatic tests: 92 (run `python -m unittest discover -s tests`).
 
 ## 1. Where everything lives
 
@@ -89,7 +89,8 @@
 **Reading**
 - Book names in the Bible's own language ("1. Mose", "创世记", "Génesis"), on the phone and the computer; references can be typed that way too ("Römer 8:28").
 - **App language flag** (phone, top bar): English, Deutsch, Español, Français, Português, 中文, Русский, 한국어. It changes buttons and menus only; the Bible text stays in the Bible you chose. Words live in `web/i18n.js`, one line per phrase.
-- Read mode by book and chapter, flowing text or one verse per line, text size, dark mode, read-aloud chapter after chapter.
+- Read mode by book and chapter, flowing text or one verse per line, text size, dark mode, read-aloud chapter after chapter. Chapters are picked from a grid of numbers.
+- **Verse button** (computer and phone, next to the chapter title): opens a grid of the chapter's verse numbers, big enough to tap on a phone. Tapping one closes the grid, scrolls straight to that verse and makes it glow gold for a moment. The grid shows the verses the chapter really has, so it fits every Bible, including the Ethiopian Canon.
 - **← → arrows** at the top go back and forward to where you have been (chapters, search results, chats), like a browser's back button. On the computer, Alt+← and Alt+→ do the same.
 - Scofield Reference Notes (1917) as highlighted words in the text; Easton's Bible Dictionary (1897) on names and places.
 - Bookmarks; verse of the day.
@@ -183,7 +184,7 @@ Sources: [YouVersion on the App Store](https://apps.apple.com/us/app/bible/id282
 
 You can type references: `Daniel 7:25`, `1 Cor 13:4-7`, `Psalm 23`, `Rev 22`.
 
-**Reading a whole chapter.** Press **📖 Read** at the top of the sidebar. Pick a Bible, click a book to show its chapters, and click a chapter. Use **‹ Prev / Next ›** (or the ← → keys) to turn chapters, **🔊 Listen** to have it read aloud (it carries on into the next chapter until you press Stop), **¶** to switch between one verse per line and flowing text, and **A− / A+** for text size. **💬 Ask** takes you back to Chat with that chapter filled in. In a chat answer, click a verse reference to open it in the reader. BibleChat remembers where you stopped.
+**Reading a whole chapter.** Press **📖 Read** at the top of the sidebar. Pick a Bible, click a book to show its chapters, and click a chapter. To jump to a verse, press **Verse** next to the chapter title and tap its number (on the phone: tap the chapter name to change chapter, **Verse** to pick a verse). Use **‹ Prev / Next ›** (or the ← → keys) to turn chapters, **🔊 Listen** to have it read aloud (it carries on into the next chapter until you press Stop), **¶** to switch between one verse per line and flowing text, and **A− / A+** for text size. **💬 Ask** takes you back to Chat with that chapter filled in. In a chat answer, click a verse reference to open it in the reader. BibleChat remembers where you stopped.
 
 **Bookmarks, verse of the day, Hebrew letters.** Click a verse, then **🔖 Bookmark this verse**; the 🔖 button above the text lists them. The chat's start page shows a **verse of the day** with a button that makes a lock-screen picture of it. In a Hebrew Strong's entry, click the Hebrew word to go **letter by letter**: each letter's name, sound, number and ancient picture (e.g. יהוה: hand · behold · nail · behold). On the phone, tap a verse for 🔖 Bookmark, ✨ Ask AI (opens Claude, ChatGPT, Gemini, Grok or Perplexity with the verse filled in, using your own account) and 🖼 Lock-screen picture.
 
@@ -286,7 +287,7 @@ Your chat history lives in your browser. Delete the folder above to reset the Bi
 ## For developers
 
 ```bash
-python -m unittest discover -s tests -v     # 91 tests (one runs the phone search with Node.js if it is installed)
+python -m unittest discover -s tests -v     # 92 tests (one runs the phone search with Node.js if it is installed)
 python -m bibleask.mcp_server               # the connector, for Claude Desktop / Claude Code
 ./run_from_source_linux.sh                  # run from source on Linux
 ```

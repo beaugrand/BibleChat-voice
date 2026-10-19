@@ -69,6 +69,11 @@ a{color:var(--accent)}
 #rtext.lines .v{display:block;margin:0 0 .45em}
 #rtext sup{font-family:system-ui,sans-serif;font-size:.6em;font-weight:650;color:var(--accent);margin:0 3px 0 1px;vertical-align:.45em}
 #rtext .v.hit{background:rgba(47,93,138,.16)}
+#rtext .v.jump{animation:vjump 2.6s ease-out}
+@keyframes vjump{0%,45%{background:rgba(232,176,40,.45);box-shadow:0 0 0 3px rgba(232,176,40,.45)}100%{background:transparent;box-shadow:none}}
+.vpgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));gap:8px;padding:6px 2px 10px}
+.vpgrid button{min-height:48px;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:10px;font-size:17px}
+.vpgrid button:active{background:var(--accent);border-color:var(--accent);color:var(--accent-text)}
 #rtext .v.say{background:var(--hl)}
 .pager{display:flex;justify-content:space-between;gap:10px;padding:8px 0 26px}
 /* study sheet */
@@ -256,6 +261,7 @@ body.has-church #top .brand{display:none}
     <div id="rbar"><div class="wrap">
       <button class="btn" id="prev" aria-label="Previous chapter">‹</button>
       <button id="where">…</button>
+      <button class="btn" id="vpick" title="Jump to a verse">Verse</button>
       <button class="btn" id="next" aria-label="Next chapter">›</button>
     </div></div>
     <div class="wrap">
@@ -377,6 +383,11 @@ body.has-church #top .brand{display:none}
 <div class="sheet" id="pick" hidden><div class="card">
   <header><h2>Choose a chapter</h2><button class="iconbtn" id="pickClose" aria-label="Close">✕</button></header>
   <div class="body"><input class="find" id="bookFind" type="search" placeholder="Find a book"><div id="books"></div></div>
+</div></div>
+
+<div class="sheet" id="vpSheet" hidden><div class="card">
+  <header><h2 id="vpTitle">Choose a verse</h2><button class="iconbtn" id="vpClose" aria-label="Close">✕</button></header>
+  <div class="body"><div class="vpgrid" id="vpGrid"></div></div>
 </div></div>
 
 <div class="sheet" id="churchDlg" hidden><div class="card">
@@ -629,6 +640,25 @@ function renderBooks(){
   }).join("") || `<div class="notice">No book matches.</div>`;
 }
 $("#where").onclick = openPicker;
+/* verse picker: a grid of the chapter's verse numbers; tap one to jump there */
+function openVersePicker(){
+  const vs = (bible.byName[place.book] || {map: new Map()}).map.get(place.ch) || [];
+  $("#vpTitle").textContent = bName(place.book) + " " + place.ch;
+  $("#vpGrid").innerHTML = [...new Set(vs.map(([n]) => n))].map(n => `<button data-v="${n}">${n}</button>`).join("");
+  $("#vpSheet").hidden = false;
+}
+function jumpToVerse(n){
+  $("#vpSheet").hidden = true;
+  const el = document.getElementById("v" + n); if(!el) return;
+  el.scrollIntoView({block: "center"});
+  el.classList.remove("jump"); void el.offsetWidth; el.classList.add("jump");   // restart the glow if tapped twice
+  setTimeout(() => el.classList.remove("jump"), 2700);
+  history.replaceState(null, "", "#/" + encodeURIComponent(place.bible) + "/" + encodeURIComponent(place.book) + "/" + place.ch + "/" + n);
+}
+$("#vpick").onclick = openVersePicker;
+$("#vpGrid").onclick = e => { const b = e.target.closest("button[data-v]"); if(b) jumpToVerse(+b.dataset.v); };
+$("#vpClose").onclick = () => { $("#vpSheet").hidden = true; };
+$("#vpSheet").onclick = e => { if(e.target.id === "vpSheet") $("#vpSheet").hidden = true; };
 $("#pickClose").onclick = () => $("#pick").hidden = true;
 $("#pick").addEventListener("click", e => { if(e.target.id === "pick") $("#pick").hidden = true; });
 $("#bookFind").addEventListener("input", renderBooks);
