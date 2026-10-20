@@ -137,8 +137,10 @@ class PathPagesTest(unittest.TestCase):
         sw = read("web", "sw.js")
         for part in ('"paths.js"', '"paths/index.json"', '"quoted.json"', '"paths/" + p.id'):
             self.assertIn(part, sw)                               # works offline
-        pages = read(".github", "workflows", "pages.yml")
-        self.assertIn("cp -r web/paths site/paths", pages); self.assertIn("build_paths.py --check", pages)
+        study = read("web", "build_study.py")                   # the phone build (pages.yml runs build_study.py)
+        for part in ('"paths.js", "quoted.json"', 'os.path.join(web, "paths")'):
+            self.assertIn(part, study)
+        self.assertIn("build_study.py site", read(".github", "workflows", "pages.yml"))
         spec = read("BibleChat.spec")
         self.assertIn('("web/paths", "web/paths")', spec); self.assertIn('("web/paths.js", "web")', spec)
         i18n = read("web", "i18n.js")
