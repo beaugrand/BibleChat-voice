@@ -42,6 +42,7 @@ class PagesTest(unittest.TestCase):
                          ">Holy Bible</tspan>", 'id="cvGold"', 'id="cvLeather"', "function homeWhere", 'id="homeWhere"'):
                 self.assertIn(part, s, f"{part} missing in {p}")
         self.assertIn('show("home", true)', read(PAGES[0]))
+        self.assertIn('de: ["Die", "Heilige Schrift"', read(PAGES[0]))   # the cover in German
         self.assertIn('setMode("home")', read(PAGES[1]))
 
     def test_verse_picker_in_read_mode(self):
