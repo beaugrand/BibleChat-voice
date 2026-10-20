@@ -272,6 +272,7 @@ body.has-church #top .brand{display:none}
     <button class="cover" id="homeCover" title="Open the Bible"><svg class="coverart" viewBox="0 0 300 440" role="img" aria-label="The Holy Bible: a black cover with a golden cross. KJV · ETHIOPIAN CANON · BSB"><defs><radialGradient id="cvLeather" cx="45%" cy="38%" r="75%"><stop offset="0" stop-color="#2b2a28"/><stop offset=".6" stop-color="#121110"/><stop offset="1" stop-color="#050505"/></radialGradient><linearGradient id="cvGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1a8"/><stop offset=".28" stop-color="#e2bd4f"/><stop offset=".55" stop-color="#a87b1c"/><stop offset=".8" stop-color="#e9c860"/><stop offset="1" stop-color="#8f6514"/></linearGradient><linearGradient id="cvEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d77a"/><stop offset=".5" stop-color="#b8891f"/><stop offset="1" stop-color="#f0cf6a"/></linearGradient><linearGradient id="cvSpine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".75"/><stop offset=".7" stop-color="#3a3835" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient><filter id="cvEmboss" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.6" stdDeviation="1.2" flood-color="#000" flood-opacity=".85"/></filter></defs><path d="M231 404h16v34l-8-7-8 7z" fill="#8e1b26"/><rect x="16" y="10" width="280" height="404" rx="6" fill="url(#cvEdge)"/><path d="M286 22v382M291 26v374" stroke="#8a6414" stroke-width=".7" opacity=".6"/><rect x="4" y="4" width="284" height="408" rx="11" fill="url(#cvLeather)"/><rect x="4" y="4" width="30" height="408" rx="11" fill="url(#cvSpine)"/><path d="M33 8v400" stroke="#000" stroke-width="1.4" opacity=".7"/><path d="M35 8v400" stroke="#4a4743" stroke-width=".6" opacity=".5"/><g fill="none" stroke="url(#cvGold)"><rect x="46" y="20" width="228" height="376" rx="5" stroke-width="2"/><rect x="53" y="27" width="214" height="362" rx="3" stroke-width=".8"/></g><g filter="url(#cvEmboss)"><text text-anchor="middle" font-family="Georgia,'Times New Roman',serif" fill="url(#cvGold)"><tspan id="cvT1" x="160" y="82" font-size="19" letter-spacing="5">The</tspan><tspan id="cvT2" x="160" y="122" font-size="34" textLength="176" lengthAdjust="spacingAndGlyphs">Holy Bible</tspan></text><path d="M150 158h20v56h38v20h-38v104h-20V234h-38v-20h38z" fill="url(#cvGold)"/><text id="cvVer" x="160" y="372" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="8.5" letter-spacing="1.6" fill="url(#cvGold)" textLength="190" lengthAdjust="spacingAndGlyphs">KJV · ETHIOPIAN CANON · BSB</text></g><path d="M151 159h18v56" stroke="#fff6c8" stroke-width=".8" fill="none" opacity=".7"/></svg></button>
     <p class="homeHint">Tap the cover to open</p>
     <p id="homeWhere"></p>
+    <p><button class="btn pathsBtn" id="homePaths">📜 Study Paths</button></p>
   </div></section>
 
   <!-- READ -->
@@ -292,6 +293,7 @@ body.has-church #top .brand{display:none}
         <button class="btn" id="big" aria-label="Larger text">A+</button>
         <button class="btn" id="bmOpen" title="Your bookmarks">🔖</button>
         <button class="btn" id="votdOpen" title="Verse of the day">☀</button>
+        <button class="btn pathsBtn" title="Study Paths: guided studies through the text, with questions">📜 Paths</button>
         <button class="btn smOpen" title="Sermon list: Sunday's verses with a QR code">📋<span class="smCount"></span></button>
       </div>
       <div id="votd" hidden></div>
@@ -465,6 +467,8 @@ body.has-church #top .brand{display:none}
   <div class="body"><p class="small">The Bible text stays in the Bible you chose. This changes the app's buttons and menus.</p><div id="langList"></div></div>
 </div></div>
 
+<div id="pathsView" hidden></div>
+
 <nav id="tabs"><div class="wrap">
   <button data-tab="home"><b>🏠</b>Home</button>
   <button data-tab="read" class="on"><b>📖</b>Read</button>
@@ -478,6 +482,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 </script>
 <script src="i18n.js"></script>
 <script src="smart.js"></script>
+<script src="paths.js"></script>
 <script>
 "use strict";
 const $ = s => document.querySelector(s);
@@ -877,6 +882,7 @@ async function xrefSearch(q){
 }
 async function runSearch(q){
   q = q.trim(); if(!q) return;
+  store.set("pastq", store.get("pastq", []).filter(x => x !== q).concat([q]).slice(-50));   // stays on this phone
   searchSeq++;   // a meaning search still loading for an earlier question must not draw over this one
   if(!idx) buildIndex();
   if(XREF_CUE.test(q)) return xrefSearch(q);
@@ -904,6 +910,8 @@ async function runSearch(q){
       : `<div class="notice">Nothing found in this Bible. Try other words, or a reference like John 3:16.</div><div id="mprep"></div>`;
     if(found.length){
       const b = document.createElement("p"); b.innerHTML = `<button class="btn">✨ Ask AI about this, with these verses</button>`; out.prepend(b);
+      const mk = document.createElement("button"); mk.className = "btn"; mk.textContent = "📜 Make a study path"; mk.style.marginLeft = "6px";
+      mk.onclick = () => pathFromResults(q, found.slice(0, 8).map(f => `${flat[f.i].b} ${flat[f.i].c}:${flat[f.i].v}`)); b.appendChild(mk);
       b.querySelector("button").onclick = () => askAI(q + "\n\nVerses BibleChat found (" + bibleAbbr() + "):\n" +
         found.slice(0, 8).map(f => `${flat[f.i].b} ${flat[f.i].c}:${flat[f.i].v} ${flat[f.i].t}`).join("\n") + "\n\nAnswer from these verses and say which verse supports each point.");
     }
@@ -1168,6 +1176,41 @@ $("#studyBody").addEventListener("click", e => {
   const g = e.target.closest(".sv-go"); if(g){ e.preventDefault(); return studyVerse(g.dataset.b, +g.dataset.c, +g.dataset.v); }
   const a = e.target.closest(".res a, a.nref"); if(a){ e.preventDefault(); studyClose(); go(a.dataset.b, +a.dataset.c, +a.dataset.v); }
 });
+
+/* ---------- 📜 Study Paths (web/paths.js): guided studies with questions; everything stays on this phone ---------- */
+const PATH_BIBLES = {KJV: "eng-kjv", ETH: "eng-ethiopian-canon", BSB: "eng-bsb"};
+BCPaths.mount({
+  container: $("#pathsView"), base: "paths/", quotedUrl: "quoted.json", chatName: "Search",
+  books: async () => (sBooks = sBooks || await sGet("books.json")),
+  study: f => sGet(f),
+  chapter: async (key, book, ch) => {
+    const id = key === "reader" ? place.bible : PATH_BIBLES[key];
+    if(!id || !catalog.some(c => c.id === id)) return null;
+    const b = await loadBible(id), bk = b.byName[book];
+    return (bk && bk.map.get(ch)) || null;
+  },
+  bookName: n => bName(n),
+  letters: (w, he) => he ? hebLettersHtml(w) : grkLettersHtml(w),
+  qr: (t, px) => qrCanvas(t, px),
+  shareUrl: h => PHONE_URL + h,
+  openVerse: async (book, ch, v) => {
+    if(!bible.byName[book]){   // e.g. 1 Enoch while reading the KJV: open it in the Ethiopian Canon
+      const id = Object.values(PATH_BIBLES).find(x => catalog.some(c => c.id === x) && loaded[x] && loaded[x].byName[book]) || "eng-ethiopian-canon";
+      try{ await useBible(id, true); }catch(e){ return toast("That Bible didn't load. Try again."); }
+    }
+    go(book, ch, v);
+  },
+  get: (k, d) => store.get(k, d), set: (k, v) => store.set(k, v), toast: m => toast(tr(m)),
+  canGet: false, getBibles: () => show("bibles"),
+  pastQuestions: () => store.get("pastq", []),
+  similar: async (qs, past) => {   // the meaning search already on this phone (smart.js); nothing leaves the device
+    if(!Smart.meaningReady()) await Smart.loadMeaning(() => {});
+    const P = past.map(t => Smart.embed(t));
+    return qs.map(q => { const e = Smart.embed(q); return Math.max(...P.map(p => p.reduce((s, z, i) => s + z * e[i], 0))); });
+  }
+});
+document.querySelectorAll(".pathsBtn").forEach(b => b.onclick = () => { sayStop(); BCPaths.open(); });
+function pathFromResults(q, refs){ BCPaths.fromAnswer(q, refs); }
 
 /* Verse of the day: one well-known verse per day, the same for everyone on that date */
 const VOTD = ["John 3:16","Psalms 23:1","Philippians 4:13","Jeremiah 29:11","Romans 8:28","Isaiah 40:31","Proverbs 3:5","Joshua 1:9","Matthew 11:28","Psalms 46:1",
@@ -1723,6 +1766,7 @@ function bibleFailed(id, e){
 
 /* ---------- start ---------- */
 function parseHash(){
+  if(/^#\/path\//.test(location.hash)) return null;   // a study path link, opened after the start
   const p = location.hash.replace(/^#\/?/, "").split("/").map(decodeURIComponent);
   if(p.length >= 3 && p[0]) return {bible: p[0], book: p[1], ch: +p[2] || 1, v: +p[3] || null, shared: p[4] === "s"};
   return null;
@@ -1735,6 +1779,7 @@ function parseHash(){
   const langs = [...new Set(catalog.map(c => c.language.replace(/ \(.*\)$/, "")))];
   $("#blang").innerHTML = `<option value="">All languages</option>` + langs.map(l => `<option>${esc(l)}</option>`).join("");
   $("#blang").value = store.get("lang", "English");
+  const PATH_HASH = /^#\/path\//.test(location.hash) ? location.hash : null;
   const h = parseHash();
   if(h && catalog.some(c => c.id === h.bible)) place = {bible: h.bible, book: h.book, ch: h.ch};
   if(!catalog.some(c => c.id === place.bible)) place.bible = catalog[0].id;
@@ -1748,11 +1793,12 @@ function parseHash(){
     smScreen(s, true);
   }
   else if(h && h.shared && h.v && verseText(h.v)){ markShared(h.v); showWelcome(h.v); }
+  else if(PATH_HASH){ show("home", true); BCPaths.openHash(PATH_HASH); }
   else {
     if(!(h && h.v)) show("home", true);   // a normal start opens on the Bible cover; a link to a verse goes straight to it
     if(!store.get("tip", false)){ store.set("tip", true); setTimeout(() => toast("Tip: tap any verse to share or study it"), 1200); }
   }
-  addEventListener("hashchange", () => { const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]){ go(x.book, x.ch, x.v); if(x.shared && x.v) markShared(x.v); } });
+  addEventListener("hashchange", () => { if(/^#\/path\//.test(location.hash)){ BCPaths.openHash(location.hash); return; } const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]){ go(x.book, x.ch, x.v); if(x.shared && x.v) markShared(x.v); } });
 })();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>

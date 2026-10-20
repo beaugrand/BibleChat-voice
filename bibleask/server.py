@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import shutil
 import socket
 import subprocess
@@ -28,6 +29,11 @@ TTS_URL = "http://127.0.0.1:8000"  # Kyutai Pocket TTS, if the person started it
 
 def web_dir() -> str:
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), "web")
+
+
+def shared_web_dir() -> str:
+    """The phone's web/ folder: Study Paths (paths.js, paths/*.json) and the "Quoted or named" list are shared."""
+    return os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "web")
 
 
 # ---- speaking answers aloud, via a separately-running Kyutai Pocket TTS server ---------
@@ -258,6 +264,20 @@ def make_handler(app: App, port: int):
             if path in ("/", "/index.html"):
                 with open(os.path.join(web_dir(), "index.html"), "rb") as f:
                     self._send(200, f.read(), "text/html; charset=utf-8")
+            elif path in ("/paths.js", "/quoted.json") or re.fullmatch(r"/paths/[a-z0-9-]+\.json", path):
+                try:
+                    with open(os.path.join(shared_web_dir(), *path.strip("/").split("/")), "rb") as f:
+                        ctype = "text/javascript; charset=utf-8" if path.endswith(".js") else "application/json"
+                        self._send(200, f.read(), ctype)
+                except OSError:
+                    self._send(404, b"Not found", "text/plain")
+            elif path.startswith("/api/sdata/"):
+                from . import studyfiles
+                obj = studyfiles.get(path[len("/api/sdata/"):])
+                if obj is None:
+                    self._json({"error": "Not found."}, 404)
+                else:
+                    self._json(obj)
             elif path == "/api/ping":
                 app.last_ping, app.seen_ping = time.time(), True
                 self._json({"app": SIGNATURE, "ok": True})

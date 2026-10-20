@@ -1,0 +1,50 @@
+[
+ {
+  "id": "enoch-and-the-watchers",
+  "title": "Enoch and the Watchers",
+  "opening_question": "Who was Enoch, who were \"the sons of God\" in Genesis 6, and what does the New Testament say about them?",
+  "steps": 7,
+  "show": 8,
+  "verses": 184
+ },
+ {
+  "id": "heavens-and-earth",
+  "title": "The heavens and the earth in the text's own words",
+  "opening_question": "What does the text itself say about the shape of the earth, the firmament and what holds the earth?",
+  "steps": 6,
+  "show": 8,
+  "verses": 194
+ },
+ {
+  "id": "light-before-sun",
+  "title": "Light before the sun",
+  "opening_question": "If the sun was made on Day 4, what was the light on Day 1?",
+  "steps": 7,
+  "show": 8,
+  "verses": 40
+ },
+ {
+  "id": "mist-not-rain",
+  "title": "Mist, not rain",
+  "opening_question": "What watered the ground before the flood, and what does the text say about rain?",
+  "steps": 6,
+  "show": 8,
+  "verses": 20
+ },
+ {
+  "id": "the-name",
+  "title": "The Name",
+  "opening_question": "What is God's name, and what is the name by which we must be saved?",
+  "steps": 7,
+  "show": 8,
+  "verses": 28
+ },
+ {
+  "id": "word-made-flesh",
+  "title": "The Word made flesh, the way, the truth, the light",
+  "opening_question": "Who is the Word, and what does the text say about keeping His commandments?",
+  "steps": 6,
+  "show": 8,
+  "verses": 33
+ }
+]

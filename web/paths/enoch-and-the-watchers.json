@@ -1,0 +1,463 @@
+{
+ "id": "enoch-and-the-watchers",
+ "title": "Enoch and the Watchers",
+ "opening_question": "Who was Enoch, who were \"the sons of God\" in Genesis 6, and what does the New Testament say about them?",
+ "required_refs": [
+  "Genesis 5:21-24",
+  "Genesis 6:1-4",
+  "Jude 1:14-15",
+  "1 Enoch 1:9",
+  "1 Peter 3:19-20",
+  "2 Peter 2:4-5",
+  "1 Enoch 6-16",
+  "Jubilees 4-5"
+ ],
+ "words": [
+  "H2585",
+  "H5303",
+  "G5020"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What does Genesis say about Enoch, and what does Hebrews add?",
+   "refs": [
+    "Genesis 5:21-24",
+    "Hebrews 11:5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2585",
+     "G3346"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "Who took wives in Genesis 6, and who were born? Where else does the Old Testament say \"sons of God\"?",
+   "refs": [
+    "Genesis 6:1-4",
+    "Job 1:6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5303",
+     "H430",
+     "H1121"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "Jude quotes a prophecy of Enoch. Read it next to 1 Enoch 1:9: what is the same, and what is different?",
+   "refs": [
+    "Jude 1:14-15",
+    "1 Enoch 1:9"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4395"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "side_by_side": true
+  },
+  {
+   "question": "What do Peter's letters say about spirits in prison and angels that sinned?",
+   "refs": [
+    "1 Peter 3:19-20",
+    "2 Peter 2:4-5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5020",
+     "G5438"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "What does Jesus say about angels and marriage? Read it as part of the whole counsel.",
+   "refs": [
+    "Matthew 22:30"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G32"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "The Book of the Watchers (1 Enoch 6–16, Ethiopian Canon): who came down, what did they teach, and what was their judgement?",
+   "refs": [
+    "1 Enoch 6-16"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 0
+   },
+   "compare": [
+    "ETH"
+   ],
+   "notes": []
+  },
+  {
+   "question": "Jubilees 4–5 (Ethiopian Canon): what does it say about Jared's days, Enoch, and the angels of God?",
+   "refs": [
+    "Jubilees 4-5"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 0
+   },
+   "compare": [
+    "ETH"
+   ],
+   "notes": []
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"Enoch walked with God: and he was not; for God took him\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 5:24"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 105,
+    "word": "H430",
+    "word_count": 6,
+    "differ": 0.406,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here",
+    "The Hebrew word 'ĕlôhîym (H430) is in 6 verses of this path"
+   ],
+   "score": 0.6266
+  },
+  {
+   "q": "Jude 1:14 calls Enoch what?",
+   "type": "multiple_choice",
+   "options": [
+    "The seventh from Adam",
+    "The father of Noah",
+    "The first prophet",
+    "A priest of the most high God"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Jude 1:14"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "the seventh from Adam"
+   },
+   "signals": {
+    "xref": 39,
+    "votes": 253,
+    "word": "G4395",
+    "word_count": 1,
+    "differ": 0.406,
+    "quoted": "The prophecy of Enoch: quoted here"
+   },
+   "why": [
+    "39 cross-references point here",
+    "The prophecy of Enoch: quoted here"
+   ],
+   "score": 0.9464
+  },
+  {
+   "q": "Fill in the word: \"the same became mighty men which were of old, men of ___\"",
+   "type": "fill_word",
+   "ref": "Genesis 6:4",
+   "bible": "KJV",
+   "word": "renown",
+   "answer_refs": [
+    "Genesis 6:4"
+   ],
+   "signals": {
+    "xref": 11,
+    "votes": 53,
+    "word": "H430",
+    "word_count": 6,
+    "differ": 0.45,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Hebrew word 'ĕlôhîym (H430) is in 6 verses of this path"
+   ],
+   "score": 0.587
+  },
+  {
+   "q": "Which translation says \"giants\" in Genesis 6:4, where others keep the Hebrew word Nephilim?",
+   "type": "which_translation",
+   "ref": "Genesis 6:4",
+   "bible": "KJV",
+   "phrase": "giants",
+   "answer_refs": [
+    "Genesis 6:4"
+   ],
+   "signals": {
+    "xref": 11,
+    "votes": 53,
+    "word": "H430",
+    "word_count": 6,
+    "differ": 0.45,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Hebrew word 'ĕlôhîym (H430) is in 6 verses of this path"
+   ],
+   "score": 0.587
+  },
+  {
+   "q": "Which verse in 1 Enoch says \"He cometh with ten thousands of His holy ones\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Enoch 1:9"
+   ],
+   "signals": {
+    "xref": 0,
+    "votes": 0,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.0,
+    "quoted": "Quoted in Jude 1:14-15"
+   },
+   "why": [
+    "Quoted in Jude 1:14-15"
+   ],
+   "score": 0.4
+  },
+  {
+   "q": "Which verse says God spared not the angels that sinned, but cast them down?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Peter 2:4"
+   ],
+   "signals": {
+    "xref": 34,
+    "votes": 302,
+    "word": "G32",
+    "word_count": 2,
+    "differ": 0.49,
+    "quoted": null
+   },
+   "why": [
+    "34 cross-references point here",
+    "The Greek word ángelos (G32) is in 2 verses of this path"
+   ],
+   "score": 0.6098
+  },
+  {
+   "q": "According to 1 Peter 3:20, how many souls were saved by water?",
+   "type": "multiple_choice",
+   "options": [
+    "Eight",
+    "Seven",
+    "Twelve",
+    "Two"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 Peter 3:20"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "eight"
+   },
+   "signals": {
+    "xref": 22,
+    "votes": 136,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.46,
+    "quoted": null
+   },
+   "why": [
+    "22 cross-references point here"
+   ],
+   "score": 0.4844
+  },
+  {
+   "q": "Fill in the word: \"By faith Enoch was ___ that he should not see death\"",
+   "type": "fill_word",
+   "ref": "Hebrews 11:5",
+   "bible": "KJV",
+   "word": "translated",
+   "answer_refs": [
+    "Hebrews 11:5"
+   ],
+   "signals": {
+    "xref": 17,
+    "votes": 239,
+    "word": "G3346",
+    "word_count": 2,
+    "differ": 0.474,
+    "quoted": null
+   },
+   "why": [
+    "17 cross-references point here",
+    "The Greek word metatíthēmi (G3346) is in 2 verses of this path"
+   ],
+   "score": 0.5883
+  },
+  {
+   "q": "Which verse says in the resurrection they neither marry, but are as the angels of God in heaven?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 22:30"
+   ],
+   "signals": {
+    "xref": 13,
+    "votes": 69,
+    "word": "G32",
+    "word_count": 2,
+    "differ": 0.388,
+    "quoted": null
+   },
+   "why": [
+    "13 cross-references point here",
+    "The Greek word ángelos (G32) is in 2 verses of this path"
+   ],
+   "score": 0.4743
+  },
+  {
+   "q": "In 1 Enoch 6:6, on which mountain did the two hundred descend?",
+   "type": "multiple_choice",
+   "options": [
+    "Hermon",
+    "Sinai",
+    "Zion",
+    "Ararat"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 Enoch 6:6"
+   ],
+   "check": {
+    "bible": "ETH",
+    "word": "Hermon"
+   },
+   "signals": {
+    "xref": 0,
+    "votes": 0,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.0,
+    "quoted": null
+   },
+   "why": [],
+   "score": 0.0
+  },
+  {
+   "q": "Which verse in Jubilees says the angels of the Lord, named the Watchers, descended in the days of Jared?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Jubilees 4:15"
+   ],
+   "signals": {
+    "xref": 0,
+    "votes": 0,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.0,
+    "quoted": null
+   },
+   "why": [],
+   "score": 0.0
+  },
+  {
+   "q": "Which verse says the sons of God came to present themselves before the LORD, and Satan came also among them?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Job 1:6"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 115,
+    "word": "H430",
+    "word_count": 6,
+    "differ": 0.429,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here",
+    "The Hebrew word 'ĕlôhîym (H430) is in 6 verses of this path"
+   ],
+   "score": 0.6391
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "1 Enoch and Jubilees (R. H. Charles, 1917)"
+ ],
+ "verse_count": 184,
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/enoch-and-the-watchers.json",
+  "sha": "e5798a58b3bbd247",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

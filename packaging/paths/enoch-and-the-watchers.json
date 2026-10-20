@@ -1,0 +1,42 @@
+{
+  "id": "enoch-and-the-watchers",
+  "title": "Enoch and the Watchers",
+  "opening_question": "Who was Enoch, who were \"the sons of God\" in Genesis 6, and what does the New Testament say about them?",
+  "required_refs": ["Genesis 5:21-24", "Genesis 6:1-4", "Jude 1:14-15", "1 Enoch 1:9", "1 Peter 3:19-20", "2 Peter 2:4-5", "1 Enoch 6-16", "Jubilees 4-5"],
+  "words": ["H2585", "H5303", "G5020"],
+  "show": 8,
+  "steps": [
+    {"question": "What does Genesis say about Enoch, and what does Hebrews add?", "refs": ["Genesis 5:21-24", "Hebrews 11:5"],
+     "look_closer": {"strongs": ["H2585", "G3346"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
+    {"question": "Who took wives in Genesis 6, and who were born? Where else does the Old Testament say \"sons of God\"?", "refs": ["Genesis 6:1-4", "Job 1:6"],
+     "look_closer": {"strongs": ["H5303", "H430", "H1121"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
+    {"question": "Jude quotes a prophecy of Enoch. Read it next to 1 Enoch 1:9: what is the same, and what is different?", "refs": ["Jude 1:14-15", "1 Enoch 1:9"],
+     "look_closer": {"strongs": ["G4395"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"], "side_by_side": true},
+    {"question": "What do Peter's letters say about spirits in prison and angels that sinned?", "refs": ["1 Peter 3:19-20", "2 Peter 2:4-5"],
+     "look_closer": {"strongs": ["G5020", "G5438"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
+    {"question": "What does Jesus say about angels and marriage? Read it as part of the whole counsel.", "refs": ["Matthew 22:30"],
+     "look_closer": {"strongs": ["G32"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
+    {"question": "The Book of the Watchers (1 Enoch 6–16, Ethiopian Canon): who came down, what did they teach, and what was their judgement?", "refs": ["1 Enoch 6-16"],
+     "look_closer": {"strongs": [], "xref_top": 0}, "compare": ["ETH"], "notes": []},
+    {"question": "Jubilees 4–5 (Ethiopian Canon): what does it say about Jared's days, Enoch, and the angels of God?", "refs": ["Jubilees 4-5"],
+     "look_closer": {"strongs": [], "xref_top": 0}, "compare": ["ETH"], "notes": []}
+  ],
+  "quiz": [
+    {"q": "Which verse says \"Enoch walked with God: and he was not; for God took him\"?", "type": "find_the_verse", "answer_refs": ["Genesis 5:24"]},
+    {"q": "Jude 1:14 calls Enoch what?", "type": "multiple_choice", "options": ["The seventh from Adam", "The father of Noah", "The first prophet", "A priest of the most high God"], "answer": 0,
+     "answer_refs": ["Jude 1:14"], "check": {"bible": "KJV", "word": "the seventh from Adam"}},
+    {"q": "Fill in the word: \"the same became mighty men which were of old, men of ___\"", "type": "fill_word", "ref": "Genesis 6:4", "bible": "KJV", "word": "renown"},
+    {"q": "Which translation says \"giants\" in Genesis 6:4, where others keep the Hebrew word Nephilim?", "type": "which_translation", "ref": "Genesis 6:4", "bible": "KJV", "phrase": "giants"},
+    {"q": "Which verse in 1 Enoch says \"He cometh with ten thousands of His holy ones\"?", "type": "find_the_verse", "answer_refs": ["1 Enoch 1:9"]},
+    {"q": "Which verse says God spared not the angels that sinned, but cast them down?", "type": "find_the_verse", "answer_refs": ["2 Peter 2:4"]},
+    {"q": "According to 1 Peter 3:20, how many souls were saved by water?", "type": "multiple_choice", "options": ["Eight", "Seven", "Twelve", "Two"], "answer": 0,
+     "answer_refs": ["1 Peter 3:20"], "check": {"bible": "KJV", "word": "eight"}},
+    {"q": "Fill in the word: \"By faith Enoch was ___ that he should not see death\"", "type": "fill_word", "ref": "Hebrews 11:5", "bible": "KJV", "word": "translated"},
+    {"q": "Which verse says in the resurrection they neither marry, but are as the angels of God in heaven?", "type": "find_the_verse", "answer_refs": ["Matthew 22:30"]},
+    {"q": "In 1 Enoch 6:6, on which mountain did the two hundred descend?", "type": "multiple_choice", "options": ["Hermon", "Sinai", "Zion", "Ararat"], "answer": 0,
+     "answer_refs": ["1 Enoch 6:6"], "check": {"bible": "ETH", "word": "Hermon"}},
+    {"q": "Which verse in Jubilees says the angels of the Lord, named the Watchers, descended in the days of Jared?", "type": "find_the_verse", "answer_refs": ["Jubilees 4:15"]},
+    {"q": "Which verse says the sons of God came to present themselves before the LORD, and Satan came also among them?", "type": "find_the_verse", "answer_refs": ["Job 1:6"]}
+  ],
+  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry", "1 Enoch and Jubilees (R. H. Charles, 1917)"]
+}

@@ -27,6 +27,10 @@ following work by others. Each keeps its own license.
 | **BGE-small-en v1.5** sentence model ([BAAI](https://huggingface.co/BAAI/bge-small-en-v1.5)), stored with 8-bit weights in `bibleask/data/meaning/` | Search by meaning ("matched by meaning"), on the computer and the phone | MIT (Copyright (c) 2022 staoxiao; full text in `bibleask/data/meaning/LICENSE.txt`) |
 | **Berean Standard Bible** (open-bibles copy) | The verse "meaning fingerprints" in `bibleask/data/meaning/` | Public domain |
 
+The **📜 Study Paths** (`packaging/paths/`, `web/paths/`) and the list **Quoted or named in Scripture** (`web/quoted.json`) are
+written for BibleChat and licensed with it (Apache 2.0). They contain references and questions, not Bible text; the verses,
+words, cross-references and notes they show come from the sources in this file.
+
 ## Font included in BibleChat
 
 | Font | Used for | License |

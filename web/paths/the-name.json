@@ -1,0 +1,626 @@
+{
+ "id": "the-name",
+ "title": "The Name",
+ "opening_question": "What is God's name, and what is the name by which we must be saved?",
+ "required_refs": [
+  "Exodus 3:13-15",
+  "Exodus 6:2-3",
+  "Exodus 20:7",
+  "Psalms 83:18",
+  "Isaiah 42:8",
+  "Jeremiah 23:26-27",
+  "Joel 2:32",
+  "Malachi 1:11",
+  "Numbers 13:16",
+  "Matthew 1:21",
+  "John 17:6",
+  "John 17:11-12",
+  "John 17:26",
+  "Acts 4:12",
+  "Philippians 2:9-11"
+ ],
+ "words": [
+  "H3068",
+  "H3091",
+  "G2424"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What did God tell Moses to say when the people ask for His name?",
+   "refs": [
+    "Exodus 3:13-15"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3068",
+     "H1961"
+    ],
+    "xref_top": 5,
+    "letters": "H3068"
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "By which name does God say He was not known to Abraham, Isaac and Jacob? Read it next to the earlier verses that use the name.",
+   "refs": [
+    "Exodus 6:2-3",
+    "Genesis 4:26",
+    "Genesis 22:14"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3068",
+     "H7706"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "What do these verses say about God's name: how it is to be treated, and how far it reaches?",
+   "refs": [
+    "Exodus 20:7",
+    "Psalms 83:18",
+    "Isaiah 42:8",
+    "Malachi 1:11"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H8034",
+     "H3068"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "What do the prophets say about forgetting the name and calling on it? Compare Joel with the verse that quotes him.",
+   "refs": [
+    "Jeremiah 23:26-27",
+    "Joel 2:32",
+    "Romans 10:13"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3068",
+     "G2962"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "What name did Moses give Hoshea, and what name was Mary's son to be given?",
+   "refs": [
+    "Numbers 13:16",
+    "Nehemiah 8:17",
+    "Matthew 1:21",
+    "Acts 7:45",
+    "Hebrews 4:8"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H1954",
+     "H3091",
+     "H3442",
+     "G2424"
+    ],
+    "xref_top": 5,
+    "letters": "H3091"
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield"
+   ],
+   "facts": [
+    {
+     "text": "Numbers 13:16: Moses called Oshea (Hoshea, H1954) the son of Nun \"Jehoshua\" (Yehoshua, H3091).",
+     "refs": [
+      "Numbers 13:16"
+     ],
+     "strongs": [
+      "H1954",
+      "H3091"
+     ]
+    },
+    {
+     "text": "Yehoshua (H3091): Strong's gives its parts as H3068 (YHWH) and H3467 (to save): \"Jehovah-saved\".",
+     "strongs": [
+      "H3091",
+      "H3068",
+      "H3467"
+     ]
+    },
+    {
+     "text": "Yeshua (H3442): Strong's says \"for H3091\", the same name in a shorter form. Nehemiah 8:17 calls Joshua the son of Nun \"Jeshua\".",
+     "refs": [
+      "Nehemiah 8:17"
+     ],
+     "strongs": [
+      "H3442"
+     ]
+    },
+    {
+     "text": "Iesous (G2424): Strong's says \"of Hebrew origin (H03091)\", that is H3091. The Greek uses it for Joshua too: in Acts 7:45 and Hebrews 4:8 the King James prints \"Jesus\" where the Ethiopian Canon (World English Bible text) and the Berean Standard Bible print \"Joshua\".",
+     "refs": [
+      "Acts 7:45",
+      "Hebrews 4:8"
+     ],
+     "strongs": [
+      "G2424"
+     ],
+     "check": [
+      {
+       "bible": "KJV",
+       "ref": "Acts 7:45",
+       "word": "Jesus"
+      },
+      {
+       "bible": "BSB",
+       "ref": "Acts 7:45",
+       "word": "Joshua"
+      },
+      {
+       "bible": "KJV",
+       "ref": "Hebrews 4:8",
+       "word": "Jesus"
+      },
+      {
+       "bible": "BSB",
+       "ref": "Hebrews 4:8",
+       "word": "Joshua"
+      },
+      {
+       "bible": "ETH",
+       "ref": "Hebrews 4:8",
+       "word": "Joshua"
+      },
+      {
+       "bible": "ETH",
+       "ref": "Acts 7:45",
+       "word": "Joshua"
+      }
+     ]
+    },
+    {
+     "text": "English: the King James prints the name in Matthew 1:21 as \"JESUS\".",
+     "refs": [
+      "Matthew 1:21"
+     ],
+     "check": [
+      {
+       "bible": "KJV",
+       "ref": "Matthew 1:21",
+       "word": "JESUS"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does Jesus say He did with the Father's name?",
+   "refs": [
+    "John 17:6",
+    "John 17:11-12",
+    "John 17:26"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3686"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "What do these verses say about the name given among men, and the name above every name?",
+   "refs": [
+    "Acts 4:12",
+    "Philippians 2:9-11"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3686",
+     "G2424"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"I AM THAT I AM\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Exodus 3:14"
+   ],
+   "signals": {
+    "xref": 25,
+    "votes": 217,
+    "word": "H1961",
+    "word_count": 2,
+    "differ": 0.546,
+    "quoted": null
+   },
+   "why": [
+    "25 cross-references point here",
+    "The Hebrew word hâyâh (H1961) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5991
+  },
+  {
+   "q": "In Exodus 6:3, by which name does God say He appeared to Abraham, Isaac and Jacob?",
+   "type": "multiple_choice",
+   "options": [
+    "God Almighty",
+    "The Most High",
+    "The Holy One",
+    "The Ancient of Days"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Exodus 6:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "God Almighty"
+   },
+   "signals": {
+    "xref": 14,
+    "votes": 81,
+    "word": "H8034",
+    "word_count": 17,
+    "differ": 0.3,
+    "quoted": null
+   },
+   "why": [
+    "14 cross-references point here",
+    "The Hebrew word shêm (H8034) is in 17 verses of this path"
+   ],
+   "score": 0.7558
+  },
+  {
+   "q": "Fill in the name: \"That men may know that thou, whose name alone is ___, art the most high over all the earth.\"",
+   "type": "fill_word",
+   "ref": "Psalms 83:18",
+   "bible": "KJV",
+   "word": "JEHOVAH",
+   "answer_refs": [
+    "Psalms 83:18"
+   ],
+   "signals": {
+    "xref": 38,
+    "votes": 340,
+    "word": "H8034",
+    "word_count": 17,
+    "differ": 0.291,
+    "quoted": null
+   },
+   "why": [
+    "38 cross-references point here",
+    "The Hebrew word shêm (H8034) is in 17 verses of this path"
+   ],
+   "score": 0.8606
+  },
+  {
+   "q": "Which translation writes the name as \"Yahweh\" in Exodus 20:7?",
+   "type": "which_translation",
+   "ref": "Exodus 20:7",
+   "bible": "ETH",
+   "phrase": "Yahweh",
+   "answer_refs": [
+    "Exodus 20:7"
+   ],
+   "signals": {
+    "xref": 16,
+    "votes": 130,
+    "word": "H8034",
+    "word_count": 17,
+    "differ": 0.455,
+    "quoted": null
+   },
+   "why": [
+    "16 cross-references point here",
+    "The Hebrew word shêm (H8034) is in 17 verses of this path"
+   ],
+   "score": 0.8298
+  },
+  {
+   "q": "Which verse says the prophets think to cause God's people to forget His name by their dreams?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Jeremiah 23:27"
+   ],
+   "signals": {
+    "xref": 11,
+    "votes": 51,
+    "word": "H8034",
+    "word_count": 17,
+    "differ": 0.576,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Hebrew word shêm (H8034) is in 17 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.7906
+  },
+  {
+   "q": "Which verse says \"whosoever shall call on the name of the LORD shall be delivered\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Joel 2:32"
+   ],
+   "signals": {
+    "xref": 24,
+    "votes": 570,
+    "word": "H8034",
+    "word_count": 17,
+    "differ": 0.552,
+    "quoted": null
+   },
+   "why": [
+    "24 cross-references point here",
+    "The Hebrew word shêm (H8034) is in 17 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.938
+  },
+  {
+   "q": "Fill in the name Moses gave Oshea the son of Nun.",
+   "type": "fill_word",
+   "ref": "Numbers 13:16",
+   "bible": "KJV",
+   "word": "Jehoshua",
+   "answer_refs": [
+    "Numbers 13:16"
+   ],
+   "signals": {
+    "xref": 6,
+    "votes": 21,
+    "word": "H8034",
+    "word_count": 17,
+    "differ": 0.351,
+    "quoted": null
+   },
+   "why": [
+    "6 cross-references point here",
+    "The Hebrew word shêm (H8034) is in 17 verses of this path"
+   ],
+   "score": 0.6698
+  },
+  {
+   "q": "Hebrews 4:8 speaks of the man who led Israel into the land. Which translation prints his name there as \"Jesus\"?",
+   "type": "which_translation",
+   "ref": "Hebrews 4:8",
+   "bible": "KJV",
+   "phrase": "Jesus",
+   "answer_refs": [
+    "Hebrews 4:8"
+   ],
+   "signals": {
+    "xref": 12,
+    "votes": 67,
+    "word": "G2424",
+    "word_count": 5,
+    "differ": 0.304,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here",
+    "The Greek word Iēsoûs (G2424) is in 5 verses of this path"
+   ],
+   "score": 0.5386
+  },
+  {
+   "q": "Matthew 1:21 gives the reason for the name. What does it say?",
+   "type": "multiple_choice",
+   "options": [
+    "For he shall save his people from their sins",
+    "For he shall be called great",
+    "For he shall reign for ever",
+    "For he is the light of the world"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Matthew 1:21"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "save his people from their sins"
+   },
+   "signals": {
+    "xref": 42,
+    "votes": 424,
+    "word": "G3686",
+    "word_count": 10,
+    "differ": 0.475,
+    "quoted": null
+   },
+   "why": [
+    "42 cross-references point here",
+    "The Greek word ónoma (G3686) is in 10 verses of this path"
+   ],
+   "score": 0.8604
+  },
+  {
+   "q": "Which verse says there is none other name under heaven whereby we must be saved?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Acts 4:12"
+   ],
+   "signals": {
+    "xref": 46,
+    "votes": 807,
+    "word": "G3686",
+    "word_count": 10,
+    "differ": 0.33,
+    "quoted": null
+   },
+   "why": [
+    "46 cross-references point here",
+    "The Greek word ónoma (G3686) is in 10 verses of this path"
+   ],
+   "score": 0.8242
+  },
+  {
+   "q": "Fill in the word: \"I have ___ thy name unto the men which thou gavest me out of the world\"",
+   "type": "fill_word",
+   "ref": "John 17:6",
+   "bible": "KJV",
+   "word": "manifested",
+   "answer_refs": [
+    "John 17:6"
+   ],
+   "signals": {
+    "xref": 24,
+    "votes": 207,
+    "word": "G3686",
+    "word_count": 10,
+    "differ": 0.411,
+    "quoted": null
+   },
+   "why": [
+    "24 cross-references point here",
+    "The Greek word ónoma (G3686) is in 10 verses of this path"
+   ],
+   "score": 0.7951
+  },
+  {
+   "q": "Which verse says \"then began men to call upon the name of the LORD\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 4:26"
+   ],
+   "signals": {
+    "xref": 4,
+    "votes": 15,
+    "word": "H8034",
+    "word_count": 17,
+    "differ": 0.379,
+    "quoted": null
+   },
+   "why": [
+    "4 cross-references point here",
+    "The Hebrew word shêm (H8034) is in 17 verses of this path"
+   ],
+   "score": 0.6529
+  },
+  {
+   "q": "Which verse says God's name shall be great among the Gentiles from the rising of the sun?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Malachi 1:11"
+   ],
+   "signals": {
+    "xref": 58,
+    "votes": 345,
+    "word": "H8034",
+    "word_count": 17,
+    "differ": 0.48,
+    "quoted": null
+   },
+   "why": [
+    "58 cross-references point here",
+    "The Hebrew word shêm (H8034) is in 17 verses of this path"
+   ],
+   "score": 0.9089
+  },
+  {
+   "q": "Which verse says every knee should bow at the name of Jesus?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Philippians 2:10"
+   ],
+   "signals": {
+    "xref": 86,
+    "votes": 717,
+    "word": "G3686",
+    "word_count": 10,
+    "differ": 0.114,
+    "quoted": null
+   },
+   "why": [
+    "86 cross-references point here",
+    "The Greek word ónoma (G3686) is in 10 verses of this path"
+   ],
+   "score": 0.7702
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 28,
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/the-name.json",
+  "sha": "48f2f79cafa30513",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

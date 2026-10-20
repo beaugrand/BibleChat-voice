@@ -1,0 +1,458 @@
+{
+ "id": "mist-not-rain",
+ "title": "Mist, not rain",
+ "opening_question": "What watered the ground before the flood, and what does the text say about rain?",
+ "required_refs": [
+  "Genesis 1:6-8",
+  "Genesis 2:4-6",
+  "Genesis 7:11-12",
+  "Genesis 8:2",
+  "Genesis 9:12-17",
+  "Psalms 148:4",
+  "Hebrews 11:7"
+ ],
+ "words": [
+  "H108",
+  "H7549"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What did God make on Day 2, and what did it divide?",
+   "refs": [
+    "Genesis 1:6-8"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7549"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield"
+   ]
+  },
+  {
+   "question": "Why had no plant grown yet, and what watered the ground?",
+   "refs": [
+    "Genesis 2:4-6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H108",
+     "H4305"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "The word for \"mist\" is used only twice. What does the other verse say about it?",
+   "refs": [
+    "Job 36:27-28"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H108"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "Where did the flood waters come from, and how long did it rain?",
+   "refs": [
+    "Genesis 6:17",
+    "Genesis 7:11-12",
+    "Genesis 8:2"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3999",
+     "H8064"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "What did God set in the cloud, and what is it a token of?",
+   "refs": [
+    "Genesis 9:12-17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7198",
+     "H6051"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "Where are waters still spoken of, and what was Noah warned about?",
+   "refs": [
+    "Psalms 148:4",
+    "Hebrews 11:7"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4325"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"there went up a mist from the earth\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 2:6"
+   ],
+   "signals": {
+    "xref": 1,
+    "votes": 3,
+    "word": "H108",
+    "word_count": 2,
+    "differ": 0.315,
+    "quoted": null
+   },
+   "why": [
+    "1 cross-reference point here",
+    "The Hebrew word 'êd (H108) is in 2 verses of this path"
+   ],
+   "score": 0.2412
+  },
+  {
+   "q": "According to Genesis 2:5, what had the LORD God not yet caused to happen on the earth?",
+   "type": "multiple_choice",
+   "options": [
+    "To rain",
+    "To snow",
+    "To be dark",
+    "To shake"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Genesis 2:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "rain"
+   },
+   "signals": {
+    "xref": 3,
+    "votes": 10,
+    "word": "H4305",
+    "word_count": 1,
+    "differ": 0.453,
+    "quoted": null
+   },
+   "why": [
+    "3 cross-references point here"
+   ],
+   "score": 0.3224
+  },
+  {
+   "q": "Fill in the word God called the firmament.",
+   "type": "fill_word",
+   "ref": "Genesis 1:8",
+   "bible": "KJV",
+   "word": "Heaven",
+   "answer_refs": [
+    "Genesis 1:8"
+   ],
+   "signals": {
+    "xref": 7,
+    "votes": 64,
+    "word": "H8064",
+    "word_count": 10,
+    "differ": 0.348,
+    "quoted": null
+   },
+   "why": [
+    "7 cross-references point here",
+    "The Hebrew word shâmayim (H8064) is in 10 verses of this path"
+   ],
+   "score": 0.6921
+  },
+  {
+   "q": "Which translation says \"expanse\" in Genesis 1:7, where the King James says \"firmament\"?",
+   "type": "which_translation",
+   "ref": "Genesis 1:7",
+   "bible": "BSB",
+   "phrase": "the expanse and separated",
+   "answer_refs": [
+    "Genesis 1:7"
+   ],
+   "signals": {
+    "xref": 10,
+    "votes": 77,
+    "word": "H4325",
+    "word_count": 9,
+    "differ": 0.307,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "The Hebrew word mayim (H4325) is in 9 verses of this path"
+   ],
+   "score": 0.6663
+  },
+  {
+   "q": "Which verse says the fountains of the great deep were broken up and the windows of heaven were opened?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 7:11"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 81,
+    "word": "H8064",
+    "word_count": 10,
+    "differ": 0.305,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here",
+    "The Hebrew word shâmayim (H8064) is in 10 verses of this path"
+   ],
+   "score": 0.6988
+  },
+  {
+   "q": "How many days and nights was the rain upon the earth?",
+   "type": "multiple_choice",
+   "options": [
+    "Forty",
+    "Seven",
+    "One hundred and fifty",
+    "Twelve"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Genesis 7:12"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "forty"
+   },
+   "signals": {
+    "xref": 9,
+    "votes": 37,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.437,
+    "quoted": null
+   },
+   "why": [
+    "9 cross-references point here"
+   ],
+   "score": 0.3823
+  },
+  {
+   "q": "Fill in the word: \"I do set my ___ in the cloud\"",
+   "type": "fill_word",
+   "ref": "Genesis 9:13",
+   "bible": "KJV",
+   "word": "bow",
+   "answer_refs": [
+    "Genesis 9:13"
+   ],
+   "signals": {
+    "xref": 10,
+    "votes": 42,
+    "word": "H6051",
+    "word_count": 4,
+    "differ": 0.313,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "The Hebrew word ‛ânân (H6051) is in 4 verses of this path"
+   ],
+   "score": 0.4773
+  },
+  {
+   "q": "Which verse speaks of \"waters that be above the heavens\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 148:4"
+   ],
+   "signals": {
+    "xref": 21,
+    "votes": 208,
+    "word": "H8064",
+    "word_count": 10,
+    "differ": 0.473,
+    "quoted": null
+   },
+   "why": [
+    "21 cross-references point here",
+    "The Hebrew word shâmayim (H8064) is in 10 verses of this path"
+   ],
+   "score": 0.811
+  },
+  {
+   "q": "Which verse says Noah was warned of God of things not seen as yet?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Hebrews 11:7"
+   ],
+   "signals": {
+    "xref": 51,
+    "votes": 524,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.415,
+    "quoted": null
+   },
+   "why": [
+    "51 cross-references point here"
+   ],
+   "score": 0.5537
+  },
+  {
+   "q": "Job 36:27 uses the same Hebrew word as the mist of Genesis 2:6. How does the King James render it there?",
+   "type": "multiple_choice",
+   "options": [
+    "vapour",
+    "mist",
+    "dew",
+    "cloud"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Job 36:27"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "vapour"
+   },
+   "signals": {
+    "xref": 6,
+    "votes": 23,
+    "word": "H4325",
+    "word_count": 9,
+    "differ": 0.547,
+    "quoted": null
+   },
+   "why": [
+    "6 cross-references point here",
+    "The Hebrew word mayim (H4325) is in 9 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6378
+  },
+  {
+   "q": "Which verse says the fountains of the deep and the windows of heaven were stopped?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 8:2"
+   ],
+   "signals": {
+    "xref": 2,
+    "votes": 15,
+    "word": "H8064",
+    "word_count": 10,
+    "differ": 0.493,
+    "quoted": null
+   },
+   "why": [
+    "2 cross-references point here",
+    "The Hebrew word shâmayim (H8064) is in 10 verses of this path"
+   ],
+   "score": 0.6231
+  },
+  {
+   "q": "Which translation says \"Yahweh God\" in Genesis 2:4?",
+   "type": "which_translation",
+   "ref": "Genesis 2:4",
+   "bible": "ETH",
+   "phrase": "Yahweh God",
+   "answer_refs": [
+    "Genesis 2:4"
+   ],
+   "signals": {
+    "xref": 4,
+    "votes": 19,
+    "word": "H8064",
+    "word_count": 10,
+    "differ": 0.303,
+    "quoted": null
+   },
+   "why": [
+    "4 cross-references point here",
+    "The Hebrew word shâmayim (H8064) is in 10 verses of this path"
+   ],
+   "score": 0.5923
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 20,
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/mist-not-rain.json",
+  "sha": "55a595cfcfff5f0f",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

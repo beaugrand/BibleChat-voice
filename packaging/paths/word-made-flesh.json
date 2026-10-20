@@ -1,0 +1,41 @@
+{
+  "id": "word-made-flesh",
+  "title": "The Word made flesh, the way, the truth, the light",
+  "opening_question": "Who is the Word, and what does the text say about keeping His commandments?",
+  "required_refs": ["John 1:1-14", "John 14:6", "John 14:15", "John 8:12", "Matthew 5:17-19", "1 John 2:3-6", "1 John 5:3", "Revelation 14:12", "Revelation 22:14"],
+  "words": ["G3056", "G4561", "G1785"],
+  "show": 8,
+  "steps": [
+    {"question": "Who is the Word, and what became of Him?", "refs": ["John 1:1-14"],
+     "look_closer": {"strongs": ["G3056", "G4561"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
+    {"question": "What does Jesus say He is?", "refs": ["John 14:6", "John 8:12"],
+     "look_closer": {"strongs": ["G3598", "G225", "G5457"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
+    {"question": "What did Jesus say about the law and the commandments?", "refs": ["Matthew 5:17-19", "John 14:15"],
+     "look_closer": {"strongs": ["G3551", "G1785", "G4137"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
+    {"question": "How does John say we know that we know Him?", "refs": ["1 John 2:3-6", "1 John 5:3"],
+     "look_closer": {"strongs": ["G1785", "G5083"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
+    {"question": "What do these verses say about faith, works and the law? Read them next to the verses above.", "refs": ["Romans 3:28", "Galatians 2:16", "Romans 10:4", "Ephesians 2:8-10"],
+     "look_closer": {"strongs": ["G1344", "G4102", "G2041"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
+    {"question": "How does Revelation describe the saints, and who has right to the tree of life? Compare the translations of 22:14.", "refs": ["Revelation 14:12", "Revelation 22:14"],
+     "look_closer": {"strongs": ["G1785", "G4111"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]}
+  ],
+  "quiz": [
+    {"q": "Which verse says \"the Word was made flesh, and dwelt among us\"?", "type": "find_the_verse", "answer_refs": ["John 1:14"]},
+    {"q": "In John 14:6, what three things does Jesus say He is?", "type": "multiple_choice",
+     "options": ["The way, the truth, and the life", "The door, the shepherd, and the vine", "The bread, the water, and the light", "The first, the last, and the living"], "answer": 0,
+     "answer_refs": ["John 14:6"], "check": {"bible": "KJV", "word": "the way, the truth, and the life"}},
+    {"q": "Fill in the word: \"If ye love me, keep my ___.\"", "type": "fill_word", "ref": "John 14:15", "bible": "KJV", "word": "commandments"},
+    {"q": "Which translation says \"Blessed are those who wash their robes\" in Revelation 22:14?", "type": "which_translation", "ref": "Revelation 22:14", "bible": "BSB", "phrase": "wash their robes"},
+    {"q": "Which verse says \"Think not that I am come to destroy the law, or the prophets\"?", "type": "find_the_verse", "answer_refs": ["Matthew 5:17"]},
+    {"q": "Which verse says he that saith \"I know him\" and keepeth not his commandments is a liar?", "type": "find_the_verse", "answer_refs": ["1 John 2:4"]},
+    {"q": "Fill in the word: \"For this is the love of God, that we keep his commandments: and his commandments are not ___.\"", "type": "fill_word", "ref": "1 John 5:3", "bible": "KJV", "word": "grievous"},
+    {"q": "Revelation 14:12 says the saints keep the commandments of God and what else?", "type": "multiple_choice",
+     "options": ["The faith of Jesus", "The traditions of the elders", "The feasts", "The words of the prophets"], "answer": 0,
+     "answer_refs": ["Revelation 14:12"], "check": {"bible": "KJV", "word": "the faith of Jesus"}},
+    {"q": "Which verse says a man is justified by faith without the deeds of the law?", "type": "find_the_verse", "answer_refs": ["Romans 3:28"]},
+    {"q": "Which verse says \"For by grace are ye saved through faith\"?", "type": "find_the_verse", "answer_refs": ["Ephesians 2:8"]},
+    {"q": "Which verse says \"Christ is the end of the law for righteousness to every one that believeth\"?", "type": "find_the_verse", "answer_refs": ["Romans 10:4"]},
+    {"q": "Which translation says \"the darkness comprehended it not\" in John 1:5?", "type": "which_translation", "ref": "John 1:5", "bible": "KJV", "phrase": "comprehended it not"}
+  ],
+  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]
+}

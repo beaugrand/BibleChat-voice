@@ -104,6 +104,11 @@ def main(out: str) -> None:
     with open(os.path.join(src, "verses.json"), encoding="utf-8") as f:
         assert json.load(f)["books"] == books
     shutil.copytree(src, os.path.join(out, "data", "meaning"), dirs_exist_ok=True)
+    # 📜 Study Paths: the paths built by packaging/build_paths.py, their page code and "Quoted or named in Scripture"
+    web = os.path.join(ROOT, "web")
+    for f in ("paths.js", "quoted.json"):
+        shutil.copy2(os.path.join(web, f), os.path.join(out, f))
+    shutil.copytree(os.path.join(web, "paths"), os.path.join(out, "paths"), dirs_exist_ok=True)
     total = sum(os.path.getsize(os.path.join(dp, f)) for dp, _, fs in os.walk(base) for f in fs)
     nfiles = sum(len(fs) for _, _, fs in os.walk(base))
     print(f"study data: {nfiles} files, {total / 1e6:.1f} MB")
