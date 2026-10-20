@@ -38,6 +38,16 @@ def bibles():
     return _BIBLES
 
 
+def need_full_texts(test):
+    """The quotation rules compare against the downloaded KJV and BSB (packaging/build_paths.py fetches them; the
+    phone build runs it with --check). Without those files, e.g. offline or in the computer build, skip instead of
+    failing on wording that only the full texts carry."""
+    import tempfile
+    have = all(os.path.exists(os.path.join(tempfile.gettempdir(), f)) for f in bp.FILES.values())
+    if not have:
+        test.skipTest("KJV/BSB downloads not present; run python packaging/build_paths.py --check")
+
+
 def load(path):
     with open(path, encoding="utf-8") as f:
         return json.load(f)
@@ -46,6 +56,7 @@ def load(path):
 class PathRulesTest(unittest.TestCase):
     def test_every_path_passes_every_rule(self):
         self.assertGreaterEqual(len(SOURCES), 6)
+        need_full_texts(self)
         B = bibles()
         for f in SOURCES:
             with self.subTest(path=os.path.basename(f)):
@@ -58,6 +69,7 @@ class PathRulesTest(unittest.TestCase):
         bp.check_quoted(B)
 
     def test_broken_paths_are_refused(self):
+        need_full_texts(self)
         B = bibles()
         good = load(os.path.join(bp.SRC_DIR, "light-before-sun.json"))
         def broken(change):
