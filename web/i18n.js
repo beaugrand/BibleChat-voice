@@ -33,6 +33,8 @@ const I18N = {
 "Search": ["Suchen", "Buscar", "Chercher", "Buscar", "搜索", "Поиск", "검색"],
 "Bibles": ["Bibeln", "Biblias", "Bibles", "Bíblias", "圣经", "Библии", "성경"],
 "Love": ["Spenden", "Donar", "Dons", "Doar", "奉献", "Пожертвовать", "후원"],
+"🏠 Home": ["🏠 Start", "🏠 Inicio", "🏠 Accueil", "🏠 Início", "🏠 首页", "🏠 Главная", "🏠 홈"],
+"Close the book: back to the cover": ["Buch schließen: zurück zum Einband", "Cerrar el libro: volver a la portada", "Fermer le livre : retour à la couverture", "Fechar o livro: voltar à capa", "合上圣经：回到封面", "Закрыть книгу: назад к обложке", "책 덮기: 표지로 돌아가기"],
 "Home": ["Start", "Inicio", "Accueil", "Início", "首页", "Главная", "홈"],
 "Open the Bible": ["Bibel öffnen", "Abrir la Biblia", "Ouvrir la Bible", "Abrir a Bíblia", "打开圣经", "Открыть Библию", "성경 펼치기"],
 "Tap the cover to open": ["Tippe auf den Einband, um sie zu öffnen", "Toca la portada para abrirla", "Touchez la couverture pour l'ouvrir", "Toque na capa para abrir", "点击封面打开", "Нажмите на обложку, чтобы открыть", "표지를 누르면 열립니다"],

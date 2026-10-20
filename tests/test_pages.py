@@ -45,6 +45,42 @@ class PagesTest(unittest.TestCase):
         self.assertIn('de: ["Die", "Heilige Schrift"', read(PAGES[0]))   # the cover in German
         self.assertIn('setMode("home")', read(PAGES[1]))
 
+    def test_cover_version_line(self):
+        # The cover prints the standard versions in small gold capitals inside the inner gold border, under the
+        # cross: only versions BibleChat really offers (NIV only once it is licensed; until then BSB).
+        import re, shutil, subprocess, json
+        for p in PAGES:
+            s = read(p)
+            m = re.search(r'<text id="cvVer"([^>]*)>([^<]*)</text>', s)
+            self.assertTrue(m, f"cover line missing in {p}")
+            a = dict(re.findall(r'([\w-]+)="([^"]*)"', m.group(1)))
+            self.assertEqual(a["fill"], "url(#cvGold)")                     # fixed gold: same in light and dark mode
+            self.assertEqual(a["x"], "160"); self.assertEqual(a["text-anchor"], "middle")
+            self.assertTrue(338 < float(a["y"]) - float(a["font-size"]) and float(a["y"]) + 3 < 389, a)   # under the cross, above the border
+            self.assertLessEqual(float(a["textLength"]) / 2, 160 - 53 - 4)   # inside the inner border (x 53–267)
+            self.assertIn("NIV", s)                                          # the code knows the NIV...
+            self.assertNotIn("NIV", m.group(2))                              # ...but the cover doesn't promise it yet
+            g = s.index('<g filter="url(#cvEmboss)"')
+            self.assertTrue(g < m.start() < s.index("</g>", g), "the line must sit in the embossed group")
+            self.assertIn("ETHIOPIAN CANON · BSB", s[s.index('aria-label="The Holy Bible'):][:120])
+            self.assertIn("const COVER_VERSIONS", s)
+            self.assertIn('id="' + ("closeBook" if p == PAGES[0] else "rHome") + '"', s)   # 🏠 in Read closes the book
+            if not shutil.which("node"):
+                continue
+            js = s[s.index("const COVER_VERSIONS"):s.index("return s;\n}", s.index("function coverLine")) + 11]
+            script = js + """
+const el = {t: "", a: {}, set textContent(v){ this.t = v; }, setAttribute(k, v){ this.a[k] = v; }};
+global.document = {getElementById: () => el};
+const out = [];
+for(const abbrs of [["KJV","ETH","BSB","WEB"], ["KJV","ETH","BSB","NIV"], ["KJV","BSB"]]){ coverLine(abbrs); out.push([el.t, +el.a.textLength]); }
+console.log(JSON.stringify(out));"""
+            r = subprocess.run(["node", "-e", script], capture_output=True, text=True, timeout=60)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            out = json.loads(r.stdout)
+            self.assertEqual([o[0] for o in out], ["KJV · ETHIOPIAN CANON · BSB", "KJV · ETHIOPIAN CANON · NIV", "KJV · BSB"])
+            self.assertTrue(all(o[1] <= 196 for o in out), out)
+        self.assertIn(".coverart", read(os.path.join(ROOT, "web", "i18n.js")))   # same abbreviations in every app language
+
     def test_verse_picker_in_read_mode(self):
         # a "Verse" button next to the chapter title opens a grid of the chapter's own verse numbers
         # (so a Bible that skips or joins verses, like the Ethiopian Canon, shows only real ones); a tap jumps

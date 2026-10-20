@@ -15,8 +15,8 @@
 - Published download: **v1.0.3** (19 October 2026). Version number lives in `bibleask/__init__.py`.
 - v1.0.3 brought the computer downloads up to date with the phone version again: book names in each Bible's own language (computer and phone), app language flag with 8 languages (phone); **share a verse as a picture** (phone): tapping a verse now offers 🖼 Share as a picture first, the picture carries a small QR code that opens the verse, the link to the verse goes along in the message, and a friend who opens it lands on that verse with it highlighted in gold; a broken Bible download on a weak phone connection is retried, with Try again / KJV / another Bible instead of "Load failed"; **search by meaning and by the original Hebrew/Greek word** (computer and phone): "sea monsters" now finds Genesis 1:21 even in the King James, which says "great whales" there, and every verse says why it was found; **Verse button** in Read mode (computer and phone): a grid of the chapter's verse numbers that jumps straight to a verse and makes it glow.
 - v1.0.2 (17 October 2026) brought: Strong's study, Nave's topics, cross-references, Scofield notes, Matthew Henry, Easton's dictionary, Hebrew/Greek letter by letter with Paleo-Hebrew, bookmarks, verse of the day, Septuagint, Ethiopian canon, update notice, chat fixes, back/forward arrows, verse image maker with your own photos, church logo with QR code, sermon list with QR code, Ask AI on the computer, Suggest a feature, the BibleChat connector for AI apps, license changed from MIT to Apache 2.0.
-- Changes since v1.0.3 (on the phone as soon as it is published; on computers with the next release): **🏠 Home with a Bible cover** (computer and phone): BibleChat now opens on a black Bible cover with a golden cross and "The Holy Bible" in gold; tapping or clicking the cover opens the Bible where you left off.
-- Automatic tests: 93 (run `python -m unittest discover -s tests`).
+- Changes since v1.0.3 (on the phone as soon as it is published; on computers with the next release): **🏠 Home with a Bible cover** (computer and phone): BibleChat now opens on a black Bible cover with a golden cross and "The Holy Bible" in gold; tapping or clicking the cover opens the Bible where you left off. **Version line on the cover**: "KJV · ETHIOPIAN CANON · BSB" in small gold capitals under the cross, built from the Bibles BibleChat really offers (it will read "KJV · ETHIOPIAN CANON · NIV" by itself once a licensed NIV is in the list). **🏠 Home in Read** (computer and phone) closes the book: the cover swings shut and Home shows.
+- Automatic tests: 94 (run `python -m unittest discover -s tests`).
 
 ## 1. Where everything lives
 
@@ -88,7 +88,7 @@
 - Add your own Bible files: PDF, XML (Zefania, OSIS, USFX), TXT, SPB, TSV, MyBible and unlocked MySword.
 
 **Reading**
-- **🏠 Home: the Bible cover** (computer and phone). BibleChat opens on a black leather-look Bible cover with a golden cross, "The Holy Bible" in gold (on the phone with the app language set to Deutsch: "Die Heilige Schrift"), gilt page edges and a red ribbon. Under it: "Continue reading: John 3 · KJV". Tapping or clicking the cover opens the Bible there, with a short page-turn movement (none if the device asks for reduced motion). Home is the first tab on the phone and the first button (🏠 Home · 💬 Chat · 📖 Read) on the computer. A link or QR code to a verse or sermon list still goes straight to it. The cover is drawn in code (no picture file), so it is sharp on every screen and works offline.
+- **🏠 Home: the Bible cover** (computer and phone). BibleChat opens on a black leather-look Bible cover with a golden cross, "The Holy Bible" in gold (on the phone with the app language set to Deutsch: "Die Heilige Schrift"), gilt page edges and a red ribbon. Near the bottom, inside the gold border, the standard versions in small gold capitals: "KJV · ETHIOPIAN CANON · BSB". The line is made from the `COVER_VERSIONS` list and only names Bibles BibleChat really offers, so it switches to "… · NIV" by itself once a licensed NIV is added; the abbreviations stay the same in every app language. Under it: "Continue reading: John 3 · KJV". Tapping or clicking the cover opens the Bible there, with a short page-turn movement (none if the device asks for reduced motion). Home is the first tab on the phone and the first button (🏠 Home · 💬 Chat · 📖 Read) on the computer. In Read, **🏠 Home** (first button in the reading tools) closes the book: the cover swings shut and Home shows. A link or QR code to a verse or sermon list still goes straight to it. The cover is drawn in code (no picture file), so it is sharp on every screen and works offline.
 - Book names in the Bible's own language ("1. Mose", "创世记", "Génesis"), on the phone and the computer; references can be typed that way too ("Römer 8:28").
 - **App language flag** (phone, top bar): English, Deutsch, Español, Français, Português, 中文, Русский, 한국어. It changes buttons and menus only; the Bible text stays in the Bible you chose. Words live in `web/i18n.js`, one line per phrase.
 - Read mode by book and chapter, flowing text or one verse per line, text size, dark mode, read-aloud chapter after chapter. Chapters are picked from a grid of numbers.
@@ -190,7 +190,7 @@ You can type references: `Daniel 7:25`, `1 Cor 13:4-7`, `Psalm 23`, `Rev 22`.
 
 **Bookmarks, verse of the day, Hebrew letters.** Click a verse, then **🔖 Bookmark this verse**; the 🔖 button above the text lists them. The chat's start page shows a **verse of the day** with a button that makes a lock-screen picture of it. In a Hebrew Strong's entry, click the Hebrew word to go **letter by letter**: each letter's name, sound, number and ancient picture (e.g. יהוה: hand · behold · nail · behold). On the phone, tap a verse for 🔖 Bookmark, ✨ Ask AI (opens Claude, ChatGPT, Gemini, Grok or Perplexity with the verse filled in, using your own account) and 🖼 Lock-screen picture.
 
-**Home.** **🏠 Home** (first tab on the phone, first button in the sidebar on the computer) shows the Bible cover. Tap or click it to open the Bible where you stopped.
+**Home.** **🏠 Home** (first tab on the phone, first button in the sidebar on the computer) shows the Bible cover. Tap or click it to open the Bible where you stopped. While reading, **🏠 Home** in the reading tools closes the book again.
 
 **Language.** Tap the flag at the top of the phone version to switch the app's buttons and menus to Deutsch, Español, Français, Português, 中文, Русский or 한국어. Book names always follow the Bible you are reading.
 
@@ -291,7 +291,7 @@ Your chat history lives in your browser. Delete the folder above to reset the Bi
 ## For developers
 
 ```bash
-python -m unittest discover -s tests -v     # 92 tests (one runs the phone search with Node.js if it is installed)
+python -m unittest discover -s tests -v     # 94 tests (one runs the phone search with Node.js if it is installed)
 python -m bibleask.mcp_server               # the connector, for Claude Desktop / Claude Code
 ./run_from_source_linux.sh                  # run from source on Linux
 ```
