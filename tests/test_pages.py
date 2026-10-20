@@ -33,6 +33,17 @@ class PagesTest(unittest.TestCase):
                          "function sermonLink", 'id="sgText"', "mailto:wbeaugrand@gmail.com", "issues/new", "function askAI", 'id="viDlg"', "function viDraw", 'id="viPhoto"'):
                 self.assertIn(part, s, f"{part} missing in {p}")
 
+    def test_home_bible_cover(self):
+        # Home (phone: first tab; computer: first mode button) shows a black Bible cover with a golden cross and
+        # "The Holy Bible"; clicking it opens Read. A normal start opens on Home; a link to a verse goes straight to it.
+        for p, button in [(PAGES[0], '<button data-tab="home">'), (PAGES[1], 'id="modeHome"')]:
+            s = read(p)
+            for part in (button, 'id="homeCover"', 'class="coverart"', 'aria-label="The Holy Bible', ">The</tspan>",
+                         ">Holy Bible</tspan>", 'id="cvGold"', 'id="cvLeather"', "function homeWhere", 'id="homeWhere"'):
+                self.assertIn(part, s, f"{part} missing in {p}")
+        self.assertIn('show("home", true)', read(PAGES[0]))
+        self.assertIn('setMode("home")', read(PAGES[1]))
+
     def test_verse_picker_in_read_mode(self):
         # a "Verse" button next to the chapter title opens a grid of the chapter's own verse numbers
         # (so a Bible that skips or joins verses, like the Ethiopian Canon, shows only real ones); a tap jumps

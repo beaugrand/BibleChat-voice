@@ -161,6 +161,16 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 .vpgrid button{min-height:46px;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;font-size:17px;cursor:pointer}
 .vpgrid button:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 #rfoot{max-width:780px;margin:0 auto;padding:0 20px 40px;display:flex;justify-content:space-between;gap:10px;width:100%}
+/* home: the Bible cover */
+#home{flex:1;overflow:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;text-align:center}
+.cover{border:0;background:none;padding:0;width:min(320px,80%,calc((100vh - 190px) * .68));perspective:1400px;border-radius:12px}
+.cover .coverart{display:block;width:100%;height:auto;transform-origin:2% 50%;transition:transform .5s ease;filter:drop-shadow(0 12px 22px rgba(0,0,0,.35))}
+.cover:hover .coverart,.cover:focus-visible .coverart{transform:translateY(-5px)}
+.cover:focus-visible{outline:3px solid var(--accent);outline-offset:6px}
+.cover.opening .coverart{transform:rotateY(-78deg)}
+@media (prefers-reduced-motion: reduce){.cover .coverart{transition:none}}
+.homeHint{color:var(--muted);font-size:14.5px;margin:18px 0 4px}
+#homeWhere{font-size:15px;margin:0}
 /* Love Donations */
 .love{width:100%;border:1px solid #e8b4bc;background:linear-gradient(#fff3f4,#ffe6ea);color:#9b2c3d;font-weight:600}
 :root[data-theme="dark"] .love{background:#3a2226;border-color:#6b3a43;color:#f2a7b4}
@@ -366,7 +376,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
       <span class="navs"><button class="btn" id="navBack" title="Back to where you were (Alt+←)" aria-label="Back" disabled>←</button><button class="btn" id="navFwd" title="Forward (Alt+→)" aria-label="Forward" disabled>→</button></span>
     </div>
     <button id="churchBtn" hidden></button>
-    <div class="modes" role="tablist"><button id="modeChat" class="on">💬 Chat</button><button id="modeRead">📖 Read</button></div>
+    <div class="modes" role="tablist"><button id="modeHome" class="on">🏠 Home</button><button id="modeChat">💬 Chat</button><button id="modeRead">📖 Read</button></div>
     <button class="btn primary block" id="newChat">＋ New chat</button>
   </div>
   <div class="scroll">
@@ -412,6 +422,11 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 
 <section id="main">
   <div id="bar"><button class="menu" id="menu" aria-label="Menu">☰</button><b>BibleChat</b></div>
+  <div id="home" hidden>
+    <button class="cover" id="homeCover" title="Open the Bible"><svg class="coverart" viewBox="0 0 300 440" role="img" aria-label="The Holy Bible: a black cover with a golden cross"><defs><radialGradient id="cvLeather" cx="45%" cy="38%" r="75%"><stop offset="0" stop-color="#2b2a28"/><stop offset=".6" stop-color="#121110"/><stop offset="1" stop-color="#050505"/></radialGradient><linearGradient id="cvGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1a8"/><stop offset=".28" stop-color="#e2bd4f"/><stop offset=".55" stop-color="#a87b1c"/><stop offset=".8" stop-color="#e9c860"/><stop offset="1" stop-color="#8f6514"/></linearGradient><linearGradient id="cvEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d77a"/><stop offset=".5" stop-color="#b8891f"/><stop offset="1" stop-color="#f0cf6a"/></linearGradient><linearGradient id="cvSpine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".75"/><stop offset=".7" stop-color="#3a3835" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient><filter id="cvEmboss" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.6" stdDeviation="1.2" flood-color="#000" flood-opacity=".85"/></filter></defs><path d="M231 404h16v34l-8-7-8 7z" fill="#8e1b26"/><rect x="16" y="10" width="280" height="404" rx="6" fill="url(#cvEdge)"/><path d="M286 22v382M291 26v374" stroke="#8a6414" stroke-width=".7" opacity=".6"/><rect x="4" y="4" width="284" height="408" rx="11" fill="url(#cvLeather)"/><rect x="4" y="4" width="30" height="408" rx="11" fill="url(#cvSpine)"/><path d="M33 8v400" stroke="#000" stroke-width="1.4" opacity=".7"/><path d="M35 8v400" stroke="#4a4743" stroke-width=".6" opacity=".5"/><g fill="none" stroke="url(#cvGold)"><rect x="46" y="20" width="228" height="376" rx="5" stroke-width="2"/><rect x="53" y="27" width="214" height="362" rx="3" stroke-width=".8"/></g><g filter="url(#cvEmboss)"><text text-anchor="middle" font-family="Georgia,'Times New Roman',serif" fill="url(#cvGold)"><tspan x="160" y="82" font-size="19" letter-spacing="5">The</tspan><tspan x="160" y="122" font-size="34" textLength="176" lengthAdjust="spacingAndGlyphs">Holy Bible</tspan></text><path d="M150 158h20v56h38v20h-38v104h-20V234h-38v-20h38z" fill="url(#cvGold)"/></g><path d="M151 159h18v56" stroke="#fff6c8" stroke-width=".8" fill="none" opacity=".7"/></svg></button>
+    <p class="homeHint">Click the cover to open</p>
+    <p id="homeWhere"></p>
+  </div>
   <div id="scroll"><div id="thread"></div></div>
   <div id="composer">
     <div class="box">
@@ -646,7 +661,7 @@ function renderChats(){
       if(activeId === e.target.dataset.del) activeId = chats[0] ? chats[0].id : null;
       save(); if(!activeId) return newChat(); renderChats(); renderThread(); return;
     }
-    activeId = el.dataset.id; save(); renderChats(); renderThread(); document.body.classList.remove("open"); navNote();
+    activeId = el.dataset.id; save(); renderChats(); renderThread(); document.body.classList.remove("open"); if(mode !== "chat") setMode("chat"); navNote();
   });
 }
 function renderBibles(){
@@ -971,23 +986,38 @@ async function micStop(){
 $("#mic").onclick = () => micOn ? micStop() : micStart();
 
 /* ---------------- reading view (book list + whole chapters) ---------------- */
-let mode = store.get("bc.mode", "chat");
+let mode = "home";   // BibleChat opens on the Bible cover (Home)
 let rd = store.get("bc.read", {});          // last place read: {bible, book, chapter}
 let rBooks = [], rBooksFor = null, rChap = null, rToken = 0;
 let rLinesOn = store.get("bc.rlines", true), rScale = store.get("bc.rscale", 1);
 
 function setMode(m){
-  mode = m; store.set("bc.mode", m);
+  mode = m;
+  $("#modeHome").classList.toggle("on", m === "home");
   $("#modeChat").classList.toggle("on", m === "chat"); $("#modeRead").classList.toggle("on", m === "read");
-  $("#chatSide").hidden = $("#newChat").hidden = m !== "chat";
+  $("#chatSide").hidden = m === "read"; $("#newChat").hidden = m !== "chat";
   $("#readSide").hidden = m !== "read";
   $("#scroll").hidden = $("#composer").hidden = m !== "chat";
   $("#reader").hidden = m !== "read";
-  if(m === "read") openReader(); else { sayStop(); studyClose(); $("#q").focus(); }
+  $("#home").hidden = m !== "home";
+  if(m === "read") openReader(); else { sayStop(); studyClose(); if(m === "home") homeWhere(); else $("#q").focus(); }
   navNote();
 }
+$("#modeHome").onclick = () => setMode("home");
 $("#modeChat").onclick = () => setMode("chat");
 $("#modeRead").onclick = () => setMode("read");
+
+/* Home: a black Bible cover with a golden cross; clicking it opens the Bible where you left off */
+function homeWhere(){
+  const b = state.bibles.find(x => x.id === rd.bible);
+  $("#homeWhere").innerHTML = b && rd.book ? `Continue reading: <b>${esc(rd.book)} ${esc(rd.chapter || 1)}</b> · ${esc(b.name)}` : "";
+}
+$("#homeCover").onclick = () => {
+  const c = $("#homeCover"); if(c.classList.contains("opening")) return;
+  const open = () => { c.classList.remove("opening"); setMode("read"); };
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return open();
+  c.classList.add("opening"); setTimeout(open, 420);
+};
 
 async function openReader(){
   const sel = $("#rBible");
@@ -1959,7 +1989,7 @@ $("#sgGit").onclick = () => {
 };
 /* ---------------- back / forward: return to where you have been ---------------- */
 const hist = {list: [], i: -1, busy: false};
-function navSnap(){ return mode === "read" ? {mode, bible: rd.bible, book: rd.book, chapter: rd.chapter} : {mode, chat: activeId}; }
+function navSnap(){ return mode === "read" ? {mode, bible: rd.bible, book: rd.book, chapter: rd.chapter} : mode === "home" ? {mode} : {mode, chat: activeId}; }
 function navButtons(){ $("#navBack").disabled = hist.i <= 0; $("#navFwd").disabled = hist.i >= hist.list.length - 1; }
 function navNote(){
   if(hist.busy) return;
@@ -1973,7 +2003,8 @@ async function navGo(d){
   const s = hist.list[hist.i + d]; if(!s) return;
   hist.i += d; hist.busy = true;
   try{
-    if(s.mode === "chat"){
+    if(s.mode === "home"){ if(mode !== "home") setMode("home"); }
+    else if(s.mode === "chat"){
       if(chats.some(c => c.id === s.chat)){ activeId = s.chat; save(); renderChats(); renderThread(); }
       if(mode !== "chat") setMode("chat");
     }else{
@@ -1999,8 +2030,7 @@ addEventListener("keydown", e => {
   if(!chats.length || !chats.some(c => c.id === activeId)){ if(chats.length) activeId = chats[0].id; else newChat(); }
   renderChats(); renderThread();
   applyReadLook();
-  if(mode !== "read") navNote();
-  if(mode === "read") setMode("read");
+  setMode("home");   // BibleChat always opens on the Bible cover
   setTimeout(refresh, 8000);   // the update check runs in the background at start-up
 })();
 </script>

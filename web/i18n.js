@@ -33,6 +33,10 @@ const I18N = {
 "Search": ["Suchen", "Buscar", "Chercher", "Buscar", "搜索", "Поиск", "검색"],
 "Bibles": ["Bibeln", "Biblias", "Bibles", "Bíblias", "圣经", "Библии", "성경"],
 "Love": ["Spenden", "Donar", "Dons", "Doar", "奉献", "Пожертвовать", "후원"],
+"Home": ["Start", "Inicio", "Accueil", "Início", "首页", "Главная", "홈"],
+"Open the Bible": ["Bibel öffnen", "Abrir la Biblia", "Ouvrir la Bible", "Abrir a Bíblia", "打开圣经", "Открыть Библию", "성경 펼치기"],
+"Tap the cover to open": ["Tippe auf den Einband, um sie zu öffnen", "Toca la portada para abrirla", "Touchez la couverture pour l'ouvrir", "Toque na capa para abrir", "点击封面打开", "Нажмите на обложку, чтобы открыть", "표지를 누르면 열립니다"],
+"Continue reading:": ["Weiterlesen:", "Seguir leyendo:", "Continuer la lecture :", "Continuar lendo:", "继续阅读：", "Продолжить чтение:", "이어 읽기:"],
 "Words or a verse, e.g. John 3:16": ["Wörter oder ein Vers, z. B. Joh 3,16", "Palabras o un versículo, p. ej. Juan 3:16", "Mots ou un verset, p. ex. Jean 3:16", "Palavras ou um versículo, ex. João 3:16", "词语或经文，例如 约 3:16", "Слова или стих, например Ин 3:16", "단어 또는 구절, 예: 요 3:16"],
 "Find": ["Finden", "Buscar", "Chercher", "Buscar", "查找", "Найти", "찾기"],
 "Try:": ["Probiere:", "Prueba:", "Essayez :", "Experimente:", "试试：", "Попробуйте:", "예:"],
@@ -239,7 +243,7 @@ function tr(s){
 }
 /* Translate the page's own words. The original English is kept on each node, so switching back works.
    Bible text, verse lists and study content are left alone. */
-const I18N_SKIP = "#rtext, .res, #shareQuote, #welcomeQuote, #smsList, .smT, #aiPrompt, #chLink, script, style, .vt, .scof, #viRef, #books, .bl b, #smsTitle, #studyTitle, .quote, .tp b, .w, .heb, .pw, #where, #bibleChip, #churchBtn, #loveChurch h2, textarea, #langList";
+const I18N_SKIP = ".coverart, #homeWhere b, #rtext, .res, #shareQuote, #welcomeQuote, #smsList, .smT, #aiPrompt, #chLink, script, style, .vt, .scof, #viRef, #books, .bl b, #smsTitle, #studyTitle, .quote, .tp b, .w, .heb, .pw, #where, #bibleChip, #churchBtn, #loveChurch h2, textarea, #langList";
 function i18nText(n){
   const p = n.parentElement; if(!p || p.closest(I18N_SKIP)) return;
   if(n.__en === undefined || (n.nodeValue !== n.__tr)) n.__en = n.nodeValue;

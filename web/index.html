@@ -56,6 +56,16 @@ a{color:var(--accent)}
 #tabs button b{font-size:20px;line-height:1.1;font-weight:400}
 #tabs button.on{color:var(--accent);font-weight:650}
 #tabs button.love b{color:#c2455a}
+/* home: the Bible cover */
+#v-home .wrap{display:flex;flex-direction:column;align-items:center;padding-top:22px;padding-bottom:18px;text-align:center}
+.cover{border:0;background:none;padding:0;width:min(300px,72vw,calc((100vh - 230px) * .68));perspective:1400px;border-radius:12px}
+.cover .coverart{display:block;width:100%;height:auto;transform-origin:2% 50%;transition:transform .5s ease,filter .2s;filter:drop-shadow(0 10px 18px rgba(0,0,0,.35))}
+.cover:hover .coverart,.cover:focus-visible .coverart{transform:translateY(-4px)}
+.cover:focus-visible{outline:3px solid var(--accent);outline-offset:6px}
+.cover.opening .coverart{transform:rotateY(-78deg)}
+@media (prefers-reduced-motion: reduce){.cover .coverart{transition:none}}
+.homeHint{color:var(--muted);font-size:14.5px;margin:16px 0 4px}
+#homeWhere{font-size:15px;margin:0}
 /* reader */
 #rbar{position:sticky;top:calc(55px + env(safe-area-inset-top));z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
 #rbar .wrap{display:flex;align-items:center;gap:6px;padding-top:8px;padding-bottom:8px}
@@ -256,6 +266,13 @@ body.has-church #top .brand{display:none}
 </div></header>
 
 <main>
+  <!-- HOME: the Bible cover; tap it to open the Bible -->
+  <section id="v-home" hidden><div class="wrap">
+    <button class="cover" id="homeCover" title="Open the Bible"><svg class="coverart" viewBox="0 0 300 440" role="img" aria-label="The Holy Bible: a black cover with a golden cross"><defs><radialGradient id="cvLeather" cx="45%" cy="38%" r="75%"><stop offset="0" stop-color="#2b2a28"/><stop offset=".6" stop-color="#121110"/><stop offset="1" stop-color="#050505"/></radialGradient><linearGradient id="cvGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1a8"/><stop offset=".28" stop-color="#e2bd4f"/><stop offset=".55" stop-color="#a87b1c"/><stop offset=".8" stop-color="#e9c860"/><stop offset="1" stop-color="#8f6514"/></linearGradient><linearGradient id="cvEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d77a"/><stop offset=".5" stop-color="#b8891f"/><stop offset="1" stop-color="#f0cf6a"/></linearGradient><linearGradient id="cvSpine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".75"/><stop offset=".7" stop-color="#3a3835" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient><filter id="cvEmboss" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.6" stdDeviation="1.2" flood-color="#000" flood-opacity=".85"/></filter></defs><path d="M231 404h16v34l-8-7-8 7z" fill="#8e1b26"/><rect x="16" y="10" width="280" height="404" rx="6" fill="url(#cvEdge)"/><path d="M286 22v382M291 26v374" stroke="#8a6414" stroke-width=".7" opacity=".6"/><rect x="4" y="4" width="284" height="408" rx="11" fill="url(#cvLeather)"/><rect x="4" y="4" width="30" height="408" rx="11" fill="url(#cvSpine)"/><path d="M33 8v400" stroke="#000" stroke-width="1.4" opacity=".7"/><path d="M35 8v400" stroke="#4a4743" stroke-width=".6" opacity=".5"/><g fill="none" stroke="url(#cvGold)"><rect x="46" y="20" width="228" height="376" rx="5" stroke-width="2"/><rect x="53" y="27" width="214" height="362" rx="3" stroke-width=".8"/></g><g filter="url(#cvEmboss)"><text text-anchor="middle" font-family="Georgia,'Times New Roman',serif" fill="url(#cvGold)"><tspan x="160" y="82" font-size="19" letter-spacing="5">The</tspan><tspan x="160" y="122" font-size="34" textLength="176" lengthAdjust="spacingAndGlyphs">Holy Bible</tspan></text><path d="M150 158h20v56h38v20h-38v104h-20V234h-38v-20h38z" fill="url(#cvGold)"/></g><path d="M151 159h18v56" stroke="#fff6c8" stroke-width=".8" fill="none" opacity=".7"/></svg></button>
+    <p class="homeHint">Tap the cover to open</p>
+    <p id="homeWhere"></p>
+  </div></section>
+
   <!-- READ -->
   <section id="v-read">
     <div id="rbar"><div class="wrap">
@@ -447,6 +464,7 @@ body.has-church #top .brand{display:none}
 </div></div>
 
 <nav id="tabs"><div class="wrap">
+  <button data-tab="home"><b>🏠</b>Home</button>
   <button data-tab="read" class="on"><b>📖</b>Read</button>
   <button data-tab="search"><b>🔍</b>Search</button>
   <button data-tab="bibles"><b>📚</b>Bibles</button>
@@ -483,15 +501,26 @@ $("#themeBtn").onclick = () => { const dark = $("#themeBtn").textContent === "�
 let tab = "read";
 function show(t, noFocus){
   tab = t;
-  for(const n of ["read", "search", "bibles", "love"]) $("#v-" + n).hidden = n !== t;
+  for(const n of ["home", "read", "search", "bibles", "love"]) $("#v-" + n).hidden = n !== t;
   document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === t));
   if(t === "bibles") renderBibles();
+  if(t === "home") homeWhere();
   if(t === "search" && !noFocus) setTimeout(() => $("#q").focus(), 50);
   scrollTo(0, 0);
   navNote();
 }
 document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => { if(b.dataset.tab !== "read") sayStop(); show(b.dataset.tab); });
 $("#bibleChip").onclick = () => show("bibles");
+/* Home: a black Bible cover with a golden cross; tapping it opens the Bible where you left off */
+function homeWhere(){
+  $("#homeWhere").innerHTML = bible ? `<span>Continue reading:</span> <b>${esc(bName(place.book))} ${place.ch}</b> · ${esc(bibleAbbr())}` : "";
+}
+$("#homeCover").onclick = () => {
+  const c = $("#homeCover"); if(c.classList.contains("opening")) return;
+  const open = () => { c.classList.remove("opening"); show("read"); };
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return open();
+  c.classList.add("opening"); setTimeout(open, 420);
+};
 
 /* ---------- loading a Bible ---------- */
 const loaded = {};
@@ -1685,7 +1714,10 @@ function parseHash(){
     smScreen(s, true);
   }
   else if(h && h.shared && h.v && verseText(h.v)){ markShared(h.v); showWelcome(h.v); }
-  else if(!store.get("tip", false)){ store.set("tip", true); setTimeout(() => toast("Tip: tap any verse to share or study it"), 1200); }
+  else {
+    if(!(h && h.v)) show("home", true);   // a normal start opens on the Bible cover; a link to a verse goes straight to it
+    if(!store.get("tip", false)){ store.set("tip", true); setTimeout(() => toast("Tip: tap any verse to share or study it"), 1200); }
+  }
   addEventListener("hashchange", () => { const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]){ go(x.book, x.ch, x.v); if(x.shared && x.v) markShared(x.v); } });
 })();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
