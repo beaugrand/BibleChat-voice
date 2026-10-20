@@ -10,6 +10,8 @@ every verse with a word) and Nave's topics, split into small files the phone loa
     data/study/henry/<book#>.json  {"7:9": "note on the passage from 7:9", ...}  (Matthew Henry, Concise)
     data/study/easton/names.json   names marked in the text; easton/<letter>.json {"babylon": ["Babylon", text]}
     data/study/xref/<book#>.json   {"7:13": [[book#, ch, v, ch2, v2, votes], ...], ...}   (OpenBible.info, CC-BY)
+    data/study/orig/<book#>.json   {"1:1": "בְּרֵאשִׁית…", "4:1": ["…", "3:19"]}  (Hebrew WLC / Greek TR line; Hebrew number if different)
+    data/study/versemap.json       Septuagint verse numbers in King James numbering (bibleask/versemap.py)
     data/study/gloss.json          English words -> the Hebrew/Greek words that mean them (bibleask/strongs.py)
     data/meaning/                  the meaning model and verse fingerprints (bibleask/data/meaning, copied as is)
 
@@ -96,6 +98,13 @@ def main(out: str) -> None:
     dump(os.path.join(base, "topics.json"),
          [[TopicHit(t, h, refs, 0).title, [[num[b], c, v1, v2] for b, c, v1, v2 in refs if b in num]]
           for t, h, refs, _a, _b in rows])
+    from bibleask.original import book_file
+    for i, b in enumerate(books):
+        o = book_file(b)
+        if o:
+            dump(os.path.join(base, "orig", f"{i}.json"), o)
+    shutil_copy = __import__("shutil").copyfile
+    shutil_copy(os.path.join(ROOT, "bibleask", "data", "versemap.json"), os.path.join(base, "versemap.json"))   # Septuagint numbers
     from bibleask.strongs import COMMON, VERSES
     gi = STRONGS.gloss_index()
     dump(os.path.join(base, "gloss.json"), dict(gi, common=sorted(COMMON), verses=VERSES))

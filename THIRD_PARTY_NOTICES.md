@@ -26,6 +26,7 @@ following work by others. Each keeps its own license.
 | **King James Version with Strong's numbers**, from the CrossWire SWORD module "KJV" (engKJV2006eb) | Which Hebrew/Greek word stands behind each English word, and every verse that uses it | Public domain |
 | **BGE-small-en v1.5** sentence model ([BAAI](https://huggingface.co/BAAI/bge-small-en-v1.5)), stored with 8-bit weights in `bibleask/data/meaning/` | Search by meaning ("matched by meaning"), on the computer and the phone | MIT (Copyright (c) 2022 staoxiao; full text in `bibleask/data/meaning/LICENSE.txt`) |
 | **Berean Standard Bible** (open-bibles copy) | The verse "meaning fingerprints" in `bibleask/data/meaning/` | Public domain |
+| **Original line** (`bibleask/data/original.json.gz`): Westminster Leningrad Codex and Greek Textus Receptus from eBible.org | The Hebrew/Greek line of a verse in the study panel and in Study Paths | Public domain |
 
 The **📜 Study Paths** (`packaging/paths/`, `web/paths/`) and the list **Quoted or named in Scripture** (`web/quoted.json`) are
 written for BibleChat and licensed with it (Apache 2.0). They contain references and questions, not Bible text; the verses,
@@ -66,4 +67,12 @@ clicks to get it, and stays under its own license.
   non-commercial use with this notice; commercial use needs written permission of the Bible Society of Ethiopia.
 - **Septuagint in English** from [eBible.org](https://ebible.org): Brenton's *Translation of the Greek
   Septuagint into English* (1851, public domain) and LXX2012, its update to modern English (public domain).
+- **Book of Jasher (1840 English translation)**, public domain, as transcribed by the
+  [Scrollmapper](https://github.com/scrollmapper/bible_databases_deuterocanonical) project (commit 271173e), hosted by
+  BibleChat (`bibles/eng-jasher-1840.zefania.xml`). Labelled in the app: scholars dispute whether it is the book named in Joshua 10:13.
+- **Westminster Leningrad Codex** (Hebrew Old Testament) from [eBible.org](https://ebible.org/hboWLC/copyright.htm): the WLC
+  text is public domain. **Greek Textus Receptus New Testament** from [eBible.org](https://ebible.org/grctr/copyright.htm): public
+  domain (Stephanus 1550, Elzevir 1624, Scrivener 1881 collated; Adam Boyd's notes dedicated to the public domain).
+- **NIV**: not included and not downloaded. "Open in NIV ↗" only links to BibleGateway. The NIV is © Biblica, Inc.
+- **Dead Sea Scrolls**: not included. BibleChat only links to the Leon Levy Dead Sea Scrolls Digital Library.
 - **Bibles people add from their own files** are the person's own business; BibleChat ships none.

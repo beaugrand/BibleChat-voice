@@ -540,7 +540,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
   <div id="getDlg" hidden><div class="card" role="dialog" aria-label="Get free Bibles">
     <header>
       <h2>Get free Bibles <button class="x" id="getClose" style="opacity:1;font-size:24px" title="Close">×</button></h2>
-      <p>Public-domain and freely licensed Bibles, most from the <a href="https://github.com/seven1m/open-bibles" target="_blank" rel="noopener">open-bibles</a> collection, plus the Ethiopian canon, the Septuagint and the Amharic New Testament. Click Download and it's added to Your Bibles.</p>
+      <p>Public-domain and freely licensed Bibles, most from the <a href="https://github.com/seven1m/open-bibles" target="_blank" rel="noopener">open-bibles</a> collection, plus the Ethiopian canon, the Septuagint and the Amharic New Testament. Click Download and it's added to Your Bibles. Also the Book of Jasher (1840), the Hebrew Westminster Leningrad Codex and the Greek Textus Receptus. Pictures of the Dead Sea Scrolls: <a href="https://www.deadseascrolls.org.il/" target="_blank" rel="noopener">Leon Levy Dead Sea Scrolls Digital Library ↗</a> (a link only; BibleChat copies none of their images).</p>
       <div class="filters"><input type="search" id="getFind" placeholder="Search by name or language…"><select id="getLang"></select></div>
     </header>
     <div id="getList"></div>
@@ -1471,6 +1471,8 @@ async function studyVerse(book, chapter, verse){
   studyStack = [];
   const j = await studyGet(`/api/study/verse?bible=${encodeURIComponent(rd.bible)}&book=${encodeURIComponent(book)}&chapter=${chapter}&verse=${verse}`);
   if(j.error) return studyShow({title: `${book} ${chapter}:${verse}`, html: `<p class="notice err">${esc(j.error)}</p>`});
+  if(j.nomatch) return studyShow({title: `${book} ${chapter}:${verse}`, html: `<p class="muted">The Septuagint numbers its verses differently from the King James, and this verse has no clear King James match. Strong's numbers, cross-references and notes follow the King James numbering, so none are shown here rather than those of another verse.</p>`});
+  const mapNote = j.kjv_ref ? `<p class="muted">The Septuagint numbers this verse differently: its study notes are those of <b>${esc(j.kjv_ref)}</b> in the King James.</p>` : "";
   const ot = BIBLE_ORDER.includes(book);
   const words = j.words.length
     ? `<h3>Original words (Strong's${ot ? ", Hebrew" : ", Greek"})</h3><div class="kjv">${j.words.map(w => typeof w === "string" ? esc(w)
@@ -1491,7 +1493,27 @@ async function studyVerse(book, chapter, verse){
       : `<p class="muted">No comment on this verse.</p>`);
   const bmBtn = `<button class="tp bmtoggle" data-book="${esc(book)}" data-ch="${chapter}" data-v="${verse}"><b>${bmHas(book, chapter, verse) ? "🔖 Bookmarked ✓ (click to remove)" : "🔖 Bookmark this verse"}</b><span></span></button>`;
   const extra = `<button class="tp smadd" data-book="${esc(book)}" data-ch="${chapter}" data-v="${verse}"><b>📋 Add to sermon list</b><span></span></button><button class="tp viimg" data-book="${esc(book)}" data-ch="${chapter}" data-v="${verse}"><b>🖼 Make an image to post</b><span>your photo or a background</span></button><button class="tp aiask" data-ref="${esc(book)} ${chapter}:${verse}" data-v="${verse}"><b>✨ Ask an AI about this verse</b><span>Claude, ChatGPT, Gemini…</span></button>`;
-  studyShow({title: `${book} ${chapter}:${verse}`, html: bmBtn + extra + words + xrefs + topics + henry, xr});
+  const o = j.original;
+  const orig = o ? `<h3>The original line (${esc(o.language)})</h3><div class="orig${o.language === "Hebrew" ? " he" : ""}" style="font-size:22px" dir="${o.language === "Hebrew" ? "rtl" : "ltr"}">${esc(o.text)}</div>`
+      + `<p class="muted">${esc(o.source)}, public domain${o.number !== chapter + ":" + verse ? `. Hebrew numbering: ${esc(o.number)}` : ""}.</p>` : "";
+  const niv = BIBLE_ORDER.includes(book) || ALL_BOOKS.includes(book)
+    ? `<p class="muted"><a href="https://www.biblegateway.com/passage/?search=${encodeURIComponent(j.kjv_ref || book + " " + chapter + ":" + verse)}&version=NIV" target="_blank" rel="noopener">Open in NIV ↗</a> (the NIV is copyrighted, so it opens on BibleGateway)</p>` : "";
+  const qd = await quotedFor(book, chapter, verse);
+  const quoted = qd.length ? `<h3>📚 Quoted or named in Scripture</h3>` + qd.map(it => `<div class="sv"><a data-book="${esc(it.go[0])}" data-ch="${it.go[1]}" data-v="${it.go[2]}">${esc(it.label)}</a>${esc(it.writing)}: ${esc(it.note)}</div>`).join("") : "";
+  studyShow({title: `${book} ${chapter}:${verse}`, html: bmBtn + extra + mapNote + niv + quoted + orig + words + xrefs + topics + henry, xr});
+}
+/* "Quoted or named in Scripture" (web/quoted.json, shared with the phone): links between the canon and other writings */
+let quotedList = null;
+async function quotedFor(book, ch, v){
+  try{ quotedList = quotedList || (await (await fetch("/quoted.json")).json()).items; }catch(e){ return []; }
+  const P = r => BCPaths.parseRef(r), hit = (p, c, x) => p && p.book === book && (p.v1 === null ? c >= p.c1 && c <= p.c2 : (c > p.c1 || (c === p.c1 && x >= p.v1)) && (c < p.c2 || (c === p.c2 && x <= p.v2)));
+  const out = [];
+  for(const it of quotedList){
+    const a = P(it.ref), t = it.target && P(it.target.ref);
+    if(hit(a, ch, v)) out.push(t ? {label: it.target.ref, go: [t.book, t.c1, t.v1], writing: it.writing, note: it.note} : {label: it.ref, go: [a.book, a.c1, a.v1], writing: it.writing, note: it.note});
+    if(hit(t, ch, v)) out.push({label: it.ref, go: [a.book, a.c1, a.v1], writing: it.writing, note: it.note});
+  }
+  return out;
 }
 const ALL_BOOKS = BIBLE_ORDER.concat(["Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation"]);
 const REF_IN_NOTE = new RegExp("\\b(" + ALL_BOOKS.map(b => b.replace(/ /g, "\\s")).sort((a, b) => b.length - a.length).join("|") + ")\\s(\\d+):(\\d+)", "g");
@@ -1563,7 +1585,9 @@ $("#studyBody").addEventListener("click", e => {
   const g = e.target.closest(".sv-go"); if(g && rChap) return studyVerse(rChap.book, rChap.chapter, +g.dataset.v);
   const a = e.target.closest(".sv a, a.nref");
   if(a){ sayStop(); rToken++; const bk = a.dataset.book, ch = +a.dataset.ch, vn = +a.dataset.v;
-    (async () => { await loadBooks(rd.bible); await showChapter(bk, ch, vn); })(); }
+    (async () => { await loadBooks(rd.bible);
+      if(!rBooks.some(b => b.name === bk)){ const other = libId(bk === "Jasher" ? "JASHER" : "ETH"); if(other){ rd = {bible: other, book: bk, chapter: ch}; $("#rBible").value = other; await loadBooks(other); } }
+      await showChapter(bk, ch, vn); })(); }
 });
 $("#studyFind").onsubmit = e => { e.preventDefault(); studyFind($("#studyQ").value); };
 $("#studyBack").onclick = () => { if(studyStack.length > 1){ studyStack.pop(); studyShow(studyStack[studyStack.length - 1], false); } };
@@ -1934,9 +1958,17 @@ BCPaths.mount({
     const id = key === "reader" ? (rd.bible || (state.bibles[0] || {}).id) : libId(key), k = (id || "builtin-" + key) + "|" + book + "|" + ch;
     if(pathChap.has(k)) return pathChap.get(k);
     let out = null;
-    if(id){
-      try{ const j = await (await fetch(`/api/chapter?bible=${encodeURIComponent(id)}&book=${encodeURIComponent(book)}&chapter=${ch}`)).json();
-        if(!j.error && j.verses) out = j.verses.map(v => [v.verse, v.text]); }catch(e){}
+    const name = id ? String((state.bibles.find(b => b.id === id) || {}).name || "") : "", lxx = /^(LXX2012|BRENTON) - /.test(name) ? (name.startsWith("LXX2012") ? "eng-lxx2012" : "eng-Brenton") : null;
+    const get = async c => { try{ const j = await (await fetch(`/api/chapter?bible=${encodeURIComponent(id)}&book=${encodeURIComponent(book)}&chapter=${c}`)).json();
+        return !j.error && j.verses ? j.verses.map(v => [v.verse, v.text]) : null; }catch(e){ return null; } };
+    if(id && lxx && key === "reader"){   // the Septuagint numbers verses differently: gather what stands in this King James chapter
+      const vm = await (pathChap.vm || (pathChap.vm = fetch("/api/sdata/versemap.json").then(r => r.json()))), none = new Set((vm.none || {})[lxx] || []), m = (vm[lxx] || {})[book] || {};
+      const res = [];
+      for(let c = Math.max(1, ch - 2); c <= ch + 2; c++){ const vs = await get(c); if(!vs) continue;
+        for(const [n, t] of vs){ if(none.has(`${book} ${c}:${n}`)) continue; const at = (m[c + ":" + n] || c + ":" + n).split(":").map(Number); if(at[0] === ch) res.push([at[1], t]); } }
+      out = res.length ? res.sort((a, b) => a[0] - b[0]) : null;
+    }else if(id){
+      out = await get(ch);
     }else if(key === "KJV"){   // no KJV downloaded: the King James text built into BibleChat (the one with Strong's numbers)
       const books = await fetch("/api/sdata/books.json").then(r => r.json()), bi = books.indexOf(book);
       if(bi >= 0){ const d = await fetch(`/api/sdata/kjv/${bi}.json`).then(r => r.json());
@@ -1952,7 +1984,7 @@ BCPaths.mount({
   openVerse: async (book, ch, v) => {
     setMode("read"); await loadBooks(rd.bible);
     if(!rBooks.some(b => b.name === book)){   // e.g. 1 Enoch while reading the KJV: open the Ethiopian Canon
-      const eth = libId("ETH"); if(eth){ rd = {bible: eth, book, chapter: ch}; $("#rBible").value = eth; await loadBooks(eth); }
+      const eth = libId(book === "Jasher" ? "JASHER" : "ETH"); if(eth){ rd = {bible: eth, book, chapter: ch}; $("#rBible").value = eth; await loadBooks(eth); }
     }
     rToken++; await showChapter(book, ch, v);
   },

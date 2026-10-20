@@ -291,7 +291,8 @@ def make_handler(app: App, port: int):
                         self._json({"books": app.lib.books(bid)})
                     else:
                         res = app.lib.chapter(bid, (q.get("book") or [""])[0], int((q.get("chapter") or ["1"])[0]))
-                        res["scofield"] = study.chapter_notes(res["book"], res["chapter"])
+                        res["scofield"] = study.chapter_notes(res["book"], res["chapter"], app.lib, bid,
+                                                              [x["verse"] for x in res.get("verses", [])])
                         self._json(res)
                 except Exception as e:
                     self._json({"error": str(e) or "That Bible isn't available."}, 404)

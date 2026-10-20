@@ -79,6 +79,7 @@ class Bibles:
         self.missing: list[str] = []
         from bibleask.loaders import load_bible
         self._add("ETH", load_bible(os.path.join(ROOT, "bibles", "eng-ethiopian-canon.zefania.xml")).verses)
+        self._add("JASHER", load_bible(os.path.join(ROOT, "bibles", "eng-jasher-1840.zefania.xml")).verses)
         for key, file in FILES.items():
             path = self._find(file, src, download)
             if path:

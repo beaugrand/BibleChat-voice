@@ -13,15 +13,27 @@ from .topics import TOPICS
 from .xref import XREFS
 from .scofield import SCOFIELD
 from .henry_easton import HENRY, EASTON
+from .original import line as original_line
+from . import versemap
 
 MAX_VERSES = 400
 
 
+def _key(lib, bible_id: str):
+    """The verse-map key of a Septuagint Bible (its numbers differ from the King James), else None."""
+    try:
+        return versemap.key_for(lib.get(bible_id)[0].name) if bible_id else None
+    except Exception:
+        return None
+
+
 def _text(lib, bible_id: str, book: str, ch: int, v: int) -> str:
+    """A verse given in King James numbering, in the person's Bible (KJV as fallback)."""
     t = None
     if bible_id:
+        at = versemap.from_kjv(_key(lib, bible_id), book, ch, v)
         try:
-            t = lib.verse_text(bible_id, book, ch, v)
+            t = lib.verse_text(bible_id, book, *at) if at else None
         except Exception:
             t = None
     return t if t is not None else STRONGS.kjv_text(book, ch, v)
@@ -45,16 +57,35 @@ def xrefs(lib, bible_id: str, book: str, ch: int, v: int, to_book: Optional[str]
 
 
 def verse(lib, bible_id: str, book: str, ch: int, v: int) -> dict:
+    """Study one verse, given in the numbering of the person's Bible. For the Septuagint the study data comes from
+    the King James verse that stands in its place (Psalm 22 there is Psalm 23 here); with no clear match, none."""
+    ref = f"{book} {ch}:{v}"
+    at = versemap.to_kjv(_key(lib, bible_id), book, ch, v)
+    if at is None:
+        return {"ref": ref, "book": book, "chapter": ch, "verse": v, "words": [], "topics": [], "xrefs": [],
+                "henry": None, "original": None, "nomatch": True}
+    kjv_ref = f"{book} {at[0]}:{at[1]}" if at != (ch, v) else None
+    ch, v = at
     words = STRONGS.verse(book, ch, v) if STRONGS.available() else []
-    return {"ref": f"{book} {ch}:{v}", "book": book, "chapter": ch, "verse": v,
+    return {"ref": ref, "kjv_ref": kjv_ref, "book": book, "chapter": ch, "verse": v,
             "words": words, "topics": TOPICS.for_verse(book, ch, v)[:40],
             "xrefs": xrefs(lib, bible_id, book, ch, v),
-            "henry": HENRY.for_verse(book, ch, v)}
+            "henry": HENRY.for_verse(book, ch, v), "original": original_line(book, ch, v)}
 
 
-def chapter_notes(book: str, ch: int) -> dict:
-    """Scofield notes of one chapter, by verse number, for marking the words they explain."""
-    return {str(v): SCOFIELD.note(book, ch, v) for v in SCOFIELD.verses_with_notes(book, ch)}
+def chapter_notes(book: str, ch: int, lib=None, bible_id: str = "", verses=None) -> dict:
+    """Scofield notes of one chapter, by verse number, for marking the words they explain. For a Septuagint Bible
+    each verse gets the note of the King James verse in its place."""
+    key = _key(lib, bible_id) if lib is not None else None
+    if not key:
+        return {str(v): SCOFIELD.note(book, ch, v) for v in SCOFIELD.verses_with_notes(book, ch)}
+    out = {}
+    for v in verses or []:
+        at = versemap.to_kjv(key, book, ch, v)
+        n = SCOFIELD.note(book, *at) if at else None
+        if n:
+            out[str(v)] = n
+    return out
 
 
 def strongs(lib, bible_id: str, number: str) -> Optional[dict]:

@@ -313,6 +313,7 @@ body.has-church #top .brand{display:none}
   <section id="v-bibles" hidden><div class="wrap">
     <div style="display:flex;gap:8px;padding:14px 0 6px"><input class="find" id="bfind" type="search" placeholder="Search by name or language"><select id="blang" class="find" style="width:auto;max-width:44%"></select></div>
     <p class="hint">Free, public-domain and openly licensed Bibles, most from the <a href="https://github.com/seven1m/open-bibles" target="_blank" rel="noopener">open-bibles</a> collection, plus the Ethiopian canon, the Septuagint and the Amharic New Testament. A Bible you open is kept on this phone, so it also works offline.</p>
+    <p class="hint">Also the Book of Jasher (1840), the Hebrew Westminster Leningrad Codex and the Greek Textus Receptus. Pictures of the Dead Sea Scrolls: <a href="https://www.deadseascrolls.org.il/" target="_blank" rel="noopener">Leon Levy Dead Sea Scrolls Digital Library ↗</a> (a link only; BibleChat copies none of their images).</p>
     <div id="blist"></div>
   </div></section>
 
@@ -392,7 +393,7 @@ body.has-church #top .brand{display:none}
     <button class="btn primary" id="welcomeRead">📖 Keep reading here</button>
     <a class="btn" id="dlWin" href="https://github.com/beaugrand/BibleChat-voice/releases/latest/download/BibleChat-Windows.zip">⬇ Download for Windows</a>
     <a class="btn" id="dlMac" href="https://github.com/beaugrand/BibleChat-voice/releases/latest/download/BibleChat-Mac.zip">⬇ Download for Mac <span class="muted" style="font-size:12.5px">(M1 and newer)</span></a>
-    <p class="small">BibleChat is free: read and search 48 Bibles right here, or download the app for your computer, which adds AI explanations. <a href="https://github.com/beaugrand/BibleChat-voice/releases/latest" target="_blank" rel="noopener">Linux and more</a></p>
+    <p class="small">BibleChat is free: read and search 51 Bibles and writings right here, or download the app for your computer, which adds AI explanations. <a href="https://github.com/beaugrand/BibleChat-voice/releases/latest" target="_blank" rel="noopener">Linux and more</a></p>
   </div>
 </div></div>
 
@@ -603,7 +604,8 @@ async function enhanceChapter(bid, book, ch, vs){
     const [sc, names] = await Promise.all([bi >= 0 ? sGet("scofield/" + bi + ".json").catch(() => ({})) : {}, eNames ? null : sGet("easton/names.json").catch(() => [])]);
     if(names) eNames = new Set(names);
     if(place.bible !== bid || place.book !== book || place.ch !== ch) return;   // the reader moved on
-    for(const k in sc) if(k.split(":")[0] === String(ch)) chNotes[k.split(":")[1]] = sc[k];
+    if(vmKey()){ await vmLoad(); for(const [n] of vs){ const at = toKJV(book, ch, n); if(at && sc[at[0] + ":" + at[1]]) chNotes[n] = sc[at[0] + ":" + at[1]]; } }
+    else for(const k in sc) if(k.split(":")[0] === String(ch)) chNotes[k.split(":")[1]] = sc[k];
     const letters = {n: 0};
     for(const [n, x] of vs){ const el = document.getElementById("v" + n); if(el) el.innerHTML = `<sup>${n}</sup>${markVerse(x, chNotes[n], letters, n)} `; }
   }catch(e){}
@@ -1084,6 +1086,28 @@ async function sGet(path){
   return sCache[path];
 }
 let sBooks = null, sTopics = null, sByVerse = null, sStack = [];
+/* the Septuagint numbers many verses differently (its Psalm 22 is the King James Psalm 23); Strong's, cross-references
+   and notes follow the King James, so they are looked up through this map (data/study/versemap.json) */
+let vmap = null, vmRev = {};
+const VM_BIBLES = ["eng-lxx2012", "eng-Brenton"];
+async function vmLoad(){
+  if(vmap) return vmap;
+  try{ vmap = await sGet("versemap.json"); }catch(e){ vmap = {none: {}}; }
+  for(const k of VM_BIBLES){ const r = vmRev[k] = {}; for(const b in vmap[k] || {}) for(const [src, kv] of Object.entries(vmap[k][b])) r[b + " " + kv] = src;
+    vmap["noneSet_" + k] = new Set((vmap.none || {})[k] || []); }
+  return vmap;
+}
+const vmKey = () => VM_BIBLES.includes(place.bible) ? place.bible : null;
+function toKJV(book, c, v){   // a verse of the Bible being read -> [c, v] in King James numbering, or null
+  const k = vmKey(); if(!k || !vmap) return [c, v];
+  if(vmap["noneSet_" + k].has(`${book} ${c}:${v}`)) return null;
+  const m = (vmap[k][book] || {})[c + ":" + v]; return m ? m.split(":").map(Number) : [c, v];
+}
+function fromKJV(book, c, v){   // a King James verse -> [c, v] in the Bible being read, or null
+  const k = vmKey(); if(!k || !vmap) return [c, v];
+  const src = vmRev[k][book + " " + c + ":" + v]; if(src) return src.split(":").map(Number);
+  const back = toKJV(book, c, v); return back && back[0] === c && back[1] === v ? [c, v] : null;
+}
 async function sLoadTopics(){
   if(sTopics) return;
   const t = await sGet("topics.json"); sByVerse = new Map();
@@ -1095,7 +1119,9 @@ function sShow(view, push = true){
   $("#studySheet").hidden = false; $("#studyBack").hidden = sStack.length < 2;
   $("#studyTitle").textContent = view.title; $("#studyBody").innerHTML = view.html; $("#studyBody").scrollTop = 0;
 }
-function sText(book, ch, v){ const bk = bible.byName[book], vs = bk && bk.map.get(ch), x = vs && vs.find(e => e[0] === v); return x ? x[1] : ""; }
+function sText(book, ch, v){   // a verse given in King James numbering, from the Bible being read
+  const at = fromKJV(book, ch, v); if(!at) return "";
+  const bk = bible.byName[book], vs = bk && bk.map.get(at[0]), x = vs && vs.find(e => e[0] === at[1]); return x ? x[1] : ""; }
 function sVerses(list){ return list.map(([b, c, v, w]) => { const book = sBooks[b];
   return `<div class="res"><a href="#" data-b="${esc(book)}" data-c="${c}" data-v="${v}">${esc(bName(book))} ${c}:${v}</a>${esc(sText(book, c, v) || "(not in this Bible)")}${w ? `<i>KJV: “${esc(w)}”</i>` : ""}</div>`; }).join(""); }
 function sRange(b, c, v, c2, v2){ const book = sBooks[b]; return book + " " + c + ":" + v + (c2 === c && v2 !== v ? "–" + v2 : c2 !== c ? "–" + c2 + ":" + v2 : ""); }
@@ -1117,16 +1143,32 @@ async function studyVerse(book, ch, v){
   sStack = [];
   try{
     sBooks = sBooks || await sGet("books.json");
+    if(vmKey()){ await vmLoad();
+      const at = toKJV(book, ch, v), title = `${bName(book)} ${ch}:${v}`;
+      if(!at) return sShow({title, html: `<p>The Septuagint numbers its verses differently from the King James, and this verse has no clear King James match. Strong's numbers, cross-references and notes follow the King James numbering, so none are shown here rather than those of another verse.</p>`});
+      if(at[0] !== ch || at[1] !== v){ const r = await studyVerseKJV(book, at[0], at[1], title); return r; }
+    }
+    return await studyVerseKJV(book, ch, v, null);
+  }catch(e){ sFail(); }
+}
+async function studyVerseKJV(book, ch, v, readerTitle){
+  try{
     const bi = sBooks.indexOf(book);
-    const [kjv, xrb, scb] = await Promise.all([bi >= 0 ? sGet("kjv/" + bi + ".json") : {}, bi >= 0 ? sGet("xref/" + bi + ".json").catch(() => ({})) : {},
-      bi >= 0 ? sGet("henry/" + bi + ".json").catch(() => ({})) : {}, sLoadTopics()]);
+    const [kjv, xrb, scb, , org] = await Promise.all([bi >= 0 ? sGet("kjv/" + bi + ".json") : {}, bi >= 0 ? sGet("xref/" + bi + ".json").catch(() => ({})) : {},
+      bi >= 0 ? sGet("henry/" + bi + ".json").catch(() => ({})) : {}, sLoadTopics(), bi >= 0 ? sGet("orig/" + bi + ".json").catch(() => ({})) : {}]);
+    const ol = org[ch + ":" + v], olT = Array.isArray(ol) ? ol[0] : ol, olN = Array.isArray(ol) ? ol[1] : null;
     let hFrom = v; while(hFrom > 0 && !scb[ch + ":" + hFrom]) hFrom--;
     const hNote = hFrom > 0 ? scb[ch + ":" + hFrom] : null;
     const xr = (xrb[ch + ":" + v] || []).map(([b, c, vv, c2, v2]) => [b, c, vv, c2, v2]);
     const words = kjv[ch + ":" + v] || [];
     const topics = (sByVerse.get(bi + ":" + ch + ":" + v) || []).map(id => [id, sTopics[id][0], sTopics[id][1].reduce((n, r) => n + r[3] - r[2] + 1, 0)]).sort((a, b) => a[2] - b[2]);
     const ot = bi >= 0 && bi < 39;
-    sShow({title: `${bName(book)} ${ch}:${v}`, xr, html:
+    const q = await quotedFor(book, ch, v), nivRef = encodeURIComponent(book + " " + ch + ":" + v);
+    sShow({title: readerTitle || `${bName(book)} ${ch}:${v}`, xr, html:
+      (readerTitle ? `<p class="small">The Septuagint numbers this verse differently: its study notes are those of <b>${esc(bName(book))} ${ch}:${v}</b> in the King James.</p>` : "") +
+      (bi >= 0 ? `<p class="small"><a href="https://www.biblegateway.com/passage/?search=${nivRef}&version=NIV" target="_blank" rel="noopener">Open in NIV ↗</a> <span>(the NIV is copyrighted, so it opens on BibleGateway)</span></p>` : "") +
+      (q.length ? `<h3>📚 Quoted or named in Scripture</h3>` + q.map(it => `<div class="res"><a href="#" data-b="${esc(it.go[0])}" data-c="${it.go[1]}" data-v="${it.go[2]}">${esc(it.label)}</a><span class="vt">${esc(it.writing)}: ${esc(it.note)}</span></div>`).join("") : "") +
+      (olT ? `<h3>The original line (${bi < 39 ? "Hebrew" : "Greek"})</h3><div class="orig${bi < 39 ? " he" : ""}" style="font-size:21px" dir="${bi < 39 ? "rtl" : "ltr"}">${esc(olT)}</div>${olN ? `<p class="small">Hebrew numbering: ${esc(olN)}</p>` : ""}` : "") +
       (words.length ? `<h3>Original words (Strong's, ${ot ? "Hebrew" : "Greek"})</h3><div class="kjv">${words.map(w => typeof w === "string" ? esc(w)
           : `<button class="w" data-n="${esc(w[1].split(" ")[0])}">${esc(w[0])}<sub>${esc(w[1].split(" ")[0])}</sub></button>`).join("")}</div>
           <p class="small">King James wording, because Strong's numbers are attached to it. Tap an underlined word.</p>`
@@ -1136,6 +1178,20 @@ async function studyVerse(book, ch, v){
         : `<h3>Topics</h3><p class="small">Nave's doesn't list this verse under a topic.</p>`) +
       `<h3>Matthew Henry's Commentary</h3>` + (hNote ? (hFrom !== v ? `<p class="small">On the passage from verse ${hFrom}:</p>` : "") + `<div class="scof">${sNoteHtml(hNote)}</div>` : `<p class="small">No comment on this verse.</p>`)});
   }catch(e){ sFail(); }
+}
+/* "Quoted or named in Scripture" (web/quoted.json): links between the canon and other writings, both ways */
+let quotedList = null;
+async function quotedFor(book, ch, v){
+  try{ quotedList = quotedList || (await (await fetch("quoted.json")).json()).items; }catch(e){ return []; }
+  const P = r => BCPaths.parseRef(r), hit = (p, c, x) => p && p.book === book && (p.v1 === null ? c >= p.c1 && c <= p.c2 : (c > p.c1 || (c === p.c1 && x >= p.v1)) && (c < p.c2 || (c === p.c2 && x <= p.v2)));
+  const out = [];
+  for(const it of quotedList){
+    const a = P(it.ref), t = it.target && P(it.target.ref);
+    if(hit(a, ch, v) && t) out.push({label: it.target.ref, go: [t.book, t.c1, t.v1], writing: it.writing, note: it.note});
+    else if(hit(a, ch, v)) out.push({label: it.ref, go: [a.book, a.c1, a.v1], writing: it.writing, note: it.note});
+    if(hit(t, ch, v)) out.push({label: it.ref, go: [a.book, a.c1, a.v1], writing: it.writing, note: it.note});
+  }
+  return out;
 }
 async function studyStrongs(n){
   const m = /^([HG])0*(\d{1,4})$/i.exec(n.trim()); if(!m) return;
@@ -1174,11 +1230,21 @@ $("#studyBody").addEventListener("click", e => {
   const w = e.target.closest(".w, a.sn"); if(w){ e.preventDefault(); return studyStrongs(w.dataset.n); }
   const t = e.target.closest(".tp"); if(t) return studyTopic(+t.dataset.t);
   const g = e.target.closest(".sv-go"); if(g){ e.preventDefault(); return studyVerse(g.dataset.b, +g.dataset.c, +g.dataset.v); }
-  const a = e.target.closest(".res a, a.nref"); if(a){ e.preventDefault(); studyClose(); go(a.dataset.b, +a.dataset.c, +a.dataset.v); }
+  const a = e.target.closest(".res a, a.nref"); if(a){ e.preventDefault(); studyClose(); openAnywhere(a.dataset.b, +a.dataset.c, +a.dataset.v); }
 });
 
+/* open a verse even if the Bible being read doesn't have its book (1 Enoch, Jubilees, Jasher): switch to one that does */
+async function openAnywhere(book, ch, v){
+  if(!bible.byName[book]){
+    const id = Object.values(PATH_BIBLES).find(x => catalog.some(c => c.id === x) && loaded[x] && loaded[x].byName[book])
+      || (book === "Jasher" ? "eng-jasher-1840" : "eng-ethiopian-canon");
+    try{ await useBible(id, true); }catch(e){ return toast(tr("That Bible didn't load. Try again.")); }
+    if(!bible.byName[book]) return toast(tr("That Bible didn't load. Try again."));
+  }
+  go(book, ch, v);
+}
 /* ---------- 📜 Study Paths (web/paths.js): guided studies with questions; everything stays on this phone ---------- */
-const PATH_BIBLES = {KJV: "eng-kjv", ETH: "eng-ethiopian-canon", BSB: "eng-bsb"};
+const PATH_BIBLES = {KJV: "eng-kjv", ETH: "eng-ethiopian-canon", BSB: "eng-bsb", JASHER: "eng-jasher-1840"};
 BCPaths.mount({
   container: $("#pathsView"), base: "paths/", quotedUrl: "quoted.json", chatName: "Search",
   books: async () => (sBooks = sBooks || await sGet("books.json")),
@@ -1187,19 +1253,19 @@ BCPaths.mount({
     const id = key === "reader" ? place.bible : PATH_BIBLES[key];
     if(!id || !catalog.some(c => c.id === id)) return null;
     const b = await loadBible(id), bk = b.byName[book];
-    return (bk && bk.map.get(ch)) || null;
+    if(!bk) return null;
+    if(key === "reader" && vmKey()){   // the Septuagint: gather the verses that stand in this King James chapter
+      await vmLoad(); const out = [];
+      for(const [c, vs] of bk.c) if(book === "Jeremiah" || Math.abs(c - ch) <= 2) for(const [n, t] of vs){ const at = toKJV(book, c, n); if(at && at[0] === ch) out.push([at[1], t]); }
+      return out.length ? out.sort((x, y) => x[0] - y[0]) : null;
+    }
+    return bk.map.get(ch) || null;
   },
   bookName: n => bName(n),
   letters: (w, he) => he ? hebLettersHtml(w) : grkLettersHtml(w),
   qr: (t, px) => qrCanvas(t, px),
   shareUrl: h => PHONE_URL + h,
-  openVerse: async (book, ch, v) => {
-    if(!bible.byName[book]){   // e.g. 1 Enoch while reading the KJV: open it in the Ethiopian Canon
-      const id = Object.values(PATH_BIBLES).find(x => catalog.some(c => c.id === x) && loaded[x] && loaded[x].byName[book]) || "eng-ethiopian-canon";
-      try{ await useBible(id, true); }catch(e){ return toast("That Bible didn't load. Try again."); }
-    }
-    go(book, ch, v);
-  },
+  openVerse: (book, ch, v) => openAnywhere(book, ch, v),
   get: (k, d) => store.get(k, d), set: (k, v) => store.set(k, v), toast: m => toast(tr(m)),
   canGet: false, getBibles: () => show("bibles"),
   pastQuestions: () => store.get("pastq", []),

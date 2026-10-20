@@ -83,6 +83,16 @@ EXTRA: list[tuple[str, str, str, str, str, int, int, str, str]] = [
     ('eng-Brenton_usfx.zip', 'English', 'BRENTON', 'Brenton Septuagint (1851)', 'Public Domain', 0, 28689,
      "Old Testament and Apocrypha (53 books): Sir Lancelot Brenton's English translation of the Greek Septuagint",
      'https://ebible.org/Scriptures/eng-Brenton_usfx.zip'),
+    # other important writings and the original languages (each license checked on its source page, October 2026)
+    ('eng-jasher-1840.zefania.xml', 'English', 'JASHER', 'Book of Jasher (1840 English translation)', 'Public Domain',
+     0, 3910, 'The 1840 English Jasher; scholars dispute whether it is the book named in Joshua 10:13. '
+     '91 chapters, transcribed by the Scrollmapper project', OWN + 'eng-jasher-1840.zefania.xml'),
+    ('hboWLC_usfx.zip', 'Hebrew', 'WLC', 'Westminster Leningrad Codex (Hebrew Old Testament)', 'Public Domain', 0, 23213,
+     'The Hebrew Masoretic text, 39 books, with vowels and accents (eBible.org). Some verse numbers differ from '
+     'English Bibles (Malachi 4 is Hebrew Malachi 3:19-24)', 'https://ebible.org/Scriptures/hboWLC_usfx.zip'),
+    ('grctr_usfx.zip', 'Greek (Ancient)', 'TR', 'Greek Textus Receptus New Testament', 'Public Domain', 0, 7957,
+     'The Greek text behind the King James: Stephanus 1550, Elzevir 1624 and Scrivener 1881 collated, with '
+     "Adam Boyd's manuscript notes (eBible.org)", 'https://ebible.org/Scriptures/grctr_usfx.zip'),
 ]
 
 

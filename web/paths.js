@@ -12,7 +12,7 @@
 "use strict";
 const BCPaths = (() => {
   const LABEL = {scofield: "Commentary (Scofield, 1917)", henry: "Commentary (Matthew Henry, Concise)"};
-  const NAMES = {KJV: "King James Version", ETH: "Ethiopian Canon", BSB: "Berean Standard Bible"};
+  const NAMES = {KJV: "King James Version", ETH: "Ethiopian Canon", BSB: "Berean Standard Bible", JASHER: "Book of Jasher (1840)"};
   const STOP_STRONGS = new Set("H853 H5921 H413 H834 H3588 H3605 H5973 H4480 H3808 H1961 H559 H3651 H1931 H2088 G3588 G2532 G1161 G846 G1722 G1519 G3754 G1063 G3756 G2076 G1510 G3739 G3778 G1537 G4314 G5100 G3361 G3767 G2443 G235 G1909 G1223 G3004 G2036".split(" "));
   let A = null, root = null, list = null, quoted = null;
   const cache = {};
@@ -48,7 +48,7 @@ const BCPaths = (() => {
   async function readVerses(ref){
     const r = await versesOf("reader", ref).catch(() => null);
     if(r) return {key: "reader", vs: r};
-    for(const k of ["KJV", "ETH", "BSB"]){ const x = await versesOf(k, ref).catch(() => null); if(x) return {key: k, vs: x}; }
+    for(const k of ["KJV", "ETH", "BSB", "JASHER"]){ const x = await versesOf(k, ref).catch(() => null); if(x) return {key: k, vs: x}; }
     return {key: null, vs: []};
   }
 
@@ -102,7 +102,7 @@ const BCPaths = (() => {
     const q = await loadQuoted(), st = {text: "In BibleChat", disputed: "Disputed", lost: "Lost", "not-in-biblechat": "Not in BibleChat"};
     frame("📚 Quoted or named in Scripture", `<p class="pv-lead pvx">${esc(q.about || "")}</p>` + q.items.map(it => { const p = parseRef(it.ref), t = it.target && parseRef(it.target.ref);
       return `<div class="pv-qd"><div class="pv-qh">${refLink(p.book, p.c1, p.v1, label(it.ref))} <span class="pv-tag pv-st-${esc(it.status)}">${esc(st[it.status] || it.status)}</span></div>
-        <b class="pvx">${esc(it.writing)}</b><p class="pvx">${esc(it.note)}</p>${t ? `<p><span>${it.status === "text" ? "Read it:" : "See:"}</span> ${refLink(t.book, t.c1, t.v1, label(it.target.ref))}${it.target.bible === "ETH" ? " <small>(Ethiopian Canon)</small>" : ""}</p>` : ""}
+        <b class="pvx">${esc(it.writing)}</b><p class="pvx">${esc(it.note)}</p>${t ? `<p><span>${it.status === "text" ? "Read it:" : "See:"}</span> ${refLink(t.book, t.c1, t.v1, label(it.target.ref))}${it.target.bible === "ETH" ? " <small>(Ethiopian Canon)</small>" : it.target.bible === "JASHER" ? " <small>(the 1840 English Jasher)</small>" : ""}</p>` : ""}
         <small><span>Source:</span> <span class="pvx">${esc(it.source)}</span></small></div>`; }).join(""), true);
   }
   async function showPath(id, step){
@@ -187,6 +187,21 @@ const BCPaths = (() => {
       <details class="pv-sub"${lettersOpen ? " open" : ""}><summary>${he ? "א" : "α"} Letter by letter${he ? ", with Paleo-Hebrew" : ""}</summary><div>${A.letters(e.w, he)}</div></details>
       <details class="pv-sub"><summary>Every verse with this word (${uses.length})</summary><div class="pv-uses">${uses.slice(0, 400).map(([b, c, v, kw]) => `<div>${refLink(books[b], c, v)} <span class="pvx">${esc(kw || "")}</span></div>`).join("")}${uses.length > 400 ? `<p class="pv-small">…and ${uses.length - 400} more.</p>` : ""}</div></details></div>`;
   }
+  /* the original line of each verse: Hebrew (Westminster Leningrad Codex) or Greek (Textus Receptus) */
+  async function originalLines(refs, books){
+    const rows = [];
+    for(const r of refs){
+      const p = parseRef(r), bi = books.indexOf(p.book); if(bi < 0) continue;
+      const d = await A.study("orig/" + bi + ".json").catch(() => ({}));
+      Object.keys(d).map(k => k.split(":").map(Number)).filter(([c, v]) => inRef(p, c, v)).sort((a, b) => a[0] - b[0] || a[1] - b[1])
+        .forEach(([c, v]) => rows.push([p.book, c, v, d[c + ":" + v], bi < 39]));
+    }
+    if(!rows.length) return "";
+    return `<h4>The original line</h4>` + rows.slice(0, 12).map(([b, c, v, x, he]) => { const t = Array.isArray(x) ? x[0] : x, num = Array.isArray(x) ? x[1] : null;
+        return `<div class="pv-ol"><small>${refLink(b, c, v)}${num ? ` <span>(Hebrew numbering: ${esc(num)})</span>` : ""}</small><div class="pvx pv-oline" dir="${he ? "rtl" : "ltr"}" lang="${he ? "he" : "grc"}">${esc(t)}</div></div>`; }).join("")
+      + (rows.length > 12 ? `<p class="pv-small">…and ${rows.length - 12} more verses.</p>` : "")
+      + `<p class="pv-small">Hebrew: Westminster Leningrad Codex. Greek: Textus Receptus (Stephanus 1550, Elzevir 1624 and Scrivener 1881, collated). Both public domain, from eBible.org. Where the Hebrew numbers a verse differently, its own number is shown; a verse that couldn't be lined up for certain has no line.</p>`;
+  }
   async function showWord(n){
     S.view = "word";
     frame("Strong's " + n, `<p class="pv-small">Loading…</p>`, true);
@@ -195,6 +210,7 @@ const BCPaths = (() => {
   }
   async function drawCloser(s, el){
     const lc = s.look_closer || {}, parts = [], books = await A.books();
+    parts.push(await originalLines(s.refs, books));
     for(const n of lc.strongs || []){
       try{ parts.push(await wordCard(n, lc.letters === n)); }catch(err){ parts.push(`<p class="pv-err">Couldn't load Strong's ${esc(n)}.</p>`); }
     }
@@ -474,7 +490,8 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-orig{font-size:30px;line-height:1.2}.pv-he{direction:rtl;text-align:left}
 .pv-sub>summary{cursor:pointer;color:var(--accent);margin:4px 0}
 .pv-uses{max-height:260px;overflow:auto;font-size:14px}
-.pv-x{border-top:1px solid var(--line);padding:6px 0}.pv-x small{color:var(--muted)}
+.pv-x{border-top:1px solid var(--line);padding:6px 0}
+.pv-ol{border-top:1px solid var(--line);padding:5px 0}.pv-oline{font-size:20px;line-height:1.6;font-family:"SBL Hebrew","Ezra SIL","Times New Roman",serif}.pv-x small{color:var(--muted)}
 .pnote{background:var(--panel,#f1efea);border-left:4px solid var(--muted);border-radius:8px;padding:8px 12px;margin:8px 0;font-family:system-ui,sans-serif;font-size:14.5px}
 .pnote h4{margin:2px 0 2px;font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
 .pnote-why{font-style:italic;color:var(--muted);font-size:13px;margin:0 0 6px}
