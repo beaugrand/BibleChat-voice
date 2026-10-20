@@ -81,6 +81,17 @@ console.log(JSON.stringify(out));"""
             self.assertTrue(all(o[1] <= 196 for o in out), out)
         self.assertIn(".coverart", read(os.path.join(ROOT, "web", "i18n.js")))   # same abbreviations in every app language
 
+    def test_love_tab_section_tabs(self):
+        # the phone's Love tab starts with tabs (Donate, About, Churches, Ideas), so people see there is more below
+        s = read(PAGES[0])
+        self.assertIn('id="loveTabs"', s)
+        for sec in ("lvDonate", "lvAbout", "lvChurch", "lvIdeas"):
+            self.assertIn(f'data-sec="{sec}"', s); self.assertIn(f'id="{sec}"', s)
+        self.assertLess(s.index('id="loveTabs"'), s.index('src="cashapp-qr.jpg"'))   # the tabs come before the QR code
+        i18n = read(os.path.join(ROOT, "web", "i18n.js"))
+        for label in ("♥ Donate", "ℹ About", "⛪ Churches", "💡 Ideas"):
+            self.assertIn(f'"{label}":', i18n)
+
     def test_verse_picker_in_read_mode(self):
         # a "Verse" button next to the chapter title opens a grid of the chapter's own verse numbers
         # (so a Bible that skips or joins verses, like the Ethiopian Canon, shows only real ones); a tap jumps
