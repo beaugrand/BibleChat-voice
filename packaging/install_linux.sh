@@ -26,16 +26,22 @@ fi
 # a BibleChat that is still running (often kept alive by an open browser tab) would keep showing the old
 # version: stop it first, then replace the old install completely
 pkill -f "/BibleChat/BibleChat" >/dev/null 2>&1 || true
-sleep 1
+sleep 2
+pkill -9 -f "/BibleChat/BibleChat" >/dev/null 2>&1 || true   # one that didn't stop when asked
 mkdir -p "$HOME/.local/opt" "$APPS"
 rm -rf "$DEST"
 cp -r "$HERE/BibleChat" "$DEST"
 [ -f "$HERE/biblechat.png" ] && cp "$HERE/biblechat.png" "$DEST/biblechat.png"
 
+# the version goes into the name, so the desktop icon and the menu say which BibleChat it is
+VER="$(cat "$HERE/VERSION" 2>/dev/null || true)"
+[ -n "$VER" ] || VER="$(basename "$HERE" | sed -n 's/.*-\([0-9][0-9.]*\)$/\1/p')"   # or from the folder name (…-1.0.6)
+NAME="BibleChat${VER:+ $VER}"
 cat > "$APPS/biblechat.desktop" <<DESK
 [Desktop Entry]
 Type=Application
-Name=BibleChat
+Name=$NAME
+GenericName=Bible reader and chat (computer app)
 Comment=Read, search and chat with your Bibles (opens in your browser)
 Exec="$DEST/BibleChat"
 Icon=$DEST/biblechat.png
@@ -55,10 +61,11 @@ if [ -d "$DESKTOP_DIR" ]; then
 fi
 
 echo ""
-VER="$(cat "$HERE/VERSION" 2>/dev/null || true)"
-echo "Done! BibleChat ${VER:+$VER }is installed."
-echo "  - Open it from your applications menu (look for BibleChat), or from the icon on your desktop."
+echo "Done! $NAME is installed."
+echo "  - Open it from your applications menu or from the desktop icon \"$NAME\"."
 echo "  - Starting BibleChat now: your browser opens by itself in a few seconds."
 echo "  - If an old BibleChat tab is still open in your browser, close it."
+echo "  - From now on, always open BibleChat from the menu or the desktop icon. You can delete this"
+echo "    download folder (and any older BibleChat folders you downloaded); they are no longer needed."
 nohup "$DEST/BibleChat" >/dev/null 2>&1 &
 finish

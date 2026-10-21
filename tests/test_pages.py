@@ -122,6 +122,29 @@ console.log(JSON.stringify(out));"""
         sh = read(os.path.join(ROOT, "packaging", "install_linux.sh"))
         self.assertIn('pkill -f "/BibleChat/BibleChat"', sh); self.assertIn('rm -rf "$DEST"', sh)
 
+    def test_listen_bar_and_suggest_without_account(self):
+        # Listen: a bar that stays in reach (Pause/Resume, Stop, from verse 1), the place is remembered, and a
+        # verse can be read from; Suggest a feature sends without GitHub or a mail program
+        for p, start in [(PAGES[0], 'id="shareSay"'), (PAGES[1], 'class="tp saythis"')]:
+            s = read(p)
+            for part in ('id="player"', 'id="plPause"', 'id="plStop"', 'id="plStart"', "sayAt", start, 'id="sgSend"', 'id="sgReply"'):
+                self.assertIn(part, s, f"{part} missing in {p}")
+        self.assertIn("formsubmit.co/ajax/", read(PAGES[0]))
+        self.assertIn('fetch("/api/suggest"', read(PAGES[1]))
+        srv = read(os.path.join(ROOT, "bibleask", "server.py"))
+        self.assertIn('"/api/suggest"', srv); self.assertIn("formsubmit.co/ajax/", srv)
+        self.assertNotIn("formsubmit.co/ajax/wbeaugrand", read(PAGES[0]) + srv)   # a private address, not the email
+
+    def test_version_in_names(self):
+        # which BibleChat is which: the Linux desktop icon and menu say "BibleChat 1.0.6", the computer app's
+        # window title carries the version, and the phone/web version installs as "BibleChat Web"
+        sh = read(os.path.join(ROOT, "packaging", "install_linux.sh"))
+        self.assertIn('NAME="BibleChat${VER:+ $VER}"', sh); self.assertIn("Name=$NAME", sh); self.assertIn("pkill -9", sh)
+        srv = read(os.path.join(ROOT, "bibleask", "server.py"))
+        self.assertIn('f"<title>BibleChat {__version__}</title>"', srv)
+        self.assertIn("document.title = `BibleChat ${state.version}`", read(PAGES[1]))
+        self.assertIn('"name": "BibleChat Web"', read(os.path.join(ROOT, "web", "manifest.webmanifest")))
+
     def test_verse_picker_in_read_mode(self):
         # a "Verse" button next to the chapter title opens a grid of the chapter's own verse numbers
         # (so a Bible that skips or joins verses, like the Ethiopian Canon, shows only real ones); a tap jumps

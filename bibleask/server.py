@@ -263,8 +263,10 @@ def make_handler(app: App, port: int):
                 return
             path = urllib.parse.urlparse(self.path).path
             if path in ("/", "/index.html"):
-                with open(os.path.join(web_dir(), "index.html"), "rb") as f:
-                    self._send(200, f.read(), "text/html; charset=utf-8")
+                with open(os.path.join(web_dir(), "index.html"), "rb") as f:   # the version in the window title from the start
+                    page = f.read().replace(b"<title>BibleChat</title>", f"<title>BibleChat {__version__}</title>".encode(), 1)
+                    page = page.replace(b"Loading BibleChat, please wait", f"Loading BibleChat {__version__}, please wait".encode(), 1)
+                    self._send(200, page, "text/html; charset=utf-8")
             elif path in ("/paths.js", "/quoted.json") or re.fullmatch(r"/paths/[a-z0-9-]+\.json", path):
                 try:
                     with open(os.path.join(shared_web_dir(), *path.strip("/").split("/")), "rb") as f:
@@ -407,6 +409,8 @@ def make_handler(app: App, port: int):
                         self._json({"error": str(e) or e.__class__.__name__}, 400)
                         return
                     self._json({"text": text})
+                elif path == "/api/suggest":
+                    self._json(_send_suggestion(json.loads(self._body() or b"{}")))
                 elif path == "/api/quit":
                     self._json({"ok": True})
                     threading.Thread(target=self.server.shutdown, daemon=True).start()
@@ -456,6 +460,31 @@ def make_handler(app: App, port: int):
                     app.busy -= 1
 
     return Handler
+
+
+SUGGEST_URL = "https://formsubmit.co/ajax/56755bcbd30a076dc522b82fa44cf441"   # FormSubmit.co: passes ideas on to Hans
+
+
+def _send_suggestion(req: dict) -> dict:
+    """💡 Suggest a feature without any account: hand the idea to FormSubmit.co, which emails it to Hans.
+    Only runs when the person presses Send."""
+    msg = str(req.get("message") or "").strip()[:3500]
+    if len(msg) < 3:
+        return {"error": "Type your idea first."}
+    reply = str(req.get("email") or "").strip()[:120]
+    data = {"message": msg, "email": reply or "(not given)", "_subject": "BibleChat suggestion",
+            "_template": "box", "_captcha": "false"}
+    if reply:
+        data["_replyto"] = reply
+    try:
+        rq = urllib.request.Request(SUGGEST_URL, data=json.dumps(data).encode("utf-8"), method="POST", headers={
+            "Content-Type": "application/json", "Accept": "application/json", "User-Agent": "BibleChat",
+            "Origin": "https://beaugrand.github.io", "Referer": "https://beaugrand.github.io/BibleChat-voice/"})
+        with urllib.request.urlopen(rq, timeout=20) as r:
+            j = json.loads(r.read() or b"{}")
+        return {"ok": True} if str(j.get("success")).lower() == "true" else {"error": j.get("message") or "Not sent."}
+    except Exception as e:
+        return {"error": f"It couldn't be sent: {e}"}
 
 
 def _close_splash() -> None:

@@ -1,6 +1,6 @@
 {
-  "name": "BibleChat",
-  "short_name": "BibleChat",
+  "name": "BibleChat Web",
+  "short_name": "BibleChat Web",
   "description": "Read and search free Bibles. No sign-up, nothing to install.",
   "start_url": "./",
   "scope": "./",

@@ -50,6 +50,11 @@ a{color:var(--accent)}
 .notice{color:var(--muted);font-size:14.5px;padding:14px 0}
 .err{color:var(--danger)}
 /* tab bar */
+/* Listen: a bar just above the tabs while reading aloud, so Pause and Stop are always in reach */
+#player{position:fixed;left:0;right:0;bottom:calc(var(--tabh) + env(safe-area-inset-bottom));z-index:29;background:var(--panel);border-top:1px solid var(--line);box-shadow:0 -4px 14px rgba(0,0,0,.1)}
+#player .wrap{display:flex;gap:8px;align-items:center;justify-content:center;padding:8px 12px}
+#plWhere{font-weight:650;margin-right:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.playing{padding-bottom:calc(var(--tabh) + 62px + env(safe-area-inset-bottom))}
 #tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--panel);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
 #tabs .wrap{display:flex;height:var(--tabh);padding:0 6px}
 #tabs button{flex:1;border:0;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font-size:11.5px;color:var(--muted);border-radius:10px}
@@ -354,8 +359,9 @@ body.has-church #top .brand{display:none}
       <h3>💡 Suggest a feature</h3>
       <p class="muted">What would make BibleChat better for you or your church? It goes straight to Hans.</p>
       <textarea id="sgText" maxlength="3000" placeholder="My idea…"></textarea>
-      <div class="row"><button class="btn primary" id="sgMail">✉ Send by email</button><button class="btn" id="sgGit">Post on GitHub</button></div>
-      <p class="muted" style="font-size:13px">Email opens your mail app with the idea filled in. GitHub shows it publicly and needs a free GitHub account.</p>
+      <input class="find" id="sgReply" type="email" maxlength="120" autocomplete="email" placeholder="Your email (optional, only if you'd like an answer)">
+      <div class="row"><button class="btn primary" id="sgSend">📨 Send to Hans</button></div>
+      <p class="muted" id="sgNote" style="font-size:13px">No account needed. Your idea is sent to Hans by FormSubmit.co, only when you press Send. Other ways: <a href="#" id="sgMail">email</a> · <a href="#" id="sgGit">GitHub</a></p>
     </div>
   </div></div></section>
 </main>
@@ -366,7 +372,7 @@ body.has-church #top .brand{display:none}
     <div class="quote" id="shareQuote"></div>
     <button class="btn primary" id="shareImg" style="width:100%;margin:0 0 8px">🖼 Share as a picture</button>
     <button class="btn" id="shareStudy" style="width:100%;margin:0 0 8px">📖 Study it: Hebrew/Greek, cross-references, topics, Matthew Henry</button>
-    <div class="alt" style="margin:0 0 12px"><button class="btn" id="shareBm">🔖 Bookmark</button><button class="btn" id="shareAI">✨ Ask AI</button><button class="btn" id="shareSm">📋 Add to sermon</button></div>
+    <div class="alt" style="margin:0 0 12px"><button class="btn" id="shareBm">🔖 Bookmark</button><button class="btn" id="shareAI">✨ Ask AI</button><button class="btn" id="shareSm">📋 Add to sermon</button><button class="btn" id="shareSay" hidden>🔊 Listen from here</button></div>
     <form id="shareForm" class="sendrow">
       <input class="find" id="shareTo" type="text" inputmode="email" autocomplete="email tel" placeholder="Phone number or email address">
       <button class="btn primary">Share</button>
@@ -481,6 +487,9 @@ body.has-church #top .brand{display:none}
   <div class="body"><p class="small">The Bible text stays in the Bible you chose. This changes the app's buttons and menus.</p><div id="langList"></div></div>
 </div></div>
 
+<div id="player" hidden role="region" aria-label="Listening"><div class="wrap">
+  <span id="plWhere"></span><button class="btn primary" id="plPause">⏸ Pause</button><button class="btn" id="plStop">■ Stop</button><button class="btn" id="plStart" title="Read the chapter from verse 1">↺ 1</button>
+</div></div>
 <div id="pathsView" hidden></div>
 
 <nav id="tabs"><div class="wrap">
@@ -609,6 +618,7 @@ function render(hitVerse){
   const bk = bible.byName[place.book]; let vs = bk && bk.map.get(place.ch);
   if(!vs){ place.book = bible.list[0]; place.ch = bible.books[0].c[0][0]; vs = bible.books[0].c[0][1]; }
   $("#where").textContent = bName(place.book) + " " + place.ch;
+  if(!saying && $("#player")) sayBar(sayResumeIdx() != null && !$("#player").hidden ? "paused" : "off");   // Listen says where it goes on
   const t = $("#rtext"); t.className = rLines ? "lines" : ""; t.style.setProperty("--rs", rScale);
   t.innerHTML = vs.map(([n, x]) => `<span class="v" id="v${n}"><sup>${n}</sup>${esc(x)} </span>`).join("");
   enhanceChapter(place.bible, place.book, place.ch, vs);
@@ -767,18 +777,49 @@ function pickVoice(lang){
   return same.find(v => norm(v.lang) === want) || same.find(v => v.default) || same[0] || null;
 }
 function intro(lang){ const w = CHAPTER[lang.split("-")[0]]; if(!w) return ""; return (lang.startsWith("en") ? place.book + ", " : "") + w + " " + place.ch + ". "; }
-function sayStop(){ saying = false; try{ speechSynthesis.cancel(); }catch(e){} document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say")); $("#say").textContent = "🔊 Listen"; }
-function sayFrom(i){
+/* Listen. The bar above the tabs (Pause / Resume / Stop) stays in reach while the text scrolls. The verse being read is
+   remembered: Pause and Stop keep the place, Resume and Listen go on from there, "↺ 1" starts the chapter again.
+   Tapping a verse offers "Listen from here". */
+let sayTok = 0, sayAt = store.get("sayAt", null);   // {bible, book, ch, i}
+function sayResumeIdx(){ return sayAt && sayAt.bible === place.bible && sayAt.book === place.book && sayAt.ch === place.ch ? sayAt.i : null; }
+function sayBar(state){   // "playing", "paused" or "off"
+  $("#player").hidden = state === "off"; document.body.classList.toggle("playing", state !== "off");
+  $("#plPause").textContent = state === "playing" ? "⏸ Pause" : "▶ Resume";
+  const vs = bible && bible.byName[place.book] && bible.byName[place.book].map.get(place.ch), i = sayResumeIdx();
+  const vn = vs && i != null && vs[i] ? vs[i][0] : null;
+  $("#plWhere").textContent = bName(place.book) + " " + place.ch + (vn ? ":" + vn : "");
+  $("#say").textContent = state === "playing" ? "⏸ Pause" : (vn && vn > 1 ? `🔊 Listen (verse ${vn})` : "🔊 Listen");
+  i18nEl($("#player")); i18nEl($("#say"));
+}
+function sayHalt(){ saying = false; sayTok++; try{ speechSynthesis.cancel(); }catch(e){} }
+function sayPause(){ sayHalt(); sayBar("paused"); }
+function sayStop(){ sayHalt(); document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say")); if($("#player")) sayBar("off"); }
+function sayFrom(i, tok){
+  if(!saying || tok !== sayTok) return;   // a stopped or older reading: ignore its late "finished" signal
   const vs = bible.byName[place.book].map.get(place.ch);
-  if(!saying) return;
-  if(i >= vs.length){ const n = neighbours().next; if(n){ place.book = n[0]; place.ch = n[1]; render(); saying = true; $("#say").textContent = "⏸ Stop"; sayFrom(0); } else sayStop(); return; }
+  if(i >= vs.length){
+    const n = neighbours().next; sayAt = null; store.set("sayAt", null);
+    if(n){ place.book = n[0]; place.ch = n[1]; render(); saying = true; sayFrom(0, tok); } else sayStop();
+    return;
+  }
+  sayAt = {bible: place.bible, book: place.book, ch: place.ch, i}; store.set("sayAt", sayAt); sayBar("playing");
   document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say"));
   const el = document.getElementById("v" + vs[i][0]); if(el){ el.classList.add("say"); el.scrollIntoView({block: "center", behavior: "smooth"}); }
   const lang = bibleLang(), voice = pickVoice(lang);
   const u = new SpeechSynthesisUtterance((i === 0 ? intro(lang) : "") + vs[i][1]);
   u.lang = voice ? voice.lang : lang; try{ if(voice) u.voice = voice; }catch(e){} u.rate = .95;
-  u.onend = () => sayFrom(i + 1); u.onerror = () => sayStop();
+  u.onend = () => sayFrom(i + 1, tok); u.onerror = () => { if(tok === sayTok) sayPause(); };
   speechSynthesis.speak(u);
+}
+function sayStart(i){
+  loadVoices();
+  const lang = bibleLang();
+  if(voices.length && !lang.startsWith("en") && !pickVoice(lang)){ voiceHelp(); return; }   // don't read German with an English voice
+  const vs = bible.byName[place.book].map.get(place.ch);
+  if(i == null) i = sayResumeIdx() || 0;
+  if(i >= vs.length) i = 0;
+  sayHalt(); saying = true; const tok = sayTok;
+  sayFrom(i, tok);
 }
 function voiceHelp(){
   const lang = bibleMeta().language.replace(/ \(.*\)$/, ""), ua = navigator.userAgent;
@@ -791,14 +832,13 @@ function voiceHelp(){
   $("#voiceMsg").innerHTML = `This device has no ${esc(lang)} voice yet, so Listen can't read this Bible aloud.<br><br>${esc(where)}<br><br>Then come back and press Listen again.`;
   $("#voiceSheet").hidden = false;
 }
-if("speechSynthesis" in window){ $("#say").hidden = false; loadVoices(); try{ speechSynthesis.addEventListener("voiceschanged", loadVoices); }catch(e){} }
-$("#say").onclick = () => {
-  if(saying){ sayStop(); return; }
-  loadVoices();
-  const lang = bibleLang();
-  if(voices.length && !lang.startsWith("en") && !pickVoice(lang)){ voiceHelp(); return; }   // don't read German with an English voice
-  saying = true; $("#say").textContent = "⏸ Stop"; speechSynthesis.cancel(); sayFrom(0);
-};
+if("speechSynthesis" in window){ $("#say").hidden = false; $("#shareSay").hidden = false; loadVoices(); try{ speechSynthesis.addEventListener("voiceschanged", loadVoices); }catch(e){} }
+$("#say").onclick = () => saying ? sayPause() : sayStart();
+$("#plPause").onclick = () => saying ? sayPause() : sayStart();
+$("#plStop").onclick = () => sayStop();
+$("#plStart").onclick = () => sayStart(0);
+$("#shareSay").onclick = () => { const v = shareV; closeShare(); const vs = bible.byName[place.book].map.get(place.ch);
+  const i = vs.findIndex(x => x[0] === v); show("read", true); sayStart(i < 0 ? 0 : i); };
 
 /* ---------- search: words, Hebrew/Greek words and meaning together (web/smart.js, same as the computer app) ---------- */
 function buildIndex(){
@@ -1763,11 +1803,28 @@ smCount();
 /* ---------- suggest a feature: goes to Hans by email or on GitHub ---------- */
 function sgBody(){ return $("#sgText").value.trim() + "\n\n(" + SG_FROM + ")"; }
 function sgCheck(){ if($("#sgText").value.trim().length < 3){ chSay("Type your idea first."); return false; } return true; }
-$("#sgMail").onclick = () => {
+/* Send without any account: FormSubmit.co passes the idea on to Hans's inbox (a private address, so his email isn't in the code) */
+const SG_URL = "https://formsubmit.co/ajax/56755bcbd30a076dc522b82fa44cf441";
+async function sgSend(via){
+  if(!sgCheck()) return;
+  const b = $("#sgSend"), reply = $("#sgReply").value.trim();
+  b.disabled = true; b.textContent = tr("Sending…");
+  try{
+    const r = await via({message: sgBody(), email: reply || "(not given)", _replyto: reply || undefined,
+      _subject: "BibleChat suggestion", _template: "box", _captcha: "false"});
+    if(!r.ok) throw new Error(r.status);
+    $("#sgText").value = ""; $("#sgReply").value = "";
+    $("#sgNote").textContent = tr("Thank you! Your idea is on its way to Hans.");
+    chSay(tr("Thank you! Your idea is on its way to Hans."));
+  }catch(e){ chSay(tr("It couldn't be sent. Check the internet connection and try again.")); }
+  b.disabled = false; b.textContent = tr("📨 Send to Hans");
+}
+$("#sgSend").onclick = () => sgSend(data => fetch(SG_URL, {method: "POST", headers: {"Content-Type": "application/json", "Accept": "application/json"}, body: JSON.stringify(data)}));
+$("#sgMail").onclick = e => { e.preventDefault();
   if(!sgCheck()) return;
   location.href = "mailto:wbeaugrand@gmail.com?subject=" + encodeURIComponent("BibleChat suggestion") + "&body=" + encodeURIComponent(sgBody());
 };
-$("#sgGit").onclick = () => {
+$("#sgGit").onclick = e => { e.preventDefault();
   if(!sgCheck()) return;
   const t = $("#sgText").value.trim().split("\n")[0].slice(0, 70);
   window.open("https://github.com/beaugrand/BibleChat-voice/issues/new?title=" + encodeURIComponent("Suggestion: " + t) + "&body=" + encodeURIComponent(sgBody()), "_blank", "noopener");

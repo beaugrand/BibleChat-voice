@@ -119,6 +119,19 @@ const I18N = {
 "⛪ Churches": ["⛪ Gemeinden", "⛪ Iglesias", "⛪ Églises", "⛪ Igrejas", "⛪ 教会", "⛪ Церкви", "⛪ 교회"],
 "💡 Ideas": ["💡 Ideen", "💡 Ideas", "💡 Idées", "💡 Ideias", "💡 建议", "💡 Идеи", "💡 아이디어"],
 "Sections of this page": ["Abschnitte dieser Seite", "Secciones de esta página", "Sections de cette page", "Seções desta página", "本页各部分", "Разделы страницы", "이 페이지의 구역"],
+"⏸ Pause": ["⏸ Pause", "⏸ Pausa", "⏸ Pause", "⏸ Pausar", "⏸ 暂停", "⏸ Пауза", "⏸ 일시정지"],
+"▶ Resume": ["▶ Weiter", "▶ Continuar", "▶ Reprendre", "▶ Continuar", "▶ 继续", "▶ Продолжить", "▶ 계속"],
+"■ Stop": ["■ Stopp", "■ Detener", "■ Arrêter", "■ Parar", "■ 停止", "■ Стоп", "■ 정지"],
+"🔊 Listen from here": ["🔊 Ab hier vorlesen", "🔊 Escuchar desde aquí", "🔊 Écouter à partir d'ici", "🔊 Ouvir a partir daqui", "🔊 从这里开始朗读", "🔊 Слушать отсюда", "🔊 여기서부터 듣기"],
+"Read the chapter from verse 1": ["Kapitel ab Vers 1 vorlesen", "Leer el capítulo desde el versículo 1", "Lire le chapitre depuis le verset 1", "Ler o capítulo desde o versículo 1", "从第 1 节朗读本章", "Читать главу с 1-го стиха", "1절부터 이 장 읽기"],
+"Listening": ["Vorlesen", "Escuchando", "Écoute", "Ouvindo", "朗读中", "Чтение вслух", "듣는 중"],
+"📨 Send to Hans": ["📨 An Hans senden", "📨 Enviar a Hans", "📨 Envoyer à Hans", "📨 Enviar ao Hans", "📨 发送给 Hans", "📨 Отправить Хансу", "📨 Hans에게 보내기"],
+"Sending…": ["Wird gesendet…", "Enviando…", "Envoi…", "Enviando…", "正在发送…", "Отправка…", "보내는 중…"],
+"Your email (optional, only if you'd like an answer)": ["Deine E-Mail (freiwillig, nur wenn du eine Antwort möchtest)", "Tu correo (opcional, solo si quieres respuesta)", "Votre e-mail (facultatif, seulement si vous voulez une réponse)", "Seu e-mail (opcional, só se quiser resposta)", "你的邮箱（可选，需要回复时再填）", "Ваш e-mail (по желанию, если хотите ответ)", "이메일 (선택, 답장을 원할 때만)"],
+"No account needed. Your idea is sent to Hans by FormSubmit.co, only when you press Send. Other ways:": ["Kein Konto nötig. Deine Idee wird über FormSubmit.co an Hans geschickt, nur wenn du auf Senden drückst. Andere Wege:", "No necesitas cuenta. Tu idea se envía a Hans mediante FormSubmit.co, solo al pulsar Enviar. Otras formas:", "Aucun compte nécessaire. Votre idée est envoyée à Hans via FormSubmit.co, seulement quand vous appuyez sur Envoyer. Autres moyens :", "Não precisa de conta. Sua ideia vai para o Hans pelo FormSubmit.co, só quando você tocar em Enviar. Outras formas:", "无需账号。只有按下发送时，你的想法才会通过 FormSubmit.co 发给 Hans。其他方式：", "Аккаунт не нужен. Идея уходит Хансу через FormSubmit.co, только когда вы нажмёте «Отправить». Другие способы:", "계정이 필요 없습니다. 보내기를 누를 때만 FormSubmit.co를 통해 Hans에게 전달됩니다. 다른 방법:"],
+"Thank you! Your idea is on its way to Hans.": ["Danke! Deine Idee ist auf dem Weg zu Hans.", "¡Gracias! Tu idea va camino a Hans.", "Merci ! Votre idée est en route vers Hans.", "Obrigado! Sua ideia está a caminho do Hans.", "谢谢！你的想法正在发给 Hans。", "Спасибо! Ваша идея отправлена Хансу.", "감사합니다! 아이디어가 Hans에게 전달되고 있습니다."],
+"It couldn't be sent. Check the internet connection and try again.": ["Es konnte nicht gesendet werden. Prüfe die Internetverbindung und versuche es noch einmal.", "No se pudo enviar. Revisa la conexión a internet e inténtalo de nuevo.", "L'envoi a échoué. Vérifiez la connexion internet et réessayez.", "Não foi possível enviar. Verifique a conexão e tente de novo.", "发送失败。请检查网络连接后重试。", "Не удалось отправить. Проверьте подключение к интернету и попробуйте снова.", "보내지 못했습니다. 인터넷 연결을 확인하고 다시 시도하세요."],
+"email": ["E-Mail", "correo", "e-mail", "e-mail", "邮件", "e-mail", "이메일"],
 "Home": ["Start", "Inicio", "Accueil", "Início", "首页", "Главная", "홈"],
 "Open the Bible": ["Bibel öffnen", "Abrir la Biblia", "Ouvrir la Bible", "Abrir a Bíblia", "打开圣经", "Открыть Библию", "성경 펼치기"],
 "Tap the cover to open": ["Tippe auf den Einband, um sie zu öffnen", "Toca la portada para abrirla", "Touchez la couverture pour l'ouvrir", "Toque na capa para abrir", "点击封面打开", "Нажмите на обложку, чтобы открыть", "표지를 누르면 열립니다"],
@@ -303,6 +316,7 @@ const I18N = {
 };
 /* phrases with numbers or names in them */
 const I18N_RE = [
+  [/^🔊 Listen \(verse (\d+)\)$/, ["🔊 Vorlesen (Vers $1)", "🔊 Escuchar (versículo $1)", "🔊 Écouter (verset $1)", "🔊 Ouvir (versículo $1)", "🔊 朗读（第 $1 节）", "🔊 Слушать (стих $1)", "🔊 듣기 ($1절)"]],
   [/^Hebrew numbering: (.+)$/, ["Hebräische Zählung: $1", "Numeración hebrea: $1", "Numérotation hébraïque : $1", "Numeração hebraica: $1", "希伯来文编号：$1", "Еврейская нумерация: $1", "히브리어 번호: $1"]],
   [/^\(Hebrew numbering: (.+)\)$/, ["(Hebräische Zählung: $1)", "(Numeración hebrea: $1)", "(Numérotation hébraïque : $1)", "(Numeração hebraica: $1)", "（希伯来文编号：$1）", "(Еврейская нумерация: $1)", "(히브리어 번호: $1)"]],
   [/^Step (\d+) of (\d+)$/, ["Schritt $1 von $2", "Paso $1 de $2", "Étape $1 sur $2", "Passo $1 de $2", "第 $1 步，共 $2 步", "Шаг $1 из $2", "$2단계 중 $1단계"]],

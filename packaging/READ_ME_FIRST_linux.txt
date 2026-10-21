@@ -18,5 +18,9 @@ OR, IN A TERMINAL (in this folder), type exactly this and press Enter:
 TRY IT WITHOUT INSTALLING: double-click BibleChat/BibleChat, or type
        ./BibleChat/BibleChat
 
+AFTER INSTALLING, always open BibleChat from your applications menu or the desktop
+icon. You can delete this download folder and any older BibleChat folders: the
+installed copy is the one that counts, and installing a new version replaces it.
+
 When BibleChat opens in your browser, click "Get free Bibles" to download a Bible.
 Nothing you read or ask is sent anywhere; everything stays on this computer.

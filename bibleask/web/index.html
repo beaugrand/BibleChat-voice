@@ -160,6 +160,10 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 .vpgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));gap:8px}
 .vpgrid button{min-height:46px;border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;font-size:17px;cursor:pointer}
 .vpgrid button:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+/* Listen: a bar that stays at the bottom of the screen while reading aloud, so Pause and Stop are always in reach */
+#player{position:sticky;bottom:0;z-index:6;margin-top:auto;display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;
+  padding:10px 14px;background:var(--panel);border-top:1px solid var(--line);box-shadow:0 -4px 14px rgba(0,0,0,.08)}
+#plWhere{font-weight:650;margin-right:6px}
 #rfoot{max-width:780px;margin:0 auto;padding:0 20px 40px;display:flex;justify-content:space-between;gap:10px;width:100%}
 /* start-up: "Loading BibleChat, please wait…" until the Bibles are open */
 #boot{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
@@ -469,6 +473,10 @@ details.src[open]>summary::after{transform:rotate(180deg)}
       <button class="btn" id="rBig" title="Larger text">A+</button>
     </div></div>
     <div id="rtext"></div>
+    <div id="player" hidden role="region" aria-label="Listening">
+      <span id="plWhere"></span>
+      <button class="btn primary" id="plPause">⏸ Pause</button><button class="btn" id="plStop">■ Stop</button><button class="btn" id="plStart" title="Read the chapter from verse 1">↺ From verse 1</button>
+    </div>
     <div id="rfoot"><button class="btn" id="rPrev2">‹ Previous chapter</button><button class="btn" id="rNext2">Next chapter ›</button></div>
   </div>
   <div id="study" hidden>
@@ -487,8 +495,9 @@ details.src[open]>summary::after{transform:rotate(180deg)}
     <p class="about"><b>About BibleChat.</b> Made by Hans W. Beaugrand. Free and open source under the <a href="https://github.com/beaugrand/BibleChat-voice/blob/main/LICENSE" target="_blank" rel="noopener">Apache License 2.0</a>; anyone who shares or builds on it keeps this credit (<a href="https://github.com/beaugrand/BibleChat-voice/blob/main/NOTICE" target="_blank" rel="noopener">NOTICE</a>).</p>
     <div class="suggest"><b>💡 Suggest a feature</b>
       <textarea id="sgText" maxlength="3000" placeholder="What would make BibleChat better for you or your church?"></textarea>
-      <div class="row"><button class="btn primary" id="sgMail">✉ Send by email</button><button class="btn" id="sgGit">Post on GitHub</button></div>
-      <p style="font-size:12.5px;margin:6px 0 0">It goes straight to Hans. Email opens your mail program; GitHub shows it publicly (free account needed).</p>
+      <input id="sgReply" type="email" maxlength="120" autocomplete="email" placeholder="Your email (optional, only if you'd like an answer)" style="width:100%;margin:6px 0 0;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:inherit">
+      <div class="row"><button class="btn primary" id="sgSend">📨 Send to Hans</button></div>
+      <p id="sgNote" style="font-size:12.5px;margin:6px 0 0">No account needed. Your idea is sent to Hans by FormSubmit.co, only when you press Send. Other ways: <a href="#" id="sgMail">email</a> · <a href="#" id="sgGit">GitHub</a></p>
     </div>
   </div></div>
   <div id="vpDlg" hidden><div class="card" role="dialog" aria-label="Choose a verse">
@@ -819,6 +828,7 @@ let pollTimer = null;
 function renderUpdate(){
   const u = state.update, box = $("#updBox"), ver = $("#verLine");
   if(ver) ver.textContent = state.version ? `BibleChat ${state.version}${u ? "" : " · up to date"}` : "";
+  if(state.version) document.title = `BibleChat ${state.version}`;   // the window and taskbar say which version is running
   if(!u){ box.hidden = true; return; }
   const win = /Windows\.zip$/.test(u.url), mac = /Mac\.zip$/.test(u.url);
   box.innerHTML = `<b>✨ BibleChat ${esc(u.version)} is out</b>You have ${esc(state.version)}.
@@ -1178,6 +1188,7 @@ async function showChapter(book, chapter, hitVerse){
   for(const id of ["#rPrev", "#rPrev2"]) $(id).disabled = !j.prev;
   for(const id of ["#rNext", "#rNext2"]) $(id).disabled = !j.next;
   $("#rSay").hidden = !(state.tts || HAS_LOCAL_VOICE);
+  if(!say) sayBar("off");   // the Listen button says where it would go on ("Listen from verse 12")
   renderBooks();
   const curBtn = document.querySelector(".book.cur .chs .cur") || document.querySelector(".book.cur"); if(curBtn) curBtn.scrollIntoView({block: "center"});
   const r = $("#reader");
@@ -1310,17 +1321,37 @@ function voiceFor(text, bibleId){
 
 /* read the chapter aloud, a few verses at a time, carrying on into the next chapter */
 let say = null;
-function sayStop(){
+/* Listen. The bar at the bottom (Pause / Resume / Stop) stays in reach while the text scrolls. BibleChat remembers the
+   verse it was reading: Pause and Stop keep the place, Resume and Listen go on from there; "From verse 1" starts the
+   chapter again. Clicking a verse offers "Listen from this verse". */
+let sayAt = store.get("bc.sayAt", null);   // {bid, book, chapter, verse}: where reading aloud stopped
+function sayPlace(v){ if(!rChap) return; sayAt = {bid: rChap.bid, book: rChap.book, chapter: rChap.chapter, verse: v}; store.set("bc.sayAt", sayAt); }
+function sayResumeVerse(){ return sayAt && rChap && sayAt.bid === rChap.bid && sayAt.book === rChap.book && sayAt.chapter === rChap.chapter ? sayAt.verse : null; }
+function sayBar(state){   // "playing", "paused" or "off"
+  const p = $("#player"); p.hidden = state === "off";
+  const v = sayResumeVerse();
+  $("#plPause").textContent = state === "playing" ? "⏸ Pause" : "▶ Resume";
+  $("#plWhere").textContent = rChap ? `${rChap.book} ${rChap.chapter}${v ? ":" + v : ""}` : "";
+  const r = sayResumeVerse();
+  $("#rSay").textContent = state === "playing" ? "⏸ Pause" : (r && r > 1 ? `🔊 Listen from verse ${r}` : "🔊 Listen");
+}
+function sayHalt(){   // stop the voice, keep the place
   if(!say) return;
   say.stop = true; if(say.audio) say.audio.pause(); if(say.local) try{ speechSynthesis.cancel(); }catch(e){}
-  document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say"));
-  say = null; $("#rSay").textContent = "🔊 Listen";
+  say = null;
 }
-function sayChunks(){
+function sayPause(){ sayHalt(); sayBar("paused"); }
+function sayStop(){   // used when leaving Read or changing chapter: stop, keep the place, hide the bar
+  sayHalt();
+  document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say"));
+  if($("#player")) sayBar("off");
+}
+function sayChunks(from){
   const out = []; let cur = {nums: [], text: ""};
   for(const v of rChap.verses){
+    if(v.verse < from) continue;
     if(cur.text && cur.text.length + v.text.length > 450){ out.push(cur); cur = {nums: [], text: ""}; }
-    if(!cur.nums.length && !out.length) cur.text = `${rChap.book}, chapter ${rChap.chapter}. `;
+    if(!cur.nums.length && !out.length && from <= 1) cur.text = `${rChap.book}, chapter ${rChap.chapter}. `;
     cur.nums.push(v.verse); cur.text += v.text + " ";
   }
   if(cur.nums.length) out.push(cur);
@@ -1331,50 +1362,58 @@ async function fetchAudio(text){
   if(!r.ok){ const j = await r.json().catch(() => ({})); throw new Error(j.error || "Couldn't speak that."); }
   return URL.createObjectURL(await r.blob());
 }
-async function sayStart(){
+function sayMark(nums, scroll){
+  document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say"));
+  nums.forEach(n => { const el = document.getElementById("v" + n); if(el) el.classList.add("say"); });
+  const first = document.getElementById("v" + nums[0]); if(first && scroll) first.scrollIntoView({block: "center", behavior: "smooth"});
+}
+async function sayStart(from){
   if(!rChap) return;
+  sayHalt();
+  from = from || sayResumeVerse() || 1;
+  if(!rChap.verses.some(v => v.verse >= from)) from = 1;
   loadSysVoices();
   const pick = voiceFor(rChap.verses.slice(0, 40).map(v => v.text).join(" "), rChap.bid);
   if(!pick.ok){ alert(noVoiceMessage(pick.lang)); return; }
   const me = say = {stop: false, audio: null, local: pick.local};
-  $("#rSay").textContent = "⏸ Stop";
+  sayPlace(from); sayBar("playing");
+  const finished = async () => {   // end of the chapter: go on with the next one
+    const n = rChap.next; sayAt = null; store.set("bc.sayAt", null); sayStop();
+    if(n){ await showChapter(n.book, n.chapter); sayStart(1); }
+  };
   if(pick.local){   // the computer's own voice, one verse at a time
     const w = CHAPTER_WORD[pick.lang.split("-")[0]];
     try{
-      for(let i = 0; i < rChap.verses.length; i++){
+      for(const v of rChap.verses){
+        if(v.verse < from) continue;
         if(me.stop) return;
-        const v = rChap.verses[i];
-        document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say"));
-        const el = document.getElementById("v" + v.verse); if(el){ el.classList.add("say"); el.scrollIntoView({block: "center", behavior: "smooth"}); }
-        const lead = i === 0 && w ? (pick.lang.startsWith("en") ? rChap.book + ", " : "") + w + " " + rChap.chapter + ". " : "";
+        sayPlace(v.verse); sayMark([v.verse], true); sayBar("playing");
+        const lead = v.verse === 1 && from <= 1 && w ? (pick.lang.startsWith("en") ? rChap.book + ", " : "") + w + " " + rChap.chapter + ". " : "";
         await speakLocal(lead + v.text, pick.lang, me);
       }
-    }catch(err){ if(!me.stop){ sayStop(); alert(err.message); } return; }
-    if(me.stop) return;
-    const n = rChap.next; sayStop();
-    if(n){ await showChapter(n.book, n.chapter); sayStart(); }
+    }catch(err){ if(!me.stop){ sayPause(); alert(err.message); } return; }
+    if(!me.stop) await finished();
     return;
   }
-  const chunks = sayChunks();
+  const chunks = sayChunks(from);
   let next = fetchAudio(chunks[0].text);
   try{
     for(let i = 0; i < chunks.length; i++){
       const url = await next;
       if(me.stop) return;
       if(i + 1 < chunks.length) next = fetchAudio(chunks[i + 1].text);   // fetch the next part while this one plays
-      document.querySelectorAll("#rtext .v.say").forEach(n => n.classList.remove("say"));
-      chunks[i].nums.forEach(n => { const el = document.getElementById("v" + n); if(el) el.classList.add("say"); });
-      const first = document.getElementById("v" + chunks[i].nums[0]); if(first) first.scrollIntoView({block: "center", behavior: "smooth"});
+      sayPlace(chunks[i].nums[0]); sayMark(chunks[i].nums, true); sayBar("playing");
       me.audio = new Audio(url);
       await new Promise((res, rej) => { me.audio.onended = res; me.audio.onerror = () => rej(new Error("Couldn't play the audio.")); me.audio.play().catch(rej); });
       if(me.stop) return;
     }
-  }catch(err){ if(!me.stop){ sayStop(); alert(err.message); } return; }
-  if(me.stop) return;
-  const n = rChap.next; sayStop();
-  if(n){ await showChapter(n.book, n.chapter); sayStart(); }
+  }catch(err){ if(!me.stop){ sayPause(); alert(err.message); } return; }
+  if(!me.stop) await finished();
 }
-$("#rSay").onclick = () => say ? sayStop() : sayStart();
+$("#plPause").onclick = () => say ? sayPause() : sayStart();
+$("#plStop").onclick = () => sayStop();
+$("#plStart").onclick = () => sayStart(1);
+$("#rSay").onclick = () => say ? sayPause() : sayStart();
 
 /* a verse reference in a chat answer opens that chapter in the reader */
 $("#thread").addEventListener("click", e => {
@@ -1502,7 +1541,9 @@ async function studyVerse(book, chapter, verse){
       ? (h.from_verse !== verse ? `<p class="muted">On the passage from verse ${h.from_verse}:</p>` : "") + `<div class="scof">${noteHtml(h.text)}</div>`
       : `<p class="muted">No comment on this verse.</p>`);
   const bmBtn = `<button class="tp bmtoggle" data-book="${esc(book)}" data-ch="${chapter}" data-v="${verse}"><b>${bmHas(book, chapter, verse) ? "🔖 Bookmarked ✓ (click to remove)" : "🔖 Bookmark this verse"}</b><span></span></button>`;
-  const extra = `<button class="tp smadd" data-book="${esc(book)}" data-ch="${chapter}" data-v="${verse}"><b>📋 Add to sermon list</b><span></span></button><button class="tp viimg" data-book="${esc(book)}" data-ch="${chapter}" data-v="${verse}"><b>🖼 Make an image to post</b><span>your photo or a background</span></button><button class="tp aiask" data-ref="${esc(book)} ${chapter}:${verse}" data-v="${verse}"><b>✨ Ask an AI about this verse</b><span>Claude, ChatGPT, Gemini…</span></button>`;
+  const listen = (state.tts || HAS_LOCAL_VOICE) && rChap && rChap.book === book && rChap.chapter === chapter
+    ? `<button class="tp saythis" data-v="${verse}"><b>🔊 Listen from this verse</b><span></span></button>` : "";
+  const extra = listen + `<button class="tp smadd" data-book="${esc(book)}" data-ch="${chapter}" data-v="${verse}"><b>📋 Add to sermon list</b><span></span></button><button class="tp viimg" data-book="${esc(book)}" data-ch="${chapter}" data-v="${verse}"><b>🖼 Make an image to post</b><span>your photo or a background</span></button><button class="tp aiask" data-ref="${esc(book)} ${chapter}:${verse}" data-v="${verse}"><b>✨ Ask an AI about this verse</b><span>Claude, ChatGPT, Gemini…</span></button>`;
   const o = j.original;
   const orig = o ? `<h3>The original line (${esc(o.language)})</h3><div class="orig${o.language === "Hebrew" ? " he" : ""}" style="font-size:22px" dir="${o.language === "Hebrew" ? "rtl" : "ltr"}">${esc(o.text)}</div>`
       + `<p class="muted">${esc(o.source)}, public domain${o.number !== chapter + ":" + verse ? `. Hebrew numbering: ${esc(o.number)}` : ""}.</p>` : "";
@@ -1575,6 +1616,7 @@ $("#studyBody").addEventListener("change", e => {
 });
 function verseTextOf(n){ const x = rChap && rChap.verses.find(v => v.verse === n); return x ? x.text : ""; }
 $("#studyBody").addEventListener("click", e => {
+  const st = e.target.closest(".saythis"); if(st){ studyClose(); sayStart(+st.dataset.v); return; }
   const vm = e.target.closest(".viimg"); if(vm){ viOpen(vm.dataset.book, +vm.dataset.ch, +vm.dataset.v, +vm.dataset.v); return; }
   const sa = e.target.closest(".smadd"); if(sa){ smAdd(sa.dataset.book, +sa.dataset.ch, +sa.dataset.v, +sa.dataset.v, rd.bible); sa.querySelector("b").textContent = "📋 In the sermon list ✓"; return; }
   const aa = e.target.closest(".aiask"); if(aa){ const t = verseTextOf(+aa.dataset.v);
@@ -2098,11 +2140,26 @@ smCount();
 /* ---------- suggest a feature: goes to Hans by email or on GitHub ---------- */
 function sgBody(){ return $("#sgText").value.trim() + "\n\n(" + SG_FROM + ")"; }
 function sgCheck(){ if($("#sgText").value.trim().length < 3){ chSay("Type your idea first."); return false; } return true; }
-$("#sgMail").onclick = () => {
+async function sgSend(){
+  if(!sgCheck()) return;
+  const b = $("#sgSend"), reply = $("#sgReply").value.trim();
+  b.disabled = true; b.textContent = "Sending…";
+  try{
+    const r = await fetch("/api/suggest", {method: "POST", body: JSON.stringify({message: sgBody(), email: reply})});
+    const j = await r.json().catch(() => ({}));
+    if(!r.ok || j.error) throw new Error(j.error || r.status);
+    $("#sgText").value = ""; $("#sgReply").value = "";
+    $("#sgNote").textContent = "Thank you! Your idea is on its way to Hans.";
+    chSay("Thank you! Your idea is on its way to Hans.");
+  }catch(e){ chSay("It couldn't be sent. Check the internet connection and try again."); }
+  b.disabled = false; b.textContent = "📨 Send to Hans";
+}
+$("#sgSend").onclick = sgSend;
+$("#sgMail").onclick = e => { e.preventDefault();
   if(!sgCheck()) return;
   location.href = "mailto:wbeaugrand@gmail.com?subject=" + encodeURIComponent("BibleChat suggestion") + "&body=" + encodeURIComponent(sgBody());
 };
-$("#sgGit").onclick = () => {
+$("#sgGit").onclick = e => { e.preventDefault();
   if(!sgCheck()) return;
   const t = $("#sgText").value.trim().split("\n")[0].slice(0, 70);
   window.open("https://github.com/beaugrand/BibleChat-voice/issues/new?title=" + encodeURIComponent("Suggestion: " + t) + "&body=" + encodeURIComponent(sgBody()), "_blank", "noopener");
