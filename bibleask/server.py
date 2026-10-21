@@ -457,6 +457,15 @@ def make_handler(app: App, port: int):
     return Handler
 
 
+def _close_splash() -> None:
+    """Close the Windows start-up picture ("BibleChat is starting… please wait"), if the build has one."""
+    try:
+        import pyi_splash  # only exists inside a PyInstaller build made with a splash screen
+        pyi_splash.close()
+    except Exception:
+        pass
+
+
 def _already_running(port: int) -> bool:
     try:
         with urllib.request.urlopen(f"http://127.0.0.1:{port}/api/ping", timeout=1.5) as r:
@@ -473,6 +482,7 @@ def _free(port: int) -> bool:
 def main(open_browser: bool = True) -> int:
     port = PORT
     if _already_running(port):
+        _close_splash()
         if open_browser:
             webbrowser.open(f"http://127.0.0.1:{port}/")
         return 0
@@ -501,6 +511,7 @@ def main(open_browser: bool = True) -> int:
         pass
     if open_browser:
         threading.Timer(0.6, lambda: webbrowser.open(url)).start()
+    threading.Timer(1.5, _close_splash).start()   # the browser shows "Loading BibleChat, please wait…" from here on
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:

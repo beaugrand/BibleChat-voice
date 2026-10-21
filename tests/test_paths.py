@@ -168,7 +168,7 @@ const c = P.choose(p); console.log(JSON.stringify({n: c.pick.length, rest: c.res
   sorted: c.pick.every((q, i) => !i || c.pick[i - 1].rank >= q.rank), refs: P.parseRef('John 17:11-12'), whole: P.parseRef('Jubilees 4-5')}));"""
         for f in SOURCES:
             built = os.path.join(bp.OUT_DIR, os.path.basename(f))
-            r = subprocess.run(["node", "-e", script, os.path.join(ROOT, "web", "paths.js"), built], capture_output=True, text=True, timeout=60)
+            r = subprocess.run(["node", "-e", script, os.path.join(ROOT, "web", "paths.js"), built], capture_output=True, text=True, encoding="utf-8", timeout=60)
             self.assertEqual(r.returncode, 0, r.stderr)
             out, p = json.loads(r.stdout), load(built)
             self.assertEqual(out["n"], p.get("show", 8)); self.assertEqual(out["n"] + out["rest"], len(p["quiz"]))

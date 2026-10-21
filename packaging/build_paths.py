@@ -427,8 +427,9 @@ def score(sig: dict) -> float:
 
 # ---------------------------------------------------------------- build
 def sha(path: str) -> str:
+    """Fingerprint of a source file. Line endings don't count: Windows checks text files out with \r\n."""
     with open(path, "rb") as f:
-        return hashlib.sha256(f.read()).hexdigest()[:16]
+        return hashlib.sha256(f.read().replace(b"\r\n", b"\n")).hexdigest()[:16]
 
 
 def build(B: Bibles) -> dict[str, dict]:

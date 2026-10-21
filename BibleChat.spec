@@ -25,12 +25,25 @@ a = Analysis(["chat_app.py"], datas=datas, binaries=binaries, hiddenimports=hidd
              excludes=["tkinter", "matplotlib", "PIL.ImageTk"])
 pyz = PYZ(a.pure)
 ICON = "packaging/biblechat.ico" if sys.platform.startswith("win") and os.path.isfile("packaging/biblechat.ico") else None
-exe = EXE(pyz, a.scripts, [], exclude_binaries=True, name="BibleChat", icon=ICON,
+# Windows: a small "BibleChat is starting… please wait" picture the moment the app is double-clicked (the first
+# start can take 15 seconds or more); bibleask/server.py closes it when the browser opens. PyInstaller's splash
+# screen doesn't work on the Mac, and if it can't be made here the app is simply built without it.
+splash = None
+if sys.platform.startswith("win") and os.path.isfile("packaging/splash.png"):
+    try:
+        splash = Splash("packaging/splash.png", binaries=a.binaries, datas=a.datas, text_pos=None,
+                        minify_script=True, always_on_top=False)
+    except Exception as err:
+        print("No splash screen:", err)
+        splash = None
+exe = EXE(pyz, a.scripts, *([splash] if splash else []), [], exclude_binaries=True, name="BibleChat", icon=ICON,
           console=sys.platform.startswith("linux"))   # no black window on Windows/Mac; Linux prints the address
 
 # A second, hidden helper: Pocket TTS's own server, bundled right alongside so BibleChat can speak
 # its answers with no separate install step. bibleask/server.py launches it automatically.
 exes, all_binaries, all_zipfiles, all_datas = [exe], a.binaries, a.zipfiles, a.datas
+if splash:
+    all_binaries = all_binaries + splash.binaries
 if os.path.isfile("pocket_tts_entry.py") and importlib.util.find_spec("pocket_tts"):  # only when the voice is installed
     a2 = Analysis(["pocket_tts_entry.py"], hiddenimports=hiddenimports, excludes=["tkinter", "matplotlib"])
     pyz2 = PYZ(a2.pure)

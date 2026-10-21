@@ -1,2 +1,6 @@
 # Keep the meaning-search word list byte-for-byte on every system (Windows would otherwise add \r to each line)
 bibleask/data/meaning/vocab.txt -text
+# Study Paths and their checked copies: the same bytes on every system, so their fingerprints match
+packaging/paths/*.json text eol=lf
+web/paths/*.json text eol=lf
+web/quoted.json text eol=lf

@@ -74,7 +74,7 @@ global.document = {getElementById: () => el};
 const out = [];
 for(const abbrs of [["KJV","ETH","BSB","WEB"], ["KJV","ETH","BSB","NIV"], ["KJV","BSB"]]){ coverLine(abbrs); out.push([el.t, +el.a.textLength]); }
 console.log(JSON.stringify(out));"""
-            r = subprocess.run(["node", "-e", script], capture_output=True, text=True, timeout=60)
+            r = subprocess.run(["node", "-e", script], capture_output=True, text=True, encoding="utf-8", timeout=60)
             self.assertEqual(r.returncode, 0, r.stderr)
             out = json.loads(r.stdout)
             self.assertEqual([o[0] for o in out], ["KJV · ETHIOPIAN CANON · BSB", "KJV · ETHIOPIAN CANON · NIV", "KJV · BSB"])
@@ -91,6 +91,17 @@ console.log(JSON.stringify(out));"""
         i18n = read(os.path.join(ROOT, "web", "i18n.js"))
         for label in ("♥ Donate", "ℹ About", "⛪ Churches", "💡 Ideas"):
             self.assertIn(f'"{label}":', i18n)
+
+    def test_start_up_says_loading_please_wait(self):
+        # the computer app can take 15+ seconds to start: the page says "Loading BibleChat, please wait…" until
+        # the Bibles are open, and Windows shows a start-up picture the moment the app is double-clicked
+        s = read(PAGES[1])
+        self.assertIn('id="boot"', s); self.assertIn("Loading BibleChat, please wait", s)
+        self.assertIn('$("#boot").remove()', s)
+        spec = read(os.path.join(ROOT, "BibleChat.spec"))
+        self.assertIn('Splash("packaging/splash.png"', spec)
+        self.assertTrue(os.path.isfile(os.path.join(ROOT, "packaging", "splash.png")))
+        self.assertIn("pyi_splash.close()", read(os.path.join(ROOT, "bibleask", "server.py")))
 
     def test_verse_picker_in_read_mode(self):
         # a "Verse" button next to the chapter title opens a grid of the chapter's own verse numbers
