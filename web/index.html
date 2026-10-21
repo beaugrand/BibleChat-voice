@@ -55,6 +55,8 @@ a{color:var(--accent)}
 #player .wrap{display:flex;gap:8px;align-items:center;justify-content:center;padding:8px 12px}
 #plWhere{font-weight:650;margin-right:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 body.playing{padding-bottom:calc(var(--tabh) + 62px + env(safe-area-inset-bottom))}
+#rReturn{margin:0 0 8px;padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;background:var(--card);font-size:14.5px}
+#rReturn .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 #tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--panel);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
 #tabs .wrap{display:flex;height:var(--tabh);padding:0 6px}
 #tabs button{flex:1;border:0;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font-size:11.5px;color:var(--muted);border-radius:10px}
@@ -296,7 +298,7 @@ body.has-church #top .brand{display:none}
       <button id="where">…</button>
       <button class="btn" id="vpick" title="Jump to a verse">Verse</button>
       <button class="btn" id="next" aria-label="Next chapter">›</button>
-    </div></div>
+    </div><div class="wrap"><div id="rReturn" hidden></div></div></div>
     <div class="wrap">
       <div id="rtools">
         <button class="btn" id="closeBook" title="Close the book: back to the cover">🏠 Home</button>
@@ -618,6 +620,7 @@ function render(hitVerse){
   const bk = bible.byName[place.book]; let vs = bk && bk.map.get(place.ch);
   if(!vs){ place.book = bible.list[0]; place.ch = bible.books[0].c[0][0]; vs = bible.books[0].c[0][1]; }
   $("#where").textContent = bName(place.book) + " " + place.ch;
+  retShow();
   if(!saying && $("#player")) sayBar(sayResumeIdx() != null && !$("#player").hidden ? "paused" : "off");   // Listen says where it goes on
   const t = $("#rtext"); t.className = rLines ? "lines" : ""; t.style.setProperty("--rs", rScale);
   t.innerHTML = vs.map(([n, x]) => `<span class="v" id="v${n}"><sup>${n}</sup>${esc(x)} </span>`).join("");
@@ -1303,14 +1306,40 @@ $("#studyBody").addEventListener("click", e => {
 });
 
 /* open a verse even if the Bible being read doesn't have its book (1 Enoch, Jubilees, Jasher): switch to one that does */
-async function openAnywhere(book, ch, v){
-  if(!bible.byName[book]){
-    const id = Object.values(PATH_BIBLES).find(x => catalog.some(c => c.id === x) && loaded[x] && loaded[x].byName[book])
-      || (book === "Jasher" ? "eng-jasher-1840" : "eng-ethiopian-canon");
-    try{ await useBible(id, true); }catch(e){ return toast(tr("That Bible didn't load. Try again.")); }
-    if(!bible.byName[book]) return toast(tr("That Bible didn't load. Try again."));
+/* Opening a verse from a link. If the Bible being read has the book, it opens there; if not, in the King James
+   (when it has the book), else the Ethiopian Canon (1 Enoch, Jubilees) or the 1840 Jasher, and a bar says so with
+   "← Back to <your Bible>" (and "← Back to Study Paths" when the link came from a path). */
+let rRet = null;   // {bible, book, ch, toBible, toBook, fromPaths}
+function bAbbr(id){ const m = catalog.find(c => c.id === id); return m ? (m.abbr || m.name) : id; }
+function retShow(){
+  const box = $("#rReturn"); if(!box) return;
+  if(!rRet || place.bible !== rRet.toBible){ box.hidden = true; return; }
+  const switched = rRet.bible && rRet.bible !== rRet.toBible;
+  box.hidden = false;
+  box.innerHTML = (switched ? `<span>${esc(tr("Reading"))} <b>${esc(bName(rRet.toBook))}</b> in <b>${esc(bAbbr(rRet.toBible))}</b>, ${esc(tr("because it isn't in"))} ${esc(bAbbr(rRet.bible))}.</span>` : "")
+    + `<div class="row">${switched ? `<button class="btn primary" id="retBible">← ${esc(bAbbr(rRet.bible))} · ${esc(rRet.book)} ${rRet.ch}</button>` : ""}`
+    + `${rRet.fromPaths ? `<button class="btn" id="retPaths">← ${esc(tr("Back to Study Paths"))}</button>` : ""}<button class="btn" id="retClose" aria-label="Close">✕</button></div>`;
+}
+document.addEventListener("click", e => {
+  if(e.target.closest("#retBible")){ const r = rRet; rRet = null;
+    (async () => { try{ await useBible(r.bible, true); }catch(err){ return toast(tr("That Bible didn't load. Try again.")); } go(r.book, r.ch); retShow(); })(); return; }
+  if(e.target.closest("#retPaths")){ if(rRet) rRet.fromPaths = false; retShow(); BCPaths.reopen(); return; }
+  if(e.target.closest("#retClose")){ rRet = null; retShow(); }
+});
+async function openAnywhere(book, ch, v, fromPaths){
+  const back = {bible: place.bible, book: place.book, ch: place.ch};
+  let target = bible.byName[book] ? place.bible : null;
+  if(!target){
+    const order = ["eng-kjv", book === "Jasher" ? "eng-jasher-1840" : "eng-ethiopian-canon", ...Object.values(PATH_BIBLES)];
+    for(const id of order){
+      if(!catalog.some(c => c.id === id)) continue;
+      try{ const b = await loadBible(id); if(b.byName[book]){ target = id; break; } }catch(e){}
+    }
+    if(!target) return toast(tr("That Bible didn't load. Try again."));
+    try{ await useBible(target, true); }catch(e){ return toast(tr("That Bible didn't load. Try again.")); }
   }
-  go(book, ch, v);
+  rRet = target !== back.bible ? {...back, toBible: target, toBook: book, fromPaths: !!fromPaths} : fromPaths ? {toBible: target, toBook: book, fromPaths: true} : null;
+  go(book, ch, v); retShow();
 }
 /* ---------- 📜 Study Paths (web/paths.js): guided studies with questions; everything stays on this phone ---------- */
 const PATH_BIBLES = {KJV: "eng-kjv", ETH: "eng-ethiopian-canon", BSB: "eng-bsb", JASHER: "eng-jasher-1840"};
@@ -1334,7 +1363,7 @@ BCPaths.mount({
   letters: (w, he) => he ? hebLettersHtml(w) : grkLettersHtml(w),
   qr: (t, px) => qrCanvas(t, px),
   shareUrl: h => PHONE_URL + h,
-  openVerse: (book, ch, v) => openAnywhere(book, ch, v),
+  openVerse: (book, ch, v) => openAnywhere(book, ch, v, true),
   get: (k, d) => store.get(k, d), set: (k, v) => store.set(k, v), toast: m => toast(tr(m)),
   canGet: false, getBibles: () => show("bibles"),
   pastQuestions: () => store.get("pastq", []),

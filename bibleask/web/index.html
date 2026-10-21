@@ -164,6 +164,9 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 #player{position:sticky;bottom:0;z-index:6;margin-top:auto;display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;
   padding:10px 14px;background:var(--panel);border-top:1px solid var(--line);box-shadow:0 -4px 14px rgba(0,0,0,.08)}
 #plWhere{font-weight:650;margin-right:6px}
+/* "Reading 1 Enoch in the Ethiopian Canon, because it isn't in the KJV. ← Back to KJV · Revelation 20" */
+#rReturn{max-width:780px;margin:0 auto 10px;padding:10px 14px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;background:var(--panel);font-size:14.5px;width:calc(100% - 40px)}
+#rReturn .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 #rfoot{max-width:780px;margin:0 auto;padding:0 20px 40px;display:flex;justify-content:space-between;gap:10px;width:100%}
 /* start-up: "Loading BibleChat, please wait…" until the Bibles are open */
 #boot{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
@@ -471,7 +474,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
       <button class="btn" id="rLines" title="One verse per line, or flowing text">¶</button>
       <button class="btn" id="rSmall" title="Smaller text">A−</button>
       <button class="btn" id="rBig" title="Larger text">A+</button>
-    </div></div>
+    </div><div id="rReturn" hidden></div></div>
     <div id="rtext"></div>
     <div id="player" hidden role="region" aria-label="Listening">
       <span id="plWhere"></span>
@@ -1174,7 +1177,7 @@ async function showChapter(book, chapter, hitVerse){
     j = await (await fetch(`/api/chapter?bible=${encodeURIComponent(bid)}&book=${encodeURIComponent(book)}&chapter=${chapter}`)).json();
   }catch(err){ $("#rtext").innerHTML = `<p class="notice err">Couldn't reach BibleChat. If you closed it, open the app again.</p>`; return; }
   if(my !== rToken) return;
-  if(j.error){ $("#rtext").innerHTML = `<p class="notice err">${esc(j.error)}</p>`; return; }
+  if(j.error){ if(rChap){ chSay(j.error); return; } $("#rtext").innerHTML = `<p class="notice err">${esc(j.error)}</p>`; return; }
   rChap = {...j, bid};
   rd = {bible: bid, book, chapter}; store.set("bc.read", rd); navNote();
   $("#rtitle").innerHTML = `<b>${esc((rBooks.find(b => b.name === book) || {}).local || book)} ${chapter}</b><small>${esc(j.bible)} · ${j.verses.length} verses · click a verse to study it${Object.keys(j.scofield || {}).length ? " · <mark class=\"sc\" style=\"cursor:default\">highlighted</mark> = Scofield note" : ""}</small>`;
@@ -1189,6 +1192,7 @@ async function showChapter(book, chapter, hitVerse){
   for(const id of ["#rNext", "#rNext2"]) $(id).disabled = !j.next;
   $("#rSay").hidden = !(state.tts || HAS_LOCAL_VOICE);
   if(!say) sayBar("off");   // the Listen button says where it would go on ("Listen from verse 12")
+  retShow();
   renderBooks();
   const curBtn = document.querySelector(".book.cur .chs .cur") || document.querySelector(".book.cur"); if(curBtn) curBtn.scrollIntoView({block: "center"});
   const r = $("#reader");
@@ -1526,8 +1530,8 @@ async function studyVerse(book, chapter, verse){
   const words = j.words.length
     ? `<h3>Original words (Strong's${ot ? ", Hebrew" : ", Greek"})</h3><div class="kjv">${j.words.map(w => typeof w === "string" ? esc(w)
         : `<button class="w" data-n="${esc(w[1].split(" ")[0])}" title="${esc(w[1])}">${esc(w[0])}<sub>${esc(w[1].split(" ")[0])}</sub></button>`).join("")}</div>
-       <p class="muted">The King James wording, because Strong's numbers are attached to it. Click an underlined word.</p>`
-    : `<h3>Original words</h3><p class="muted">Strong's numbers aren't available for this verse.</p>`;
+       <p class="muted">The King James wording, because Strong's numbers are attached to it. Click an underlined word.${(state.bibles.find(b => b.id === rd.bible) || {name: "KJV"}).name.startsWith("KJV") ? "" : ` You are reading ${esc(bibleName(rd.bible))}; the Hebrew/Greek words and the Paleo-Hebrew letters always come from the King James.`}</p>`
+    : `<h3>Original words</h3><p class="muted">${BIBLE_ORDER.includes(book) || ALL_BOOKS.includes(book) ? "Strong's numbers aren't available for this verse." : `The Hebrew/Greek word study (Strong's numbers, letter by letter, Paleo-Hebrew) covers the 66 books of the King James. ${esc(book)} has no Strong's numbers.`}</p>`;
   const topics = j.topics.length
     ? `<h3>Topics (Nave's Topical Bible)</h3>` + j.topics.map(t => `<button class="tp" data-t="${t.id}"><b>${esc(t.title)}</b><span>${t.count} verse${t.count === 1 ? "" : "s"}</span></button>`).join("")
     : `<h3>Topics</h3><p class="muted">Nave's doesn't list this verse under a topic.</p>`;
@@ -1636,10 +1640,7 @@ $("#studyBody").addEventListener("click", e => {
   const t = e.target.closest(".tp"); if(t) return studyTopic(+t.dataset.t);
   const g = e.target.closest(".sv-go"); if(g && rChap) return studyVerse(rChap.book, rChap.chapter, +g.dataset.v);
   const a = e.target.closest(".sv a, a.nref");
-  if(a){ sayStop(); rToken++; const bk = a.dataset.book, ch = +a.dataset.ch, vn = +a.dataset.v;
-    (async () => { await loadBooks(rd.bible);
-      if(!rBooks.some(b => b.name === bk)){ const other = libId(bk === "Jasher" ? "JASHER" : "ETH"); if(other){ rd = {bible: other, book: bk, chapter: ch}; $("#rBible").value = other; await loadBooks(other); } }
-      await showChapter(bk, ch, vn); })(); }
+  if(a){ openRef(a.dataset.book, +a.dataset.ch, +a.dataset.v); }
 });
 $("#studyFind").onsubmit = e => { e.preventDefault(); studyFind($("#studyQ").value); };
 $("#studyBack").onclick = () => { if(studyStack.length > 1){ studyStack.pop(); studyShow(studyStack[studyStack.length - 1], false); } };
@@ -1999,6 +2000,63 @@ $("#thread").addEventListener("click", e => {
   askAI(q + "\n\nVerses BibleChat found:\n" + vs + "\n\nAnswer from these verses and say which verse supports each point.");
 });
 
+
+/* Opening a verse from a link (Study Paths, "Quoted or named in Scripture", cross-references, notes).
+   If the Bible being read has the book, it opens there. If not, it opens in a Bible on this computer that has it,
+   the King James first, then the Ethiopian Canon (1 Enoch, Jubilees) or the 1840 Jasher, and a bar says so with
+   "← Back to <your Bible>". If no Bible here has the book, BibleChat offers to download the right one and stays put. */
+const booksCache = {};
+async function booksOf(bid){ if(!bid) return []; if(!booksCache[bid]){ try{ booksCache[bid] = ((await (await fetch("/api/books?bible=" + encodeURIComponent(bid))).json()).books || []).map(b => b.name); }catch(e){ return []; } } return booksCache[bid]; }
+const HOME_OF = {Jasher: ["JASHER", "eng-jasher-1840.zefania.xml", "the 1840 Book of Jasher"]};
+const ETH_GET = ["ETH", "eng-ethiopian-canon.zefania.xml", "the Ethiopian Canon"];
+let rRet = null;   // {bible, book, chapter, verse, name, toBible, toBook, fromPaths}
+function bibleName(id){ const b = state.bibles.find(x => x.id === id); return b ? String(b.name).split(" - ")[0] : "this Bible"; }
+function retShow(){
+  const box = $("#rReturn"); if(!box) return;
+  if(!rRet || rd.bible !== rRet.toBible){ box.hidden = true; return; }
+  box.hidden = false;
+  box.innerHTML = (rRet.fromPaths && !rRet.bible ? "" : `Reading <b>${esc(rRet.toBook)}</b> in <b>${esc(bibleName(rRet.toBible))}</b>${rRet.bible && rRet.bible !== rRet.toBible ? `, because it isn't in ${esc(bibleName(rRet.bible))}` : ""}.`)
+    + `<div class="row">${rRet.bible && rRet.bible !== rRet.toBible ? `<button class="btn primary" id="retBible">← Back to ${esc(bibleName(rRet.bible))} · ${esc(rRet.book)} ${rRet.chapter}</button>` : ""}`
+    + `${rRet.fromPaths ? `<button class="btn" id="retPaths">← Back to Study Paths</button>` : ""}<button class="btn" id="retClose" title="Hide this bar">✕</button></div>`;
+}
+$("#reader").addEventListener("click", e => {
+  if(e.target.closest("#retBible")){ const r = rRet; rRet = null; retShow(); sayStop(); rd = {bible: r.bible, book: r.book, chapter: r.chapter}; $("#rBible").value = r.bible; store.set("bc.read", rd); rToken++;
+    (async () => { await loadBooks(r.bible); await showChapter(r.book, r.chapter, r.verse); })(); return; }
+  if(e.target.closest("#retPaths")){ const r = rRet; if(r) r.fromPaths = false; retShow(); BCPaths.reopen(); return; }
+  if(e.target.closest("#retClose")){ rRet = null; retShow(); return; }
+  const g = e.target.closest("#getHome"); if(g){ getHomeBible(g.dataset.file, g.dataset.book, +g.dataset.c, +g.dataset.v); }
+});
+async function getHomeBible(file, book, ch, v){
+  const box = $("#rReturn"); box.innerHTML = "Downloading… (free, one time)";
+  try{
+    const j = await (await fetch("/api/catalog/get", {method: "POST", body: JSON.stringify({file})})).json();
+    if(j.error) throw new Error(j.error);
+    for(;;){ await new Promise(r => setTimeout(r, 700)); const st = await (await fetch("/api/jobs/" + j.job)).json();
+      if(st.status === "running"){ box.innerHTML = `Downloading… ${Math.round(100 * (st.progress || 0))}%`; continue; } if(st.status === "error") throw new Error(st.error); break; }
+    await refresh(); await openRef(book, ch, v, {fromPaths: rRet && rRet.fromPaths});
+  }catch(err){ box.innerHTML = `Couldn't download. Is the internet on? <div class="row"><button class="btn" id="retClose">OK</button></div>`; }
+}
+async function openRef(book, ch, v, opts = {}){
+  if(mode !== "read") setMode("read");
+  const here = rd.bible || (state.bibles[0] || {}).id, back = rChap ? {bible: rChap.bid, book: rChap.book, chapter: rChap.chapter, verse: null} : {bible: here};
+  let target = (await booksOf(here)).includes(book) ? here : null;
+  if(!target){
+    const home = HOME_OF[book] || ETH_GET, order = [libId("KJV"), libId(home[0]), ...state.bibles.map(b => b.id)].filter(Boolean);
+    for(const id of order) if((await booksOf(id)).includes(book)){ target = id; break; }
+    if(!target){   // no Bible on this computer has it: offer it, and stay where we are
+      const isKjvBook = BIBLE_ORDER.includes(book) || ALL_BOOKS.includes(book), get = isKjvBook ? ["KJV", "eng-kjv.osis.xml", "the King James Version"] : home;
+      rRet = {...back, toBible: rd.bible, toBook: book, fromPaths: !!opts.fromPaths};
+      const box = $("#rReturn"); box.hidden = false;
+      box.innerHTML = `<b>${esc(book)} ${ch}${v ? ":" + v : ""}</b> is in ${esc(get[2])}, which isn't on this computer yet.<div class="row"><button class="btn primary" id="getHome" data-file="${esc(get[1])}" data-book="${esc(book)}" data-c="${ch}" data-v="${v || ""}">⬇ Get ${esc(get[2])} (free)</button>${opts.fromPaths ? `<button class="btn" id="retPaths">← Back to Study Paths</button>` : ""}<button class="btn" id="retClose">Stay here</button></div>`;
+      return;
+    }
+  }
+  rRet = target !== here || opts.fromPaths ? {...(target !== here ? back : {}), toBible: target, toBook: book, fromPaths: !!opts.fromPaths} : null;
+  sayStop(); rToken++;
+  rd = {bible: target, book, chapter: ch}; $("#rBible").value = target; store.set("bc.read", rd);
+  await loadBooks(target); await showChapter(book, ch, v);
+  retShow();
+}
 /* ---------- 📜 Study Paths (web/paths.js, shared with the phone): guided studies with questions ---------- */
 const pathChap = new Map();
 function libId(abbr){ const b = state.bibles.find(x => String(x.name || "").split(" - ")[0] === abbr); return b ? b.id : null; }
@@ -2033,13 +2091,7 @@ BCPaths.mount({
   letters: (w, he) => he ? hebLettersHtml(w) : grkLettersHtml(w),
   qr: (t, px) => qrCanvas(t, px),
   shareUrl: h => PHONE_URL + h,
-  openVerse: async (book, ch, v) => {
-    setMode("read"); await loadBooks(rd.bible);
-    if(!rBooks.some(b => b.name === book)){   // e.g. 1 Enoch while reading the KJV: open the Ethiopian Canon
-      const eth = libId(book === "Jasher" ? "JASHER" : "ETH"); if(eth){ rd = {bible: eth, book, chapter: ch}; $("#rBible").value = eth; await loadBooks(eth); }
-    }
-    rToken++; await showChapter(book, ch, v);
-  },
+  openVerse: (book, ch, v) => openRef(book, ch, v, {fromPaths: true}),
   get: (k, d) => store.get("bc." + k, d), set: (k, v) => store.set("bc." + k, v), toast: m => chSay(m),
   canGet: true, getBibles: () => { BCPaths.close(); openCatalog(); },
   pastQuestions: () => chats.flatMap(c => c.messages.filter(m => m.role === "user").map(m => m.text))

@@ -1,3 +1,3 @@
 """BibleAsk: ask questions of a Bible you supply."""
 
-__version__ = "1.0.6"   # keep in step with the release tag (v1.0.6); the release build checks this
+__version__ = "1.0.7"   # keep in step with the release tag (v1.0.7); the release build checks this

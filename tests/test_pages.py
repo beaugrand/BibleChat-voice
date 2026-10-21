@@ -145,6 +145,18 @@ console.log(JSON.stringify(out));"""
         self.assertIn("document.title = `BibleChat ${state.version}`", read(PAGES[1]))
         self.assertIn('"name": "BibleChat Web"', read(os.path.join(ROOT, "web", "manifest.webmanifest")))
 
+    def test_links_to_other_bibles_have_a_way_back(self):
+        # a link to 1 Enoch while reading the KJV opens the Bible that has it (KJV first) with "← Back to KJV",
+        # "← Back to Study Paths" when it came from a path, and an offer to download a missing Bible
+        phone, comp = read(PAGES[0]), read(PAGES[1])
+        for s in (phone, comp):
+            for part in ('id="rReturn"', "function retShow", 'id="retBible"', 'id="retPaths"', "BCPaths.reopen()"):
+                self.assertIn(part, s)
+        self.assertIn('"eng-kjv", book === "Jasher"', phone)
+        self.assertIn("async function openRef", comp); self.assertIn('id="getHome"', comp)
+        self.assertIn("if(rChap){ chSay(j.error); return; }", comp)   # a chapter that can't open never empties the page
+        self.assertIn("reopen", read(os.path.join(ROOT, "web", "paths.js")))
+
     def test_verse_picker_in_read_mode(self):
         # a "Verse" button next to the chapter title opens a grid of the chapter's own verse numbers
         # (so a Bible that skips or joins verses, like the Ethiopian Canon, shows only real ones); a tap jumps

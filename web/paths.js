@@ -17,6 +17,7 @@ const BCPaths = (() => {
   let A = null, root = null, list = null, quoted = null;
   const cache = {};
   const S = {path: null, step: 0, view: "list", quiz: null};
+  let lastView = null;   // where the reader was when a verse link took them to Read: "← Back to Study Paths" returns there
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
   const T = x => (typeof tr === "function" ? tr(x) : x);   // the phone's app language (web/i18n.js), where there is one
   const get = (k, d) => A.get("paths." + k, d), set = (k, v) => A.set("paths." + k, v);
@@ -413,7 +414,9 @@ const BCPaths = (() => {
     if(t.closest(".pv-more")){ showQuiz(true); return; }
     if(t.closest(".pv-get")){ A.getBibles(); return; }
     const sn = t.closest(".pv-sn"); if(sn){ showWord(sn.dataset.n); return; }
-    const go = t.closest(".pv-go"); if(go){ e.preventDefault(); close(); A.openVerse(go.dataset.b, +go.dataset.c, go.dataset.v ? +go.dataset.v : null); return; }
+    const go = t.closest(".pv-go"); if(go){ e.preventDefault();
+      lastView = {view: S.view === "quiz" || S.view === "word" || S.view === "share" ? "step" : S.view, id: S.path && S.path.id, step: S.step, top: root.scrollTop};
+      close(); A.openVerse(go.dataset.b, +go.dataset.c, go.dataset.v ? +go.dataset.v : null); return; }
     const o = t.closest(".pv-o"); if(o){ const q = S.path.quiz[+o.dataset.q]; q.i = +o.dataset.q;
       const ok = o.dataset.t ? o.dataset.t === q.bible : +o.dataset.o === q.answer; o.classList.add(ok ? "pv-right" : "pv-wrong"); answer(q, ok); return; }
     const rv = t.closest(".pv-reveal"); if(rv){ const q = S.path.quiz[+rv.dataset.q]; q.i = +rv.dataset.q; answer(q, (q.i in S.quiz.answers) ? null : false); return; }
@@ -438,6 +441,11 @@ const BCPaths = (() => {
 
   /* ---------- public ---------- */
   async function open(id, step){ if(!root) return; if(id) await showPath(id, step); else await showList(); }
+  async function reopen(){
+    const v = lastView; if(!v){ await showList(); return; }
+    if(v.view === "quoted") await showQuoted(); else if(v.id && v.view === "step") await showPath(v.id, v.step); else await showList();
+    if(v.top) root.scrollTop = v.top;
+  }
   function close(){ if(root){ root.hidden = true; root.innerHTML = ""; S.view = "list"; if(A.onClose) A.onClose(); } }
   function mount(adapter){
     A = adapter; root = adapter.container;
@@ -523,6 +531,6 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-tag{font-size:11.5px;font-weight:700;border-radius:99px;padding:1px 8px;background:var(--line)}
 .pv-st-text{background:#d9ecd9}.pv-st-lost{background:#efd9d4}.pv-st-disputed{background:#f3e7c4}
 :root[data-theme="dark"] .pv-tag{color:#1f1e1b}`;
-  return {mount, open, close, openHash, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden};
+  return {mount, open, close, reopen, openHash, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden};
 })();
 if(typeof module !== "undefined") module.exports = BCPaths;
