@@ -18,6 +18,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Optional
 
 from . import catalog, chat, llm, storage, study, stt, updates
+from . import __version__
 from .library import Library
 
 PORT = 8765
@@ -280,7 +281,7 @@ def make_handler(app: App, port: int):
                     self._json(obj)
             elif path == "/api/ping":
                 app.last_ping, app.seen_ping = time.time(), True
-                self._json({"app": SIGNATURE, "ok": True})
+                self._json({"app": SIGNATURE, "ok": True, "version": __version__})
             elif path == "/api/state":
                 self._json(app.state())
             elif path in ("/api/books", "/api/chapter"):
@@ -466,12 +467,34 @@ def _close_splash() -> None:
         pass
 
 
-def _already_running(port: int) -> bool:
+def _running_version(port: int) -> Optional[str]:
+    """The version of a BibleChat already running on this port: "" for versions before 1.0.4 (they don't say),
+    None if no BibleChat is running there."""
     try:
         with urllib.request.urlopen(f"http://127.0.0.1:{port}/api/ping", timeout=1.5) as r:
-            return json.loads(r.read()).get("app") == SIGNATURE
+            j = json.loads(r.read())
+            return str(j.get("version") or "") if j.get("app") == SIGNATURE else None
     except Exception:
-        return False
+        return None
+
+
+def _already_running(port: int) -> bool:
+    return _running_version(port) is not None
+
+
+def _stop_other_version(port: int) -> None:
+    """An older (or other) BibleChat is still running, often kept alive by an open browser tab. Opening that one
+    would show the old version, so ask it to quit and wait until its port is free."""
+    try:
+        req = urllib.request.Request(f"http://127.0.0.1:{port}/api/quit", data=b"{}", method="POST",
+                                     headers={"Content-Type": "application/json"})
+        urllib.request.urlopen(req, timeout=3).read()
+    except Exception:
+        pass
+    for _ in range(40):
+        if _running_version(port) is None:
+            return
+        time.sleep(0.25)
 
 
 def _free(port: int) -> bool:
@@ -481,6 +504,9 @@ def _free(port: int) -> bool:
 
 def main(open_browser: bool = True) -> int:
     port = PORT
+    other = _running_version(port)
+    if other is not None and other != __version__:
+        _stop_other_version(port)      # the new version takes over from the old one
     if _already_running(port):
         _close_splash()
         if open_browser:

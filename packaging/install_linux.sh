@@ -23,6 +23,10 @@ if [ ! -x "$HERE/BibleChat/BibleChat" ]; then
     echo "The BibleChat folder is missing next to this installer. Unpack the whole download again and retry."
     finish; exit 1
 fi
+# a BibleChat that is still running (often kept alive by an open browser tab) would keep showing the old
+# version: stop it first, then replace the old install completely
+pkill -f "/BibleChat/BibleChat" >/dev/null 2>&1 || true
+sleep 1
 mkdir -p "$HOME/.local/opt" "$APPS"
 rm -rf "$DEST"
 cp -r "$HERE/BibleChat" "$DEST"
@@ -51,8 +55,10 @@ if [ -d "$DESKTOP_DIR" ]; then
 fi
 
 echo ""
-echo "Done! BibleChat is installed."
+VER="$(cat "$HERE/VERSION" 2>/dev/null || true)"
+echo "Done! BibleChat ${VER:+$VER }is installed."
 echo "  - Open it from your applications menu (look for BibleChat), or from the icon on your desktop."
 echo "  - Starting BibleChat now: your browser opens by itself in a few seconds."
+echo "  - If an old BibleChat tab is still open in your browser, close it."
 nohup "$DEST/BibleChat" >/dev/null 2>&1 &
 finish

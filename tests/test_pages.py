@@ -114,6 +114,14 @@ console.log(JSON.stringify(out));"""
         for part in ("biblechat.desktop", "xdg-user-dir DESKTOP", "metadata::trusted", 'nohup "$DEST/BibleChat"'):
             self.assertIn(part, sh)
 
+    def test_new_version_takes_over_from_old_one(self):
+        # an old BibleChat kept alive by a browser tab must not be shown instead of the new version
+        srv = read(os.path.join(ROOT, "bibleask", "server.py"))
+        self.assertIn('"version": __version__', srv)
+        self.assertIn("other != __version__", srv); self.assertIn("_stop_other_version(port)", srv)
+        sh = read(os.path.join(ROOT, "packaging", "install_linux.sh"))
+        self.assertIn('pkill -f "/BibleChat/BibleChat"', sh); self.assertIn('rm -rf "$DEST"', sh)
+
     def test_verse_picker_in_read_mode(self):
         # a "Verse" button next to the chapter title opens a grid of the chapter's own verse numbers
         # (so a Bible that skips or joins verses, like the Ethiopian Canon, shows only real ones); a tap jumps
