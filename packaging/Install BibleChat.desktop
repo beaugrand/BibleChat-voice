@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Install BibleChat
+Comment=Double-click to install BibleChat in your applications menu and on your desktop
+Exec=sh -c 'cd "$(dirname "$1")" && exec sh ./install.sh --from-desktop' sh %k
+Icon=system-software-install
+Terminal=true
+Categories=Education;

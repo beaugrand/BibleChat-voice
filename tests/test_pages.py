@@ -103,6 +103,17 @@ console.log(JSON.stringify(out));"""
         self.assertTrue(os.path.isfile(os.path.join(ROOT, "packaging", "splash.png")))
         self.assertIn("pyi_splash.close()", read(os.path.join(ROOT, "bibleask", "server.py")))
 
+    def test_linux_install_without_typing(self):
+        # Linux users who aren't programmers: double-click "Install BibleChat"; the read-me says ./install.sh
+        # with the dot and slash, and the installer adds a menu entry and a desktop icon and starts BibleChat
+        d = read(os.path.join(ROOT, "packaging", "Install BibleChat.desktop"))
+        self.assertIn("Terminal=true", d); self.assertIn("install.sh --from-desktop", d); self.assertIn("%k", d)
+        rd = read(os.path.join(ROOT, "packaging", "READ_ME_FIRST_linux.txt"))
+        self.assertIn("double-click \"Install BibleChat\"", rd); self.assertIn("./install.sh", rd); self.assertIn("command not found", rd)
+        sh = read(os.path.join(ROOT, "packaging", "install_linux.sh"))
+        for part in ("biblechat.desktop", "xdg-user-dir DESKTOP", "metadata::trusted", 'nohup "$DEST/BibleChat"'):
+            self.assertIn(part, sh)
+
     def test_verse_picker_in_read_mode(self):
         # a "Verse" button next to the chapter title opens a grid of the chapter's own verse numbers
         # (so a Bible that skips or joins verses, like the Ethiopian Canon, shows only real ones); a tap jumps
