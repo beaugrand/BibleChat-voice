@@ -209,3 +209,14 @@ class LanguagesTest(unittest.TestCase):
         from bibleask.library import book_names
         self.assertEqual(book_names("deu-luther1912.osis")["Revelation"], "Offenbarung")
         self.assertEqual(book_names("eng-kjv"), {})
+
+
+class HomeScreenButtonTest(unittest.TestCase):
+    def test_phone_offers_add_to_home_screen(self):
+        page = open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "web", "index.html"), encoding="utf-8").read()
+        for part in ('id="homeInstall"', "Add BibleChat to your home screen", 'id="installSheet"', "beforeinstallprompt", ".prompt()",
+                     "appinstalled", "display-mode: standalone", "navigator.standalone", "Add to Home Screen", "Add to Home screen",
+                     'name="apple-mobile-web-app-capable"', 'rel="manifest"'):
+            self.assertIn(part, page)
+        self.assertLess(page.index('id="homeInstall"'), page.index('id="homeCover"'))   # first thing on Home, above the cover
+

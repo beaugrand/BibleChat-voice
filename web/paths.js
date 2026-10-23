@@ -16,7 +16,7 @@ const BCPaths = (() => {
   const STOP_STRONGS = new Set("H853 H5921 H413 H834 H3588 H3605 H5973 H4480 H3808 H1961 H559 H3651 H1931 H2088 G3588 G2532 G1161 G846 G1722 G1519 G3754 G1063 G3756 G2076 G1510 G3739 G3778 G1537 G4314 G5100 G3361 G3767 G2443 G235 G1909 G1223 G3004 G2036".split(" "));
   let A = null, root = null, list = null, quoted = null;
   const cache = {};
-  const S = {path: null, step: 0, view: "list", quiz: null};
+  const S = {path: null, step: 0, view: "list", quiz: null, filter: "All"};
   let lastView = null;   // where the reader was when a verse link took them to Read: "← Back to Study Paths" returns there
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
   const T = x => (typeof tr === "function" ? tr(x) : x);   // the phone's app language (web/i18n.js), where there is one
@@ -62,6 +62,9 @@ const BCPaths = (() => {
   function nivLink(ref){ return `<a class="pv-niv" href="https://www.biblegateway.com/passage/?search=${encodeURIComponent(ref)}&version=NIV" target="_blank" rel="noopener" title="The NIV is copyrighted; BibleChat links to it on BibleGateway">Open in NIV ↗</a>`; }
   function progress(){ return get("progress", {}); }
   function saveProgress(id, patch){ const p = progress(); p[id] = Object.assign(p[id] || {}, patch); set("progress", p); }
+  /* the steps the reader has ticked off (Next ticks the step it leaves; the ✓ boxes on a card tick or untick by hand) */
+  function doneSteps(id){ return new Set((progress()[id] || {}).done || []); }
+  function markDone(id, step, on){ const d = doneSteps(id); if(on === false) d.delete(step); else d.add(step); saveProgress(id, {done: [...d].sort((a, b) => a - b)}); }
   function mine(){ return get("mine", []); }
 
   /* ---------- loading ---------- */
@@ -83,17 +86,46 @@ const BCPaths = (() => {
   function frame(title, body, back){
     root.innerHTML = `<div class="pv-in"><header class="pv-head">${back ? `<button class="pv-ib pv-back" aria-label="Back">‹</button>` : ""}<h2 class="pvx">${esc(title)}</h2>
       ${S.path && S.view !== "list" && S.view !== "quoted" ? `<button class="pv-ib pv-share" title="Share this path">↗</button>` : ""}<button class="pv-ib pv-close" aria-label="Close">✕</button></header><div class="pv-body">${body}</div></div>`;
+    root.classList.toggle("pv-wide", S.view === "list");
     root.hidden = false; root.scrollTop = 0; const b = root.querySelector(".pv-body"); if(b) b.scrollTop = 0;
+  }
+  /* the list of paths: filter chips on top, then a grid of cards, each with the path's own picture, its size and time,
+     the steps ticked off so far and the steps themselves (open "Steps" to jump straight to one) */
+  const ALL = "All", BUSY = "In progress", YOURS = "Your paths";
+  function cardInfo(p, g){
+    const qs = p.step_questions || (Array.isArray(p.steps) ? p.steps.map(x => x.question) : []), n = qs.length || +p.steps || 0;
+    const done = new Set(g.done || []);
+    return {qs, n, done, finished: !!g.score, started: g.step != null || done.size > 0 || !!g.score};
+  }
+  function card(p, g){
+    const {qs, n, done, finished, started} = cardInfo(p, g), mineP = p.id.startsWith("mine-");
+    const pct = n ? Math.round(100 * (finished ? n : done.size) / n) : 0;
+    const status = finished ? `✓ Finished · ${g.score[0]} of ${g.score[1]} right` : done.size ? `${done.size} of ${n} steps done` : g.step != null ? `At step ${g.step + 1} of ${n}` : "Not started";
+    const go = finished ? "Do it again" : started ? "Continue" : "Start";
+    const img = p.image ? `<img src="${esc(A.base + p.image)}" alt="" loading="lazy">` : `<span class="pv-pc-ph" aria-hidden="true">📜</span>`;
+    const dots = qs.map((q, i) => `<i class="${done.has(i) || finished ? "pv-d-ok" : g.step === i ? "pv-d-now" : ""}" title="${esc("Step " + (i + 1))}"></i>`).join("");
+    return `<article class="pv-pc${finished ? " pv-pc-fin" : ""}" data-id="${esc(p.id)}">
+      <button class="pv-pc-open" data-id="${esc(p.id)}" aria-label="${esc("Open " + p.title)}"><div class="pv-pc-img">${img}<span class="pv-pc-cat">${esc(mineP ? YOURS : p.category || "")}</span>${finished ? `<span class="pv-pc-check" title="Finished">✓</span>` : ""}</div>
+        <div class="pv-pc-txt"><b class="pvx">${esc(p.title)}</b><span class="pvx">${esc(p.opening_question)}</span></div></button>
+      <div class="pv-pc-meta">${p.minutes ? `<span title="About ${p.minutes} minutes">⏱ ${p.minutes} min</span>` : ""}<span>${n} <span>steps</span></span>${p.verses ? `<span>${p.verses} <span>verses</span></span>` : ""}</div>
+      <div class="pv-pc-prog"><div class="pv-dots" aria-hidden="true">${dots}</div><small class="${finished ? "pv-ok" : started ? "pv-busy" : ""}">${esc(status)}</small></div>
+      <div class="pv-bar"><i style="width:${pct}%"></i></div>
+      <details class="pv-pc-steps"><summary>Steps</summary><ol>${qs.map((q, i) => `<li class="${done.has(i) ? "pv-li-ok" : ""}"><label class="pv-tickl" title="Tick this step as done"><input type="checkbox" class="pv-tick" data-id="${esc(p.id)}" data-step="${i}"${done.has(i) ? " checked" : ""}><span>${i + 1}</span></label><button class="pv-jump pvx" data-id="${esc(p.id)}" data-step="${i}">${esc(mineP ? T(q) : q)}</button></li>`).join("")}
+        <li><span class="pv-tickl pv-qa">?</span><button class="pv-jump pv-jumpquiz" data-id="${esc(p.id)}">Questions and answers${finished ? ` · ${g.score[0]} of ${g.score[1]}` : ""}</button></li></ol></details>
+      <button class="pv-btn pv-primary pv-pc-go" data-id="${esc(p.id)}"><span>${esc(go)}</span> ›</button></article>`;
   }
   async function showList(){
     S.view = "list"; S.path = null;
     const L = await loadList(), P = progress(), M = mine();
-    const card = p => { const g = P[p.id] || {};
-      const st = g.score ? `Finished · ${g.score[0]} of ${g.score[1]}` : g.step != null ? `Step ${g.step + 1} of ${p.steps.length || p.steps}` : "Not started";
-      return `<button class="pv-card" data-id="${esc(p.id)}"><b class="pvx">${esc(p.title)}</b><span class="pvx">${esc(p.opening_question)}</span><small>${esc(st)}</small></button>`; };
+    const cats = [...new Set(L.map(p => p.category).filter(Boolean))];
+    const chips = [ALL, BUSY].concat(cats, M.length ? [YOURS] : []);
+    if(!chips.includes(S.filter)) S.filter = ALL;
+    const busy = p => { const i = cardInfo(p, P[p.id] || {}); return i.started && !i.finished; };
+    const keep = p => S.filter === ALL || (S.filter === BUSY ? busy(p) : S.filter === YOURS ? p.id.startsWith("mine-") : p.category === S.filter);
+    const shown = L.concat(M).filter(keep);
     frame("📜 Study Paths", `<p class="pv-lead">Each path starts with a question, walks through every main verse on it, including the ones that seem to point the other way, and ends with questions whose answer is always a verse. The path asks; you decide.</p>`
-      + L.map(card).join("")
-      + (M.length ? `<h3>Your paths</h3>` + M.map(p => card(Object.assign({}, p, {steps: p.steps}))).join("") : "")
+      + `<div class="pv-chips" role="toolbar" aria-label="Show">${chips.map(c => `<button class="pv-chip${c === S.filter ? " pv-chip-on" : ""}" data-f="${esc(c)}" aria-pressed="${c === S.filter}">${esc(c)}</button>`).join("")}</div>`
+      + (shown.length ? `<div class="pv-grid">${shown.map(p => card(p, P[p.id] || {})).join("")}</div>` : `<p class="pv-small pv-empty">${S.filter === BUSY ? "No path started yet. Pick one under All." : "No paths here yet."}</p>`)
       + `<p class="pv-small">Make your own: ask a question, then press 📜 Make a study path under the answer.</p>`
       + `<button class="pv-card pv-quoted"><b>📚 Quoted or named in Scripture</b><span>Verses that quote or name another writing: the Book of Enoch, the Book of Jasher, lost books.</span></button>`
       + `<p class="pv-small">Your progress, notes and scores stay on this device.</p>`);
@@ -113,9 +145,11 @@ const BCPaths = (() => {
     const g = progress()[p.id] || {};
     S.step = Math.max(0, Math.min(p.steps.length - 1, step != null ? step : g.step || 0));
     saveProgress(p.id, {step: S.step});
-    const s = p.steps[S.step], n = p.steps.length, notes = get("notes", {}), mineNote = (notes[p.id] || {})[S.step] || "";
-    frame(p.title, `<div class="pv-open pvx"><small>The question</small>${esc(p.opening_question)}</div>
-      <div class="pv-stepno">Step ${S.step + 1} of ${n}</div><div class="pv-bar"><i style="width:${Math.round(100 * (S.step + 1) / n)}%"></i></div>
+    const s = p.steps[S.step], n = p.steps.length, notes = get("notes", {}), mineNote = (notes[p.id] || {})[S.step] || "", done = doneSteps(p.id);
+    frame(p.title, `${p.image ? `<div class="pv-hero"><img src="${esc(A.base + p.image)}" alt=""><span class="pv-pc-cat">${esc(p.category || "")}</span></div>` : ""}<div class="pv-open pvx"><small>The question</small>${esc(p.opening_question)}</div>
+      <div class="pv-stepno">Step ${S.step + 1} of ${n}</div>
+      <div class="pv-track" role="navigation" aria-label="Steps">${p.steps.map((x, i) => `<button class="pv-dot${i === S.step ? " pv-dot-now" : ""}${done.has(i) ? " pv-dot-ok" : ""}" data-step="${i}" title="${esc("Step " + (i + 1) + ": " + x.question)}">${done.has(i) ? "✓" : i + 1}</button>`).join(`<i class="pv-track-line"></i>`)}</div>
+      <div class="pv-bar"><i style="width:${Math.round(100 * done.size / n)}%"></i></div>
       <h3 class="pv-q pvx">${esc(p.mine ? T(s.question) : s.question)}</h3>
       <div class="pv-verses${s.side_by_side ? " pv-sbs" : ""}" id="pvVerses"><p class="pv-small">Loading the verses…</p></div>
       ${s.facts ? `<div class="pv-facts"><h4>Facts about the words</h4>${s.facts.map(f => `<p class="pvx">${esc(f.text)}<br><small>${(f.refs || []).map(r => { const q = parseRef(r); return refLink(q.book, q.c1, q.v1, label(r)); }).join(" · ")}${f.refs && f.strongs ? " · " : ""}${(f.strongs || []).map(x => `<button class="pv-sn" data-n="${x}">Strong's ${x}</button>`).join(" ")}</small></p>`).join("")}</div>` : ""}
@@ -407,9 +441,14 @@ const BCPaths = (() => {
     if(t.closest(".pv-copy")){ const i = root.querySelector(".pv-url"); i.select(); (navigator.clipboard ? navigator.clipboard.writeText(i.value) : Promise.reject()).then(() => A.toast("Link copied"), () => { document.execCommand("copy"); A.toast("Link copied"); }); return; }
     if(t.closest(".pv-sys")){ navigator.share({title: S.path.title, url: root.querySelector(".pv-url").value}).catch(() => {}); return; }
     const c = t.closest(".pv-card"); if(c){ if(c.classList.contains("pv-quoted")) showQuoted(); else open(c.dataset.id); return; }
+    const chip = t.closest(".pv-chip"); if(chip){ S.filter = chip.dataset.f; showList(); return; }
+    const jq = t.closest(".pv-jumpquiz"); if(jq){ loadPath(jq.dataset.id).then(p => { S.path = p; S.step = p.steps.length - 1; S.quiz = null; showQuiz(false); }).catch(() => open(jq.dataset.id)); return; }
+    const j = t.closest(".pv-jump"); if(j){ open(j.dataset.id, +j.dataset.step); return; }
+    const pc = t.closest(".pv-pc-open, .pv-pc-go"); if(pc){ const g = progress()[pc.dataset.id] || {}; open(pc.dataset.id, g.score ? 0 : null); return; }
+    const dot = t.closest(".pv-dot"); if(dot){ showPath(S.path.id, +dot.dataset.step); return; }
     if(t.closest(".pv-prev")){ showPath(S.path.id, S.step - 1); return; }
-    if(t.closest(".pv-next")){ showPath(S.path.id, S.step + 1); return; }
-    if(t.closest(".pv-toquiz")){ showQuiz(false); return; }
+    if(t.closest(".pv-next")){ markDone(S.path.id, S.step); showPath(S.path.id, S.step + 1); return; }
+    if(t.closest(".pv-toquiz")){ markDone(S.path.id, S.step); showQuiz(false); return; }
     if(t.closest(".pv-backsteps")){ showPath(S.path.id, S.step); return; }
     if(t.closest(".pv-more")){ showQuiz(true); return; }
     if(t.closest(".pv-get")){ A.getBibles(); return; }
@@ -435,6 +474,11 @@ const BCPaths = (() => {
     answer(q, await checkFind(q, v));
   }
   function onInput(e){
+    if(e.type === "change" && e.target.classList.contains("pv-tick")){ const t = e.target, li = t.closest("li");
+      markDone(t.dataset.id, +t.dataset.step, t.checked); if(li) li.classList.toggle("pv-li-ok", t.checked);
+      const top = root.scrollTop, open = [...root.querySelectorAll(".pv-pc-steps")].filter(d => d.open).map(d => d.closest(".pv-pc").dataset.id);
+      showList().then(() => { open.forEach(id => { const d = root.querySelector(`.pv-pc[data-id="${id}"] .pv-pc-steps`); if(d) d.open = true; }); root.scrollTop = top; });
+      return; }
     if(e.target.id === "pvSee"){ const n = get("notes", {}); (n[S.path.id] = n[S.path.id] || {})[S.step] = e.target.value; set("notes", n); }
     if(e.target.id === "pvPast"){ const p = get("prefs", {}); p.past = e.target.checked; set("prefs", p); showQuiz(false); }
   }
@@ -449,7 +493,7 @@ const BCPaths = (() => {
   function close(){ if(root){ root.hidden = true; root.innerHTML = ""; S.view = "list"; if(A.onClose) A.onClose(); } }
   function mount(adapter){
     A = adapter; root = adapter.container;
-    root.classList.add("pv"); root.hidden = true;
+    root.classList.add("pv", "pv-dark"); root.hidden = true;
     root.addEventListener("click", onClick); root.addEventListener("toggle", onToggle, true);
     root.addEventListener("submit", onSubmit); root.addEventListener("input", onInput); root.addEventListener("change", onInput);
     addEventListener("keydown", e => { if(e.key === "Escape" && !root.hidden) close(); });
@@ -458,6 +502,8 @@ const BCPaths = (() => {
   const BOOKS66 = Object.fromEntries("Genesis Exodus Leviticus Numbers Deuteronomy Joshua Judges Ruth|1 Samuel|2 Samuel|1 Kings|2 Kings|1 Chronicles|2 Chronicles|Ezra Nehemiah Esther Job Psalms Proverbs Ecclesiastes|Song of Solomon|Isaiah Jeremiah Lamentations Ezekiel Daniel Hosea Joel Amos Obadiah Jonah Micah Nahum Habakkuk Zephaniah Haggai Zechariah Malachi Matthew Mark Luke John Acts Romans|1 Corinthians|2 Corinthians|Galatians Ephesians Philippians Colossians|1 Thessalonians|2 Thessalonians|1 Timothy|2 Timothy|Titus Philemon Hebrews James|1 Peter|2 Peter|1 John|2 John|3 John|Jude Revelation"
     .split("|").flatMap(x => /^\d/.test(x) ? [x] : x.trim().split(" ")).filter(Boolean).map(b => [b, 1]));
   const CSS = `
+.pv-dark{--bg:#16191d;--card:#1e2228;--panel:#191c21;--panel2:#262b32;--line:#2e343c;--text:#e9ecef;--muted:#9aa3ad;--accent:#d9b44a;--accent-text:#1a1606;--ok:#4ade80;--danger:#f08070;--hl:rgba(255,205,60,.25);color-scheme:dark}
+.pv-dark a{color:#8cc4ff}
 .pv{position:fixed;inset:0;z-index:35;background:var(--bg);color:var(--text);overflow:auto;-webkit-overflow-scrolling:touch}
 .pv-in{max-width:760px;margin:0 auto;padding:0 16px calc(28px + env(safe-area-inset-bottom))}
 .pv-head{position:sticky;top:0;z-index:2;background:var(--bg);display:flex;align-items:center;gap:8px;padding:calc(10px + env(safe-area-inset-top)) 0 10px;border-bottom:1px solid var(--line)}
@@ -528,9 +574,63 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-url{width:100%;border:1px solid var(--line);border-radius:9px;padding:8px;background:var(--card);color:inherit;font-size:13px}
 .pv-qd{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:10px 12px;margin:0 0 10px}
 .pv-qd p{margin:4px 0}.pv-qh{display:flex;gap:8px;align-items:center;font-weight:650}
+.pv-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px;margin:0 0 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.pv-chips::-webkit-scrollbar{display:none}
+.pv-chip{flex:none;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:99px;padding:7px 15px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap}
+.pv-chip-on{background:var(--accent);border-color:var(--accent);color:var(--accent-text)}
+.pv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 16px}
+@media (min-width:760px){.pv-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+@media (min-width:1060px){.pv-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:340px){.pv-grid{grid-template-columns:1fr}}
+.pv-grid .pv-pc:has(.pv-pc-steps[open]){grid-column:1/-1}
+@media (max-width:560px){.pv-grid{gap:10px}.pv-pc{border-radius:14px}.pv-pc-txt{padding:8px 10px 0}.pv-pc-txt b{font-size:14.5px}.pv-pc-txt span{font-size:12.5px;-webkit-line-clamp:2}
+  .pv-pc-meta{padding:6px 10px 0;gap:4px}.pv-pc-meta>span{font-size:10.5px;padding:1px 6px}.pv-pc-prog{padding:7px 10px 0}.pv-pc-prog small{font-size:11px}
+  .pv-dots i{width:7px;height:7px}.pv-pc .pv-bar,.pv-pc-steps{margin-left:10px;margin-right:10px}.pv-pc-go{margin:auto 10px 10px;padding:7px 8px;font-size:13.5px}.pv-pc-cat{font-size:10.5px;left:6px;top:6px}}
+.pv-pc{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.28);min-width:0}
+.pv-pc-fin{border-color:rgba(74,222,128,.45)}
+.pv-pc-open{display:block;width:100%;border:0;background:none;padding:0;text-align:left;color:inherit;font:inherit;cursor:pointer}
+.pv-pc-img{position:relative;aspect-ratio:3/2;background:linear-gradient(135deg,#2b3240,#1b1f26);overflow:hidden}
+.pv-pc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}.pv-pc-open:hover .pv-pc-img img{transform:scale(1.04)}
+.pv-pc-img:after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(transparent,rgba(22,25,29,.85))}
+.pv-pc-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:44px}
+.pv-pc-cat{position:absolute;z-index:1;left:8px;top:8px;background:rgba(15,17,20,.72);color:#f3e2a6;font-size:11.5px;font-weight:700;letter-spacing:.03em;border-radius:99px;padding:3px 9px;backdrop-filter:blur(4px)}
+.pv-pc-check{position:absolute;z-index:1;right:8px;top:8px;width:26px;height:26px;border-radius:50%;background:var(--ok);color:#0b2414;display:flex;align-items:center;justify-content:center;font-weight:800}
+.pv-pc-txt{padding:10px 12px 0}
+.pv-pc-txt b{display:block;font-size:16px;line-height:1.25}
+.pv-pc-txt span{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;color:var(--muted);font-size:13.5px;line-height:1.35;margin-top:4px}
+.pv-pc-meta{display:flex;flex-wrap:wrap;gap:5px;padding:8px 12px 0}
+.pv-pc-meta>span{font-size:11.5px;font-weight:650;color:var(--text);background:var(--panel2);border-radius:99px;padding:2px 8px}
+.pv-pc-prog{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 8px;padding:9px 12px 0}
+.pv-pc-prog small{font-size:12px;font-weight:650;color:var(--muted)}.pv-pc-prog small.pv-ok{color:var(--ok)}.pv-pc-prog small.pv-busy{color:var(--accent)}
+.pv-dots{display:flex;gap:4px;flex-wrap:wrap}.pv-dots i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.pv-dots i.pv-d-ok{background:var(--ok)}.pv-dots i.pv-d-now{background:var(--accent);box-shadow:0 0 0 2px rgba(217,180,74,.3)}
+.pv-pc .pv-bar{margin:8px 12px 0;height:4px}.pv-pc-fin .pv-bar i{background:var(--ok)}
+.pv-pc-steps{margin:8px 12px 0;border-top:1px solid var(--line)}
+.pv-pc-steps>summary{cursor:pointer;padding:8px 0 4px;font-size:13.5px;font-weight:650;color:var(--accent);list-style:none}
+.pv-pc-steps>summary::-webkit-details-marker{display:none}.pv-pc-steps>summary:after{content:" ▾"}.pv-pc-steps[open]>summary:after{content:" ▴"}
+.pv-pc-steps ol{list-style:none;margin:0;padding:0 0 4px}
+.pv-pc-steps li{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:1px dashed var(--line)}.pv-pc-steps li:last-child{border-bottom:0}
+.pv-tickl{flex:none;position:relative;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer}
+.pv-tickl input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.pv-li-ok .pv-tickl{background:var(--ok);border-color:var(--ok)}.pv-li-ok .pv-tickl span{display:none}.pv-li-ok .pv-tickl:after{content:"✓";color:#0b2414;font-size:13px}
+.pv-tickl input:focus-visible+span{outline:2px solid var(--accent)}
+.pv-qa{border-style:dashed;cursor:default}
+.pv-jump{flex:1;min-width:0;border:0;background:none;padding:1px 0;text-align:left;color:inherit;font:inherit;font-size:13px;line-height:1.35;cursor:pointer}.pv-jump:hover{color:var(--accent)}
+.pv-li-ok .pv-jump{color:var(--muted)}
+.pv-pc-steps{margin-bottom:10px}
+.pv-pc-go{margin:auto 12px 12px;font-size:14px;font-weight:650}
+.pv-empty{padding:20px 0}
+.pv-hero{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:3/1;max-height:190px;width:100%;margin:2px 0 10px;background:var(--card)}
+.pv-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.pv-track{display:flex;align-items:center;margin:6px 0 8px;overflow-x:auto;padding:3px 1px}
+.pv-dot{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--line);background:var(--card);color:var(--muted);font:inherit;font-size:13px;font-weight:700;cursor:pointer;padding:0}
+.pv-dot-ok{background:var(--ok);border-color:var(--ok);color:#0b2414}
+.pv-dot-now{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 3px rgba(217,180,74,.25)}.pv-dot-ok.pv-dot-now{color:#0b2414}
+.pv-track-line{flex:1 1 8px;min-width:6px;max-width:40px;height:2px;background:var(--line)}
+.pv-wide .pv-in{max-width:1100px}
 .pv-tag{font-size:11.5px;font-weight:700;border-radius:99px;padding:1px 8px;background:var(--line)}
 .pv-st-text{background:#d9ecd9}.pv-st-lost{background:#efd9d4}.pv-st-disputed{background:#f3e7c4}
-:root[data-theme="dark"] .pv-tag{color:#1f1e1b}`;
+:root[data-theme="dark"] .pv-tag,.pv-dark .pv-tag{color:#1f1e1b}
+.pv-dark .pnote{background:#191c21}`;
   return {mount, open, close, reopen, openHash, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden};
 })();
 if(typeof module !== "undefined") module.exports = BCPaths;

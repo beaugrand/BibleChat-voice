@@ -1,6 +1,7 @@
 {
  "id": "light-before-sun",
  "title": "Light before the sun",
+ "category": "Creation",
  "opening_question": "If the sun was made on Day 4, what was the light on Day 1?",
  "required_refs": [
   "Genesis 1:1-5",
@@ -525,13 +526,14 @@
   "Matthew Henry"
  ],
  "verse_count": 40,
+ "image": "img/light-before-sun.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
   "henry": "Commentary (Matthew Henry, Concise)"
  },
  "built_from": {
   "file": "packaging/paths/light-before-sun.json",
-  "sha": "2c28a5254fa269d9",
+  "sha": "b29c5a576fb3e9af",
   "checked_in": [
    "KJV",
    "ETH",

@@ -9,6 +9,9 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="BibleChat Web">
 <style>
 :root{
   --bg:#faf9f7; --panel:#f1efea; --panel2:#e8e5de; --text:#27251f; --muted:#6f6b60; --line:#ddd9cf;
@@ -73,6 +76,18 @@ body.playing{padding-bottom:calc(var(--tabh) + 62px + env(safe-area-inset-bottom
 .cover.closing .coverart{transition:none!important;transform:rotateY(-78deg)}
 @media (prefers-reduced-motion: reduce){.cover .coverart{transition:none}}
 .homeHint{color:var(--muted);font-size:14.5px;margin:16px 0 4px}
+/* 📲 Add BibleChat to your home screen */
+#homeInstall{display:flex;align-items:center;gap:10px;width:min(420px,100%);margin:4px auto 14px;padding:10px 14px;border-radius:14px;text-align:left;font-size:15.5px;font-weight:650;box-shadow:0 4px 14px rgba(47,93,138,.25)}
+#homeInstall[hidden]{display:none}
+#homeInstall .hi-ic{font-size:24px;line-height:1}#homeInstall small{display:block;font-weight:400;font-size:12.5px;opacity:.85}
+.inst-steps{list-style:none;margin:6px 0 10px;padding:0;counter-reset:st}
+.inst-steps li{counter-increment:st;display:flex;gap:12px;align-items:flex-start;padding:10px 4px;border-bottom:1px solid var(--line);font-size:16px;line-height:1.45}
+.inst-steps li:before{content:counter(st);flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-text);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.inst-key{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:1px 7px;font-weight:650;white-space:nowrap}
+.inst-key svg{width:17px;height:17px;vertical-align:-3px}
+.inst-point{text-align:center;font-size:30px;color:var(--accent);animation:instBob 1.1s ease-in-out infinite}
+@keyframes instBob{50%{transform:translateY(7px)}}
+#installSheet .btn{width:100%;margin-top:8px;padding:11px}
 #homeWhere{font-size:15px;margin:0}
 /* reader */
 #rbar{position:sticky;top:calc(55px + env(safe-area-inset-top));z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
@@ -285,6 +300,7 @@ body.has-church #top .brand{display:none}
 <main>
   <!-- HOME: the Bible cover; tap it to open the Bible -->
   <section id="v-home" hidden><div class="wrap">
+    <button class="btn primary" id="homeInstall" hidden><span class="hi-ic" aria-hidden="true">📲</span><span><span>Add BibleChat to your home screen</span><small>Opens like an app, full screen, also offline</small></span></button>
     <button class="cover" id="homeCover" title="Open the Bible"><svg class="coverart" viewBox="0 0 300 440" role="img" aria-label="The Holy Bible: a black cover with a golden cross. KJV · ETHIOPIAN CANON · BSB"><defs><radialGradient id="cvLeather" cx="45%" cy="38%" r="75%"><stop offset="0" stop-color="#2b2a28"/><stop offset=".6" stop-color="#121110"/><stop offset="1" stop-color="#050505"/></radialGradient><linearGradient id="cvGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1a8"/><stop offset=".28" stop-color="#e2bd4f"/><stop offset=".55" stop-color="#a87b1c"/><stop offset=".8" stop-color="#e9c860"/><stop offset="1" stop-color="#8f6514"/></linearGradient><linearGradient id="cvEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d77a"/><stop offset=".5" stop-color="#b8891f"/><stop offset="1" stop-color="#f0cf6a"/></linearGradient><linearGradient id="cvSpine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".75"/><stop offset=".7" stop-color="#3a3835" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient><filter id="cvEmboss" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.6" stdDeviation="1.2" flood-color="#000" flood-opacity=".85"/></filter></defs><path d="M231 404h16v34l-8-7-8 7z" fill="#8e1b26"/><rect x="16" y="10" width="280" height="404" rx="6" fill="url(#cvEdge)"/><path d="M286 22v382M291 26v374" stroke="#8a6414" stroke-width=".7" opacity=".6"/><rect x="4" y="4" width="284" height="408" rx="11" fill="url(#cvLeather)"/><rect x="4" y="4" width="30" height="408" rx="11" fill="url(#cvSpine)"/><path d="M33 8v400" stroke="#000" stroke-width="1.4" opacity=".7"/><path d="M35 8v400" stroke="#4a4743" stroke-width=".6" opacity=".5"/><g fill="none" stroke="url(#cvGold)"><rect x="46" y="20" width="228" height="376" rx="5" stroke-width="2"/><rect x="53" y="27" width="214" height="362" rx="3" stroke-width=".8"/></g><g filter="url(#cvEmboss)"><text text-anchor="middle" font-family="Georgia,'Times New Roman',serif" fill="url(#cvGold)"><tspan id="cvT1" x="160" y="82" font-size="19" letter-spacing="5">The</tspan><tspan id="cvT2" x="160" y="122" font-size="34" textLength="176" lengthAdjust="spacingAndGlyphs">Holy Bible</tspan></text><path d="M150 158h20v56h38v20h-38v104h-20V234h-38v-20h38z" fill="url(#cvGold)"/><text id="cvVer" x="160" y="372" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="8.5" letter-spacing="1.6" fill="url(#cvGold)" textLength="190" lengthAdjust="spacingAndGlyphs">KJV · ETHIOPIAN CANON · BSB</text></g><path d="M151 159h18v56" stroke="#fff6c8" stroke-width=".8" fill="none" opacity=".7"/></svg></button>
     <p class="homeHint">Tap the cover to open</p>
     <p id="homeWhere"></p>
@@ -405,6 +421,11 @@ body.has-church #top .brand{display:none}
 <div class="sheet" id="studySheet" hidden><div class="card">
   <header><button class="iconbtn" id="studyBack" aria-label="Back" hidden>‹</button><h2 id="studyTitle">Study</h2><button class="iconbtn" id="studyClose" aria-label="Close">✕</button></header>
   <div class="body" id="studyBody"></div>
+</div></div>
+
+<div class="sheet" id="installSheet" hidden><div class="card">
+  <header><h2>📲 Add to your home screen</h2><button class="iconbtn" id="installClose" aria-label="Close">✕</button></header>
+  <div class="body" id="installBody"></div>
 </div></div>
 
 <div class="sheet" id="welcome" hidden><div class="card welcomecard">
@@ -1981,6 +2002,71 @@ function parseHash(){
   }
   addEventListener("hashchange", () => { if(/^#\/path\//.test(location.hash)){ BCPaths.openHash(location.hash); return; } const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]){ go(x.book, x.ch, x.v); if(x.shared && x.v) markShared(x.v); } });
 })();
+/* ---------- 📲 Add BibleChat to your home screen ----------
+   Android, Chrome and Edge: the button opens the browser's own "Add to Home screen / Install" box (beforeinstallprompt).
+   iPhone and iPad: Safari has no such box, so the button shows the three taps (Share → Add to Home Screen → Add).
+   Hidden when BibleChat is already opened from the home screen. */
+let installEvt = null;
+const UA = navigator.userAgent;
+const isStandalone = () => matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+const isIOS = /iPad|iPhone|iPod/.test(UA) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const isAndroid = /Android/i.test(UA);
+const inAppBrowser = /FBAN|FBAV|Instagram|Line\/|WhatsApp|Snapchat|TikTok|GSA\//i.test(UA);
+function installRefresh(){ $("#homeInstall").hidden = isStandalone(); }
+addEventListener("beforeinstallprompt", e => { e.preventDefault(); installEvt = e; installRefresh(); });
+addEventListener("appinstalled", () => { installEvt = null; $("#homeInstall").hidden = true; $("#installSheet").hidden = true; toast(tr("BibleChat is on your home screen")); });
+const SHARE_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7.5 7.5 12 3l4.5 4.5"/><path d="M8 11H6a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-2"/></svg>`;
+const instKey = (html) => `<span class="inst-key">${html}</span>`;
+function installSteps(){
+  let steps, note = "", point = false;
+  if(inAppBrowser){
+    steps = [`<span>This page is open inside another app. Open it in</span> ${instKey(isIOS ? "Safari" : "Chrome")} <span>first: tap</span> ${instKey("•••")} <span>and choose "Open in browser", or copy the link below and paste it there.</span>`,
+             `<span>Then press</span> ${instKey("📲 Add BibleChat to your home screen")} <span>again.</span>`];
+  } else if(isIOS && /CriOS/.test(UA)){
+    steps = [`<span>Tap the Share button</span> ${instKey(SHARE_ICON)} <span>at the top right, next to the address.</span>`,
+             `<span>Tap</span> ${instKey("Add to Home Screen ⊞")}<span>. If you don't see it, tap "More" first.</span>`,
+             `<span>Tap</span> ${instKey("Add")}<span>. BibleChat is now on your home screen.</span>`];
+  } else if(isIOS){
+    steps = [`<span>Tap the Share button</span> ${instKey(SHARE_ICON)} <span>in Safari's bar (at the bottom on iPhone, at the top on iPad). On newer iPhones tap</span> ${instKey("•••")} <span>first, then Share.</span>`,
+             `<span>Scroll down and tap</span> ${instKey("Add to Home Screen ⊞")}<span>.</span>`,
+             `<span>Tap</span> ${instKey("Add")} <span>at the top right. BibleChat is now on your home screen.</span>`];
+    point = /iPhone|iPod/.test(UA);
+    if(/FxiOS|EdgiOS/.test(UA)) note = `<p class="small">If your browser has no "Add to Home Screen", open this page in Safari.</p>`;
+  } else if(isAndroid && /SamsungBrowser/.test(UA)){
+    steps = [`<span>Tap the menu</span> ${instKey("≡")} <span>at the bottom right.</span>`,
+             `<span>Tap</span> ${instKey("Add page to")} <span>and then</span> ${instKey("Home screen")}<span>.</span>`,
+             `<span>Tap</span> ${instKey("Add")}<span>.</span>`];
+  } else if(isAndroid){
+    steps = [`<span>Tap the menu</span> ${instKey("⋮")} <span>at the top right of Chrome.</span>`,
+             `<span>Tap</span> ${instKey("Add to Home screen")} <span>(or</span> ${instKey("Install app")}<span>).</span>`,
+             `<span>Tap</span> ${instKey("Install")} <span>or</span> ${instKey("Add")}<span>. BibleChat is now on your home screen.</span>`];
+  } else {
+    steps = [`<span>In Chrome or Edge: click the install icon</span> ${instKey("⊕")} <span>at the right end of the address bar, or open the menu</span> ${instKey("⋮")} <span>→ "Cast, save and share" → "Install page as app".</span>`,
+             `<span>In Safari on a Mac: choose</span> ${instKey("File → Add to Dock")}<span>.</span>`,
+             `<span>Or download BibleChat for your computer: it adds AI explanations.</span> <a href="https://github.com/beaugrand/BibleChat-voice/releases/latest" target="_blank" rel="noopener">⬇ Windows, Mac, Linux</a>`];
+  }
+  $("#installBody").innerHTML = `<ol class="inst-steps">${steps.map(x => `<li><div>${x}</div></li>`).join("")}</ol>${note}`
+    + `<p class="small">BibleChat then opens from its own icon, full screen like an app, and the Bibles you opened also work without internet.</p>`
+    + (inAppBrowser ? `<button class="btn" id="installCopy">⧉ Copy the link</button>` : "")
+    + `<button class="btn primary" id="installDone">OK</button>`
+    + (point ? `<div class="inst-point" aria-hidden="true">⬇</div>` : "");
+  $("#installSheet").hidden = false;
+}
+$("#homeInstall").onclick = async () => {
+  if(installEvt){   // the browser's own "Add to Home screen" box
+    const e = installEvt; installEvt = null;
+    try{ await e.prompt(); const r = await e.userChoice; if(r && r.outcome === "accepted") return; }catch(err){ installSteps(); }
+    return;
+  }
+  installSteps();
+};
+$("#installClose").onclick = () => { $("#installSheet").hidden = true; };
+$("#installSheet").addEventListener("click", e => {
+  if(e.target.id === "installSheet" || e.target.id === "installDone"){ $("#installSheet").hidden = true; return; }
+  if(e.target.id === "installCopy"){ (navigator.clipboard ? navigator.clipboard.writeText(PHONE_URL) : Promise.reject()).then(() => toast(tr("Link copied")), () => toast(PHONE_URL)); }
+});
+matchMedia("(display-mode: standalone)").addEventListener && matchMedia("(display-mode: standalone)").addEventListener("change", installRefresh);
+installRefresh();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
 </body>

@@ -11,6 +11,7 @@ The rules it enforces (the build stops on the first broken rule):
     (KJV for the 66 books and the Apocrypha, the Ethiopian Canon for 1 Enoch, Jubilees and the rest).
   * Every quiz answer is a verse of that path; every verse Hans listed for the path is shown in a step.
   * Commentary is only Scofield or Matthew Henry, and the app shows it under its label (tests check that).
+  * Every path has a category (the filter chips above the cards) and its own picture, web/paths/img/<id>.jpg.
 
 It also works out, for every question, why it is worth asking: how many cross-references point to its verse
 (OpenBible.info votes), how often the path's Hebrew/Greek words occur in its verses, and how much KJV, the
@@ -39,6 +40,7 @@ sys.path.insert(0, ROOT)
 
 SRC_DIR = os.path.join(ROOT, "packaging", "paths")
 OUT_DIR = os.path.join(ROOT, "web", "paths")
+IMG_DIR = os.path.join(OUT_DIR, "img")              # one picture per path, shown on its card: img/<id>.jpg
 QUOTED = os.path.join(ROOT, "web", "quoted.json")   # "Quoted or named in Scripture", hand-checked
 STATUS = ("text", "disputed", "lost", "not-in-biblechat")
 TYPES = ("find_the_verse", "multiple_choice", "fill_word", "which_translation")
@@ -187,7 +189,7 @@ def check_path(p: dict, B: Bibles, file_id: str | None = None) -> dict:
     """Raise PathError for the first broken rule; return facts the build needs (verses of the path, checks done)."""
     from bibleask.strongs import STRONGS
     where = f"path {p.get('id')!r}"
-    for k in ("id", "title", "opening_question", "steps", "quiz", "sources", "required_refs"):
+    for k in ("id", "title", "category", "opening_question", "steps", "quiz", "sources", "required_refs"):
         if not p.get(k):
             raise PathError(f"{where}: missing {k!r}")
     if file_id and p["id"] != file_id:
@@ -445,6 +447,9 @@ def build(B: Bibles) -> dict[str, dict]:
             s = sig.for_question(q, p, B, info["verses"])
             q["signals"], q["why"], q["score"] = s, why(s, STRONGS), score(s)
         p["verse_count"] = len(set(info["verses"]))
+        if not os.path.exists(os.path.join(IMG_DIR, p["id"] + ".jpg")):
+            raise PathError(f"path {p['id']!r}: no picture web/paths/img/{p['id']}.jpg for its card")
+        p["image"] = "img/" + p["id"] + ".jpg"
         p["labels"] = NOTES
         p["built_from"] = {"file": "packaging/paths/" + os.path.basename(f), "sha": sha(f),
                            "checked_in": [k for k in ("KJV", "ETH", "BSB") if k not in B.missing]}
@@ -452,9 +457,18 @@ def build(B: Bibles) -> dict[str, dict]:
     return out
 
 
+def minutes(p: dict) -> int:
+    """About how long a path takes: reading its verses, thinking about each step, answering the questions."""
+    m = 0.25 * p["verse_count"] + 3 * len(p["steps"]) + p.get("show", 8)
+    return max(10, int(5 * round(m / 5)))
+
+
 def index(paths: dict[str, dict]) -> list[dict]:
-    return [{"id": p["id"], "title": p["title"], "opening_question": p["opening_question"], "steps": len(p["steps"]),
-             "show": p.get("show", 8), "verses": p["verse_count"]} for p in paths.values()]
+    """What the cards need without loading every path: picture, category, size, time and the step questions."""
+    return [{"id": p["id"], "title": p["title"], "category": p["category"], "image": p["image"],
+             "opening_question": p["opening_question"], "steps": len(p["steps"]),
+             "step_questions": [s["question"] for s in p["steps"]],
+             "show": p.get("show", 8), "verses": p["verse_count"], "minutes": minutes(p)} for p in paths.values()]
 
 
 def dumps(obj) -> str:

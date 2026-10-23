@@ -1,6 +1,7 @@
 {
   "id": "light-before-sun",
   "title": "Light before the sun",
+  "category": "Creation",
   "opening_question": "If the sun was made on Day 4, what was the light on Day 1?",
   "required_refs": ["Genesis 1:1-5", "Genesis 1:14-19", "John 1:1-9", "John 8:12", "Matthew 5:14-16", "1 John 1:5",
                     "Isaiah 60:19-20", "Revelation 21:23", "Revelation 22:5"],

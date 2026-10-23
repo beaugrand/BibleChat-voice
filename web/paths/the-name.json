@@ -1,6 +1,7 @@
 {
  "id": "the-name",
  "title": "The Name",
+ "category": "Name & Word",
  "opening_question": "What is God's name, and what is the name by which we must be saved?",
  "required_refs": [
   "Exodus 3:13-15",
@@ -610,13 +611,14 @@
   "Matthew Henry"
  ],
  "verse_count": 28,
+ "image": "img/the-name.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
   "henry": "Commentary (Matthew Henry, Concise)"
  },
  "built_from": {
   "file": "packaging/paths/the-name.json",
-  "sha": "48f2f79cafa30513",
+  "sha": "e65801325bb2f7cb",
   "checked_in": [
    "KJV",
    "ETH",

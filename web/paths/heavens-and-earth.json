@@ -1,6 +1,7 @@
 {
  "id": "heavens-and-earth",
  "title": "The heavens and the earth in the text's own words",
+ "category": "Creation",
  "opening_question": "What does the text itself say about the shape of the earth, the firmament and what holds the earth?",
  "required_refs": [
   "Genesis 1:6-8",
@@ -462,13 +463,14 @@
   "1 Enoch (R. H. Charles, 1917)"
  ],
  "verse_count": 194,
+ "image": "img/heavens-and-earth.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
   "henry": "Commentary (Matthew Henry, Concise)"
  },
  "built_from": {
   "file": "packaging/paths/heavens-and-earth.json",
-  "sha": "09e5113e8ecdcff9",
+  "sha": "48dc6445fc34562e",
   "checked_in": [
    "KJV",
    "ETH",

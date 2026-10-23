@@ -1,0 +1,653 @@
+{
+ "id": "the-rainbow",
+ "title": "The rainbow: God's bow in the cloud",
+ "category": "Covenant",
+ "opening_question": "Whose sign is the rainbow, what does God say it means, and where else does the Bible show it?",
+ "required_refs": [
+  "Genesis 1:3-5",
+  "Genesis 9:8-17",
+  "Isaiah 54:9-10",
+  "Ezekiel 1:26-28",
+  "Revelation 4:2-3",
+  "Revelation 10:1",
+  "Psalms 97:1-6",
+  "Habakkuk 3:3-4",
+  "John 8:12"
+ ],
+ "words": [
+  "H7198",
+  "G2463",
+  "H1285"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Before any rainbow, what did God make first, and what did He divide it from?",
+   "refs": [
+    "Genesis 1:3-5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H216"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "With whom does God make this covenant, what does He set in the cloud, and for how long?",
+   "refs": [
+    "Genesis 9:8-17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7198",
+     "H1285",
+     "H226"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Hebrew word for \"bow\" here is qesheth. Strong's gives it as \"a bow for shooting\" or \"the iris\".",
+     "refs": [
+      "Genesis 9:13"
+     ],
+     "strongs": [
+      "H7198"
+     ]
+    },
+    {
+     "text": "God says \"I will remember my covenant\" and \"I will look upon it\".",
+     "refs": [
+      "Genesis 9:15-16"
+     ]
+    },
+    {
+     "text": "The King James calls it \"the everlasting covenant\", made with \"every living creature\".",
+     "refs": [
+      "Genesis 9:16"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does God compare to \"the waters of Noah\", and what does He say shall not depart?",
+   "refs": [
+    "Isaiah 54:9-10"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2617",
+     "H1285"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "Ezekiel saw \"the bow that is in the cloud in the day of rain\". Whose glory was it, and what colours does he name?",
+   "refs": [
+    "Ezekiel 1:26-28"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7198",
+     "H2830",
+     "H5051"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The word for \"bow\" in Ezekiel 1:28 is the same Hebrew word as in Genesis 9:13: qesheth.",
+     "refs": [
+      "Ezekiel 1:28",
+      "Genesis 9:13"
+     ],
+     "strongs": [
+      "H7198"
+     ]
+    },
+    {
+     "text": "Around the throne Ezekiel names \"a sapphire stone\", \"the colour of amber\" and \"fire\".",
+     "refs": [
+      "Ezekiel 1:26-27"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What is round about the throne in heaven, and what is it like to look upon?",
+   "refs": [
+    "Revelation 4:2-3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2463",
+     "G4664"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Here the Greek word is iris. Strong's gives it as \"a rainbow\".",
+     "refs": [
+      "Revelation 4:3"
+     ],
+     "strongs": [
+      "G2463"
+     ]
+    },
+    {
+     "text": "John names three stones in this verse: \"a jasper\", \"a sardine stone\" and \"an emerald\".",
+     "refs": [
+      "Revelation 4:3"
+     ],
+     "strongs": [
+      "G2393",
+      "G4555",
+      "G4664"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What was upon the head of the mighty angel, and what was he clothed with?",
+   "refs": [
+    "Revelation 10:1"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2463"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "What is round about the LORD, and what comes out of His hand?",
+   "refs": [
+    "Psalms 97:1-6",
+    "Habakkuk 3:3-4"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5051",
+     "H216"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "Who does Jesus say is \"the light of the world\", and what does the one who follows Him have?",
+   "refs": [
+    "John 8:12"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5457"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"I do set my bow in the cloud\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 9:13"
+   ],
+   "signals": {
+    "xref": 10,
+    "votes": 42,
+    "word": "H1285",
+    "word_count": 8,
+    "differ": 0.313,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "The Hebrew word berîyth (H1285) is in 8 verses of this path"
+   ],
+   "score": 0.594
+  },
+  {
+   "q": "In Genesis 9:13, what does God say the bow in the cloud shall be?",
+   "type": "multiple_choice",
+   "options": [
+    "A token of a covenant",
+    "A sign of judgment",
+    "A gate of heaven",
+    "A path of light"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Genesis 9:13"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "token"
+   },
+   "signals": {
+    "xref": 10,
+    "votes": 42,
+    "word": "H1285",
+    "word_count": 8,
+    "differ": 0.313,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "The Hebrew word berîyth (H1285) is in 8 verses of this path"
+   ],
+   "score": 0.594
+  },
+  {
+   "q": "Fill in the word: \"I will remember my ___\"",
+   "type": "fill_word",
+   "ref": "Genesis 9:15",
+   "bible": "KJV",
+   "word": "covenant",
+   "answer_refs": [
+    "Genesis 9:15"
+   ],
+   "signals": {
+    "xref": 10,
+    "votes": 42,
+    "word": "H1285",
+    "word_count": 8,
+    "differ": 0.22,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "The Hebrew word berîyth (H1285) is in 8 verses of this path"
+   ],
+   "score": 0.5707
+  },
+  {
+   "q": "Which translation says \"set my bow\" in Genesis 9:13, where the others say \"rainbow\"?",
+   "type": "which_translation",
+   "ref": "Genesis 9:13",
+   "bible": "KJV",
+   "phrase": "set my bow",
+   "answer_refs": [
+    "Genesis 9:13"
+   ],
+   "signals": {
+    "xref": 10,
+    "votes": 42,
+    "word": "H1285",
+    "word_count": 8,
+    "differ": 0.313,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "The Hebrew word berîyth (H1285) is in 8 verses of this path"
+   ],
+   "score": 0.594
+  },
+  {
+   "q": "Which verse says there was \"a rainbow round about the throne\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 4:3"
+   ],
+   "signals": {
+    "xref": 16,
+    "votes": 67,
+    "word": "G2463",
+    "word_count": 2,
+    "differ": 0.533,
+    "quoted": null
+   },
+   "why": [
+    "16 cross-references point here",
+    "The Greek word îris (G2463) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5084
+  },
+  {
+   "q": "In Revelation 4:3, what was the rainbow like to look upon?",
+   "type": "multiple_choice",
+   "options": [
+    "An emerald",
+    "A sapphire",
+    "A ruby",
+    "A pearl"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 4:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "emerald"
+   },
+   "signals": {
+    "xref": 16,
+    "votes": 67,
+    "word": "G2463",
+    "word_count": 2,
+    "differ": 0.533,
+    "quoted": null
+   },
+   "why": [
+    "16 cross-references point here",
+    "The Greek word îris (G2463) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5084
+  },
+  {
+   "q": "Which verse says of a mighty angel \"a rainbow was upon his head\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 10:1"
+   ],
+   "signals": {
+    "xref": 12,
+    "votes": 61,
+    "word": "G2463",
+    "word_count": 2,
+    "differ": 0.381,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here",
+    "The Greek word îris (G2463) is in 2 verses of this path"
+   ],
+   "score": 0.4634
+  },
+  {
+   "q": "Which translation says \"carnelian\" in Revelation 4:3?",
+   "type": "which_translation",
+   "ref": "Revelation 4:3",
+   "bible": "BSB",
+   "phrase": "carnelian",
+   "answer_refs": [
+    "Revelation 4:3"
+   ],
+   "signals": {
+    "xref": 16,
+    "votes": 67,
+    "word": "G2463",
+    "word_count": 2,
+    "differ": 0.533,
+    "quoted": null
+   },
+   "why": [
+    "16 cross-references point here",
+    "The Greek word îris (G2463) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5084
+  },
+  {
+   "q": "Which verse compares the brightness round about the glory of the LORD to the bow in the cloud in the day of rain?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Ezekiel 1:28"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 169,
+    "word": "H7198",
+    "word_count": 4,
+    "differ": 0.421,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here",
+    "The Hebrew word qesheth (H7198) is in 4 verses of this path"
+   ],
+   "score": 0.6075
+  },
+  {
+   "q": "Fill in the word: \"I am the ___ of the world\"",
+   "type": "fill_word",
+   "ref": "John 8:12",
+   "bible": "KJV",
+   "word": "light",
+   "answer_refs": [
+    "John 8:12"
+   ],
+   "signals": {
+    "xref": 49,
+    "votes": 1055,
+    "word": "G5457",
+    "word_count": 2,
+    "differ": 0.449,
+    "quoted": null
+   },
+   "why": [
+    "49 cross-references point here",
+    "The Greek word phōs (G5457) is in 2 verses of this path"
+   ],
+   "score": 0.6206
+  },
+  {
+   "q": "In Isaiah 54:10, what does the LORD say shall not depart, even if the mountains depart?",
+   "type": "multiple_choice",
+   "options": [
+    "My kindness",
+    "My anger",
+    "The waters",
+    "The cloud"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Isaiah 54:10"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "kindness"
+   },
+   "signals": {
+    "xref": 35,
+    "votes": 358,
+    "word": "H1285",
+    "word_count": 8,
+    "differ": 0.464,
+    "quoted": null
+   },
+   "why": [
+    "35 cross-references point here",
+    "The Hebrew word berîyth (H1285) is in 8 verses of this path"
+   ],
+   "score": 0.791
+  },
+  {
+   "q": "Which translation says \"horns coming out of his hand\" in Habakkuk 3:4?",
+   "type": "which_translation",
+   "ref": "Habakkuk 3:4",
+   "bible": "KJV",
+   "phrase": "horns coming out of his hand",
+   "answer_refs": [
+    "Habakkuk 3:4"
+   ],
+   "signals": {
+    "xref": 13,
+    "votes": 50,
+    "word": "H216",
+    "word_count": 6,
+    "differ": 0.689,
+    "quoted": null
+   },
+   "why": [
+    "13 cross-references point here",
+    "The Hebrew word 'ôr (H216) is in 6 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6424
+  },
+  {
+   "q": "Which verse says \"Clouds and darkness are round about him\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 97:2"
+   ],
+   "signals": {
+    "xref": 24,
+    "votes": 128,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.474,
+    "quoted": null
+   },
+   "why": [
+    "24 cross-references point here"
+   ],
+   "score": 0.4834
+  },
+  {
+   "q": "In Genesis 1:5, what did God call the light?",
+   "type": "multiple_choice",
+   "options": [
+    "Day",
+    "Night",
+    "Glory",
+    "Heaven"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Genesis 1:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Day"
+   },
+   "signals": {
+    "xref": 9,
+    "votes": 90,
+    "word": "H216",
+    "word_count": 6,
+    "differ": 0.133,
+    "quoted": null
+   },
+   "why": [
+    "9 cross-references point here",
+    "The Hebrew word 'ôr (H216) is in 6 verses of this path"
+   ],
+   "score": 0.5469
+  },
+  {
+   "q": "Fill in the word: \"And God said, Let there be ___\"",
+   "type": "fill_word",
+   "ref": "Genesis 1:3",
+   "bible": "KJV",
+   "word": "light",
+   "answer_refs": [
+    "Genesis 1:3"
+   ],
+   "signals": {
+    "xref": 14,
+    "votes": 162,
+    "word": "H216",
+    "word_count": 6,
+    "differ": 0.0,
+    "quoted": null
+   },
+   "why": [
+    "14 cross-references point here",
+    "The Hebrew word 'ôr (H216) is in 6 verses of this path"
+   ],
+   "score": 0.5574
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 30,
+ "image": "img/the-rainbow.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/the-rainbow.json",
+  "sha": "2882619776fb9abd",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

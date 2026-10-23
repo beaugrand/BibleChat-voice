@@ -118,7 +118,42 @@ class PathRulesTest(unittest.TestCase):
         self.assertTrue(any(s["look_closer"].get("letters") == "H3068" for s in p["steps"]))   # YHWH letter by letter
 
 
+    def test_hans_new_paths_and_pictures(self):
+        names = {os.path.basename(f)[:-5] for f in SOURCES}
+        self.assertIn("husband-and-wife", names); self.assertIn("the-rainbow", names)
+        hw = load(os.path.join(bp.SRC_DIR, "husband-and-wife.json"))
+        for r in ("Genesis 2:18-25", "Proverbs 31:10-31", "Song of Solomon 2:1-16", "Ephesians 5:21-33", "Colossians 3:18-19",
+                  "1 Corinthians 7:1-16", "1 Corinthians 13:4-8", "1 Peter 3:1-7", "Hebrews 13:4", "Ecclesiastes 4:9-12", "Mark 10:6-9"):
+            self.assertIn(r, hw["required_refs"])
+        rb = load(os.path.join(bp.SRC_DIR, "the-rainbow.json"))
+        for r in ("Genesis 9:8-17", "Ezekiel 1:26-28", "Revelation 4:2-3", "Revelation 10:1", "Isaiah 54:9-10"):
+            self.assertIn(r, rb["required_refs"])
+        # every path has a category (the filter chips) and its own picture, and the cards get them from index.json
+        index = {x["id"]: x for x in load(os.path.join(bp.OUT_DIR, "index.json"))}
+        for f in SOURCES:
+            pid = os.path.basename(f)[:-5]
+            self.assertTrue(load(f).get("category"), pid)
+            img = os.path.join(bp.IMG_DIR, pid + ".jpg")
+            self.assertTrue(os.path.exists(img), pid)
+            with open(img, "rb") as fh:
+                self.assertEqual(fh.read(3), b"\xff\xd8\xff")                     # a real JPEG
+            self.assertLess(os.path.getsize(img), 150_000)                            # small enough for a phone
+            x = index[pid]
+            self.assertEqual(x["image"], "img/" + pid + ".jpg")
+            self.assertEqual(len(x["step_questions"]), x["steps"])
+            self.assertGreaterEqual(x["minutes"], 10)
+
+
 class PathPagesTest(unittest.TestCase):
+    def test_card_grid_layout(self):
+        js = read("web", "paths.js")
+        for part in ("pv-chips", "pv-grid", "pv-pc-img", "pv-pc-meta", "pv-dots", "pv-pc-steps", "pv-tick", "pv-jump", "pv-track",
+                     "grid-template-columns:repeat(2,", "grid-template-columns:repeat(3,", "pv-dark"):
+            self.assertIn(part, js)
+        sw = read("web", "sw.js")
+        self.assertIn('"paths/" + p.image', sw)                                     # pictures work offline
+        self.assertIn(r"/paths/img/[a-z0-9-]+\.jpg", read("bibleask", "server.py"))  # and on the computer
+
     def test_commentary_only_with_its_label(self):
         js = read("web", "paths.js")
         for kind, lab in bp.NOTES.items():

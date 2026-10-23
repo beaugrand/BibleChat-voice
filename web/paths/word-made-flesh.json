@@ -1,6 +1,7 @@
 {
  "id": "word-made-flesh",
  "title": "The Word made flesh, the way, the truth, the light",
+ "category": "Name & Word",
  "opening_question": "Who is the Word, and what does the text say about keeping His commandments?",
  "required_refs": [
   "John 1:1-14",
@@ -447,13 +448,14 @@
   "Matthew Henry"
  ],
  "verse_count": 33,
+ "image": "img/word-made-flesh.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
   "henry": "Commentary (Matthew Henry, Concise)"
  },
  "built_from": {
   "file": "packaging/paths/word-made-flesh.json",
-  "sha": "b5d307ad7ea03720",
+  "sha": "2342139369f5a483",
   "checked_in": [
    "KJV",
    "ETH",

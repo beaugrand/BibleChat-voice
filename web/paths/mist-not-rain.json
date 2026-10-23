@@ -1,6 +1,7 @@
 {
  "id": "mist-not-rain",
  "title": "Mist, not rain",
+ "category": "Creation",
  "opening_question": "What watered the ground before the flood, and what does the text say about rain?",
  "required_refs": [
   "Genesis 1:6-8",
@@ -442,13 +443,14 @@
   "Matthew Henry"
  ],
  "verse_count": 20,
+ "image": "img/mist-not-rain.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
   "henry": "Commentary (Matthew Henry, Concise)"
  },
  "built_from": {
   "file": "packaging/paths/mist-not-rain.json",
-  "sha": "55a595cfcfff5f0f",
+  "sha": "6557881745674c2d",
   "checked_in": [
    "KJV",
    "ETH",

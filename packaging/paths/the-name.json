@@ -1,6 +1,7 @@
 {
   "id": "the-name",
   "title": "The Name",
+  "category": "Name & Word",
   "opening_question": "What is God's name, and what is the name by which we must be saved?",
   "required_refs": ["Exodus 3:13-15", "Exodus 6:2-3", "Exodus 20:7", "Psalms 83:18", "Isaiah 42:8", "Jeremiah 23:26-27", "Joel 2:32",
                     "Malachi 1:11", "Numbers 13:16", "Matthew 1:21", "John 17:6", "John 17:11-12", "John 17:26", "Acts 4:12", "Philippians 2:9-11"],

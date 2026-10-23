@@ -31,6 +31,8 @@ following work by others. Each keeps its own license.
 The **📜 Study Paths** (`packaging/paths/`, `web/paths/`) and the list **Quoted or named in Scripture** (`web/quoted.json`) are
 written for BibleChat and licensed with it (Apache 2.0). They contain references and questions, not Bible text; the verses,
 words, cross-references and notes they show come from the sources in this file.
+The path pictures (`web/paths/img/`) were made with an AI image generator for BibleChat (October 2026) and are licensed with
+it (Apache 2.0). They show no real people and no text.
 
 ## Font included in BibleChat
 

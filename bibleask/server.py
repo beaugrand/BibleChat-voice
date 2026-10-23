@@ -33,7 +33,7 @@ def web_dir() -> str:
 
 
 def shared_web_dir() -> str:
-    """The phone's web/ folder: Study Paths (paths.js, paths/*.json) and the "Quoted or named" list are shared."""
+    """The phone's web/ folder: Study Paths (paths.js, paths/*.json, paths/img/*.jpg) and the "Quoted or named" list are shared."""
     return os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "web")
 
 
@@ -267,10 +267,12 @@ def make_handler(app: App, port: int):
                     page = f.read().replace(b"<title>BibleChat</title>", f"<title>BibleChat {__version__}</title>".encode(), 1)
                     page = page.replace(b"Loading BibleChat, please wait", f"Loading BibleChat {__version__}, please wait".encode(), 1)
                     self._send(200, page, "text/html; charset=utf-8")
-            elif path in ("/paths.js", "/quoted.json") or re.fullmatch(r"/paths/[a-z0-9-]+\.json", path):
+            elif (path in ("/paths.js", "/quoted.json") or re.fullmatch(r"/paths/[a-z0-9-]+\.json", path)
+                  or re.fullmatch(r"/paths/img/[a-z0-9-]+\.jpg", path)):   # a path's picture for its card
                 try:
                     with open(os.path.join(shared_web_dir(), *path.strip("/").split("/")), "rb") as f:
-                        ctype = "text/javascript; charset=utf-8" if path.endswith(".js") else "application/json"
+                        ctype = ("text/javascript; charset=utf-8" if path.endswith(".js") else "image/jpeg" if path.endswith(".jpg")
+                                 else "application/json")
                         self._send(200, f.read(), ctype)
                 except OSError:
                     self._send(404, b"Not found", "text/plain")

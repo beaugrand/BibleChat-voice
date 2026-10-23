@@ -2,49 +2,163 @@
  {
   "id": "enoch-and-the-watchers",
   "title": "Enoch and the Watchers",
+  "category": "Enoch",
+  "image": "img/enoch-and-the-watchers.jpg",
   "opening_question": "Who was Enoch, who were \"the sons of God\" in Genesis 6, and what does the New Testament say about them?",
   "steps": 7,
+  "step_questions": [
+   "What does Genesis say about Enoch, and what does Hebrews add?",
+   "Who took wives in Genesis 6, and who were born? Where else does the Old Testament say \"sons of God\"?",
+   "Jude quotes a prophecy of Enoch. Read it next to 1 Enoch 1:9: what is the same, and what is different?",
+   "What do Peter's letters say about spirits in prison and angels that sinned?",
+   "What does Jesus say about angels and marriage? Read it as part of the whole counsel.",
+   "The Book of the Watchers (1 Enoch 6–16, Ethiopian Canon): who came down, what did they teach, and what was their judgement?",
+   "Jubilees 4–5 (Ethiopian Canon): what does it say about Jared's days, Enoch, and the angels of God?"
+  ],
   "show": 8,
-  "verses": 184
+  "verses": 184,
+  "minutes": 75
  },
  {
   "id": "heavens-and-earth",
   "title": "The heavens and the earth in the text's own words",
+  "category": "Creation",
+  "image": "img/heavens-and-earth.jpg",
   "opening_question": "What does the text itself say about the shape of the earth, the firmament and what holds the earth?",
   "steps": 6,
+  "step_questions": [
+   "What is the firmament, where are the lights set, and what is above and below it?",
+   "How do these verses describe the sky?",
+   "Which words describe the shape: circle, compass, ball, corners? Read each one in its own sentence.",
+   "What does the earth hang on or rest on? Read the verses about nothing, foundations and pillars side by side.",
+   "What do these verses say about the earth being moved, and about the sun?",
+   "The Book of the Luminaries (Ethiopian Canon): how does it describe the sun, moon and stars and their gates?"
+  ],
   "show": 8,
-  "verses": 194
+  "verses": 194,
+  "minutes": 75
+ },
+ {
+  "id": "husband-and-wife",
+  "title": "Husband and wife",
+  "category": "Marriage",
+  "image": "img/husband-and-wife.jpg",
+  "opening_question": "What does the Bible say about husband and wife: how it began, how they are to love each other, and what holds them together?",
+  "steps": 11,
+  "step_questions": [
+   "Why did God make the woman, and what does the man say when he sees her?",
+   "Where does Jesus go back to when He speaks of marriage, and who joins husband and wife together?",
+   "What is the wife told, what is the husband told, and how did Christ love the church?",
+   "What are wives told, and what are husbands told not to be?",
+   "What adorning is of great price in the sight of God, and how are husbands to dwell with their wives?",
+   "What do husband and wife owe each other, and what does the Lord command about leaving?",
+   "What is love like, and what never fails?",
+   "Why are two better than one, and what is not quickly broken?",
+   "What does her husband do, and what is she praised for at the end?",
+   "How do the beloved and his love speak of each other?",
+   "How is marriage to be held, and who will God judge?"
+  ],
+  "show": 8,
+  "verses": 98,
+  "minutes": 65
  },
  {
   "id": "light-before-sun",
   "title": "Light before the sun",
+  "category": "Creation",
+  "image": "img/light-before-sun.jpg",
   "opening_question": "If the sun was made on Day 4, what was the light on Day 1?",
   "steps": 7,
+  "step_questions": [
+   "What does the text say happened on Day 1?",
+   "What was made on Day 4, and what does the text say it is for?",
+   "What does John say was there in the beginning, and what does he call the light?",
+   "Who is called \"the light of the world\" in these verses?",
+   "What does this verse say God is?",
+   "What gives light where there is no sun or moon?",
+   "More verses on light and where it comes from. Some say God forms light, some say God is light, some say He dwells in it. What does each one say?"
+  ],
   "show": 8,
-  "verses": 40
+  "verses": 40,
+  "minutes": 40
  },
  {
   "id": "mist-not-rain",
   "title": "Mist, not rain",
+  "category": "Creation",
+  "image": "img/mist-not-rain.jpg",
   "opening_question": "What watered the ground before the flood, and what does the text say about rain?",
   "steps": 6,
+  "step_questions": [
+   "What did God make on Day 2, and what did it divide?",
+   "Why had no plant grown yet, and what watered the ground?",
+   "The word for \"mist\" is used only twice. What does the other verse say about it?",
+   "Where did the flood waters come from, and how long did it rain?",
+   "What did God set in the cloud, and what is it a token of?",
+   "Where are waters still spoken of, and what was Noah warned about?"
+  ],
   "show": 8,
-  "verses": 20
+  "verses": 20,
+  "minutes": 30
  },
  {
   "id": "the-name",
   "title": "The Name",
+  "category": "Name & Word",
+  "image": "img/the-name.jpg",
   "opening_question": "What is God's name, and what is the name by which we must be saved?",
   "steps": 7,
+  "step_questions": [
+   "What did God tell Moses to say when the people ask for His name?",
+   "By which name does God say He was not known to Abraham, Isaac and Jacob? Read it next to the earlier verses that use the name.",
+   "What do these verses say about God's name: how it is to be treated, and how far it reaches?",
+   "What do the prophets say about forgetting the name and calling on it? Compare Joel with the verse that quotes him.",
+   "What name did Moses give Hoshea, and what name was Mary's son to be given?",
+   "What does Jesus say He did with the Father's name?",
+   "What do these verses say about the name given among men, and the name above every name?"
+  ],
   "show": 8,
-  "verses": 28
+  "verses": 28,
+  "minutes": 35
+ },
+ {
+  "id": "the-rainbow",
+  "title": "The rainbow: God's bow in the cloud",
+  "category": "Covenant",
+  "image": "img/the-rainbow.jpg",
+  "opening_question": "Whose sign is the rainbow, what does God say it means, and where else does the Bible show it?",
+  "steps": 8,
+  "step_questions": [
+   "Before any rainbow, what did God make first, and what did He divide it from?",
+   "With whom does God make this covenant, what does He set in the cloud, and for how long?",
+   "What does God compare to \"the waters of Noah\", and what does He say shall not depart?",
+   "Ezekiel saw \"the bow that is in the cloud in the day of rain\". Whose glory was it, and what colours does he name?",
+   "What is round about the throne in heaven, and what is it like to look upon?",
+   "What was upon the head of the mighty angel, and what was he clothed with?",
+   "What is round about the LORD, and what comes out of His hand?",
+   "Who does Jesus say is \"the light of the world\", and what does the one who follows Him have?"
+  ],
+  "show": 8,
+  "verses": 30,
+  "minutes": 40
  },
  {
   "id": "word-made-flesh",
   "title": "The Word made flesh, the way, the truth, the light",
+  "category": "Name & Word",
+  "image": "img/word-made-flesh.jpg",
   "opening_question": "Who is the Word, and what does the text say about keeping His commandments?",
   "steps": 6,
+  "step_questions": [
+   "Who is the Word, and what became of Him?",
+   "What does Jesus say He is?",
+   "What did Jesus say about the law and the commandments?",
+   "How does John say we know that we know Him?",
+   "What do these verses say about faith, works and the law? Read them next to the verses above.",
+   "How does Revelation describe the saints, and who has right to the tree of life? Compare the translations of 22:14."
+  ],
   "show": 8,
-  "verses": 33
+  "verses": 33,
+  "minutes": 35
  }
 ]
