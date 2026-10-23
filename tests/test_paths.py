@@ -121,6 +121,10 @@ class PathRulesTest(unittest.TestCase):
     def test_hans_new_paths_and_pictures(self):
         names = {os.path.basename(f)[:-5] for f in SOURCES}
         self.assertIn("husband-and-wife", names); self.assertIn("the-rainbow", names)
+        self.assertIn("freedom-from-bondage", names)
+        fb = load(os.path.join(bp.SRC_DIR, "freedom-from-bondage.json"))
+        for r in ("John 8:34", "John 8:36", "Psalms 107:13-14", "Romans 6:14", "1 Corinthians 10:13", "Galatians 5:1", "1 John 1:9"):
+            self.assertIn(r, fb["required_refs"])
         hw = load(os.path.join(bp.SRC_DIR, "husband-and-wife.json"))
         for r in ("Genesis 2:18-25", "Proverbs 31:10-31", "Song of Solomon 2:1-16", "Ephesians 5:21-33", "Colossians 3:18-19",
                   "1 Corinthians 7:1-16", "1 Corinthians 13:4-8", "1 Peter 3:1-7", "Hebrews 13:4", "Ecclesiastes 4:9-12", "Mark 10:6-9"):

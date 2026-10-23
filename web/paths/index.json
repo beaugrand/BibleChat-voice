@@ -20,6 +20,26 @@
   "minutes": 75
  },
  {
+  "id": "freedom-from-bondage",
+  "title": "Freedom from bondage",
+  "category": "Freedom",
+  "image": "img/freedom-from-bondage.jpg",
+  "opening_question": "What does the Bible say about being held captive by sin, like an addiction, and who sets us free?",
+  "steps": 7,
+  "step_questions": [
+   "What does Jesus call whoever commits sin, and what does Paul say about doing what he hates?",
+   "What did they do in their trouble, and what did the LORD do with their bands?",
+   "Who can make you free, and what happened to \"our old man\"?",
+   "What shall not have dominion over you, and is there any condemnation for those in Christ Jesus?",
+   "What does God make with every temptation, and what are the free told to stand fast in?",
+   "Where does strength come from, how often are His mercies new, and where can we find mercy and help?",
+   "What happens when we confess our sins, and what is there where the Spirit of the Lord is?"
+  ],
+  "show": 8,
+  "verses": 26,
+  "minutes": 35
+ },
+ {
   "id": "heavens-and-earth",
   "title": "The heavens and the earth in the text's own words",
   "category": "Creation",

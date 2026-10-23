@@ -1,0 +1,656 @@
+{
+ "id": "freedom-from-bondage",
+ "title": "Freedom from bondage",
+ "category": "Freedom",
+ "opening_question": "What does the Bible say about being held captive by sin, like an addiction, and who sets us free?",
+ "required_refs": [
+  "John 8:34",
+  "Romans 7:15",
+  "Romans 7:19",
+  "Psalms 107:13-14",
+  "Psalms 40:1-3",
+  "John 8:36",
+  "Romans 6:6-7",
+  "Romans 6:14",
+  "Romans 8:1-2",
+  "1 Corinthians 10:13",
+  "Galatians 5:1",
+  "Philippians 4:13",
+  "Lamentations 3:22-23",
+  "Hebrews 4:15-16",
+  "1 John 1:9",
+  "2 Corinthians 3:17"
+ ],
+ "words": [
+  "G1401",
+  "G1659",
+  "G1657",
+  "G266"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What does Jesus call whoever commits sin, and what does Paul say about doing what he hates?",
+   "refs": [
+    "John 8:34",
+    "Romans 7:15-19"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1401",
+     "G266"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The word for \"servant\" in John 8:34 is doulos. Strong's gives it as \"a slave\".",
+     "refs": [
+      "John 8:34"
+     ],
+     "strongs": [
+      "G1401"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did they do in their trouble, and what did the LORD do with their bands?",
+   "refs": [
+    "Psalms 107:13-14",
+    "Psalms 40:1-3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4147"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The word for \"bands\" in Psalm 107:14 is moser. Strong's gives it as \"a halter\" and \"restraint\".",
+     "refs": [
+      "Psalms 107:14"
+     ],
+     "strongs": [
+      "H4147"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who can make you free, and what happened to \"our old man\"?",
+   "refs": [
+    "John 8:36",
+    "Romans 6:6-7"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1659",
+     "G1398"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"make you free\" is the Greek eleutheroo: \"to liberate\".",
+     "refs": [
+      "John 8:36"
+     ],
+     "strongs": [
+      "G1659"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What shall not have dominion over you, and is there any condemnation for those in Christ Jesus?",
+   "refs": [
+    "Romans 6:14",
+    "Romans 8:1-2"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2961",
+     "G1659"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"have dominion\" is the Greek kyrieuo: \"to rule\".",
+     "refs": [
+      "Romans 6:14"
+     ],
+     "strongs": [
+      "G2961"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does God make with every temptation, and what are the free told to stand fast in?",
+   "refs": [
+    "1 Corinthians 10:13",
+    "Galatians 5:1"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1545",
+     "G1657"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"a way to escape\" is one Greek word, ekbasis: \"an exit\".",
+     "refs": [
+      "1 Corinthians 10:13"
+     ],
+     "strongs": [
+      "G1545"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Where does strength come from, how often are His mercies new, and where can we find mercy and help?",
+   "refs": [
+    "Philippians 4:13",
+    "Lamentations 3:22-23",
+    "Hebrews 4:15-16"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G769",
+     "H7356"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The \"infirmities\" of Hebrews 4:15 is astheneia: \"feebleness (of mind or body)\".",
+     "refs": [
+      "Hebrews 4:15"
+     ],
+     "strongs": [
+      "G769"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What happens when we confess our sins, and what is there where the Spirit of the Lord is?",
+   "refs": [
+    "1 John 1:9",
+    "2 Corinthians 3:17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3670",
+     "G1657"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"Whosoever committeth sin is the servant of sin\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 8:34"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 232,
+    "word": "G266",
+    "word_count": 11,
+    "differ": 0.673,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here",
+    "The Greek word hamartía (G266) is in 11 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.8983
+  },
+  {
+   "q": "Which translation says \"a slave to sin\" in John 8:34?",
+   "type": "which_translation",
+   "ref": "John 8:34",
+   "bible": "BSB",
+   "phrase": "slave to sin",
+   "answer_refs": [
+    "John 8:34"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 232,
+    "word": "G266",
+    "word_count": 11,
+    "differ": 0.673,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here",
+    "The Greek word hamartía (G266) is in 11 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.8983
+  },
+  {
+   "q": "Which verse says \"what I hate, that do I\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 7:15"
+   ],
+   "signals": {
+    "xref": 8,
+    "votes": 45,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.566,
+    "quoted": null
+   },
+   "why": [
+    "8 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.4289
+  },
+  {
+   "q": "Which translation says \"brake their bands in sunder\" in Psalm 107:14?",
+   "type": "which_translation",
+   "ref": "Psalms 107:14",
+   "bible": "KJV",
+   "phrase": "brake their bands in sunder",
+   "answer_refs": [
+    "Psalms 107:14"
+   ],
+   "signals": {
+    "xref": 16,
+    "votes": 118,
+    "word": "H4147",
+    "word_count": 1,
+    "differ": 0.259,
+    "quoted": null
+   },
+   "why": [
+    "16 cross-references point here"
+   ],
+   "score": 0.4527
+  },
+  {
+   "q": "According to Psalm 40:2, where did the LORD set his feet?",
+   "type": "multiple_choice",
+   "options": [
+    "Upon a rock",
+    "In the miry clay",
+    "By the river",
+    "In the pit"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Psalms 40:2"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "rock"
+   },
+   "signals": {
+    "xref": 40,
+    "votes": 379,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.417,
+    "quoted": null
+   },
+   "why": [
+    "40 cross-references point here"
+   ],
+   "score": 0.5502
+  },
+  {
+   "q": "Fill in the word: \"If the Son therefore shall make you free, ye shall be free ___\"",
+   "type": "fill_word",
+   "ref": "John 8:36",
+   "bible": "KJV",
+   "word": "indeed",
+   "answer_refs": [
+    "John 8:36"
+   ],
+   "signals": {
+    "xref": 22,
+    "votes": 323,
+    "word": "G1659",
+    "word_count": 6,
+    "differ": 0.406,
+    "quoted": null
+   },
+   "why": [
+    "22 cross-references point here",
+    "The Greek word eleutheróō (G1659) is in 6 verses of this path"
+   ],
+   "score": 0.7105
+  },
+  {
+   "q": "Which verse says \"our old man is crucified with him\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 6:6"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 559,
+    "word": "G266",
+    "word_count": 11,
+    "differ": 0.5,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here",
+    "The Greek word hamartía (G266) is in 11 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.8958
+  },
+  {
+   "q": "In Romans 6:14, why shall sin not have dominion over you?",
+   "type": "multiple_choice",
+   "options": [
+    "Ye are not under the law, but under grace",
+    "Ye are strong",
+    "Ye have kept the law",
+    "Ye are not tempted"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Romans 6:14"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "grace"
+   },
+   "signals": {
+    "xref": 29,
+    "votes": 374,
+    "word": "G266",
+    "word_count": 11,
+    "differ": 0.408,
+    "quoted": null
+   },
+   "why": [
+    "29 cross-references point here",
+    "The Greek word hamartía (G266) is in 11 verses of this path"
+   ],
+   "score": 0.8678
+  },
+  {
+   "q": "Fill in the word: \"There is therefore now no ___ to them which are in Christ Jesus\"",
+   "type": "fill_word",
+   "ref": "Romans 8:1",
+   "bible": "KJV",
+   "word": "condemnation",
+   "answer_refs": [
+    "Romans 8:1"
+   ],
+   "signals": {
+    "xref": 37,
+    "votes": 606,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.414,
+    "quoted": null
+   },
+   "why": [
+    "37 cross-references point here"
+   ],
+   "score": 0.5535
+  },
+  {
+   "q": "Which verse says God \"will with the temptation also make a way to escape\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Corinthians 10:13"
+   ],
+   "signals": {
+    "xref": 36,
+    "votes": 522,
+    "word": "G1545",
+    "word_count": 1,
+    "differ": 0.497,
+    "quoted": null
+   },
+   "why": [
+    "36 cross-references point here"
+   ],
+   "score": 0.6034
+  },
+  {
+   "q": "Which translation says \"yoke of slavery\" in Galatians 5:1?",
+   "type": "which_translation",
+   "ref": "Galatians 5:1",
+   "bible": "BSB",
+   "phrase": "yoke of slavery",
+   "answer_refs": [
+    "Galatians 5:1"
+   ],
+   "signals": {
+    "xref": 31,
+    "votes": 548,
+    "word": "G1659",
+    "word_count": 6,
+    "differ": 0.598,
+    "quoted": null
+   },
+   "why": [
+    "31 cross-references point here",
+    "The Greek word eleutheróō (G1659) is in 6 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.7745
+  },
+  {
+   "q": "According to Lamentations 3:23, how often are His mercies new?",
+   "type": "multiple_choice",
+   "options": [
+    "Every morning",
+    "Every sabbath",
+    "Every year",
+    "Every evening"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Lamentations 3:23"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "morning"
+   },
+   "signals": {
+    "xref": 21,
+    "votes": 505,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.133,
+    "quoted": null
+   },
+   "why": [
+    "21 cross-references point here"
+   ],
+   "score": 0.4833
+  },
+  {
+   "q": "Which verse says \"I can do all things through Christ\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Philippians 4:13"
+   ],
+   "signals": {
+    "xref": 66,
+    "votes": 1889,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.323,
+    "quoted": null
+   },
+   "why": [
+    "66 cross-references point here"
+   ],
+   "score": 0.5308
+  },
+  {
+   "q": "Fill in the word: \"Let us therefore come ___ unto the throne of grace\"",
+   "type": "fill_word",
+   "ref": "Hebrews 4:16",
+   "bible": "KJV",
+   "word": "boldly",
+   "answer_refs": [
+    "Hebrews 4:16"
+   ],
+   "signals": {
+    "xref": 44,
+    "votes": 657,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.372,
+    "quoted": null
+   },
+   "why": [
+    "44 cross-references point here"
+   ],
+   "score": 0.543
+  },
+  {
+   "q": "Which verse says \"If we confess our sins, he is faithful and just to forgive us\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 John 1:9"
+   ],
+   "signals": {
+    "xref": 69,
+    "votes": 713,
+    "word": "G266",
+    "word_count": 11,
+    "differ": 0.105,
+    "quoted": null
+   },
+   "why": [
+    "69 cross-references point here",
+    "The Greek word hamartía (G266) is in 11 verses of this path"
+   ],
+   "score": 0.7971
+  },
+  {
+   "q": "Which translation says \"there is freedom\" in 2 Corinthians 3:17?",
+   "type": "which_translation",
+   "ref": "2 Corinthians 3:17",
+   "bible": "BSB",
+   "phrase": "there is freedom",
+   "answer_refs": [
+    "2 Corinthians 3:17"
+   ],
+   "signals": {
+    "xref": 19,
+    "votes": 596,
+    "word": "G1657",
+    "word_count": 2,
+    "differ": 0.174,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here",
+    "The Greek word eleuthería (G1657) is in 2 verses of this path"
+   ],
+   "score": 0.5518
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 26,
+ "image": "img/freedom-from-bondage.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/freedom-from-bondage.json",
+  "sha": "2d11600ff5316d5f",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}
