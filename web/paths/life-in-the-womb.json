@@ -1,0 +1,534 @@
+{
+ "id": "life-in-the-womb",
+ "title": "Life in the womb",
+ "category": "Body & Life",
+ "opening_question": "What does the Bible say about the child in the womb: who forms it, who knows it, and what does the text call it?",
+ "required_refs": [
+  "Psalms 139:13-16",
+  "Jeremiah 1:5",
+  "Job 31:15",
+  "Isaiah 44:24",
+  "Luke 1:41-44",
+  "Exodus 21:22-25",
+  "Psalms 51:5"
+ ],
+ "words": [
+  "H990",
+  "G2836",
+  "H3335"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Who covered me in my mother's womb, and what did His eyes see?",
+   "refs": [
+    "Psalms 139:13-16"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5526",
+     "H1564"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"my substance, yet being unperfect\" is one Hebrew word, golem: \"a wrapped (and unformed mass that is as the embryo)\".",
+     "refs": [
+      "Psalms 139:16"
+     ],
+     "strongs": [
+      "H1564"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "When did God know Jeremiah, and when did He sanctify him?",
+   "refs": [
+    "Jeremiah 1:5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3045",
+     "H6942"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "Who made both Job and his servant in the womb, and who formed thee from the womb?",
+   "refs": [
+    "Job 31:15",
+    "Isaiah 44:24"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3335"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "What did the babe in Elisabeth's womb do when Mary's greeting sounded?",
+   "refs": [
+    "Luke 1:41-44"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1025"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The \"babe\" in Elisabeth's womb is brephos, the same word Luke uses for the newborn Jesus in the manger. Strong's: \"an infant (properly, unborn)\".",
+     "refs": [
+      "Luke 1:41",
+      "Luke 2:12"
+     ],
+     "strongs": [
+      "G1025"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does the law say when a woman with child is hurt, if no mischief follows and if mischief follows?",
+   "refs": [
+    "Exodus 21:22-25"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3206",
+     "H611"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The translations differ here. The King James says \"her fruit depart from her\"; the Berean Standard Bible says \"her child is born prematurely\".",
+     "refs": [
+      "Exodus 21:22"
+     ]
+    },
+    {
+     "text": "The Hebrew word for \"fruit\" in Exodus 21:22 is yeled: \"something born that is a lad or offspring\". The word for \"mischief\" is ason: \"hurt\".",
+     "refs": [
+      "Exodus 21:22"
+     ],
+     "strongs": [
+      "H3206",
+      "H611"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does David say about the moment his mother conceived him?",
+   "refs": [
+    "Psalms 51:5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3179"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"thou hast covered me in my mother's womb\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 139:13"
+   ],
+   "signals": {
+    "xref": 8,
+    "votes": 69,
+    "word": "H990",
+    "word_count": 4,
+    "differ": 0.431,
+    "quoted": null
+   },
+   "why": [
+    "8 cross-references point here",
+    "The Hebrew word beţen (H990) is in 4 verses of this path"
+   ],
+   "score": 0.5434
+  },
+  {
+   "q": "Fill in the word: \"I am fearfully and ___ made\"",
+   "type": "fill_word",
+   "ref": "Psalms 139:14",
+   "bible": "KJV",
+   "word": "wonderfully",
+   "answer_refs": [
+    "Psalms 139:14"
+   ],
+   "signals": {
+    "xref": 12,
+    "votes": 122,
+    "word": "H3045",
+    "word_count": 2,
+    "differ": 0.526,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here",
+    "The Hebrew word yâda‛ (H3045) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5511
+  },
+  {
+   "q": "Which translation says \"unformed body\" in Psalm 139:16?",
+   "type": "which_translation",
+   "ref": "Psalms 139:16",
+   "bible": "BSB",
+   "phrase": "unformed body",
+   "answer_refs": [
+    "Psalms 139:16"
+   ],
+   "signals": {
+    "xref": 13,
+    "votes": 220,
+    "word": "H3335",
+    "word_count": 3,
+    "differ": 0.618,
+    "quoted": null
+   },
+   "why": [
+    "13 cross-references point here",
+    "The Hebrew word yâtsar (H3335) is in 3 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6473
+  },
+  {
+   "q": "Which verse says \"Before I formed thee in the belly I knew thee\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Jeremiah 1:5"
+   ],
+   "signals": {
+    "xref": 17,
+    "votes": 1655,
+    "word": "H990",
+    "word_count": 4,
+    "differ": 0.5,
+    "quoted": null
+   },
+   "why": [
+    "17 cross-references point here",
+    "The Hebrew word beţen (H990) is in 4 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6917
+  },
+  {
+   "q": "In Jeremiah 1:5, what did God ordain Jeremiah to be?",
+   "type": "multiple_choice",
+   "options": [
+    "A prophet unto the nations",
+    "A king",
+    "A priest",
+    "A judge"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Jeremiah 1:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "prophet"
+   },
+   "signals": {
+    "xref": 17,
+    "votes": 1655,
+    "word": "H990",
+    "word_count": 4,
+    "differ": 0.5,
+    "quoted": null
+   },
+   "why": [
+    "17 cross-references point here",
+    "The Hebrew word beţen (H990) is in 4 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6917
+  },
+  {
+   "q": "Which verse asks \"did not one fashion us in the womb?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Job 31:15"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 129,
+    "word": "H990",
+    "word_count": 4,
+    "differ": 0.426,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here",
+    "The Hebrew word beţen (H990) is in 4 verses of this path"
+   ],
+   "score": 0.5886
+  },
+  {
+   "q": "In Luke 1:44, why did the babe leap in Elisabeth's womb?",
+   "type": "multiple_choice",
+   "options": [
+    "For joy",
+    "For fear",
+    "In sorrow",
+    "In pain"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 1:44"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "joy"
+   },
+   "signals": {
+    "xref": 2,
+    "votes": 15,
+    "word": "G2836",
+    "word_count": 4,
+    "differ": 0.517,
+    "quoted": null
+   },
+   "why": [
+    "2 cross-references point here",
+    "The Greek word koilía (G2836) is in 4 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.4541
+  },
+  {
+   "q": "Fill in the word: \"blessed is the ___ of thy womb\"",
+   "type": "fill_word",
+   "ref": "Luke 1:42",
+   "bible": "KJV",
+   "word": "fruit",
+   "answer_refs": [
+    "Luke 1:42"
+   ],
+   "signals": {
+    "xref": 5,
+    "votes": 36,
+    "word": "G2836",
+    "word_count": 4,
+    "differ": 0.362,
+    "quoted": null
+   },
+   "why": [
+    "5 cross-references point here",
+    "The Greek word koilía (G2836) is in 4 verses of this path"
+   ],
+   "score": 0.4783
+  },
+  {
+   "q": "Which translation says \"her fruit depart from her\" in Exodus 21:22?",
+   "type": "which_translation",
+   "ref": "Exodus 21:22",
+   "bible": "KJV",
+   "phrase": "her fruit depart from her",
+   "answer_refs": [
+    "Exodus 21:22"
+   ],
+   "signals": {
+    "xref": 3,
+    "votes": 22,
+    "word": "H611",
+    "word_count": 2,
+    "differ": 0.632,
+    "quoted": null
+   },
+   "why": [
+    "3 cross-references point here",
+    "The Hebrew word 'âsôn (H611) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.4517
+  },
+  {
+   "q": "Which translation says \"gives birth prematurely\" in Exodus 21:22?",
+   "type": "which_translation",
+   "ref": "Exodus 21:22",
+   "bible": "ETH",
+   "phrase": "gives birth prematurely",
+   "answer_refs": [
+    "Exodus 21:22"
+   ],
+   "signals": {
+    "xref": 3,
+    "votes": 22,
+    "word": "H611",
+    "word_count": 2,
+    "differ": 0.632,
+    "quoted": null
+   },
+   "why": [
+    "3 cross-references point here",
+    "The Hebrew word 'âsôn (H611) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.4517
+  },
+  {
+   "q": "Which verse says \"thou shalt give life for life\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Exodus 21:23"
+   ],
+   "signals": {
+    "xref": 4,
+    "votes": 27,
+    "word": "H611",
+    "word_count": 2,
+    "differ": 0.686,
+    "quoted": null
+   },
+   "why": [
+    "4 cross-references point here",
+    "The Hebrew word 'âsôn (H611) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.48
+  },
+  {
+   "q": "Which verse says \"he that formed thee from the womb\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 44:24"
+   ],
+   "signals": {
+    "xref": 31,
+    "votes": 433,
+    "word": "H990",
+    "word_count": 4,
+    "differ": 0.499,
+    "quoted": null
+   },
+   "why": [
+    "31 cross-references point here",
+    "The Hebrew word beţen (H990) is in 4 verses of this path"
+   ],
+   "score": 0.6914
+  },
+  {
+   "q": "According to Psalm 51:5, in what did my mother conceive me?",
+   "type": "multiple_choice",
+   "options": [
+    "In sin",
+    "In joy",
+    "In the temple",
+    "In Egypt"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Psalms 51:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "sin"
+   },
+   "signals": {
+    "xref": 28,
+    "votes": 247,
+    "word": "H3179",
+    "word_count": 1,
+    "differ": 0.511,
+    "quoted": null
+   },
+   "why": [
+    "28 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5708
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 16,
+ "image": "img/life-in-the-womb.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/life-in-the-womb.json",
+  "sha": "8c243a8c3d142bdc",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

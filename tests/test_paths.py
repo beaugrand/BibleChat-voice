@@ -122,6 +122,7 @@ class PathRulesTest(unittest.TestCase):
         names = {os.path.basename(f)[:-5] for f in SOURCES}
         self.assertIn("husband-and-wife", names); self.assertIn("the-rainbow", names)
         self.assertIn("freedom-from-bondage", names)
+        self.assertIn("my-body-a-temple", names); self.assertIn("life-in-the-womb", names)
         fb = load(os.path.join(bp.SRC_DIR, "freedom-from-bondage.json"))
         for r in ("John 8:34", "John 8:36", "Psalms 107:13-14", "Romans 6:14", "1 Corinthians 10:13", "Galatians 5:1", "1 John 1:9"):
             self.assertIn(r, fb["required_refs"])
@@ -154,6 +155,9 @@ class PathPagesTest(unittest.TestCase):
         for part in ("pv-chips", "pv-grid", "pv-pc-img", "pv-pc-meta", "pv-dots", "pv-pc-steps", "pv-tick", "pv-jump", "pv-track",
                      "grid-template-columns:repeat(2,", "grid-template-columns:repeat(3,", "pv-dark"):
             self.assertIn(part, js)
+        for part in ("pv-pc-share", "pv-sharewide", "📤 Send to someone", "sms:?&body=", "https://wa.me/?text=", "mailto:?subject=",
+                     "shareHash(p, 0)", "Someone shared this study path with you"):
+            self.assertIn(part, js)                                                  # a path can be sent to someone
         sw = read("web", "sw.js")
         self.assertIn('"paths/" + p.image', sw)                                     # pictures work offline
         self.assertIn(r"/paths/img/[a-z0-9-]+\.jpg", read("bibleask", "server.py"))  # and on the computer

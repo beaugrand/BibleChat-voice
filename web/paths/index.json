@@ -83,6 +83,25 @@
   "minutes": 65
  },
  {
+  "id": "life-in-the-womb",
+  "title": "Life in the womb",
+  "category": "Body & Life",
+  "image": "img/life-in-the-womb.jpg",
+  "opening_question": "What does the Bible say about the child in the womb: who forms it, who knows it, and what does the text call it?",
+  "steps": 6,
+  "step_questions": [
+   "Who covered me in my mother's womb, and what did His eyes see?",
+   "When did God know Jeremiah, and when did He sanctify him?",
+   "Who made both Job and his servant in the womb, and who formed thee from the womb?",
+   "What did the babe in Elisabeth's womb do when Mary's greeting sounded?",
+   "What does the law say when a woman with child is hurt, if no mischief follows and if mischief follows?",
+   "What does David say about the moment his mother conceived him?"
+  ],
+  "show": 8,
+  "verses": 16,
+  "minutes": 30
+ },
+ {
   "id": "light-before-sun",
   "title": "Light before the sun",
   "category": "Creation",
@@ -119,6 +138,25 @@
   ],
   "show": 8,
   "verses": 20,
+  "minutes": 30
+ },
+ {
+  "id": "my-body-a-temple",
+  "title": "My body is a temple",
+  "category": "Body & Life",
+  "image": "img/my-body-a-temple.jpg",
+  "opening_question": "My body is a temple: what does the text say about honouring it, and about physicians and remedies? The Bible does not name vaccines; this path shows what it does say, and you decide.",
+  "steps": 6,
+  "step_questions": [
+   "Whose temple is your body, and why are you not your own?",
+   "Who dwells in the temple of God, and what does the text say about anyone who defiles it?",
+   "What are we asked to present our bodies as?",
+   "What did the Samaritan do for the wounded man's body?",
+   "Who does Jesus say needs a physician, what is Luke called, and what did Paul tell Timothy to use?",
+   "Where is there safety, according to Proverbs?"
+  ],
+  "show": 8,
+  "verses": 11,
   "minutes": 30
  },
  {
