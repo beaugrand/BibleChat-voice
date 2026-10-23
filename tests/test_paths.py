@@ -123,6 +123,9 @@ class PathRulesTest(unittest.TestCase):
         self.assertIn("husband-and-wife", names); self.assertIn("the-rainbow", names)
         self.assertIn("freedom-from-bondage", names)
         self.assertIn("my-body-a-temple", names); self.assertIn("life-in-the-womb", names)
+        d2 = load(os.path.join(bp.SRC_DIR, "daniel-2-statue-and-stone.json"))
+        self.assertEqual(d2["category"], bp.GROUPS); self.assertTrue(d2["group"])
+        self.assertTrue(d2["read_along"]["url"].startswith("https://"))           # TS2009: a link, never its text
         fb = load(os.path.join(bp.SRC_DIR, "freedom-from-bondage.json"))
         for r in ("John 8:34", "John 8:36", "Psalms 107:13-14", "Romans 6:14", "1 Corinthians 10:13", "Galatians 5:1", "1 John 1:9"):
             self.assertIn(r, fb["required_refs"])
@@ -156,7 +159,8 @@ class PathPagesTest(unittest.TestCase):
                      "grid-template-columns:repeat(2,", "grid-template-columns:repeat(3,", "pv-dark"):
             self.assertIn(part, js)
         for part in ("pv-pc-share", "pv-sharewide", "📤 Send to someone", "sms:?&body=", "https://wa.me/?text=", "mailto:?subject=",
-                     "shareHash(p, 0)", "Someone shared this study path with you"):
+                     "shareHash(p, 0)", "Someone shared this study path with you",
+                     "Bible Study Groups", "Add your own study path", "formsubmit.co/ajax/", "issues/new?title=", "Read in "):
             self.assertIn(part, js)                                                  # a path can be sent to someone
         sw = read("web", "sw.js")
         self.assertIn('"paths/" + p.image', sw)                                     # pictures work offline

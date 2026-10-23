@@ -1,0 +1,566 @@
+{
+ "id": "daniel-2-statue-and-stone",
+ "title": "Daniel 2: the statue and the stone",
+ "category": "Bible Study Groups",
+ "group": "Friday night Bible study",
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/DAN.{c}.TS2009"
+ },
+ "opening_question": "Nebuchadnezzar dreamed of a great image of gold, silver, brass, iron and clay, and a stone cut out without hands. What did the dream show, and whose kingdom stands for ever?",
+ "required_refs": [
+  "Daniel 2:1-49",
+  "Daniel 3:1"
+ ],
+ "words": [
+  "H6755",
+  "H69",
+  "H4437",
+  "H7328"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What did the king demand of the wise men, and why could they not do it?",
+   "refs": [
+    "Daniel 2:1-13"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2493",
+     "H762"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Where the Chaldeans answer the king \"in Syriack\" (Daniel 2:4), the book itself switches from Hebrew to Aramaic, and stays in Aramaic through Daniel 7.",
+     "refs": [
+      "Daniel 2:4"
+     ],
+     "strongs": [
+      "H762"
+     ]
+    },
+    {
+     "text": "The king asked for the dream itself, not only its meaning: \"tell me the dream, and I shall know that ye can shew me the interpretation thereof\".",
+     "refs": [
+      "Daniel 2:9"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Whom did Daniel go to first, and what did God reveal to him in a night vision?",
+   "refs": [
+    "Daniel 2:14-23"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7328"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The word for \"secret\" is raz. Strong's gives it as \"a mystery\".",
+     "refs": [
+      "Daniel 2:18",
+      "Daniel 2:19"
+     ],
+     "strongs": [
+      "H7328"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What was the great image made of, and what happened to it when the stone struck it?",
+   "refs": [
+    "Daniel 2:24-35"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H6755",
+     "H69",
+     "H1505"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The word for \"image\" is tselem. Strong's gives it as \"an idolatrous figure\".",
+     "refs": [
+      "Daniel 2:31"
+     ],
+     "strongs": [
+      "H6755"
+     ]
+    },
+    {
+     "text": "Head \"of fine gold\", breast and arms \"of silver\", belly and thighs \"of brass\", legs \"of iron\", feet \"part of iron and part of clay\".",
+     "refs": [
+      "Daniel 2:32-33"
+     ]
+    },
+    {
+     "text": "\"cut out\" is gezar: \"to quarry\". The text does not say who cut the stone, only that it was \"without hands\".",
+     "refs": [
+      "Daniel 2:34"
+     ],
+     "strongs": [
+      "H1505"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Which kingdoms do the metals stand for, and what kingdom shall never be destroyed?",
+   "refs": [
+    "Daniel 2:36-45"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4437",
+     "H1855"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The word for \"kingdom\" is malku: \"dominion\". It is used for every kingdom of the image and for the kingdom the God of heaven sets up.",
+     "refs": [
+      "Daniel 2:39",
+      "Daniel 2:44"
+     ],
+     "strongs": [
+      "H4437"
+     ]
+    },
+    {
+     "text": "\"brake in pieces\" is deqaq: \"to crumble or (transitively) crush\".",
+     "refs": [
+      "Daniel 2:45"
+     ],
+     "strongs": [
+      "H1855"
+     ]
+    },
+    {
+     "text": "Other verses on the kingdoms that fall and the reign that stands (the cross-references the TS2009 gives at verse 44).",
+     "refs": [
+      "Psalms 22:28",
+      "Jeremiah 30:11",
+      "Joel 3:16",
+      "Obadiah 1:15-17",
+      "Habakkuk 3:12-13",
+      "Zephaniah 3:8",
+      "Haggai 2:22",
+      "Revelation 11:15"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did the king confess about Daniel's God, and what did he make right after?",
+   "refs": [
+    "Daniel 2:46-49",
+    "Daniel 3:1"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H426"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"a stone was cut out without hands\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 2:34"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 72,
+    "word": "H1855",
+    "word_count": 7,
+    "differ": 0.553,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here",
+    "The Hebrew word deqaq (H1855) is in 7 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6645
+  },
+  {
+   "q": "In Daniel 2:32, what was the head of the image made of?",
+   "type": "multiple_choice",
+   "options": [
+    "Fine gold",
+    "Silver",
+    "Brass",
+    "Iron"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 2:32"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "gold"
+   },
+   "signals": {
+    "xref": 5,
+    "votes": 20,
+    "word": "H6755",
+    "word_count": 6,
+    "differ": 0.491,
+    "quoted": null
+   },
+   "why": [
+    "5 cross-references point here",
+    "The Hebrew word tselem (H6755) is in 6 verses of this path"
+   ],
+   "score": 0.5263
+  },
+  {
+   "q": "Fill in the word: \"His legs of iron, his feet part of iron and part of ___\"",
+   "type": "fill_word",
+   "ref": "Daniel 2:33",
+   "bible": "KJV",
+   "word": "clay",
+   "answer_refs": [
+    "Daniel 2:33"
+   ],
+   "signals": {
+    "xref": 2,
+    "votes": 10,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.281,
+    "quoted": null
+   },
+   "why": [
+    "2 cross-references point here"
+   ],
+   "score": 0.2503
+  },
+  {
+   "q": "Which translation says \"in Aramaic\" in Daniel 2:4?",
+   "type": "which_translation",
+   "ref": "Daniel 2:4",
+   "bible": "BSB",
+   "phrase": "in Aramaic",
+   "answer_refs": [
+    "Daniel 2:4"
+   ],
+   "signals": {
+    "xref": 12,
+    "votes": 51,
+    "word": "H2493",
+    "word_count": 11,
+    "differ": 0.48,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here",
+    "The Hebrew word chêlem (H2493) is in 11 verses of this path"
+   ],
+   "score": 0.7375
+  },
+  {
+   "q": "Which verse says \"there is a God in heaven that revealeth secrets\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 2:28"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 145,
+    "word": "H426",
+    "word_count": 12,
+    "differ": 0.423,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here",
+    "The Hebrew word 'ĕlâhh (H426) is in 12 verses of this path"
+   ],
+   "score": 0.8299
+  },
+  {
+   "q": "In Daniel 2:17, to whom did Daniel make the thing known?",
+   "type": "multiple_choice",
+   "options": [
+    "Hananiah, Mishael, and Azariah",
+    "Arioch",
+    "The Chaldeans",
+    "The king's guard"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 2:17"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Hananiah"
+   },
+   "signals": {
+    "xref": 3,
+    "votes": 13,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.316,
+    "quoted": null
+   },
+   "why": [
+    "3 cross-references point here"
+   ],
+   "score": 0.2771
+  },
+  {
+   "q": "Fill in the word: \"and the light ___ with him\"",
+   "type": "fill_word",
+   "ref": "Daniel 2:22",
+   "bible": "KJV",
+   "word": "dwelleth",
+   "answer_refs": [
+    "Daniel 2:22"
+   ],
+   "signals": {
+    "xref": 19,
+    "votes": 213,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.338,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here"
+   ],
+   "score": 0.4874
+  },
+  {
+   "q": "Which verse says the stone \"became a great mountain, and filled the whole earth\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 2:35"
+   ],
+   "signals": {
+    "xref": 21,
+    "votes": 113,
+    "word": "H1855",
+    "word_count": 7,
+    "differ": 0.387,
+    "quoted": null
+   },
+   "why": [
+    "21 cross-references point here",
+    "The Hebrew word deqaq (H1855) is in 7 verses of this path"
+   ],
+   "score": 0.6565
+  },
+  {
+   "q": "Which translation says \"peoples will mix\" in Daniel 2:43, where the others say \"mingle themselves with the seed of men\"?",
+   "type": "which_translation",
+   "ref": "Daniel 2:43",
+   "bible": "BSB",
+   "phrase": "peoples will mix",
+   "answer_refs": [
+    "Daniel 2:43"
+   ],
+   "signals": {
+    "xref": 5,
+    "votes": 20,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.577,
+    "quoted": null
+   },
+   "why": [
+    "5 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.3728
+  },
+  {
+   "q": "Which verse says the God of heaven shall \"set up a kingdom, which shall never be destroyed\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 2:44"
+   ],
+   "signals": {
+    "xref": 67,
+    "votes": 463,
+    "word": "H426",
+    "word_count": 12,
+    "differ": 0.359,
+    "quoted": null
+   },
+   "why": [
+    "67 cross-references point here",
+    "The Hebrew word 'ĕlâhh (H426) is in 12 verses of this path"
+   ],
+   "score": 0.8898
+  },
+  {
+   "q": "In Daniel 2:47, what did the king call Daniel's God?",
+   "type": "multiple_choice",
+   "options": [
+    "A God of gods, and a Lord of kings",
+    "The god of Babylon",
+    "The god of the Chaldeans",
+    "One god among many"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 2:47"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "gods"
+   },
+   "signals": {
+    "xref": 25,
+    "votes": 126,
+    "word": "H426",
+    "word_count": 12,
+    "differ": 0.433,
+    "quoted": null
+   },
+   "why": [
+    "25 cross-references point here",
+    "The Hebrew word 'ĕlâhh (H426) is in 12 verses of this path"
+   ],
+   "score": 0.8219
+  },
+  {
+   "q": "In Daniel 3:1, what did Nebuchadnezzar make right after the dream?",
+   "type": "multiple_choice",
+   "options": [
+    "An image of gold",
+    "A temple",
+    "A wall of iron",
+    "A tower"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 3:1"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "gold"
+   },
+   "signals": {
+    "xref": 4,
+    "votes": 14,
+    "word": "H6755",
+    "word_count": 6,
+    "differ": 0.376,
+    "quoted": null
+   },
+   "why": [
+    "4 cross-references point here",
+    "The Hebrew word tselem (H6755) is in 6 verses of this path"
+   ],
+   "score": 0.4723
+  },
+  {
+   "q": "Fill in the word: \"Thou art this head of ___\"",
+   "type": "fill_word",
+   "ref": "Daniel 2:38",
+   "bible": "KJV",
+   "word": "gold",
+   "answer_refs": [
+    "Daniel 2:38"
+   ],
+   "signals": {
+    "xref": 8,
+    "votes": 32,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.46,
+    "quoted": null
+   },
+   "why": [
+    "8 cross-references point here"
+   ],
+   "score": 0.3775
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ],
+ "verse_count": 50,
+ "image": "img/daniel-2-statue-and-stone.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/daniel-2-statue-and-stone.json",
+  "sha": "ae5e8df993a72ab6",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

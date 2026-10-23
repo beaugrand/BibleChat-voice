@@ -45,6 +45,7 @@ QUOTED = os.path.join(ROOT, "web", "quoted.json")   # "Quoted or named in Script
 STATUS = ("text", "disputed", "lost", "not-in-biblechat")
 TYPES = ("find_the_verse", "multiple_choice", "fill_word", "which_translation")
 COMPARE = ("KJV", "ETH", "BSB")
+GROUPS = "Bible Study Groups"   # the category for studies made for a Bible study group; "group" names the group's folder
 NOTES = {"scofield": "Commentary (Scofield, 1917)", "henry": "Commentary (Matthew Henry, Concise)"}
 FILES = {"KJV": "eng-kjv.osis.xml", "BSB": "eng-bsb.usfx.xml"}
 REF_RE = re.compile(r"^(.+?) (\d+)(?::(\d+))?(?:-(\d+)(?::(\d+))?)?$")
@@ -192,6 +193,11 @@ def check_path(p: dict, B: Bibles, file_id: str | None = None) -> dict:
     for k in ("id", "title", "category", "opening_question", "steps", "quiz", "sources", "required_refs"):
         if not p.get(k):
             raise PathError(f"{where}: missing {k!r}")
+    ra = p.get("read_along")
+    if ra is not None and (not ra.get("label") or not str(ra.get("url", "")).startswith("https://")):
+        raise PathError(f"{where}: read_along needs a label and an https:// link (a link only, never copied text)")
+    if p["category"] == GROUPS and not (p.get("group") or "").strip():
+        raise PathError(f"{where}: a path in {GROUPS!r} needs the name of its group")
     if file_id and p["id"] != file_id:
         raise PathError(f"{where}: id must match the file name {file_id!r}")
     if not re.fullmatch(r"[a-z0-9-]+", p["id"]):
@@ -468,7 +474,9 @@ def index(paths: dict[str, dict]) -> list[dict]:
     return [{"id": p["id"], "title": p["title"], "category": p["category"], "image": p["image"],
              "opening_question": p["opening_question"], "steps": len(p["steps"]),
              "step_questions": [s["question"] for s in p["steps"]],
-             "show": p.get("show", 8), "verses": p["verse_count"], "minutes": minutes(p)} for p in paths.values()]
+             "show": p.get("show", 8), "verses": p["verse_count"], "minutes": minutes(p),
+             **({"group": p["group"]} if p.get("group") else {}), **({"read_along": p["read_along"]} if p.get("read_along") else {})}
+            for p in paths.values()]
 
 
 def dumps(obj) -> str:

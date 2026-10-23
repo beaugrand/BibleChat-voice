@@ -1,0 +1,60 @@
+{
+  "id": "daniel-2-statue-and-stone",
+  "title": "Daniel 2: the statue and the stone",
+  "category": "Bible Study Groups",
+  "group": "Friday night Bible study",
+  "read_along": {"label": "TS2009", "url": "https://www.bible.com/bible/316/DAN.{c}.TS2009"},
+  "opening_question": "Nebuchadnezzar dreamed of a great image of gold, silver, brass, iron and clay, and a stone cut out without hands. What did the dream show, and whose kingdom stands for ever?",
+  "required_refs": ["Daniel 2:1-49", "Daniel 3:1"],
+  "words": ["H6755", "H69", "H4437", "H7328"],
+  "show": 8,
+  "steps": [
+    {"question": "What did the king demand of the wise men, and why could they not do it?", "refs": ["Daniel 2:1-13"],
+     "look_closer": {"strongs": ["H2493", "H762"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Where the Chaldeans answer the king \"in Syriack\" (Daniel 2:4), the book itself switches from Hebrew to Aramaic, and stays in Aramaic through Daniel 7.", "refs": ["Daniel 2:4"], "strongs": ["H762"]},
+       {"text": "The king asked for the dream itself, not only its meaning: \"tell me the dream, and I shall know that ye can shew me the interpretation thereof\".", "refs": ["Daniel 2:9"]}
+     ]},
+    {"question": "Whom did Daniel go to first, and what did God reveal to him in a night vision?", "refs": ["Daniel 2:14-23"],
+     "look_closer": {"strongs": ["H7328"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "The word for \"secret\" is raz. Strong's gives it as \"a mystery\".", "refs": ["Daniel 2:18", "Daniel 2:19"], "strongs": ["H7328"]}
+     ]},
+    {"question": "What was the great image made of, and what happened to it when the stone struck it?", "refs": ["Daniel 2:24-35"],
+     "look_closer": {"strongs": ["H6755", "H69", "H1505"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "The word for \"image\" is tselem. Strong's gives it as \"an idolatrous figure\".", "refs": ["Daniel 2:31"], "strongs": ["H6755"]},
+       {"text": "Head \"of fine gold\", breast and arms \"of silver\", belly and thighs \"of brass\", legs \"of iron\", feet \"part of iron and part of clay\".", "refs": ["Daniel 2:32-33"]},
+       {"text": "\"cut out\" is gezar: \"to quarry\". The text does not say who cut the stone, only that it was \"without hands\".", "refs": ["Daniel 2:34"], "strongs": ["H1505"]}
+     ]},
+    {"question": "Which kingdoms do the metals stand for, and what kingdom shall never be destroyed?", "refs": ["Daniel 2:36-45"],
+     "look_closer": {"strongs": ["H4437", "H1855"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "The word for \"kingdom\" is malku: \"dominion\". It is used for every kingdom of the image and for the kingdom the God of heaven sets up.", "refs": ["Daniel 2:39", "Daniel 2:44"], "strongs": ["H4437"]},
+       {"text": "\"brake in pieces\" is deqaq: \"to crumble or (transitively) crush\".", "refs": ["Daniel 2:45"], "strongs": ["H1855"]},
+       {"text": "Other verses on the kingdoms that fall and the reign that stands (the cross-references the TS2009 gives at verse 44).", "refs": ["Psalms 22:28", "Jeremiah 30:11", "Joel 3:16", "Obadiah 1:15-17", "Habakkuk 3:12-13", "Zephaniah 3:8", "Haggai 2:22", "Revelation 11:15"]}
+     ]},
+    {"question": "What did the king confess about Daniel's God, and what did he make right after?", "refs": ["Daniel 2:46-49", "Daniel 3:1"],
+     "look_closer": {"strongs": ["H426"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]}
+  ],
+  "quiz": [
+    {"q": "Which verse says \"a stone was cut out without hands\"?", "type": "find_the_verse", "answer_refs": ["Daniel 2:34"]},
+    {"q": "In Daniel 2:32, what was the head of the image made of?", "type": "multiple_choice",
+     "options": ["Fine gold", "Silver", "Brass", "Iron"], "answer": 0, "answer_refs": ["Daniel 2:32"], "check": {"bible": "KJV", "word": "gold"}},
+    {"q": "Fill in the word: \"His legs of iron, his feet part of iron and part of ___\"", "type": "fill_word", "ref": "Daniel 2:33", "bible": "KJV", "word": "clay"},
+    {"q": "Which translation says \"in Aramaic\" in Daniel 2:4?", "type": "which_translation", "ref": "Daniel 2:4", "bible": "BSB", "phrase": "in Aramaic"},
+    {"q": "Which verse says \"there is a God in heaven that revealeth secrets\"?", "type": "find_the_verse", "answer_refs": ["Daniel 2:28"]},
+    {"q": "In Daniel 2:17, to whom did Daniel make the thing known?", "type": "multiple_choice",
+     "options": ["Hananiah, Mishael, and Azariah", "Arioch", "The Chaldeans", "The king's guard"], "answer": 0, "answer_refs": ["Daniel 2:17"], "check": {"bible": "KJV", "word": "Hananiah"}},
+    {"q": "Fill in the word: \"and the light ___ with him\"", "type": "fill_word", "ref": "Daniel 2:22", "bible": "KJV", "word": "dwelleth"},
+    {"q": "Which verse says the stone \"became a great mountain, and filled the whole earth\"?", "type": "find_the_verse", "answer_refs": ["Daniel 2:35"]},
+    {"q": "Which translation says \"peoples will mix\" in Daniel 2:43, where the others say \"mingle themselves with the seed of men\"?", "type": "which_translation", "ref": "Daniel 2:43", "bible": "BSB", "phrase": "peoples will mix"},
+    {"q": "Which verse says the God of heaven shall \"set up a kingdom, which shall never be destroyed\"?", "type": "find_the_verse", "answer_refs": ["Daniel 2:44"]},
+    {"q": "In Daniel 2:47, what did the king call Daniel's God?", "type": "multiple_choice",
+     "options": ["A God of gods, and a Lord of kings", "The god of Babylon", "The god of the Chaldeans", "One god among many"], "answer": 0, "answer_refs": ["Daniel 2:47"], "check": {"bible": "KJV", "word": "gods"}},
+    {"q": "In Daniel 3:1, what did Nebuchadnezzar make right after the dream?", "type": "multiple_choice",
+     "options": ["An image of gold", "A temple", "A wall of iron", "A tower"], "answer": 0, "answer_refs": ["Daniel 3:1"], "check": {"bible": "KJV", "word": "gold"}},
+    {"q": "Fill in the word: \"Thou art this head of ___\"", "type": "fill_word", "ref": "Daniel 2:38", "bible": "KJV", "word": "gold"}
+  ],
+  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry", "TS2009 (read-along link only)"]
+}

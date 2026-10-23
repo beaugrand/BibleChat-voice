@@ -59,6 +59,9 @@ const BCPaths = (() => {
   function hasWord(text, w){ return new RegExp("(^|[^a-z])" + norm(w).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?![a-z])").test(norm(text)); }
   function bookIndex(book){ return A.books().then(b => b.indexOf(book)); }
   function refLink(book, c, v, text){ return `<a href="#" class="pv-go" data-b="${esc(book)}" data-c="${c}" data-v="${v || ""}">${esc(text || A.bookName(book) + " " + c + (v ? ":" + v : ""))}</a>`; }
+  /* a group's own Bible (e.g. TS2009) as a link only: BibleChat never copies its text */
+  function readAlong(path, p){ const ra = path && path.read_along; if(!ra) return "";
+    return `<a class="pv-niv pv-ra" href="${esc(ra.url.replace("{c}", p ? p.c1 : 1))}" target="_blank" rel="noopener" title="Opens on Bible.com; BibleChat doesn't copy this Bible's text">Read in ${esc(ra.label)} ↗</a>`; }
   function nivLink(ref){ return `<a class="pv-niv" href="https://www.biblegateway.com/passage/?search=${encodeURIComponent(ref)}&version=NIV" target="_blank" rel="noopener" title="The NIV is copyrighted; BibleChat links to it on BibleGateway">Open in NIV ↗</a>`; }
   function progress(){ return get("progress", {}); }
   function saveProgress(id, patch){ const p = progress(); p[id] = Object.assign(p[id] || {}, patch); set("progress", p); }
@@ -91,7 +94,11 @@ const BCPaths = (() => {
   }
   /* the list of paths: filter chips on top, then a grid of cards, each with the path's own picture, its size and time,
      the steps ticked off so far and the steps themselves (open "Steps" to jump straight to one) */
-  const ALL = "All", BUSY = "In progress", YOURS = "Your paths";
+  const ALL = "All", BUSY = "In progress", YOURS = "Your paths", GROUPS = "Bible Study Groups";
+  /* "+ Add your own study path": the request goes to Hans's inbox by FormSubmit.co (no account; his address isn't in the code),
+     or as a GitHub issue. The group picks the Bible and the verses; Hans writes the path and it appears in the group's folder. */
+  const REQ_URL = "https://formsubmit.co/ajax/56755bcbd30a076dc522b82fa44cf441";
+  const REQ_BIBLES = ["The Scriptures 2009 (TS2009)", "King James Version (KJV)", "New King James Version (NKJV)", "New International Version (NIV)", "English Standard Version (ESV)", "Berean Standard Bible (BSB)", "Ethiopian Canon", "Another Bible"];
   function cardInfo(p, g){
     const qs = p.step_questions || (Array.isArray(p.steps) ? p.steps.map(x => x.question) : []), n = qs.length || +p.steps || 0;
     const done = new Set(g.done || []);
@@ -105,7 +112,7 @@ const BCPaths = (() => {
     const img = p.image ? `<img src="${esc(A.base + p.image)}" alt="" loading="lazy">` : `<span class="pv-pc-ph" aria-hidden="true">📜</span>`;
     const dots = qs.map((q, i) => `<i class="${done.has(i) || finished ? "pv-d-ok" : g.step === i ? "pv-d-now" : ""}" title="${esc("Step " + (i + 1))}"></i>`).join("");
     return `<article class="pv-pc${finished ? " pv-pc-fin" : ""}" data-id="${esc(p.id)}">
-      <button class="pv-pc-open" data-id="${esc(p.id)}" aria-label="${esc("Open " + p.title)}"><div class="pv-pc-img">${img}<span class="pv-pc-cat">${esc(mineP ? YOURS : p.category || "")}</span>${finished ? `<span class="pv-pc-check" title="Finished">✓</span>` : ""}</div>
+      <button class="pv-pc-open" data-id="${esc(p.id)}" aria-label="${esc("Open " + p.title)}"><div class="pv-pc-img">${img}<span class="pv-pc-cat">${esc(mineP ? YOURS : p.group ? "👥 " + p.group : p.category || "")}</span>${finished ? `<span class="pv-pc-check" title="Finished">✓</span>` : ""}</div>
         <div class="pv-pc-txt"><b class="pvx">${esc(p.title)}</b><span class="pvx">${esc(p.opening_question)}</span></div></button>
       <div class="pv-pc-meta">${p.minutes ? `<span title="About ${p.minutes} minutes">⏱ ${p.minutes} min</span>` : ""}<span>${n} <span>steps</span></span>${p.verses ? `<span>${p.verses} <span>verses</span></span>` : ""}</div>
       <div class="pv-pc-prog"><div class="pv-dots" aria-hidden="true">${dots}</div><small class="${finished ? "pv-ok" : started ? "pv-busy" : ""}">${esc(status)}</small></div>
@@ -117,19 +124,69 @@ const BCPaths = (() => {
   async function showList(){
     S.view = "list"; S.path = null;
     const L = await loadList(), P = progress(), M = mine();
-    const cats = [...new Set(L.map(p => p.category).filter(Boolean))];
-    const chips = [ALL, BUSY].concat(cats, M.length ? [YOURS] : []);
+    const cats = [...new Set(L.map(p => p.category).filter(Boolean))].filter(c => c !== GROUPS);
+    const chips = [ALL, BUSY, GROUPS].concat(cats, M.length ? [YOURS] : []);
     if(!chips.includes(S.filter)) S.filter = ALL;
     const busy = p => { const i = cardInfo(p, P[p.id] || {}); return i.started && !i.finished; };
     const keep = p => S.filter === ALL || (S.filter === BUSY ? busy(p) : S.filter === YOURS ? p.id.startsWith("mine-") : p.category === S.filter);
     const shown = L.concat(M).filter(keep);
     frame("📜 Study Paths", `<p class="pv-lead">Each path starts with a question, walks through every main verse on it, including the ones that seem to point the other way, and ends with questions whose answer is always a verse. The path asks; you decide.</p>`
-      + `<div class="pv-chips" role="toolbar" aria-label="Show">${chips.map(c => `<button class="pv-chip${c === S.filter ? " pv-chip-on" : ""}" data-f="${esc(c)}" aria-pressed="${c === S.filter}">${esc(c)}</button>`).join("")}</div>`
-      + (shown.length ? `<div class="pv-grid">${shown.map(p => card(p, P[p.id] || {})).join("")}</div>` : `<p class="pv-small pv-empty">${S.filter === BUSY ? "No path started yet. Pick one under All." : "No paths here yet."}</p>`)
+      + `<div class="pv-chips" role="toolbar" aria-label="Show">${chips.map(c => `<button class="pv-chip${c === S.filter ? " pv-chip-on" : ""}" data-f="${esc(c)}" aria-pressed="${c === S.filter}">${c === GROUPS ? "👥 " : ""}${esc(c)}</button>`).join("")}</div>`
+      + (S.filter === GROUPS ? groupsView(shown, P)
+        : shown.length ? `<div class="pv-grid">${shown.map(p => card(p, P[p.id] || {})).join("")}</div>` : `<p class="pv-small pv-empty">${S.filter === BUSY ? "No path started yet. Pick one under All." : "No paths here yet."}</p>`)
       + `<p class="pv-small">Make your own: ask a question, then press 📜 Make a study path under the answer.</p>`
       + `<button class="pv-card pv-quoted"><b>📚 Quoted or named in Scripture</b><span>Verses that quote or name another writing: the Book of Enoch, the Book of Jasher, lost books.</span></button>`
       + `<p class="pv-small">Your progress, notes and scores stay on this device.</p>`);
   }
+  /* 👥 Bible Study Groups: one folder per group, then "+ Add your own study path" */
+  function groupsView(shown, P){
+    const by = {};
+    for(const p of shown) (by[p.group || "Other groups"] = by[p.group || "Other groups"] || []).push(p);
+    const reqs = get("requests", []);
+    return `<p class="pv-lead">Studies made for Bible study groups: the group picks the Bible and the verses, and the study path is written for them. Share a path with your group (↗) so everyone follows the same verses on their phone during the call or meeting.</p>`
+      + Object.keys(by).map((g, i, all) => `<h3 class="pv-grp">👥 <span class="pvx">${esc(g)}</span></h3><div class="pv-grid">${by[g].map(p => card(p, P[p.id] || {})).join("")}${i === all.length - 1 ? ADD_CARD : ""}</div>`).join("")
+      + (Object.keys(by).length ? "" : `<div class="pv-grid">${ADD_CARD}</div>`)
+      + (reqs.length ? `<h3 class="pv-grp">📨 Your requests</h3>` + reqs.map(r => `<div class="pv-req"><b class="pvx">${esc(r.passage)}</b> <span class="pvx">· ${esc(r.group)} · ${esc(r.bible)}</span><small>Sent ${esc(r.date)}. It will appear in your group's folder here when it's ready.</small></div>`).join("") : "");
+  }
+  const ADD_CARD = `<button class="pv-pc pv-add"><span class="pv-add-plus" aria-hidden="true">+</span><b>Add your own study path</b><span>For your Bible study group: pick your Bible and the verses, and Hans will write the study path for you.</span></button>`;
+  function showRequest(){
+    S.view = "request";
+    frame("+ Add your own study path", `<p class="pv-lead">Tell Hans what your group is studying. He writes the study path (steps, verses, Hebrew/Greek words, questions) and it appears under 👥 Bible Study Groups in a folder with your group's name.</p>
+      <form class="pv-reqf" id="pvReq">
+        <label>Your group's name <small>(this becomes your folder)</small><input name="group" required maxlength="80" placeholder="Friday night Bible study"></label>
+        <label>The Bible your group reads<select name="bible">${REQ_BIBLES.map(b => `<option>${esc(b)}</option>`).join("")}</select></label>
+        <label class="pv-other" hidden>Which Bible?<input name="bible_other" maxlength="80"></label>
+        <label>Book, chapter and verses<input name="passage" required maxlength="120" placeholder="Daniel 2, or Acts 1:1-14"></label>
+        <label>When does your group meet? <small>(optional)</small><input name="when" maxlength="80" placeholder="Friday 8 pm"></label>
+        <label>Questions or topics you want in the study <small>(optional)</small><textarea name="notes" maxlength="2000" rows="4"></textarea></label>
+        <label>Your name <small>(optional)</small><input name="name" maxlength="80"></label>
+        <label>Your email, so Hans can tell you when it's ready <small>(optional)</small><input name="email" type="email" maxlength="120"></label>
+        <div class="pv-nav"><button class="pv-btn pv-primary pv-reqsend" type="submit">📨 Send to Hans</button><button class="pv-btn pv-backlist" type="button">‹ Back</button></div>
+        <p class="pv-small" id="pvReqNote">No account needed. Sent by FormSubmit.co to Hans's inbox, only when you press Send. Or <a href="#" class="pv-reqgit">open it on GitHub</a>.</p>
+      </form>`, true);
+  }
+  function reqData(){
+    const f = root.querySelector("#pvReq"), v = n => (f.elements[n].value || "").trim();
+    const bible = v("bible") === "Another Bible" ? (v("bible_other") || "Another Bible") : v("bible");
+    return {group: v("group"), bible, passage: v("passage"), when: v("when"), notes: v("notes"), name: v("name"), email: v("email")};
+  }
+  function reqText(d){
+    return `New study path request for BibleChat\n\nGroup (folder): ${d.group}\nBible: ${d.bible}\nPassage: ${d.passage}\nMeets: ${d.when || "-"}\nFrom: ${d.name || "-"}  ${d.email || ""}\n\nQuestions or topics:\n${d.notes || "-"}`;
+  }
+  async function sendRequest(){
+    const d = reqData(), note = root.querySelector("#pvReqNote"), b = root.querySelector(".pv-reqsend");
+    if(!d.group || !d.passage){ note.textContent = T("Fill in your group's name and the verses first."); return; }
+    b.disabled = true; b.textContent = T("Sending…");
+    try{
+      const r = await fetch(REQ_URL, {method: "POST", headers: {"Content-Type": "application/json", "Accept": "application/json"},
+        body: JSON.stringify({message: reqText(d), group: d.group, bible: d.bible, passage: d.passage, meets: d.when || "-", name: d.name || "-",
+          email: d.email || "(not given)", _replyto: d.email || undefined, _subject: `BibleChat study path request: ${d.passage} (${d.group})`, _template: "box", _captcha: "false"})});
+      if(!r.ok) throw new Error(r.status);
+      const reqs = get("requests", []); reqs.unshift({group: d.group, bible: d.bible, passage: d.passage, date: new Date().toLocaleDateString()}); set("requests", reqs.slice(0, 20));
+      S.filter = GROUPS; await showList(); A.toast(T("Thank you! Your request is on its way to Hans."));
+    }catch(e){ note.textContent = T("It couldn't be sent. Check the internet connection and try again, or open it on GitHub."); b.disabled = false; b.textContent = T("📨 Send to Hans"); }
+  }
+
   async function showQuoted(){
     S.view = "quoted";
     const q = await loadQuoted(), st = {text: "In BibleChat", disputed: "Disputed", lost: "Lost", "not-in-biblechat": "Not in BibleChat"};
@@ -169,7 +226,7 @@ const BCPaths = (() => {
     for(const r of s.refs){
       const {key, vs} = await readVerses(r); if(S.step !== my || !root.contains(box)) return;
       const p = parseRef(r);
-      html.push(`<div class="pv-ref"><div class="pv-refh">${refLink(p.book, p.c1, p.v1, label(r))}${key && key !== "reader" ? ` <small class="pv-from">${esc(key === "ETH" ? "Ethiopian Canon" : key)}: not in your Bible</small>` : ""} ${p.book in BOOKS66 ? nivLink(r) : ""}</div>`
+      html.push(`<div class="pv-ref"><div class="pv-refh">${refLink(p.book, p.c1, p.v1, label(r))}${key && key !== "reader" ? ` <small class="pv-from">${esc(key === "ETH" ? "Ethiopian Canon" : key)}: not in your Bible</small>` : ""} ${readAlong(S.path, p)}${p.book in BOOKS66 ? nivLink(r) : ""}</div>`
         + (vs.length ? `<div class="pvx pv-text">${vs.map(([b, c, v, t]) => `<span class="pv-v"><sup>${p.c1 !== p.c2 || p.v1 === null ? c + ":" : ""}${v}</sup>${esc(t)} </span>`).join("")}</div>` : `<p class="pv-err">This passage isn't in the Bibles available here.</p>`) + `</div>`);
     }
     box.innerHTML = html.join("");
@@ -454,8 +511,11 @@ const BCPaths = (() => {
   function onClick(e){
     const t = e.target;
     if(t.closest(".pv-close")){ close(); return; }
-    if(t.closest(".pv-back")){ if(S.view === "share" && S.shareFrom === "list") showList(); else if(S.view === "word" || S.view === "share") showPath(S.path.id, S.step); else if(S.view === "step" || S.view === "quiz" || S.view === "quoted") showList(); else close(); return; }
+    if(t.closest(".pv-back")){ if(S.view === "request" || (S.view === "share" && S.shareFrom === "list")) showList(); else if(S.view === "word" || S.view === "share") showPath(S.path.id, S.step); else if(S.view === "step" || S.view === "quiz" || S.view === "quoted") showList(); else close(); return; }
     const sc = t.closest(".pv-pc-share"); if(sc){ shareFromCard(sc.dataset.id); return; }
+    if(t.closest(".pv-add")){ showRequest(); return; }
+    if(t.closest(".pv-reqgit")){ e.preventDefault(); const d = reqData();
+      window.open("https://github.com/beaugrand/BibleChat-voice/issues/new?title=" + encodeURIComponent("Study path request: " + (d.passage || "?") + " (" + (d.group || "?") + ")") + "&body=" + encodeURIComponent(reqText(d)), "_blank", "noopener"); return; }
     if(t.closest(".pv-share")){ share(); return; }
     if(t.closest(".pv-backlist")){ showList(); return; }
     if(t.closest(".pv-backpath")){ showPath(S.path.id, S.step); return; }
@@ -489,12 +549,14 @@ const BCPaths = (() => {
     f(s, el).catch(() => { el.innerHTML = `<p class="pv-err">Couldn't load this. Check the internet connection and try again.</p>`; delete d.dataset.done; });
   }
   async function onSubmit(e){
+    if(e.target.id === "pvReq"){ e.preventDefault(); sendRequest(); return; }
     const f = e.target.closest(".pv-find"); if(!f) return; e.preventDefault();
     const q = S.path.quiz[+f.dataset.q]; q.i = +f.dataset.q;
     const v = f.querySelector("input").value; if(!v.trim()) return;
     answer(q, await checkFind(q, v));
   }
   function onInput(e){
+    if(e.target.name === "bible" && e.target.closest("#pvReq")){ root.querySelector(".pv-other").hidden = e.target.value !== "Another Bible"; return; }
     if(e.type === "change" && e.target.classList.contains("pv-tick")){ const t = e.target, li = t.closest("li");
       markDone(t.dataset.id, +t.dataset.step, t.checked); if(li) li.classList.toggle("pv-li-ok", t.checked);
       const top = root.scrollTop, open = [...root.querySelectorAll(".pv-pc-steps")].filter(d => d.open).map(d => d.closest(".pv-pc").dataset.id);
@@ -613,7 +675,7 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-pc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}.pv-pc-open:hover .pv-pc-img img{transform:scale(1.04)}
 .pv-pc-img:after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(transparent,rgba(22,25,29,.85))}
 .pv-pc-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:44px}
-.pv-pc-cat{position:absolute;z-index:1;left:8px;top:8px;background:rgba(15,17,20,.72);color:#f3e2a6;font-size:11.5px;font-weight:700;letter-spacing:.03em;border-radius:99px;padding:3px 9px;backdrop-filter:blur(4px)}
+.pv-pc-cat{position:absolute;z-index:1;left:8px;top:8px;max-width:calc(100% - 50px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:rgba(15,17,20,.72);color:#f3e2a6;font-size:11.5px;font-weight:700;letter-spacing:.03em;border-radius:99px;padding:3px 9px;backdrop-filter:blur(4px)}
 .pv-pc-check{position:absolute;z-index:1;right:8px;top:8px;width:26px;height:26px;border-radius:50%;background:var(--ok);color:#0b2414;display:flex;align-items:center;justify-content:center;font-weight:800}
 .pv-pc-txt{padding:10px 12px 0}
 .pv-pc-txt b{display:block;font-size:16px;line-height:1.25}
@@ -647,6 +709,14 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-shbtns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.pv-shbtns .pv-btn{text-align:center;text-decoration:none;font-weight:650}.pv-shbtns .pv-primary{grid-column:1/-1}
 .pv-welcome{background:rgba(217,180,74,.14);border:1px solid rgba(217,180,74,.45);border-radius:12px;padding:10px 12px;margin:6px 0 10px;font-size:14.5px;line-height:1.45}
 .pv-empty{padding:20px 0}
+.pv-grp{font-size:16px;margin:14px 0 10px;color:var(--accent)}
+.pv-add{align-items:center;justify-content:center;text-align:center;gap:6px;padding:22px 14px;border:2px dashed var(--line);background:transparent;box-shadow:none;cursor:pointer;color:inherit;font:inherit;min-height:200px}
+.pv-add:hover{border-color:var(--accent)}.pv-add b{font-size:16px}.pv-add span:last-child{color:var(--muted);font-size:13.5px;line-height:1.4}
+.pv-add-plus{width:54px;height:54px;border-radius:50%;background:var(--accent);color:var(--accent-text);font-size:36px;font-weight:700;line-height:54px}
+.pv-req{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:9px 12px;margin:0 0 8px}.pv-req span{color:var(--muted)}.pv-req small{display:block;color:var(--muted);margin-top:3px}
+.pv-reqf label{display:block;font-weight:650;margin:0 0 12px}.pv-reqf small{font-weight:400;color:var(--muted)}
+.pv-reqf input,.pv-reqf select,.pv-reqf textarea{display:block;width:100%;margin-top:5px;border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--card);color:inherit;font:inherit;font-weight:400}
+.pv-ra{color:#f3d77a !important}
 .pv-hero{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:3/1;max-height:190px;width:100%;margin:2px 0 10px;background:var(--card)}
 .pv-hero img{width:100%;height:100%;object-fit:cover;display:block}
 .pv-track{display:flex;align-items:center;margin:6px 0 8px;overflow-x:auto;padding:3px 1px}

@@ -1,5 +1,28 @@
 [
  {
+  "id": "daniel-2-statue-and-stone",
+  "title": "Daniel 2: the statue and the stone",
+  "category": "Bible Study Groups",
+  "image": "img/daniel-2-statue-and-stone.jpg",
+  "opening_question": "Nebuchadnezzar dreamed of a great image of gold, silver, brass, iron and clay, and a stone cut out without hands. What did the dream show, and whose kingdom stands for ever?",
+  "steps": 5,
+  "step_questions": [
+   "What did the king demand of the wise men, and why could they not do it?",
+   "Whom did Daniel go to first, and what did God reveal to him in a night vision?",
+   "What was the great image made of, and what happened to it when the stone struck it?",
+   "Which kingdoms do the metals stand for, and what kingdom shall never be destroyed?",
+   "What did the king confess about Daniel's God, and what did he make right after?"
+  ],
+  "show": 8,
+  "verses": 50,
+  "minutes": 35,
+  "group": "Friday night Bible study",
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/DAN.{c}.TS2009"
+  }
+ },
+ {
   "id": "enoch-and-the-watchers",
   "title": "Enoch and the Watchers",
   "category": "Enoch",
