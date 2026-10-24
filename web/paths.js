@@ -99,6 +99,7 @@ const BCPaths = (() => {
 
   /* ---------- drawing ---------- */
   function frame(title, body, back){
+    if(LS.on && !LS.moving) lsStop();
     root.innerHTML = `<div class="pv-in"><header class="pv-head">${back ? `<button class="pv-ib pv-back" aria-label="Back">‹</button>` : ""}<h2 class="pvx">${esc(title)}</h2>
       ${S.path && (S.view === "step" || S.view === "quiz") ? `<button class="pv-ib pv-share" title="Share this path">↗</button>` : ""}<button class="pv-ib pv-close" aria-label="Close">✕</button></header><div class="pv-body">${body}</div></div>`;
     root.classList.toggle("pv-wide", S.view === "list");
@@ -156,6 +157,89 @@ const BCPaths = (() => {
       + `<button class="pv-card pv-quoted"><b>📚 Quoted or named in Scripture</b><span>Verses that quote or name another writing: the Book of Enoch, the Book of Jasher, lost books.</span></button>`
       + `<p class="pv-small">Your progress, notes and scores stay on this device.</p>`);
   }
+  /* ---------- 🔊 Listen: every Study Path screen can be read aloud ----------
+     A step: "Step 2 of 7", its question, every passage (in the reader's own Bible, with its own voice), the facts about the
+     words, the maker's note and any commentary that is open; then it goes on to the next step. The questions page reads
+     the questions and their choices. The voice is the one BibleChat already reads with (the phone's or computer's own
+     voice, or the computer's cloned voice when it runs); nothing is recorded or sent anywhere.
+     ⏸ Pause / ▶ Resume, ⏭ Skip and ■ Stop in the bar at the bottom; the part being read is highlighted. */
+  const LS = {on: false, paused: false, tok: 0, segs: [], i: 0, kind: "step", ctl: null, moving: false};
+  const sayRef = r => { const p = parseRef(r); if(!p) return r; const b = A.bookName(p.book);
+    if(p.v1 === null) return b + " " + p.c1 + (p.c2 !== p.c1 ? " to " + p.c2 : "");
+    return b + " " + p.c1 + (p.c2 !== p.c1 ? ", verse " + p.v1 + ", to chapter " + p.c2 + ", verse " + p.v2 : p.v2 > p.v1 ? ", verses " + p.v1 + " to " + p.v2 : ", verse " + p.v1); };
+  const plain = el => (el ? el.textContent : "").replace(/\s+/g, " ").trim();
+  function speakOne(text, kind, ctl){
+    if(A.speak) return A.speak(text, kind, ctl);
+    if(!("speechSynthesis" in window)) return Promise.reject(new Error(T("This device has no voice for reading aloud.")));
+    const v = A.voice ? A.voice(kind, text) : null;
+    return new Promise((res, rej) => { const u = new SpeechSynthesisUtterance(text); u.lang = (v && v.lang) || "en-US"; try{ if(v && v.voice) u.voice = v.voice; }catch(e){}
+      u.rate = .95; u.onend = res; u.onerror = e => (ctl.stop || e.error === "interrupted" || e.error === "canceled") ? res() : rej(new Error(T("The voice couldn't read that."))); speechSynthesis.speak(u); });
+  }
+  function speakCancel(){ const c = LS.ctl; if(c){ c.stop = true; if(c.audio) try{ c.audio.pause(); }catch(e){} } if(A.speakCancel) A.speakCancel(); try{ speechSynthesis.cancel(); }catch(e){} }
+  function lsSegments(kind){
+    const segs = [], add = (text, el, voice) => { text = String(text || "").trim(); if(text) segs.push({text, el, kind: voice || "path"}); };
+    if(kind === "quiz"){
+      add(T("Questions and answers. The answer to every question is a verse."), root.querySelector(".pv-in h3"));
+      root.querySelectorAll(".pv-qc").forEach((c, i) => { const q = plain(c.querySelector(".pv-qb p")), opts = [...c.querySelectorAll(".pv-opts .pv-o")].map(plain);
+        add((i + 1) + ". " + q + (opts.length ? " " + opts.join(", or ") + "?" : ""), c); });
+      return segs;
+    }
+    const p = S.path, st = p.steps[S.step];
+    add(`${T("Step")} ${S.step + 1} ${T("of")} ${p.steps.length}. ${p.mine ? T(st.question) : st.question}`, root.querySelector(".pv-q"));
+    root.querySelectorAll("#pvVerses .pv-ref").forEach(r => {
+      const voice = r.dataset.key === "reader" ? "reader" : "path", vs = [...r.querySelectorAll(".pv-v")];
+      add(sayRef(r.dataset.ref) + ".", r.querySelector(".pv-refh"));
+      vs.forEach(v => add([...v.childNodes].filter(n => !(n.nodeName === "SUP")).map(n => n.textContent).join("").trim(), v, voice));
+    });
+    const facts = root.querySelectorAll(".pv-facts p"); if(facts.length){ add(T("Facts about the words."), root.querySelector(".pv-facts h4")); facts.forEach(f => add(plain(f.firstChild && f.firstChild.nodeType === 3 ? f.firstChild : f).replace(/\s+·.*$/, ""), f)); }
+    const cn = root.querySelector(".pv-cnote"); if(cn) add(plain(cn.querySelector("h4")) + ". " + plain(cn.querySelector("div.pvx")), cn);
+    root.querySelectorAll("details.pv-notesec[open] .pnote").forEach(n => { add(plain(n.querySelector("h4")) + ". " + T("The notes of a man, not Scripture."), n.querySelector("h4"));
+      n.querySelectorAll(".pnote-item").forEach(it => add(plain(it), it)); });
+    return segs;
+  }
+  async function lsStart(kind){
+    if(A.onListen) A.onListen();   // the Bible reader's own Listen stops
+    speakCancel(); LS.tok++;
+    Object.assign(LS, {on: true, paused: false, kind, i: 0, segs: []});
+    lsBar(T("Getting ready…"));
+    if(kind === "step" && S.versesP) await S.versesP;
+    if(!LS.on) return;
+    LS.segs = lsSegments(kind); lsRun(LS.tok);
+  }
+  async function lsRun(tok){
+    while(LS.on && !LS.paused && tok === LS.tok && LS.i < LS.segs.length){
+      const sg = LS.segs[LS.i];
+      root.querySelectorAll(".pv-saying").forEach(x => x.classList.remove("pv-saying"));
+      if(sg.el){ sg.el.classList.add("pv-saying"); sg.el.scrollIntoView({block: "center", behavior: "smooth"}); }
+      lsBar();
+      const ctl = LS.ctl = {stop: false};
+      try{ await speakOne(sg.text, sg.kind, ctl); }catch(e){ if(tok === LS.tok){ lsStop(); A.toast(e.message || T("The voice couldn't read that.")); } return; }
+      if(tok !== LS.tok || ctl.stop) return;
+      LS.i++;
+    }
+    if(tok !== LS.tok || !LS.on || LS.paused) return;
+    if(LS.kind === "step" && S.path && S.step < S.path.steps.length - 1){   // on to the next step, still listening
+      markDone(S.path.id, S.step); LS.moving = true; S.lsAuto = true;
+      try{ await showPath(S.path.id, S.step + 1); }finally{ LS.moving = false; }
+      return;
+    }
+    if(LS.kind === "step"){ LS.segs.push({text: T("That was the last step. The questions and answers come next."), kind: "path"}); const t2 = ++LS.tok; LS.kind = "end"; return lsRun(t2); }
+    lsStop();
+  }
+  function lsPause(){ if(!LS.on) return; if(LS.paused){ LS.paused = false; LS.tok++; lsRun(LS.tok); } else { LS.paused = true; LS.tok++; speakCancel(); } lsBar(); }
+  function lsSkip(){ if(!LS.on) return; LS.tok++; speakCancel(); LS.i++; LS.paused = false; lsRun(LS.tok); }
+  function lsStop(){ if(!LS.on && !root) return; LS.on = false; LS.paused = false; LS.tok++; speakCancel();
+    if(root){ root.querySelectorAll(".pv-saying").forEach(x => x.classList.remove("pv-saying")); const b = root.querySelector(".pv-player"); if(b) b.remove(); } }
+  function lsBar(msg){
+    let b = root.querySelector(".pv-player");
+    if(!b){ b = document.createElement("div"); b.className = "pv-player"; b.setAttribute("role", "region"); b.setAttribute("aria-label", "Listen");
+      b.innerHTML = `<span class="pv-plw"></span><button class="pv-btn pv-lspause"></button><button class="pv-btn pv-lsskip" title="Skip this part">⏭</button><button class="pv-btn pv-lsstop" title="Stop">■</button>`; root.appendChild(b); }
+    const sg = LS.segs[LS.i], where = msg || (LS.kind === "quiz" ? T("Questions") + " · " + Math.min(LS.i + 1, LS.segs.length) + "/" + LS.segs.length
+      : S.path ? T("Step") + " " + (S.step + 1) + " · " + Math.min(LS.i + 1, LS.segs.length) + "/" + LS.segs.length : "");
+    b.querySelector(".pv-plw").textContent = "🔊 " + where;
+    b.querySelector(".pv-lspause").textContent = LS.paused ? "▶ " + T("Resume") : "⏸ " + T("Pause");
+  }
+
   /* ---------- 👥 Community: your own study paths, the ones readers sent in (checked by Hans), and the Bible study groups ---------- */
   const COMMUNITY = "Community";
   const VIS = {private: "🔒 Only you", link: "🔗 Anyone with the link", community: "👥 Community"};
@@ -374,6 +458,7 @@ const BCPaths = (() => {
     const s = p.steps[S.step], n = p.steps.length, notes = get("notes", {}), mineNote = (notes[p.id] || {})[S.step] || "", done = doneSteps(p.id);
     const arrived = S.arrived; S.arrived = false;
     frame(p.title, `${arrived ? `<div class="pv-welcome">👋 <b>Someone shared this study path with you.</b> Read the question, then the verses of each step, and press <b>Next step</b>. Your notes and answers stay on your device.</div>` : ""}${p.image ? `<div class="pv-hero">${picture(p, true)}<span class="pv-pc-cat">${esc(p.series ? "Session " + p.series.session + " of " + p.series.of : p.group ? "👥 " + p.group : p.category || "")}</span></div>` : ""}${p.series ? `<p class="pv-small pv-serline">📖 <span class="pvx">${esc(p.series.title)}</span></p>` : ""}<div class="pv-open pvx"><small>The question</small>${esc(p.opening_question)}</div>
+      <button class="pv-btn pv-listen" data-ls="step">🔊 Listen to this step</button>
       <div class="pv-stepno">Step ${S.step + 1} of ${n}</div>
       <div class="pv-track" role="navigation" aria-label="Steps">${p.steps.map((x, i) => `<button class="pv-dot${i === S.step ? " pv-dot-now" : ""}${done.has(i) ? " pv-dot-ok" : ""}" data-step="${i}" title="${esc("Step " + (i + 1) + ": " + x.question)}">${done.has(i) ? "✓" : i + 1}</button>`).join(`<i class="pv-track-line"></i>`)}</div>
       <div class="pv-bar"><i style="width:${Math.round(100 * done.size / n)}%"></i></div>
@@ -390,14 +475,15 @@ const BCPaths = (() => {
       <button class="pv-btn pv-share pv-sharewide">↗ Share this path with someone</button>
       ${p.mine ? `<button class="pv-btn pv-sharewide pv-edit" data-id="${esc(p.id)}">✏️ ${p.received ? "Make it your own (edit a copy)" : "Edit this path"}</button>` : ""}
       <p class="pv-small"><span>Sources:</span> <span class="pvx">${esc((p.sources || []).join(" · "))}</span></p>`, true);
-    drawVerses(s);
+    S.versesP = drawVerses(s);
+    if(S.lsAuto){ S.lsAuto = false; lsStart("step"); }   // 🔊 Listen goes on into the next step
   }
   async function drawVerses(s){
     const box = root.querySelector("#pvVerses"), my = S.step, html = [];
     for(const r of s.refs){
       const {key, vs} = await readVerses(r); if(S.step !== my || !root.contains(box)) return;
       const p = parseRef(r);
-      html.push(`<div class="pv-ref"><div class="pv-refh">${refLink(p.book, p.c1, p.v1, label(r))}${key && key !== "reader" ? ` <small class="pv-from">${esc(key === "ETH" ? "Ethiopian Canon" : key)}: not in your Bible</small>` : ""} ${readAlong(S.path, p)}${p.book in BOOKS66 ? nivLink(r) : ""}</div>`
+      html.push(`<div class="pv-ref" data-ref="${esc(r)}" data-key="${esc(key || "")}"><div class="pv-refh">${refLink(p.book, p.c1, p.v1, label(r))}${key && key !== "reader" ? ` <small class="pv-from">${esc(key === "ETH" ? "Ethiopian Canon" : key)}: not in your Bible</small>` : ""} ${readAlong(S.path, p)}${p.book in BOOKS66 ? nivLink(r) : ""}</div>`
         + (vs.length ? `<div class="pvx pv-text">${vs.map(([b, c, v, t]) => `<span class="pv-v"><sup>${p.c1 !== p.c2 || p.v1 === null ? c + ":" : ""}${v}</sup>${esc(t)} </span>`).join("")}</div>` : `<p class="pv-err">This passage isn't in the Bibles available here.</p>`) + `</div>`);
     }
     box.innerHTML = html.join("");
@@ -550,7 +636,7 @@ const BCPaths = (() => {
     if(!more || !S.quiz){ const extra = await closeness(p); S.quiz = Object.assign(choose(p, extra), {answers: {}, past: !!extra}); }
     else { const add = S.quiz.rest.splice(0, Math.min(p.show || 8, S.quiz.rest.length)); S.quiz.pick = S.quiz.pick.concat(add); }
     const prefs = get("prefs", {});
-    frame(p.title, `<div class="pv-open pvx"><small>The question</small>${esc(p.opening_question)}</div><h3>Questions and answers</h3>
+    frame(p.title, `<div class="pv-open pvx"><small>The question</small>${esc(p.opening_question)}</div><h3>Questions and answers</h3><button class="pv-btn pv-listen" data-ls="quiz">🔊 Listen to the questions</button>
       <p class="pv-small">The answer to every question is a verse.</p>
       ${A.similar ? `<label class="pv-opt"><input type="checkbox" id="pvPast"${prefs.past ? " checked" : ""}> Put questions close to what I asked before first (uses the meaning search on this device; off unless you tick it)</label>` : ""}
       <div id="pvQs">${S.quiz.pick.map((q, n) => qCard(q, n)).join("")}</div>
@@ -776,6 +862,10 @@ const BCPaths = (() => {
     if(t.closest(".pv-back")){ if(S.view === "edit"){ S.draft = null; showList(); return; } if(S.view === "request" || (S.view === "share" && S.shareFrom === "list")) showList(); else if(S.view === "word" || S.view === "share") showPath(S.path.id, S.step); else if(S.view === "step" || S.view === "quiz" || S.view === "quoted") showList(); else close(); return; }
     const sc = t.closest(".pv-pc-share"); if(sc){ shareFromCard(sc.dataset.id); return; }
     if(t.closest(".pv-add")){ showRequest(); return; }
+    const lb = t.closest(".pv-listen"); if(lb){ if(LS.on && LS.kind === lb.dataset.ls && !LS.paused) lsPause(); else lsStart(lb.dataset.ls); return; }
+    if(t.closest(".pv-lspause")){ lsPause(); return; }
+    if(t.closest(".pv-lsskip")){ lsSkip(); return; }
+    if(t.closest(".pv-lsstop")){ lsStop(); return; }
     const sg = t.closest(".pv-segb"); if(sg){ S.section = sg.dataset.sec; showList(); return; }
     if(t.closest(".pv-new")){ editPath(null); return; }
     const ed = t.closest(".pv-edit"); if(ed){ const p = mine().find(x => x.id === ed.dataset.id); if(p){ const c = JSON.parse(JSON.stringify(p)); if(c.received){ c.id = "mine-" + Date.now().toString(36); delete c.received; delete c.sig; c.isNew = true; } editPath(c); } return; }
@@ -873,7 +963,7 @@ const BCPaths = (() => {
     if(v.view === "quoted") await showQuoted(); else if(v.id && v.view === "step") await showPath(v.id, v.step); else await showList();
     if(v.top) root.scrollTop = v.top;
   }
-  function close(){ if(root){ root.hidden = true; root.innerHTML = ""; S.view = "list"; S.draft = null; if(A.onClose) A.onClose(); } }
+  function close(){ lsStop(); if(root){ root.hidden = true; root.innerHTML = ""; S.view = "list"; S.draft = null; if(A.onClose) A.onClose(); } }
   function mount(adapter){
     A = adapter; root = adapter.container;
     root.classList.add("pv", "pv-dark"); root.hidden = true;
@@ -1012,6 +1102,10 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-shbtns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.pv-shbtns .pv-btn{text-align:center;text-decoration:none;font-weight:650}.pv-shbtns .pv-primary{grid-column:1/-1}
 .pv-welcome{background:rgba(217,180,74,.14);border:1px solid rgba(217,180,74,.45);border-radius:12px;padding:10px 12px;margin:6px 0 10px;font-size:14.5px;line-height:1.45}
 .pv-empty{padding:20px 0}
+.pv-listen{display:block;width:100%;margin:2px 0 10px;font-weight:700;font-size:15.5px;padding:11px;background:rgba(217,180,74,.14);border-color:rgba(217,180,74,.55)}
+.pv-player{position:sticky;bottom:0;z-index:5;display:flex;align-items:center;gap:6px;max-width:760px;margin:0 auto;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:#0f1215;border-top:1px solid var(--line);box-shadow:0 -6px 18px rgba(0,0,0,.35)}
+.pv-plw{flex:1;min-width:0;font-size:13.5px;font-weight:650;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pv-player .pv-btn{padding:7px 11px;font-weight:700}
+.pv-saying{background:rgba(217,180,74,.22)!important;border-radius:6px;box-shadow:0 0 0 2px rgba(217,180,74,.35)}
 .pv-seg{display:flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px;margin:10px 0 6px}
 .pv-segb{flex:1;border:0;background:none;color:var(--muted);font:inherit;font-weight:700;font-size:15px;padding:9px 6px;border-radius:10px;cursor:pointer}.pv-segon{background:var(--accent);color:var(--accent-text)}
 .pv-who{display:flex;flex-direction:column;gap:4px;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:10px 12px;margin:0 0 12px;font-size:14px}.pv-who span{color:var(--muted)}

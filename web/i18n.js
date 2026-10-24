@@ -103,6 +103,8 @@ const I18N = {
 "Show the words of these verses": ["Die Wörter dieser Verse zeigen", "Mostrar las palabras de estos versículos", "Afficher les mots de ces versets", "Mostrar as palavras destes versículos", "显示这些经文的原文词", "Показать слова этих стихов", "이 구절의 단어 보기"],
 "Study Paths about this": ["Studienpfade dazu", "Rutas de estudio sobre esto", "Parcours d'étude à ce sujet", "Caminhos de estudo sobre isto", "相关学习路径", "Пути изучения по теме", "관련 학습 경로"],
 "Paths": ["Pfade", "Rutas", "Parcours", "Caminhos", "路径", "Пути", "경로"],
+"🔊 Listen to this step": ["🔊 Diesen Schritt anhören", "🔊 Escuchar este paso", "🔊 Écouter cette étape", "🔊 Ouvir este passo", "🔊 收听这一步", "🔊 Слушать этот шаг", "🔊 이 단계 듣기"],
+"🔊 Listen to the questions": ["🔊 Die Fragen anhören", "🔊 Escuchar las preguntas", "🔊 Écouter les questions", "🔊 Ouvir as perguntas", "🔊 收听问题", "🔊 Слушать вопросы", "🔊 질문 듣기"],
 "Show the answer": ["Antwort zeigen", "Mostrar la respuesta", "Voir la réponse", "Mostrar a resposta", "显示答案", "Показать ответ", "답 보기"],
 "Check": ["Prüfen", "Comprobar", "Vérifier", "Verificar", "检查", "Проверить", "확인"],
 "The missing word": ["Das fehlende Wort", "La palabra que falta", "Le mot manquant", "A palavra que falta", "缺少的词", "Пропущенное слово", "빠진 단어"],

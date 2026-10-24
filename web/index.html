@@ -1410,6 +1410,9 @@ BCPaths.mount({
   get: (k, d) => store.get(k, d), set: (k, v) => store.set(k, v), toast: m => toast(tr(m)),
   canGet: false, getBibles: () => show("bibles"),
   onClose: () => document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab)),
+  /* 🔊 Listen in Study Paths: the phone's own voice, the Bible's language for its verses, English for the path's own words */
+  voice: kind => { loadVoices(); const lang = kind === "reader" ? bibleLang() : "en-US"; return {lang, voice: pickVoice(lang)}; },
+  onListen: () => sayStop(),
   findVerses: async q => { if(!idx) buildIndex(); return search(q, 15).map(i => ({ref: `${flat[i].b} ${flat[i].c}:${flat[i].v}`, text: flat[i].t})); },
   pastQuestions: () => store.get("pastq", []),
   similar: async (qs, past) => {   // the meaning search already on this phone (smart.js); nothing leaves the device

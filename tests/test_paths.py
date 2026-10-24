@@ -171,6 +171,19 @@ class PathRulesTest(unittest.TestCase):
 
 
 class PathPagesTest(unittest.TestCase):
+    def test_listen_on_every_study_path_screen(self):
+        js = read("web", "paths.js")
+        for part in ('data-ls="step"', 'data-ls="quiz"', "🔊 Listen to this step", "🔊 Listen to the questions", "lsSegments", "lsStart", "lsPause",
+                     "lsSkip", "lsStop", "pv-player", "pv-saying", "speechSynthesis", "A.speak", "A.voice", "A.onListen", 'data-key="${esc(key || "")}"',
+                     "S.lsAuto", "if(LS.on && !LS.moving) lsStop();", "function close(){ lsStop();"):
+            self.assertIn(part, js)
+        self.assertIn("details.pv-notesec[open] .pnote", js)                     # commentary is read only when open, with its label
+        phone, computer = read("web", "index.html"), read("bibleask", "web", "index.html")
+        for part in ("voice: kind =>", "onListen: () => sayStop()"):
+            self.assertIn(part, phone)
+        for part in ("speak: async (text, kind, me) =>", "fetchAudio(text)", "speakLocal(text, pick.lang, me)", "onListen: () => sayStop()"):
+            self.assertIn(part, computer)
+
     def test_make_your_own_and_community(self):
         js = read("web", "paths.js")
         for part in ("Study Paths / Community", "pv-segb", "communityView", "＋ Make your own study path", "editPath", "normRef", "edAddRef",

@@ -2098,6 +2098,15 @@ BCPaths.mount({
   get: (k, d) => store.get("bc." + k, d), set: (k, v) => store.set("bc." + k, v), toast: m => chSay(m),
   canGet: true, getBibles: () => { BCPaths.close(); openCatalog(); },
   pastQuestions: () => chats.flatMap(c => c.messages.filter(m => m.role === "user").map(m => m.text)),
+  /* 🔊 Listen in Study Paths: the cloned voice for English when it runs, else the computer's own voice (as in Read) */
+  speak: async (text, kind, me) => {
+    const pick = voiceFor(text, kind === "reader" ? (rd.bible || (state.bibles[0] || {}).id) : null);
+    if(!pick.local){ const url = await fetchAudio(text); if(me.stop) return; me.audio = new Audio(url);
+      await new Promise((res, rej) => { me.audio.onended = res; me.audio.onerror = () => rej(new Error("Couldn't play the audio.")); me.audio.play().catch(rej); }); return; }
+    if(!HAS_LOCAL_VOICE) throw new Error("This computer has no voice for reading aloud.");
+    await speakLocal(text, pick.lang, me);
+  },
+  onListen: () => sayStop(),
   findVerses: async q => { const id = rd.bible || (state.bibles[0] || {}).id; if(!id) return [];   // ＋ Make your own study path: find verses by words
     const j = await (await fetch(`/api/find?bible=${encodeURIComponent(id)}&q=${encodeURIComponent(q)}`)).json(); return j.hits || []; }
 });
