@@ -283,6 +283,15 @@ def make_handler(app: App, port: int):
                     self._json({"error": "Not found."}, 404)
                 else:
                     self._json(obj)
+            elif path == "/api/find":   # Study Paths editor: verses by words in one Bible (the reader's own)
+                q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
+                try:
+                    _, ix = app.lib.get((q.get("bible") or [""])[0])
+                    hits = ix.search((q.get("q") or [""])[0][:200], k=15)
+                    self._json({"hits": [{"ref": f"{ix.verses[h.index].book} {ix.verses[h.index].chapter}:{ix.verses[h.index].verse}",
+                                          "text": ix.verses[h.index].text} for h in hits]})
+                except Exception:
+                    self._json({"hits": []})
             elif path == "/api/ping":
                 app.last_ping, app.seen_ping = time.time(), True
                 self._json({"app": SIGNATURE, "ok": True, "version": __version__})

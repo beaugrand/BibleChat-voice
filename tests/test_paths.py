@@ -171,6 +171,32 @@ class PathRulesTest(unittest.TestCase):
 
 
 class PathPagesTest(unittest.TestCase):
+    def test_make_your_own_and_community(self):
+        js = read("web", "paths.js")
+        for part in ("Study Paths / Community", "pv-segb", "communityView", "＋ Make your own study path", "editPath", "normRef", "edAddRef",
+                     "A.findVerses", "edWords", "Paleo-Hebrew", "data-opt=\"${opt}\"", "my_note", "autoQuiz", "VIS", "sendToCommunity",
+                     "openShared", "v: 2", "findPaths", "openCommunity"):
+            self.assertIn(part, js)
+        self.assertEqual(js.count('class="pnote"'), 1)          # the maker's own note is never drawn as commentary...
+        self.assertIn('class="pv-cnote"', js); self.assertIn("not Scripture, and not checked by BibleChat", js)   # ...but labelled as theirs
+        phone, computer = read("web", "index.html"), read("bibleask", "web", "index.html")
+        for part in ('data-tab="paths"', "BCPaths.findPaths", "findVerses:", "Study Paths about this"):
+            self.assertIn(part, phone)
+        for part in ('id="sidePaths"', "Study Paths / Community", "data-openpath", "findVerses:", "/api/find?bible="):
+            self.assertIn(part, computer)
+        self.assertIn('path == "/api/find"', read("bibleask", "server.py"))
+        index = load(os.path.join(bp.OUT_DIR, "index.json"))
+        self.assertTrue(all(x["books"] for x in index))                          # a search for a book finds its paths
+
+    @unittest.skipUnless(shutil.which("node"), "Node.js is not installed")
+    def test_search_finds_study_paths(self):
+        script = """global.document = undefined; const P = require(process.argv[1]); console.log("ok");"""
+        r = subprocess.run(["node", "-e", script, os.path.join(ROOT, "web", "paths.js")], capture_output=True, text=True, timeout=60)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        index = load(os.path.join(bp.OUT_DIR, "index.json"))
+        hay = " ".join([x for p in index if "garden" in p["id"] for x in [p["title"], p["opening_question"]] + p["step_questions"]]).lower()
+        self.assertIn("adam", hay); self.assertIn("eve", hay)                    # "Adam Eve" in a search finds The Garden, the serpent and Cain
+
     def test_card_grid_layout(self):
         js = read("web", "paths.js")
         for part in ("pv-chips", "pv-grid", "pv-pc-img", "pv-pc-meta", "pv-dots", "pv-pc-steps", "pv-tick", "pv-jump", "pv-track",

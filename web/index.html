@@ -78,6 +78,8 @@ body.playing{padding-bottom:calc(var(--tabh) + 62px + env(safe-area-inset-bottom
 #tabs button b{font-size:20px;line-height:1.1;font-weight:400}
 #tabs button.on{color:var(--accent);font-weight:650}
 #tabs button.love b{color:#c2455a}
+#tabs button small{font-size:8.5px;line-height:1;margin-top:-1px;opacity:.85;white-space:nowrap;letter-spacing:-.1px}
+.pathhits{margin:0 0 10px}.pathhits .btn{margin:0 6px 6px 0;text-align:left}
 /* home: the Bible cover */
 #v-home .wrap{display:flex;flex-direction:column;align-items:center;padding-top:22px;padding-bottom:18px;text-align:center}
 .cover{border:0;background:none;padding:0;width:min(300px,72vw,calc((100vh - 230px) * .68));perspective:1400px;border-radius:12px}
@@ -532,6 +534,7 @@ body.has-church #top .brand{display:none}
   <button data-tab="home"><b>🏠</b>Home</button>
   <button data-tab="read" class="on"><b>📖</b>Read</button>
   <button data-tab="search"><b>🔍</b>Search</button>
+  <button data-tab="paths" title="Study Paths / Community"><b>📜</b>Paths<small>&amp; Community</small></button>
   <button data-tab="bibles"><b>📚</b>Bibles</button>
   <button data-tab="love" class="love"><b>♥</b>Love</button>
 </div></nav>
@@ -575,7 +578,9 @@ function show(t, noFocus){
   scrollTo(0, 0);
   navNote();
 }
-document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => { if(b.dataset.tab !== "read") sayStop(); show(b.dataset.tab); });
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => { if(b.dataset.tab !== "read") sayStop();
+  if(b.dataset.tab === "paths"){ document.querySelectorAll("#tabs button").forEach(x => x.classList.toggle("on", x === b)); BCPaths.open(); return; }   // 📜 Study Paths / Community
+  show(b.dataset.tab); });
 $("#bibleChip").onclick = () => show("bibles");
 /* Love tab: the section tabs at the top jump to Donate, About, Churches or Ideas; the tab of the section on screen lights up */
 document.querySelectorAll("#loveTabs button").forEach(b => b.onclick = () => {
@@ -1013,12 +1018,15 @@ async function runSearch(q){
     let found;
     try{ found = await Smart.blend(q, ctx, 30); }catch(e){ found = search(q, 30).map(i => ({i, why: []})); }   // quietly the plain word search
     if(seq !== searchSeq) return;   // a newer search is on screen
-    out.innerHTML = found.length
+    const pf = BCPaths.findPaths(q, 4);   // 📜 Study Paths about this question ("Adam Eve" finds The Garden, the serpent and Cain)
+    const pathsHtml = pf.length ? `<div class="pathhits"><div class="hint">📜 ${esc(tr("Study Paths about this"))}</div>${pf.map(p => `<button class="btn" data-pid="${esc(p.id)}">📜 ${esc(p.title)}</button>`).join("")}</div>` : "";
+    out.innerHTML = pathsHtml + (found.length
       ? `<div class="hint">${found.length} verses, best match first. Tap one to read it in its chapter.</div><div id="mprep"></div>` + found.map(f => { const x = flat[f.i];
           return `<div class="res"><a href="#" data-b="${esc(x.b)}" data-c="${x.c}" data-v="${x.v}">${esc(bName(x.b))} ${x.c}:${x.v}</a>${highlight(x.t, raw.length ? raw : words)}${whyHtml(f.why)}</div>`; }).join("")
-      : `<div class="notice">Nothing found in this Bible. Try other words, or a reference like John 3:16.</div><div id="mprep"></div>`;
+      : `<div class="notice">Nothing found in this Bible. Try other words, or a reference like John 3:16.</div><div id="mprep"></div>`);
+    out.querySelectorAll("[data-pid]").forEach(b => b.onclick = () => BCPaths.open(b.dataset.pid));
     if(found.length){
-      const b = document.createElement("p"); b.innerHTML = `<button class="btn">✨ Ask AI about this, with these verses</button>`; out.prepend(b);
+      const b = document.createElement("p"); b.innerHTML = `<button class="btn">✨ Ask AI about this, with these verses</button>`; const ph = out.querySelector(".pathhits"); if(ph) ph.after(b); else out.prepend(b);
       const mk = document.createElement("button"); mk.className = "btn"; mk.textContent = "📜 Make a study path"; mk.style.marginLeft = "6px";
       mk.onclick = () => pathFromResults(q, found.slice(0, 8).map(f => `${flat[f.i].b} ${flat[f.i].c}:${flat[f.i].v}`)); b.appendChild(mk);
       b.querySelector("button").onclick = () => askAI(q + "\n\nVerses BibleChat found (" + bibleAbbr() + "):\n" +
@@ -1401,6 +1409,8 @@ BCPaths.mount({
   openVerse: (book, ch, v) => openAnywhere(book, ch, v, true),
   get: (k, d) => store.get(k, d), set: (k, v) => store.set(k, v), toast: m => toast(tr(m)),
   canGet: false, getBibles: () => show("bibles"),
+  onClose: () => document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab)),
+  findVerses: async q => { if(!idx) buildIndex(); return search(q, 15).map(i => ({ref: `${flat[i].b} ${flat[i].c}:${flat[i].v}`, text: flat[i].t})); },
   pastQuestions: () => store.get("pastq", []),
   similar: async (qs, past) => {   // the meaning search already on this phone (smart.js); nothing leaves the device
     if(!Smart.meaningReady()) await Smart.loadMeaning(() => {});

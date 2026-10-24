@@ -481,6 +481,7 @@ def index(paths: dict[str, dict]) -> list[dict]:
     return [{"id": p["id"], "title": p["title"], "category": p["category"], "image": p["image"],
              "opening_question": p["opening_question"], "steps": len(p["steps"]),
              "step_questions": [s["question"] for s in p["steps"]],
+             "books": sorted({parse_ref(r)[0] for s in p["steps"] for r in s["refs"]}),   # a search for "Genesis" or "Daniel" finds the path
              "show": p.get("show", 8), "verses": p["verse_count"], "minutes": minutes(p),
              **{k: p[k] for k in ("group", "read_along", "anim", "series") if p.get(k)}}
             for p in paths.values()]

@@ -394,6 +394,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
     <button id="churchBtn" hidden></button>
     <div class="modes" role="tablist"><button id="modeHome" class="on">🏠 Home</button><button id="modeChat">💬 Chat</button><button id="modeRead">📖 Read</button></div>
     <button class="btn primary block" id="newChat">＋ New chat</button>
+    <button class="btn block pathsBtn" id="sidePaths" title="Study Paths and the Community: guided studies, and the ones you make yourself">📜 Study Paths / Community</button>
   </div>
   <div class="scroll">
    <div id="readSide" hidden>
@@ -649,6 +650,8 @@ function botHtml(m, question){
   if(m.notice) h += `<div class="notice">${esc(m.notice)}</div>`;
   if(m.text) h += `<div class="body">${md(m.text)}</div>`;
   if(!m.pending && (state.tts || HAS_LOCAL_VOICE) && speakable(m)) h += `<button class="spk" data-say>🔊 Listen</button>`;
+  if(!m.pending && question && typeof BCPaths !== "undefined" && BCPaths.findPaths){ const pf = BCPaths.findPaths(question, 3);   // 📜 Study Paths about this question
+    if(pf.length) h += `<div class="pathhits">📜 Study Paths about this: ${pf.map(p => `<button class="spk" data-openpath="${esc(p.id)}">${esc(p.title)}</button>`).join(" ")}</div>`; }
   if(!m.pending && m.sources) h += ` <button class="spk" data-askai>✨ Ask another AI</button> <button class="spk" data-mkpath title="A guided study from these verses: their Hebrew/Greek words, cross-references and find-the-verse questions">📜 Make a study path</button>`;
   if(m.error) h += `<div class="notice err">${esc(m.error)}</div>`;
   if(m.pending && !m.text && !m.sources) h += `<div class="typing"><i></i><i></i><i></i></div>`;
@@ -2094,10 +2097,13 @@ BCPaths.mount({
   openVerse: (book, ch, v) => openRef(book, ch, v, {fromPaths: true}),
   get: (k, d) => store.get("bc." + k, d), set: (k, v) => store.set("bc." + k, v), toast: m => chSay(m),
   canGet: true, getBibles: () => { BCPaths.close(); openCatalog(); },
-  pastQuestions: () => chats.flatMap(c => c.messages.filter(m => m.role === "user").map(m => m.text))
+  pastQuestions: () => chats.flatMap(c => c.messages.filter(m => m.role === "user").map(m => m.text)),
+  findVerses: async q => { const id = rd.bible || (state.bibles[0] || {}).id; if(!id) return [];   // ＋ Make your own study path: find verses by words
+    const j = await (await fetch(`/api/find?bible=${encodeURIComponent(id)}&q=${encodeURIComponent(q)}`)).json(); return j.hits || []; }
 });
 document.querySelectorAll(".pathsBtn").forEach(b => b.onclick = () => { sayStop(); BCPaths.open(); });
 $("#thread").addEventListener("click", e => {
+  const op = e.target.closest("[data-openpath]"); if(op){ sayStop(); BCPaths.open(op.dataset.openpath); return; }
   const b = e.target.closest("[data-mkpath]"); if(!b) return;
   const i = +b.closest(".msg.bot").dataset.i, c = activeChat(), m = c.messages[i], q = c.messages[i - 1] ? c.messages[i - 1].text : "A study path";
   const refs = m.sources.groups.flatMap(g => g.verses).filter(v => v.book && v.chapter)

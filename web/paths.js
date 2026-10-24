@@ -16,7 +16,7 @@ const BCPaths = (() => {
   const STOP_STRONGS = new Set("H853 H5921 H413 H834 H3588 H3605 H5973 H4480 H3808 H1961 H559 H3651 H1931 H2088 G3588 G2532 G1161 G846 G1722 G1519 G3754 G1063 G3756 G2076 G1510 G3739 G3778 G1537 G4314 G5100 G3361 G3767 G2443 G235 G1909 G1223 G3004 G2036".split(" "));
   let A = null, root = null, list = null, quoted = null;
   const cache = {};
-  const S = {path: null, step: 0, view: "list", quiz: null, filter: "All"};
+  const S = {path: null, step: 0, view: "list", quiz: null, filter: "All", section: "paths", draft: null};
   let lastView = null;   // where the reader was when a verse link took them to Read: "← Back to Study Paths" returns there
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
   const T = x => (typeof tr === "function" ? tr(x) : x);   // the phone's app language (web/i18n.js), where there is one
@@ -131,27 +131,172 @@ const BCPaths = (() => {
       <div class="pv-bar"><i style="width:${pct}%"></i></div>
       <details class="pv-pc-steps"><summary>Steps</summary><ol>${qs.map((q, i) => `<li class="${done.has(i) ? "pv-li-ok" : ""}"><label class="pv-tickl" title="Tick this step as done"><input type="checkbox" class="pv-tick" data-id="${esc(p.id)}" data-step="${i}"${done.has(i) ? " checked" : ""}><span>${i + 1}</span></label><button class="pv-jump pvx" data-id="${esc(p.id)}" data-step="${i}">${esc(mineP ? T(q) : q)}</button></li>`).join("")}
         <li><span class="pv-tickl pv-qa">?</span><button class="pv-jump pv-jumpquiz" data-id="${esc(p.id)}">Questions and answers${finished ? ` · ${g.score[0]} of ${g.score[1]}` : ""}</button></li></ol></details>
+      ${mineP ? `<div class="pv-pc-mine"><span class="pv-vis">${esc(VIS[p.visibility || "private"] || VIS.private)}${p.community ? " · " + esc(T("sent")) + " " + esc(p.community) : ""}</span><button class="pv-link pv-edit" data-id="${esc(p.id)}">✏️ Edit</button></div>` : ""}
       <div class="pv-pc-acts"><button class="pv-btn pv-primary pv-pc-go" data-id="${esc(p.id)}"><span>${esc(go)}</span> ›</button><button class="pv-btn pv-pc-share" data-id="${esc(p.id)}" title="Share this path with someone" aria-label="Share this path with someone">↗</button></div></article>`;
   }
   async function showList(){
     S.view = "list"; S.path = null;
     const L = await loadList(), P = progress(), M = mine();
     const cats = [...new Set(L.map(p => p.category).filter(Boolean))].filter(c => c !== GROUPS);
-    const chips = [ALL, BUSY, GROUPS].concat(cats, M.length ? [YOURS] : []);
+    const chips = [ALL, BUSY, GROUPS].concat(cats.filter(c => c !== COMMUNITY));
     if(!chips.includes(S.filter)) S.filter = ALL;
     const busy = p => { const i = cardInfo(p, P[p.id] || {}); return i.started && !i.finished; };
     const keep = p => S.filter === ALL || (S.filter === BUSY ? busy(p) : S.filter === YOURS ? p.id.startsWith("mine-") : p.category === S.filter);
-    const shown = L.concat(M).filter(keep);
+    const shown = L.filter(p => p.category !== COMMUNITY).filter(keep);
     const arrivedList = S.arrivedList; S.arrivedList = false;
-    frame("📜 Study Paths", (arrivedList ? `<div class="pv-welcome">👋 <b>Someone shared the BibleChat Study Paths with you.</b> Pick a path below and press <b>Start</b>: every step shows the verses, the Hebrew and Greek words, and questions to think about. Free, no sign-up.</div>` : "")
+    const sections = `<div class="pv-seg" role="tablist"><button class="pv-segb${S.section === "paths" ? " pv-segon" : ""}" data-sec="paths" role="tab">📖 Study Paths</button><button class="pv-segb${S.section === "community" ? " pv-segon" : ""}" data-sec="community" role="tab">👥 Community</button></div>`;
+    if(S.section === "community"){ frame("📜 Study Paths / Community", sections + communityView(L, M, P)); return; }
+    frame("📜 Study Paths / Community", sections + (arrivedList ? `<div class="pv-welcome">👋 <b>Someone shared the BibleChat Study Paths with you.</b> Pick a path below and press <b>Start</b>: every step shows the verses, the Hebrew and Greek words, and questions to think about. Free, no sign-up.</div>` : "")
       + `<div class="pv-allshare"><button class="pv-btn pv-shareall">📱 Share all Study Paths · link or QR code</button></div>`
       + `<p class="pv-lead">Each path starts with a question, walks through every main verse on it, including the ones that seem to point the other way, and ends with questions whose answer is always a verse. The path asks; you decide.</p>`
       + `<div class="pv-chips" role="toolbar" aria-label="Show">${chips.map(c => `<button class="pv-chip${c === S.filter ? " pv-chip-on" : ""}" data-f="${esc(c)}" aria-pressed="${c === S.filter}">${c === GROUPS ? "👥 " : ""}${esc(c)}</button>`).join("")}</div>`
       + (S.filter === GROUPS ? groupsView(shown, P)
         : shown.length ? gridWithSeries(shown, P) : `<p class="pv-small pv-empty">${S.filter === BUSY ? "No path started yet. Pick one under All." : "No paths here yet."}</p>`)
-      + `<p class="pv-small">Make your own: ask a question, then press 📜 Make a study path under the answer.</p>`
+      + `<p class="pv-small">Make your own: open <b>👥 Community</b> and press <b>＋ Make your own study path</b>, or ask a question and press 📜 Make a study path under the answer.</p>`
       + `<button class="pv-card pv-quoted"><b>📚 Quoted or named in Scripture</b><span>Verses that quote or name another writing: the Book of Enoch, the Book of Jasher, lost books.</span></button>`
       + `<p class="pv-small">Your progress, notes and scores stay on this device.</p>`);
+  }
+  /* ---------- 👥 Community: your own study paths, the ones readers sent in (checked by Hans), and the Bible study groups ---------- */
+  const COMMUNITY = "Community";
+  const VIS = {private: "🔒 Only you", link: "🔗 Anyone with the link", community: "👥 Community"};
+  function communityView(L, M, P){
+    const comm = L.filter(p => p.category === COMMUNITY), groups = L.filter(p => p.category === GROUPS);
+    return `<p class="pv-lead">Study paths made by BibleChat readers. Pick the verses, the questions, the commentaries and the Hebrew/Greek words yourself.</p>
+      <div class="pv-who"><b>Who can see a path you make?</b><span>🔒 <b>Only you</b>: it stays on this device.</span><span>🔗 <b>Anyone with the link</b>: send the link or QR code; the whole path travels inside the link, nothing is stored on a server.</span><span>👥 <b>Community</b>: send it to Hans; once he has checked that every verse and word is right, it appears here for everyone.</span></div>
+      <button class="pv-btn pv-primary pv-new">＋ Make your own study path</button>
+      <h3 class="pv-grp">✍ Your study paths</h3>`
+      + (M.length ? `<div class="pv-grid">${M.map(p => card(p, P[p.id] || {})).join("")}</div>` : `<p class="pv-small">None yet. Press ＋ Make your own study path, or 📜 Make a study path under a search or chat answer.</p>`)
+      + `<h3 class="pv-grp">👥 Community study paths</h3>`
+      + (comm.length ? gridWithSeries(comm, P) : `<p class="pv-small">Paths readers send in appear here after Hans has checked them. Be the first: make one and choose 👥 Community.</p>`)
+      + (groups.length ? `<h3 class="pv-grp">👥 Bible Study Groups</h3>` + groupsView(groups, P) : "");
+  }
+  function blankStep(){ return {question: "", refs: [], notes: ["scofield", "henry"], compare: ["KJV", "ETH", "BSB"], look_closer: {strongs: [], xref_top: 5}, my_note: ""}; }
+  function editPath(p){
+    S.draft = p ? JSON.parse(JSON.stringify(p)) : {id: "mine-" + Date.now().toString(36), title: "", opening_question: "", author: get("author", ""), category: "", visibility: "private", steps: [blankStep()], mine: true, isNew: true};
+    if(!S.draft.steps.length) S.draft.steps.push(blankStep());
+    S.draft.steps.forEach(st => { st.look_closer = st.look_closer || {strongs: [], xref_top: 0}; st.look_closer.strongs = st.look_closer.strongs || []; st.notes = st.notes || []; st.compare = st.compare || []; st.my_note = st.my_note || ""; });
+    S.view = "edit"; edRender(true);
+  }
+  const CAT_CHOICES = ["Creation", "Prophecy", "Gospel", "Marriage", "Freedom", "Body & Life", "Name & Word", "Covenant", "Bible study group", "Other"];
+  function edRender(top){
+    const d = S.draft, keep = top ? 0 : root.scrollTop, cb = (on, opt, i, lab) => `<label class="pv-edck"><input type="checkbox" data-opt="${opt}" data-s="${i}"${on ? " checked" : ""}> ${lab}</label>`;
+    frame(d.isNew ? "＋ Make your own study path" : "✏️ Edit your study path", `<form class="pv-reqf pv-ed" id="pvEd" autocomplete="off">
+      <label>Title<input data-f="title" maxlength="90" value="${esc(d.title)}" placeholder="The serpent in the garden"></label>
+      <label>The starting question <small>(what the path asks; the verses answer)</small><textarea data-f="opening_question" maxlength="400" rows="2" placeholder="What does the text say about the serpent, Eve and Cain?">${esc(d.opening_question)}</textarea></label>
+      <div class="pv-edrow"><label>Topic<select data-f="category">${["", ...CAT_CHOICES].map(c => `<option${c === d.category ? " selected" : ""} value="${esc(c)}">${esc(c || "Choose…")}</option>`).join("")}</select></label>
+        <label>Your name <small>(optional)</small><input data-f="author" maxlength="60" value="${esc(d.author || "")}"></label></div>
+      ${d.steps.map((st, i) => `<div class="pv-eds" data-i="${i}">
+        <div class="pv-edsh"><b>Step ${i + 1}</b><span><button type="button" class="pv-ib" data-ed="up" data-s="${i}" title="Move up"${i ? "" : " disabled"}>↑</button><button type="button" class="pv-ib" data-ed="down" data-s="${i}" title="Move down"${i < d.steps.length - 1 ? "" : " disabled"}>↓</button><button type="button" class="pv-ib" data-ed="delstep" data-s="${i}" title="Remove this step"${d.steps.length > 1 ? "" : " disabled"}>🗑</button></span></div>
+        <label>Question for this step<input data-k="question" data-s="${i}" maxlength="240" value="${esc(st.question)}" placeholder="What did the serpent say to the woman?"></label>
+        <div class="pv-edrefs">${st.refs.length ? st.refs.map((r, j) => `<div class="pv-edref"><div><b>${esc(label(r))}</b> <button type="button" class="pv-link" data-ed="delref" data-s="${i}" data-j="${j}">remove</button></div><div class="pv-edprev pvx" data-ref="${esc(r)}">…</div></div>`).join("") : `<p class="pv-small">No verses yet. Add one or more below.</p>`}</div>
+        <div class="pv-edadd"><input class="pv-edin" data-s="${i}" maxlength="60" placeholder="Add verses, e.g. Genesis 3:1-6 or John 3:16"><button type="button" class="pv-btn" data-ed="addref" data-s="${i}">＋ Add</button></div>
+        <p class="pv-small pv-edmsg" data-s="${i}"></p>
+        ${A.findVerses ? `<details class="pv-edfind"><summary>🔎 Find verses by words</summary><div class="pv-edadd"><input class="pv-edq" data-s="${i}" maxlength="80" placeholder="e.g. serpent beguiled"><button type="button" class="pv-btn" data-ed="find" data-s="${i}">Search</button></div><div class="pv-edhits" data-s="${i}"></div></details>` : ""}
+        <div class="pv-edopts">${cb(st.compare.length > 1, "compare", i, "⇄ Compare KJV · Ethiopian Canon · BSB")}${cb(st.notes.includes("scofield"), "scofield", i, "📝 Scofield notes (1917)")}${cb(st.notes.includes("henry"), "henry", i, "📝 Matthew Henry notes")}${cb(st.look_closer.xref_top, "xref", i, "🔗 Strongest cross-references")}</div>
+        <div class="pv-edwords"><div><b>🔎 Hebrew/Greek words</b> <small>tap a word to put it in Look closer: its meaning, every verse with it and, for Hebrew, the Paleo-Hebrew letters one by one</small></div>
+          <div class="pv-edwl" data-s="${i}">${st.look_closer.strongs.map(n => `<button type="button" class="pv-edw pv-edw-on" data-ed="word" data-s="${i}" data-n="${n}">${esc(n)} ✓</button>`).join("")}</div>
+          <button type="button" class="pv-btn" data-ed="words" data-s="${i}"${st.refs.length ? "" : " disabled"}>Show the words of these verses</button></div>
+        <label>Your note for this step <small>(shown under your name, clearly not Scripture)</small><textarea data-k="my_note" data-s="${i}" maxlength="1500" rows="2">${esc(st.my_note)}</textarea></label>
+      </div>`).join("")}
+      <button type="button" class="pv-btn" data-ed="addstep">＋ Add a step</button>
+      <fieldset class="pv-edvis"><legend>Who can see it?</legend>${Object.keys(VIS).map(v => `<label class="pv-edck"><input type="radio" name="vis" value="${v}"${(d.visibility || "private") === v ? " checked" : ""}> ${VIS[v]}<small>${v === "private" ? " stays on this device" : v === "link" ? " send the link or QR code" : " sent to Hans; after his check it is listed here for everyone"}</small></label>`).join("")}</fieldset>
+      <div class="pv-nav"><button type="submit" class="pv-btn pv-primary">💾 Save${d.isNew ? "" : " changes"}</button>${d.isNew ? "" : `<button type="button" class="pv-btn pv-eddel">🗑 Delete</button>`}<button type="button" class="pv-btn pv-backlist">‹ Back</button></div>
+      <p class="pv-small" id="pvEdNote">Every verse comes from the Bibles in BibleChat; your questions and notes are shown as yours. The questions at the end ("Which verse says …?") are made from your verses.</p>
+    </form>`, true);
+    if(keep) root.scrollTop = keep;
+    root.querySelectorAll(".pv-edprev").forEach(async el => { const {vs} = await readVerses(el.dataset.ref).catch(() => ({vs: []}));
+      const t = vs.map(x => x[3]).join(" "); el.textContent = t ? (t.length > 220 ? t.slice(0, 217) + "…" : t) : T("Not in the Bibles here."); });
+  }
+  /* "gen 3:1-6", "1 cor 13", "Psalm 23", "Song of Solomon 2:1" -> "Genesis 3:1-6" ... (any book name BibleChat knows) */
+  async function normRef(text){
+    const books = await A.books(), t = String(text).trim().replace(/\s+/g, " ").replace(/[–—]/g, "-");
+    const m = /^(.+?)\s*(\d+)(?:\s*[:.]\s*(\d+)(?:\s*-\s*(\d+)(?:\s*[:.]\s*(\d+))?)?)?\s*$/.exec(t); if(!m) return null;
+    const key = x => norm(x).replace(/[^a-z0-9]/g, ""), typed = key(m[1]), all = books.concat(["1 Enoch", "Jubilees"]);
+    const book = all.find(b => key(b) === typed) || all.find(b => key(A.bookName(b)) === typed) || all.find(b => typed.length >= 2 && key(b).startsWith(typed))
+      || all.find(b => typed.length >= 2 && key(A.bookName(b)).startsWith(typed)) || (typed === "psalm" ? "Psalms" : null);
+    if(!book) return null;
+    const c = +m[2], v1 = m[3] ? +m[3] : null, x = m[4] ? +m[4] : null, y = m[5] ? +m[5] : null;
+    return book + " " + c + (v1 == null ? "" : ":" + v1 + (x == null ? "" : y == null ? (x > v1 ? "-" + x : "") : "-" + x + ":" + y));
+  }
+  async function edAddRef(i, text){
+    const msg = root.querySelector(`.pv-edmsg[data-s="${i}"]`), parts = String(text).split(/[;,]\s*(?=[1-4]?\s*[A-Za-z])/).filter(x => x.trim());
+    for(const part of parts){
+      const r = await normRef(part); if(!r){ msg.textContent = T("Not a verse BibleChat knows. Try e.g. Genesis 3:1-6."); return; }
+      const {vs} = await readVerses(r).catch(() => ({vs: []})); if(!vs.length){ msg.textContent = r + ": " + T("not in the Bibles here."); return; }
+      const st = S.draft.steps[i]; if(!st.refs.includes(r)) st.refs.push(r);
+    }
+    edRender();
+  }
+  /* the Hebrew/Greek words of a step's verses (from the King James with Strong's numbers) as chips to tap */
+  async function edWords(i){
+    const st = S.draft.steps[i], books = await A.books(), seen = new Map(), box = root.querySelector(`.pv-edwl[data-s="${i}"]`);
+    box.innerHTML = `<span class="pv-small">Loading…</span>`;
+    for(const r of st.refs){ const p = parseRef(r), bi = books.indexOf(p.book); if(bi < 0) continue;
+      const kjv = await A.study("kjv/" + bi + ".json").catch(() => ({}));
+      for(const k of Object.keys(kjv)){ const [c, v] = k.split(":").map(Number); if(!inRef(p, c, v)) continue;
+        for(const w of kjv[k]) if(typeof w !== "string") for(const n of w[1].split(" ")) if(/^[HG]\d+$/.test(n) && !STOP_STRONGS.has(n) && !seen.has(n)) seen.set(n, w[0].trim()); }
+      if(seen.size > 60) break; }
+    const nums = [...seen.keys()].slice(0, 40), out = [];
+    for(const n of nums){ const d = await A.study("dict/" + n[0] + Math.floor(+n.slice(1) / 500) + ".json").catch(() => ({})), e = d[n] || {};
+      out.push(`<button type="button" class="pv-edw${st.look_closer.strongs.includes(n) ? " pv-edw-on" : ""}" data-ed="word" data-s="${i}" data-n="${n}"><span class="pvx" lang="${n[0] === "H" ? "he" : "el"}">${esc(e.w || "")}</span> <i class="pvx">${esc(e.t || "")}</i> “${esc(seen.get(n))}”${st.look_closer.strongs.includes(n) ? " ✓" : ""}</button>`); }
+    box.innerHTML = out.join("") || `<span class="pv-small">No Hebrew/Greek words found for these verses.</span>`;
+  }
+  async function edFind(i, q){
+    const box = root.querySelector(`.pv-edhits[data-s="${i}"]`); if(!q.trim()) return;
+    box.innerHTML = `<p class="pv-small">Searching…</p>`;
+    let hits = []; try{ hits = await A.findVerses(q); }catch(e){}
+    box.innerHTML = hits.length ? hits.slice(0, 15).map(h => `<div class="pv-edhit"><button type="button" class="pv-btn" data-ed="hit" data-s="${i}" data-ref="${esc(h.ref)}">＋</button> <b>${esc(label(h.ref))}</b> <span class="pvx">${esc(h.text.length > 160 ? h.text.slice(0, 157) + "…" : h.text)}</span></div>`).join("") : `<p class="pv-small">Nothing found. Try other words.</p>`;
+  }
+  /* quiz from the path's own verses: "Which verse says …?" (the answer is always the verse) */
+  async function autoQuiz(steps){
+    const quiz = [];
+    for(const st of steps) for(const r of st.refs){
+      const p = parseRef(r); if(!p || p.v1 === null) continue;
+      const first = p.book + " " + p.c1 + ":" + p.v1, {vs} = await readVerses(first).catch(() => ({vs: []})); if(!vs.length) continue;
+      const w = vs[0][3].split(/\s+/), start = w.slice(0, Math.min(10, w.length)).join(" ");
+      quiz.push({q: `Which verse says: “${start}${w.length > 10 ? " …" : ""}”?`, type: "find_the_verse", answer_refs: [first], why: ["A verse of this path"], score: 0});
+    }
+    return quiz.slice(0, 20);
+  }
+  async function edSave(){
+    const d = S.draft, note = root.querySelector("#pvEdNote");
+    d.title = (d.title || "").trim(); d.opening_question = (d.opening_question || "").trim();
+    const steps = d.steps.filter(st => st.refs.length);
+    if(!d.title || !d.opening_question){ note.textContent = T("Give the path a title and a starting question."); note.classList.add("pv-err"); return; }
+    if(!steps.length){ note.textContent = T("Add at least one verse."); note.classList.add("pv-err"); return; }
+    steps.forEach((st, i) => { if(!st.question.trim()) st.question = `What does ${label(st.refs[0])} say?`; st.look_closer.xref_top = st.look_closer.xref_top ? 5 : 0;
+      const he = st.look_closer.strongs.find(n => n[0] === "H"); if(he) st.look_closer.letters = he; else delete st.look_closer.letters; });
+    const vis = (root.querySelector('input[name="vis"]:checked') || {}).value || "private";
+    const quiz = await autoQuiz(steps);
+    const p = {id: d.id, title: d.title, opening_question: d.opening_question, author: (d.author || "").trim(), category: d.category || "", visibility: vis, steps, quiz,
+      show: Math.min(10, Math.max(quiz.length, 1)), mine: true, updated: new Date().toISOString().slice(0, 10),
+      sources: ["Made by " + ((d.author || "").trim() || "a BibleChat reader"), "KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references"]};
+    if(d.author) set("author", d.author.trim());
+    const M = mine().filter(x => x.id !== p.id); M.unshift(p); set("mine", M.slice(0, 50));
+    S.draft = null; S.section = "community";
+    if(vis === "community"){ await sendToCommunity(p); }
+    else if(vis === "link"){ share(p, "list", "path"); A.toast(T("Saved. Send the link or QR code.")); }
+    else { await showList(); A.toast(T("Saved on this device.")); }
+  }
+  /* 👥 Community: the path goes to Hans (FormSubmit, no account); he checks every verse and word, then lists it for everyone */
+  async function sendToCommunity(p){
+    const url = A.shareUrl(shareHash(p, 0)), body = {message: `A reader sent a study path for the Community.\n\nTitle: ${p.title}\nQuestion: ${p.opening_question}\nBy: ${p.author || "-"}\nTopic: ${p.category || "-"}\n\nOpen it: ${url}\n\n` + p.steps.map((st, i) => `Step ${i + 1}: ${st.question}\n  ${st.refs.join("; ")}${st.my_note ? "\n  Note: " + st.my_note : ""}`).join("\n") + "\n\nThe whole path (JSON):\n" + JSON.stringify(p),
+      _subject: "BibleChat Community study path: " + p.title, _template: "box", _captcha: "false"};
+    try{ const r = await fetch(REQ_URL, {method: "POST", headers: {"Content-Type": "application/json", "Accept": "application/json"}, body: JSON.stringify(body)}); if(!r.ok) throw new Error(r.status);
+      const M = mine(); const x = M.find(y => y.id === p.id); if(x){ x.community = new Date().toLocaleDateString(); set("mine", M); }
+      await showList(); A.toast(T("Sent to Hans for the Community. Until then anyone with the link can use it."));
+    }catch(e){ await showList(); A.toast(T("Saved, but it couldn't be sent. Check the internet connection and choose 👥 Community again.")); }
+  }
+  /* 📜 Study Paths about a search or chat question ("Adam Eve" finds The Garden, the serpent and Cain) */
+  const FIND_STOP = new Set("the and for with that this what does about from into have was were his her him she they them who whom which when where why how are you your our not but all any can will shall bible say says said".split(" "));
+  function findPaths(q, n){
+    const toks = [...new Set((norm(q).match(/[a-z0-9']+/g) || []).map(w => w.replace(/'s$/, "")).filter(w => w.length > 2 && !FIND_STOP.has(w)))];
+    if(!toks.length) return [];
+    const hay = p => norm([p.title, p.opening_question, p.category, p.group, p.series && p.series.title, (p.step_questions || (p.steps || []).map(s => s.question) || []).join(" "), (p.books || []).join(" "), (p.steps && p.steps.map ? p.steps.map(s => (s.refs || []).join(" ")).join(" ") : "")].filter(Boolean).join(" "));
+    const scored = (list || []).concat(mine()).map(p => { const h = hay(p); let sc = 0;
+      for(const t of toks){ const st = t.replace(/s$/, ""); if(new RegExp("(^|[^a-z])" + st.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "").test(h)) sc += norm(p.title).includes(st) ? 2 : 1; }
+      return {p, sc}; }).filter(x => x.sc >= Math.min(2, toks.length));
+    return scored.sort((a, b) => b.sc - a.sc).slice(0, n || 4).map(x => x.p);
   }
   /* paths of a series (e.g. the 7 sessions of the mirror prophecies) stand together under the series' title, with its own ↗ / QR code */
   function gridWithSeries(shown, P){
@@ -234,6 +379,7 @@ const BCPaths = (() => {
       <div class="pv-bar"><i style="width:${Math.round(100 * done.size / n)}%"></i></div>
       <h3 class="pv-q pvx">${esc(p.mine ? T(s.question) : s.question)}</h3>
       <div class="pv-verses${s.side_by_side ? " pv-sbs" : ""}" id="pvVerses"><p class="pv-small">Loading the verses…</p></div>
+      ${p.mine && s.my_note ? `<div class="pv-cnote"><h4>✍ Note from <span class="pvx">${esc(p.author || T("the maker of this path"))}</span></h4><p class="pv-cnote-why">Written by the person who made this path: not Scripture, and not checked by BibleChat.</p><div class="pvx">${esc(s.my_note)}</div></div>` : ""}
       ${s.facts ? `<div class="pv-facts"><h4>Facts about the words</h4>${s.facts.map(f => `<p class="pvx">${esc(f.text)}<br><small>${(f.refs || []).map(r => { const q = parseRef(r); return refLink(q.book, q.c1, q.v1, label(r)); }).join(" · ")}${f.refs && f.strongs ? " · " : ""}${(f.strongs || []).map(x => `<button class="pv-sn" data-n="${x}">Strong's ${x}</button>`).join(" ")}</small></p>`).join("")}</div>` : ""}
       ${(s.compare || []).length > 1 ? `<details class="pv-sec" data-sec="compare"><summary>⇄ Compare the translations</summary><div class="pv-secbody"></div></details>` : ""}
       ${(s.look_closer && ((s.look_closer.strongs || []).length || s.look_closer.xref_top)) ? `<details class="pv-sec" data-sec="closer"><summary>🔎 Look closer: the Hebrew/Greek words and cross-references</summary><div class="pv-secbody"></div></details>` : ""}
@@ -242,6 +388,7 @@ const BCPaths = (() => {
       <textarea id="pvSee" class="pvx" maxlength="4000" placeholder="${esc(T("Your own notes on these verses. They stay on this device."))}">${esc(mineNote)}</textarea>
       <div class="pv-nav"><button class="pv-btn pv-prev"${S.step ? "" : " disabled"}>‹ Previous step</button>${S.step < n - 1 ? `<button class="pv-btn pv-primary pv-next">Next step ›</button>` : `<button class="pv-btn pv-primary pv-toquiz">Questions and answers ›</button>`}</div>
       <button class="pv-btn pv-share pv-sharewide">↗ Share this path with someone</button>
+      ${p.mine ? `<button class="pv-btn pv-sharewide pv-edit" data-id="${esc(p.id)}">✏️ ${p.received ? "Make it your own (edit a copy)" : "Edit this path"}</button>` : ""}
       <p class="pv-small"><span>Sources:</span> <span class="pvx">${esc((p.sources || []).join(" · "))}</span></p>`, true);
     drawVerses(s);
   }
@@ -488,7 +635,11 @@ const BCPaths = (() => {
     open(p.id, 0);
   }
   function shareHash(p, step){
-    if(p.mine){ const data = btoa(unescape(encodeURIComponent(JSON.stringify({t: p.opening_question, r: p.steps.map(s => s.refs[0])})))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, ""); return "#/path/mine/" + data; }
+    if(p.mine){   // version 2: the whole path travels in the link (title, question, steps, options, words, notes); nothing is stored on a server
+      const o = st => (st.compare && st.compare.length > 1 ? 1 : 0) | ((st.notes || []).includes("scofield") ? 2 : 0) | ((st.notes || []).includes("henry") ? 4 : 0) | (st.look_closer && st.look_closer.xref_top ? 8 : 0);
+      const d = {v: 2, ti: p.title, q: p.opening_question, a: p.author || undefined, c: p.category || undefined,
+        s: p.steps.map(st => ({q: st.question, r: st.refs, o: o(st), w: (st.look_closer || {}).strongs || [], n: st.my_note ? String(st.my_note).slice(0, 800) : undefined}))};
+      const data = btoa(unescape(encodeURIComponent(JSON.stringify(d)))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, ""); return "#/path/mine/" + data; }
     return "#/path/" + encodeURIComponent(p.id) + "/" + (step + 1);
   }
   /* ↗ Share a path with someone: one link that opens the path on the phone version of BibleChat (any phone or computer
@@ -578,6 +729,22 @@ const BCPaths = (() => {
     let p = (await loadList()).find(x => x.id === id) || mine().find(x => x.id === id);
     if(!p) return; share(p, "list", "path");
   }
+  /* a path someone made and sent by link: kept on this device under ✍ Your study paths (once), then opened */
+  async function openShared(d){
+    const str = x => String(x == null ? "" : x).slice(0, 1500);
+    const steps = d.s.slice(0, 30).map(x => ({question: str(x.q).slice(0, 240), refs: (x.r || []).filter(r => parseRef(r)).slice(0, 12),
+      compare: x.o & 1 ? ["KJV", "ETH", "BSB"] : [], notes: [x.o & 2 ? "scofield" : null, x.o & 4 ? "henry" : null].filter(Boolean),
+      look_closer: {strongs: (x.w || []).filter(n => /^[HG]\d{1,4}$/.test(n)).slice(0, 8), xref_top: x.o & 8 ? 5 : 0}, my_note: str(x.n)})).filter(st => st.refs.length);
+    steps.forEach(st => { const he = st.look_closer.strongs.find(n => n[0] === "H"); if(he) st.look_closer.letters = he; });
+    if(!steps.length) return;
+    const sig = JSON.stringify([d.ti, d.q, steps.map(s => s.refs)]), M = mine(), have = M.find(x => x.sig === sig);
+    if(have){ await open(have.id, 0); return; }
+    const quiz = await autoQuiz(steps);
+    const p = {id: "mine-" + Date.now().toString(36), sig, title: str(d.ti).slice(0, 90) || "A shared study path", opening_question: str(d.q).slice(0, 400), author: str(d.a).slice(0, 60), category: str(d.c).slice(0, 40),
+      steps, quiz, show: Math.min(10, Math.max(quiz.length, 1)), mine: true, received: true, visibility: "link",
+      sources: ["Made by " + (str(d.a) || "a BibleChat reader"), "KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references"]};
+    M.unshift(p); set("mine", M.slice(0, 50)); await open(p.id, 0);
+  }
   /* a link "#/path/<id>/<step>" or "#/path/mine/<data>" */
   async function openHash(h){
     const all = /^#\/paths(?:\/series\/([a-z0-9-]+))?\/?$/.exec(h || "");
@@ -592,6 +759,7 @@ const BCPaths = (() => {
     if(m[1] === "mine" && m[2]){
       try{
         const d = JSON.parse(decodeURIComponent(escape(atob(m[2].replace(/-/g, "+").replace(/_/g, "/")))));
+        if(d.v === 2 && Array.isArray(d.s)){ S.arrived = true; await openShared(d); return true; }
         const refs = (d.r || []).filter(r => parseRef(r)).slice(0, 8);
         if(refs.length){ await fromAnswer(String(d.t || "A shared study path").slice(0, 300), refs); return true; }
       }catch(e){}
@@ -605,9 +773,14 @@ const BCPaths = (() => {
   function onClick(e){
     const t = e.target;
     if(t.closest(".pv-close")){ close(); return; }
-    if(t.closest(".pv-back")){ if(S.view === "request" || (S.view === "share" && S.shareFrom === "list")) showList(); else if(S.view === "word" || S.view === "share") showPath(S.path.id, S.step); else if(S.view === "step" || S.view === "quiz" || S.view === "quoted") showList(); else close(); return; }
+    if(t.closest(".pv-back")){ if(S.view === "edit"){ S.draft = null; showList(); return; } if(S.view === "request" || (S.view === "share" && S.shareFrom === "list")) showList(); else if(S.view === "word" || S.view === "share") showPath(S.path.id, S.step); else if(S.view === "step" || S.view === "quiz" || S.view === "quoted") showList(); else close(); return; }
     const sc = t.closest(".pv-pc-share"); if(sc){ shareFromCard(sc.dataset.id); return; }
     if(t.closest(".pv-add")){ showRequest(); return; }
+    const sg = t.closest(".pv-segb"); if(sg){ S.section = sg.dataset.sec; showList(); return; }
+    if(t.closest(".pv-new")){ editPath(null); return; }
+    const ed = t.closest(".pv-edit"); if(ed){ const p = mine().find(x => x.id === ed.dataset.id); if(p){ const c = JSON.parse(JSON.stringify(p)); if(c.received){ c.id = "mine-" + Date.now().toString(36); delete c.received; delete c.sig; c.isNew = true; } editPath(c); } return; }
+    if(t.closest(".pv-eddel")){ if(confirm(T("Delete this study path from this device?"))){ set("mine", mine().filter(x => x.id !== S.draft.id)); S.draft = null; showList(); } return; }
+    const eb = t.closest("[data-ed]"); if(eb && S.view === "edit"){ e.preventDefault(); edAction(eb); return; }
     if(t.closest(".pv-shareall")){ share(null, "list", "all"); return; }
     const sq = t.closest(".pv-serqr"); if(sq){ loadList().then(L => { const p = L.find(x => x.series && x.series.id === sq.dataset.series); if(p) share(p, "list", "series"); }); return; }
     if(t.closest(".pv-qrbig")){ bigQr(); return; }
@@ -649,7 +822,25 @@ const BCPaths = (() => {
     const f = {compare: drawCompare, closer: drawCloser, notes: drawNotes}[d.dataset.sec];
     f(s, el).catch(() => { el.innerHTML = `<p class="pv-err">Couldn't load this. Check the internet connection and try again.</p>`; delete d.dataset.done; });
   }
+  function edAction(b){
+    const d = S.draft, i = +b.dataset.s, st = d.steps[i], a = b.dataset.ed;
+    if(a === "addstep"){ d.steps.push(blankStep()); edRender(); setTimeout(() => { const el = root.querySelector(`.pv-eds[data-i="${d.steps.length - 1}"]`); if(el) el.scrollIntoView({block: "start"}); }, 30); return; }
+    if(a === "delstep"){ d.steps.splice(i, 1); edRender(); return; }
+    if(a === "up" && i > 0){ [d.steps[i - 1], d.steps[i]] = [d.steps[i], d.steps[i - 1]]; edRender(); return; }
+    if(a === "down" && i < d.steps.length - 1){ [d.steps[i + 1], d.steps[i]] = [d.steps[i], d.steps[i + 1]]; edRender(); return; }
+    if(a === "delref"){ st.refs.splice(+b.dataset.j, 1); edRender(); return; }
+    if(a === "addref"){ const inp = root.querySelector(`.pv-edin[data-s="${i}"]`); if(inp && inp.value.trim()) edAddRef(i, inp.value); return; }
+    if(a === "hit"){ if(!st.refs.includes(b.dataset.ref)) st.refs.push(b.dataset.ref); b.disabled = true; b.textContent = "✓"; const box = root.querySelector(`.pv-edrefs`); edRender(); return; }
+    if(a === "find"){ const inp = root.querySelector(`.pv-edq[data-s="${i}"]`); if(inp) edFind(i, inp.value); return; }
+    if(a === "words"){ edWords(i); return; }
+    if(a === "word"){ const n = b.dataset.n, L = st.look_closer.strongs, k = L.indexOf(n); if(k >= 0) L.splice(k, 1); else if(L.length < 8) L.push(n);
+      b.classList.toggle("pv-edw-on", L.includes(n)); b.innerHTML = b.innerHTML.replace(/ ✓$/, "") + (L.includes(n) ? " ✓" : ""); return; }
+  }
   async function onSubmit(e){
+    if(e.target.id === "pvEd"){ e.preventDefault(); const f = document.activeElement;
+      if(f && f.classList && f.classList.contains("pv-edin")){ edAddRef(+f.dataset.s, f.value); return; }   // Enter in "Add verses" adds them
+      if(f && f.classList && f.classList.contains("pv-edq")){ edFind(+f.dataset.s, f.value); return; }
+      edSave(); return; }
     if(e.target.id === "pvReq"){ e.preventDefault(); sendRequest(); return; }
     const f = e.target.closest(".pv-find"); if(!f) return; e.preventDefault();
     const q = S.path.quiz[+f.dataset.q]; q.i = +f.dataset.q;
@@ -657,6 +848,14 @@ const BCPaths = (() => {
     answer(q, await checkFind(q, v));
   }
   function onInput(e){
+    if(S.view === "edit" && S.draft && e.target.closest && e.target.closest("#pvEd")){ const el = e.target, d = S.draft;
+      if(el.dataset.f){ d[el.dataset.f] = el.value; return; }
+      if(el.dataset.k){ d.steps[+el.dataset.s][el.dataset.k] = el.value; return; }
+      if(el.dataset.opt && e.type === "change"){ const st = d.steps[+el.dataset.s], o = el.dataset.opt;
+        if(o === "compare") st.compare = el.checked ? ["KJV", "ETH", "BSB"] : [];
+        if(o === "scofield" || o === "henry"){ st.notes = st.notes.filter(x => x !== o); if(el.checked) st.notes.push(o); }
+        if(o === "xref") st.look_closer.xref_top = el.checked ? 5 : 0; return; }
+      if(el.name === "vis") d.visibility = el.value; return; }
     if(e.target.name === "bible" && e.target.closest("#pvReq")){ root.querySelector(".pv-other").hidden = e.target.value !== "Another Bible"; return; }
     if(e.type === "change" && e.target.classList.contains("pv-tick")){ const t = e.target, li = t.closest("li");
       markDone(t.dataset.id, +t.dataset.step, t.checked); if(li) li.classList.toggle("pv-li-ok", t.checked);
@@ -674,13 +873,14 @@ const BCPaths = (() => {
     if(v.view === "quoted") await showQuoted(); else if(v.id && v.view === "step") await showPath(v.id, v.step); else await showList();
     if(v.top) root.scrollTop = v.top;
   }
-  function close(){ if(root){ root.hidden = true; root.innerHTML = ""; S.view = "list"; if(A.onClose) A.onClose(); } }
+  function close(){ if(root){ root.hidden = true; root.innerHTML = ""; S.view = "list"; S.draft = null; if(A.onClose) A.onClose(); } }
   function mount(adapter){
     A = adapter; root = adapter.container;
     root.classList.add("pv", "pv-dark"); root.hidden = true;
     root.addEventListener("click", onClick); root.addEventListener("toggle", onToggle, true);
     root.addEventListener("submit", onSubmit); root.addEventListener("input", onInput); root.addEventListener("change", onInput);
     addEventListener("keydown", e => { if(e.key === "Escape" && !root.hidden) close(); });
+    loadList().catch(() => {});   // so a search can show the Study Paths about it at once
     if(!document.getElementById("pvStyle")){ const st = document.createElement("style"); st.id = "pvStyle"; st.textContent = CSS; document.head.appendChild(st); }
   }
   const USFM = Object.fromEntries(("Genesis GEN|Exodus EXO|Leviticus LEV|Numbers NUM|Deuteronomy DEU|Joshua JOS|Judges JDG|Ruth RUT|1 Samuel 1SA|2 Samuel 2SA|1 Kings 1KI|2 Kings 2KI|1 Chronicles 1CH|2 Chronicles 2CH|Ezra EZR|Nehemiah NEH|Esther EST|Job JOB|Psalms PSA|Proverbs PRO|Ecclesiastes ECC|Song of Solomon SNG|Isaiah ISA|Jeremiah JER|Lamentations LAM|Ezekiel EZK|Daniel DAN|Hosea HOS|Joel JOL|Amos AMO|Obadiah OBA|Jonah JON|Micah MIC|Nahum NAM|Habakkuk HAB|Zephaniah ZEP|Haggai HAG|Zechariah ZEC|Malachi MAL|"
@@ -812,6 +1012,23 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-shbtns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.pv-shbtns .pv-btn{text-align:center;text-decoration:none;font-weight:650}.pv-shbtns .pv-primary{grid-column:1/-1}
 .pv-welcome{background:rgba(217,180,74,.14);border:1px solid rgba(217,180,74,.45);border-radius:12px;padding:10px 12px;margin:6px 0 10px;font-size:14.5px;line-height:1.45}
 .pv-empty{padding:20px 0}
+.pv-seg{display:flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px;margin:10px 0 6px}
+.pv-segb{flex:1;border:0;background:none;color:var(--muted);font:inherit;font-weight:700;font-size:15px;padding:9px 6px;border-radius:10px;cursor:pointer}.pv-segon{background:var(--accent);color:var(--accent-text)}
+.pv-who{display:flex;flex-direction:column;gap:4px;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:10px 12px;margin:0 0 12px;font-size:14px}.pv-who span{color:var(--muted)}
+.pv-new{display:block;width:100%;font-weight:700;font-size:16px;padding:12px;margin:0 0 6px}
+.pv-pc-mine{display:flex;justify-content:space-between;align-items:center;gap:6px;padding:6px 12px 0;font-size:12px}.pv-vis{color:var(--muted)}
+.pv-cnote{border:1px solid rgba(140,196,255,.35);background:rgba(140,196,255,.08);border-radius:10px;padding:8px 12px;margin:0 0 10px}.pv-cnote h4{margin:2px 0}.pv-cnote-why{font-size:12.5px;color:var(--muted);font-style:italic;margin:0 0 6px}
+.pv-ed .pv-edrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media (max-width:520px){.pv-ed .pv-edrow{grid-template-columns:1fr}}
+.pv-eds{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:10px 12px;margin:0 0 12px}.pv-edsh{display:flex;justify-content:space-between;align-items:center;margin:0 0 6px}.pv-edsh b{color:var(--accent);font-size:16px}
+.pv-ed .pv-eds input,.pv-ed .pv-eds textarea{background:var(--bg)}
+.pv-edref{border-left:3px solid var(--accent);padding:4px 8px;margin:0 0 6px}.pv-edprev{font-family:Georgia,serif;font-size:14px;color:var(--muted)}
+.pv-edadd{display:flex;gap:6px;align-items:center}.pv-edadd input{flex:1;min-width:0;margin:0!important}
+.pv-edfind summary{cursor:pointer;color:var(--accent);margin:6px 0}.pv-edhit{font-size:13.5px;padding:4px 0;border-top:1px dashed var(--line)}.pv-edhit .pv-btn{padding:2px 9px}
+.pv-edopts{display:grid;grid-template-columns:1fr 1fr;gap:2px 10px;margin:8px 0}@media (max-width:520px){.pv-edopts{grid-template-columns:1fr}}
+.pv-ed .pv-edck{display:flex;gap:6px;align-items:baseline;font-weight:500;margin:2px 0}.pv-ed .pv-edck input{display:inline;width:auto;margin:0}
+.pv-edwords{border-top:1px dashed var(--line);padding:8px 0 4px;margin:4px 0 8px}.pv-edwords small{color:var(--muted);display:block}
+.pv-edwl{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}.pv-edw{border:1px solid var(--line);background:var(--bg);color:inherit;border-radius:99px;padding:3px 10px;font:inherit;font-size:13px;cursor:pointer}.pv-edw-on{border-color:var(--accent);background:rgba(217,180,74,.18)}
+.pv-edvis{border:1px solid var(--line);border-radius:12px;padding:6px 12px;margin:10px 0}.pv-edvis legend{font-weight:700;padding:0 6px}.pv-edvis small{color:var(--muted)}
 .pv-anim{position:absolute;inset:0;overflow:hidden}.pv-anim img{width:100%;height:100%;object-fit:cover;display:block;animation:pvKB 24s ease-in-out infinite alternate;transform-origin:var(--x,50%) var(--y,40%)}
 @keyframes pvKB{from{transform:scale(1)}to{transform:scale(1.07)}}
 .pv-anim .pv-fx,.pv-anim .pv-fx2{position:absolute;inset:0;pointer-events:none}
@@ -872,6 +1089,8 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-st-text{background:#d9ecd9}.pv-st-lost{background:#efd9d4}.pv-st-disputed{background:#f3e7c4}
 :root[data-theme="dark"] .pv-tag,.pv-dark .pv-tag{color:#1f1e1b}
 .pv-dark .pnote{background:#191c21}`;
-  return {mount, open, close, reopen, openHash, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden};
+  async function openCommunity(){ S.section = "community"; await open(); }
+  return {mount, open, close, reopen, openHash, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden,
+    findPaths, openCommunity, preload: () => loadList(), normRef};
 })();
 if(typeof module !== "undefined") module.exports = BCPaths;
