@@ -2,6 +2,7 @@
   "id": "life-in-the-womb",
   "title": "Life in the womb",
   "category": "Body & Life",
+  "anim": {"kind": "light", "x": 95, "y": 30, "s": 40},
   "opening_question": "What does the Bible say about the child in the womb: who forms it, who knows it, and what does the text call it?",
   "required_refs": ["Psalms 139:13-16", "Jeremiah 1:5", "Job 31:15", "Isaiah 44:24", "Luke 1:41-44", "Exodus 21:22-25", "Psalms 51:5"],
   "words": ["H990", "G2836", "H3335"],

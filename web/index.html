@@ -1968,7 +1968,7 @@ function bibleFailed(id, e){
 
 /* ---------- start ---------- */
 function parseHash(){
-  if(/^#\/path\//.test(location.hash)) return null;   // a study path link, opened after the start
+  if(/^#\/paths?(\/|$)/.test(location.hash)) return null;   // a study path link, opened after the start
   const p = location.hash.replace(/^#\/?/, "").split("/").map(decodeURIComponent);
   if(p.length >= 3 && p[0]) return {bible: p[0], book: p[1], ch: +p[2] || 1, v: +p[3] || null, shared: p[4] === "s"};
   return null;
@@ -1981,7 +1981,7 @@ function parseHash(){
   const langs = [...new Set(catalog.map(c => c.language.replace(/ \(.*\)$/, "")))];
   $("#blang").innerHTML = `<option value="">All languages</option>` + langs.map(l => `<option>${esc(l)}</option>`).join("");
   $("#blang").value = store.get("lang", "English");
-  const PATH_HASH = /^#\/path\//.test(location.hash) ? location.hash : null;
+  const PATH_HASH = /^#\/paths?(\/|$)/.test(location.hash) ? location.hash : null;
   const h = parseHash();
   if(h && catalog.some(c => c.id === h.bible)) place = {bible: h.bible, book: h.book, ch: h.ch};
   if(!catalog.some(c => c.id === place.bible)) place.bible = catalog[0].id;
@@ -2000,7 +2000,7 @@ function parseHash(){
     if(!(h && h.v)) show("home", true);   // a normal start opens on the Bible cover; a link to a verse goes straight to it
     if(!store.get("tip", false)){ store.set("tip", true); setTimeout(() => toast("Tip: tap any verse to share or study it"), 1200); }
   }
-  addEventListener("hashchange", () => { if(/^#\/path\//.test(location.hash)){ BCPaths.openHash(location.hash); return; } const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]){ go(x.book, x.ch, x.v); if(x.shared && x.v) markShared(x.v); } });
+  addEventListener("hashchange", () => { if(/^#\/paths?(\/|$)/.test(location.hash)){ BCPaths.openHash(location.hash); return; } const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]){ go(x.book, x.ch, x.v); if(x.shared && x.v) markShared(x.v); } });
 })();
 /* ---------- 📲 Add BibleChat to your home screen ----------
    Android, Chrome and Edge: the button opens the browser's own "Add to Home screen / Install" box (beforeinstallprompt).

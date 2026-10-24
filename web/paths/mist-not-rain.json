@@ -2,6 +2,9 @@
  "id": "mist-not-rain",
  "title": "Mist, not rain",
  "category": "Creation",
+ "anim": {
+  "kind": "mist"
+ },
  "opening_question": "What watered the ground before the flood, and what does the text say about rain?",
  "required_refs": [
   "Genesis 1:6-8",
@@ -450,7 +453,7 @@
  },
  "built_from": {
   "file": "packaging/paths/mist-not-rain.json",
-  "sha": "6557881745674c2d",
+  "sha": "3602c611dea6bfff",
   "checked_in": [
    "KJV",
    "ETH",

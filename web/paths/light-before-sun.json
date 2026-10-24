@@ -2,6 +2,12 @@
  "id": "light-before-sun",
  "title": "Light before the sun",
  "category": "Creation",
+ "anim": {
+  "kind": "light",
+  "x": 60,
+  "y": 22,
+  "s": 40
+ },
  "opening_question": "If the sun was made on Day 4, what was the light on Day 1?",
  "required_refs": [
   "Genesis 1:1-5",
@@ -533,7 +539,7 @@
  },
  "built_from": {
   "file": "packaging/paths/light-before-sun.json",
-  "sha": "b29c5a576fb3e9af",
+  "sha": "afc209862f5330b5",
   "checked_in": [
    "KJV",
    "ETH",

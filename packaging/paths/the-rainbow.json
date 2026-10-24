@@ -2,6 +2,7 @@
   "id": "the-rainbow",
   "title": "The rainbow: God's bow in the cloud",
   "category": "Covenant",
+  "anim": {"kind": "rainbow"},
   "opening_question": "Whose sign is the rainbow, what does God say it means, and where else does the Bible show it?",
   "required_refs": ["Genesis 1:3-5", "Genesis 9:8-17", "Isaiah 54:9-10", "Ezekiel 1:26-28", "Revelation 4:2-3", "Revelation 10:1", "Psalms 97:1-6", "Habakkuk 3:3-4", "John 8:12"],
   "words": ["H7198", "G2463", "H1285"],

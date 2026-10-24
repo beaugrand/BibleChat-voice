@@ -2,6 +2,12 @@
  "id": "husband-and-wife",
  "title": "Husband and wife",
  "category": "Marriage",
+ "anim": {
+  "kind": "light",
+  "x": 72,
+  "y": 4,
+  "s": 30
+ },
  "opening_question": "What does the Bible say about husband and wife: how it began, how they are to love each other, and what holds them together?",
  "required_refs": [
   "Genesis 2:18-25",
@@ -712,7 +718,7 @@
  },
  "built_from": {
   "file": "packaging/paths/husband-and-wife.json",
-  "sha": "030eb72cd5d74b7a",
+  "sha": "44e3aaa2c8bd2b45",
   "checked_in": [
    "KJV",
    "ETH",

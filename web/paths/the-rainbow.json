@@ -2,6 +2,9 @@
  "id": "the-rainbow",
  "title": "The rainbow: God's bow in the cloud",
  "category": "Covenant",
+ "anim": {
+  "kind": "rainbow"
+ },
  "opening_question": "Whose sign is the rainbow, what does God say it means, and where else does the Bible show it?",
  "required_refs": [
   "Genesis 1:3-5",
@@ -643,7 +646,7 @@
  },
  "built_from": {
   "file": "packaging/paths/the-rainbow.json",
-  "sha": "2882619776fb9abd",
+  "sha": "a245dc7ca98e8c9e",
   "checked_in": [
    "KJV",
    "ETH",

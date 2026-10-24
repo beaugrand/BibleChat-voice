@@ -2,6 +2,12 @@
  "id": "life-in-the-womb",
  "title": "Life in the womb",
  "category": "Body & Life",
+ "anim": {
+  "kind": "light",
+  "x": 95,
+  "y": 30,
+  "s": 40
+ },
  "opening_question": "What does the Bible say about the child in the womb: who forms it, who knows it, and what does the text call it?",
  "required_refs": [
   "Psalms 139:13-16",
@@ -524,7 +530,7 @@
  },
  "built_from": {
   "file": "packaging/paths/life-in-the-womb.json",
-  "sha": "8c243a8c3d142bdc",
+  "sha": "f70329c417e9debd",
   "checked_in": [
    "KJV",
    "ETH",

@@ -2,6 +2,12 @@
  "id": "freedom-from-bondage",
  "title": "Freedom from bondage",
  "category": "Freedom",
+ "anim": {
+  "kind": "light",
+  "x": 70,
+  "y": 8,
+  "s": 32
+ },
  "opening_question": "What does the Bible say about being held captive by sin, like an addiction, and who sets us free?",
  "required_refs": [
   "John 8:34",
@@ -646,7 +652,7 @@
  },
  "built_from": {
   "file": "packaging/paths/freedom-from-bondage.json",
-  "sha": "2d11600ff5316d5f",
+  "sha": "c015e21efb6a675e",
   "checked_in": [
    "KJV",
    "ETH",

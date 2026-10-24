@@ -2,6 +2,12 @@
  "id": "enoch-and-the-watchers",
  "title": "Enoch and the Watchers",
  "category": "Enoch",
+ "anim": {
+  "kind": "light",
+  "x": 62,
+  "y": 18,
+  "s": 30
+ },
  "opening_question": "Who was Enoch, who were \"the sons of God\" in Genesis 6, and what does the New Testament say about them?",
  "required_refs": [
   "Genesis 5:21-24",
@@ -455,7 +461,7 @@
  },
  "built_from": {
   "file": "packaging/paths/enoch-and-the-watchers.json",
-  "sha": "847052ffeda25d0c",
+  "sha": "9a0ce470292219ac",
   "checked_in": [
    "KJV",
    "ETH",

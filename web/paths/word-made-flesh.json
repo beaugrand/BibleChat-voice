@@ -2,6 +2,12 @@
  "id": "word-made-flesh",
  "title": "The Word made flesh, the way, the truth, the light",
  "category": "Name & Word",
+ "anim": {
+  "kind": "fire",
+  "x": 32,
+  "y": 50,
+  "s": 9
+ },
  "opening_question": "Who is the Word, and what does the text say about keeping His commandments?",
  "required_refs": [
   "John 1:1-14",
@@ -455,7 +461,7 @@
  },
  "built_from": {
   "file": "packaging/paths/word-made-flesh.json",
-  "sha": "2342139369f5a483",
+  "sha": "cad1635388a275b2",
   "checked_in": [
    "KJV",
    "ETH",

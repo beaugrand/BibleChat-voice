@@ -60,8 +60,20 @@ const BCPaths = (() => {
   function bookIndex(book){ return A.books().then(b => b.indexOf(book)); }
   function refLink(book, c, v, text){ return `<a href="#" class="pv-go" data-b="${esc(book)}" data-c="${c}" data-v="${v || ""}">${esc(text || A.bookName(book) + " " + c + (v ? ":" + v : ""))}</a>`; }
   /* a group's own Bible (e.g. TS2009) as a link only: BibleChat never copies its text */
+  /* ---------- moving pictures: fire flickers, light breathes, mist drifts, the rainbow shimmers, stars twinkle, lightning flashes.
+     Only CSS on top of the still picture (light for the phone); "reduce motion" in the phone's settings keeps them still. */
+  const STARS = "8 6,22 14,35 4,47 18,58 9,71 15,83 5,93 12,15 27,40 31,64 25,88 30,5 40,28 44,52 38,77 42".split(",").map(x => x.split(" "));
+  function picture(p, hero){
+    if(!p.image) return `<span class="pv-pc-ph" aria-hidden="true">📜</span>`;
+    const a = p.anim || {}, k = a.kind || "", x = a.x == null ? 50 : a.x, y = a.y == null ? 30 : a.y, sz = a.s || 30;
+    const yy = hero ? Math.max(-30, Math.min(130, 2 * y - 50)) : y;   // the banner shows the middle third of the picture
+    const fx = k === "fire" ? `<i class="pv-fx"></i>${[0, 1, 2, 3, 4, 5, 6].map(i => `<b class="pv-ember" style="--d:${(i * 0.37).toFixed(2)}s;--dx:${(i % 2 ? 1 : -1) * (6 + i * 3)}px"></b>`).join("")}`
+      : k === "stars" ? `<i class="pv-fx" style="background-image:${STARS.map(([sx, sy], i) => `radial-gradient(${i % 3 ? 1.2 : 2}px ${i % 3 ? 1.2 : 2}px at ${sx}% ${sy}%, #fff, transparent)`).join(",")}"></i><i class="pv-fx2" style="background-image:${STARS.map(([sx, sy]) => `radial-gradient(1.4px 1.4px at ${(+sx + 11) % 100}% ${(+sy + 7) % 50}%, #fff, transparent)`).join(",")}"></i>`
+      : k ? `<i class="pv-fx"></i><i class="pv-fx2"></i>` : "";
+    return `<div class="pv-anim${k ? " pv-a-" + k : ""}" style="--x:${x}%;--y:${yy}%;--s:${sz}%"><img src="${esc(A.base + p.image)}" alt="" loading="lazy">${fx}</div>`;
+  }
   function readAlong(path, p){ const ra = path && path.read_along; if(!ra) return "";
-    return `<a class="pv-niv pv-ra" href="${esc(ra.url.replace("{c}", p ? p.c1 : 1))}" target="_blank" rel="noopener" title="Opens on Bible.com; BibleChat doesn't copy this Bible's text">Read in ${esc(ra.label)} ↗</a>`; }
+    return `<a class="pv-niv pv-ra" href="${esc(ra.url.replace("{book}", USFM[p && p.book] || "GEN").replace("{c}", p ? p.c1 : 1))}" target="_blank" rel="noopener" title="Opens on Bible.com; BibleChat doesn't copy this Bible's text">Read in ${esc(ra.label)} ↗</a>`; }
   function nivLink(ref){ return `<a class="pv-niv" href="https://www.biblegateway.com/passage/?search=${encodeURIComponent(ref)}&version=NIV" target="_blank" rel="noopener" title="The NIV is copyrighted; BibleChat links to it on BibleGateway">Open in NIV ↗</a>`; }
   function progress(){ return get("progress", {}); }
   function saveProgress(id, patch){ const p = progress(); p[id] = Object.assign(p[id] || {}, patch); set("progress", p); }
@@ -109,12 +121,12 @@ const BCPaths = (() => {
     const pct = n ? Math.round(100 * (finished ? n : done.size) / n) : 0;
     const status = finished ? `✓ Finished · ${g.score[0]} of ${g.score[1]} right` : done.size ? `${done.size} of ${n} steps done` : g.step != null ? `At step ${g.step + 1} of ${n}` : "Not started";
     const go = finished ? "Do it again" : started ? "Continue" : "Start";
-    const img = p.image ? `<img src="${esc(A.base + p.image)}" alt="" loading="lazy">` : `<span class="pv-pc-ph" aria-hidden="true">📜</span>`;
+    const img = picture(p, false);
     const dots = qs.map((q, i) => `<i class="${done.has(i) || finished ? "pv-d-ok" : g.step === i ? "pv-d-now" : ""}" title="${esc("Step " + (i + 1))}"></i>`).join("");
     return `<article class="pv-pc${finished ? " pv-pc-fin" : ""}" data-id="${esc(p.id)}">
-      <button class="pv-pc-open" data-id="${esc(p.id)}" aria-label="${esc("Open " + p.title)}"><div class="pv-pc-img">${img}<span class="pv-pc-cat">${esc(mineP ? YOURS : p.group ? "👥 " + p.group : p.category || "")}</span>${finished ? `<span class="pv-pc-check" title="Finished">✓</span>` : ""}</div>
+      <button class="pv-pc-open" data-id="${esc(p.id)}" aria-label="${esc("Open " + p.title)}"><div class="pv-pc-img">${img}<span class="pv-pc-cat">${esc(mineP ? YOURS : p.series ? "Session " + p.series.session + " of " + p.series.of : p.group ? "👥 " + p.group : p.category || "")}</span>${finished ? `<span class="pv-pc-check" title="Finished">✓</span>` : ""}</div>
         <div class="pv-pc-txt"><b class="pvx">${esc(p.title)}</b><span class="pvx">${esc(p.opening_question)}</span></div></button>
-      <div class="pv-pc-meta">${p.minutes ? `<span title="About ${p.minutes} minutes">⏱ ${p.minutes} min</span>` : ""}<span>${n} <span>steps</span></span>${p.verses ? `<span>${p.verses} <span>verses</span></span>` : ""}</div>
+      <div class="pv-pc-meta">${p.series ? `<span>📖 ${p.series.session}/${p.series.of}</span>` : ""}${p.minutes ? `<span title="About ${p.minutes} minutes">⏱ ${p.minutes} min</span>` : ""}<span>${n} <span>steps</span></span>${p.verses ? `<span>${p.verses} <span>verses</span></span>` : ""}</div>
       <div class="pv-pc-prog"><div class="pv-dots" aria-hidden="true">${dots}</div><small class="${finished ? "pv-ok" : started ? "pv-busy" : ""}">${esc(status)}</small></div>
       <div class="pv-bar"><i style="width:${pct}%"></i></div>
       <details class="pv-pc-steps"><summary>Steps</summary><ol>${qs.map((q, i) => `<li class="${done.has(i) ? "pv-li-ok" : ""}"><label class="pv-tickl" title="Tick this step as done"><input type="checkbox" class="pv-tick" data-id="${esc(p.id)}" data-step="${i}"${done.has(i) ? " checked" : ""}><span>${i + 1}</span></label><button class="pv-jump pvx" data-id="${esc(p.id)}" data-step="${i}">${esc(mineP ? T(q) : q)}</button></li>`).join("")}
@@ -130,13 +142,25 @@ const BCPaths = (() => {
     const busy = p => { const i = cardInfo(p, P[p.id] || {}); return i.started && !i.finished; };
     const keep = p => S.filter === ALL || (S.filter === BUSY ? busy(p) : S.filter === YOURS ? p.id.startsWith("mine-") : p.category === S.filter);
     const shown = L.concat(M).filter(keep);
-    frame("📜 Study Paths", `<p class="pv-lead">Each path starts with a question, walks through every main verse on it, including the ones that seem to point the other way, and ends with questions whose answer is always a verse. The path asks; you decide.</p>`
+    const arrivedList = S.arrivedList; S.arrivedList = false;
+    frame("📜 Study Paths", (arrivedList ? `<div class="pv-welcome">👋 <b>Someone shared the BibleChat Study Paths with you.</b> Pick a path below and press <b>Start</b>: every step shows the verses, the Hebrew and Greek words, and questions to think about. Free, no sign-up.</div>` : "")
+      + `<div class="pv-allshare"><button class="pv-btn pv-shareall">📱 Share all Study Paths · link or QR code</button></div>`
+      + `<p class="pv-lead">Each path starts with a question, walks through every main verse on it, including the ones that seem to point the other way, and ends with questions whose answer is always a verse. The path asks; you decide.</p>`
       + `<div class="pv-chips" role="toolbar" aria-label="Show">${chips.map(c => `<button class="pv-chip${c === S.filter ? " pv-chip-on" : ""}" data-f="${esc(c)}" aria-pressed="${c === S.filter}">${c === GROUPS ? "👥 " : ""}${esc(c)}</button>`).join("")}</div>`
       + (S.filter === GROUPS ? groupsView(shown, P)
-        : shown.length ? `<div class="pv-grid">${shown.map(p => card(p, P[p.id] || {})).join("")}</div>` : `<p class="pv-small pv-empty">${S.filter === BUSY ? "No path started yet. Pick one under All." : "No paths here yet."}</p>`)
+        : shown.length ? gridWithSeries(shown, P) : `<p class="pv-small pv-empty">${S.filter === BUSY ? "No path started yet. Pick one under All." : "No paths here yet."}</p>`)
       + `<p class="pv-small">Make your own: ask a question, then press 📜 Make a study path under the answer.</p>`
       + `<button class="pv-card pv-quoted"><b>📚 Quoted or named in Scripture</b><span>Verses that quote or name another writing: the Book of Enoch, the Book of Jasher, lost books.</span></button>`
       + `<p class="pv-small">Your progress, notes and scores stay on this device.</p>`);
+  }
+  /* paths of a series (e.g. the 7 sessions of the mirror prophecies) stand together under the series' title, with its own ↗ / QR code */
+  function gridWithSeries(shown, P){
+    const out = [], loose = [], seen = {};
+    for(const p of shown){ if(p.series){ (seen[p.series.id] = seen[p.series.id] || []).push(p); } else loose.push(p); }
+    for(const id in seen){ const ps = seen[id].sort((a, b) => a.series.session - b.series.session), se = ps[0].series;
+      out.push(`<div class="pv-series" id="pvSeries-${esc(id)}"><div class="pv-serh"><div><b>📖 <span class="pvx">${esc(se.title)}</span></b><small>${ps.length} of ${se.of} sessions ready${ps.length < se.of ? " · more coming" : ""}</small></div><button class="pv-btn pv-serqr" data-series="${esc(id)}" title="Share this series by link or QR code">↗ QR</button></div><div class="pv-grid">${ps.map(p => card(p, P[p.id] || {})).join("")}</div></div>`); }
+    if(loose.length) out.push(`<div class="pv-grid">${loose.map(p => card(p, P[p.id] || {})).join("")}</div>`);
+    return out.join("");
   }
   /* 👥 Bible Study Groups: one folder per group, then "+ Add your own study path" */
   function groupsView(shown, P){
@@ -204,7 +228,7 @@ const BCPaths = (() => {
     saveProgress(p.id, {step: S.step});
     const s = p.steps[S.step], n = p.steps.length, notes = get("notes", {}), mineNote = (notes[p.id] || {})[S.step] || "", done = doneSteps(p.id);
     const arrived = S.arrived; S.arrived = false;
-    frame(p.title, `${arrived ? `<div class="pv-welcome">👋 <b>Someone shared this study path with you.</b> Read the question, then the verses of each step, and press <b>Next step</b>. Your notes and answers stay on your device.</div>` : ""}${p.image ? `<div class="pv-hero"><img src="${esc(A.base + p.image)}" alt=""><span class="pv-pc-cat">${esc(p.category || "")}</span></div>` : ""}<div class="pv-open pvx"><small>The question</small>${esc(p.opening_question)}</div>
+    frame(p.title, `${arrived ? `<div class="pv-welcome">👋 <b>Someone shared this study path with you.</b> Read the question, then the verses of each step, and press <b>Next step</b>. Your notes and answers stay on your device.</div>` : ""}${p.image ? `<div class="pv-hero">${picture(p, true)}<span class="pv-pc-cat">${esc(p.series ? "Session " + p.series.session + " of " + p.series.of : p.group ? "👥 " + p.group : p.category || "")}</span></div>` : ""}${p.series ? `<p class="pv-small pv-serline">📖 <span class="pvx">${esc(p.series.title)}</span></p>` : ""}<div class="pv-open pvx"><small>The question</small>${esc(p.opening_question)}</div>
       <div class="pv-stepno">Step ${S.step + 1} of ${n}</div>
       <div class="pv-track" role="navigation" aria-label="Steps">${p.steps.map((x, i) => `<button class="pv-dot${i === S.step ? " pv-dot-now" : ""}${done.has(i) ? " pv-dot-ok" : ""}" data-step="${i}" title="${esc("Step " + (i + 1) + ": " + x.question)}">${done.has(i) ? "✓" : i + 1}</button>`).join(`<i class="pv-track-line"></i>`)}</div>
       <div class="pv-bar"><i style="width:${Math.round(100 * done.size / n)}%"></i></div>
@@ -470,30 +494,60 @@ const BCPaths = (() => {
   /* ↗ Share a path with someone: one link that opens the path on the phone version of BibleChat (any phone or computer
      browser, no sign-up), at step 1. Send it by the phone's own share sheet, a text message, WhatsApp or email, or show the
      QR code to someone next to you. */
-  function shareText(p){ return `Let's study "${p.title}" together in BibleChat (free, no sign-up): ${p.opening_question}`; }
-  function share(p, from){
-    p = p || S.path; if(!p) return;
-    const url = A.shareUrl(shareHash(p, 0)), text = shareText(p), both = text + "\n" + url;
-    S.shareFrom = from || "path"; S.shareP = p; S.view = "share";
+  function shareText(t){ return t.kind === "all" ? "Have a look at the BibleChat Study Paths (free, no sign-up): guided Bible studies with the verses side by side, the Hebrew and Greek words, and questions. Pick one and start."
+    : t.kind === "series" ? `Let's study "${t.title}" together in BibleChat (free, no sign-up): ${t.question}`
+    : `Let's study "${t.title}" together in BibleChat (free, no sign-up): ${t.opening_question || t.question}`; }
+  /* what is shared: one path (step 1), a whole series, or the page with all the Study Paths */
+  function target(kind, p){
+    if(kind === "all") return {kind, title: "BibleChat Study Paths", question: "Every path starts with a question and walks through the verses.", hash: "#/paths", image: null};
+    if(kind === "series") return {kind, title: p.series.title, question: `${p.series.of} sessions, Daniel and Revelation side by side.`, hash: "#/paths/series/" + p.series.id, image: p.image};
+    return Object.assign({kind: "path", hash: shareHash(p, 0), question: p.opening_question}, p);
+  }
+  function share(p, from, kind){
+    p = p || S.path; if(!p && kind !== "all") return;
+    const t = target(kind || "path", p), url = A.shareUrl(t.hash), text = shareText(t), both = text + "\n" + url;
+    const what = t.kind === "all" ? "the page with all the Study Paths" : t.kind === "series" ? "this series of study paths" : "this study path, at step 1";
+    S.shareFrom = from || "path"; S.shareP = t; S.view = "share";
     const back = S.shareFrom === "list" ? `<button class="pv-btn pv-backlist">‹ Back to the paths</button>` : `<button class="pv-btn pv-backpath">‹ Back to the path</button>`;
-    frame("↗ Share this path", `<div class="pv-shead">${p.image ? `<img src="${esc(A.base + p.image)}" alt="">` : ""}<div><b class="pvx">${esc(p.title)}</b><span class="pvx">${esc(p.opening_question)}</span></div></div>
-      <p class="pv-small">Send this link to someone. It opens this study path in BibleChat on their phone or computer, at step 1. No sign-up, nothing to install.</p>
+    const wide = matchMedia("(min-width: 760px)").matches;   // on a computer the QR code comes first: hold the phone up to the screen
+    const qr = `<div class="pv-qrbox"><p class="pv-small">${wide ? "Point a phone camera at the screen:" : "Or let them scan this code with their phone camera:"}</p><div class="pv-qr"></div><button class="pv-btn pv-qrbig">⛶ Show the QR code big (for a TV or projector)</button></div>`;
+    frame(t.kind === "all" ? "↗ Share the Study Paths" : t.kind === "series" ? "↗ Share this series" : "↗ Share this path", `<div class="pv-shead">${t.image ? `<img src="${esc(A.base + t.image)}" alt="">` : `<span class="pv-shico">📜</span>`}<div><b class="pvx">${esc(t.title)}</b><span class="pvx">${esc(t.question || "")}</span></div></div>
+      <p class="pv-small">Send this link to someone. It opens ${what} in BibleChat on their phone or computer. No sign-up, nothing to install.</p>
+      ${wide ? qr : ""}
       <div class="pv-shbtns">${navigator.share ? `<button class="pv-btn pv-primary pv-sys">📤 Send to someone</button>` : ""}
         <a class="pv-btn" href="sms:?&body=${encodeURIComponent(both)}">💬 Text message</a>
         <a class="pv-btn" href="https://wa.me/?text=${encodeURIComponent(both)}" target="_blank" rel="noopener">🟢 WhatsApp</a>
-        <a class="pv-btn" href="mailto:?subject=${encodeURIComponent("Bible study: " + p.title)}&body=${encodeURIComponent(both)}">✉ Email</a>
+        <a class="pv-btn" href="mailto:?subject=${encodeURIComponent("Bible study: " + t.title)}&body=${encodeURIComponent(both)}">✉ Email</a>
         <button class="pv-btn pv-copy">⧉ Copy link</button></div>
       <input class="pv-url" readonly value="${esc(url)}">
-      <p class="pv-small">Or let them scan this code with their phone camera:</p><div class="pv-qr"></div>
+      ${wide ? "" : qr}
       <div class="pv-nav">${back}</div>`, true);
-    const cv = A.qr(url, 220); if(cv) root.querySelector(".pv-qr").appendChild(cv);
+    const cv = A.qr(url, wide ? 280 : 220); if(cv) root.querySelector(".pv-qr").appendChild(cv);
+  }
+  /* the QR code over the whole screen, as big as it fits: for a TV, a projector or a room */
+  function bigQr(){
+    const t = S.shareP; if(!t) return;
+    const url = A.shareUrl(t.hash), px = Math.max(220, Math.min(innerWidth, innerHeight) - 250);
+    const o = document.createElement("div"); o.className = "pv-qrfull";
+    o.innerHTML = `<div class="pv-qrf-in"><b class="pvx">${esc(t.title)}</b><div class="pv-qrf-code"></div><span>Scan with your phone camera · BibleChat</span><button class="pv-btn pv-qrclose">✕ Close</button></div>`;
+    const cv = A.qr(url, px); if(cv) o.querySelector(".pv-qrf-code").appendChild(cv);
+    o.addEventListener("click", e => { if(e.target === o || e.target.closest(".pv-qrclose")) o.remove(); });
+    root.appendChild(o);
   }
   async function shareFromCard(id){
     let p = (await loadList()).find(x => x.id === id) || mine().find(x => x.id === id);
-    if(!p) return; share(p, "list");
+    if(!p) return; share(p, "list", "path");
   }
   /* a link "#/path/<id>/<step>" or "#/path/mine/<data>" */
   async function openHash(h){
+    const all = /^#\/paths(?:\/series\/([a-z0-9-]+))?\/?$/.exec(h || "");
+    if(all){
+      S.arrivedList = true; S.filter = ALL;
+      if(all[1]){ const L = await loadList(), p = L.find(x => x.series && x.series.id === all[1]); if(p) S.filter = p.category; }
+      await showList();
+      if(all[1]){ const el = root.querySelector("#pvSeries-" + all[1]); if(el) el.scrollIntoView({block: "start"}); }
+      return true;
+    }
     const m = /^#\/path\/([^/]+)(?:\/([^/]+))?/.exec(h || ""); if(!m) return false;
     if(m[1] === "mine" && m[2]){
       try{
@@ -514,13 +568,16 @@ const BCPaths = (() => {
     if(t.closest(".pv-back")){ if(S.view === "request" || (S.view === "share" && S.shareFrom === "list")) showList(); else if(S.view === "word" || S.view === "share") showPath(S.path.id, S.step); else if(S.view === "step" || S.view === "quiz" || S.view === "quoted") showList(); else close(); return; }
     const sc = t.closest(".pv-pc-share"); if(sc){ shareFromCard(sc.dataset.id); return; }
     if(t.closest(".pv-add")){ showRequest(); return; }
+    if(t.closest(".pv-shareall")){ share(null, "list", "all"); return; }
+    const sq = t.closest(".pv-serqr"); if(sq){ loadList().then(L => { const p = L.find(x => x.series && x.series.id === sq.dataset.series); if(p) share(p, "list", "series"); }); return; }
+    if(t.closest(".pv-qrbig")){ bigQr(); return; }
     if(t.closest(".pv-reqgit")){ e.preventDefault(); const d = reqData();
       window.open("https://github.com/beaugrand/BibleChat-voice/issues/new?title=" + encodeURIComponent("Study path request: " + (d.passage || "?") + " (" + (d.group || "?") + ")") + "&body=" + encodeURIComponent(reqText(d)), "_blank", "noopener"); return; }
     if(t.closest(".pv-share")){ share(); return; }
     if(t.closest(".pv-backlist")){ showList(); return; }
     if(t.closest(".pv-backpath")){ showPath(S.path.id, S.step); return; }
     if(t.closest(".pv-copy")){ const i = root.querySelector(".pv-url"); i.select(); (navigator.clipboard ? navigator.clipboard.writeText(i.value) : Promise.reject()).then(() => A.toast("Link copied"), () => { document.execCommand("copy"); A.toast("Link copied"); }); return; }
-    if(t.closest(".pv-sys")){ const p = S.shareP || S.path; navigator.share({title: p.title, text: shareText(p), url: root.querySelector(".pv-url").value}).catch(() => {}); return; }
+    if(t.closest(".pv-sys")){ const p = S.shareP || target("path", S.path); navigator.share({title: p.title, text: shareText(p), url: root.querySelector(".pv-url").value}).catch(() => {}); return; }
     const c = t.closest(".pv-card"); if(c){ if(c.classList.contains("pv-quoted")) showQuoted(); else open(c.dataset.id); return; }
     const chip = t.closest(".pv-chip"); if(chip){ S.filter = chip.dataset.f; showList(); return; }
     const jq = t.closest(".pv-jumpquiz"); if(jq){ loadPath(jq.dataset.id).then(p => { S.path = p; S.step = p.steps.length - 1; S.quiz = null; showQuiz(false); }).catch(() => open(jq.dataset.id)); return; }
@@ -582,6 +639,8 @@ const BCPaths = (() => {
     addEventListener("keydown", e => { if(e.key === "Escape" && !root.hidden) close(); });
     if(!document.getElementById("pvStyle")){ const st = document.createElement("style"); st.id = "pvStyle"; st.textContent = CSS; document.head.appendChild(st); }
   }
+  const USFM = Object.fromEntries(("Genesis GEN|Exodus EXO|Leviticus LEV|Numbers NUM|Deuteronomy DEU|Joshua JOS|Judges JDG|Ruth RUT|1 Samuel 1SA|2 Samuel 2SA|1 Kings 1KI|2 Kings 2KI|1 Chronicles 1CH|2 Chronicles 2CH|Ezra EZR|Nehemiah NEH|Esther EST|Job JOB|Psalms PSA|Proverbs PRO|Ecclesiastes ECC|Song of Solomon SNG|Isaiah ISA|Jeremiah JER|Lamentations LAM|Ezekiel EZK|Daniel DAN|Hosea HOS|Joel JOL|Amos AMO|Obadiah OBA|Jonah JON|Micah MIC|Nahum NAM|Habakkuk HAB|Zephaniah ZEP|Haggai HAG|Zechariah ZEC|Malachi MAL|"
+    + "Matthew MAT|Mark MRK|Luke LUK|John JHN|Acts ACT|Romans ROM|1 Corinthians 1CO|2 Corinthians 2CO|Galatians GAL|Ephesians EPH|Philippians PHP|Colossians COL|1 Thessalonians 1TH|2 Thessalonians 2TH|1 Timothy 1TI|2 Timothy 2TI|Titus TIT|Philemon PHM|Hebrews HEB|James JAS|1 Peter 1PE|2 Peter 2PE|1 John 1JN|2 John 2JN|3 John 3JN|Jude JUD|Revelation REV").split("|").map(x => { const i = x.lastIndexOf(" "); return [x.slice(0, i), x.slice(i + 1)]; }));
   const BOOKS66 = Object.fromEntries("Genesis Exodus Leviticus Numbers Deuteronomy Joshua Judges Ruth|1 Samuel|2 Samuel|1 Kings|2 Kings|1 Chronicles|2 Chronicles|Ezra Nehemiah Esther Job Psalms Proverbs Ecclesiastes|Song of Solomon|Isaiah Jeremiah Lamentations Ezekiel Daniel Hosea Joel Amos Obadiah Jonah Micah Nahum Habakkuk Zephaniah Haggai Zechariah Malachi Matthew Mark Luke John Acts Romans|1 Corinthians|2 Corinthians|Galatians Ephesians Philippians Colossians|1 Thessalonians|2 Thessalonians|1 Timothy|2 Timothy|Titus Philemon Hebrews James|1 Peter|2 Peter|1 John|2 John|3 John|Jude Revelation"
     .split("|").flatMap(x => /^\d/.test(x) ? [x] : x.trim().split(" ")).filter(Boolean).map(b => [b, 1]));
   const CSS = `
@@ -709,6 +768,41 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-shbtns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.pv-shbtns .pv-btn{text-align:center;text-decoration:none;font-weight:650}.pv-shbtns .pv-primary{grid-column:1/-1}
 .pv-welcome{background:rgba(217,180,74,.14);border:1px solid rgba(217,180,74,.45);border-radius:12px;padding:10px 12px;margin:6px 0 10px;font-size:14.5px;line-height:1.45}
 .pv-empty{padding:20px 0}
+.pv-anim{position:absolute;inset:0;overflow:hidden}.pv-anim img{width:100%;height:100%;object-fit:cover;display:block;animation:pvKB 24s ease-in-out infinite alternate;transform-origin:var(--x,50%) var(--y,40%)}
+@keyframes pvKB{from{transform:scale(1)}to{transform:scale(1.07)}}
+.pv-anim .pv-fx,.pv-anim .pv-fx2{position:absolute;inset:0;pointer-events:none}
+.pv-a-light .pv-fx{background:radial-gradient(circle at var(--x) var(--y),rgba(255,236,170,.75),rgba(255,214,120,.25) calc(var(--s) * .6),transparent var(--s));mix-blend-mode:screen;animation:pvBreathe 5s ease-in-out infinite}
+.pv-a-light .pv-fx2{background:conic-gradient(from 180deg at var(--x) var(--y),transparent 0 20deg,rgba(255,240,190,.16) 24deg,transparent 30deg 60deg,rgba(255,240,190,.12) 66deg,transparent 72deg 110deg,rgba(255,240,190,.14) 116deg,transparent 122deg 160deg,rgba(255,240,190,.12) 166deg,transparent 172deg);mix-blend-mode:screen;animation:pvRays 9s ease-in-out infinite alternate}
+@keyframes pvBreathe{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes pvRays{from{opacity:.4;transform:rotate(-2deg)}to{opacity:1;transform:rotate(2deg)}}
+.pv-a-fire .pv-fx{background:radial-gradient(ellipse calc(var(--s) * .7) var(--s) at var(--x) var(--y),rgba(255,170,40,.75),rgba(255,90,0,.25) 55%,transparent 75%);mix-blend-mode:screen;animation:pvFlicker 1.6s infinite}
+@keyframes pvFlicker{0%{opacity:.55}12%{opacity:.95}20%{opacity:.6}35%{opacity:1}48%{opacity:.7}60%{opacity:.9}72%{opacity:.5}85%{opacity:1}100%{opacity:.55}}
+.pv-ember{position:absolute;left:var(--x);top:var(--y);width:3px;height:3px;border-radius:50%;background:#ffd27a;box-shadow:0 0 6px 2px rgba(255,150,40,.85);opacity:0;animation:pvEmber 2.6s ease-out infinite;animation-delay:var(--d)}
+@keyframes pvEmber{0%{opacity:0;transform:translate(0,0) scale(1)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx),-70px) scale(.4)}}
+.pv-a-mist .pv-fx,.pv-a-mist .pv-fx2{background:radial-gradient(ellipse 40% 22% at 25% 70%,rgba(255,255,255,.55),transparent 70%),radial-gradient(ellipse 35% 18% at 70% 62%,rgba(255,255,255,.45),transparent 70%),radial-gradient(ellipse 45% 20% at 50% 85%,rgba(255,255,255,.5),transparent 70%);filter:blur(6px);animation:pvMist 18s ease-in-out infinite alternate}
+.pv-a-mist .pv-fx2{opacity:.7;animation-duration:27s;animation-direction:alternate-reverse;transform:scaleX(-1)}
+@keyframes pvMist{from{transform:translateX(-12%)}to{transform:translateX(12%)}}
+.pv-a-rainbow .pv-fx{background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.32) 48%,rgba(255,255,255,.08) 54%,transparent 62%);background-size:260% 100%;mix-blend-mode:screen;animation:pvSweep 6.5s ease-in-out infinite}
+.pv-a-rainbow img{animation:pvKB 24s ease-in-out infinite alternate,pvSat 4s ease-in-out infinite}
+@keyframes pvSweep{from{background-position:120% 0}to{background-position:-20% 0}}
+@keyframes pvSat{0%,100%{filter:saturate(1)}50%{filter:saturate(1.45) brightness(1.06)}}
+.pv-a-stars .pv-fx{animation:pvTwinkle 2.8s ease-in-out infinite}.pv-a-stars .pv-fx2{animation:pvTwinkle 3.9s ease-in-out infinite reverse}
+@keyframes pvTwinkle{0%,100%{opacity:.2}50%{opacity:1}}
+.pv-a-storm .pv-fx{background:radial-gradient(ellipse 60% 45% at 70% 15%,rgba(220,230,255,.9),transparent 70%);mix-blend-mode:screen;opacity:0;animation:pvFlash 7s infinite}
+.pv-a-storm .pv-fx2{background:linear-gradient(transparent 62%,rgba(200,225,255,.18) 75%,transparent 90%);background-size:100% 200%;animation:pvWaves 5s ease-in-out infinite alternate}
+@keyframes pvFlash{0%,60%,64%,67%,100%{opacity:0}61%{opacity:.9}62%{opacity:.2}65%{opacity:1}}
+@keyframes pvWaves{from{background-position:0 0}to{background-position:0 18%}}
+@media (prefers-reduced-motion:reduce){.pv-anim img,.pv-anim .pv-fx,.pv-anim .pv-fx2,.pv-ember{animation:none!important}.pv-ember{display:none}}
+.pv-allshare{display:flex;justify-content:flex-end;margin:8px 0 0}
+.pv-shareall{font-weight:650}
+.pv-series{margin:0 0 14px}.pv-serh{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:6px 0 10px}
+.pv-serh b{display:block;font-size:16px;color:var(--accent)}.pv-serh small{color:var(--muted)}.pv-serqr{flex:none;font-weight:700}
+.pv-serline{margin:-4px 0 8px;color:var(--accent)}
+.pv-shico{font-size:40px;width:96px;text-align:center}
+.pv-qrbox{text-align:center;margin:6px 0 10px}.pv-qrbig{margin-top:6px}
+.pv-qrfull{position:fixed;inset:0;z-index:60;background:rgba(10,12,15,.94);display:flex;align-items:center;justify-content:center}
+.pv-qrf-in{display:flex;flex-direction:column;align-items:center;gap:12px;color:#fff;text-align:center;padding:16px}.pv-qrf-in b{font-size:clamp(18px,3vw,30px)}
+.pv-qrf-code canvas,.pv-qrf-code img{background:#fff;padding:14px;border-radius:14px;max-width:92vw}
 .pv-grp{font-size:16px;margin:14px 0 10px;color:var(--accent)}
 .pv-add{align-items:center;justify-content:center;text-align:center;gap:6px;padding:22px 14px;border:2px dashed var(--line);background:transparent;box-shadow:none;cursor:pointer;color:inherit;font:inherit;min-height:200px}
 .pv-add:hover{border-color:var(--accent)}.pv-add b{font-size:16px}.pv-add span:last-child{color:var(--muted);font-size:13.5px;line-height:1.4}

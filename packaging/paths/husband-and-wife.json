@@ -2,6 +2,7 @@
   "id": "husband-and-wife",
   "title": "Husband and wife",
   "category": "Marriage",
+  "anim": {"kind": "light", "x": 72, "y": 4, "s": 30},
   "opening_question": "What does the Bible say about husband and wife: how it began, how they are to love each other, and what holds them together?",
   "required_refs": ["Genesis 2:18-25", "Proverbs 31:10-31", "Song of Solomon 2:1-16", "Ephesians 5:21-33", "Colossians 3:18-19", "1 Corinthians 7:1-16", "1 Corinthians 13:4-8", "1 Peter 3:1-7", "Hebrews 13:4", "Ecclesiastes 4:9-12", "Mark 10:6-9"],
   "words": ["H802", "G435", "G1135", "G25"],

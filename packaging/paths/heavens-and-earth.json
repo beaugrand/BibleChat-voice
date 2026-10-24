@@ -2,6 +2,7 @@
   "id": "heavens-and-earth",
   "title": "The heavens and the earth in the text's own words",
   "category": "Creation",
+  "anim": {"kind": "stars"},
   "opening_question": "What does the text itself say about the shape of the earth, the firmament and what holds the earth?",
   "required_refs": ["Genesis 1:6-8", "Genesis 1:14-17", "Job 9:6", "Job 26:7", "Job 26:10", "Job 37:18", "Job 38:4-14", "Psalms 19:1-6", "Psalms 93:1",
                     "Psalms 104:2-5", "Proverbs 8:27", "Isaiah 11:12", "Isaiah 22:18", "Isaiah 40:22", "1 Chronicles 16:30", "Revelation 7:1", "1 Enoch 72-82"],

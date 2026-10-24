@@ -2,6 +2,9 @@
  "id": "daniel-2-statue-and-stone",
  "title": "Daniel 2: the statue and the stone",
  "category": "Bible Study Groups",
+ "anim": {
+  "kind": "stars"
+ },
  "group": "Friday night Bible study",
  "read_along": {
   "label": "TS2009",
@@ -556,7 +559,7 @@
  },
  "built_from": {
   "file": "packaging/paths/daniel-2-statue-and-stone.json",
-  "sha": "ae5e8df993a72ab6",
+  "sha": "68973b092077c87f",
   "checked_in": [
    "KJV",
    "ETH",

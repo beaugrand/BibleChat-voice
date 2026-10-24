@@ -2,6 +2,7 @@
   "id": "word-made-flesh",
   "title": "The Word made flesh, the way, the truth, the light",
   "category": "Name & Word",
+  "anim": {"kind": "fire", "x": 32, "y": 50, "s": 9},
   "opening_question": "Who is the Word, and what does the text say about keeping His commandments?",
   "required_refs": ["John 1:1-14", "John 14:6", "John 14:15", "John 8:12", "Matthew 5:17-19", "1 John 2:3-6", "1 John 5:3", "Revelation 14:12", "Revelation 22:14"],
   "words": ["G3056", "G4561", "G1785"],

@@ -20,6 +20,9 @@
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/DAN.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "stars"
   }
  },
  {
@@ -40,7 +43,13 @@
   ],
   "show": 8,
   "verses": 184,
-  "minutes": 75
+  "minutes": 75,
+  "anim": {
+   "kind": "light",
+   "x": 62,
+   "y": 18,
+   "s": 30
+  }
  },
  {
   "id": "freedom-from-bondage",
@@ -60,7 +69,13 @@
   ],
   "show": 8,
   "verses": 26,
-  "minutes": 35
+  "minutes": 35,
+  "anim": {
+   "kind": "light",
+   "x": 70,
+   "y": 8,
+   "s": 32
+  }
  },
  {
   "id": "heavens-and-earth",
@@ -79,7 +94,10 @@
   ],
   "show": 8,
   "verses": 194,
-  "minutes": 75
+  "minutes": 75,
+  "anim": {
+   "kind": "stars"
+  }
  },
  {
   "id": "husband-and-wife",
@@ -103,7 +121,13 @@
   ],
   "show": 8,
   "verses": 98,
-  "minutes": 65
+  "minutes": 65,
+  "anim": {
+   "kind": "light",
+   "x": 72,
+   "y": 4,
+   "s": 30
+  }
  },
  {
   "id": "life-in-the-womb",
@@ -122,7 +146,13 @@
   ],
   "show": 8,
   "verses": 16,
-  "minutes": 30
+  "minutes": 30,
+  "anim": {
+   "kind": "light",
+   "x": 95,
+   "y": 30,
+   "s": 40
+  }
  },
  {
   "id": "light-before-sun",
@@ -142,7 +172,44 @@
   ],
   "show": 8,
   "verses": 40,
-  "minutes": 40
+  "minutes": 40,
+  "anim": {
+   "kind": "light",
+   "x": 60,
+   "y": 22,
+   "s": 40
+  }
+ },
+ {
+  "id": "mirror-1-four-beasts",
+  "title": "Session 1: The four beasts",
+  "category": "Prophecy",
+  "image": "img/mirror-1-four-beasts.jpg",
+  "opening_question": "Daniel saw four beasts come up out of the great sea; John saw one beast rise up out of the sea. What do the two visions share, and what does the text itself say the beasts are?",
+  "steps": 5,
+  "step_questions": [
+   "What did Daniel see the four winds do, and where did the four great beasts come up from?",
+   "Describe each of the four beasts. What did the fourth beast have that the others did not?",
+   "What does the one who stood by tell Daniel the beasts are, and what are the ten horns?",
+   "Where does John's beast rise from, what animals is it like, and how many heads and horns does it have? Now count the heads of Daniel's four beasts.",
+   "What does Revelation say the ten horns are, and what are the waters?"
+  ],
+  "show": 8,
+  "verses": 17,
+  "minutes": 25,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "storm"
+  },
+  "series": {
+   "id": "mirror-prophecies",
+   "title": "Revelation & Daniel: the mirror prophecies",
+   "session": 1,
+   "of": 7
+  }
  },
  {
   "id": "mist-not-rain",
@@ -161,7 +228,10 @@
   ],
   "show": 8,
   "verses": 20,
-  "minutes": 30
+  "minutes": 30,
+  "anim": {
+   "kind": "mist"
+  }
  },
  {
   "id": "my-body-a-temple",
@@ -180,7 +250,13 @@
   ],
   "show": 8,
   "verses": 11,
-  "minutes": 30
+  "minutes": 30,
+  "anim": {
+   "kind": "light",
+   "x": 52,
+   "y": 4,
+   "s": 40
+  }
  },
  {
   "id": "the-name",
@@ -200,7 +276,13 @@
   ],
   "show": 8,
   "verses": 28,
-  "minutes": 35
+  "minutes": 35,
+  "anim": {
+   "kind": "fire",
+   "x": 25,
+   "y": 34,
+   "s": 26
+  }
  },
  {
   "id": "the-rainbow",
@@ -221,7 +303,10 @@
   ],
   "show": 8,
   "verses": 30,
-  "minutes": 40
+  "minutes": 40,
+  "anim": {
+   "kind": "rainbow"
+  }
  },
  {
   "id": "word-made-flesh",
@@ -240,6 +325,12 @@
   ],
   "show": 8,
   "verses": 33,
-  "minutes": 35
+  "minutes": 35,
+  "anim": {
+   "kind": "fire",
+   "x": 32,
+   "y": 50,
+   "s": 9
+  }
  }
 ]

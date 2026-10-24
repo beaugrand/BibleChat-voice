@@ -2,6 +2,7 @@
   "id": "mist-not-rain",
   "title": "Mist, not rain",
   "category": "Creation",
+  "anim": {"kind": "mist"},
   "opening_question": "What watered the ground before the flood, and what does the text say about rain?",
   "required_refs": ["Genesis 1:6-8", "Genesis 2:4-6", "Genesis 7:11-12", "Genesis 8:2", "Genesis 9:12-17", "Psalms 148:4", "Hebrews 11:7"],
   "words": ["H108", "H7549"],

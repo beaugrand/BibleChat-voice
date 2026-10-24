@@ -2,6 +2,7 @@
   "id": "my-body-a-temple",
   "title": "My body is a temple",
   "category": "Body & Life",
+  "anim": {"kind": "light", "x": 52, "y": 4, "s": 40},
   "opening_question": "My body is a temple: what does the text say about honouring it, and about physicians and remedies? The Bible does not name vaccines; this path shows what it does say, and you decide.",
   "required_refs": ["1 Corinthians 6:19-20", "1 Corinthians 3:16-17", "Romans 12:1", "Luke 10:33-34", "Matthew 9:12", "Colossians 4:14", "1 Timothy 5:23", "Proverbs 11:14"],
   "words": ["G3485", "G4983", "G2395"],

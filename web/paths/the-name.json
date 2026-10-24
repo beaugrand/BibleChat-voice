@@ -2,6 +2,12 @@
  "id": "the-name",
  "title": "The Name",
  "category": "Name & Word",
+ "anim": {
+  "kind": "fire",
+  "x": 25,
+  "y": 34,
+  "s": 26
+ },
  "opening_question": "What is God's name, and what is the name by which we must be saved?",
  "required_refs": [
   "Exodus 3:13-15",
@@ -618,7 +624,7 @@
  },
  "built_from": {
   "file": "packaging/paths/the-name.json",
-  "sha": "e65801325bb2f7cb",
+  "sha": "9dd66172dc7832af",
   "checked_in": [
    "KJV",
    "ETH",
