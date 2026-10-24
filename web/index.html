@@ -149,6 +149,25 @@ body.playing{padding-bottom:calc(var(--tabh) + 62px + env(safe-area-inset-bottom
 .bmrow{display:flex;gap:8px;align-items:flex-start}
 .bmrow .res{flex:1}
 .bmrow button{border:0;background:none;color:var(--muted);font-size:18px;padding:10px 4px}
+/* 🖍 highlights: the reader's own colours on verses (Read and Study Paths) */
+.hl-y{background-color:rgba(255,206,46,.42)}.hl-g{background-color:rgba(98,196,90,.36)}.hl-b{background-color:rgba(84,160,255,.32)}
+.hl-p{background-color:rgba(255,120,190,.32)}.hl-o{background-color:rgba(255,150,50,.40)}
+#rtext .v[class*="hl-"],.pv-v[class*="hl-"]{border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hlrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 12px}
+.hlrow .lab{font-size:14px;font-weight:600;margin-right:2px}
+.hldot{width:36px;height:36px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0;font-size:15px;line-height:1}
+.hldot.on{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.hldot.hlx{background:var(--card);color:var(--muted)}
+.hlsw{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;margin-right:6px;border:1px solid var(--line)}
+.hlgrp{font:600 14px system-ui,sans-serif;margin:14px 4px 4px;display:flex;align-items:center}
+#penBar{position:fixed;left:0;right:0;bottom:calc(var(--tabh) + env(safe-area-inset-bottom));z-index:31;background:var(--panel);border-top:2px solid var(--accent);box-shadow:0 -4px 14px rgba(0,0,0,.12)}
+#penBar .wrap{display:flex;gap:7px;align-items:center;justify-content:center;flex-wrap:wrap;padding:8px 10px}
+#penBar .hldot{width:30px;height:30px}
+#penBar small{flex-basis:100%;text-align:center;color:var(--muted);font-size:13px}
+body.playing #penBar{bottom:calc(var(--tabh) + 62px + env(safe-area-inset-bottom))}
+body.pen{padding-bottom:calc(var(--tabh) + 92px + env(safe-area-inset-bottom))}
+.gcopt{display:flex;gap:8px;align-items:flex-start;margin-top:10px;font-size:14px}
+.gcopt input{margin-top:3px;width:18px;height:18px;flex:none}
 #rtext .v.bm > sup:first-child::after{content:"🔖";font-size:.85em;margin-left:1px}
 #rtext mark.sc{background:rgba(255,214,90,.55);color:inherit;border-radius:3px;padding:0 1px}
 [data-theme="dark"] #rtext mark.sc{background:rgba(214,170,40,.38)}
@@ -341,6 +360,7 @@ body.has-church #top .brand{display:none}
         <button class="btn" id="small" aria-label="Smaller text">A−</button>
         <button class="btn" id="big" aria-label="Larger text">A+</button>
         <button class="btn" id="bmOpen" title="Your bookmarks">🔖</button>
+        <button class="btn" id="hlOpen" title="Your highlights">🖍</button>
         <button class="btn pathsBtn" title="Study Paths: guided studies through the text, with questions">📜 Paths</button>
         <button class="btn smOpen" title="Sermon list: Sunday's verses with a QR code">📋<span class="smCount"></span></button>
       </div>
@@ -380,6 +400,8 @@ body.has-church #top .brand{display:none}
       <p><b>About BibleChat.</b> Read and search free Bibles right here, with no sign-up and nothing to install. Tap your browser's <b>Share → Add to Home Screen</b> to keep it like an app.</p>
       <p>On a computer, the full <a href="https://github.com/beaugrand/biblechat-voice/releases/latest" target="_blank" rel="noopener">BibleChat app</a> adds AI explanations, voice questions and your own Bible files.</p>
       <p>BibleChat is made by <b>Hans W. Beaugrand</b>. Free and open source under the <a href="https://github.com/beaugrand/BibleChat-voice/blob/main/LICENSE" target="_blank" rel="noopener">Apache License 2.0</a>; anyone who shares or builds on it keeps this credit (<a href="https://github.com/beaugrand/BibleChat-voice/blob/main/NOTICE" target="_blank" rel="noopener">NOTICE</a>). Each Bible keeps its own license, shown in the Bibles tab.</p>
+      <p><b>Visit counter.</b> BibleChat counts how often it is opened and which parts are used (Read, Search, Study Paths…), so Hans can see how many people it reaches. It uses <a href="https://www.goatcounter.com" target="_blank" rel="noopener">GoatCounter</a>: free, open source, no cookies, no account, and nothing about you: no name, no IP address kept, no verses, no searches, no notes. Your Bible, highlights and notes never leave this phone.</p>
+      <label class="gcopt"><input type="checkbox" id="gcOn" checked> <span>Count my visits (anonymous). Untick to leave yours out.</span></label>
     </div>
     <div class="churchcta" id="lvChurch">
       <h3>⛪ For churches</h3>
@@ -403,6 +425,7 @@ body.has-church #top .brand{display:none}
   <header><h2>This verse</h2><button class="iconbtn" id="shareClose" aria-label="Close">✕</button></header>
   <div class="body">
     <div class="quote" id="shareQuote"></div>
+    <div class="hlrow" id="hlRow"><span class="lab">🖍 Highlight</span><button class="hldot hl-y" data-hl="y" aria-label="Yellow" title="Yellow"></button><button class="hldot hl-g" data-hl="g" aria-label="Green" title="Green"></button><button class="hldot hl-b" data-hl="b" aria-label="Blue" title="Blue"></button><button class="hldot hl-p" data-hl="p" aria-label="Pink" title="Pink"></button><button class="hldot hl-o" data-hl="o" aria-label="Orange" title="Orange"></button><button class="hldot hlx" data-hl="" aria-label="Remove the highlight" title="Remove the highlight" hidden>✕</button></div>
     <button class="btn primary" id="shareImg" style="width:100%;margin:0 0 8px">🖼 Share as a picture</button>
     <button class="btn" id="shareStudy" style="width:100%;margin:0 0 8px">📖 Study it: Hebrew/Greek, cross-references, topics, Matthew Henry</button>
     <div class="alt" style="margin:0 0 12px"><button class="btn" id="shareBm">🔖 Bookmark</button><button class="btn" id="shareAI">✨ Ask AI</button><button class="btn" id="shareSm">📋 Add to sermon</button><button class="btn" id="shareSay" hidden>🔊 Listen from here</button></div>
@@ -418,6 +441,16 @@ body.has-church #top .brand{display:none}
 <div class="sheet" id="bmSheet" hidden><div class="card">
   <header><h2>🔖 Bookmarks</h2><button class="iconbtn" id="bmClose" aria-label="Close">✕</button></header>
   <div class="body" id="bmBody"></div>
+</div></div>
+
+<div class="sheet" id="hlSheet" hidden><div class="card">
+  <header><h2>🖍 My Highlights</h2><button class="iconbtn" id="hlClose" aria-label="Close">✕</button></header>
+  <div class="body" id="hlBody"></div>
+</div></div>
+
+<div id="penBar" hidden role="region" aria-label="Highlighter"><div class="wrap">
+  <b>🖍</b><button class="hldot pen hl-y" data-hl="y" aria-label="Yellow" title="Yellow"></button><button class="hldot pen hl-g" data-hl="g" aria-label="Green" title="Green"></button><button class="hldot pen hl-b" data-hl="b" aria-label="Blue" title="Blue"></button><button class="hldot pen hl-p" data-hl="p" aria-label="Pink" title="Pink"></button><button class="hldot pen hl-o" data-hl="o" aria-label="Orange" title="Orange"></button><button class="hldot pen hlx" data-hl="" aria-label="Eraser: tap a verse to remove its colour" title="Eraser">✕</button><button class="btn primary" id="penDone">✓ Done</button>
+  <small id="penHint">Tap more verses to mark them. Tap a marked verse again to remove it.</small>
 </div></div>
 
 <div class="sheet" id="aiSheet" hidden><div class="card">
@@ -554,6 +587,23 @@ const store = {
   set(k, v){ try{ localStorage.setItem("bcw." + k, JSON.stringify(v)); }catch(e){} }
 };
 function toast(msg){ const t = document.createElement("div"); t.className = "toast"; t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 2200); }
+/* ---------- visit counter: GoatCounter (free, open source, no cookies, nothing about the person) ----------
+   Counts that BibleChat was opened and which parts are used, once per visit each. Never a verse, a search or a note.
+   Hans reads the numbers at https://biblechat.goatcounter.com. Love → About → "Count my visits" turns it off
+   (GoatCounter's own switch: localStorage "skipgc"). */
+var GC_URL = "https://biblechat.goatcounter.com/count", gcSeen = {}, gcWait = [];
+function gcOff(){ try{ return localStorage.getItem("skipgc") === "t"; }catch(e){ return false; } }
+function gcSend(v){ try{ if(window.goatcounter && goatcounter.count) goatcounter.count(v); else gcWait.push(v); }catch(e){} }
+function gcEvent(name){ if(gcSeen[name] || gcOff()) return; gcSeen[name] = 1; gcSend({path: name, title: name, event: true}); }
+function gcStart(){
+  if(gcOff() || /^(localhost|127\.)/.test(location.hostname) || location.protocol === "file:") return;
+  const sc = document.createElement("script"); sc.async = true; sc.src = "https://gc.zgo.at/count.js";
+  sc.dataset.goatcounter = GC_URL; sc.dataset.goatcounterSettings = JSON.stringify({no_onload: true});
+  sc.onload = () => { const home = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+    goatcounter.count({path: home ? "/home-screen-app" : "/", title: home ? "BibleChat Web (from the home screen)" : "BibleChat Web"});
+    gcWait.splice(0).forEach(v => goatcounter.count(v)); };
+  document.head.appendChild(sc);
+}
 
 /* ---------- state ---------- */
 let catalog = [], bible = null, flat = null, idx = null;
@@ -570,6 +620,8 @@ $("#themeBtn").onclick = () => { const dark = $("#themeBtn").textContent === "�
 let tab = "read";
 function show(t, noFocus){
   tab = t;
+  gcEvent(t);
+  if(t !== "read" && typeof penStop === "function") penStop();
   for(const n of ["home", "read", "search", "bibles", "love"]) $("#v-" + n).hidden = n !== t;
   document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === t));
   if(t === "bibles") renderBibles();
@@ -666,6 +718,7 @@ function render(hitVerse){
   t.innerHTML = vs.map(([n, x]) => `<span class="v" id="v${n}"><sup>${n}</sup>${esc(x)} </span>`).join("");
   enhanceChapter(place.bible, place.book, place.ch, vs);
   bmMark();
+  hlMark();
   const nb = neighbours();
   $("#prev").disabled = $("#prev2").disabled = !nb.prev; $("#next").disabled = $("#next2").disabled = !nb.next;
   document.title = bName(place.book) + " " + place.ch + " · BibleChat";
@@ -855,6 +908,7 @@ function sayFrom(i, tok){
   speechSynthesis.speak(u);
 }
 function sayStart(i){
+  gcEvent("listen");
   loadVoices();
   const lang = bibleLang();
   if(voices.length && !lang.startsWith("en") && !pickVoice(lang)){ voiceHelp(); return; }   // don't read German with an English voice
@@ -1090,10 +1144,12 @@ function openShare(v){
   const el = document.getElementById("v" + v); if(el) el.classList.add("sel");
   $("#shareQuote").innerHTML = esc(verseText(v)) +  `<b>${esc(bName(place.book))} ${place.ch}:${v} · ${esc(bibleAbbr())}</b>`;
   $("#shareBm").textContent = bmHas(v) ? "🔖 Bookmarked ✓" : "🔖 Bookmark";
+  hlDots();
   $("#shareTo").value = store.get("lastTo", ""); $("#shareSheet").hidden = false;
 }
 function closeShare(){ $("#shareSheet").hidden = true; document.querySelectorAll("#rtext .v.sel").forEach(n => n.classList.remove("sel")); }
 $("#rtext").addEventListener("click", e => {
+  const pv = pen != null && e.target.closest(".v"); if(pv){ penTap(+pv.id.slice(1)); return; }   // 🖍 the highlighter is on
   const sc = e.target.closest(".sc, .scm"); if(sc) return showScofieldNote(sc.dataset.v, +sc.dataset.k);
   const ed = e.target.closest(".ed"); if(ed) return showEastonEntry(ed.dataset.term);
   const el = e.target.closest(".v"); if(!el || saying) return; openShare(+el.id.slice(1));
@@ -1407,6 +1463,7 @@ BCPaths.mount({
   qr: (t, px) => qrCanvas(t, px),
   shareUrl: h => PHONE_URL + h,
   openVerse: (book, ch, v) => openAnywhere(book, ch, v, true),
+  highlight: (b, c, v) => hlGet(b, c, v), track: name => gcEvent(name),
   get: (k, d) => store.get(k, d), set: (k, v) => store.set(k, v), toast: m => toast(tr(m)),
   canGet: false, getBibles: () => show("bibles"),
   onClose: () => document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab)),
@@ -1506,6 +1563,90 @@ $("#bmSheet").addEventListener("click", async e => {
 });
 $("#shareBm").onclick = () => { const on = bmToggle(shareV); $("#shareBm").textContent = on ? "🔖 Bookmarked ✓" : "🔖 Bookmark"; toast(on ? "Bookmarked" : "Bookmark removed"); };
 $("#shareImg").onclick = () => { const v = shareV; closeShare(); viOpen(place.book, place.ch, v, v); };
+
+/* ---------- 🖍 highlights (kept on this phone) ----------
+   One colour per verse, kept by book, chapter and verse, so the verse keeps its colour in every Bible and in the
+   Study Paths. Tap a verse → pick a colour; the highlighter then stays on, so more verses are marked with one tap
+   each, until ✓ Done. 🖍 in Read lists them all, by colour. */
+var HL_NAMES = {y: "Yellow", g: "Green", b: "Blue", p: "Pink", o: "Orange"}, pen = null;
+function hlAll(){ const h = store.get("highlights", {}); return h && typeof h === "object" && !Array.isArray(h) ? h : {}; }
+function hlKey(b, c, v){ return b + "|" + c + "|" + v; }
+function hlGet(b, c, v){ const h = hlAll()[hlKey(b, c, v)]; return h && HL_NAMES[h.col] ? h.col : null; }
+function hlSet(v, col){
+  const all = hlAll(), k = hlKey(place.book, place.ch, v);
+  delete all[k];
+  if(col) all[k] = {col, t: verseText(v), a: bibleAbbr(), at: Date.now()};
+  store.set("highlights", all); hlMark();
+  if(col) gcEvent("highlight");
+}
+function hlMark(){
+  const all = hlAll();
+  document.querySelectorAll("#rtext .v").forEach(el => { const h = all[hlKey(place.book, place.ch, +el.id.slice(1))];
+    for(const c in HL_NAMES) el.classList.toggle("hl-" + c, !!h && h.col === c); });
+}
+function hlDots(){
+  const cur = shareV ? hlGet(place.book, place.ch, shareV) : null;
+  document.querySelectorAll("#hlRow .hldot").forEach(d => { d.classList.toggle("on", !!d.dataset.hl && d.dataset.hl === cur); if(!d.dataset.hl) d.hidden = !cur; });
+}
+$("#hlRow").addEventListener("click", e => {
+  const d = e.target.closest(".hldot"); if(!d || !shareV) return;
+  const col = d.dataset.hl || null, v = shareV;
+  if(!col || hlGet(place.book, place.ch, v) === col){ hlSet(v, null); hlDots(); toast(tr("Highlight removed")); return; }
+  hlSet(v, col); closeShare(); penStart(col);
+});
+/* the highlighter: while it is on, a tap on a verse marks it (or takes the colour off again) */
+function penStart(col){
+  pen = col; $("#penBar").hidden = false; document.body.classList.add("pen"); penDots();
+  i18nEl($("#penBar"));
+}
+function penStop(){ if(pen == null) return; pen = null; $("#penBar").hidden = true; document.body.classList.remove("pen"); }
+function penDots(){ document.querySelectorAll("#penBar .hldot").forEach(d => d.classList.toggle("on", d.dataset.hl === pen)); }
+function penTap(v){
+  const cur = hlGet(place.book, place.ch, v);
+  hlSet(v, !pen || cur === pen ? null : pen);
+}
+$("#penBar").addEventListener("click", e => {
+  if(e.target.id === "penDone"){ penStop(); return; }
+  const d = e.target.closest(".hldot"); if(d){ pen = d.dataset.hl; penDots(); }
+});
+/* 🖍 My Highlights: every marked verse, grouped by colour, in Bible order */
+function hlShow(){
+  const all = hlAll(), order = b => { const i = bible ? bible.list.indexOf(b) : -1; return i < 0 ? 999 : i; };
+  const rows = Object.keys(all).map(k => { const [b, c, v] = k.split("|"); return {k, b, c: +c, v: +v, h: all[k]}; })
+    .filter(r => HL_NAMES[r.h.col]).sort((x, y) => order(x.b) - order(y.b) || x.c - y.c || x.v - y.v);
+  let html = "";
+  for(const col in HL_NAMES){
+    const g = rows.filter(r => r.h.col === col); if(!g.length) continue;
+    html += `<div class="hlgrp"><span class="hlsw hl-${col}"></span>${esc(tr(HL_NAMES[col]))} · ${g.length}</div>`
+      + g.map(r => `<div class="bmrow"><div class="res"><a href="#" data-k="${esc(r.k)}">${esc(bName(r.b))} ${r.c}:${r.v}</a><span class="hl-${col}">${esc(r.h.t || "")}</span> <span class="small">${esc(r.h.a || "")}</span></div><button data-hdel="${esc(r.k)}" aria-label="Remove">✕</button></div>`).join("");
+  }
+  $("#hlBody").innerHTML = rows.length
+    ? html + `<div class="alt"><button class="btn" id="hlShare">↗ Send my highlights</button></div><p class="small" style="margin:10px 4px">Your highlights stay on this phone. A highlight shows in every Bible and in the Study Paths.</p>`
+    : `<p class="small" style="margin:10px 4px">No highlights yet. Tap a verse in Read and pick a colour. The highlighter stays on, so you can tap more verses, then ✓ Done.</p>`;
+  $("#hlSheet").hidden = false;
+}
+$("#hlOpen").onclick = hlShow;
+$("#hlClose").onclick = () => { $("#hlSheet").hidden = true; };
+$("#hlSheet").addEventListener("click", async e => {
+  if(e.target.id === "hlSheet"){ $("#hlSheet").hidden = true; return; }
+  const d = e.target.closest("[data-hdel]");
+  if(d){ const all = hlAll(); delete all[d.dataset.hdel]; store.set("highlights", all); hlMark(); return hlShow(); }
+  if(e.target.id === "hlShare"){
+    const all = hlAll(), text = Object.keys(all).map(k => { const [b, c, v] = k.split("|"); return `${bName(b)} ${c}:${v} (${tr(HL_NAMES[all[k].col] || "")}): ${all[k].t || ""}`; }).join("\n\n");
+    const msg = tr("My highlights in BibleChat") + "\n\n" + text + "\n\n" + PHONE_URL;
+    if(navigator.share){ try{ await navigator.share({text: msg}); return; }catch(err){ if(err && err.name === "AbortError") return; } }
+    (navigator.clipboard ? navigator.clipboard.writeText(msg) : Promise.reject()).then(() => toast(tr("Copied")), () => toast(tr("Couldn't copy it.")));
+    return;
+  }
+  const a = e.target.closest("a[data-k]"); if(!a) return; e.preventDefault();
+  const [b, c, v] = a.dataset.k.split("|"); $("#hlSheet").hidden = true;
+  go(b, +c, +v);
+});
+
+/* Love → About: the visit counter can be turned off on this phone */
+$("#gcOn").checked = !gcOff();
+$("#gcOn").onchange = () => { try{ if($("#gcOn").checked) localStorage.removeItem("skipgc"); else localStorage.setItem("skipgc", "t"); }catch(e){}
+  toast(tr($("#gcOn").checked ? "Your visits are counted (anonymous). Thank you!" : "Your visits are no longer counted.")); };
 
 /* ---------- verse of the day: on Home, above the Bible cover, in the Bible you're reading ---------- */
 function votdShow(){
@@ -2092,6 +2233,7 @@ $("#installSheet").addEventListener("click", e => {
 matchMedia("(display-mode: standalone)").addEventListener && matchMedia("(display-mode: standalone)").addEventListener("change", installRefresh);
 installRefresh();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+gcStart();   // the visit counter, after the page has taken any church or sermon details out of the address
 </script>
 </body>
 </html>

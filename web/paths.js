@@ -33,6 +33,10 @@ const BCPaths = (() => {
     return {book, c1: +c1, v1: +v1, c2: +x, v2: +y};
   }
   const label = r => String(r).replace(/-/g, "–");
+  /* 🖍 a verse the reader highlighted in Read keeps its colour here (the page hands in A.highlight) */
+  /* the page's visit counter (A.track), if it has one: only the name of the part used, once per visit */
+  const track = name => { try{ if(A && A.track) A.track(name); }catch(e){} };
+  const hlClass = (b, c, v) => { const k = A.highlight && A.highlight(b, c, v); return k ? " hl-" + k : ""; };
   function inRef(p, c, v){ return p.v1 === null ? c >= p.c1 && c <= p.c2 : (c > p.c1 || (c === p.c1 && v >= p.v1)) && (c < p.c2 || (c === p.c2 && v <= p.v2)); }
   /* the verses of a reference in one Bible: [[book, ch, v, text], ...]; null if that Bible lacks the book */
   async function versesOf(key, ref){
@@ -198,6 +202,7 @@ const BCPaths = (() => {
     return segs;
   }
   async function lsStart(kind){
+    track("listen-study-path");
     if(A.onListen) A.onListen();   // the Bible reader's own Listen stops
     speakCancel(); LS.tok++;
     Object.assign(LS, {on: true, paused: false, kind, i: 0, segs: []});
@@ -356,7 +361,7 @@ const BCPaths = (() => {
       show: Math.min(10, Math.max(quiz.length, 1)), mine: true, updated: new Date().toISOString().slice(0, 10),
       sources: ["Made by " + ((d.author || "").trim() || "a BibleChat reader"), "KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references"]};
     if(d.author) set("author", d.author.trim());
-    const M = mine().filter(x => x.id !== p.id); M.unshift(p); set("mine", M.slice(0, 50));
+    const M = mine().filter(x => x.id !== p.id); M.unshift(p); set("mine", M.slice(0, 50)); track("study-path-made");
     S.draft = null; S.section = "community";
     if(vis === "community"){ await sendToCommunity(p); }
     else if(vis === "link"){ share(p, "list", "path"); A.toast(T("Saved. Send the link or QR code.")); }
@@ -449,6 +454,7 @@ const BCPaths = (() => {
         <small><span>Source:</span> <span class="pvx">${esc(it.source)}</span></small></div>`; }).join(""), true);
   }
   async function showPath(id, step){
+    track("study-path-opened");
     let p;
     try{ p = await loadPath(id); }catch(e){ frame("📜 Study Paths", `<p class="pv-err">That study path isn't available. Check the internet connection, or pick another path.</p>`, true); return; }
     S.path = p; S.view = "step";
@@ -484,7 +490,7 @@ const BCPaths = (() => {
       const {key, vs} = await readVerses(r); if(S.step !== my || !root.contains(box)) return;
       const p = parseRef(r);
       html.push(`<div class="pv-ref" data-ref="${esc(r)}" data-key="${esc(key || "")}"><div class="pv-refh">${refLink(p.book, p.c1, p.v1, label(r))}${key && key !== "reader" ? ` <small class="pv-from">${esc(key === "ETH" ? "Ethiopian Canon" : key)}: not in your Bible</small>` : ""} ${readAlong(S.path, p)}${p.book in BOOKS66 ? nivLink(r) : ""}</div>`
-        + (vs.length ? `<div class="pvx pv-text">${vs.map(([b, c, v, t]) => `<span class="pv-v"><sup>${p.c1 !== p.c2 || p.v1 === null ? c + ":" : ""}${v}</sup>${esc(t)} </span>`).join("")}</div>` : `<p class="pv-err">This passage isn't in the Bibles available here.</p>`) + `</div>`);
+        + (vs.length ? `<div class="pvx pv-text">${vs.map(([b, c, v, t]) => `<span class="pv-v${hlClass(b, c, v)}"><sup>${p.c1 !== p.c2 || p.v1 === null ? c + ":" : ""}${v}</sup>${esc(t)} </span>`).join("")}</div>` : `<p class="pv-err">This passage isn't in the Bibles available here.</p>`) + `</div>`);
     }
     box.innerHTML = html.join("");
   }
@@ -866,7 +872,7 @@ const BCPaths = (() => {
     if(t.closest(".pv-lspause")){ lsPause(); return; }
     if(t.closest(".pv-lsskip")){ lsSkip(); return; }
     if(t.closest(".pv-lsstop")){ lsStop(); return; }
-    const sg = t.closest(".pv-segb"); if(sg){ S.section = sg.dataset.sec; showList(); return; }
+    const sg = t.closest(".pv-segb"); if(sg){ S.section = sg.dataset.sec; if(S.section === "community") track("community"); showList(); return; }
     if(t.closest(".pv-new")){ editPath(null); return; }
     const ed = t.closest(".pv-edit"); if(ed){ const p = mine().find(x => x.id === ed.dataset.id); if(p){ const c = JSON.parse(JSON.stringify(p)); if(c.received){ c.id = "mine-" + Date.now().toString(36); delete c.received; delete c.sig; c.isNew = true; } editPath(c); } return; }
     if(t.closest(".pv-eddel")){ if(confirm(T("Delete this study path from this device?"))){ set("mine", mine().filter(x => x.id !== S.draft.id)); S.draft = null; showList(); } return; }
@@ -957,7 +963,7 @@ const BCPaths = (() => {
   }
 
   /* ---------- public ---------- */
-  async function open(id, step){ if(!root) return; if(id) await showPath(id, step); else await showList(); }
+  async function open(id, step){ if(!root) return; track("study-paths"); if(id) await showPath(id, step); else await showList(); }
   async function reopen(){
     const v = lastView; if(!v){ await showList(); return; }
     if(v.view === "quoted") await showQuoted(); else if(v.id && v.view === "step") await showPath(v.id, v.step); else await showList();
@@ -1183,7 +1189,7 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-st-text{background:#d9ecd9}.pv-st-lost{background:#efd9d4}.pv-st-disputed{background:#f3e7c4}
 :root[data-theme="dark"] .pv-tag,.pv-dark .pv-tag{color:#1f1e1b}
 .pv-dark .pnote{background:#191c21}`;
-  async function openCommunity(){ S.section = "community"; await open(); }
+  async function openCommunity(){ S.section = "community"; track("community"); await open(); }
   return {mount, open, close, reopen, openHash, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden,
     findPaths, openCommunity, preload: () => loadList(), normRef};
 })();

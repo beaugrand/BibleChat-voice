@@ -25,6 +25,18 @@ PORT = 8765
 IDLE_SECONDS = 180  # quit this long after the last browser tab is closed
 MAX_UPLOAD = 600 * 1024 * 1024
 SIGNATURE = "bible-chat"
+
+# 🖍 Highlights: one colour per verse, kept by book, chapter and verse, so a verse keeps its colour in every Bible
+HL_COLORS = ("y", "g", "b", "p", "o")   # yellow, green, blue, pink, orange
+HL_KEY = re.compile(r"[^|]{1,60}\|\d{1,3}\|\d{1,3}")
+HL_MAX = 10000
+
+
+def _highlights(st: dict) -> dict:
+    h = st.get("highlights")
+    return h if isinstance(h, dict) else {}
+
+
 TTS_URL = "http://127.0.0.1:8000"  # Kyutai Pocket TTS, if the person started it separately
 
 
@@ -312,6 +324,8 @@ def make_handler(app: App, port: int):
                     self._json({"error": str(e) or "That Bible isn't available."}, 404)
             elif path == "/api/bookmarks":
                 self._json({"items": storage.load_settings().get("bookmarks", [])})
+            elif path == "/api/highlights":   # 🖍 highlighted verses: {"Genesis|3|15": {"col": "y", "t": text, "a": Bible, "at": time}}
+                self._json({"items": _highlights(storage.load_settings())})
             elif path == "/api/easton/names":
                 self._json({"names": study.EASTON.names()})
             elif path == "/api/easton":
@@ -385,6 +399,21 @@ def make_handler(app: App, port: int):
                     st["bookmarks"] = items[:1000]
                     storage.save_settings(st)
                     self._json({"items": st["bookmarks"]})
+                elif path == "/api/highlights":
+                    req = json.loads(self._body() or b"{}")
+                    st = storage.load_settings()
+                    items = _highlights(st)
+                    for k in req.get("remove") or []:
+                        items.pop(str(k), None)
+                    for k, it in (req.get("set") or {}).items():
+                        if HL_KEY.fullmatch(str(k)) and isinstance(it, dict) and it.get("col") in HL_COLORS:
+                            items.pop(k, None)   # a new mark goes to the end, so the newest are kept when the list is full
+                            items[k] = {"col": it["col"], "t": str(it.get("t") or "")[:1500], "a": str(it.get("a") or "")[:80], "at": time.time()}
+                    while len(items) > HL_MAX:
+                        items.pop(next(iter(items)))
+                    st["highlights"] = items
+                    storage.save_settings(st)
+                    self._json({"items": items})
                 elif path == "/api/catalog/get":
                     req = json.loads(self._body() or b"{}")
                     file = req.get("file") or ""

@@ -236,6 +236,23 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 #studyBody .scof b{color:var(--accent)}
 #studyBody a.nref,#studyBody a.sv-go{color:var(--accent);cursor:pointer;text-decoration:underline dotted}
 #studyBody .hebtap{cursor:pointer}
+/* 🖍 highlights: the reader's own colours on verses (Read and Study Paths) */
+.hl-y{background-color:rgba(255,206,46,.42)}.hl-g{background-color:rgba(98,196,90,.36)}.hl-b{background-color:rgba(84,160,255,.32)}
+.hl-p{background-color:rgba(255,120,190,.32)}.hl-o{background-color:rgba(255,150,50,.40)}
+#rtext .v[class*="hl-"],.pv-v[class*="hl-"]{border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hlrow{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:0 0 8px}
+.hlrow .lab{font-size:14px;font-weight:600;margin-right:2px}
+.hldot{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0;font-size:14px;line-height:1;color:var(--muted)}
+.hldot:hover{border-color:var(--accent)}
+.hldot.on{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.hldot.hlx{background:var(--card)}
+.hlsw{display:inline-block;width:13px;height:13px;border-radius:50%;vertical-align:-2px;margin-right:6px;border:1px solid var(--line)}
+.hlgrp{font-weight:650;margin:14px 0 4px;display:flex;align-items:center}
+#penBar{position:sticky;bottom:0;z-index:7;display:flex;gap:7px;align-items:center;justify-content:center;flex-wrap:wrap;padding:9px 14px;background:var(--panel);border-top:2px solid var(--accent);box-shadow:0 -4px 14px rgba(0,0,0,.08)}
+#penBar[hidden]{display:none}
+#penBar small{color:var(--muted);font-size:13px}
+.gcopt{display:flex;gap:8px;align-items:flex-start;margin-top:8px;font-size:13.5px}
+.gcopt input{margin-top:2px;flex:none}
 #rtext .v.bm > sup:first-child::after{content:"🔖";font-size:.85em;margin-left:1px}
 #studyBody .bmdel{border:0;background:none;color:var(--muted);cursor:pointer;float:right}
 #studyBody a.bmgo{color:var(--accent);font-weight:650;cursor:pointer;margin-right:6px}
@@ -469,6 +486,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
       <button class="btn" id="rNext" title="Next chapter (→)">Next ›</button>
       <button class="btn" id="rSay" hidden>🔊 Listen</button>
       <button class="btn" id="rBm" title="Your bookmarks">🔖</button>
+      <button class="btn" id="rHl" title="Your highlights">🖍</button>
       <button class="btn pathsBtn" title="Study Paths: guided studies through the text, with questions">📜 Paths</button>
       <button class="btn smOpen" title="Sermon list: Sunday's verses on the screen with a QR code">📋 Sermon<span class="smCount"></span></button>
       <button class="btn" id="rAsk" title="Ask about this chapter in Chat">💬 Ask</button>
@@ -477,6 +495,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
       <button class="btn" id="rBig" title="Larger text">A+</button>
     </div><div id="rReturn" hidden></div></div>
     <div id="rtext"></div>
+    <div id="penBar" hidden role="region" aria-label="Highlighter"><b>🖍</b><button class="hldot pen hl-y" data-hl="y" title="Yellow" aria-label="Yellow"></button><button class="hldot pen hl-g" data-hl="g" title="Green" aria-label="Green"></button><button class="hldot pen hl-b" data-hl="b" title="Blue" aria-label="Blue"></button><button class="hldot pen hl-p" data-hl="p" title="Pink" aria-label="Pink"></button><button class="hldot pen hl-o" data-hl="o" title="Orange" aria-label="Orange"></button><button class="hldot pen hlx" data-hl="" title="Eraser: click a verse to remove its colour" aria-label="Eraser">✕</button><button class="btn primary" id="penDone">✓ Done</button><small>Click more verses to mark them. Click a marked verse again to remove it.</small></div>
     <div id="player" hidden role="region" aria-label="Listening">
       <span id="plWhere"></span>
       <button class="btn primary" id="plPause">⏸ Pause</button><button class="btn" id="plStop">■ Stop</button><button class="btn" id="plStart" title="Read the chapter from verse 1">↺ From verse 1</button>
@@ -497,6 +516,8 @@ details.src[open]>summary::after{transform:rotate(180deg)}
     <div class="tag">Cash App: $HansBeaugrand</div>
     <a class="btn primary" href="https://cash.app/$HansBeaugrand" target="_blank" rel="noopener">Open Cash App</a>
     <p class="about"><b>About BibleChat.</b> Made by Hans W. Beaugrand. Free and open source under the <a href="https://github.com/beaugrand/BibleChat-voice/blob/main/LICENSE" target="_blank" rel="noopener">Apache License 2.0</a>; anyone who shares or builds on it keeps this credit (<a href="https://github.com/beaugrand/BibleChat-voice/blob/main/NOTICE" target="_blank" rel="noopener">NOTICE</a>).</p>
+    <p class="about"><b>Visit counter.</b> BibleChat counts that the app was opened and which parts are used (Chat, Read, Study Paths…), so Hans can see how many people it reaches. It uses <a href="https://www.goatcounter.com" target="_blank" rel="noopener">GoatCounter</a>: free, open source, no cookies, no account, and nothing about you: no name, no IP address kept, no verses, no questions, no notes.</p>
+    <label class="gcopt"><input type="checkbox" id="gcOn" checked> <span>Count my visits (anonymous). Untick to leave yours out.</span></label>
     <div class="suggest"><b>💡 Suggest a feature</b>
       <textarea id="sgText" maxlength="3000" placeholder="What would make BibleChat better for you or your church?"></textarea>
       <input id="sgReply" type="email" maxlength="120" autocomplete="email" placeholder="Your email (optional, only if you'd like an answer)" style="width:100%;margin:6px 0 0;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:inherit">
@@ -583,6 +604,22 @@ const store = {
   get(k, d){ try{ const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
   set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
 };
+/* ---------- visit counter: GoatCounter (free, open source, no cookies, nothing about the person) ----------
+   Counts that the computer app was opened and which parts are used, once per start each. Never a verse, a question,
+   a search or a note. Hans reads the numbers at https://biblechat.goatcounter.com. The ♥ dialog → "Count my visits"
+   turns it off (GoatCounter's own switch: localStorage "skipgc"). */
+var GC_URL = "https://biblechat.goatcounter.com/count", gcSeen = {}, gcWait = [];
+function gcOff(){ try{ return localStorage.getItem("skipgc") === "t"; }catch(e){ return false; } }
+function gcSend(v){ try{ if(window.goatcounter && goatcounter.count) goatcounter.count(v); else gcWait.push(v); }catch(e){} }
+function gcEvent(name){ if(gcSeen[name] || gcOff()) return; gcSeen[name] = 1; gcSend({path: name, title: name, event: true}); }
+function gcStart(){
+  if(gcOff()) return;
+  const sc = document.createElement("script"); sc.async = true; sc.src = "https://gc.zgo.at/count.js";
+  sc.dataset.goatcounter = GC_URL; sc.dataset.goatcounterSettings = JSON.stringify({no_onload: true, allow_local: true});
+  sc.onload = () => { goatcounter.count({path: "/computer-app", title: "BibleChat computer app " + ((state && state.version) || ""), referrer: ""});
+    gcWait.splice(0).forEach(v => goatcounter.count(v)); };
+  document.head.appendChild(sc);
+}
 
 let state = {bibles:[], models:[], model:{status:"none"}, engine:true, cpu_problem:null, selected_model:""};
 let chats = store.get("bc.chats", []);
@@ -1025,6 +1062,8 @@ let rLinesOn = store.get("bc.rlines", true), rScale = store.get("bc.rscale", 1);
 
 function setMode(m){
   mode = m;
+  gcEvent("computer-" + m);
+  if(m !== "read") penStop();
   $("#modeHome").classList.toggle("on", m === "home");
   $("#modeChat").classList.toggle("on", m === "chat"); $("#modeRead").classList.toggle("on", m === "read");
   $("#chatSide").hidden = m === "read"; $("#newChat").hidden = m !== "chat";
@@ -1190,7 +1229,7 @@ async function showChapter(book, chapter, hitVerse){
   if(my !== rToken) return;
   const letters = {n: 0};
   t.innerHTML = j.verses.map(v => `<span class="v" id="v${v.verse}" data-v="${v.verse}" title="Click to study this verse: Hebrew/Greek words, cross-references, topics, Matthew Henry"><sup>${v.verse}</sup>${markVerse(v.text, (j.scofield || {})[v.verse], letters, v.verse)} </span>`).join("");
-  bmMark();
+  bmMark(); hlMark();
   for(const id of ["#rPrev", "#rPrev2"]) $(id).disabled = !j.prev;
   for(const id of ["#rNext", "#rNext2"]) $(id).disabled = !j.next;
   $("#rSay").hidden = !(state.tts || HAS_LOCAL_VOICE);
@@ -1376,6 +1415,7 @@ function sayMark(nums, scroll){
 }
 async function sayStart(from){
   if(!rChap) return;
+  gcEvent("computer-listen");
   sayHalt();
   from = from || sayResumeVerse() || 1;
   if(!rChap.verses.some(v => v.verse >= from)) from = 1;
@@ -1558,7 +1598,7 @@ async function studyVerse(book, chapter, verse){
     ? `<p class="muted"><a href="https://www.biblegateway.com/passage/?search=${encodeURIComponent(j.kjv_ref || book + " " + chapter + ":" + verse)}&version=NIV" target="_blank" rel="noopener">Open in NIV ↗</a> (the NIV is copyrighted, so it opens on BibleGateway)</p>` : "";
   const qd = await quotedFor(book, chapter, verse);
   const quoted = qd.length ? `<h3>📚 Quoted or named in Scripture</h3>` + qd.map(it => `<div class="sv"><a data-book="${esc(it.go[0])}" data-ch="${it.go[1]}" data-v="${it.go[2]}">${esc(it.label)}</a>${esc(it.writing)}: ${esc(it.note)}</div>`).join("") : "";
-  studyShow({title: `${book} ${chapter}:${verse}`, html: bmBtn + extra + mapNote + niv + quoted + orig + words + xrefs + topics + henry, xr});
+  studyShow({title: `${book} ${chapter}:${verse}`, html: hlRow(book, chapter, verse) + bmBtn + extra + mapNote + niv + quoted + orig + words + xrefs + topics + henry, xr});
 }
 /* "Quoted or named in Scripture" (web/quoted.json, shared with the phone): links between the canon and other writings */
 let quotedList = null;
@@ -1611,6 +1651,7 @@ async function studyFind(q){
     : `<p class="muted">No Nave's topic named “${esc(q)}”. Try one word, like “prayer”, “faith” or “angels”.</p>`});
 }
 $("#rtext").addEventListener("click", e => {
+  const hv = pen != null && rChap && e.target.closest(".v"); if(hv){ penTap(+hv.dataset.v); return; }
   const sc = e.target.closest(".sc, .scm"); if(sc && rChap) return showScofield(+sc.dataset.v, +sc.dataset.k);
   const ed = e.target.closest(".ed"); if(ed) return showEaston(ed.dataset.term);
   const v = e.target.closest(".v"); if(!v || !rChap) return;
@@ -1623,6 +1664,9 @@ $("#studyBody").addEventListener("change", e => {
 });
 function verseTextOf(n){ const x = rChap && rChap.verses.find(v => v.verse === n); return x ? x.text : ""; }
 $("#studyBody").addEventListener("click", e => {
+  const hd = e.target.closest(".hlrow .hldot"); if(hd){ hlPick(hd); return; }
+  const hx = e.target.closest("[data-hdel]"); if(hx){ hlSave({remove: [hx.dataset.hdel]}).then(hlShowList); return; }
+  const hg = e.target.closest("a[data-hk]"); if(hg){ const [b, c, v] = hg.dataset.hk.split("|"); openRef(b, +c, +v); return; }
   const st = e.target.closest(".saythis"); if(st){ studyClose(); sayStart(+st.dataset.v); return; }
   const vm = e.target.closest(".viimg"); if(vm){ viOpen(vm.dataset.book, +vm.dataset.ch, +vm.dataset.v, +vm.dataset.v); return; }
   const sa = e.target.closest(".smadd"); if(sa){ smAdd(sa.dataset.book, +sa.dataset.ch, +sa.dataset.v, +sa.dataset.v, rd.bible); sa.querySelector("b").textContent = "📋 In the sermon list ✓"; return; }
@@ -1735,6 +1779,71 @@ async function bmShowList(){
     : `<p class="muted">No bookmarks yet. Click a verse, then 🔖 Bookmark this verse.</p>`});
 }
 $("#rBm").onclick = bmShowList;
+
+/* 🖍 highlights: kept by the app on this computer (settings.json, like the bookmarks).
+   One colour per verse, kept by book, chapter and verse, so the verse keeps its colour in every Bible and in the
+   Study Paths. Click a verse → pick a colour; the highlighter then stays on, so more verses are marked with one click
+   each, until ✓ Done. 🖍 in Read lists them all, by colour. */
+const HL_NAMES = {y: "Yellow", g: "Green", b: "Blue", p: "Pink", o: "Orange"};
+let highlights = {}, pen = null;
+async function hlLoad(){ try{ highlights = (await (await fetch("/api/highlights")).json()).items || {}; }catch(e){} hlMark(); }
+async function hlSave(body){
+  try{ highlights = (await (await fetch("/api/highlights", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body)})).json()).items || {}; }
+  catch(e){ chSay("Couldn't save the highlight. Is BibleChat still open?"); }
+  hlMark();
+}
+function hlGet(b, c, v){ const h = highlights[b + "|" + c + "|" + v]; return h && HL_NAMES[h.col] ? h.col : null; }
+function hlSet(book, ch, v, col){
+  const k = book + "|" + ch + "|" + v;
+  if(!col){ delete highlights[k]; hlMark(); return hlSave({remove: [k]}); }
+  highlights[k] = {col, t: rChap && rChap.book === book && rChap.chapter === ch ? verseTextOf(v) : "", a: bibleName(rd.bible)}; hlMark(); gcEvent("computer-highlight");
+  return hlSave({set: {[k]: highlights[k]}});
+}
+function hlMark(){ if(!rChap) return; document.querySelectorAll("#rtext .v").forEach(el => { const c = hlGet(rChap.book, rChap.chapter, +el.dataset.v);
+  for(const k in HL_NAMES) el.classList.toggle("hl-" + k, c === k); }); }
+function hlRow(book, ch, v){
+  const cur = hlGet(book, ch, v);
+  return `<div class="hlrow" data-book="${esc(book)}" data-ch="${ch}" data-v="${v}"><span class="lab">🖍 Highlight</span>`
+    + Object.keys(HL_NAMES).map(k => `<button class="hldot hl-${k}${cur === k ? " on" : ""}" data-hl="${k}" title="${HL_NAMES[k]}" aria-label="${HL_NAMES[k]}"></button>`).join("")
+    + `<button class="hldot hlx" data-hl="" title="Remove the highlight" aria-label="Remove the highlight"${cur ? "" : " hidden"}>✕</button></div>`;
+}
+function hlPick(d){
+  const row = d.closest(".hlrow"), book = row.dataset.book, ch = +row.dataset.ch, v = +row.dataset.v, col = d.dataset.hl || null;
+  const off = !col || hlGet(book, ch, v) === col;
+  hlSet(book, ch, v, off ? null : col);
+  row.outerHTML = hlRow(book, ch, v);
+  if(!off && rChap && rChap.book === book && rChap.chapter === ch) penStart(col);
+}
+/* the highlighter: while it is on, a click on a verse marks it (or takes the colour off again) */
+function penStart(col){ pen = col; $("#penBar").hidden = false; penDots(); }
+function penStop(){ if(pen == null) return; pen = null; $("#penBar").hidden = true; }
+function penDots(){ document.querySelectorAll("#penBar .hldot").forEach(d => d.classList.toggle("on", d.dataset.hl === pen)); }
+function penTap(v){ const cur = hlGet(rChap.book, rChap.chapter, v); hlSet(rChap.book, rChap.chapter, v, !pen || cur === pen ? null : pen); }
+$("#penBar").addEventListener("click", e => {
+  if(e.target.id === "penDone"){ penStop(); return; }
+  const d = e.target.closest(".hldot"); if(d){ pen = d.dataset.hl; penDots(); }
+});
+/* 🖍 My Highlights: every marked verse, grouped by colour, in Bible order */
+async function hlShowList(){
+  await hlLoad(); studyStack = [];
+  const order = b => { const i = ALL_BOOKS.indexOf(b); return i < 0 ? 999 : i; };
+  const rows = Object.keys(highlights).map(k => { const [b, c, v] = k.split("|"); return {k, b, c: +c, v: +v, h: highlights[k]}; })
+    .filter(r => HL_NAMES[r.h.col]).sort((x, y) => order(x.b) - order(y.b) || x.c - y.c || x.v - y.v);
+  let html = "";
+  for(const col in HL_NAMES){
+    const g = rows.filter(r => r.h.col === col); if(!g.length) continue;
+    html += `<div class="hlgrp"><span class="hlsw hl-${col}"></span>${HL_NAMES[col]} · ${g.length}</div>`
+      + g.map(r => `<div class="sv"><a data-hk="${esc(r.k)}">${esc(r.b)} ${r.c}:${r.v}</a><span class="hl-${col}">${esc(r.h.t || "")}</span> <i>${esc(r.h.a || "")}</i> <button class="bmdel" data-hdel="${esc(r.k)}" title="Remove">✕</button></div>`).join("");
+  }
+  studyShow({title: "🖍 My Highlights", html: rows.length
+    ? html + `<p class="muted">Your highlights stay on this computer. A highlight shows in every Bible and in the Study Paths.</p>`
+    : `<p class="muted">No highlights yet. Click a verse in Read and pick a colour under 🖍 Highlight. The highlighter stays on, so you can click more verses, then ✓ Done.</p>`});
+}
+$("#rHl").onclick = hlShowList;
+/* ♥ dialog: the visit counter can be turned off on this computer */
+$("#gcOn").checked = !gcOff();
+$("#gcOn").onchange = () => { try{ if($("#gcOn").checked) localStorage.removeItem("skipgc"); else localStorage.setItem("skipgc", "t"); }catch(e){}
+  chSay($("#gcOn").checked ? "Your visits are counted (anonymous). Thank you!" : "Your visits are no longer counted."); };
 
 /* ---------------- theme, quit, heartbeat ---------------- */
 function applyTheme(t){ document.documentElement.dataset.theme = t; $("#theme").textContent = t === "dark" ? "☀ Light" : "☾ Dark"; }
@@ -2095,6 +2204,7 @@ BCPaths.mount({
   qr: (t, px) => qrCanvas(t, px),
   shareUrl: h => PHONE_URL + h,
   openVerse: (book, ch, v) => openRef(book, ch, v, {fromPaths: true}),
+  highlight: (b, c, v) => hlGet(b, c, v), track: name => gcEvent("computer-" + name),
   get: (k, d) => store.get("bc." + k, d), set: (k, v) => store.set("bc." + k, v), toast: m => chSay(m),
   canGet: true, getBibles: () => { BCPaths.close(); openCatalog(); },
   pastQuestions: () => chats.flatMap(c => c.messages.filter(m => m.role === "user").map(m => m.text)),
@@ -2280,7 +2390,8 @@ addEventListener("keydown", e => {
   await refresh();
   clearInterval(tick); $("#boot").remove();
   coverFromCatalog();
-  bmLoad();
+  bmLoad(); hlLoad();
+  gcStart();   // the visit counter (GoatCounter): "the computer app was opened", nothing more
   if(!chats.length || !chats.some(c => c.id === activeId)){ if(chats.length) activeId = chats[0].id; else newChat(); }
   renderChats(); renderThread();
   applyReadLook();

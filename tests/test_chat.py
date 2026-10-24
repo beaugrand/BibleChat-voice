@@ -163,6 +163,19 @@ class ChatTests(unittest.TestCase):
         finally:
             self.app.model = old
 
+    def test_7b_highlights_are_kept(self):
+        url = self.base + "/api/highlights"
+        post = lambda body: json.loads(_call(url, json.dumps(body).encode(), {"Content-Type": "application/json"}))["items"]
+        items = post({"set": {"Genesis|3|15": {"col": "y", "t": "And I will put enmity", "a": "KJV"},
+                              "John|3|16": {"col": "g", "t": "For God so loved", "a": "KJV"},
+                              "bad key": {"col": "y"}, "Genesis|1|1": {"col": "purple"}}})
+        self.assertEqual(sorted(items), ["Genesis|3|15", "John|3|16"])
+        self.assertEqual(items["Genesis|3|15"]["col"], "y")
+        items = post({"set": {"Genesis|3|15": {"col": "b"}}, "remove": ["John|3|16"]})
+        self.assertEqual(list(items), ["Genesis|3|15"]); self.assertEqual(items["Genesis|3|15"]["col"], "b")
+        self.assertEqual(json.loads(_call(url))["items"], items)   # kept by the app, there after a restart too
+        post({"remove": ["Genesis|3|15"]})
+
     def test_8_rejects_foreign_host_and_serves_page(self):
         req = urllib.request.Request(self.base + "/api/state", headers={"Host": "evil.example"})
         with self.assertRaises(Exception):

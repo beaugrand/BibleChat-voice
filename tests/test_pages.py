@@ -147,6 +147,28 @@ console.log(JSON.stringify(out));"""
         self.assertIn('"/api/suggest"', srv); self.assertIn("formsubmit.co/ajax/", srv)
         self.assertNotIn("formsubmit.co/ajax/wbeaugrand", read(PAGES[0]) + srv)   # a private address, not the email
 
+    def test_highlights_and_visit_counter(self):
+        # 🖍 Highlights: a colour row on a verse, the highlighter that stays on, a list of them all, and the
+        # colours in the Study Paths; the visit counter (GoatCounter) can be turned off and never sends a verse
+        for p, row in [(PAGES[0], 'id="hlRow"'), (PAGES[1], "function hlRow(")]:
+            s = read(p)
+            for part in (row, 'id="penBar"', 'id="penDone"', "function penTap(", "function hlMark(", "My Highlights", 'class="hldot',
+                         "highlight: (b, c, v) => hlGet(b, c, v)", 'id="gcOn"', "skipgc", "https://biblechat.goatcounter.com/count",
+                         "https://gc.zgo.at/count.js", "no_onload: true", "gcStart();"):
+                self.assertIn(part, s, f"{part} missing in {p}")
+            for col in ("hl-y", "hl-g", "hl-b", "hl-p", "hl-o"):
+                self.assertIn("." + col + "{", s)
+        self.assertIn('id="hlOpen"', read(PAGES[0])); self.assertIn('id="rHl"', read(PAGES[1]))
+        self.assertIn('fetch("/api/highlights"', read(PAGES[1]))
+        self.assertIn("allow_local: true", read(PAGES[1]))
+        # the phone counts only after the church/sermon details are taken out of the address
+        ph = read(PAGES[0])
+        self.assertLess(ph.index("if(location.search) history.replaceState"), ph.index("gcStart();   //"))
+        paths = read(os.path.join(ROOT, "web", "paths.js"))
+        self.assertIn('class="pv-v${hlClass(b, c, v)}"', paths); self.assertIn("A.track", paths)
+        priv = read(os.path.join(ROOT, "PRIVACY.md"))
+        self.assertIn("GoatCounter", priv); self.assertNotIn("no analytics", priv)
+
     def test_version_in_names(self):
         # which BibleChat is which: the Linux desktop icon and menu say "BibleChat 1.0.6", the computer app's
         # window title carries the version, and the phone/web version installs as "BibleChat Web"
