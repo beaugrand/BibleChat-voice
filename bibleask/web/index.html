@@ -251,8 +251,6 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 #penBar{position:sticky;bottom:0;z-index:7;display:flex;gap:7px;align-items:center;justify-content:center;flex-wrap:wrap;padding:9px 14px;background:var(--panel);border-top:2px solid var(--accent);box-shadow:0 -4px 14px rgba(0,0,0,.08)}
 #penBar[hidden]{display:none}
 #penBar small{color:var(--muted);font-size:13px}
-.gcopt{display:flex;gap:8px;align-items:flex-start;margin-top:8px;font-size:13.5px}
-.gcopt input{margin-top:2px;flex:none}
 #rtext .v.bm > sup:first-child::after{content:"🔖";font-size:.85em;margin-left:1px}
 #studyBody .bmdel{border:0;background:none;color:var(--muted);cursor:pointer;float:right}
 #studyBody a.bmgo{color:var(--accent);font-weight:650;cursor:pointer;margin-right:6px}
@@ -516,8 +514,6 @@ details.src[open]>summary::after{transform:rotate(180deg)}
     <div class="tag">Cash App: $HansBeaugrand</div>
     <a class="btn primary" href="https://cash.app/$HansBeaugrand" target="_blank" rel="noopener">Open Cash App</a>
     <p class="about"><b>About BibleChat.</b> Made by Hans W. Beaugrand. Free and open source under the <a href="https://github.com/beaugrand/BibleChat-voice/blob/main/LICENSE" target="_blank" rel="noopener">Apache License 2.0</a>; anyone who shares or builds on it keeps this credit (<a href="https://github.com/beaugrand/BibleChat-voice/blob/main/NOTICE" target="_blank" rel="noopener">NOTICE</a>).</p>
-    <p class="about"><b>Visit counter.</b> BibleChat counts that the app was opened and which parts are used (Chat, Read, Study Paths…), so Hans can see how many people it reaches. It uses <a href="https://www.goatcounter.com" target="_blank" rel="noopener">GoatCounter</a>: free, open source, no cookies, no account, and nothing about you: no name, no IP address kept, no verses, no questions, no notes.</p>
-    <label class="gcopt"><input type="checkbox" id="gcOn" checked> <span>Count my visits (anonymous). Untick to leave yours out.</span></label>
     <div class="suggest"><b>💡 Suggest a feature</b>
       <textarea id="sgText" maxlength="3000" placeholder="What would make BibleChat better for you or your church?"></textarea>
       <input id="sgReply" type="email" maxlength="120" autocomplete="email" placeholder="Your email (optional, only if you'd like an answer)" style="width:100%;margin:6px 0 0;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:inherit">
@@ -604,22 +600,6 @@ const store = {
   get(k, d){ try{ const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
   set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
 };
-/* ---------- visit counter: GoatCounter (free, open source, no cookies, nothing about the person) ----------
-   Counts that the computer app was opened and which parts are used, once per start each. Never a verse, a question,
-   a search or a note. Hans reads the numbers at https://biblechat.goatcounter.com. The ♥ dialog → "Count my visits"
-   turns it off (GoatCounter's own switch: localStorage "skipgc"). */
-var GC_URL = "https://biblechat.goatcounter.com/count", gcSeen = {}, gcWait = [];
-function gcOff(){ try{ return localStorage.getItem("skipgc") === "t"; }catch(e){ return false; } }
-function gcSend(v){ try{ if(window.goatcounter && goatcounter.count) goatcounter.count(v); else gcWait.push(v); }catch(e){} }
-function gcEvent(name){ if(gcSeen[name] || gcOff()) return; gcSeen[name] = 1; gcSend({path: name, title: name, event: true}); }
-function gcStart(){
-  if(gcOff()) return;
-  const sc = document.createElement("script"); sc.async = true; sc.src = "https://gc.zgo.at/count.js";
-  sc.dataset.goatcounter = GC_URL; sc.dataset.goatcounterSettings = JSON.stringify({no_onload: true, allow_local: true});
-  sc.onload = () => { goatcounter.count({path: "/computer-app", title: "BibleChat computer app " + ((state && state.version) || ""), referrer: ""});
-    gcWait.splice(0).forEach(v => goatcounter.count(v)); };
-  document.head.appendChild(sc);
-}
 
 let state = {bibles:[], models:[], model:{status:"none"}, engine:true, cpu_problem:null, selected_model:""};
 let chats = store.get("bc.chats", []);
@@ -1062,7 +1042,6 @@ let rLinesOn = store.get("bc.rlines", true), rScale = store.get("bc.rscale", 1);
 
 function setMode(m){
   mode = m;
-  gcEvent("computer-" + m);
   if(m !== "read") penStop();
   $("#modeHome").classList.toggle("on", m === "home");
   $("#modeChat").classList.toggle("on", m === "chat"); $("#modeRead").classList.toggle("on", m === "read");
@@ -1415,7 +1394,6 @@ function sayMark(nums, scroll){
 }
 async function sayStart(from){
   if(!rChap) return;
-  gcEvent("computer-listen");
   sayHalt();
   from = from || sayResumeVerse() || 1;
   if(!rChap.verses.some(v => v.verse >= from)) from = 1;
@@ -1796,7 +1774,7 @@ function hlGet(b, c, v){ const h = highlights[b + "|" + c + "|" + v]; return h &
 function hlSet(book, ch, v, col){
   const k = book + "|" + ch + "|" + v;
   if(!col){ delete highlights[k]; hlMark(); return hlSave({remove: [k]}); }
-  highlights[k] = {col, t: rChap && rChap.book === book && rChap.chapter === ch ? verseTextOf(v) : "", a: bibleName(rd.bible)}; hlMark(); gcEvent("computer-highlight");
+  highlights[k] = {col, t: rChap && rChap.book === book && rChap.chapter === ch ? verseTextOf(v) : "", a: bibleName(rd.bible)}; hlMark();
   return hlSave({set: {[k]: highlights[k]}});
 }
 function hlMark(){ if(!rChap) return; document.querySelectorAll("#rtext .v").forEach(el => { const c = hlGet(rChap.book, rChap.chapter, +el.dataset.v);
@@ -1841,9 +1819,6 @@ async function hlShowList(){
 }
 $("#rHl").onclick = hlShowList;
 /* ♥ dialog: the visit counter can be turned off on this computer */
-$("#gcOn").checked = !gcOff();
-$("#gcOn").onchange = () => { try{ if($("#gcOn").checked) localStorage.removeItem("skipgc"); else localStorage.setItem("skipgc", "t"); }catch(e){}
-  chSay($("#gcOn").checked ? "Your visits are counted (anonymous). Thank you!" : "Your visits are no longer counted."); };
 
 /* ---------------- theme, quit, heartbeat ---------------- */
 function applyTheme(t){ document.documentElement.dataset.theme = t; $("#theme").textContent = t === "dark" ? "☀ Light" : "☾ Dark"; }
@@ -2204,7 +2179,7 @@ BCPaths.mount({
   qr: (t, px) => qrCanvas(t, px),
   shareUrl: h => PHONE_URL + h,
   openVerse: (book, ch, v) => openRef(book, ch, v, {fromPaths: true}),
-  highlight: (b, c, v) => hlGet(b, c, v), track: name => gcEvent("computer-" + name),
+  highlight: (b, c, v) => hlGet(b, c, v),
   get: (k, d) => store.get("bc." + k, d), set: (k, v) => store.set("bc." + k, v), toast: m => chSay(m),
   canGet: true, getBibles: () => { BCPaths.close(); openCatalog(); },
   pastQuestions: () => chats.flatMap(c => c.messages.filter(m => m.role === "user").map(m => m.text)),
@@ -2391,7 +2366,6 @@ addEventListener("keydown", e => {
   clearInterval(tick); $("#boot").remove();
   coverFromCatalog();
   bmLoad(); hlLoad();
-  gcStart();   // the visit counter (GoatCounter): "the computer app was opened", nothing more
   if(!chats.length || !chats.some(c => c.id === activeId)){ if(chats.length) activeId = chats[0].id; else newChat(); }
   renderChats(); renderThread();
   applyReadLook();

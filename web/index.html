@@ -166,8 +166,6 @@ body.playing{padding-bottom:calc(var(--tabh) + 62px + env(safe-area-inset-bottom
 #penBar small{flex-basis:100%;text-align:center;color:var(--muted);font-size:13px}
 body.playing #penBar{bottom:calc(var(--tabh) + 62px + env(safe-area-inset-bottom))}
 body.pen{padding-bottom:calc(var(--tabh) + 92px + env(safe-area-inset-bottom))}
-.gcopt{display:flex;gap:8px;align-items:flex-start;margin-top:10px;font-size:14px}
-.gcopt input{margin-top:3px;width:18px;height:18px;flex:none}
 #rtext .v.bm > sup:first-child::after{content:"🔖";font-size:.85em;margin-left:1px}
 #rtext mark.sc{background:rgba(255,214,90,.55);color:inherit;border-radius:3px;padding:0 1px}
 [data-theme="dark"] #rtext mark.sc{background:rgba(214,170,40,.38)}
@@ -400,8 +398,6 @@ body.has-church #top .brand{display:none}
       <p><b>About BibleChat.</b> Read and search free Bibles right here, with no sign-up and nothing to install. Tap your browser's <b>Share → Add to Home Screen</b> to keep it like an app.</p>
       <p>On a computer, the full <a href="https://github.com/beaugrand/biblechat-voice/releases/latest" target="_blank" rel="noopener">BibleChat app</a> adds AI explanations, voice questions and your own Bible files.</p>
       <p>BibleChat is made by <b>Hans W. Beaugrand</b>. Free and open source under the <a href="https://github.com/beaugrand/BibleChat-voice/blob/main/LICENSE" target="_blank" rel="noopener">Apache License 2.0</a>; anyone who shares or builds on it keeps this credit (<a href="https://github.com/beaugrand/BibleChat-voice/blob/main/NOTICE" target="_blank" rel="noopener">NOTICE</a>). Each Bible keeps its own license, shown in the Bibles tab.</p>
-      <p><b>Visit counter.</b> BibleChat counts how often it is opened and which parts are used (Read, Search, Study Paths…), so Hans can see how many people it reaches. It uses <a href="https://www.goatcounter.com" target="_blank" rel="noopener">GoatCounter</a>: free, open source, no cookies, no account, and nothing about you: no name, no IP address kept, no verses, no searches, no notes. Your Bible, highlights and notes never leave this phone.</p>
-      <label class="gcopt"><input type="checkbox" id="gcOn" checked> <span>Count my visits (anonymous). Untick to leave yours out.</span></label>
     </div>
     <div class="churchcta" id="lvChurch">
       <h3>⛪ For churches</h3>
@@ -587,23 +583,6 @@ const store = {
   set(k, v){ try{ localStorage.setItem("bcw." + k, JSON.stringify(v)); }catch(e){} }
 };
 function toast(msg){ const t = document.createElement("div"); t.className = "toast"; t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 2200); }
-/* ---------- visit counter: GoatCounter (free, open source, no cookies, nothing about the person) ----------
-   Counts that BibleChat was opened and which parts are used, once per visit each. Never a verse, a search or a note.
-   Hans reads the numbers at https://biblechat.goatcounter.com. Love → About → "Count my visits" turns it off
-   (GoatCounter's own switch: localStorage "skipgc"). */
-var GC_URL = "https://biblechat.goatcounter.com/count", gcSeen = {}, gcWait = [];
-function gcOff(){ try{ return localStorage.getItem("skipgc") === "t"; }catch(e){ return false; } }
-function gcSend(v){ try{ if(window.goatcounter && goatcounter.count) goatcounter.count(v); else gcWait.push(v); }catch(e){} }
-function gcEvent(name){ if(gcSeen[name] || gcOff()) return; gcSeen[name] = 1; gcSend({path: name, title: name, event: true}); }
-function gcStart(){
-  if(gcOff() || /^(localhost|127\.)/.test(location.hostname) || location.protocol === "file:") return;
-  const sc = document.createElement("script"); sc.async = true; sc.src = "https://gc.zgo.at/count.js";
-  sc.dataset.goatcounter = GC_URL; sc.dataset.goatcounterSettings = JSON.stringify({no_onload: true});
-  sc.onload = () => { const home = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
-    goatcounter.count({path: home ? "/home-screen-app" : "/", title: home ? "BibleChat Web (from the home screen)" : "BibleChat Web"});
-    gcWait.splice(0).forEach(v => goatcounter.count(v)); };
-  document.head.appendChild(sc);
-}
 
 /* ---------- state ---------- */
 let catalog = [], bible = null, flat = null, idx = null;
@@ -620,7 +599,6 @@ $("#themeBtn").onclick = () => { const dark = $("#themeBtn").textContent === "�
 let tab = "read";
 function show(t, noFocus){
   tab = t;
-  gcEvent(t);
   if(t !== "read" && typeof penStop === "function") penStop();
   for(const n of ["home", "read", "search", "bibles", "love"]) $("#v-" + n).hidden = n !== t;
   document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === t));
@@ -908,7 +886,6 @@ function sayFrom(i, tok){
   speechSynthesis.speak(u);
 }
 function sayStart(i){
-  gcEvent("listen");
   loadVoices();
   const lang = bibleLang();
   if(voices.length && !lang.startsWith("en") && !pickVoice(lang)){ voiceHelp(); return; }   // don't read German with an English voice
@@ -1463,7 +1440,7 @@ BCPaths.mount({
   qr: (t, px) => qrCanvas(t, px),
   shareUrl: h => PHONE_URL + h,
   openVerse: (book, ch, v) => openAnywhere(book, ch, v, true),
-  highlight: (b, c, v) => hlGet(b, c, v), track: name => gcEvent(name),
+  highlight: (b, c, v) => hlGet(b, c, v),
   get: (k, d) => store.get(k, d), set: (k, v) => store.set(k, v), toast: m => toast(tr(m)),
   canGet: false, getBibles: () => show("bibles"),
   onClose: () => document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab)),
@@ -1577,7 +1554,6 @@ function hlSet(v, col){
   delete all[k];
   if(col) all[k] = {col, t: verseText(v), a: bibleAbbr(), at: Date.now()};
   store.set("highlights", all); hlMark();
-  if(col) gcEvent("highlight");
 }
 function hlMark(){
   const all = hlAll();
@@ -1644,9 +1620,6 @@ $("#hlSheet").addEventListener("click", async e => {
 });
 
 /* Love → About: the visit counter can be turned off on this phone */
-$("#gcOn").checked = !gcOff();
-$("#gcOn").onchange = () => { try{ if($("#gcOn").checked) localStorage.removeItem("skipgc"); else localStorage.setItem("skipgc", "t"); }catch(e){}
-  toast(tr($("#gcOn").checked ? "Your visits are counted (anonymous). Thank you!" : "Your visits are no longer counted.")); };
 
 /* ---------- verse of the day: on Home, above the Bible cover, in the Bible you're reading ---------- */
 function votdShow(){
@@ -2233,7 +2206,6 @@ $("#installSheet").addEventListener("click", e => {
 matchMedia("(display-mode: standalone)").addEventListener && matchMedia("(display-mode: standalone)").addEventListener("change", installRefresh);
 installRefresh();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
-gcStart();   // the visit counter, after the page has taken any church or sermon details out of the address
 </script>
 </body>
 </html>

@@ -34,8 +34,6 @@ const BCPaths = (() => {
   }
   const label = r => String(r).replace(/-/g, "–");
   /* 🖍 a verse the reader highlighted in Read keeps its colour here (the page hands in A.highlight) */
-  /* the page's visit counter (A.track), if it has one: only the name of the part used, once per visit */
-  const track = name => { try{ if(A && A.track) A.track(name); }catch(e){} };
   const hlClass = (b, c, v) => { const k = A.highlight && A.highlight(b, c, v); return k ? " hl-" + k : ""; };
   function inRef(p, c, v){ return p.v1 === null ? c >= p.c1 && c <= p.c2 : (c > p.c1 || (c === p.c1 && v >= p.v1)) && (c < p.c2 || (c === p.c2 && v <= p.v2)); }
   /* the verses of a reference in one Bible: [[book, ch, v, text], ...]; null if that Bible lacks the book */
@@ -202,7 +200,6 @@ const BCPaths = (() => {
     return segs;
   }
   async function lsStart(kind){
-    track("listen-study-path");
     if(A.onListen) A.onListen();   // the Bible reader's own Listen stops
     speakCancel(); LS.tok++;
     Object.assign(LS, {on: true, paused: false, kind, i: 0, segs: []});
@@ -361,7 +358,7 @@ const BCPaths = (() => {
       show: Math.min(10, Math.max(quiz.length, 1)), mine: true, updated: new Date().toISOString().slice(0, 10),
       sources: ["Made by " + ((d.author || "").trim() || "a BibleChat reader"), "KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references"]};
     if(d.author) set("author", d.author.trim());
-    const M = mine().filter(x => x.id !== p.id); M.unshift(p); set("mine", M.slice(0, 50)); track("study-path-made");
+    const M = mine().filter(x => x.id !== p.id); M.unshift(p); set("mine", M.slice(0, 50));
     S.draft = null; S.section = "community";
     if(vis === "community"){ await sendToCommunity(p); }
     else if(vis === "link"){ share(p, "list", "path"); A.toast(T("Saved. Send the link or QR code.")); }
@@ -388,13 +385,36 @@ const BCPaths = (() => {
     return scored.sort((a, b) => b.sc - a.sc).slice(0, n || 4).map(x => x.p);
   }
   /* paths of a series (e.g. the 7 sessions of the mirror prophecies) stand together under the series' title, with its own ↗ / QR code */
+  /* 📂 a series (e.g. the 7 sessions of Revelation & Daniel) is ONE folder card in the list; tapping it opens the folder
+     with its sessions. Any future series made of several sessions ("series" in a path) works the same way. */
   function gridWithSeries(shown, P){
-    const out = [], loose = [], seen = {};
-    for(const p of shown){ if(p.series){ (seen[p.series.id] = seen[p.series.id] || []).push(p); } else loose.push(p); }
-    for(const id in seen){ const ps = seen[id].sort((a, b) => a.series.session - b.series.session), se = ps[0].series;
-      out.push(`<div class="pv-series" id="pvSeries-${esc(id)}"><div class="pv-serh"><div><b>📖 <span class="pvx">${esc(se.title)}</span></b><small>${ps.length} of ${se.of} sessions ready${ps.length < se.of ? " · more coming" : ""}</small></div><button class="pv-btn pv-serqr" data-series="${esc(id)}" title="Share this series by link or QR code">↗ QR</button></div><div class="pv-grid">${ps.map(p => card(p, P[p.id] || {})).join("")}</div></div>`); }
-    if(loose.length) out.push(`<div class="pv-grid">${loose.map(p => card(p, P[p.id] || {})).join("")}</div>`);
-    return out.join("");
+    const cards = [], seen = {}, order = [];
+    for(const p of shown){ if(p.series){ if(!seen[p.series.id]){ seen[p.series.id] = []; order.push({series: p.series.id}); } seen[p.series.id].push(p); } else order.push(p); }
+    order.sort((a, b) => (b.series ? 1 : 0) - (a.series ? 1 : 0));   // folders first, then the single paths in their usual order
+    for(const x of order) cards.push(x.series ? folderCard(seen[x.series].sort((a, b) => a.series.session - b.series.session), P) : card(x, P[x.id] || {}));
+    return cards.length ? `<div class="pv-grid">${cards.join("")}</div>` : "";
+  }
+  function folderCard(ps, P){
+    const se = ps[0].series, info = ps.map(p => cardInfo(p, P[p.id] || {})), fin = info.filter(i => i.finished).length, busy = info.filter(i => i.started && !i.finished).length;
+    const mins = ps.reduce((a, p) => a + (p.minutes || 0), 0), status = fin === ps.length ? `✓ All ${ps.length} sessions finished` : fin || busy ? `${fin} of ${ps.length} sessions finished` : "Not started";
+    return `<article class="pv-pc pv-folder" data-series="${esc(se.id)}">
+      <button class="pv-pc-open pv-sopen" data-series="${esc(se.id)}" aria-label="${esc("Open " + se.title)}"><div class="pv-pc-img">${picture(ps[0], false)}<span class="pv-pc-cat">📂 ${ps.length} sessions</span></div>
+        <div class="pv-pc-txt"><b class="pvx">${esc(se.title)}</b><span class="pvx">${esc(ps.map(p => p.title.replace(/^Session \d+:\s*/, "")).join(" · "))}</span></div></button>
+      <div class="pv-pc-meta"><span>📂 ${ps.length}${ps.length < se.of ? " of " + se.of : ""} sessions</span>${mins ? `<span title="About ${mins} minutes in all">⏱ ${mins} min</span>` : ""}</div>
+      <div class="pv-pc-prog"><div class="pv-dots" aria-hidden="true">${info.map(i => `<i class="${i.finished ? "pv-d-ok" : i.started ? "pv-d-now" : ""}"></i>`).join("")}</div><small class="${fin === ps.length ? "pv-ok" : fin || busy ? "pv-busy" : ""}">${esc(status)}</small></div>
+      <div class="pv-pc-acts"><button class="pv-btn pv-primary pv-sopen" data-series="${esc(se.id)}"><span>Open</span> ›</button><button class="pv-btn pv-serqr" data-series="${esc(se.id)}" title="Share this series by link or QR code" aria-label="Share this series">↗</button></div></article>`;
+  }
+  /* inside the folder: the series' sessions, in order */
+  async function showSeries(id){
+    const L = await loadList(), ps = L.filter(p => p.series && p.series.id === id).sort((a, b) => a.series.session - b.series.session);
+    if(!ps.length){ await showList(); return; }
+    const se = ps[0].series, P = progress(), arrived = S.arrivedList; S.arrivedList = false;
+    S.view = "series"; S.series = id; S.path = null;
+    frame("📂 " + se.title, (arrived ? `<div class="pv-welcome">👋 <b>Someone shared these study sessions with you.</b> Start with Session 1 and press <b>Start</b>. Free, no sign-up.</div>` : "")
+      + `<p class="pv-lead">${ps.length}${ps.length < se.of ? " of " + se.of : ""} sessions, one after another. Each starts with a question and walks through the verses; the questions at the end are answered with a verse.</p>`
+      + `<button class="pv-btn pv-serqr pv-sharewide" data-series="${esc(id)}">↗ Share these sessions · link or QR code</button>`
+      + `<div class="pv-grid">${ps.map(p => card(p, P[p.id] || {})).join("")}</div>`
+      + `<div class="pv-nav"><button class="pv-btn pv-backlist">‹ All Study Paths</button></div>`, true);
   }
   /* 👥 Bible Study Groups: one folder per group, then "+ Add your own study path" */
   function groupsView(shown, P){
@@ -454,7 +474,6 @@ const BCPaths = (() => {
         <small><span>Source:</span> <span class="pvx">${esc(it.source)}</span></small></div>`; }).join(""), true);
   }
   async function showPath(id, step){
-    track("study-path-opened");
     let p;
     try{ p = await loadPath(id); }catch(e){ frame("📜 Study Paths", `<p class="pv-err">That study path isn't available. Check the internet connection, or pick another path.</p>`, true); return; }
     S.path = p; S.view = "step";
@@ -751,7 +770,7 @@ const BCPaths = (() => {
     const t = target(kind || "path", p), url = A.shareUrl(t.hash), text = shareText(t), both = text + "\n" + url;
     const what = t.kind === "all" ? "the page with all the Study Paths" : t.kind === "series" ? "this series of study paths" : "this study path, at step 1";
     S.shareFrom = from || "path"; S.shareP = t; S.view = "share";
-    const back = S.shareFrom === "list" ? `<button class="pv-btn pv-backlist">‹ Back to the paths</button>` : `<button class="pv-btn pv-backpath">‹ Back to the path</button>`;
+    const back = S.shareFrom === "list" || S.shareFrom === "series" ? `<button class="pv-btn pv-backlist">‹ Back to the paths</button>` : `<button class="pv-btn pv-backpath">‹ Back to the path</button>`;
     const wide = matchMedia("(min-width: 760px)").matches;   // on a computer the QR code comes first: hold the phone up to the screen
     const qr = `<div class="pv-qrbox"><p class="pv-small">${wide ? "Point a phone camera at the screen:" : "Or let them scan this code with their phone camera:"}</p><div class="pv-qr"></div><button class="pv-btn pv-qrbig">⛶ Show the QR code big (for a TV or projector)</button></div>`;
     frame(t.kind === "all" ? "↗ Share the Study Paths" : t.kind === "series" ? "↗ Share this series" : "↗ Share this path", `<div class="pv-shead">${t.image ? `<img src="${esc(A.base + t.image)}" alt="">` : `<span class="pv-shico">📜</span>`}<div><b class="pvx">${esc(t.title)}</b><span class="pvx">${esc(t.question || "")}</span></div></div>
@@ -819,7 +838,7 @@ const BCPaths = (() => {
   }
   async function shareFromCard(id){
     let p = (await loadList()).find(x => x.id === id) || mine().find(x => x.id === id);
-    if(!p) return; share(p, "list", "path");
+    if(!p) return; share(p, S.view === "series" ? "series" : "list", "path");
   }
   /* a path someone made and sent by link: kept on this device under ✍ Your study paths (once), then opened */
   async function openShared(d){
@@ -841,10 +860,8 @@ const BCPaths = (() => {
   async function openHash(h){
     const all = /^#\/paths(?:\/series\/([a-z0-9-]+))?\/?$/.exec(h || "");
     if(all){
-      S.arrivedList = true; S.filter = ALL;
-      if(all[1]){ const L = await loadList(), p = L.find(x => x.series && x.series.id === all[1]); if(p) S.filter = p.category; }
-      await showList();
-      if(all[1]){ const el = root.querySelector("#pvSeries-" + all[1]); if(el) el.scrollIntoView({block: "start"}); }
+      S.arrivedList = true; S.filter = ALL; S.section = "paths";
+      if(all[1]) await showSeries(all[1]); else await showList();
       return true;
     }
     const m = /^#\/path\/([^/]+)(?:\/([^/]+))?/.exec(h || ""); if(!m) return false;
@@ -865,20 +882,21 @@ const BCPaths = (() => {
   function onClick(e){
     const t = e.target;
     if(t.closest(".pv-close")){ close(); return; }
-    if(t.closest(".pv-back")){ if(S.view === "edit"){ S.draft = null; showList(); return; } if(S.view === "request" || (S.view === "share" && S.shareFrom === "list")) showList(); else if(S.view === "word" || S.view === "share") showPath(S.path.id, S.step); else if(S.view === "step" || S.view === "quiz" || S.view === "quoted") showList(); else close(); return; }
+    if(t.closest(".pv-back")){ if(S.view === "edit"){ S.draft = null; showList(); return; } if(S.view === "share" && S.shareFrom === "series" && S.series) showSeries(S.series); else if(S.view === "request" || (S.view === "share" && S.shareFrom === "list")) showList(); else if(S.view === "word" || S.view === "share") showPath(S.path.id, S.step); else if((S.view === "step" || S.view === "quiz") && S.path && S.path.series) showSeries(S.path.series.id); else if(S.view === "step" || S.view === "quiz" || S.view === "quoted" || S.view === "series") showList(); else close(); return; }
     const sc = t.closest(".pv-pc-share"); if(sc){ shareFromCard(sc.dataset.id); return; }
     if(t.closest(".pv-add")){ showRequest(); return; }
     const lb = t.closest(".pv-listen"); if(lb){ if(LS.on && LS.kind === lb.dataset.ls && !LS.paused) lsPause(); else lsStart(lb.dataset.ls); return; }
     if(t.closest(".pv-lspause")){ lsPause(); return; }
     if(t.closest(".pv-lsskip")){ lsSkip(); return; }
     if(t.closest(".pv-lsstop")){ lsStop(); return; }
-    const sg = t.closest(".pv-segb"); if(sg){ S.section = sg.dataset.sec; if(S.section === "community") track("community"); showList(); return; }
+    const sg = t.closest(".pv-segb"); if(sg){ S.section = sg.dataset.sec; showList(); return; }
     if(t.closest(".pv-new")){ editPath(null); return; }
     const ed = t.closest(".pv-edit"); if(ed){ const p = mine().find(x => x.id === ed.dataset.id); if(p){ const c = JSON.parse(JSON.stringify(p)); if(c.received){ c.id = "mine-" + Date.now().toString(36); delete c.received; delete c.sig; c.isNew = true; } editPath(c); } return; }
     if(t.closest(".pv-eddel")){ if(confirm(T("Delete this study path from this device?"))){ set("mine", mine().filter(x => x.id !== S.draft.id)); S.draft = null; showList(); } return; }
     const eb = t.closest("[data-ed]"); if(eb && S.view === "edit"){ e.preventDefault(); edAction(eb); return; }
     if(t.closest(".pv-shareall")){ share(null, "list", "all"); return; }
-    const sq = t.closest(".pv-serqr"); if(sq){ loadList().then(L => { const p = L.find(x => x.series && x.series.id === sq.dataset.series); if(p) share(p, "list", "series"); }); return; }
+    const so = t.closest(".pv-sopen"); if(so){ showSeries(so.dataset.series); return; }
+    const sq = t.closest(".pv-serqr"); if(sq){ loadList().then(L => { const p = L.find(x => x.series && x.series.id === sq.dataset.series); if(p) share(p, S.view === "series" ? "series" : "list", "series"); }); return; }
     if(t.closest(".pv-qrbig")){ bigQr(); return; }
     if(t.closest(".pv-card-dl")){ shareCard(S.shareP).catch(() => A.toast(T("Couldn't make the picture."))); return; }
     if(t.closest(".pv-so-tt")){ const u = root.querySelector(".pv-url").value, h = root.querySelector(".pv-tthint"); if(h) h.hidden = false;
@@ -887,7 +905,7 @@ const BCPaths = (() => {
     if(t.closest(".pv-reqgit")){ e.preventDefault(); const d = reqData();
       window.open("https://github.com/beaugrand/BibleChat-voice/issues/new?title=" + encodeURIComponent("Study path request: " + (d.passage || "?") + " (" + (d.group || "?") + ")") + "&body=" + encodeURIComponent(reqText(d)), "_blank", "noopener"); return; }
     if(t.closest(".pv-share")){ share(); return; }
-    if(t.closest(".pv-backlist")){ showList(); return; }
+    if(t.closest(".pv-backlist")){ if(S.view === "share" && S.shareFrom === "series" && S.series) showSeries(S.series); else showList(); return; }
     if(t.closest(".pv-backpath")){ showPath(S.path.id, S.step); return; }
     if(t.closest(".pv-copy")){ const i = root.querySelector(".pv-url"); i.select(); (navigator.clipboard ? navigator.clipboard.writeText(i.value) : Promise.reject()).then(() => A.toast("Link copied"), () => { document.execCommand("copy"); A.toast("Link copied"); }); return; }
     if(t.closest(".pv-sys")){ const p = S.shareP || target("path", S.path); navigator.share({title: p.title, text: shareText(p), url: root.querySelector(".pv-url").value}).catch(() => {}); return; }
@@ -963,7 +981,7 @@ const BCPaths = (() => {
   }
 
   /* ---------- public ---------- */
-  async function open(id, step){ if(!root) return; track("study-paths"); if(id) await showPath(id, step); else await showList(); }
+  async function open(id, step){ if(!root) return; if(id) await showPath(id, step); else await showList(); }
   async function reopen(){
     const v = lastView; if(!v){ await showList(); return; }
     if(v.view === "quoted") await showQuoted(); else if(v.id && v.view === "step") await showPath(v.id, v.step); else await showList();
@@ -1159,6 +1177,7 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-series{margin:0 0 14px}.pv-serh{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:6px 0 10px}
 .pv-serh b{display:block;font-size:16px;color:var(--accent)}.pv-serh small{color:var(--muted)}.pv-serqr{flex:none;font-weight:700}
 .pv-serline{margin:-4px 0 8px;color:var(--accent)}
+.pv-folder{border-color:rgba(217,180,74,.55)}
 .pv-shico{font-size:40px;width:96px;text-align:center}
 .pv-socl{margin:12px 0 6px}.pv-social{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.pv-social .pv-btn{text-align:center;text-decoration:none;font-weight:650;font-size:14px;padding:8px 4px;color:#fff;border:0}
 @media (max-width:560px){.pv-social{grid-template-columns:repeat(3,1fr)}}
@@ -1189,7 +1208,7 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-st-text{background:#d9ecd9}.pv-st-lost{background:#efd9d4}.pv-st-disputed{background:#f3e7c4}
 :root[data-theme="dark"] .pv-tag,.pv-dark .pv-tag{color:#1f1e1b}
 .pv-dark .pnote{background:#191c21}`;
-  async function openCommunity(){ S.section = "community"; track("community"); await open(); }
+  async function openCommunity(){ S.section = "community"; await open(); }
   return {mount, open, close, reopen, openHash, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden,
     findPaths, openCommunity, preload: () => loadList(), normRef};
 })();

@@ -171,6 +171,18 @@ class PathRulesTest(unittest.TestCase):
 
 
 class PathPagesTest(unittest.TestCase):
+    def test_series_is_one_folder(self):
+        # a series (the 7 sessions of Revelation & Daniel) is one folder card on the main page; its sessions are inside
+        js = read("web", "paths.js")
+        for part in ("function folderCard(", "pv-folder", "pv-sopen", "async function showSeries(", 'S.view = "series"',
+                     "if(all[1]) await showSeries(all[1])", "S.path && S.path.series) showSeries(S.path.series.id)", "folders first"):
+            self.assertIn(part, js)
+        series = {}
+        for x in load(os.path.join(bp.OUT_DIR, "index.json")):
+            if x.get("series"):
+                series.setdefault(x["series"]["id"], []).append(x["series"]["session"])
+        self.assertEqual(sorted(series["mirror-prophecies"]), list(range(1, 8)))
+
     def test_listen_on_every_study_path_screen(self):
         js = read("web", "paths.js")
         for part in ('data-ls="step"', 'data-ls="quiz"', "🔊 Listen to this step", "🔊 Listen to the questions", "lsSegments", "lsStart", "lsPause",

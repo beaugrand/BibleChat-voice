@@ -147,27 +147,25 @@ console.log(JSON.stringify(out));"""
         self.assertIn('"/api/suggest"', srv); self.assertIn("formsubmit.co/ajax/", srv)
         self.assertNotIn("formsubmit.co/ajax/wbeaugrand", read(PAGES[0]) + srv)   # a private address, not the email
 
-    def test_highlights_and_visit_counter(self):
+    def test_highlights_and_no_tracking(self):
         # 🖍 Highlights: a colour row on a verse, the highlighter that stays on, a list of them all, and the
-        # colours in the Study Paths; the visit counter (GoatCounter) can be turned off and never sends a verse
+        # colours in the Study Paths. No visit counter or analytics anywhere (Hans: "I would rather not track")
         for p, row in [(PAGES[0], 'id="hlRow"'), (PAGES[1], "function hlRow(")]:
             s = read(p)
             for part in (row, 'id="penBar"', 'id="penDone"', "function penTap(", "function hlMark(", "My Highlights", 'class="hldot',
-                         "highlight: (b, c, v) => hlGet(b, c, v)", 'id="gcOn"', "skipgc", "https://biblechat.goatcounter.com/count",
-                         "https://gc.zgo.at/count.js", "no_onload: true", "gcStart();"):
+                         "highlight: (b, c, v) => hlGet(b, c, v)"):
                 self.assertIn(part, s, f"{part} missing in {p}")
             for col in ("hl-y", "hl-g", "hl-b", "hl-p", "hl-o"):
                 self.assertIn("." + col + "{", s)
         self.assertIn('id="hlOpen"', read(PAGES[0])); self.assertIn('id="rHl"', read(PAGES[1]))
         self.assertIn('fetch("/api/highlights"', read(PAGES[1]))
-        self.assertIn("allow_local: true", read(PAGES[1]))
-        # the phone counts only after the church/sermon details are taken out of the address
-        ph = read(PAGES[0])
-        self.assertLess(ph.index("if(location.search) history.replaceState"), ph.index("gcStart();   //"))
         paths = read(os.path.join(ROOT, "web", "paths.js"))
-        self.assertIn('class="pv-v${hlClass(b, c, v)}"', paths); self.assertIn("A.track", paths)
+        self.assertIn('class="pv-v${hlClass(b, c, v)}"', paths)
+        for page in (read(PAGES[0]), read(PAGES[1]), paths):
+            for bad in ("goatcounter", "gc.zgo.at", "gcEvent", "A.track", "google-analytics", "googletagmanager", "plausible.io"):
+                self.assertNotIn(bad, page.lower() if bad.islower() else page)
         priv = read(os.path.join(ROOT, "PRIVACY.md"))
-        self.assertIn("GoatCounter", priv); self.assertNotIn("no analytics", priv)
+        self.assertIn("no analytics and no tracking", priv); self.assertNotIn("GoatCounter", priv)
 
     def test_version_in_names(self):
         # which BibleChat is which: the Linux desktop icon and menu say "BibleChat 1.0.6", the computer app's
