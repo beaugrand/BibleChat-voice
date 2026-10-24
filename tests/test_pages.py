@@ -45,6 +45,18 @@ class PagesTest(unittest.TestCase):
         self.assertIn('de: ["Die", "Heilige Schrift"', read(PAGES[0]))   # the cover in German
         self.assertIn('setMode("home")', read(PAGES[1]))
 
+    def test_verse_of_the_day_on_home(self):
+        # Phone: the verse of the day sits on Home above the Bible cover, not above the chapter in Read.
+        s = read(PAGES[0])
+        home = s[s.index('<section id="v-home"'):s.index('<!-- READ -->')]
+        readv = s[s.index('<!-- READ -->'):s.index('<!-- SEARCH -->')]
+        self.assertIn('id="votd"', home)
+        self.assertLess(home.index('id="votd"'), home.index('id="homeCover"'))
+        self.assertNotIn('id="votd"', readv)
+        self.assertNotIn('id="votdOpen"', s)
+        self.assertNotIn("votdShow(false)", s)
+        self.assertIn("votdShow();", s[s.index("function homeWhere"):s.index("function closeBook")])
+
     def test_cover_version_line(self):
         # The cover prints the standard versions in small gold capitals inside the inner gold border, under the
         # cross: only versions BibleChat really offers (NIV only once it is licensed; until then BSB).
