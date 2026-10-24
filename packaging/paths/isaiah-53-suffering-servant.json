@@ -1,0 +1,631 @@
+{
+ "id": "isaiah-53-suffering-servant",
+ "title": "Isaiah 53: the suffering Servant",
+ "category": "Prophecy",
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "light",
+  "x": 23,
+  "y": 12,
+  "s": 36
+ },
+ "opening_question": "Isaiah wrote of a Servant who was \"wounded for our transgressions\" and \"brought as a lamb to the slaughter\". Centuries later a man of Ethiopia read these words in his chariot and asked: \"of whom speaketh the prophet this?\" Who is the Servant?",
+ "required_refs": [
+  "Isaiah 52:13-15",
+  "Isaiah 53:1-12",
+  "John 12:37-38",
+  "Matthew 8:16-17",
+  "1 Peter 2:21-25",
+  "Matthew 27:12-14",
+  "John 1:29",
+  "Acts 8:27-35",
+  "Matthew 27:38",
+  "Matthew 27:57-60",
+  "1 Corinthians 15:3-4",
+  "Luke 24:25-27",
+  "Luke 22:37",
+  "Mark 15:27-28",
+  "Luke 23:33-34",
+  "Hebrews 9:28"
+ ],
+ "words": [
+  "H5650",
+  "H5375",
+  "H4341",
+  "H2250",
+  "H7716",
+  "H817",
+  "H6293"
+ ],
+ "show": 10,
+ "steps": [
+  {
+   "question": "What will happen to the Servant, and what did many see when they looked at him?",
+   "refs": [
+    "Isaiah 52:13-15"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5650",
+     "H5375",
+     "H4893"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Hebrew word nasa, \"to lift\", is \"extolled\" in Isaiah 52:13, \"borne\" in Isaiah 53:4 (\"he hath borne our griefs\") and \"bare\" in Isaiah 53:12 (\"he bare the sin of many\"). The one who is lifted up is the one who lifts up our sins.",
+     "refs": [
+      "Isaiah 52:13",
+      "Isaiah 53:4",
+      "Isaiah 53:12"
+     ],
+     "strongs": [
+      "H5375"
+     ]
+    },
+    {
+     "text": "Where the KJV and the BSB say he shall \"sprinkle many nations\", the Ethiopian Canon says he will \"cleanse many nations\".",
+     "refs": [
+      "Isaiah 52:15"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who hath believed our report? How did men treat the man of sorrows, and who did not believe on Jesus?",
+   "refs": [
+    "Isaiah 53:1-3",
+    "John 12:37-38",
+    "Romans 10:16",
+    "John 1:10-11"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4341",
+     "H2483",
+     "H959",
+     "H2220"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "John 12:38 and Romans 10:16 both quote Isaiah 53:1: \"who hath believed our report?\"",
+     "refs": [
+      "Isaiah 53:1",
+      "John 12:38",
+      "Romans 10:16"
+     ]
+    },
+    {
+     "text": "\"Sorrows\" in \"a man of sorrows\" is the Hebrew makob, \"anguish\"; \"grief\" is choli, \"malady\". The Ethiopian Canon reads \"a man of suffering, and acquainted with disease\".",
+     "refs": [
+      "Isaiah 53:3"
+     ],
+     "strongs": [
+      "H4341",
+      "H2483"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Whose griefs and sorrows did he carry, why was he wounded, and what do his stripes do?",
+   "refs": [
+    "Isaiah 53:4-6",
+    "Matthew 8:16-17",
+    "1 Peter 2:24-25"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2490",
+     "H1792",
+     "H4148",
+     "H2250",
+     "G3468"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Stripes\" in Isaiah 53:5 is the Hebrew chaburah: \"a weal (or black and blue mark itself)\". Peter uses the Greek molops, \"blow-mark\": \"by whose stripes ye were healed\".",
+     "refs": [
+      "Isaiah 53:5",
+      "1 Peter 2:24"
+     ],
+     "strongs": [
+      "H2250",
+      "G3468"
+     ]
+    },
+    {
+     "text": "\"Wounded\" in Isaiah 53:5 is the Hebrew chalal, \"properly to bore\". The Ethiopian Canon and the BSB read \"pierced for our transgressions\".",
+     "refs": [
+      "Isaiah 53:5"
+     ],
+     "strongs": [
+      "H2490"
+     ]
+    },
+    {
+     "text": "Matthew 8:17 says Jesus' healing of the sick fulfilled Isaiah: \"Himself took our infirmities, and bare our sicknesses\".",
+     "refs": [
+      "Matthew 8:17",
+      "Isaiah 53:4"
+     ]
+    },
+    {
+     "text": "Isaiah says \"All we like sheep have gone astray\"; Peter writes \"ye were as sheep going astray; but are now returned unto the Shepherd\".",
+     "refs": [
+      "Isaiah 53:6",
+      "1 Peter 2:25"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did he do when he was oppressed and afflicted, and what is he compared to?",
+   "refs": [
+    "Isaiah 53:7-8",
+    "Matthew 27:12-14",
+    "John 1:29"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7716",
+     "H6605",
+     "G286"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Isaiah: \"he opened not his mouth\". Matthew: \"he answered nothing\", and to Pilate \"he answered him to never a word\".",
+     "refs": [
+      "Isaiah 53:7",
+      "Matthew 27:12",
+      "Matthew 27:14"
+     ]
+    },
+    {
+     "text": "John the Baptist calls Jesus \"the Lamb of God, which taketh away the sin of the world\". The Greek amnos means \"a lamb\".",
+     "refs": [
+      "John 1:29"
+     ],
+     "strongs": [
+      "G286"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Which scripture was the man of Ethiopia reading in his chariot, what did he ask Philip, and where did Philip begin?",
+   "refs": [
+    "Acts 8:27-35"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G286",
+     "G4263"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The reader of Isaiah 53 in Acts 8 was \"a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians\".",
+     "refs": [
+      "Acts 8:27"
+     ]
+    },
+    {
+     "text": "Acts 8:32-33 quotes Isaiah 53:7-8: \"He was led as a sheep to the slaughter\" and \"who shall declare his generation?\"",
+     "refs": [
+      "Acts 8:32-33",
+      "Isaiah 53:7-8"
+     ]
+    },
+    {
+     "text": "Philip \"began at the same scripture, and preached unto him Jesus\".",
+     "refs": [
+      "Acts 8:35"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "With whom was his grave made, who laid him in a tomb, and what was never found in his mouth?",
+   "refs": [
+    "Isaiah 53:9",
+    "Matthew 27:38",
+    "Matthew 27:57-60",
+    "1 Peter 2:21-23"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7563",
+     "H6223",
+     "H4820"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Jesus died between \"two thieves\"; then \"a rich man of Arimathaea, named Joseph\" laid him \"in his own new tomb\".",
+     "refs": [
+      "Matthew 27:38",
+      "Matthew 27:57",
+      "Matthew 27:60"
+     ]
+    },
+    {
+     "text": "Isaiah: \"neither was any deceit in his mouth\". Peter: \"Who did no sin, neither was guile found in his mouth\".",
+     "refs": [
+      "Isaiah 53:9",
+      "1 Peter 2:22"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "He was \"cut off out of the land of the living\", yet \"he shall see his seed, he shall prolong his days\". How can both be true?",
+   "refs": [
+    "Isaiah 53:10-11",
+    "Isaiah 53:8",
+    "1 Corinthians 15:3-4",
+    "Luke 24:25-27"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H817",
+     "H5999",
+     "H6663"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"An offering for sin\" in Isaiah 53:10 is the Hebrew asham: \"guilt\", \"also a sin offering\". The BSB reads \"a guilt offering\".",
+     "refs": [
+      "Isaiah 53:10"
+     ],
+     "strongs": [
+      "H817"
+     ]
+    },
+    {
+     "text": "In Isaiah 53:11 the Ethiopian Canon and the BSB say he will \"see the light\"; the KJV says \"He shall see of the travail of his soul\".",
+     "refs": [
+      "Isaiah 53:11"
+     ]
+    },
+    {
+     "text": "Paul: \"Christ died for our sins according to the scriptures\" and \"rose again the third day according to the scriptures\".",
+     "refs": [
+      "1 Corinthians 15:3-4"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "With whom was he numbered, whose sin did he bear, and for whom did he make intercession?",
+   "refs": [
+    "Isaiah 53:12",
+    "Luke 22:37",
+    "Mark 15:27-28",
+    "Luke 23:33-34",
+    "Hebrews 9:28"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4487",
+     "H6586",
+     "H6293"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "On the night he was betrayed, Jesus quoted Isaiah 53:12 about himself: \"this that is written must yet be accomplished in me, And he was reckoned among the transgressors\".",
+     "refs": [
+      "Luke 22:37",
+      "Isaiah 53:12"
+     ]
+    },
+    {
+     "text": "Mark 15:28 says the scripture was fulfilled, \"And he was numbered with the transgressors\", when two thieves were crucified with Jesus. The verse is in the KJV and the Ethiopian Canon; the BSB has no verse 28 there.",
+     "refs": [
+      "Mark 15:28"
+     ]
+    },
+    {
+     "text": "\"Made intercession\" is the Hebrew paga, which the KJV also translates \"intreat\" and \"pray\". On the cross Jesus prayed: \"Father, forgive them; for they know not what they do\".",
+     "refs": [
+      "Isaiah 53:12",
+      "Luke 23:34"
+     ],
+     "strongs": [
+      "H6293"
+     ]
+    },
+    {
+     "text": "Isaiah: \"he bare the sin of many\". Hebrews: \"Christ was once offered to bear the sins of many\".",
+     "refs": [
+      "Isaiah 53:12",
+      "Hebrews 9:28"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"he was wounded for our transgressions, he was bruised for our iniquities\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 53:5"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"and with his ___ we are healed\"",
+   "type": "fill_word",
+   "ref": "Isaiah 53:5",
+   "bible": "KJV",
+   "word": "stripes"
+  },
+  {
+   "q": "In Isaiah 53:7, what is he brought as, to the slaughter?",
+   "type": "multiple_choice",
+   "options": [
+    "A lamb",
+    "A lion",
+    "A goat",
+    "A dove"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Isaiah 53:7"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "lamb"
+   }
+  },
+  {
+   "q": "Which verse says \"He is despised and rejected of men; a man of sorrows\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 53:3"
+   ]
+  },
+  {
+   "q": "Where did Philip begin when he preached Jesus to the man of Ethiopia?",
+   "type": "multiple_choice",
+   "options": [
+    "At the same scripture he was reading",
+    "At the book of Genesis",
+    "At the law of Moses",
+    "At the Psalms"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Acts 8:35"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "same scripture"
+   }
+  },
+  {
+   "q": "Which verse says \"Himself took our infirmities, and bare our sicknesses\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 8:17"
+   ]
+  },
+  {
+   "q": "In Matthew 27:57, who was the rich man who came for the body of Jesus?",
+   "type": "multiple_choice",
+   "options": [
+    "Joseph of Arimathaea",
+    "Nicodemus",
+    "Pilate",
+    "Peter"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Matthew 27:57"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Arimathaea"
+   }
+  },
+  {
+   "q": "Fill in the word: \"And he made his grave with the ___, and with the rich in his death\"",
+   "type": "fill_word",
+   "ref": "Isaiah 53:9",
+   "bible": "KJV",
+   "word": "wicked"
+  },
+  {
+   "q": "Which translation says he will \"see the light of life\" in Isaiah 53:11?",
+   "type": "which_translation",
+   "ref": "Isaiah 53:11",
+   "bible": "BSB",
+   "phrase": "light of life"
+  },
+  {
+   "q": "Which verse has Jesus saying of himself \"he was reckoned among the transgressors\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 22:37"
+   ]
+  },
+  {
+   "q": "In Isaiah 53:12, for whom did he make intercession?",
+   "type": "multiple_choice",
+   "options": [
+    "For the transgressors",
+    "For the righteous only",
+    "For the priests",
+    "For the kings of the earth"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Isaiah 53:12"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "transgressors"
+   }
+  },
+  {
+   "q": "Which translation says \"acquainted with disease\" in Isaiah 53:3?",
+   "type": "which_translation",
+   "ref": "Isaiah 53:3",
+   "bible": "ETH",
+   "phrase": "acquainted with disease"
+  },
+  {
+   "q": "Fill in the word: \"Behold the ___ of God, which taketh away the sin of the world\"",
+   "type": "fill_word",
+   "ref": "John 1:29",
+   "bible": "KJV",
+   "word": "Lamb"
+  },
+  {
+   "q": "Which verse says \"by whose stripes ye were healed\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Peter 2:24"
+   ]
+  },
+  {
+   "q": "In Isaiah 53:6, what have all we gone astray like?",
+   "type": "multiple_choice",
+   "options": [
+    "Sheep",
+    "Goats",
+    "Wolves",
+    "Lost coins"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Isaiah 53:6"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "sheep"
+   }
+  },
+  {
+   "q": "Which verse asks \"Who hath believed our report?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 53:1",
+    "John 12:38",
+    "Romans 10:16"
+   ]
+  },
+  {
+   "q": "Which translation says he will \"cleanse many nations\" in Isaiah 52:15?",
+   "type": "which_translation",
+   "ref": "Isaiah 52:15",
+   "bible": "ETH",
+   "phrase": "cleanse many nations"
+  },
+  {
+   "q": "Which translation says \"reckoned among the transgressors\" in Luke 22:37?",
+   "type": "which_translation",
+   "ref": "Luke 22:37",
+   "bible": "KJV",
+   "phrase": "reckoned among the transgressors"
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ]
+}
