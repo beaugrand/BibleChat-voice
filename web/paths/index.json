@@ -130,6 +130,37 @@
   }
  },
  {
+  "id": "isaiah-53-suffering-servant",
+  "title": "Isaiah 53: the suffering Servant",
+  "category": "Prophecy",
+  "image": "img/isaiah-53-suffering-servant.jpg",
+  "opening_question": "Isaiah wrote of a Servant who was \"wounded for our transgressions\" and \"brought as a lamb to the slaughter\". Centuries later a man of Ethiopia read these words in his chariot and asked: \"of whom speaketh the prophet this?\" Who is the Servant?",
+  "steps": 8,
+  "step_questions": [
+   "What will happen to the Servant, and what did many see when they looked at him?",
+   "Who hath believed our report? How did men treat the man of sorrows, and who did not believe on Jesus?",
+   "Whose griefs and sorrows did he carry, why was he wounded, and what do his stripes do?",
+   "What did he do when he was oppressed and afflicted, and what is he compared to?",
+   "Which scripture was the man of Ethiopia reading in his chariot, what did he ask Philip, and where did Philip begin?",
+   "With whom was his grave made, who laid him in a tomb, and what was never found in his mouth?",
+   "He was \"cut off out of the land of the living\", yet \"he shall see his seed, he shall prolong his days\". How can both be true?",
+   "With whom was he numbered, whose sin did he bear, and for whom did he make intercession?"
+  ],
+  "show": 10,
+  "verses": 56,
+  "minutes": 50,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "light",
+   "x": 23,
+   "y": 12,
+   "s": 36
+  }
+ },
+ {
   "id": "life-in-the-womb",
   "title": "Life in the womb",
   "category": "Body & Life",
