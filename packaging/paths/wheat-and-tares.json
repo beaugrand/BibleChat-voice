@@ -1,0 +1,627 @@
+{
+ "id": "wheat-and-tares",
+ "title": "The wheat and the tares: who is gathered first?",
+ "category": "Prophecy",
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "light",
+  "x": 83,
+  "y": 14,
+  "s": 30
+ },
+ "opening_question": "At the harvest the householder says: \"Gather ye together first the tares … but gather the wheat into my barn.\" Some ask whether the wicked are taken away first, and whether a false \"rapture\" could be what brings the great falling away. Who is gathered first, when, by whom, and what does Scripture say comes before that day?",
+ "required_refs": [
+  "Matthew 13:24-30",
+  "Matthew 13:36-43",
+  "Matthew 13:47-50",
+  "Matthew 3:12",
+  "Matthew 24:36-42",
+  "Luke 17:26-30",
+  "John 14:3",
+  "Luke 17:31-37",
+  "Matthew 24:31",
+  "1 Thessalonians 4:16-17",
+  "2 Thessalonians 2:1-2",
+  "2 Thessalonians 2:3-12",
+  "Matthew 24:10-13",
+  "1 Timothy 4:1",
+  "Matthew 24:23-27",
+  "Revelation 14:14-16"
+ ],
+ "words": [
+  "G2215",
+  "G4621",
+  "G4816",
+  "G4412",
+  "G4930",
+  "G3880",
+  "G142",
+  "G646",
+  "G1818",
+  "G4106"
+ ],
+ "show": 10,
+ "steps": [
+  {
+   "question": "Who sowed the tares, why did the householder say not to gather them up yet, and what is gathered first at the harvest?",
+   "refs": [
+    "Matthew 13:24-30"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2215",
+     "G4621",
+     "G4816",
+     "G4412"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Tares\" is the Greek zizanion, \"darnel or false grain\". The Ethiopian Canon reads \"darnel weeds\" and the BSB \"weeds\".",
+     "refs": [
+      "Matthew 13:25"
+     ],
+     "strongs": [
+      "G2215"
+     ]
+    },
+    {
+     "text": "The householder: \"Nay; lest while ye gather up the tares, ye root up also the wheat with them.\" Then: \"Let both grow together until the harvest\".",
+     "refs": [
+      "Matthew 13:29-30"
+     ]
+    },
+    {
+     "text": "\"First\" in \"Gather ye together first the tares\" is the Greek proton, \"firstly (in time, place, order, or importance)\".",
+     "refs": [
+      "Matthew 13:30"
+     ],
+     "strongs": [
+      "G4412"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "In Jesus' own explanation, who is the sower, what is the field, who are the reapers, and when is the harvest?",
+   "refs": [
+    "Matthew 13:36-43"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4930",
+     "G165",
+     "G2326",
+     "G32"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"The harvest is the end of the world; and the reapers are the angels\". \"End\" is the Greek sunteleia, \"entire completion\", and \"world\" is aion, \"properly, an age\". The Ethiopian Canon and the BSB read \"the end of the age\".",
+     "refs": [
+      "Matthew 13:39"
+     ],
+     "strongs": [
+      "G4930",
+      "G165"
+     ]
+    },
+    {
+     "text": "\"The Son of man shall send forth his angels, and they shall gather out of his kingdom all things that offend, and them which do iniquity\", and cast them \"into a furnace of fire\".",
+     "refs": [
+      "Matthew 13:41-42"
+     ]
+    },
+    {
+     "text": "After the tares are gathered: \"Then shall the righteous shine forth as the sun in the kingdom of their Father\".",
+     "refs": [
+      "Matthew 13:43"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "In the parable of the net and in John the Baptist's words, who is separated from whom, and where does each go?",
+   "refs": [
+    "Matthew 13:47-50",
+    "Matthew 3:12"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G873",
+     "G4621",
+     "G892"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"So shall it be at the end of the world: the angels shall come forth, and sever the wicked from among the just\".",
+     "refs": [
+      "Matthew 13:49"
+     ]
+    },
+    {
+     "text": "John the Baptist: he will \"gather his wheat into the garner; but he will burn up the chaff with unquenchable fire\".",
+     "refs": [
+      "Matthew 3:12"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "In the days of Noah, whom did the flood take away? Then who \"shall be taken\" and who \"left\", and where else is the same Greek word for \"taken\" used?",
+   "refs": [
+    "Matthew 24:36-42",
+    "Luke 17:26-30",
+    "John 14:3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G142",
+     "G3880",
+     "G863"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Matthew 24:39: \"the flood came, and took them all away\". \"Took\" there is the Greek airo, \"to take up or away\". The BSB reads \"swept them all away\"; Luke 17:27 says the flood \"destroyed them all\".",
+     "refs": [
+      "Matthew 24:39",
+      "Luke 17:27"
+     ],
+     "strongs": [
+      "G142"
+     ]
+    },
+    {
+     "text": "\"Taken\" in \"the one shall be taken, and the other left\" is a different word, paralambano, \"to receive near\". Jesus uses it in John 14:3: \"I will come again, and receive you unto myself\".",
+     "refs": [
+      "Matthew 24:40",
+      "John 14:3"
+     ],
+     "strongs": [
+      "G3880"
+     ]
+    },
+    {
+     "text": "\"Left\" is the Greek aphiemi; the KJV also translates it \"forsake\", \"leave\" and \"forgive\".",
+     "refs": [
+      "Matthew 24:40"
+     ],
+     "strongs": [
+      "G863"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Lot's wife, one taken and one left: when the disciples asked \"Where, Lord?\", what did Jesus answer? Whom do the angels gather in Matthew 24:31?",
+   "refs": [
+    "Luke 17:31-37",
+    "Matthew 24:31"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3880",
+     "G1996",
+     "G105"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Jesus answered: \"Wheresoever the body is, thither will the eagles be gathered together\". The Ethiopian Canon reads \"vultures\", and the BSB \"Wherever there is a carcass, there the vultures will gather\".",
+     "refs": [
+      "Luke 17:37"
+     ]
+    },
+    {
+     "text": "Luke 17:36 (\"Two men shall be in the field\") is in the KJV; the Ethiopian Canon and the BSB have no verse 36 there.",
+     "refs": [
+      "Luke 17:36"
+     ]
+    },
+    {
+     "text": "Matthew 24:31: \"they shall gather together his elect from the four winds\".",
+     "refs": [
+      "Matthew 24:31"
+     ],
+     "strongs": [
+      "G1996"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who rises first, who is caught up, and to meet whom? What did Paul tell the Thessalonians not to be shaken by?",
+   "refs": [
+    "1 Thessalonians 4:16-17",
+    "2 Thessalonians 2:1-2"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G726",
+     "G4412",
+     "G1997"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"The dead in Christ shall rise first\", then \"we which are alive and remain shall be caught up together with them\". \"First\" is again proton; \"caught up\" is harpazo, \"to seize\".",
+     "refs": [
+      "1 Thessalonians 4:16-17"
+     ],
+     "strongs": [
+      "G4412",
+      "G726"
+     ]
+    },
+    {
+     "text": "Paul writes \"by the coming of our Lord Jesus Christ, and by our gathering together unto him\", that they \"be not soon shaken in mind\".",
+     "refs": [
+      "2 Thessalonians 2:1-2"
+     ],
+     "strongs": [
+      "G1997"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What must come first before that day, how does the man of sin come, and why do they who perish believe a lie?",
+   "refs": [
+    "2 Thessalonians 2:3-12",
+    "Matthew 24:10-13",
+    "1 Timothy 4:1"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G646",
+     "G1818",
+     "G4106",
+     "G4592"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"For that day shall not come, except there come a falling away first\". \"Falling away\" is the Greek apostasia, \"defection from truth\"; the Ethiopian Canon and the BSB read \"the rebellion\".",
+     "refs": [
+      "2 Thessalonians 2:3"
+     ],
+     "strongs": [
+      "G646",
+      "G4412"
+     ]
+    },
+    {
+     "text": "\"Let no man deceive you\" in 2 Thessalonians 2:3 is the Greek exapatao, the word Paul uses in 2 Corinthians 11:3: \"as the serpent beguiled Eve\".",
+     "refs": [
+      "2 Thessalonians 2:3",
+      "2 Corinthians 11:3"
+     ],
+     "strongs": [
+      "G1818"
+     ]
+    },
+    {
+     "text": "His coming is \"after the working of Satan with all power and signs and lying wonders\"; \"strong delusion\" is the Greek plane, \"delusion, error\".",
+     "refs": [
+      "2 Thessalonians 2:9",
+      "2 Thessalonians 2:11"
+     ],
+     "strongs": [
+      "G4106"
+     ]
+    },
+    {
+     "text": "Jesus: \"many false prophets shall rise, and shall deceive many\", \"the love of many shall wax cold\". Paul: \"some shall depart from the faith, giving heed to seducing spirits\".",
+     "refs": [
+      "Matthew 24:11-12",
+      "1 Timothy 4:1"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jesus say to do if anyone says Christ is in the desert or in the secret chambers? How will his coming be seen, and who reaps the harvest of the earth?",
+   "refs": [
+    "Matthew 24:23-27",
+    "Revelation 14:14-16"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5580",
+     "G4592",
+     "G796"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"There shall arise false Christs, and false prophets, and shall shew great signs and wonders; insomuch that, if it were possible, they shall deceive the very elect\".",
+     "refs": [
+      "Matthew 24:24"
+     ]
+    },
+    {
+     "text": "\"Behold, he is in the secret chambers; believe it not.\" Then: \"as the lightning cometh out of the east, and shineth even unto the west; so shall also the coming of the Son of man be\".",
+     "refs": [
+      "Matthew 24:26-27"
+     ],
+     "strongs": [
+      "G796"
+     ]
+    },
+    {
+     "text": "Revelation 14: one \"like unto the Son of man\" with \"a sharp sickle\", \"for the harvest of the earth is ripe\".",
+     "refs": [
+      "Revelation 14:14-15"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Fill in the word: \"Gather ye together first the ___, and bind them in bundles to burn them\"",
+   "type": "fill_word",
+   "ref": "Matthew 13:30",
+   "bible": "KJV",
+   "word": "tares"
+  },
+  {
+   "q": "Which verse says \"Let both grow together until the harvest\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 13:30"
+   ]
+  },
+  {
+   "q": "Which translation calls the tares \"darnel weeds\" in Matthew 13:25?",
+   "type": "which_translation",
+   "ref": "Matthew 13:25",
+   "bible": "ETH",
+   "phrase": "darnel weeds"
+  },
+  {
+   "q": "In Matthew 13:39, who are the reapers?",
+   "type": "multiple_choice",
+   "options": [
+    "The angels",
+    "The servants",
+    "The disciples",
+    "The kings of the earth"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Matthew 13:39"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "angels"
+   }
+  },
+  {
+   "q": "Which translation says \"the end of the world\" in Matthew 13:39?",
+   "type": "which_translation",
+   "ref": "Matthew 13:39",
+   "bible": "KJV",
+   "phrase": "end of the world"
+  },
+  {
+   "q": "Which verse says \"Then shall the righteous shine forth as the sun\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 13:43"
+   ]
+  },
+  {
+   "q": "Which verse says the angels shall \"sever the wicked from among the just\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 13:49"
+   ]
+  },
+  {
+   "q": "In Matthew 24:39, what did the flood do to them that knew not?",
+   "type": "multiple_choice",
+   "options": [
+    "Took them all away",
+    "Left them on the earth",
+    "Lifted the ark only",
+    "Gathered them into the ark"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Matthew 24:39"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "took them all away"
+   }
+  },
+  {
+   "q": "Which translation says the flood \"swept them all away\"?",
+   "type": "which_translation",
+   "ref": "Matthew 24:39",
+   "bible": "BSB",
+   "phrase": "swept them all away"
+  },
+  {
+   "q": "Which verse says \"I will come again, and receive you unto myself\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 14:3"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"___ Lot's wife\"",
+   "type": "fill_word",
+   "ref": "Luke 17:32",
+   "bible": "KJV",
+   "word": "Remember"
+  },
+  {
+   "q": "Which translation says \"Wherever there is a carcass, there the vultures will gather\"?",
+   "type": "which_translation",
+   "ref": "Luke 17:37",
+   "bible": "BSB",
+   "phrase": "Wherever there is a carcass"
+  },
+  {
+   "q": "In 1 Thessalonians 4:16, who shall rise first?",
+   "type": "multiple_choice",
+   "options": [
+    "The dead in Christ",
+    "The tares",
+    "The angels",
+    "They which are alive and remain"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 Thessalonians 4:16"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "dead in Christ"
+   }
+  },
+  {
+   "q": "Which translation says \"falling away\" in 2 Thessalonians 2:3?",
+   "type": "which_translation",
+   "ref": "2 Thessalonians 2:3",
+   "bible": "KJV",
+   "phrase": "falling away"
+  },
+  {
+   "q": "Which verse says \"God shall send them strong delusion, that they should believe a lie\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Thessalonians 2:11"
+   ]
+  },
+  {
+   "q": "Which verse says \"some shall depart from the faith, giving heed to seducing spirits\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Timothy 4:1"
+   ]
+  },
+  {
+   "q": "If they say \"he is in the secret chambers\", what did Jesus say to do?",
+   "type": "multiple_choice",
+   "options": [
+    "Believe it not",
+    "Go and see",
+    "Tell the elders",
+    "Wait at the door"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Matthew 24:26"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "believe it not"
+   }
+  },
+  {
+   "q": "Which verse says \"as the lightning cometh out of the east, and shineth even unto the west\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 24:27"
+   ]
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ]
+}

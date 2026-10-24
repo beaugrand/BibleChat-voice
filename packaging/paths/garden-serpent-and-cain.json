@@ -1,0 +1,674 @@
+{
+ "id": "garden-serpent-and-cain",
+ "title": "The Garden, the serpent and Cain: whose seed?",
+ "category": "Creation",
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "light",
+  "x": 89,
+  "y": 17,
+  "s": 30
+ },
+ "opening_question": "Some teach that the serpent fathered Cain: Genesis 4 says Adam knew Eve once, yet she bare Cain and \"again bare his brother Abel\", so (they say) the two were twins with two fathers. What does the text say about the serpent, Eve, Cain and Abel, and what did God tell Cain before he slew his brother?",
+ "required_refs": [
+  "Genesis 2:16-17",
+  "Genesis 3:1-6",
+  "Genesis 3:7-13",
+  "2 Corinthians 11:3",
+  "1 Timothy 2:13-14",
+  "Genesis 3:14-15",
+  "Galatians 4:4",
+  "Galatians 3:16",
+  "Revelation 12:9",
+  "Romans 16:20",
+  "Genesis 4:1-2",
+  "Genesis 4:25",
+  "Genesis 38:2-5",
+  "Genesis 29:32-35",
+  "Genesis 25:21-26",
+  "Genesis 38:27-30",
+  "Romans 9:10-12",
+  "Genesis 4:3-8",
+  "Hebrews 11:4",
+  "1 John 3:8-12",
+  "John 8:37-44",
+  "Jude 1:11",
+  "Genesis 4:9-16",
+  "Genesis 4:26",
+  "Genesis 5:3",
+  "Luke 3:38"
+ ],
+ "words": [
+  "H5175",
+  "H5377",
+  "H2233",
+  "H3045",
+  "H3254",
+  "H8380",
+  "H7257",
+  "G1818",
+  "G4190"
+ ],
+ "show": 10,
+ "steps": [
+  {
+   "question": "What did God command the man, what did the serpent say, and what did the woman do with the fruit?",
+   "refs": [
+    "Genesis 2:16-17",
+    "Genesis 3:1-6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5175",
+     "H6175",
+     "H398"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The serpent was \"more subtil than any beast of the field\". His first words to the woman were a question about what God had said: \"Yea, hath God said\".",
+     "refs": [
+      "Genesis 3:1"
+     ]
+    },
+    {
+     "text": "Genesis 3:6 says what she did: \"she took of the fruit thereof, and did eat, and gave also unto her husband with her; and he did eat\". The man did the same thing she did.",
+     "refs": [
+      "Genesis 3:6"
+     ]
+    },
+    {
+     "text": "\"Serpent\" is the Hebrew nachash, \"a snake\". Revelation 12:9 names \"that old serpent, called the Devil, and Satan\".",
+     "refs": [
+      "Revelation 12:9"
+     ],
+     "strongs": [
+      "H5175"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "When God asked the woman \"What is this that thou hast done?\", what did she answer, and what does Paul say happened to Eve?",
+   "refs": [
+    "Genesis 3:7-13",
+    "2 Corinthians 11:3",
+    "1 Timothy 2:13-14"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5377",
+     "G1818",
+     "G538"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Beguiled\" in Genesis 3:13 is the Hebrew nasha: \"to lead astray\", \"(mentally) to delude or (morally) to seduce\"; the KJV translates it \"beguile\" and \"deceive\". The Ethiopian Canon and the BSB read \"The serpent deceived me\".",
+     "refs": [
+      "Genesis 3:13"
+     ],
+     "strongs": [
+      "H5377"
+     ]
+    },
+    {
+     "text": "Nasha stands in 15 verses of the KJV Old Testament. Two of them: \"Let not Hezekiah deceive you\" and \"The pride of thine heart hath deceived thee\".",
+     "refs": [
+      "2 Kings 18:29",
+      "Obadiah 1:3"
+     ],
+     "strongs": [
+      "H5377"
+     ]
+    },
+    {
+     "text": "Paul uses the Greek exapatao: \"as the serpent beguiled Eve through his subtilty, so your minds should be corrupted\". The same word stands in Romans 16:18 (\"by good words and fair speeches deceive the hearts of the simple\") and in 2 Thessalonians 2:3 (\"Let no man deceive you\").",
+     "refs": [
+      "2 Corinthians 11:3",
+      "Romans 16:18",
+      "2 Thessalonians 2:3"
+     ],
+     "strongs": [
+      "G1818"
+     ]
+    },
+    {
+     "text": "The woman answered: \"The serpent beguiled me, and I did eat\". God's question to the man was: \"Hast thou eaten of the tree\".",
+     "refs": [
+      "Genesis 3:13",
+      "Genesis 3:11"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Between whom did God put enmity, and whose seed shall bruise the serpent's head?",
+   "refs": [
+    "Genesis 3:14-15",
+    "Galatians 4:4",
+    "Galatians 3:16",
+    "Revelation 12:9",
+    "Romans 16:20"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H342",
+     "H2233",
+     "H7779",
+     "G4690"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Seed\" is the Hebrew zera: \"seed; figuratively fruit\", \"posterity\". The KJV translates it \"seed\" 198 times. Genesis 3:15 speaks of \"thy seed and her seed\".",
+     "refs": [
+      "Genesis 3:15"
+     ],
+     "strongs": [
+      "H2233"
+     ]
+    },
+    {
+     "text": "Paul: \"God sent forth his Son, made of a woman\", and \"to thy seed, which is Christ\".",
+     "refs": [
+      "Galatians 4:4",
+      "Galatians 3:16"
+     ],
+     "strongs": [
+      "G4690"
+     ]
+    },
+    {
+     "text": "Where the KJV and the Ethiopian Canon say \"it shall bruise thy head\", the BSB says \"He will crush your head\". Paul: \"the God of peace shall bruise Satan under your feet shortly\".",
+     "refs": [
+      "Genesis 3:15",
+      "Romans 16:20"
+     ],
+     "strongs": [
+      "H7779"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who knew Eve before she conceived and bare Cain, and what did Eve say she had gotten?",
+   "refs": [
+    "Genesis 4:1-2",
+    "Genesis 4:25",
+    "Genesis 5:3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3045",
+     "H7069",
+     "H3254"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Genesis 4:1 puts the knowing and the conceiving together: \"Adam knew Eve his wife; and she conceived, and bare Cain\".",
+     "refs": [
+      "Genesis 4:1"
+     ],
+     "strongs": [
+      "H3045"
+     ]
+    },
+    {
+     "text": "Eve said: \"I have gotten a man from the LORD\" (KJV); the Ethiopian Canon reads \"with Yahweh's help\" and the BSB \"With the help of the LORD\".",
+     "refs": [
+      "Genesis 4:1"
+     ],
+     "strongs": [
+      "H7069"
+     ]
+    },
+    {
+     "text": "\"Again\" in \"she again bare his brother Abel\" is the Hebrew yasaph: \"to add or augment\", \"to continue to do a thing\". The BSB reads \"Later she gave birth\". The Hebrew word for twins (ta'om) is not in the verse.",
+     "refs": [
+      "Genesis 4:2"
+     ],
+     "strongs": [
+      "H3254"
+     ]
+    },
+    {
+     "text": "When Seth was born, Eve said God \"hath appointed me another seed instead of Abel, whom Cain slew\".",
+     "refs": [
+      "Genesis 4:25"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Judah \"went in unto her\": how many sons followed, and where was the third one born? When the Bible tells of twins, what word does it use, and by how many fathers were Rebekah's twins conceived?",
+   "refs": [
+    "Genesis 38:2-5",
+    "Genesis 29:32-35",
+    "Genesis 25:21-26",
+    "Genesis 38:27-30",
+    "Romans 9:10-12"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3254",
+     "H8380",
+     "H2029"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Genesis 38:2 says once that Judah \"went in unto her\"; then come three sons, Er, Onan and Shelah. The third time, \"conceived\" is the same Hebrew yasaph as \"again\" in Genesis 4:2, and Shelah was born somewhere else: \"he was at Chezib, when she bare him\".",
+     "refs": [
+      "Genesis 38:2-5",
+      "Genesis 4:2"
+     ],
+     "strongs": [
+      "H3254"
+     ]
+    },
+    {
+     "text": "Leah \"conceived again, and bare a son\" three times after Reuben, with no new verse about Jacob going in to her between the births.",
+     "refs": [
+      "Genesis 29:32-35"
+     ]
+    },
+    {
+     "text": "The Hebrew ta'om, \"twins\", is used of Esau and Jacob (\"behold, there were twins in her womb\") and of Pharez and Zarah. It is not in Genesis 4.",
+     "refs": [
+      "Genesis 25:24",
+      "Genesis 38:27"
+     ],
+     "strongs": [
+      "H8380"
+     ]
+    },
+    {
+     "text": "Paul writes of Esau and Jacob: \"Rebecca also had conceived by one, even by our father Isaac\". The BSB: \"conceived by one man\".",
+     "refs": [
+      "Romans 9:10"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Why was Cain wroth, and what did the LORD tell him before he rose up against Abel?",
+   "refs": [
+    "Genesis 4:3-8",
+    "Hebrews 11:4"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7257",
+     "H4910",
+     "H8669"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The LORD said to Cain: \"If thou doest well, shalt thou not be accepted?\" and \"thou shalt rule over him\". The BSB: \"you must master it\".",
+     "refs": [
+      "Genesis 4:7"
+     ],
+     "strongs": [
+      "H4910"
+     ]
+    },
+    {
+     "text": "\"Lieth\" in \"sin lieth at the door\" is the Hebrew rabats, \"to crouch\" like a lying animal. The Ethiopian Canon reads \"sin crouches at the door\" and the BSB \"sin is crouching at your door\".",
+     "refs": [
+      "Genesis 4:7"
+     ],
+     "strongs": [
+      "H7257"
+     ]
+    },
+    {
+     "text": "Hebrews: \"By faith Abel offered unto God a more excellent sacrifice than Cain\".",
+     "refs": [
+      "Hebrews 11:4"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "John says Cain \"was of that wicked one\". What makes someone a child of the devil in 1 John 3, and to whom did Jesus say \"Ye are of your father the devil\"?",
+   "refs": [
+    "1 John 3:8-12",
+    "John 8:37-44",
+    "Jude 1:11"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4190",
+     "G1537",
+     "G3598"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "1 John 3:10: \"In this the children of God are manifest, and the children of the devil: whosoever doeth not righteousness is not of God\".",
+     "refs": [
+      "1 John 3:10"
+     ]
+    },
+    {
+     "text": "John gives the reason Cain slew his brother: \"Because his own works were evil, and his brother's righteous\". The BSB reads \"belonged to the evil one\".",
+     "refs": [
+      "1 John 3:12"
+     ],
+     "strongs": [
+      "G4190"
+     ]
+    },
+    {
+     "text": "Jesus said to the same men \"I know that ye are Abraham's seed\" and \"Ye are of your father the devil\".",
+     "refs": [
+      "John 8:37",
+      "John 8:44"
+     ]
+    },
+    {
+     "text": "Jude: \"they have gone in the way of Cain\". \"Way\" is the Greek hodos, \"a road\", \"a mode or means\".",
+     "refs": [
+      "Jude 1:11"
+     ],
+     "strongs": [
+      "G3598"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did the LORD do for Cain after Abel's blood cried from the ground, and through which son does the line run to Enos and to Luke's genealogy?",
+   "refs": [
+    "Genesis 4:9-16",
+    "Genesis 4:26",
+    "Genesis 5:3",
+    "Luke 3:38"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H226",
+     "H5110"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The LORD \"set a mark upon Cain, lest any finding him should kill him\".",
+     "refs": [
+      "Genesis 4:15"
+     ]
+    },
+    {
+     "text": "Adam \"begat a son in his own likeness, after his image; and called his name Seth\". Luke's genealogy reads \"the son of Seth, which was the son of Adam, which was the son of God\".",
+     "refs": [
+      "Genesis 5:3",
+      "Luke 3:38"
+     ]
+    },
+    {
+     "text": "In the days of Enos, Seth's son, \"then began men to call upon the name of the LORD\".",
+     "refs": [
+      "Genesis 4:26"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"The serpent beguiled me, and I did eat\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 3:13"
+   ]
+  },
+  {
+   "q": "Which translation says \"The serpent beguiled me\" in Genesis 3:13?",
+   "type": "which_translation",
+   "ref": "Genesis 3:13",
+   "bible": "KJV",
+   "phrase": "beguiled me"
+  },
+  {
+   "q": "Fill in the word: \"between thy ___ and her ___; it shall bruise thy head\"",
+   "type": "fill_word",
+   "ref": "Genesis 3:15",
+   "bible": "KJV",
+   "word": "seed"
+  },
+  {
+   "q": "Which translation says \"He will crush your head\" in Genesis 3:15?",
+   "type": "which_translation",
+   "ref": "Genesis 3:15",
+   "bible": "BSB",
+   "phrase": "crush your head"
+  },
+  {
+   "q": "In Genesis 4:1, who knew Eve before she conceived and bare Cain?",
+   "type": "multiple_choice",
+   "options": [
+    "Adam",
+    "The serpent",
+    "Seth",
+    "No one is named"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Genesis 4:1"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Adam"
+   }
+  },
+  {
+   "q": "Fill in the word: \"And she ___ bare his brother Abel\"",
+   "type": "fill_word",
+   "ref": "Genesis 4:2",
+   "bible": "KJV",
+   "word": "again"
+  },
+  {
+   "q": "Which translation says \"I have gotten a man with Yahweh's help\"?",
+   "type": "which_translation",
+   "ref": "Genesis 4:1",
+   "bible": "ETH",
+   "phrase": "Yahweh's help"
+  },
+  {
+   "q": "In Genesis 38:5, where was Judah when Shelah was born?",
+   "type": "multiple_choice",
+   "options": [
+    "At Chezib",
+    "At Hebron",
+    "At Bethel",
+    "In Egypt"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Genesis 38:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Chezib"
+   }
+  },
+  {
+   "q": "Which verse says \"behold, there were twins in her womb\" of Esau and Jacob?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 25:24"
+   ]
+  },
+  {
+   "q": "Which verse says Rebecca \"had conceived by one, even by our father Isaac\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 9:10"
+   ]
+  },
+  {
+   "q": "Which verse has the LORD saying to Cain \"If thou doest well, shalt thou not be accepted?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 4:7"
+   ]
+  },
+  {
+   "q": "Which translation says \"sin crouches at the door\" in Genesis 4:7?",
+   "type": "which_translation",
+   "ref": "Genesis 4:7",
+   "bible": "ETH",
+   "phrase": "sin crouches at the door"
+  },
+  {
+   "q": "In 1 John 3:12, why did Cain slay his brother?",
+   "type": "multiple_choice",
+   "options": [
+    "Because his own works were evil",
+    "Because his father was the serpent",
+    "Because Abel struck him first",
+    "Because God commanded it"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 John 3:12"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "works"
+   }
+  },
+  {
+   "q": "Which verse says \"whosoever doeth not righteousness is not of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 John 3:10"
+   ]
+  },
+  {
+   "q": "Which verse has Jesus saying \"I know that ye are Abraham's seed\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 8:37"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"Woe unto them! for they have gone in the ___ of Cain\"",
+   "type": "fill_word",
+   "ref": "Jude 1:11",
+   "bible": "KJV",
+   "word": "way"
+  },
+  {
+   "q": "Which verse says \"By faith Abel offered unto God a more excellent sacrifice than Cain\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Hebrews 11:4"
+   ]
+  },
+  {
+   "q": "Which verse says \"as the serpent beguiled Eve through his subtilty, so your minds should be corrupted\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Corinthians 11:3"
+   ]
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ]
+}
