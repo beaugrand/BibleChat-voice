@@ -133,6 +133,10 @@ class PathRulesTest(unittest.TestCase):
         d2 = load(os.path.join(bp.SRC_DIR, "daniel-2-statue-and-stone.json"))
         self.assertEqual(d2["category"], bp.GROUPS); self.assertTrue(d2["group"])
         self.assertTrue(d2["read_along"]["url"].startswith("https://"))           # TS2009: a link, never its text
+        i53 = load(os.path.join(bp.SRC_DIR, "isaiah-53-suffering-servant.json"))   # Isaiah 52:13-53:12 with its fulfilment
+        for r in ("Isaiah 52:13-15", "Isaiah 53:1-12", "Acts 8:27-35", "1 Peter 2:21-25", "Luke 22:37", "Matthew 8:16-17"):
+            self.assertIn(r, i53["required_refs"])
+        self.assertEqual(i53["category"], "Prophecy"); self.assertTrue(i53["read_along"]["url"].startswith("https://"))
         fb = load(os.path.join(bp.SRC_DIR, "freedom-from-bondage.json"))
         for r in ("John 8:34", "John 8:36", "Psalms 107:13-14", "Romans 6:14", "1 Corinthians 10:13", "Galatians 5:1", "1 John 1:9"):
             self.assertIn(r, fb["required_refs"])
