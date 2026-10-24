@@ -78,6 +78,37 @@
   }
  },
  {
+  "id": "garden-serpent-and-cain",
+  "title": "The Garden, the serpent and Cain: whose seed?",
+  "category": "Creation",
+  "image": "img/garden-serpent-and-cain.jpg",
+  "opening_question": "Some teach that the serpent fathered Cain: Genesis 4 says Adam knew Eve once, yet she bare Cain and \"again bare his brother Abel\", so (they say) the two were twins with two fathers. What does the text say about the serpent, Eve, Cain and Abel, and what did God tell Cain before he slew his brother?",
+  "steps": 8,
+  "step_questions": [
+   "What did God command the man, what did the serpent say, and what did the woman do with the fruit?",
+   "When God asked the woman \"What is this that thou hast done?\", what did she answer, and what does Paul say happened to Eve?",
+   "Between whom did God put enmity, and whose seed shall bruise the serpent's head?",
+   "Who knew Eve before she conceived and bare Cain, and what did Eve say she had gotten?",
+   "Judah \"went in unto her\": how many sons followed, and where was the third one born? When the Bible tells of twins, what word does it use, and by how many fathers were Rebekah's twins conceived?",
+   "Why was Cain wroth, and what did the LORD tell him before he rose up against Abel?",
+   "John says Cain \"was of that wicked one\". What makes someone a child of the devil in 1 John 3, and to whom did Jesus say \"Ye are of your father the devil\"?",
+   "What did the LORD do for Cain after Abel's blood cried from the ground, and through which son does the line run to Enos and to Luke's genealogy?"
+  ],
+  "show": 10,
+  "verses": 80,
+  "minutes": 55,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "light",
+   "x": 89,
+   "y": 17,
+   "s": 30
+  }
+ },
+ {
   "id": "heavens-and-earth",
   "title": "The heavens and the earth in the text's own words",
   "category": "Creation",
@@ -532,6 +563,37 @@
   "minutes": 40,
   "anim": {
    "kind": "rainbow"
+  }
+ },
+ {
+  "id": "wheat-and-tares",
+  "title": "The wheat and the tares: who is gathered first?",
+  "category": "Prophecy",
+  "image": "img/wheat-and-tares.jpg",
+  "opening_question": "At the harvest the householder says: \"Gather ye together first the tares … but gather the wheat into my barn.\" Some ask whether the wicked are taken away first, and whether a false \"rapture\" could be what brings the great falling away. Who is gathered first, when, by whom, and what does Scripture say comes before that day?",
+  "steps": 8,
+  "step_questions": [
+   "Who sowed the tares, why did the householder say not to gather them up yet, and what is gathered first at the harvest?",
+   "In Jesus' own explanation, who is the sower, what is the field, who are the reapers, and when is the harvest?",
+   "In the parable of the net and in John the Baptist's words, who is separated from whom, and where does each go?",
+   "In the days of Noah, whom did the flood take away? Then who \"shall be taken\" and who \"left\", and where else is the same Greek word for \"taken\" used?",
+   "Lot's wife, one taken and one left: when the disciples asked \"Where, Lord?\", what did Jesus answer? Whom do the angels gather in Matthew 24:31?",
+   "Who rises first, who is caught up, and to meet whom? What did Paul tell the Thessalonians not to be shaken by?",
+   "What must come first before that day, how does the man of sin come, and why do they who perish believe a lie?",
+   "What did Jesus say to do if anyone says Christ is in the desert or in the secret chambers? How will his coming be seen, and who reaps the harvest of the earth?"
+  ],
+  "show": 10,
+  "verses": 68,
+  "minutes": 50,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "light",
+   "x": 83,
+   "y": 14,
+   "s": 30
   }
  },
  {
