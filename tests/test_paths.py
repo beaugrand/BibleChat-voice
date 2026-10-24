@@ -137,6 +137,13 @@ class PathRulesTest(unittest.TestCase):
         for r in ("Isaiah 52:13-15", "Isaiah 53:1-12", "Acts 8:27-35", "1 Peter 2:21-25", "Luke 22:37", "Matthew 8:16-17"):
             self.assertIn(r, i53["required_refs"])
         self.assertEqual(i53["category"], "Prophecy"); self.assertTrue(i53["read_along"]["url"].startswith("https://"))
+        gs = load(os.path.join(bp.SRC_DIR, "garden-serpent-and-cain.json"))   # the serpent, Eve, Cain and Abel, tested by the text
+        for r in ("Genesis 3:1-6", "Genesis 3:14-15", "Genesis 4:1-2", "Genesis 4:3-8", "Genesis 38:2-5", "Romans 9:10-12", "1 John 3:8-12", "John 8:37-44"):
+            self.assertIn(r, gs["required_refs"])
+        wt = load(os.path.join(bp.SRC_DIR, "wheat-and-tares.json"))           # who is gathered first, and the falling away
+        for r in ("Matthew 13:24-30", "Matthew 13:36-43", "Matthew 24:36-42", "John 14:3", "2 Thessalonians 2:3-12", "Matthew 24:23-27"):
+            self.assertIn(r, wt["required_refs"])
+        self.assertEqual(gs["category"], "Creation"); self.assertEqual(wt["category"], "Prophecy")
         fb = load(os.path.join(bp.SRC_DIR, "freedom-from-bondage.json"))
         for r in ("John 8:34", "John 8:36", "Psalms 107:13-14", "Romans 6:14", "1 Corinthians 10:13", "Galatians 5:1", "1 John 1:9"):
             self.assertIn(r, fb["required_refs"])
