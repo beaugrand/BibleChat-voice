@@ -1,0 +1,493 @@
+{
+ "id": "mirror-6-the-times",
+ "title": "Session 6: The times",
+ "category": "Prophecy",
+ "series": {
+  "id": "mirror-prophecies",
+  "title": "Revelation & Daniel: the mirror prophecies",
+  "session": 6,
+  "of": 7
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "stars"
+ },
+ "opening_question": "Daniel and Revelation both name a time of trouble: \"a time and times\", forty and two months, 1,260 days. Where does each one stand, and what happens in that time?",
+ "required_refs": [
+  "Daniel 7:25",
+  "Daniel 12:6-7",
+  "Revelation 12:6",
+  "Revelation 12:14",
+  "Revelation 11:2-3",
+  "Revelation 13:5"
+ ],
+ "words": [
+  "H5732",
+  "G2540",
+  "G3376"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "How long are the saints given into his hand?",
+   "refs": [
+    "Daniel 7:25"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5732"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The word for \"time\" in Daniel 7:25 is iddan: \"a set time; technically a year\".",
+     "refs": [
+      "Daniel 7:25"
+     ],
+     "strongs": [
+      "H5732"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did the man clothed in linen swear, and how long shall it be?",
+   "refs": [
+    "Daniel 12:6-7"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4150"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The word for \"time\" in Daniel 12:7 is moed: \"an appointment that is a fixed time or season\".",
+     "refs": [
+      "Daniel 12:7"
+     ],
+     "strongs": [
+      "H4150"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How long is the woman nourished in the wilderness, in days and in times?",
+   "refs": [
+    "Revelation 12:6",
+    "Revelation 12:14"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2540"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Revelation 12 gives the stay in the wilderness two ways: \"a thousand two hundred and threescore days\" (12:6) and \"a time, and times, and half a time\" (12:14).",
+     "refs": [
+      "Revelation 12:6",
+      "Revelation 12:14"
+     ]
+    },
+    {
+     "text": "Daniel 7:25 has \"a time and times\"; Daniel 12:7 has \"a time, times, and an half\"; Revelation 12:14 has \"a time, and times, and half a time\".",
+     "refs": [
+      "Daniel 7:25",
+      "Daniel 12:7",
+      "Revelation 12:14"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How long is the holy city trodden, how long do the two witnesses prophesy, and how long does the beast continue?",
+   "refs": [
+    "Revelation 11:2-3",
+    "Revelation 13:5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3376"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"forty and two months\" stands in Revelation 11:2 and 13:5; \"a thousand two hundred and threescore days\" in 11:3 and 12:6.",
+     "refs": [
+      "Revelation 11:2",
+      "Revelation 13:5",
+      "Revelation 11:3",
+      "Revelation 12:6"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"until a time and times and the dividing of time\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 7:25"
+   ],
+   "signals": {
+    "xref": 34,
+    "votes": 215,
+    "word": "H5732",
+    "word_count": 3,
+    "differ": 0.335,
+    "quoted": null
+   },
+   "why": [
+    "34 cross-references point here",
+    "The Hebrew word ‛iddân (H5732) is in 3 verses of this path"
+   ],
+   "score": 0.5748
+  },
+  {
+   "q": "Which verse asks \"How long shall it be to the end of these wonders?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 12:6"
+   ],
+   "signals": {
+    "xref": 6,
+    "votes": 34,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.366,
+    "quoted": null
+   },
+   "why": [
+    "6 cross-references point here"
+   ],
+   "score": 0.3584
+  },
+  {
+   "q": "In Daniel 12:7, what did the man clothed in linen hold up unto heaven?",
+   "type": "multiple_choice",
+   "options": [
+    "His right hand and his left hand",
+    "A scroll",
+    "A sword",
+    "A measuring line"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 12:7"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "hand"
+   },
+   "signals": {
+    "xref": 19,
+    "votes": 127,
+    "word": "H4150",
+    "word_count": 2,
+    "differ": 0.401,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here",
+    "The Hebrew word mô‛êd (H4150) is in 2 verses of this path"
+   ],
+   "score": 0.5229
+  },
+  {
+   "q": "Which translation says \"a time, times, and an half\" in Daniel 12:7?",
+   "type": "which_translation",
+   "ref": "Daniel 12:7",
+   "bible": "KJV",
+   "phrase": "a time, times, and an half",
+   "answer_refs": [
+    "Daniel 12:7"
+   ],
+   "signals": {
+    "xref": 19,
+    "votes": 127,
+    "word": "H4150",
+    "word_count": 2,
+    "differ": 0.401,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here",
+    "The Hebrew word mô‛êd (H4150) is in 2 verses of this path"
+   ],
+   "score": 0.5229
+  },
+  {
+   "q": "Fill in the word: \"And the woman fled into the ___\"",
+   "type": "fill_word",
+   "ref": "Revelation 12:6",
+   "bible": "KJV",
+   "word": "wilderness",
+   "answer_refs": [
+    "Revelation 12:6"
+   ],
+   "signals": {
+    "xref": 10,
+    "votes": 75,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.539,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.4599
+  },
+  {
+   "q": "In Revelation 12:6, for how many days do they feed the woman?",
+   "type": "multiple_choice",
+   "options": [
+    "A thousand two hundred and threescore",
+    "Forty",
+    "Seventy",
+    "A thousand"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 12:6"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "threescore"
+   },
+   "signals": {
+    "xref": 10,
+    "votes": 75,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.539,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.4599
+  },
+  {
+   "q": "Which verse says she is nourished \"for a time, and times, and half a time\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 12:14"
+   ],
+   "signals": {
+    "xref": 17,
+    "votes": 102,
+    "word": "G2540",
+    "word_count": 3,
+    "differ": 0.254,
+    "quoted": null
+   },
+   "why": [
+    "17 cross-references point here",
+    "The Greek word kairós (G2540) is in 3 verses of this path"
+   ],
+   "score": 0.499
+  },
+  {
+   "q": "In Revelation 12:14, what was given to the woman?",
+   "type": "multiple_choice",
+   "options": [
+    "Two wings of a great eagle",
+    "A crown of twelve stars",
+    "A rod of iron",
+    "A white horse"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 12:14"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "eagle"
+   },
+   "signals": {
+    "xref": 17,
+    "votes": 102,
+    "word": "G2540",
+    "word_count": 3,
+    "differ": 0.254,
+    "quoted": null
+   },
+   "why": [
+    "17 cross-references point here",
+    "The Greek word kairós (G2540) is in 3 verses of this path"
+   ],
+   "score": 0.499
+  },
+  {
+   "q": "Which verse says the holy city \"shall they tread under foot forty and two months\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 11:2"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 104,
+    "word": "G3376",
+    "word_count": 2,
+    "differ": 0.543,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here",
+    "The Greek word mḗn (G3376) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5435
+  },
+  {
+   "q": "Which translation says \"1,260 days\" in Revelation 11:3?",
+   "type": "which_translation",
+   "ref": "Revelation 11:3",
+   "bible": "BSB",
+   "phrase": "1,260 days",
+   "answer_refs": [
+    "Revelation 11:3"
+   ],
+   "signals": {
+    "xref": 23,
+    "votes": 119,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.428,
+    "quoted": null
+   },
+   "why": [
+    "23 cross-references point here"
+   ],
+   "score": 0.4664
+  },
+  {
+   "q": "Fill in the word: \"they shall prophesy a thousand two hundred and threescore days, clothed in ___\"",
+   "type": "fill_word",
+   "ref": "Revelation 11:3",
+   "bible": "KJV",
+   "word": "sackcloth",
+   "answer_refs": [
+    "Revelation 11:3"
+   ],
+   "signals": {
+    "xref": 23,
+    "votes": 119,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.428,
+    "quoted": null
+   },
+   "why": [
+    "23 cross-references point here"
+   ],
+   "score": 0.4664
+  },
+  {
+   "q": "In Revelation 13:5, how long was power given to the beast to continue?",
+   "type": "multiple_choice",
+   "options": [
+    "Forty and two months",
+    "Seven years",
+    "Ten days",
+    "A thousand years"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 13:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "months"
+   },
+   "signals": {
+    "xref": 30,
+    "votes": 156,
+    "word": "G3376",
+    "word_count": 2,
+    "differ": 0.613,
+    "quoted": null
+   },
+   "why": [
+    "30 cross-references point here",
+    "The Greek word mḗn (G3376) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5912
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ],
+ "verse_count": 8,
+ "image": "img/mirror-6-the-times.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/mirror-6-the-times.json",
+  "sha": "1f9630cbbbde2743",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

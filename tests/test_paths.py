@@ -125,6 +125,8 @@ class PathRulesTest(unittest.TestCase):
         self.assertIn("my-body-a-temple", names); self.assertIn("life-in-the-womb", names)
         m1 = load(os.path.join(bp.SRC_DIR, "mirror-1-four-beasts.json"))
         self.assertEqual(m1["series"]["id"], "mirror-prophecies"); self.assertEqual(m1["series"]["session"], 1)
+        sessions = sorted(load(f)["series"]["session"] for f in SOURCES if load(f).get("series", {}).get("id") == "mirror-prophecies")
+        self.assertEqual(sessions, [1, 2, 3, 4, 5, 6, 7])                         # all seven sessions of the series
         self.assertIn("Revelation 13:1-2", m1["required_refs"]); self.assertIn("Daniel 7:1-8", m1["required_refs"])
         for f in SOURCES:                                                            # every picture moves (or says why not)
             self.assertIn(load(f).get("anim", {}).get("kind"), bp.ANIMS, os.path.basename(f))
@@ -166,7 +168,8 @@ class PathPagesTest(unittest.TestCase):
         for part in ("pv-pc-share", "pv-sharewide", "📤 Send to someone", "sms:?&body=", "https://wa.me/?text=", "mailto:?subject=",
                      "shareHash(p, 0)", "Someone shared this study path with you",
                      "Bible Study Groups", "Add your own study path", "formsubmit.co/ajax/", "issues/new?title=", "Read in ",
-                     "pv-shareall", "#/paths/series/", "pv-serqr", "pv-qrbig", "prefers-reduced-motion", "pv-a-fire", "pv-a-mist", "pv-a-rainbow", "pv-ember"):
+                     "pv-shareall", "#/paths/series/", "pv-serqr", "pv-qrbig", "prefers-reduced-motion", "pv-a-fire", "pv-a-mist", "pv-a-rainbow", "pv-ember",
+                     "facebook.com/sharer", "x.com/intent", "t.me/share", "pinterest.com/pin", "linkedin.com/sharing", "reddit.com/submit", "pv-so-tt", "shareCard"):
             self.assertIn(part, js)                                                  # a path can be sent to someone
         sw = read("web", "sw.js")
         self.assertIn('"paths/" + p.image', sw)                                     # pictures work offline
@@ -187,7 +190,9 @@ class PathPagesTest(unittest.TestCase):
             for part in (src, 'id="pathsView"', "pathsBtn", "BCPaths.mount", "Make a study path", 'id="homePaths"'):
                 self.assertIn(part, page)
         self.assertIn("BCPaths.openHash", phone)                 # links and QR codes open a path
-        self.assertIn("/^#\\/paths?(\\/|$)/", phone)   # "#/paths" opens the list of all Study Paths
+        self.assertIn("/^#\\/paths?(\\/|$)/", phone)
+        for part in ('property="og:image"', 'name="twitter:card"', "og-studypaths.jpg"):
+            self.assertIn(part, phone)                                                # a posted link shows a picture   # "#/paths" opens the list of all Study Paths
         sw = read("web", "sw.js")
         for part in ('"paths.js"', '"paths/index.json"', '"quoted.json"', '"paths/" + p.id'):
             self.assertIn(part, sw)                               # works offline

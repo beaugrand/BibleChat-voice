@@ -1,0 +1,467 @@
+{
+ "id": "mirror-7-sealed-book",
+ "title": "Session 7: The sealed book",
+ "category": "Prophecy",
+ "series": {
+  "id": "mirror-prophecies",
+  "title": "Revelation & Daniel: the mirror prophecies",
+  "session": 7,
+  "of": 7
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "light",
+  "x": 70,
+  "y": 52,
+  "s": 30
+ },
+ "opening_question": "Daniel is told to seal the book until the time of the end; John sees a book sealed with seven seals, and at the end is told \"Seal not\". Who opens the book, and why is it no longer sealed?",
+ "required_refs": [
+  "Daniel 12:4",
+  "Daniel 12:8-9",
+  "Revelation 5:1-5",
+  "Revelation 10:4",
+  "Revelation 22:10"
+ ],
+ "words": [
+  "H2856",
+  "G4972",
+  "G975"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What was Daniel told to do with the words and the book, and until when?",
+   "refs": [
+    "Daniel 12:4"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2856"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"seal\" is chatham: \"to close up; especially to seal\".",
+     "refs": [
+      "Daniel 12:4"
+     ],
+     "strongs": [
+      "H2856"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Daniel ask, and why was he told to go his way?",
+   "refs": [
+    "Daniel 12:8-9"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2856"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "What was in the right hand of him that sat on the throne, and who prevailed to open it?",
+   "refs": [
+    "Revelation 5:1-5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G975",
+     "G4973"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"book\" in Revelation 5:1 is biblion: \"a roll\".",
+     "refs": [
+      "Revelation 5:1"
+     ],
+     "strongs": [
+      "G975"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What was John once told to seal up, and what is he told at the end of the book?",
+   "refs": [
+    "Revelation 10:4",
+    "Revelation 22:10"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4972"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel is told \"seal the book, even to the time of the end\"; John is told \"Seal not the sayings of the prophecy of this book: for the time is at hand\".",
+     "refs": [
+      "Daniel 12:4",
+      "Revelation 22:10"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"shut up the words, and seal the book, even to the time of the end\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 12:4"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 87,
+    "word": "H2856",
+    "word_count": 2,
+    "differ": 0.379,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here",
+    "The Hebrew word châtham (H2856) is in 2 verses of this path"
+   ],
+   "score": 0.4892
+  },
+  {
+   "q": "In Daniel 12:4, what shall be increased?",
+   "type": "multiple_choice",
+   "options": [
+    "Knowledge",
+    "Wickedness",
+    "Riches",
+    "The days"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 12:4"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "knowledge"
+   },
+   "signals": {
+    "xref": 18,
+    "votes": 87,
+    "word": "H2856",
+    "word_count": 2,
+    "differ": 0.379,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here",
+    "The Hebrew word châtham (H2856) is in 2 verses of this path"
+   ],
+   "score": 0.4892
+  },
+  {
+   "q": "Fill in the word: \"the words are closed up and ___ till the time of the end\"",
+   "type": "fill_word",
+   "ref": "Daniel 12:9",
+   "bible": "KJV",
+   "word": "sealed",
+   "answer_refs": [
+    "Daniel 12:9"
+   ],
+   "signals": {
+    "xref": 12,
+    "votes": 72,
+    "word": "H2856",
+    "word_count": 2,
+    "differ": 0.281,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here",
+    "The Hebrew word châtham (H2856) is in 2 verses of this path"
+   ],
+   "score": 0.4507
+  },
+  {
+   "q": "Which verse says \"I heard, but I understood not\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 12:8"
+   ],
+   "signals": {
+    "xref": 6,
+    "votes": 40,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.429,
+    "quoted": null
+   },
+   "why": [
+    "6 cross-references point here"
+   ],
+   "score": 0.386
+  },
+  {
+   "q": "In Revelation 5:1, with how many seals was the book sealed?",
+   "type": "multiple_choice",
+   "options": [
+    "Seven",
+    "Three",
+    "Ten",
+    "Twelve"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 5:1"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "seven"
+   },
+   "signals": {
+    "xref": 8,
+    "votes": 51,
+    "word": "G975",
+    "word_count": 6,
+    "differ": 0.449,
+    "quoted": null
+   },
+   "why": [
+    "8 cross-references point here",
+    "The Greek word biblíon (G975) is in 6 verses of this path"
+   ],
+   "score": 0.5839
+  },
+  {
+   "q": "Which verse asks \"Who is worthy to open the book, and to loose the seals thereof?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 5:2"
+   ],
+   "signals": {
+    "xref": 7,
+    "votes": 39,
+    "word": "G975",
+    "word_count": 6,
+    "differ": 0.288,
+    "quoted": null
+   },
+   "why": [
+    "7 cross-references point here",
+    "The Greek word biblíon (G975) is in 6 verses of this path"
+   ],
+   "score": 0.5239
+  },
+  {
+   "q": "Which translation says \"the Lion of the tribe of Juda\" in Revelation 5:5?",
+   "type": "which_translation",
+   "ref": "Revelation 5:5",
+   "bible": "KJV",
+   "phrase": "the Lion of the tribe of Juda",
+   "answer_refs": [
+    "Revelation 5:5"
+   ],
+   "signals": {
+    "xref": 19,
+    "votes": 119,
+    "word": "G975",
+    "word_count": 6,
+    "differ": 0.478,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here",
+    "The Greek word biblíon (G975) is in 6 verses of this path"
+   ],
+   "score": 0.6539
+  },
+  {
+   "q": "Fill in the word: \"And I ___ much, because no man was found worthy to open\"",
+   "type": "fill_word",
+   "ref": "Revelation 5:4",
+   "bible": "KJV",
+   "word": "wept",
+   "answer_refs": [
+    "Revelation 5:4"
+   ],
+   "signals": {
+    "xref": 3,
+    "votes": 14,
+    "word": "G975",
+    "word_count": 6,
+    "differ": 0.444,
+    "quoted": null
+   },
+   "why": [
+    "3 cross-references point here",
+    "The Greek word biblíon (G975) is in 6 verses of this path"
+   ],
+   "score": 0.4893
+  },
+  {
+   "q": "Which verse says \"Seal not the sayings of the prophecy of this book\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 22:10"
+   ],
+   "signals": {
+    "xref": 11,
+    "votes": 117,
+    "word": "G975",
+    "word_count": 6,
+    "differ": 0.511,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Greek word biblíon (G975) is in 6 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6609
+  },
+  {
+   "q": "In Revelation 22:10, why is John told not to seal the sayings?",
+   "type": "multiple_choice",
+   "options": [
+    "For the time is at hand",
+    "For no man shall read them",
+    "For the book is lost",
+    "For the angel will return"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 22:10"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "hand"
+   },
+   "signals": {
+    "xref": 11,
+    "votes": 117,
+    "word": "G975",
+    "word_count": 6,
+    "differ": 0.511,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Greek word biblíon (G975) is in 6 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6609
+  },
+  {
+   "q": "Which verse says \"Seal up those things which the seven thunders uttered\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 10:4"
+   ],
+   "signals": {
+    "xref": 11,
+    "votes": 49,
+    "word": "G4972",
+    "word_count": 2,
+    "differ": 0.466,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Greek word sphragízō (G4972) is in 2 verses of this path"
+   ],
+   "score": 0.4685
+  },
+  {
+   "q": "Which translation says \"open the scroll\" in Revelation 5:5?",
+   "type": "which_translation",
+   "ref": "Revelation 5:5",
+   "bible": "BSB",
+   "phrase": "open the scroll",
+   "answer_refs": [
+    "Revelation 5:5"
+   ],
+   "signals": {
+    "xref": 19,
+    "votes": 119,
+    "word": "G975",
+    "word_count": 6,
+    "differ": 0.478,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here",
+    "The Greek word biblíon (G975) is in 6 verses of this path"
+   ],
+   "score": 0.6539
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ],
+ "verse_count": 10,
+ "image": "img/mirror-7-sealed-book.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/mirror-7-sealed-book.json",
+  "sha": "bce4ffd60b920d4f",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

@@ -212,6 +212,201 @@
   }
  },
  {
+  "id": "mirror-2-little-horn",
+  "title": "Session 2: The little horn",
+  "category": "Prophecy",
+  "image": "img/mirror-2-little-horn.jpg",
+  "opening_question": "Among the ten horns of Daniel's fourth beast a little horn comes up with a mouth speaking great things. What does it do, how long, and what does Revelation 13 say about the beast's mouth?",
+  "steps": 5,
+  "step_questions": [
+   "Where did the little horn come up, what fell before it, and what did it have?",
+   "What did the horn do to the saints, and until when?",
+   "What shall he speak, what shall he think to change, and for how long?",
+   "What was given to the beast from the sea, for how long, and against whom does it make war?",
+   "What happens in the end to Daniel's beast, and to the beast of Revelation?"
+  ],
+  "show": 8,
+  "verses": 13,
+  "minutes": 25,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "storm"
+  },
+  "series": {
+   "id": "mirror-prophecies",
+   "title": "Revelation & Daniel: the mirror prophecies",
+   "session": 2,
+   "of": 7
+  }
+ },
+ {
+  "id": "mirror-3-son-of-man",
+  "title": "Session 3: The Son of man coming",
+  "category": "Prophecy",
+  "image": "img/mirror-3-son-of-man.jpg",
+  "opening_question": "Daniel saw one like the Son of man come with the clouds of heaven; John writes \"he cometh with clouds\". Who is coming, and what is given him?",
+  "steps": 5,
+  "step_questions": [
+   "Who came with the clouds of heaven, to whom, and what was given him?",
+   "Who is coming with clouds, and who shall see him?",
+   "How does John describe one like unto the Son of man, and how does Daniel describe the Ancient of days?",
+   "What does John see upon the white cloud, and what is in his hand?",
+   "When the high priest questioned Jesus, which words of Daniel did Jesus use?"
+  ],
+  "show": 8,
+  "verses": 9,
+  "minutes": 25,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "light",
+   "x": 52,
+   "y": 15,
+   "s": 40
+  },
+  "series": {
+   "id": "mirror-prophecies",
+   "title": "Revelation & Daniel: the mirror prophecies",
+   "session": 3,
+   "of": 7
+  }
+ },
+ {
+  "id": "mirror-4-throne-room",
+  "title": "Session 4: The throne room",
+  "category": "Prophecy",
+  "image": "img/mirror-4-throne-room.jpg",
+  "opening_question": "Daniel and John both see a throne in heaven with fire, multitudes and books. What does each one see, and what is the same?",
+  "steps": 4,
+  "step_questions": [
+   "What did Daniel see on and around the throne, and what was opened?",
+   "What was round about the throne John saw, and what was before it?",
+   "How many stood before the throne in each vision?",
+   "What does John see at the great white throne, and what was opened?"
+  ],
+  "show": 8,
+  "verses": 10,
+  "minutes": 20,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "fire",
+   "x": 50,
+   "y": 35,
+   "s": 32
+  },
+  "series": {
+   "id": "mirror-prophecies",
+   "title": "Revelation & Daniel: the mirror prophecies",
+   "session": 4,
+   "of": 7
+  }
+ },
+ {
+  "id": "mirror-5-stone-and-rider",
+  "title": "Session 5: The stone and the rider",
+  "category": "Prophecy",
+  "image": "img/mirror-5-stone-and-rider.jpg",
+  "opening_question": "In Daniel 2 a stone cut out without hands breaks the kingdoms and fills the earth; in Revelation 19 a rider on a white horse comes out of heaven. What does each one do, and whose kingdom stands for ever?",
+  "steps": 5,
+  "step_questions": [
+   "What was the stone cut out without, what did it strike, and what did it become?",
+   "What kingdom shall the God of heaven set up, and how long shall it stand?",
+   "Who sat upon the white horse, and what is his name called?",
+   "What goes out of his mouth, with what shall he rule, and what name is written on him?",
+   "What do the great voices in heaven say about the kingdoms of this world?"
+  ],
+  "show": 8,
+  "verses": 11,
+  "minutes": 25,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "light",
+   "x": 52,
+   "y": 10,
+   "s": 36
+  },
+  "series": {
+   "id": "mirror-prophecies",
+   "title": "Revelation & Daniel: the mirror prophecies",
+   "session": 5,
+   "of": 7
+  }
+ },
+ {
+  "id": "mirror-6-the-times",
+  "title": "Session 6: The times",
+  "category": "Prophecy",
+  "image": "img/mirror-6-the-times.jpg",
+  "opening_question": "Daniel and Revelation both name a time of trouble: \"a time and times\", forty and two months, 1,260 days. Where does each one stand, and what happens in that time?",
+  "steps": 4,
+  "step_questions": [
+   "How long are the saints given into his hand?",
+   "What did the man clothed in linen swear, and how long shall it be?",
+   "How long is the woman nourished in the wilderness, in days and in times?",
+   "How long is the holy city trodden, how long do the two witnesses prophesy, and how long does the beast continue?"
+  ],
+  "show": 8,
+  "verses": 8,
+  "minutes": 20,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "stars"
+  },
+  "series": {
+   "id": "mirror-prophecies",
+   "title": "Revelation & Daniel: the mirror prophecies",
+   "session": 6,
+   "of": 7
+  }
+ },
+ {
+  "id": "mirror-7-sealed-book",
+  "title": "Session 7: The sealed book",
+  "category": "Prophecy",
+  "image": "img/mirror-7-sealed-book.jpg",
+  "opening_question": "Daniel is told to seal the book until the time of the end; John sees a book sealed with seven seals, and at the end is told \"Seal not\". Who opens the book, and why is it no longer sealed?",
+  "steps": 4,
+  "step_questions": [
+   "What was Daniel told to do with the words and the book, and until when?",
+   "What did Daniel ask, and why was he told to go his way?",
+   "What was in the right hand of him that sat on the throne, and who prevailed to open it?",
+   "What was John once told to seal up, and what is he told at the end of the book?"
+  ],
+  "show": 8,
+  "verses": 10,
+  "minutes": 20,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "light",
+   "x": 70,
+   "y": 52,
+   "s": 30
+  },
+  "series": {
+   "id": "mirror-prophecies",
+   "title": "Revelation & Daniel: the mirror prophecies",
+   "session": 7,
+   "of": 7
+  }
+ },
+ {
   "id": "mist-not-rain",
   "title": "Mist, not rain",
   "category": "Creation",

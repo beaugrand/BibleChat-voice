@@ -519,10 +519,50 @@ const BCPaths = (() => {
         <a class="pv-btn" href="https://wa.me/?text=${encodeURIComponent(both)}" target="_blank" rel="noopener">🟢 WhatsApp</a>
         <a class="pv-btn" href="mailto:?subject=${encodeURIComponent("Bible study: " + t.title)}&body=${encodeURIComponent(both)}">✉ Email</a>
         <button class="pv-btn pv-copy">⧉ Copy link</button></div>
+      <p class="pv-small pv-socl">Post it on social media:</p>
+      <div class="pv-social">
+        <a class="pv-btn pv-so-fb" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}" target="_blank" rel="noopener">Facebook</a>
+        <a class="pv-btn pv-so-x" href="https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}" target="_blank" rel="noopener">X</a>
+        <a class="pv-btn pv-so-tg" href="https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}" target="_blank" rel="noopener">Telegram</a>
+        <a class="pv-btn pv-so-pin" href="https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&media=${encodeURIComponent(absImg(t))}&description=${encodeURIComponent(text)}" target="_blank" rel="noopener">Pinterest</a>
+        <a class="pv-btn pv-so-li" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="pv-btn pv-so-rd" href="https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(t.title)}" target="_blank" rel="noopener">Reddit</a>
+        <button class="pv-btn pv-so-tt">TikTok</button>
+        <button class="pv-btn pv-so-tt pv-so-ig">Instagram</button>
+        <button class="pv-btn pv-card-dl">🖼 Picture to post</button>
+      </div>
+      <p class="pv-small pv-tthint" hidden>TikTok and Instagram don't take links from websites. Post the picture (it has the QR code and the address on it), and paste the link in your caption, bio or story link: it is copied.</p>
       <input class="pv-url" readonly value="${esc(url)}">
       ${wide ? "" : qr}
       <div class="pv-nav">${back}</div>`, true);
     const cv = A.qr(url, wide ? 280 : 220); if(cv) root.querySelector(".pv-qr").appendChild(cv);
+  }
+  function absImg(t){ return t.image ? new URL("paths/" + t.image, A.shareUrl("")).href : new URL("paths/img/og-studypaths.jpg", A.shareUrl("")).href; }
+  /* 🖼 a picture to post (TikTok, Instagram, Facebook, a status): the path's picture, its title and question, and a QR code with the address */
+  async function shareCard(t){
+    const W = 1080, H = 1350, c = document.createElement("canvas"); c.width = W; c.height = H; const g = c.getContext("2d");
+    g.fillStyle = "#16191d"; g.fillRect(0, 0, W, H);
+    const src = t.image ? A.base + t.image : A.base + "img/og-studypaths.jpg";
+    const img = await new Promise(res => { const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = src; });
+    if(img){ const h = 720, sc = Math.max(W / img.width, h / img.height), w2 = img.width * sc, h2 = img.height * sc; g.drawImage(img, (W - w2) / 2, (h - h2) / 2, w2, h2);
+      const gr = g.createLinearGradient(0, 520, 0, 720); gr.addColorStop(0, "rgba(22,25,29,0)"); gr.addColorStop(1, "#16191d"); g.fillStyle = gr; g.fillRect(0, 520, W, 200); }
+    const wrap = (text, x, y, maxW, lh, maxLines) => {   // lines that fit; the last one ends in … if the text is longer
+      const words = String(text).split(/\s+/), lines = []; let line = "";
+      for(const w of words){ const tt = line ? line + " " + w : w; if(g.measureText(tt).width > maxW && line){ lines.push(line); line = w; } else line = tt; }
+      if(line) lines.push(line);
+      const out = lines.slice(0, maxLines);
+      if(lines.length > maxLines){ let l = out[maxLines - 1]; while(g.measureText(l + "…").width > maxW && l.length > 3) l = l.slice(0, -1); out[maxLines - 1] = l + "…"; }
+      out.forEach((l, i) => g.fillText(l, x, y + i * lh)); return y + out.length * lh; };
+    g.fillStyle = "#d9b44a"; g.font = "bold 64px Georgia, serif"; let y = wrap(t.title, 70, 790, W - 140, 74, 2);
+    g.fillStyle = "#e9ecef"; g.font = "36px system-ui, sans-serif"; y = wrap(t.question || "", 70, y + 20, W - 140, 48, 3);
+    const qr = A.qr(A.shareUrl(t.hash), 260); if(qr) g.drawImage(qr, W - 330, H - 330, 260, 260);
+    g.fillStyle = "#e9ecef"; g.font = "bold 40px system-ui, sans-serif"; g.fillText("Study it free in BibleChat", 70, H - 210);
+    g.fillStyle = "#9aa3ad"; g.font = "30px system-ui, sans-serif"; g.fillText("Scan the code, or open", 70, H - 160); g.fillText("beaugrand.github.io/BibleChat-voice", 70, H - 118); g.fillText("No sign-up · no app needed", 70, H - 76);
+    const blob = await new Promise(r => c.toBlob(r, "image/png")), name = "BibleChat-" + (t.id || t.kind || "study").replace(/[^a-z0-9-]/gi, "") + ".png";
+    const file = typeof File === "function" ? new File([blob], name, {type: "image/png"}) : null;
+    if(file && navigator.canShare && navigator.canShare({files: [file]})){ try{ await navigator.share({files: [file], title: t.title, text: shareText(t) + "\n" + A.shareUrl(t.hash)}); return; }catch(e){ if(e && e.name === "AbortError") return; } }
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    A.toast(T("Picture saved. Post it with the link."));
   }
   /* the QR code over the whole screen, as big as it fits: for a TV, a projector or a room */
   function bigQr(){
@@ -571,6 +611,10 @@ const BCPaths = (() => {
     if(t.closest(".pv-shareall")){ share(null, "list", "all"); return; }
     const sq = t.closest(".pv-serqr"); if(sq){ loadList().then(L => { const p = L.find(x => x.series && x.series.id === sq.dataset.series); if(p) share(p, "list", "series"); }); return; }
     if(t.closest(".pv-qrbig")){ bigQr(); return; }
+    if(t.closest(".pv-card-dl")){ shareCard(S.shareP).catch(() => A.toast(T("Couldn't make the picture."))); return; }
+    if(t.closest(".pv-so-tt")){ const u = root.querySelector(".pv-url").value, h = root.querySelector(".pv-tthint"); if(h) h.hidden = false;
+      (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(() => A.toast(T("Link copied")), () => {});
+      if(navigator.share){ const p = S.shareP; navigator.share({title: p.title, text: shareText(p), url: u}).catch(() => {}); } return; }
     if(t.closest(".pv-reqgit")){ e.preventDefault(); const d = reqData();
       window.open("https://github.com/beaugrand/BibleChat-voice/issues/new?title=" + encodeURIComponent("Study path request: " + (d.passage || "?") + " (" + (d.group || "?") + ")") + "&body=" + encodeURIComponent(reqText(d)), "_blank", "noopener"); return; }
     if(t.closest(".pv-share")){ share(); return; }
@@ -799,6 +843,11 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-serh b{display:block;font-size:16px;color:var(--accent)}.pv-serh small{color:var(--muted)}.pv-serqr{flex:none;font-weight:700}
 .pv-serline{margin:-4px 0 8px;color:var(--accent)}
 .pv-shico{font-size:40px;width:96px;text-align:center}
+.pv-socl{margin:12px 0 6px}.pv-social{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.pv-social .pv-btn{text-align:center;text-decoration:none;font-weight:650;font-size:14px;padding:8px 4px;color:#fff;border:0}
+@media (max-width:560px){.pv-social{grid-template-columns:repeat(3,1fr)}}
+.pv-so-fb{background:#1877f2}.pv-so-x{background:#000}.pv-so-tg{background:#229ed9}.pv-so-pin{background:#e60023}.pv-so-li{background:#0a66c2}.pv-so-rd{background:#ff4500}
+.pv-so-tt{background:linear-gradient(90deg,#25f4ee,#000 30%,#000 70%,#fe2c55)}.pv-so-ig{background:linear-gradient(45deg,#f09433,#dc2743 50%,#bc1888)}.pv-card-dl{grid-column:1/-1;background:var(--accent)!important;color:var(--accent-text)!important}
+.pv-tthint{margin-top:6px}
 .pv-qrbox{text-align:center;margin:6px 0 10px}.pv-qrbig{margin-top:6px}
 .pv-qrfull{position:fixed;inset:0;z-index:60;background:rgba(10,12,15,.94);display:flex;align-items:center;justify-content:center}
 .pv-qrf-in{display:flex;flex-direction:column;align-items:center;gap:12px;color:#fff;text-align:center;padding:16px}.pv-qrf-in b{font-size:clamp(18px,3vw,30px)}

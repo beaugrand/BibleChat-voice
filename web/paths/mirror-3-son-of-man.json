@@ -1,0 +1,471 @@
+{
+ "id": "mirror-3-son-of-man",
+ "title": "Session 3: The Son of man coming",
+ "category": "Prophecy",
+ "series": {
+  "id": "mirror-prophecies",
+  "title": "Revelation & Daniel: the mirror prophecies",
+  "session": 3,
+  "of": 7
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "light",
+  "x": 52,
+  "y": 15,
+  "s": 40
+ },
+ "opening_question": "Daniel saw one like the Son of man come with the clouds of heaven; John writes \"he cometh with clouds\". Who is coming, and what is given him?",
+ "required_refs": [
+  "Daniel 7:13-14",
+  "Revelation 1:7",
+  "Revelation 1:13-14",
+  "Daniel 7:9",
+  "Revelation 14:14",
+  "Matthew 26:63-64"
+ ],
+ "words": [
+  "H1247",
+  "H6050",
+  "G3507"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Who came with the clouds of heaven, to whom, and what was given him?",
+   "refs": [
+    "Daniel 7:13-14"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H1247",
+     "H6050"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Son of man\" in Daniel 7:13 is Aramaic bar enash: bar is \"a son\", enash is \"a man\".",
+     "refs": [
+      "Daniel 7:13"
+     ],
+     "strongs": [
+      "H1247",
+      "H606"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who is coming with clouds, and who shall see him?",
+   "refs": [
+    "Revelation 1:7"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3507"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel sees one who \"came with the clouds of heaven\"; John writes \"he cometh with clouds\".",
+     "refs": [
+      "Daniel 7:13",
+      "Revelation 1:7"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How does John describe one like unto the Son of man, and how does Daniel describe the Ancient of days?",
+   "refs": [
+    "Revelation 1:13-14",
+    "Daniel 7:9"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5207"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel's Ancient of days has a garment \"white as snow\" and hair \"like the pure wool\"; in Revelation 1:14 the one like unto the Son of man has hairs \"white like wool, as white as snow\".",
+     "refs": [
+      "Daniel 7:9",
+      "Revelation 1:14"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does John see upon the white cloud, and what is in his hand?",
+   "refs": [
+    "Revelation 14:14"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3507"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "When the high priest questioned Jesus, which words of Daniel did Jesus use?",
+   "refs": [
+    "Matthew 26:63-64"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3507"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Jesus says \"coming in the clouds of heaven\", the words of Daniel 7:13.",
+     "refs": [
+      "Matthew 26:64",
+      "Daniel 7:13"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"one like the Son of man came with the clouds of heaven\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 7:13"
+   ],
+   "signals": {
+    "xref": 44,
+    "votes": 394,
+    "word": "H1247",
+    "word_count": 1,
+    "differ": 0.442,
+    "quoted": null
+   },
+   "why": [
+    "44 cross-references point here"
+   ],
+   "score": 0.5885
+  },
+  {
+   "q": "In Daniel 7:14, what kind of dominion is given him?",
+   "type": "multiple_choice",
+   "options": [
+    "An everlasting dominion",
+    "A dominion of seventy years",
+    "A dominion over Babylon only",
+    "A dominion that shall pass away"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 7:14"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "everlasting"
+   },
+   "signals": {
+    "xref": 58,
+    "votes": 456,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.359,
+    "quoted": null
+   },
+   "why": [
+    "58 cross-references point here"
+   ],
+   "score": 0.5397
+  },
+  {
+   "q": "Fill in the word: \"Behold, he cometh with ___\"",
+   "type": "fill_word",
+   "ref": "Revelation 1:7",
+   "bible": "KJV",
+   "word": "clouds",
+   "answer_refs": [
+    "Revelation 1:7"
+   ],
+   "signals": {
+    "xref": 45,
+    "votes": 443,
+    "word": "G3507",
+    "word_count": 4,
+    "differ": 0.38,
+    "quoted": null
+   },
+   "why": [
+    "45 cross-references point here",
+    "The Greek word nephélē (G3507) is in 4 verses of this path"
+   ],
+   "score": 0.6617
+  },
+  {
+   "q": "Which verse says \"every eye shall see him, and they also which pierced him\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 1:7"
+   ],
+   "signals": {
+    "xref": 45,
+    "votes": 443,
+    "word": "G3507",
+    "word_count": 4,
+    "differ": 0.38,
+    "quoted": null
+   },
+   "why": [
+    "45 cross-references point here",
+    "The Greek word nephélē (G3507) is in 4 verses of this path"
+   ],
+   "score": 0.6617
+  },
+  {
+   "q": "Which translation says \"one like a son of man\" in Daniel 7:13?",
+   "type": "which_translation",
+   "ref": "Daniel 7:13",
+   "bible": "ETH",
+   "phrase": "one like a son of man",
+   "answer_refs": [
+    "Daniel 7:13"
+   ],
+   "signals": {
+    "xref": 44,
+    "votes": 394,
+    "word": "H1247",
+    "word_count": 1,
+    "differ": 0.442,
+    "quoted": null
+   },
+   "why": [
+    "44 cross-references point here"
+   ],
+   "score": 0.5885
+  },
+  {
+   "q": "In Revelation 1:14, what were his eyes like?",
+   "type": "multiple_choice",
+   "options": [
+    "A flame of fire",
+    "Stars",
+    "The sun",
+    "Crystal"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 1:14"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "flame"
+   },
+   "signals": {
+    "xref": 15,
+    "votes": 90,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.221,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here"
+   ],
+   "score": 0.3939
+  },
+  {
+   "q": "Which verse says his hairs were \"white like wool, as white as snow\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 1:14"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 90,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.221,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here"
+   ],
+   "score": 0.3939
+  },
+  {
+   "q": "In Revelation 14:14, what was in the hand of the one upon the white cloud?",
+   "type": "multiple_choice",
+   "options": [
+    "A sharp sickle",
+    "A sword",
+    "A book",
+    "A rod of iron"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 14:14"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "sickle"
+   },
+   "signals": {
+    "xref": 11,
+    "votes": 160,
+    "word": "G3507",
+    "word_count": 4,
+    "differ": 0.233,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Greek word nephélē (G3507) is in 4 verses of this path"
+   ],
+   "score": 0.5564
+  },
+  {
+   "q": "Fill in the word: \"having on his head a golden ___\"",
+   "type": "fill_word",
+   "ref": "Revelation 14:14",
+   "bible": "KJV",
+   "word": "crown",
+   "answer_refs": [
+    "Revelation 14:14"
+   ],
+   "signals": {
+    "xref": 11,
+    "votes": 160,
+    "word": "G3507",
+    "word_count": 4,
+    "differ": 0.233,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Greek word nephélē (G3507) is in 4 verses of this path"
+   ],
+   "score": 0.5564
+  },
+  {
+   "q": "Which verse says \"Hereafter shall ye see the Son of man sitting on the right hand of power\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 26:64"
+   ],
+   "signals": {
+    "xref": 39,
+    "votes": 344,
+    "word": "G5207",
+    "word_count": 4,
+    "differ": 0.471,
+    "quoted": null
+   },
+   "why": [
+    "39 cross-references point here",
+    "The Greek word huiós (G5207) is in 4 verses of this path"
+   ],
+   "score": 0.6731
+  },
+  {
+   "q": "Which translation says \"all kindreds of the earth shall wail\" in Revelation 1:7?",
+   "type": "which_translation",
+   "ref": "Revelation 1:7",
+   "bible": "KJV",
+   "phrase": "kindreds of the earth shall wail",
+   "answer_refs": [
+    "Revelation 1:7"
+   ],
+   "signals": {
+    "xref": 45,
+    "votes": 443,
+    "word": "G3507",
+    "word_count": 4,
+    "differ": 0.38,
+    "quoted": null
+   },
+   "why": [
+    "45 cross-references point here",
+    "The Greek word nephélē (G3507) is in 4 verses of this path"
+   ],
+   "score": 0.6617
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ],
+ "verse_count": 9,
+ "image": "img/mirror-3-son-of-man.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/mirror-3-son-of-man.json",
+  "sha": "7059d88b013b7470",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

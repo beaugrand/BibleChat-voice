@@ -1,0 +1,450 @@
+{
+ "id": "mirror-5-stone-and-rider",
+ "title": "Session 5: The stone and the rider",
+ "category": "Prophecy",
+ "series": {
+  "id": "mirror-prophecies",
+  "title": "Revelation & Daniel: the mirror prophecies",
+  "session": 5,
+  "of": 7
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "light",
+  "x": 52,
+  "y": 10,
+  "s": 36
+ },
+ "opening_question": "In Daniel 2 a stone cut out without hands breaks the kingdoms and fills the earth; in Revelation 19 a rider on a white horse comes out of heaven. What does each one do, and whose kingdom stands for ever?",
+ "required_refs": [
+  "Daniel 2:34-35",
+  "Daniel 2:44-45",
+  "Revelation 19:11-13",
+  "Revelation 19:14-16",
+  "Revelation 11:15"
+ ],
+ "words": [
+  "H69",
+  "H4437",
+  "G3022"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What was the stone cut out without, what did it strike, and what did it become?",
+   "refs": [
+    "Daniel 2:34-35"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H69",
+     "H1505"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "What kingdom shall the God of heaven set up, and how long shall it stand?",
+   "refs": [
+    "Daniel 2:44-45"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4437"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "Who sat upon the white horse, and what is his name called?",
+   "refs": [
+    "Revelation 19:11-13"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3022"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "What goes out of his mouth, with what shall he rule, and what name is written on him?",
+   "refs": [
+    "Revelation 19:14-16"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4464"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel's stone \"brake in pieces\" the iron of the image; the rider \"shall rule them with a rod of iron\".",
+     "refs": [
+      "Daniel 2:45",
+      "Revelation 19:15"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What do the great voices in heaven say about the kingdoms of this world?",
+   "refs": [
+    "Revelation 11:15"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G936"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel 2:44: the kingdom \"shall stand for ever\". Revelation 11:15: \"he shall reign for ever and ever\".",
+     "refs": [
+      "Daniel 2:44",
+      "Revelation 11:15"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"a stone was cut out without hands\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 2:34"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 72,
+    "word": "H69",
+    "word_count": 3,
+    "differ": 0.553,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here",
+    "The Hebrew word 'eben (H69) is in 3 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5479
+  },
+  {
+   "q": "In Daniel 2:35, what did the stone become?",
+   "type": "multiple_choice",
+   "options": [
+    "A great mountain",
+    "A pillar",
+    "An altar",
+    "A temple"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 2:35"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "mountain"
+   },
+   "signals": {
+    "xref": 21,
+    "votes": 113,
+    "word": "H69",
+    "word_count": 3,
+    "differ": 0.387,
+    "quoted": null
+   },
+   "why": [
+    "21 cross-references point here",
+    "The Hebrew word 'eben (H69) is in 3 verses of this path"
+   ],
+   "score": 0.5398
+  },
+  {
+   "q": "Fill in the word: \"and it shall stand for ___\"",
+   "type": "fill_word",
+   "ref": "Daniel 2:44",
+   "bible": "KJV",
+   "word": "ever",
+   "answer_refs": [
+    "Daniel 2:44"
+   ],
+   "signals": {
+    "xref": 67,
+    "votes": 463,
+    "word": "H4437",
+    "word_count": 3,
+    "differ": 0.359,
+    "quoted": null
+   },
+   "why": [
+    "67 cross-references point here",
+    "The Hebrew word malkû (H4437) is in 3 verses of this path"
+   ],
+   "score": 0.6272
+  },
+  {
+   "q": "Which verse says \"I saw heaven opened, and behold a white horse\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 19:11"
+   ],
+   "signals": {
+    "xref": 52,
+    "votes": 302,
+    "word": "G3022",
+    "word_count": 3,
+    "differ": 0.545,
+    "quoted": null
+   },
+   "why": [
+    "52 cross-references point here",
+    "The Greek word leukós (G3022) is in 3 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6527
+  },
+  {
+   "q": "In Revelation 19:11, what was he that sat upon the white horse called?",
+   "type": "multiple_choice",
+   "options": [
+    "Faithful and True",
+    "The Ancient of days",
+    "The Morning Star",
+    "Wonderful"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 19:11"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Faithful"
+   },
+   "signals": {
+    "xref": 52,
+    "votes": 302,
+    "word": "G3022",
+    "word_count": 3,
+    "differ": 0.545,
+    "quoted": null
+   },
+   "why": [
+    "52 cross-references point here",
+    "The Greek word leukós (G3022) is in 3 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6527
+  },
+  {
+   "q": "Which translation says \"vesture dipped in blood\" in Revelation 19:13?",
+   "type": "which_translation",
+   "ref": "Revelation 19:13",
+   "bible": "KJV",
+   "phrase": "vesture dipped in blood",
+   "answer_refs": [
+    "Revelation 19:13"
+   ],
+   "signals": {
+    "xref": 30,
+    "votes": 367,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.367,
+    "quoted": null
+   },
+   "why": [
+    "30 cross-references point here"
+   ],
+   "score": 0.5353
+  },
+  {
+   "q": "Fill in the word: \"and his name is called The ___ of God\"",
+   "type": "fill_word",
+   "ref": "Revelation 19:13",
+   "bible": "KJV",
+   "word": "Word",
+   "answer_refs": [
+    "Revelation 19:13"
+   ],
+   "signals": {
+    "xref": 30,
+    "votes": 367,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.367,
+    "quoted": null
+   },
+   "why": [
+    "30 cross-references point here"
+   ],
+   "score": 0.5353
+  },
+  {
+   "q": "Which verse says \"he shall rule them with a rod of iron\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 19:15"
+   ],
+   "signals": {
+    "xref": 47,
+    "votes": 330,
+    "word": "G4464",
+    "word_count": 1,
+    "differ": 0.468,
+    "quoted": null
+   },
+   "why": [
+    "47 cross-references point here"
+   ],
+   "score": 0.5818
+  },
+  {
+   "q": "In Revelation 19:16, what name is written on his vesture and on his thigh?",
+   "type": "multiple_choice",
+   "options": [
+    "KING OF KINGS, AND LORD OF LORDS",
+    "THE ANCIENT OF DAYS",
+    "THE SON OF DAVID",
+    "THE LION OF JUDAH"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 19:16"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "KINGS"
+   },
+   "signals": {
+    "xref": 53,
+    "votes": 385,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.199,
+    "quoted": null
+   },
+   "why": [
+    "53 cross-references point here"
+   ],
+   "score": 0.4969
+  },
+  {
+   "q": "Which verse says \"The kingdoms of this world are become the kingdoms of our Lord\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 11:15"
+   ],
+   "signals": {
+    "xref": 89,
+    "votes": 578,
+    "word": "G936",
+    "word_count": 1,
+    "differ": 0.381,
+    "quoted": null
+   },
+   "why": [
+    "89 cross-references point here"
+   ],
+   "score": 0.5744
+  },
+  {
+   "q": "Which translation says \"sprinkled with blood\" in Revelation 19:13?",
+   "type": "which_translation",
+   "ref": "Revelation 19:13",
+   "bible": "ETH",
+   "phrase": "sprinkled with blood",
+   "answer_refs": [
+    "Revelation 19:13"
+   ],
+   "signals": {
+    "xref": 30,
+    "votes": 367,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.367,
+    "quoted": null
+   },
+   "why": [
+    "30 cross-references point here"
+   ],
+   "score": 0.5353
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ],
+ "verse_count": 11,
+ "image": "img/mirror-5-stone-and-rider.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/mirror-5-stone-and-rider.json",
+  "sha": "3b408ae9357d6053",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

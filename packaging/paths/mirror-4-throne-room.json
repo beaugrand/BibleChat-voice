@@ -1,0 +1,287 @@
+{
+ "id": "mirror-4-throne-room",
+ "title": "Session 4: The throne room",
+ "category": "Prophecy",
+ "series": {
+  "id": "mirror-prophecies",
+  "title": "Revelation & Daniel: the mirror prophecies",
+  "session": 4,
+  "of": 7
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "fire",
+  "x": 50,
+  "y": 35,
+  "s": 32
+ },
+ "opening_question": "Daniel and John both see a throne in heaven with fire, multitudes and books. What does each one see, and what is the same?",
+ "required_refs": [
+  "Daniel 7:9-10",
+  "Revelation 4:2-6",
+  "Revelation 5:11",
+  "Revelation 20:11-12"
+ ],
+ "words": [
+  "H3764",
+  "G2362"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What did Daniel see on and around the throne, and what was opened?",
+   "refs": [
+    "Daniel 7:9-10"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H6268",
+     "H3764"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Ancient\" is attiyq: \"venerable\".",
+     "refs": [
+      "Daniel 7:9"
+     ],
+     "strongs": [
+      "H6268"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What was round about the throne John saw, and what was before it?",
+   "refs": [
+    "Revelation 4:2-6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2362"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel sees \"his throne was like the fiery flame\"; John sees \"seven lamps of fire burning before the throne\".",
+     "refs": [
+      "Daniel 7:9",
+      "Revelation 4:5"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How many stood before the throne in each vision?",
+   "refs": [
+    "Revelation 5:11"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3461"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel: \"thousand thousands ministered unto him, and ten thousand times ten thousand stood before him\". John: \"ten thousand times ten thousand, and thousands of thousands\".",
+     "refs": [
+      "Daniel 7:10",
+      "Revelation 5:11"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does John see at the great white throne, and what was opened?",
+   "refs": [
+    "Revelation 20:11-12"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G975"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Both visions say \"the books were opened\".",
+     "refs": [
+      "Daniel 7:10",
+      "Revelation 20:12"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"the Ancient of days did sit, whose garment was white as snow\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 7:9"
+   ]
+  },
+  {
+   "q": "In Daniel 7:9, what were the wheels of his throne like?",
+   "type": "multiple_choice",
+   "options": [
+    "Burning fire",
+    "Gold",
+    "Crystal",
+    "Iron"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 7:9"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "burning"
+   }
+  },
+  {
+   "q": "Fill in the word: \"A fiery ___ issued and came forth from before him\"",
+   "type": "fill_word",
+   "ref": "Daniel 7:10",
+   "bible": "KJV",
+   "word": "stream"
+  },
+  {
+   "q": "Which verse says \"the judgment was set, and the books were opened\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 7:10"
+   ]
+  },
+  {
+   "q": "Which translation says \"four and twenty seats\" in Revelation 4:4?",
+   "type": "which_translation",
+   "ref": "Revelation 4:4",
+   "bible": "KJV",
+   "phrase": "four and twenty seats"
+  },
+  {
+   "q": "In Revelation 4:6, what was before the throne?",
+   "type": "multiple_choice",
+   "options": [
+    "A sea of glass like unto crystal",
+    "A river of fire",
+    "A golden altar",
+    "A mountain"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 4:6"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "glass"
+   }
+  },
+  {
+   "q": "Which verse says there was \"a rainbow round about the throne\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 4:3"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"there were seven ___ of fire burning before the throne\"",
+   "type": "fill_word",
+   "ref": "Revelation 4:5",
+   "bible": "KJV",
+   "word": "lamps"
+  },
+  {
+   "q": "Which verse says the number of them was \"ten thousand times ten thousand, and thousands of thousands\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 5:11"
+   ]
+  },
+  {
+   "q": "In Revelation 4:4, what did the elders have on their heads?",
+   "type": "multiple_choice",
+   "options": [
+    "Crowns of gold",
+    "Helmets",
+    "Nothing",
+    "Garlands"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 4:4"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "crowns"
+   }
+  },
+  {
+   "q": "Which verse says \"another book was opened, which is the book of life\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 20:12"
+   ]
+  },
+  {
+   "q": "Which translation says \"flaming with fire\" in Daniel 7:9?",
+   "type": "which_translation",
+   "ref": "Daniel 7:9",
+   "bible": "BSB",
+   "phrase": "flaming with fire"
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ]
+}

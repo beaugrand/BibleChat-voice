@@ -1,0 +1,508 @@
+{
+ "id": "mirror-2-little-horn",
+ "title": "Session 2: The little horn",
+ "category": "Prophecy",
+ "series": {
+  "id": "mirror-prophecies",
+  "title": "Revelation & Daniel: the mirror prophecies",
+  "session": 2,
+  "of": 7
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "storm"
+ },
+ "opening_question": "Among the ten horns of Daniel's fourth beast a little horn comes up with a mouth speaking great things. What does it do, how long, and what does Revelation 13 say about the beast's mouth?",
+ "required_refs": [
+  "Daniel 7:8",
+  "Daniel 7:19-22",
+  "Daniel 7:24-26",
+  "Revelation 13:5-7",
+  "Daniel 7:11",
+  "Revelation 19:20"
+ ],
+ "words": [
+  "H7162",
+  "G2768",
+  "G4750"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Where did the little horn come up, what fell before it, and what did it have?",
+   "refs": [
+    "Daniel 7:8"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2192",
+     "H7162"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The little horn has \"eyes like the eyes of man, and a mouth speaking great things\".",
+     "refs": [
+      "Daniel 7:8"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did the horn do to the saints, and until when?",
+   "refs": [
+    "Daniel 7:19-22"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H6922"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "What shall he speak, what shall he think to change, and for how long?",
+   "refs": [
+    "Daniel 7:24-26"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5732"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The word for \"time\" in Daniel 7:25 is iddan: \"a set time; technically a year\".",
+     "refs": [
+      "Daniel 7:25"
+     ],
+     "strongs": [
+      "H5732"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What was given to the beast from the sea, for how long, and against whom does it make war?",
+   "refs": [
+    "Revelation 13:5-7"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G988",
+     "G4750"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel's horn has \"a mouth speaking great things\" and \"made war with the saints\". The beast of Revelation 13 is given \"a mouth speaking great things\" and power \"to make war with the saints\".",
+     "refs": [
+      "Daniel 7:8",
+      "Daniel 7:21",
+      "Revelation 13:5",
+      "Revelation 13:7"
+     ]
+    },
+    {
+     "text": "\"blasphemies\" is blasphemia: \"vilification (especially against God)\".",
+     "refs": [
+      "Revelation 13:5"
+     ],
+     "strongs": [
+      "G988"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What happens in the end to Daniel's beast, and to the beast of Revelation?",
+   "refs": [
+    "Daniel 7:11",
+    "Revelation 19:20"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H785",
+     "G4442"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel's beast is \"given to the burning flame\"; John's beast is \"cast alive into a lake of fire\".",
+     "refs": [
+      "Daniel 7:11",
+      "Revelation 19:20"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"there came up among them another little horn\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 7:8"
+   ],
+   "signals": {
+    "xref": 19,
+    "votes": 93,
+    "word": "H7162",
+    "word_count": 9,
+    "differ": 0.369,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here",
+    "The Hebrew word qeren (H7162) is in 9 verses of this path"
+   ],
+   "score": 0.6958
+  },
+  {
+   "q": "In Daniel 7:8, how many of the first horns were plucked up by the roots?",
+   "type": "multiple_choice",
+   "options": [
+    "Three",
+    "Ten",
+    "Seven",
+    "Two"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 7:8"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "three"
+   },
+   "signals": {
+    "xref": 19,
+    "votes": 93,
+    "word": "H7162",
+    "word_count": 9,
+    "differ": 0.369,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here",
+    "The Hebrew word qeren (H7162) is in 9 verses of this path"
+   ],
+   "score": 0.6958
+  },
+  {
+   "q": "Fill in the word: \"the same horn made war with the ___, and prevailed against them\"",
+   "type": "fill_word",
+   "ref": "Daniel 7:21",
+   "bible": "KJV",
+   "word": "saints",
+   "answer_refs": [
+    "Daniel 7:21"
+   ],
+   "signals": {
+    "xref": 9,
+    "votes": 40,
+    "word": "H7162",
+    "word_count": 9,
+    "differ": 0.434,
+    "quoted": null
+   },
+   "why": [
+    "9 cross-references point here",
+    "The Hebrew word qeren (H7162) is in 9 verses of this path"
+   ],
+   "score": 0.6498
+  },
+  {
+   "q": "Which verse says he shall \"think to change times and laws\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 7:25"
+   ],
+   "signals": {
+    "xref": 34,
+    "votes": 215,
+    "word": "H6922",
+    "word_count": 4,
+    "differ": 0.335,
+    "quoted": null
+   },
+   "why": [
+    "34 cross-references point here",
+    "The Hebrew word qaddîysh (H6922) is in 4 verses of this path"
+   ],
+   "score": 0.604
+  },
+  {
+   "q": "Which translation says \"the dividing of time\" in Daniel 7:25?",
+   "type": "which_translation",
+   "ref": "Daniel 7:25",
+   "bible": "KJV",
+   "phrase": "the dividing of time",
+   "answer_refs": [
+    "Daniel 7:25"
+   ],
+   "signals": {
+    "xref": 34,
+    "votes": 215,
+    "word": "H6922",
+    "word_count": 4,
+    "differ": 0.335,
+    "quoted": null
+   },
+   "why": [
+    "34 cross-references point here",
+    "The Hebrew word qaddîysh (H6922) is in 4 verses of this path"
+   ],
+   "score": 0.604
+  },
+  {
+   "q": "In Daniel 7:20, how was the horn's look compared to his fellows?",
+   "type": "multiple_choice",
+   "options": [
+    "More stout",
+    "Smaller",
+    "Weaker",
+    "Gentler"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 7:20"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "stout"
+   },
+   "signals": {
+    "xref": 14,
+    "votes": 65,
+    "word": "H7162",
+    "word_count": 9,
+    "differ": 0.438,
+    "quoted": null
+   },
+   "why": [
+    "14 cross-references point here",
+    "The Hebrew word qeren (H7162) is in 9 verses of this path"
+   ],
+   "score": 0.6865
+  },
+  {
+   "q": "Which verse says \"there was given unto him a mouth speaking great things and blasphemies\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 13:5"
+   ],
+   "signals": {
+    "xref": 30,
+    "votes": 156,
+    "word": "G4750",
+    "word_count": 2,
+    "differ": 0.613,
+    "quoted": null
+   },
+   "why": [
+    "30 cross-references point here",
+    "The Greek word stóma (G4750) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5912
+  },
+  {
+   "q": "In Revelation 13:5, for how long was power given to the beast?",
+   "type": "multiple_choice",
+   "options": [
+    "Forty and two months",
+    "Seven years",
+    "Ten days",
+    "A thousand years"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 13:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "months"
+   },
+   "signals": {
+    "xref": 30,
+    "votes": 156,
+    "word": "G4750",
+    "word_count": 2,
+    "differ": 0.613,
+    "quoted": null
+   },
+   "why": [
+    "30 cross-references point here",
+    "The Greek word stóma (G4750) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5912
+  },
+  {
+   "q": "Which translation says \"arrogant and blasphemous words\" in Revelation 13:5?",
+   "type": "which_translation",
+   "ref": "Revelation 13:5",
+   "bible": "BSB",
+   "phrase": "arrogant and blasphemous words",
+   "answer_refs": [
+    "Revelation 13:5"
+   ],
+   "signals": {
+    "xref": 30,
+    "votes": 156,
+    "word": "G4750",
+    "word_count": 2,
+    "differ": 0.613,
+    "quoted": null
+   },
+   "why": [
+    "30 cross-references point here",
+    "The Greek word stóma (G4750) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5912
+  },
+  {
+   "q": "Which verse says it was given unto him \"to make war with the saints, and to overcome them\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 13:7"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 186,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.531,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5255
+  },
+  {
+   "q": "Fill in the word: \"his body destroyed, and given to the burning ___\"",
+   "type": "fill_word",
+   "ref": "Daniel 7:11",
+   "bible": "KJV",
+   "word": "flame",
+   "answer_refs": [
+    "Daniel 7:11"
+   ],
+   "signals": {
+    "xref": 10,
+    "votes": 48,
+    "word": "H7162",
+    "word_count": 9,
+    "differ": 0.614,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "The Hebrew word qeren (H7162) is in 9 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.7082
+  },
+  {
+   "q": "Which verse says the beast and the false prophet \"were cast alive into a lake of fire\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 19:20"
+   ],
+   "signals": {
+    "xref": 75,
+    "votes": 433,
+    "word": "G4442",
+    "word_count": 1,
+    "differ": 0.557,
+    "quoted": null
+   },
+   "why": [
+    "75 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.6184
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ],
+ "verse_count": 13,
+ "image": "img/mirror-2-little-horn.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/mirror-2-little-horn.json",
+  "sha": "26c8594dba7cc943",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}
