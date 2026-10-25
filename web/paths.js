@@ -666,7 +666,9 @@ const BCPaths = (() => {
       ${A.similar ? `<label class="pv-opt"><input type="checkbox" id="pvPast"${prefs.past ? " checked" : ""}> Put questions close to what I asked before first (uses the meaning search on this device; off unless you tick it)</label>` : ""}
       <div id="pvQs">${S.quiz.pick.map((q, n) => qCard(q, n)).join("")}</div>
       <div id="pvScore"></div>
-      <div class="pv-nav"><button class="pv-btn pv-backsteps">‹ Back to the steps</button>${S.quiz.rest.length ? `<button class="pv-btn pv-more">More questions (${S.quiz.rest.length})</button>` : ""}</div>`, true);
+      <div class="pv-nav"><button class="pv-btn pv-backsteps">‹ Back to the steps</button>${S.quiz.rest.length ? `<button class="pv-btn pv-more">More questions (${S.quiz.rest.length})</button>` : ""}</div>
+      <div id="pvPrayer"></div>`, true);
+    if(typeof BCPrayers !== "undefined") BCPrayers.closing(root.querySelector("#pvPrayer"), p);   // 🙏 a closing prayer (web/prayers.js)
     for(const q of S.quiz.pick) if(q.type === "fill_word") fillText(q);
     score();
   }
@@ -1210,6 +1212,7 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-dark .pnote{background:#191c21}`;
   async function openCommunity(){ S.section = "community"; await open(); }
   return {mount, open, close, reopen, openHash, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden,
-    findPaths, openCommunity, preload: () => loadList(), normRef};
+    findPaths, openCommunity, preload: () => loadList(), normRef,
+    adapter: () => A, readVerses, title: id => { const x = (list || []).find(q => q.id === id); return x ? x.title : ""; }};   // 🙏 Prayers (web/prayers.js) borrow these
 })();
 if(typeof module !== "undefined") module.exports = BCPaths;

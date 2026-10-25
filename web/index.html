@@ -139,6 +139,15 @@ body.playing{padding-bottom:calc(var(--tabh) + 62px + env(safe-area-inset-bottom
 #studyBody .muted{color:var(--muted)}
 #votd{width:min(560px,100%);text-align:left;background:linear-gradient(135deg,rgba(47,93,138,.10),rgba(199,154,75,.16));border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 auto 18px}
 #votd[hidden]{display:none}
+/* 🙏 Today's prayer: under the verse of the day (web/prayers.js fills it) */
+#prayToday{width:min(560px,100%);text-align:left;background:linear-gradient(135deg,rgba(199,154,75,.16),rgba(194,69,90,.08));border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 auto 18px}
+#prayToday[hidden]{display:none}
+#prayToday .lab{font:600 12px system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+#prayToday .pr-tt{display:block;margin:6px 0 0;font-size:16px}
+#prayToday .vt{font-family:Georgia,serif;font-size:calc(16px * var(--rs));line-height:1.55;margin:4px 0 6px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+#prayToday .rf{font:600 13px system-ui,sans-serif;color:var(--accent)}
+#prayToday .alt{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+#prayToday .alt .btn{font-size:14px;padding:6px 10px}
 #votd .lab{font:600 12px system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
 #votd .vt{font-family:Georgia,serif;font-size:calc(17px * var(--rs));line-height:1.55;margin:6px 0}
 #votd .rf{font:600 13.5px system-ui,sans-serif;color:var(--accent)}
@@ -335,6 +344,8 @@ body.has-church #top .brand{display:none}
     <button class="btn primary" id="homeInstall" hidden><span class="hi-ic" aria-hidden="true">📲</span><span><span>Add BibleChat to your home screen</span><small>Opens like an app, full screen, also offline</small></span></button>
     <!-- ☀ Verse of the day: the first thing on Home, above the cover -->
     <div id="votd" hidden></div>
+    <!-- 🙏 Today's prayer: tied to the verse of the day (web/prayers.js) -->
+    <div id="prayToday" hidden></div>
     <button class="cover" id="homeCover" title="Open the Bible"><svg class="coverart" viewBox="0 0 300 440" role="img" aria-label="The Holy Bible: a black cover with a golden cross. KJV · ETHIOPIAN CANON · BSB"><defs><radialGradient id="cvLeather" cx="45%" cy="38%" r="75%"><stop offset="0" stop-color="#2b2a28"/><stop offset=".6" stop-color="#121110"/><stop offset="1" stop-color="#050505"/></radialGradient><linearGradient id="cvGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1a8"/><stop offset=".28" stop-color="#e2bd4f"/><stop offset=".55" stop-color="#a87b1c"/><stop offset=".8" stop-color="#e9c860"/><stop offset="1" stop-color="#8f6514"/></linearGradient><linearGradient id="cvEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d77a"/><stop offset=".5" stop-color="#b8891f"/><stop offset="1" stop-color="#f0cf6a"/></linearGradient><linearGradient id="cvSpine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".75"/><stop offset=".7" stop-color="#3a3835" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient><filter id="cvEmboss" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.6" stdDeviation="1.2" flood-color="#000" flood-opacity=".85"/></filter></defs><path d="M231 404h16v34l-8-7-8 7z" fill="#8e1b26"/><rect x="16" y="10" width="280" height="404" rx="6" fill="url(#cvEdge)"/><path d="M286 22v382M291 26v374" stroke="#8a6414" stroke-width=".7" opacity=".6"/><rect x="4" y="4" width="284" height="408" rx="11" fill="url(#cvLeather)"/><rect x="4" y="4" width="30" height="408" rx="11" fill="url(#cvSpine)"/><path d="M33 8v400" stroke="#000" stroke-width="1.4" opacity=".7"/><path d="M35 8v400" stroke="#4a4743" stroke-width=".6" opacity=".5"/><g fill="none" stroke="url(#cvGold)"><rect x="46" y="20" width="228" height="376" rx="5" stroke-width="2"/><rect x="53" y="27" width="214" height="362" rx="3" stroke-width=".8"/></g><g filter="url(#cvEmboss)"><text text-anchor="middle" font-family="Georgia,'Times New Roman',serif" fill="url(#cvGold)"><tspan id="cvT1" x="160" y="82" font-size="19" letter-spacing="5">The</tspan><tspan id="cvT2" x="160" y="122" font-size="34" textLength="176" lengthAdjust="spacingAndGlyphs">Holy Bible</tspan></text><path d="M150 158h20v56h38v20h-38v104h-20V234h-38v-20h38z" fill="url(#cvGold)"/><text id="cvVer" x="160" y="372" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="8.5" letter-spacing="1.6" fill="url(#cvGold)" textLength="190" lengthAdjust="spacingAndGlyphs">KJV · ETHIOPIAN CANON · BSB</text></g><path d="M151 159h18v56" stroke="#fff6c8" stroke-width=".8" fill="none" opacity=".7"/></svg></button>
     <p class="homeHint">Tap the cover to open</p>
     <p id="homeWhere"></p>
@@ -360,6 +371,7 @@ body.has-church #top .brand{display:none}
         <button class="btn" id="bmOpen" title="Your bookmarks">🔖</button>
         <button class="btn" id="hlOpen" title="Your highlights">🖍</button>
         <button class="btn pathsBtn" title="Study Paths: guided studies through the text, with questions">📜 Paths</button>
+        <button class="btn" id="prayChap" title="A prayer for this chapter">🙏 Pray</button>
         <button class="btn smOpen" title="Sermon list: Sunday's verses with a QR code">📋<span class="smCount"></span></button>
       </div>
       <div id="rtext"><div class="notice">Loading…</div></div>
@@ -558,12 +570,14 @@ body.has-church #top .brand{display:none}
   <span id="plWhere"></span><button class="btn primary" id="plPause">⏸ Pause</button><button class="btn" id="plStop">■ Stop</button><button class="btn" id="plStart" title="Read the chapter from verse 1">↺ 1</button>
 </div></div>
 <div id="pathsView" hidden></div>
+<div id="prayView" hidden></div>
 
 <nav id="tabs"><div class="wrap">
   <button data-tab="home"><b>🏠</b>Home</button>
   <button data-tab="read" class="on"><b>📖</b>Read</button>
   <button data-tab="search"><b>🔍</b>Search</button>
   <button data-tab="paths" title="Study Paths / Community"><b>📜</b>Paths<small>&amp; Community</small></button>
+  <button data-tab="pray" title="Prayers"><b>🙏</b>Pray</button>
   <button data-tab="bibles"><b>📚</b>Bibles</button>
   <button data-tab="love" class="love"><b>♥</b>Love</button>
 </div></nav>
@@ -574,6 +588,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 <script src="i18n.js"></script>
 <script src="smart.js"></script>
 <script src="paths.js"></script>
+<script src="prayers.js"></script>
 <script>
 "use strict";
 const $ = s => document.querySelector(s);
@@ -609,7 +624,8 @@ function show(t, noFocus){
   navNote();
 }
 document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => { if(b.dataset.tab !== "read") sayStop();
-  if(b.dataset.tab === "paths"){ document.querySelectorAll("#tabs button").forEach(x => x.classList.toggle("on", x === b)); BCPaths.open(); return; }   // 📜 Study Paths / Community
+  if(b.dataset.tab === "paths"){ if(BCPrayers.isOpen()) BCPrayers.close(); document.querySelectorAll("#tabs button").forEach(x => x.classList.toggle("on", x === b)); BCPaths.open(); return; }   // 📜 Study Paths / Community
+  if(b.dataset.tab === "pray"){ document.querySelectorAll("#tabs button").forEach(x => x.classList.toggle("on", x === b)); BCPrayers.open(); return; }   // 🙏 Prayers (web/prayers.js)
   show(b.dataset.tab); });
 $("#bibleChip").onclick = () => show("bibles");
 /* Love tab: the section tabs at the top jump to Donate, About, Churches or Ideas; the tab of the section on screen lights up */
@@ -632,6 +648,7 @@ addEventListener("scroll", () => {
 function homeWhere(){
   $("#homeWhere").innerHTML = bible ? `<span>Continue reading:</span> <b>${esc(bName(place.book))} ${place.ch}</b> · ${esc(bibleAbbr())}` : "";
   votdShow();
+  BCPrayers.todayCard($("#prayToday"));   // 🙏 today's prayer, drawn from the verse of the day when the library has one
 }
 /* 🏠 in Read closes the book: the cover swings shut and Home shows */
 function closeBook(){
@@ -1060,6 +1077,8 @@ async function runSearch(q){
       const b = document.createElement("p"); b.innerHTML = `<button class="btn">✨ Ask AI about this, with these verses</button>`; const ph = out.querySelector(".pathhits"); if(ph) ph.after(b); else out.prepend(b);
       const mk = document.createElement("button"); mk.className = "btn"; mk.textContent = "📜 Make a study path"; mk.style.marginLeft = "6px";
       mk.onclick = () => pathFromResults(q, found.slice(0, 8).map(f => `${flat[f.i].b} ${flat[f.i].c}:${flat[f.i].v}`)); b.appendChild(mk);
+      const pr = document.createElement("button"); pr.className = "btn"; pr.textContent = "🙏 Pray about this"; pr.style.marginLeft = "6px";   // web/prayers.js
+      pr.onclick = () => { sayStop(); BCPrayers.prayAbout(q, found.slice(0, 8).map(f => ({ref: `${flat[f.i].b} ${flat[f.i].c}:${flat[f.i].v}`, text: flat[f.i].t}))); }; b.appendChild(pr);
       b.querySelector("button").onclick = () => askAI(q + "\n\nVerses BibleChat found (" + bibleAbbr() + "):\n" +
         found.slice(0, 8).map(f => `${flat[f.i].b} ${flat[f.i].c}:${flat[f.i].v} ${flat[f.i].t}`).join("\n") + "\n\nAnswer from these verses and say which verse supports each point.");
     }
@@ -1457,6 +1476,17 @@ BCPaths.mount({
 });
 document.querySelectorAll(".pathsBtn").forEach(b => b.onclick = () => { sayStop(); BCPaths.open(); });
 function pathFromResults(q, refs){ BCPaths.fromAnswer(q, refs); }
+/* ---------- 🙏 Prayers (web/prayers.js, shared with the computer): the library, today's prayer, a prayer for the chapter,
+   the closing prayer of each Study Path, and Pray about this. It borrows the Study Paths adapter above. ---------- */
+BCPrayers.mount({
+  container: $("#prayView"), url: "prayers.json",
+  votd: () => votdRef(), bibleName: () => bibleAbbr(), pathTitle: id => BCPaths.title(id),
+  askAI: t => askAI(t), toast: m => toast(tr(m)),
+  openVerse: (book, ch, v) => openAnywhere(book, ch, v, false),
+  onOpen: () => document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === "pray")),
+  onClose: () => document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab))
+});
+$("#prayChap").onclick = () => { sayStop(); BCPrayers.openChapter(place.book, place.ch); };
 
 /* Verse of the day: one well-known verse per day, the same for everyone on that date */
 const VOTD = ["John 3:16","Psalms 23:1","Philippians 4:13","Jeremiah 29:11","Romans 8:28","Isaiah 40:31","Proverbs 3:5","Joshua 1:9","Matthew 11:28","Psalms 46:1",
@@ -2119,7 +2149,7 @@ function parseHash(){
   const langs = [...new Set(catalog.map(c => c.language.replace(/ \(.*\)$/, "")))];
   $("#blang").innerHTML = `<option value="">All languages</option>` + langs.map(l => `<option>${esc(l)}</option>`).join("");
   $("#blang").value = store.get("lang", "English");
-  const PATH_HASH = /^#\/paths?(\/|$)/.test(location.hash) ? location.hash : null;
+  const PATH_HASH = /^#\/paths?(\/|$)/.test(location.hash) ? location.hash : null, PRAY_HASH = /^#\/prayers?(\/|$)/.test(location.hash) ? location.hash : null;
   const h = parseHash();
   if(h && catalog.some(c => c.id === h.bible)) place = {bible: h.bible, book: h.book, ch: h.ch};
   if(!catalog.some(c => c.id === place.bible)) place.bible = catalog[0].id;
@@ -2134,11 +2164,12 @@ function parseHash(){
   }
   else if(h && h.shared && h.v && verseText(h.v)){ markShared(h.v); showWelcome(h.v); }
   else if(PATH_HASH){ show("home", true); BCPaths.openHash(PATH_HASH); }
+  else if(PRAY_HASH){ show("home", true); BCPrayers.openHash(PRAY_HASH); }   // a shared prayer: #/prayers/<id>
   else {
     if(!(h && h.v)) show("home", true);   // a normal start opens on the Bible cover; a link to a verse goes straight to it
     if(!store.get("tip", false)){ store.set("tip", true); setTimeout(() => toast("Tip: tap any verse to share or study it"), 1200); }
   }
-  addEventListener("hashchange", () => { if(/^#\/paths?(\/|$)/.test(location.hash)){ BCPaths.openHash(location.hash); return; } const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]){ go(x.book, x.ch, x.v); if(x.shared && x.v) markShared(x.v); } });
+  addEventListener("hashchange", () => { if(/^#\/paths?(\/|$)/.test(location.hash)){ BCPaths.openHash(location.hash); return; } if(/^#\/prayers?(\/|$)/.test(location.hash)){ BCPrayers.openHash(location.hash); return; } const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]){ go(x.book, x.ch, x.v); if(x.shared && x.v) markShared(x.v); } });
 })();
 /* ---------- 📲 Add BibleChat to your home screen ----------
    Android, Chrome and Edge: the button opens the browser's own "Add to Home screen / Install" box (beforeinstallprompt).

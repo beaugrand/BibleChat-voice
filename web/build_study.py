@@ -115,7 +115,7 @@ def main(out: str) -> None:
     shutil.copytree(src, os.path.join(out, "data", "meaning"), dirs_exist_ok=True)
     # 📜 Study Paths: the paths built by packaging/build_paths.py, their page code and "Quoted or named in Scripture"
     web = os.path.join(ROOT, "web")
-    for f in ("paths.js", "quoted.json"):
+    for f in ("paths.js", "quoted.json", "prayers.js", "prayers.json"):   # 🙏 Prayers ride along with the Study Paths
         shutil.copy2(os.path.join(web, f), os.path.join(out, f))
     shutil.copytree(os.path.join(web, "paths"), os.path.join(out, "paths"), dirs_exist_ok=True)
     total = sum(os.path.getsize(os.path.join(dp, f)) for dp, _, fs in os.walk(base) for f in fs)

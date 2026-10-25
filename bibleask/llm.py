@@ -171,6 +171,30 @@ def build_messages(question: str, passages: list[tuple[str, str]]) -> list[dict]
     ]
 
 
+PRAYER_PROMPT = (
+    "You write short prayers for a Bible app. Write one prayer of about 120 to 160 words, spoken to God in plain, "
+    "reverent words, about the topic the person gives. Build it only on the Bible passages given. When a line uses a "
+    "passage, put its reference in parentheses after the line, for example (Psalms 91:11). Never quote or name a verse "
+    "that is not in the list, and never change the words of a verse you quote. No title, no explanation: only the "
+    "prayer. End with: In Jesus' name, Amen."
+)
+
+
+def build_prayer_messages(topic: str, passages: list[tuple[str, str]]) -> list[dict]:
+    """🙏 Pray about this: the AI writes a prayer from an answer's verses only (web/prayers.js labels it as the AI's)."""
+    body = "\n".join(f"[{ref}] {text}" for ref, text in passages)
+    return [
+        {"role": "system", "content": PRAYER_PROMPT},
+        {"role": "user", "content": f"BIBLE PASSAGES:\n{body}\n\nTOPIC: {topic or 'what these verses say'}"},
+    ]
+
+
+def prayer_question(topic: str) -> str:
+    """The same request for the Bible Assistant model, which takes a question with its verses as context."""
+    return ("Write a short prayer (about 150 words) about: " + (topic or "what these verses say") + ". Use only the verses "
+            "in the context, put each reference in parentheses after the line that uses it, and end with: In Jesus' name, Amen.")
+
+
 # Set by rebuild_for_old_cpu(): lives inside the Python environment, next to the rebuilt engine.
 _COMPAT_FLAG_VENV = os.path.join(sys.prefix, "biblechat_compat.flag")
 LLAMA_CPP_VERSION = "0.3.35"  # same version the GitHub "OldCPU" build compiles
@@ -344,6 +368,27 @@ class LocalLLM:
                         temperature=0.2,
                         max_tokens=450,
                         stream=True,
+                    )
+                )
+            yield from strip_think(pieces)
+
+    def stream_prayer(self, topic: str, passages: list[tuple[str, str]]) -> Iterator[str]:
+        """🙏 A prayer from the given verses only (see PRAYER_PROMPT)."""
+        assert self._llm is not None, "model not loaded"
+        with self._lock:
+            if self.style == "bible":
+                pieces = (
+                    c["choices"][0]["text"]
+                    for c in self._llm.create_completion(
+                        prompt=build_bible_prompt(prayer_question(topic), passages),
+                        temperature=0.3, max_tokens=450, stop=["<|im_end|>", "<|endoftext|>"], stream=True,
+                    )
+                )
+            else:
+                pieces = (
+                    c["choices"][0]["delta"].get("content") or ""
+                    for c in self._llm.create_chat_completion(
+                        messages=build_prayer_messages(topic, passages), temperature=0.4, max_tokens=420, stream=True,
                     )
                 )
             yield from strip_think(pieces)

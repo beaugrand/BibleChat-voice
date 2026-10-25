@@ -45,7 +45,8 @@ def web_dir() -> str:
 
 
 def shared_web_dir() -> str:
-    """The phone's web/ folder: Study Paths (paths.js, paths/*.json, paths/img/*.jpg) and the "Quoted or named" list are shared."""
+    """The phone's web/ folder: Study Paths (paths.js, paths/*.json, paths/img/*.jpg), the "Quoted or named" list and the
+    🙏 Prayers (prayers.js, prayers.json) are shared."""
     return os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "web")
 
 
@@ -279,7 +280,7 @@ def make_handler(app: App, port: int):
                     page = f.read().replace(b"<title>BibleChat</title>", f"<title>BibleChat {__version__}</title>".encode(), 1)
                     page = page.replace(b"Loading BibleChat, please wait", f"Loading BibleChat {__version__}, please wait".encode(), 1)
                     self._send(200, page, "text/html; charset=utf-8")
-            elif (path in ("/paths.js", "/quoted.json") or re.fullmatch(r"/paths/[a-z0-9-]+\.json", path)
+            elif (path in ("/paths.js", "/quoted.json", "/prayers.js", "/prayers.json") or re.fullmatch(r"/paths/[a-z0-9-]+\.json", path)
                   or re.fullmatch(r"/paths/img/[a-z0-9-]+\.jpg", path)):   # a path's picture for its card
                 try:
                     with open(os.path.join(shared_web_dir(), *path.strip("/").split("/")), "rb") as f:
@@ -430,6 +431,8 @@ def make_handler(app: App, port: int):
                     self._json({"job": app.cpu_fix_job})
                 elif path == "/api/chat":
                     self._chat(json.loads(self._body() or b"{}"))
+                elif path == "/api/pray":   # 🙏 Pray about this: the AI helper writes a prayer from an answer's verses
+                    self._pray(json.loads(self._body() or b"{}"))
                 elif path == "/api/speak":
                     req = json.loads(self._body() or b"{}")
                     text = (req.get("text") or "").strip()
@@ -496,6 +499,43 @@ def make_handler(app: App, port: int):
                     pass
             finally:
                 gen.close()
+                with app.lock:
+                    app.busy -= 1
+
+        def _pray(self, req: dict) -> None:
+            topic = str(req.get("topic") or "").strip()[:400]
+            passages = [(str(r)[:60], str(t)[:600]) for r, t in (req.get("passages") or [])[:8] if str(r).strip()]
+            if not passages:
+                self._json({"error": "There are no verses to pray from."}, 400)
+                return
+            if not app.model.loaded:
+                self._json({"error": "The AI helper isn't loaded. Load it from the sidebar, or use Ask an AI."}, 400)
+                return
+            self.send_response(200)
+            self.send_header("Content-Type", "text/event-stream")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Connection", "close")
+            self.end_headers()
+            self.close_connection = True
+
+            def emit(event: str, data) -> None:
+                self.wfile.write(f"event: {event}\ndata: {json.dumps(data)}\n\n".encode("utf-8"))
+                self.wfile.flush()
+
+            with app.lock:
+                app.busy += 1
+            try:
+                for piece in app.model.stream_prayer(topic, passages):
+                    emit("token", piece)
+                emit("done", None)
+            except (BrokenPipeError, ConnectionResetError):
+                pass
+            except Exception as e:
+                try:
+                    emit("error", f"Something went wrong: {e}")
+                except OSError:
+                    pass
+            finally:
                 with app.lock:
                     app.busy -= 1
 
