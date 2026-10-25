@@ -113,7 +113,9 @@ class SharePagesTest(unittest.TestCase):
         self.assertEqual(len(self.files), 2 + len(index) + len(series) + len(prayers))
         for p in index:
             h = self.page("p", p["id"])
-            self.assertEqual(self.meta(h, "og:image"), build_share.SITE + "paths/" + p["image"])     # its own picture
+            self.assertEqual(self.meta(h, "og:image"), build_share.SITE + "paths/" + p["image"] + "?v=2")   # its own picture
+            self.assertEqual((self.meta(h, "og:image:width"), self.meta(h, "og:image:height")), ("624", "416"))   # size given: no broken picture on Facebook
+            self.assertEqual(self.meta(h, "og:image:type"), "image/jpeg")
             self.assertEqual(self.meta(h, "og:url"), build_share.SITE + "p/" + p["id"] + "/")
             self.assertIn('location.replace("../../#/path/%s/1"' % p["id"], h)
             self.assertNotIn('http-equiv="refresh"', h)            # a crawler must stay on this page to read its preview
@@ -122,10 +124,12 @@ class SharePagesTest(unittest.TestCase):
         for p in prayers:
             h = self.page("pray", p["id"])
             self.assertIn('location.replace("../../#/prayers/%s"' % p["id"], h)
-            self.assertTrue(self.meta(h, "og:image").endswith(".jpg"))
+            self.assertTrue(self.meta(h, "og:image").endswith(".jpg?v=2"))
+            self.assertTrue(int(self.meta(h, "og:image:width")) >= 600 and int(self.meta(h, "og:image:height")) >= 315)
         self.assertIn('location.replace("../#/paths"', self.page("p"))
         self.assertIn('location.replace("../#/prayers"', self.page("pray"))
         self.assertIn("og-prayers.jpg", self.meta(self.page("pray"), "og:image"))
+        self.assertEqual((self.meta(self.page("pray"), "og:image:width"), self.meta(self.page("pray"), "og:image:height")), ("1200", "630"))
         self.assertTrue(os.path.exists(os.path.join(ROOT, "web", "paths", "img", "og-prayers.jpg")))
 
     def test_the_phone_build_writes_them(self):

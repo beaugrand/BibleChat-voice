@@ -42,6 +42,10 @@ PAGE = """<!doctype html>
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{image}">
+<meta property="og:image:secure_url" content="{image}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="{width}">
+<meta property="og:image:height" content="{height}">
 <meta property="og:image:alt" content="{title}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
@@ -78,11 +82,30 @@ def short(text: str, n: int = 220) -> str:
     return text if len(text) <= n else text[: n - 1].rsplit(" ", 1)[0] + "…"
 
 
+def jpeg_size(path: str) -> tuple[int, int]:
+    """Width and height of a JPEG, read from its header (no image library on the build machine)."""
+    with open(path, "rb") as f:
+        data = f.read()
+    i = 2
+    while i < len(data) - 9:
+        if data[i] != 0xFF:
+            i += 1
+            continue
+        marker, size = data[i + 1], int.from_bytes(data[i + 2:i + 4], "big")
+        if marker in (0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7, 0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF):   # start of frame
+            return int.from_bytes(data[i + 7:i + 9], "big"), int.from_bytes(data[i + 5:i + 7], "big")
+        i += 2 + size
+    raise ValueError(f"not a JPEG: {path}")
+
+
 def page(out: str, rel: str, title: str, desc: str, image: str, app: str, kind: str, button: str) -> str:
     """Write OUT/<rel>index.html. `app` is the address of BibleChat at the path or prayer, relative to the page."""
     e = lambda s: html.escape(str(s), quote=True)  # noqa: E731
     url = SITE + rel
-    body = PAGE.format(title=e(title), desc=e(short(desc)), url=e(url), image=e(SITE + image), app=e(app),
+    # Facebook and Messenger show a broken or empty picture on the first share of a link unless the page says how big the
+    # picture is; "?v=" makes them fetch it afresh instead of using a copy they kept from before the size was given
+    width, height = jpeg_size(os.path.join(WEB, *image.split("/")))
+    body = PAGE.format(title=e(title), desc=e(short(desc)), url=e(url), image=e(SITE + image + "?v=2"), width=width, height=height, app=e(app),
                        app_js=json.dumps(app), kind=e(kind), button=e(button))
     path = os.path.join(out, *rel.strip("/").split("/"), "index.html") if rel else os.path.join(out, "index.html")
     os.makedirs(os.path.dirname(path), exist_ok=True)
