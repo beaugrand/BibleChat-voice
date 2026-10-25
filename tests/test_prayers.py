@@ -155,6 +155,17 @@ class PrayerPagesTest(unittest.TestCase):
         self.assertIn('"prayers.js", "prayers.json"', read("web", "build_study.py"))   # copied into the phone site
         self.assertIn('"/prayers.js", "/prayers.json"', read("bibleask", "server.py"))
 
+    def test_share_screen_shows_a_real_picture(self):
+        """The card at the top of a share screen shows a picture, not a lone emoji that looks like a broken image."""
+        pr, pa = read("web", "prayers.js"), read("web", "paths.js")
+        self.assertIn('img class="pv-shimg" src="${esc(A.base + "img/thumb-prayers.jpg")}"', pr)
+        self.assertIn('(t.image || "img/thumb-studypaths.jpg")', pa)   # Share the Study Paths has no path picture of its own
+        for f in ("thumb-prayers.jpg", "thumb-studypaths.jpg"):
+            self.assertTrue(os.path.exists(os.path.join(ROOT, "web", "paths", "img", f)), f)
+        # if the picture cannot load, the emoji stands in at full size (".pv-shead span" must not shrink it)
+        self.assertIn(".pv-shead .pv-shico{display:block;font-size:40px", pa)
+        self.assertNotIn('<span class="pv-shico">🙏</span><div>', pr)
+
     def test_phone_words_are_translated(self):
         src = read("web", "i18n.js")
         for phrase in ("Pray", "🙏 Pray", "🙏 Pray about this", "Today's prayer", "All prayers", "A closing prayer", "Protection",

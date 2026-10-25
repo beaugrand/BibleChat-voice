@@ -786,7 +786,7 @@ const BCPaths = (() => {
     const back = S.shareFrom === "list" || S.shareFrom === "series" ? `<button class="pv-btn pv-backlist">‹ Back to the paths</button>` : `<button class="pv-btn pv-backpath">‹ Back to the path</button>`;
     const wide = matchMedia("(min-width: 760px)").matches;   // on a computer the QR code comes first: hold the phone up to the screen
     const qr = `<div class="pv-qrbox"><p class="pv-small">${wide ? "Point a phone camera at the screen:" : "Or let them scan this code with their phone camera:"}</p><div class="pv-qr"></div><button class="pv-btn pv-qrbig">⛶ Show the QR code big (for a TV or projector)</button></div>`;
-    frame(t.kind === "all" ? "↗ Share the Study Paths" : t.kind === "series" ? "↗ Share this series" : "↗ Share this path", `<div class="pv-shead">${t.image ? `<img src="${esc(A.base + t.image)}" alt="">` : `<span class="pv-shico">📜</span>`}<div><b class="pvx">${esc(t.title)}</b><span class="pvx">${esc(t.question || "")}</span></div></div>
+    frame(t.kind === "all" ? "↗ Share the Study Paths" : t.kind === "series" ? "↗ Share this series" : "↗ Share this path", `<div class="pv-shead"><img class="pv-shimg" src="${esc(A.base + (t.image || "img/thumb-studypaths.jpg"))}" alt="" onerror="this.outerHTML='<span class=&quot;pv-shico&quot;>📜</span>'"><div><b class="pvx">${esc(t.title)}</b><span class="pvx">${esc(t.question || "")}</span></div></div>
       <p class="pv-small">Send this link to someone. It opens ${what} in BibleChat on their phone or computer. No sign-up, nothing to install.</p>
       ${wide ? qr : ""}
       <div class="pv-shbtns">${navigator.share ? `<button class="pv-btn pv-primary pv-sys">📤 Send to someone</button>` : ""}
@@ -1198,7 +1198,7 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-serh b{display:block;font-size:16px;color:var(--accent)}.pv-serh small{color:var(--muted)}.pv-serqr{flex:none;font-weight:700}
 .pv-serline{margin:-4px 0 8px;color:var(--accent)}
 .pv-folder{border-color:rgba(217,180,74,.55)}
-.pv-shico{font-size:40px;width:96px;text-align:center}
+.pv-shead .pv-shico{display:block;font-size:40px;line-height:64px;width:96px;margin:0;text-align:center;color:inherit;flex:none}
 .pv-socl{margin:12px 0 6px}.pv-social{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.pv-social .pv-btn{text-align:center;text-decoration:none;font-weight:650;font-size:14px;padding:8px 4px;color:#fff;border:0}
 @media (max-width:560px){.pv-social{grid-template-columns:repeat(3,1fr)}}
 .pv-so-fb{background:#1877f2}.pv-so-x{background:#000}.pv-so-tg{background:#229ed9}.pv-so-pin{background:#e60023}.pv-so-li{background:#0a66c2}.pv-so-rd{background:#ff4500}
