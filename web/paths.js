@@ -797,7 +797,7 @@ const BCPaths = (() => {
       <p class="pv-small pv-socl">Post it on social media:</p>
       <div class="pv-social">
         <a class="pv-btn pv-so-fb" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}" target="_blank" rel="noopener">Facebook</a>
-        <a class="pv-btn pv-so-x" href="https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}" target="_blank" rel="noopener">X</a>
+        <a class="pv-btn pv-so-x" href="https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}" target="_blank" rel="noopener" aria-label="X (Twitter)">X (Twitter)</a>
         <a class="pv-btn pv-so-tg" href="https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}" target="_blank" rel="noopener">Telegram</a>
         <a class="pv-btn pv-so-pin" href="https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&media=${encodeURIComponent(absImg(t))}&description=${encodeURIComponent(text)}" target="_blank" rel="noopener">Pinterest</a>
         <a class="pv-btn pv-so-li" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}" target="_blank" rel="noopener">LinkedIn</a>

@@ -1,5 +1,5 @@
 // BibleChat web: keeps the app and every Bible you opened on this phone, so it also works offline.
-const SHELL = "bc-shell-v9", DATA = "bc-data-v1", MEANING = "bc-meaning-v1";   // a new model: change MEANING
+const SHELL = "bc-shell-v10", DATA = "bc-data-v1", MEANING = "bc-meaning-v1";   // a new model: change MEANING
 const FILES = ["./", "index.html", "manifest.webmanifest", "icon.svg", "icon-192.png", "icon-512.png", "cashapp-qr.jpg", "i18n.js", "smart.js", "paths.js", "quoted.json", "paths/index.json", "prayers.js", "prayers.json"];
 // the study paths and their pictures are kept too, so a path works offline after the first visit
 self.addEventListener("install", e => { e.waitUntil(caches.open(SHELL).then(c => c.addAll(FILES).then(() =>

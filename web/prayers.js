@@ -174,8 +174,10 @@ const BCPrayers = (() => {
       <p><button class="pv-btn pr-all">🙏 ${esc(T("All prayers"))}</button></p>`, true);
     const my = S.id, vs = await versesFor(p); if(S.id !== my || root.hidden) return;
     const box = root.querySelector("#prVerses"); if(box) box.innerHTML = versesHtml(vs);
-    S.verses = vs;
+    S.verses = vs; S.versesId = p.id;
   }
+  /* the verses already loaded for this prayer (the prayer page or the share screen loads them), or null */
+  const versesCached = p => S.versesId === p.id ? S.verses : null;
   /* 🙏 in Read: the prayer for this chapter, with the others drawn from it */
   async function openChapter(book, ch){
     await load(); P.ensure && P.ensure();
@@ -216,9 +218,18 @@ const BCPrayers = (() => {
     catch(e){ const el = root.querySelector("#prAiText"); if(el) el.innerHTML = `<p class="pv-err">${esc(e.message || String(e))}</p>`; }
     btn.disabled = false; S.aiText = text;
   }
-  function shareText(p){
-    const head = written(p) ? p.text.join("\n\n") : p.title;
-    return `${p.title}\n\n${head}\n\n(${p.refs.map(label).join("; ")})`;
+  /* the prayer as plain text: a written prayer, or for a prayer of the Bible its verses from the reader's Bible */
+  function shareText(p, vs){
+    const refs = `(${p.refs.map(label).join("; ")})`;
+    if(written(p)) return `${p.title}\n\n${p.text.join("\n\n")}\n\n${refs}`;
+    const got = (vs || versesCached(p) || []).filter(x => x.vs && x.vs.length);
+    if(!got.length) return `${p.title}\n\n${refs}`;
+    return `${p.title}\n\n` + got.map(x => x.vs.map(v => v[3]).join(" ") + `\n(${label(x.ref)})`).join("\n\n");
+  }
+  /* copy a prayer; a prayer of the Bible first needs its verses */
+  function copyPrayer(p, tail){
+    if(written(p) || versesCached(p)) return copy(shareText(p) + (tail || ""));
+    versesFor(p).then(vs => { S.verses = vs; S.versesId = p.id; copy(shareText(p, vs) + (tail || "")); });
   }
   /* ↗ Share a prayer (or the whole Prayers page): one link that opens it in BibleChat on any phone or computer, no sign-up.
      Its own short page (pray/<id>/) shows the prayer's title when the link is posted. Send it by the phone's share sheet, a
@@ -231,7 +242,8 @@ const BCPrayers = (() => {
   function share(p, back){
     stopListen();
     const url = linkFor(p && p.id), text = inviteText(p), both = text + "\n" + url, wide = matchMedia("(min-width: 760px)").matches, e = encodeURIComponent;
-    S.view = "share"; S.id = p ? p.id : null; S.shareP = p || null; S.shareUrl = url; S.back = back || (p ? () => showPrayer(p.id) : () => showList());
+    S.view = "share"; S.id = p ? p.id : null; S.shareP = p || null; S.shareUrl = url;
+    if(p && !written(p) && !versesCached(p)) versesFor(p).then(vs => { S.verses = vs; S.versesId = p.id; });   // ready for 📋 Copy the whole prayer S.back = back || (p ? () => showPrayer(p.id) : () => showList());
     const qr = `<div class="pv-qrbox"><p class="pv-small">${esc(T(wide ? "Point a phone camera at the screen:" : "Or let them scan this code with their phone camera:"))}</p><div class="pv-qr"></div></div>`;
     frame(p ? "↗ " + T("Share this prayer") : "↗ " + T("Share the Prayers"), `<div class="pv-shead"><img class="pv-shimg" src="${esc(A.base + "img/thumb-prayers.jpg")}" alt="" onerror="this.outerHTML='<span class=&quot;pv-shico&quot;>🙏</span>'"><div><b class="pvx">${esc(p ? p.title : T("BibleChat Prayers"))}</b><span class="pvx">${esc(p ? p.refs.map(label).join(" · ") : T("Prayers drawn from the Bible, and the prayers the Bible itself records."))}</span></div></div>
       <p class="pv-small">${esc(T(p ? "Send this link to someone. It opens this prayer in BibleChat on their phone or computer, with the verses it comes from. No sign-up, nothing to install." : "Send this link to someone. It opens all the prayers in BibleChat on their phone or computer. No sign-up, nothing to install."))}</p>
@@ -244,7 +256,7 @@ const BCPrayers = (() => {
       <p class="pv-small pv-socl">${esc(T("Post it on social media:"))}</p>
       <div class="pv-social">
         <a class="pv-btn pv-so-fb" href="https://www.facebook.com/sharer/sharer.php?u=${e(url)}" target="_blank" rel="noopener">Facebook</a>
-        <a class="pv-btn pv-so-x" href="https://x.com/intent/post?text=${e(text)}&url=${e(url)}" target="_blank" rel="noopener">X</a>
+        <a class="pv-btn pv-so-x" href="https://x.com/intent/post?text=${e(text)}&url=${e(url)}" target="_blank" rel="noopener" aria-label="X (Twitter)">X (Twitter)</a>
         <a class="pv-btn pv-so-tg" href="https://t.me/share/url?url=${e(url)}&text=${e(text)}" target="_blank" rel="noopener">Telegram</a>
         <a class="pv-btn pv-so-li" href="https://www.linkedin.com/sharing/share-offsite/?url=${e(url)}" target="_blank" rel="noopener">LinkedIn</a>
       </div>
@@ -278,14 +290,14 @@ const BCPrayers = (() => {
     const go = t.closest(".pr-go"); if(go){ e.preventDefault(); stopListen(); close(); (P.openVerse || A.openVerse)(go.dataset.b, +go.dataset.c, go.dataset.v ? +go.dataset.v : null); return; }
     const pa = t.closest(".pr-path"); if(pa){ e.preventDefault(); stopListen(); close(); BCPaths.open(pa.dataset.path); return; }
     const p = S.id && data.byId[S.id];
-    if(t.closest(".pr-listen") && p){ const b = t.closest(".pr-listen"); partsOf(p, S.verses).then(parts => listen(parts, b)); return; }
+    if(t.closest(".pr-listen") && p){ const b = t.closest(".pr-listen"); partsOf(p, versesCached(p)).then(parts => listen(parts, b)); return; }
     if(t.closest(".pr-share") && p){ const id = p.id, prev = S.back; share(p, () => showPrayer(id, {back: prev})); return; }
     if(t.closest(".pr-shareall")){ share(null, () => showList()); return; }
     if(t.closest(".pr-sys")){ sysShare(); return; }
     if(t.closest(".pr-copylink") && S.shareUrl){ copy(S.shareUrl); return; }
-    if(t.closest(".pr-copyall") && S.shareP){ copy(shareText(S.shareP) + "\n\nBibleChat: " + S.shareUrl); return; }
+    if(t.closest(".pr-copyall") && S.shareP){ copyPrayer(S.shareP, "\n\nBibleChat: " + S.shareUrl); return; }
     if(t.closest(".pv-url")){ t.closest(".pv-url").select(); return; }
-    if(t.closest(".pr-copy") && p){ copy(shareText(p)); return; }
+    if(t.closest(".pr-copy") && p){ copyPrayer(p); return; }
     if(t.closest(".pr-aiask")){ if(P.askAI) P.askAI(aiPrompt()); return; }
     if(t.closest(".pr-aiwrite")){ aiWrite(t.closest(".pr-aiwrite")); return; }
     if(t.closest(".pr-ailisten") && S.aiText){ listen([[S.aiText, "app"]], t.closest(".pr-ailisten")); return; }
@@ -375,6 +387,6 @@ const BCPrayers = (() => {
 .pr-close-box{margin:22px 0 8px;border-top:1px solid var(--line);padding-top:12px}.pr-close-box h3{margin:0 0 4px;color:var(--accent)}.pr-close-box>b{display:block;margin:0 0 8px}`;
   return {mount, open, close, openChapter, prayAbout, todayCard, closing, openHash, share: shareFrom, isOpen: () => !!root && !root.hidden,
     load, forChapter: (b, c) => data ? forChapter(b, c) : [], forAnswer: (q, r, n) => data ? forAnswer(q, r, n) : [], today: (v, d) => data ? today(v, d) : null,
-    forPath: p => forPath(p), _data: () => data, _setData: d => { data = d; d.byId = {}; for(const p of d.prayers){ d.byId[p.id] = p; p._refs = p.refs.map(r => parse(r)).filter(Boolean); } }};
+    forPath: p => forPath(p), _shareText: (p, vs) => shareText(p, vs), _data: () => data, _setData: d => { data = d; d.byId = {}; for(const p of d.prayers){ d.byId[p.id] = p; p._refs = p.refs.map(r => parse(r)).filter(Boolean); } }};
 })();
 if(typeof module !== "undefined") module.exports = BCPrayers;

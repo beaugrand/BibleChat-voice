@@ -138,6 +138,21 @@ out.mine = P.forPath({{id: "mine-1", title: "Not afraid", steps: [{{refs: ["Isai
         self.assertEqual(o["path"], "path-freedom-from-bondage")
         self.assertEqual(o["mine"], "fear-not")                  # a path someone made: the closest library prayer
 
+    def test_copy_the_whole_prayer(self):
+        """📋 Copy the whole prayer: a prayer of the Bible copies its verses (it once copied only its title, twice)."""
+        o = self.run_js("""
+const d = P._data(), bless = d.byId["priestly-blessing"], written = d.prayers.find(p => p.text);
+out.bless = P._shareText(bless, [{ref: bless.refs[0], key: "reader", vs: [["Numbers", 6, 24, "The LORD bless thee, and keep thee:"],
+  ["Numbers", 6, 25, "The LORD make his face shine upon thee, and be gracious unto thee:"]]}]);
+out.noVerses = P._shareText(bless);
+out.written = P._shareText(written); out.last = written.text[written.text.length - 1];
+""")
+        self.assertIn("The LORD bless thee, and keep thee: The LORD make his face shine upon thee", o["bless"])
+        self.assertIn("(Numbers 6:24", o["bless"])
+        self.assertEqual(o["bless"].count("The Lord bless thee and keep thee"), 1)   # the title once, not twice
+        self.assertEqual(o["noVerses"].count("The Lord bless thee and keep thee"), 1)
+        self.assertIn(o["last"], o["written"])                   # a written prayer: every line, to the Amen
+
 
 class PrayerPagesTest(unittest.TestCase):
     def test_both_versions_carry_prayers(self):
@@ -165,6 +180,8 @@ class PrayerPagesTest(unittest.TestCase):
         # if the picture cannot load, the emoji stands in at full size (".pv-shead span" must not shrink it)
         self.assertIn(".pv-shead .pv-shico{display:block;font-size:40px", pa)
         self.assertNotIn('<span class="pv-shico">🙏</span><div>', pr)
+        for js in (pr, pa):   # "X" alone looked like a close button
+            self.assertIn('>X (Twitter)</a>', js)
 
     def test_phone_words_are_translated(self):
         src = read("web", "i18n.js")
