@@ -1,0 +1,759 @@
+{
+ "id": "quran-7-the-cross",
+ "title": "Session 7: The cross",
+ "category": "Other Faiths",
+ "series": {
+  "id": "quran-and-the-bible",
+  "title": "What does the Quran say about the Bible?",
+  "of": 8,
+  "session": 7
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "storm"
+ },
+ "opening_question": "The Quran says of Jesus, \"they slew him not nor crucified\". The Bible's prophets, its eyewitness and its earliest creed say he was crucified, died and rose. Read both, and weigh what each says about its own witnesses.",
+ "required_refs": [
+  "Psalms 22:16",
+  "Isaiah 53:5",
+  "John 19:34-35",
+  "Luke 24:39",
+  "1 Corinthians 15:3-8"
+ ],
+ "words": [
+  "G4717",
+  "H2490",
+  "G3140",
+  "G1453"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "The Quran says \"they slew him not nor crucified, but it appeared so unto them\". What does Psalm 22 describe, long before?",
+   "refs": [
+    "Psalms 22:14-18"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 4:157-158",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "and have said, Verily we have slain Christ Jesus the son of Mary, the apostle of GOD; yet they slew him not, neither crucified him, but he was represented by one in his likeness; and verily they who disagreed concerning him were in a doubt as to this matter, and had no sure knowledge thereof, but followed only an uncertain opinion. They did not really kill him; but GOD took him up unto himself: and GOD is mighty and wise."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "And because of their saying: We slew the Messiah, Jesus son of Mary, Allah's messenger - they slew him not nor crucified, but it appeared so unto them; and lo! those who disagree concerning it are in doubt thereof; they have no knowledge thereof save pursuit of a conjecture; they slew him not for certain. But Allah took him up unto Himself. Allah was ever Mighty, Wise."
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "H738",
+     "H3738"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Pierced\" in Psalm 22:16 is a disputed word. Most Hebrew copies read ka'ari, like \"a lion\"; the Greek Septuagint, made before Christ, reads they dug, and a Psalms scroll from Nahal Hever near the Dead Sea reads ka'aru, a form of karah: \"properly to dig\".",
+     "refs": [
+      "Psalms 22:16"
+     ],
+     "strongs": [
+      "H738",
+      "H3738"
+     ]
+    },
+    {
+     "text": "John says the soldiers' casting of lots fulfilled Psalm 22:18: \"They parted my raiment among them\".",
+     "refs": [
+      "John 19:24"
+     ]
+    },
+    {
+     "text": "Sale words 4:157 \"he was represented by one in his likeness\"; Pickthall, \"it appeared so unto them\". Muslim scholars give different accounts of what this means.",
+     "refs": [
+      "Psalms 22:16"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does Isaiah 53 say happened to the servant of the LORD, and why?",
+   "refs": [
+    "Isaiah 53:3-9"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2490",
+     "H1792"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Wounded is chalal: \"properly to bore\"; bruised is daka: \"to crumble\".",
+     "refs": [
+      "Isaiah 53:5"
+     ],
+     "strongs": [
+      "H2490",
+      "H1792"
+     ]
+    },
+    {
+     "text": "Philip read Isaiah 53 with the Ethiopian and \"preached unto him Jesus\".",
+     "refs": [
+      "Acts 8:35"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does the eyewitness in John 19 say he saw when the soldier pierced Jesus' side, and why does he tell it?",
+   "refs": [
+    "John 19:16-18",
+    "John 19:32-35"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4717",
+     "G3140"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Crucified is stauroo: \"to impale on the cross\". John says \"he that saw it bare record, and his record is true\".",
+     "refs": [
+      "John 19:35"
+     ],
+     "strongs": [
+      "G4717"
+     ]
+    },
+    {
+     "text": "Writers outside the Bible also say Jesus was put to death: the Roman historian Tacitus (about AD 116) writes that Christus suffered the extreme penalty under Pontius Pilate.",
+     "refs": [
+      "John 19:16"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran says God took Jesus up unto himself. What did the risen Jesus show his disciples, and how was he taken up?",
+   "refs": [
+    "Luke 24:36-43",
+    "Acts 1:9-11"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 3:55",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "When GOD said, O Jesus, verily I will cause thee to die, and I will take thee up unto me, and I will deliver thee from the unbelievers; and I will place those who follow thee above the unbelievers, until the day of resurrection: then unto me shall ye return, and I will judge between you of that concerning which ye disagree."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "(And remember) when Allah said: O Jesus! Lo! I am gathering thee and causing thee to ascend unto Me, and am cleansing thee of those who disbelieve and am setting those who follow thee above those who disbelieve until the Day of Resurrection. Then unto Me ye will (all) return, and I shall judge between you as to that wherein ye used to differ."
+      }
+     ]
+    },
+    {
+     "ref": "Quran 19:33",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "And peace be on me the day whereon I was born, and the day whereon I shall die, and the day whereon I shall be raised to life."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "Peace on me the day I was born, and the day I die, and the day I shall be raised alive!"
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4561",
+     "G353"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Arabic word in 3:55 is mutawaffika. Sale translated it \"I will cause thee to die\"; Pickthall, \"I am gathering thee\". Muslim scholars differ on whether it means death or being taken up alive.",
+     "refs": [
+      "Acts 1:9"
+     ],
+     "strongs": [
+      "G353"
+     ]
+    },
+    {
+     "text": "In the Quran (19:33) Jesus says \"Peace on me the day I was born, and the day I die, and the day I shall be raised alive\". In Luke he says \"handle me, and see; for a spirit hath not flesh and bones, as ye see me have\".",
+     "refs": [
+      "Luke 24:39"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does Paul say he \"received\" and delivered first of all, and who saw the risen Jesus?",
+   "refs": [
+    "1 Corinthians 15:3-8"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2290",
+     "G1453"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Buried is thapto: \"to celebrate funeral rites, i.e. inter\"; rose is egeiro: \"to waken\". Paul names witnesses who could still be asked: \"the greater part remain unto this present\".",
+     "refs": [
+      "1 Corinthians 15:4",
+      "1 Corinthians 15:6"
+     ],
+     "strongs": [
+      "G2290",
+      "G1453"
+     ]
+    },
+    {
+     "text": "1 Corinthians was written about AD 55, almost 600 years before the Quran. Many scholars date the creed Paul quotes to within a few years of the cross.",
+     "refs": [
+      "1 Corinthians 15:3"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"they pierced my hands and my feet\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 22:16"
+   ],
+   "signals": {
+    "xref": 40,
+    "votes": 216,
+    "word": "H3738",
+    "word_count": 1,
+    "differ": 0.468,
+    "quoted": null
+   },
+   "why": [
+    "40 cross-references point here"
+   ],
+   "score": 0.5501
+  },
+  {
+   "q": "Which translation says \"they pierced my hands and my feet\" in Psalm 22:16?",
+   "type": "which_translation",
+   "ref": "Psalms 22:16",
+   "bible": "KJV",
+   "phrase": "they pierced my hands and my feet",
+   "answer_refs": [
+    "Psalms 22:16"
+   ],
+   "signals": {
+    "xref": 40,
+    "votes": 216,
+    "word": "H3738",
+    "word_count": 1,
+    "differ": 0.468,
+    "quoted": null
+   },
+   "why": [
+    "40 cross-references point here"
+   ],
+   "score": 0.5501
+  },
+  {
+   "q": "In Psalm 22:18, what do they part among them?",
+   "type": "multiple_choice",
+   "options": [
+    "My garments",
+    "My lands",
+    "My sheep",
+    "My bread"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Psalms 22:18"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "garments"
+   },
+   "signals": {
+    "xref": 20,
+    "votes": 196,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.34,
+    "quoted": null
+   },
+   "why": [
+    "20 cross-references point here"
+   ],
+   "score": 0.4816
+  },
+  {
+   "q": "Which verse says \"he was wounded for our transgressions\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 53:5"
+   ],
+   "signals": {
+    "xref": 51,
+    "votes": 656,
+    "word": "H2490",
+    "word_count": 1,
+    "differ": 0.369,
+    "quoted": null
+   },
+   "why": [
+    "51 cross-references point here"
+   ],
+   "score": 0.5714
+  },
+  {
+   "q": "Fill in the word: \"and with his stripes we are ___\"",
+   "type": "fill_word",
+   "ref": "Isaiah 53:5",
+   "bible": "KJV",
+   "word": "healed",
+   "answer_refs": [
+    "Isaiah 53:5"
+   ],
+   "signals": {
+    "xref": 51,
+    "votes": 656,
+    "word": "H2490",
+    "word_count": 1,
+    "differ": 0.369,
+    "quoted": null
+   },
+   "why": [
+    "51 cross-references point here"
+   ],
+   "score": 0.5714
+  },
+  {
+   "q": "In Isaiah 53:7, how is he brought to the slaughter?",
+   "type": "multiple_choice",
+   "options": [
+    "As a lamb",
+    "As a lion",
+    "As a king",
+    "As a soldier"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Isaiah 53:7"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "lamb"
+   },
+   "signals": {
+    "xref": 44,
+    "votes": 462,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.324,
+    "quoted": null
+   },
+   "why": [
+    "44 cross-references point here"
+   ],
+   "score": 0.531
+  },
+  {
+   "q": "Which verse says \"he made his grave with the wicked, and with the rich in his death\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 53:9"
+   ],
+   "signals": {
+    "xref": 34,
+    "votes": 278,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.232,
+    "quoted": null
+   },
+   "why": [
+    "34 cross-references point here"
+   ],
+   "score": 0.4808
+  },
+  {
+   "q": "Which verse says \"He is despised and rejected of men\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 53:3"
+   ],
+   "signals": {
+    "xref": 67,
+    "votes": 477,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.449,
+    "quoted": null
+   },
+   "why": [
+    "67 cross-references point here"
+   ],
+   "score": 0.5623
+  },
+  {
+   "q": "Which verse says \"they crucified him, and two others with him\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 19:18"
+   ],
+   "signals": {
+    "xref": 9,
+    "votes": 48,
+    "word": "G4717",
+    "word_count": 2,
+    "differ": 0.219,
+    "quoted": null
+   },
+   "why": [
+    "9 cross-references point here",
+    "The Greek word stauróō (G4717) is in 2 verses of this path"
+   ],
+   "score": 0.4053
+  },
+  {
+   "q": "In John 19:34, what came out of his side?",
+   "type": "multiple_choice",
+   "options": [
+    "Blood and water",
+    "Only water",
+    "Fire",
+    "Nothing"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "John 19:34"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "water"
+   },
+   "signals": {
+    "xref": 15,
+    "votes": 72,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.265,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here"
+   ],
+   "score": 0.3884
+  },
+  {
+   "q": "Fill in the word: \"he that saw it bare record, and his record is ___\"",
+   "type": "fill_word",
+   "ref": "John 19:35",
+   "bible": "KJV",
+   "word": "true",
+   "answer_refs": [
+    "John 19:35"
+   ],
+   "signals": {
+    "xref": 17,
+    "votes": 96,
+    "word": "G3140",
+    "word_count": 1,
+    "differ": 0.605,
+    "quoted": null
+   },
+   "why": [
+    "17 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5239
+  },
+  {
+   "q": "In John 19:33, why did the soldiers not break his legs?",
+   "type": "multiple_choice",
+   "options": [
+    "He was dead already",
+    "It was the sabbath",
+    "Pilate forbade it",
+    "He had escaped"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "John 19:33"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "dead"
+   },
+   "signals": {
+    "xref": 7,
+    "votes": 30,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.175,
+    "quoted": null
+   },
+   "why": [
+    "7 cross-references point here"
+   ],
+   "score": 0.3016
+  },
+  {
+   "q": "Which verse says \"handle me, and see; for a spirit hath not flesh and bones\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 24:39"
+   ],
+   "signals": {
+    "xref": 13,
+    "votes": 75,
+    "word": "G4561",
+    "word_count": 1,
+    "differ": 0.345,
+    "quoted": null
+   },
+   "why": [
+    "13 cross-references point here"
+   ],
+   "score": 0.4405
+  },
+  {
+   "q": "In Luke 24:42, what did they give him to eat?",
+   "type": "multiple_choice",
+   "options": [
+    "A piece of a broiled fish",
+    "Bread and wine",
+    "Figs",
+    "Lentils"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 24:42"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "fish"
+   },
+   "signals": {
+    "xref": 5,
+    "votes": 29,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.278,
+    "quoted": null
+   },
+   "why": [
+    "5 cross-references point here"
+   ],
+   "score": 0.3248
+  },
+  {
+   "q": "Which translation says \"a cloud hid Him\" in Acts 1:9?",
+   "type": "which_translation",
+   "ref": "Acts 1:9",
+   "bible": "BSB",
+   "phrase": "a cloud hid Him",
+   "answer_refs": [
+    "Acts 1:9"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 95,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.444,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here"
+   ],
+   "score": 0.4537
+  },
+  {
+   "q": "Which verse says \"Christ died for our sins according to the scriptures\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Corinthians 15:3"
+   ],
+   "signals": {
+    "xref": 34,
+    "votes": 248,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.298,
+    "quoted": null
+   },
+   "why": [
+    "34 cross-references point here"
+   ],
+   "score": 0.4887
+  },
+  {
+   "q": "In 1 Corinthians 15:6, how many brethren saw him at once?",
+   "type": "multiple_choice",
+   "options": [
+    "Above five hundred",
+    "Twelve",
+    "Seventy",
+    "Three thousand"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 Corinthians 15:6"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "hundred"
+   },
+   "signals": {
+    "xref": 12,
+    "votes": 111,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.595,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.503
+  },
+  {
+   "q": "Fill in the word: \"he rose again the ___ day\"",
+   "type": "fill_word",
+   "ref": "1 Corinthians 15:4",
+   "bible": "KJV",
+   "word": "third",
+   "answer_refs": [
+    "1 Corinthians 15:4"
+   ],
+   "signals": {
+    "xref": 31,
+    "votes": 189,
+    "word": "G2290",
+    "word_count": 1,
+    "differ": 0.222,
+    "quoted": null
+   },
+   "why": [
+    "31 cross-references point here"
+   ],
+   "score": 0.4786
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
+  "TS2009 (read-along link only)"
+ ],
+ "verse_count": 36,
+ "outside_sources": [
+  {
+   "name": "George Sale (1734)",
+   "about": "The first English translation made directly from the Arabic. Sale was a Christian scholar. He did not number the verses; the numbers here are the standard ones.",
+   "source": "Project Gutenberg eBook #7440 (public domain)",
+   "url": "https://www.gutenberg.org/ebooks/7440"
+  },
+  {
+   "name": "Marmaduke Pickthall (1930)",
+   "about": "The first English translation by an English Muslim, read by scholars in Cairo before it was printed. Public domain in the US (published 1930) and wherever the term is life plus 70 years (Pickthall died in 1936).",
+   "source": "The 1930 London printing (George Allen & Unwin), checked word for word; text from Tanzil.net with its slips corrected",
+   "url": "https://archive.org/details/dli.csl.3756"
+  }
+ ],
+ "image": "img/quran-7-the-cross.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/quran-7-the-cross.json",
+  "sha": "5e882948635457c1",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

@@ -1,0 +1,776 @@
+{
+ "id": "quran-4-changed-words",
+ "title": "Session 4: The \"changed words\" verses",
+ "category": "Other Faiths",
+ "series": {
+  "id": "quran-and-the-bible",
+  "title": "What does the Quran say about the Bible?",
+  "of": 8,
+  "session": 4
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "storm"
+ },
+ "opening_question": "Some Quran verses say people \"change words from their context\" or write scripture with their own hands. Muslim scholars read this two ways. What does the Bible itself say about adding to, taking from, or twisting God's word?",
+ "required_refs": [
+  "Deuteronomy 4:2",
+  "Jeremiah 8:8",
+  "2 Corinthians 2:17",
+  "Revelation 22:18-19"
+ ],
+ "words": [
+  "H8267",
+  "G2585",
+  "G4761",
+  "G3051"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "The Quran says a party \"used to listen to the word of Allah, then used to change it\". What does Jeremiah say about the scribes of his day?",
+   "refs": [
+    "Jeremiah 8:8-9"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 2:75",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "Do ye therefore desire that the Jews should believe you? yet a part of them heard the word of GOD, and then perverted it, after they had understood it, against their own conscience."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "Have ye any hope that they will be true to you when a party of them used to listen to the word of Allah, then used to change it, after they had understood it, knowingly?"
+      }
+     ]
+    },
+    {
+     "ref": "Quran 3:78",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "And there are certainly some of them who read the scriptures perversely, that ye may think what they read to be really in the scriptures, yet it is not in the scripture; and they say, This is from GOD; but it is not from GOD: and they speak that which is false concerning GOD, against their own knowledge."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "And lo! there is a party of them who distort the Scripture with their tongues, that ye may think that what they say is from the Scripture, when it is not from the Scripture. And they say: It is from Allah, when it is not from Allah; and they speak a lie concerning Allah knowingly."
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "H8267",
+     "H5608"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Vain in Jeremiah 8:8 is sheqer: \"an untruth\". The BSB reads \"the lying pen of the scribes\".",
+     "refs": [
+      "Jeremiah 8:8"
+     ],
+     "strongs": [
+      "H8267"
+     ]
+    },
+    {
+     "text": "In 3:78 Sale has some who \"read the scriptures perversely\"; Pickthall, some who \"distort the Scripture with their tongues\". Here the change is in the reading aloud.",
+     "refs": [
+      "Jeremiah 8:8"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran warns those who write scripture with their own hands and say it is from God. What does Moses command about adding to God's word, and what does Proverbs add?",
+   "refs": [
+    "Deuteronomy 4:2",
+    "Proverbs 30:5-6"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 2:79",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "…And woe unto them, who transcribe corruptly the book of the law with their hands, and then say, This is from GOD: that they may sell it for a small price. Therefore woe unto them because of that which their hands have written; and woe unto them for that which they have gained."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "Therefore woe be unto those who write the Scripture with their hands and then say, \"This is from Allah,\" that they may purchase a small gain therewith. Woe unto them for that their hands have written, and woe unto them for that they earn thereby."
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3254",
+     "H1639"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Moses forbids both: \"Ye shall not add unto the word\" and \"neither shall ye diminish ought from it\". Add is yasaph: \"to add or augment\"; diminish is gara: \"to scrape off\".",
+     "refs": [
+      "Deuteronomy 4:2"
+     ],
+     "strongs": [
+      "H3254",
+      "H1639"
+     ]
+    },
+    {
+     "text": "Sale words 2:79 as those \"who transcribe corruptly the book of the law with their hands\"; Pickthall, \"those who write the Scripture with their hands\".",
+     "refs": [
+      "Deuteronomy 4:2"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran says some \"change words from their context\". What does Paul say many do with the word of God, and what does Peter say the unlearned do with Paul's letters?",
+   "refs": [
+    "2 Corinthians 2:17",
+    "2 Peter 3:15-16"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 4:46",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "Of the Jews there are some who pervert words from their places; and say, We have heard, and have disobeyed; and do thou hear without understanding our meaning, and look upon us: perplexing with their tongues, and reviling the true religion. But if they had said, We have heard, and do obey; and do thou hear, and regard us: certainly it were better for them, and more right. But GOD hath cursed them by reason of their infidelity; therefore a few of them only shall believe."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "Some of those who are Jews change words from their context and say: \"We hear and disobey; hear thou as one who heareth not\" and \"Listen to us!\" distorting with their tongues and slandering religion. If they had said: \"We hear and we obey: hear thou, and look at us\" it had been better for them, and more upright. But Allah hath cursed them for their disbelief, so they believe not, save a few."
+      }
+     ]
+    },
+    {
+     "ref": "Quran 5:13",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "Wherefore because they have broken their covenant, we have cursed them, and hardened their hearts; they dislocate the words of the Pentateuch from their places, and have forgotten part of what they were admonished; and thou wilt not cease to discover deceitful practices among them, except a few of them. But forgive them, and pardon them, for GOD loveth the beneficent."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "And because of their breaking their covenant, We have cursed them and made hard their hearts. They change words from their context and forget a part of that whereof they were admonished. Thou wilt not cease to discover treachery from all save a few of them. But bear with them and pardon them. Lo! Allah loveth the kindly."
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2585",
+     "G4761"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Corrupt is kapeleuo: \"to retail\", and by implication \"to adulterate\", like a peddler. Wrest is strebloo: \"to wrench\".",
+     "refs": [
+      "2 Corinthians 2:17",
+      "2 Peter 3:16"
+     ],
+     "strongs": [
+      "G2585",
+      "G4761"
+     ]
+    },
+    {
+     "text": "In 5:13 Sale writes \"they dislocate the words of the Pentateuch from their places\"; Pickthall, \"They change words from their context\". The Arabic names no book: Sale added \"of the Pentateuch\".",
+     "refs": [
+      "2 Peter 3:16"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does the last chapter of the Bible warn anyone who adds to, or takes away from, the words of the book?",
+   "refs": [
+    "Revelation 22:18-19"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2007",
+     "G851"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Add is epitithemi: \"to impose\"; take away is aphaireo: \"to remove\". Revelation closes with the two warnings of Deuteronomy 4:2.",
+     "refs": [
+      "Revelation 22:18-19"
+     ],
+     "strongs": [
+      "G2007",
+      "G851"
+     ]
+    },
+    {
+     "text": "Copies differ here, and BibleChat shows it: the King James reads \"book of life\", the Ethiopian Canon and the BSB \"tree of life\". The Greek manuscripts have \"tree\"; the printed Greek the King James followed took \"book\" from the Latin.",
+     "refs": [
+      "Revelation 22:19"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Paul says the Jews were trusted with \"the oracles of God\". If some did not believe, does that make God's faithfulness fail?",
+   "refs": [
+    "Romans 3:1-4"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3051",
+     "G4102"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Oracles is logion: \"an utterance (of God)\".",
+     "refs": [
+      "Romans 3:2"
+     ],
+     "strongs": [
+      "G3051"
+     ]
+    },
+    {
+     "text": "Muslim scholars read these verses in two ways. Tahrif al-ma'na: the meaning was twisted in reading and explaining, and the text was kept. Tahrif al-lafz: the text itself was changed. Early commentators such as al-Tabari (died 923) often explain them the first way; Ibn Hazm (died 1064) argued for the second, and it became the more common view in later Islamic teaching.",
+     "refs": [
+      "Romans 3:2"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"the pen of the scribes is in vain\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Jeremiah 8:8"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 90,
+    "word": "H8267",
+    "word_count": 2,
+    "differ": 0.582,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here",
+    "The Hebrew word sheqer (H8267) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5425
+  },
+  {
+   "q": "Which translation says \"lying pen of the scribes\" in Jeremiah 8:8?",
+   "type": "which_translation",
+   "ref": "Jeremiah 8:8",
+   "bible": "BSB",
+   "phrase": "lying pen of the scribes",
+   "answer_refs": [
+    "Jeremiah 8:8"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 90,
+    "word": "H8267",
+    "word_count": 2,
+    "differ": 0.582,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here",
+    "The Hebrew word sheqer (H8267) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5425
+  },
+  {
+   "q": "In Jeremiah 8:9, what have the wise men rejected?",
+   "type": "multiple_choice",
+   "options": [
+    "The word of the LORD",
+    "The king's law",
+    "The temple",
+    "The prophets' tombs"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Jeremiah 8:9"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "rejected"
+   },
+   "signals": {
+    "xref": 23,
+    "votes": 152,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.515,
+    "quoted": null
+   },
+   "why": [
+    "23 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5064
+  },
+  {
+   "q": "Which verse says \"Ye shall not add unto the word which I command you\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Deuteronomy 4:2"
+   ],
+   "signals": {
+    "xref": 12,
+    "votes": 166,
+    "word": "H3254",
+    "word_count": 2,
+    "differ": 0.456,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here",
+    "The Hebrew word yâsaph (H3254) is in 2 verses of this path"
+   ],
+   "score": 0.5566
+  },
+  {
+   "q": "Fill in the word: \"neither shall ye ___ ought from it\"",
+   "type": "fill_word",
+   "ref": "Deuteronomy 4:2",
+   "bible": "KJV",
+   "word": "diminish",
+   "answer_refs": [
+    "Deuteronomy 4:2"
+   ],
+   "signals": {
+    "xref": 12,
+    "votes": 166,
+    "word": "H3254",
+    "word_count": 2,
+    "differ": 0.456,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here",
+    "The Hebrew word yâsaph (H3254) is in 2 verses of this path"
+   ],
+   "score": 0.5566
+  },
+  {
+   "q": "Which verse says \"Every word of God is pure\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Proverbs 30:5"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 380,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.377,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here"
+   ],
+   "score": 0.5404
+  },
+  {
+   "q": "In Proverbs 30:6, what will the one who adds to his words be found?",
+   "type": "multiple_choice",
+   "options": [
+    "A liar",
+    "A king",
+    "A prophet",
+    "A scribe"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Proverbs 30:6"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "liar"
+   },
+   "signals": {
+    "xref": 8,
+    "votes": 108,
+    "word": "H3254",
+    "word_count": 2,
+    "differ": 0.461,
+    "quoted": null
+   },
+   "why": [
+    "8 cross-references point here",
+    "The Hebrew word yâsaph (H3254) is in 2 verses of this path"
+   ],
+   "score": 0.5258
+  },
+  {
+   "q": "Fill in the word: \"he is a ___ unto them that put their trust in him\"",
+   "type": "fill_word",
+   "ref": "Proverbs 30:5",
+   "bible": "KJV",
+   "word": "shield",
+   "answer_refs": [
+    "Proverbs 30:5"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 380,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.377,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here"
+   ],
+   "score": 0.5404
+  },
+  {
+   "q": "Which verse says \"we are not as many, which corrupt the word of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Corinthians 2:17"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 157,
+    "word": "G2585",
+    "word_count": 1,
+    "differ": 0.416,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here"
+   ],
+   "score": 0.5132
+  },
+  {
+   "q": "Which translation says \"peddling the word of God\" in 2 Corinthians 2:17?",
+   "type": "which_translation",
+   "ref": "2 Corinthians 2:17",
+   "bible": "ETH",
+   "phrase": "peddling the word of God",
+   "answer_refs": [
+    "2 Corinthians 2:17"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 157,
+    "word": "G2585",
+    "word_count": 1,
+    "differ": 0.416,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here"
+   ],
+   "score": 0.5132
+  },
+  {
+   "q": "Which verse says the unlearned and unstable \"wrest\" Paul's letters?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Peter 3:16"
+   ],
+   "signals": {
+    "xref": 12,
+    "votes": 53,
+    "word": "G4761",
+    "word_count": 1,
+    "differ": 0.46,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here"
+   ],
+   "score": 0.4436
+  },
+  {
+   "q": "In 2 Peter 3:16, what else do they wrest?",
+   "type": "multiple_choice",
+   "options": [
+    "The other scriptures",
+    "The laws of Rome",
+    "The words of the elders",
+    "Their own letters"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "2 Peter 3:16"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "scriptures"
+   },
+   "signals": {
+    "xref": 12,
+    "votes": 53,
+    "word": "G4761",
+    "word_count": 1,
+    "differ": 0.46,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here"
+   ],
+   "score": 0.4436
+  },
+  {
+   "q": "Which verse says \"If any man shall add unto these things, God shall add unto him the plagues\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 22:18"
+   ],
+   "signals": {
+    "xref": 9,
+    "votes": 108,
+    "word": "G2007",
+    "word_count": 2,
+    "differ": 0.455,
+    "quoted": null
+   },
+   "why": [
+    "9 cross-references point here",
+    "The Greek word epitíthēmi (G2007) is in 2 verses of this path"
+   ],
+   "score": 0.5243
+  },
+  {
+   "q": "Which translation says \"book of life\" in Revelation 22:19?",
+   "type": "which_translation",
+   "ref": "Revelation 22:19",
+   "bible": "KJV",
+   "phrase": "book of life",
+   "answer_refs": [
+    "Revelation 22:19"
+   ],
+   "signals": {
+    "xref": 14,
+    "votes": 133,
+    "word": "G851",
+    "word_count": 2,
+    "differ": 0.305,
+    "quoted": null
+   },
+   "why": [
+    "14 cross-references point here",
+    "The Greek word aphairéō (G851) is in 2 verses of this path"
+   ],
+   "score": 0.5023
+  },
+  {
+   "q": "Which verse says \"unto them were committed the oracles of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 3:2"
+   ],
+   "signals": {
+    "xref": 25,
+    "votes": 151,
+    "word": "G3051",
+    "word_count": 1,
+    "differ": 0.579,
+    "quoted": null
+   },
+   "why": [
+    "25 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5511
+  },
+  {
+   "q": "Fill in the word: \"let God be true, but every man a ___\"",
+   "type": "fill_word",
+   "ref": "Romans 3:4",
+   "bible": "KJV",
+   "word": "liar",
+   "answer_refs": [
+    "Romans 3:4"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 118,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.562,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.4993
+  },
+  {
+   "q": "In Romans 3:3, what cannot unbelief make without effect?",
+   "type": "multiple_choice",
+   "options": [
+    "The faith of God",
+    "The law of Moses",
+    "The temple",
+    "The covenant of Noah"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Romans 3:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "faith"
+   },
+   "signals": {
+    "xref": 12,
+    "votes": 106,
+    "word": "G4102",
+    "word_count": 1,
+    "differ": 0.557,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5192
+  },
+  {
+   "q": "Pickthall's Quran (2:75) speaks of those who \"used to change it, after they had understood it\". Which verse says \"they have rejected the word of the LORD\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Jeremiah 8:9"
+   ],
+   "signals": {
+    "xref": 23,
+    "votes": 152,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.515,
+    "quoted": null
+   },
+   "why": [
+    "23 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5064
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
+  "TS2009 (read-along link only)"
+ ],
+ "verse_count": 14,
+ "outside_sources": [
+  {
+   "name": "George Sale (1734)",
+   "about": "The first English translation made directly from the Arabic. Sale was a Christian scholar. He did not number the verses; the numbers here are the standard ones.",
+   "source": "Project Gutenberg eBook #7440 (public domain)",
+   "url": "https://www.gutenberg.org/ebooks/7440"
+  },
+  {
+   "name": "Marmaduke Pickthall (1930)",
+   "about": "The first English translation by an English Muslim, read by scholars in Cairo before it was printed. Public domain in the US (published 1930) and wherever the term is life plus 70 years (Pickthall died in 1936).",
+   "source": "The 1930 London printing (George Allen & Unwin), checked word for word; text from Tanzil.net with its slips corrected",
+   "url": "https://archive.org/details/dli.csl.3756"
+  }
+ ],
+ "image": "img/quran-4-changed-words.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/quran-4-changed-words.json",
+  "sha": "08d4e57f8d7c3d9a",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

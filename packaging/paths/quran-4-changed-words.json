@@ -1,0 +1,429 @@
+{
+ "id": "quran-4-changed-words",
+ "title": "Session 4: The \"changed words\" verses",
+ "category": "Other Faiths",
+ "series": {
+  "id": "quran-and-the-bible",
+  "title": "What does the Quran say about the Bible?",
+  "of": 8,
+  "session": 4
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "storm"
+ },
+ "opening_question": "Some Quran verses say people \"change words from their context\" or write scripture with their own hands. Muslim scholars read this two ways. What does the Bible itself say about adding to, taking from, or twisting God's word?",
+ "required_refs": [
+  "Deuteronomy 4:2",
+  "Jeremiah 8:8",
+  "2 Corinthians 2:17",
+  "Revelation 22:18-19"
+ ],
+ "words": [
+  "H8267",
+  "G2585",
+  "G4761",
+  "G3051"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "The Quran says a party \"used to listen to the word of Allah, then used to change it\". What does Jeremiah say about the scribes of his day?",
+   "refs": [
+    "Jeremiah 8:8-9"
+   ],
+   "outside": [
+    "Quran 2:75",
+    "Quran 3:78"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H8267",
+     "H5608"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Vain in Jeremiah 8:8 is sheqer: \"an untruth\". The BSB reads \"the lying pen of the scribes\".",
+     "refs": [
+      "Jeremiah 8:8"
+     ],
+     "strongs": [
+      "H8267"
+     ]
+    },
+    {
+     "text": "In 3:78 Sale has some who \"read the scriptures perversely\"; Pickthall, some who \"distort the Scripture with their tongues\". Here the change is in the reading aloud.",
+     "refs": [
+      "Jeremiah 8:8"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran warns those who write scripture with their own hands and say it is from God. What does Moses command about adding to God's word, and what does Proverbs add?",
+   "refs": [
+    "Deuteronomy 4:2",
+    "Proverbs 30:5-6"
+   ],
+   "outside": [
+    "Quran 2:79"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3254",
+     "H1639"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Moses forbids both: \"Ye shall not add unto the word\" and \"neither shall ye diminish ought from it\". Add is yasaph: \"to add or augment\"; diminish is gara: \"to scrape off\".",
+     "refs": [
+      "Deuteronomy 4:2"
+     ],
+     "strongs": [
+      "H3254",
+      "H1639"
+     ]
+    },
+    {
+     "text": "Sale words 2:79 as those \"who transcribe corruptly the book of the law with their hands\"; Pickthall, \"those who write the Scripture with their hands\".",
+     "refs": [
+      "Deuteronomy 4:2"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran says some \"change words from their context\". What does Paul say many do with the word of God, and what does Peter say the unlearned do with Paul's letters?",
+   "refs": [
+    "2 Corinthians 2:17",
+    "2 Peter 3:15-16"
+   ],
+   "outside": [
+    "Quran 4:46",
+    "Quran 5:13"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2585",
+     "G4761"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Corrupt is kapeleuo: \"to retail\", and by implication \"to adulterate\", like a peddler. Wrest is strebloo: \"to wrench\".",
+     "refs": [
+      "2 Corinthians 2:17",
+      "2 Peter 3:16"
+     ],
+     "strongs": [
+      "G2585",
+      "G4761"
+     ]
+    },
+    {
+     "text": "In 5:13 Sale writes \"they dislocate the words of the Pentateuch from their places\"; Pickthall, \"They change words from their context\". The Arabic names no book: Sale added \"of the Pentateuch\".",
+     "refs": [
+      "2 Peter 3:16"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does the last chapter of the Bible warn anyone who adds to, or takes away from, the words of the book?",
+   "refs": [
+    "Revelation 22:18-19"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2007",
+     "G851"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Add is epitithemi: \"to impose\"; take away is aphaireo: \"to remove\". Revelation closes with the two warnings of Deuteronomy 4:2.",
+     "refs": [
+      "Revelation 22:18-19"
+     ],
+     "strongs": [
+      "G2007",
+      "G851"
+     ]
+    },
+    {
+     "text": "Copies differ here, and BibleChat shows it: the King James reads \"book of life\", the Ethiopian Canon and the BSB \"tree of life\". The Greek manuscripts have \"tree\"; the printed Greek the King James followed took \"book\" from the Latin.",
+     "refs": [
+      "Revelation 22:19"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Paul says the Jews were trusted with \"the oracles of God\". If some did not believe, does that make God's faithfulness fail?",
+   "refs": [
+    "Romans 3:1-4"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3051",
+     "G4102"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Oracles is logion: \"an utterance (of God)\".",
+     "refs": [
+      "Romans 3:2"
+     ],
+     "strongs": [
+      "G3051"
+     ]
+    },
+    {
+     "text": "Muslim scholars read these verses in two ways. Tahrif al-ma'na: the meaning was twisted in reading and explaining, and the text was kept. Tahrif al-lafz: the text itself was changed. Early commentators such as al-Tabari (died 923) often explain them the first way; Ibn Hazm (died 1064) argued for the second, and it became the more common view in later Islamic teaching.",
+     "refs": [
+      "Romans 3:2"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"the pen of the scribes is in vain\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Jeremiah 8:8"
+   ]
+  },
+  {
+   "q": "Which translation says \"lying pen of the scribes\" in Jeremiah 8:8?",
+   "type": "which_translation",
+   "ref": "Jeremiah 8:8",
+   "bible": "BSB",
+   "phrase": "lying pen of the scribes"
+  },
+  {
+   "q": "In Jeremiah 8:9, what have the wise men rejected?",
+   "type": "multiple_choice",
+   "options": [
+    "The word of the LORD",
+    "The king's law",
+    "The temple",
+    "The prophets' tombs"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Jeremiah 8:9"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "rejected"
+   }
+  },
+  {
+   "q": "Which verse says \"Ye shall not add unto the word which I command you\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Deuteronomy 4:2"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"neither shall ye ___ ought from it\"",
+   "type": "fill_word",
+   "ref": "Deuteronomy 4:2",
+   "bible": "KJV",
+   "word": "diminish"
+  },
+  {
+   "q": "Which verse says \"Every word of God is pure\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Proverbs 30:5"
+   ]
+  },
+  {
+   "q": "In Proverbs 30:6, what will the one who adds to his words be found?",
+   "type": "multiple_choice",
+   "options": [
+    "A liar",
+    "A king",
+    "A prophet",
+    "A scribe"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Proverbs 30:6"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "liar"
+   }
+  },
+  {
+   "q": "Fill in the word: \"he is a ___ unto them that put their trust in him\"",
+   "type": "fill_word",
+   "ref": "Proverbs 30:5",
+   "bible": "KJV",
+   "word": "shield"
+  },
+  {
+   "q": "Which verse says \"we are not as many, which corrupt the word of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Corinthians 2:17"
+   ]
+  },
+  {
+   "q": "Which translation says \"peddling the word of God\" in 2 Corinthians 2:17?",
+   "type": "which_translation",
+   "ref": "2 Corinthians 2:17",
+   "bible": "ETH",
+   "phrase": "peddling the word of God"
+  },
+  {
+   "q": "Which verse says the unlearned and unstable \"wrest\" Paul's letters?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Peter 3:16"
+   ]
+  },
+  {
+   "q": "In 2 Peter 3:16, what else do they wrest?",
+   "type": "multiple_choice",
+   "options": [
+    "The other scriptures",
+    "The laws of Rome",
+    "The words of the elders",
+    "Their own letters"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "2 Peter 3:16"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "scriptures"
+   }
+  },
+  {
+   "q": "Which verse says \"If any man shall add unto these things, God shall add unto him the plagues\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 22:18"
+   ]
+  },
+  {
+   "q": "Which translation says \"book of life\" in Revelation 22:19?",
+   "type": "which_translation",
+   "ref": "Revelation 22:19",
+   "bible": "KJV",
+   "phrase": "book of life"
+  },
+  {
+   "q": "Which verse says \"unto them were committed the oracles of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 3:2"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"let God be true, but every man a ___\"",
+   "type": "fill_word",
+   "ref": "Romans 3:4",
+   "bible": "KJV",
+   "word": "liar"
+  },
+  {
+   "q": "In Romans 3:3, what cannot unbelief make without effect?",
+   "type": "multiple_choice",
+   "options": [
+    "The faith of God",
+    "The law of Moses",
+    "The temple",
+    "The covenant of Noah"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Romans 3:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "faith"
+   }
+  },
+  {
+   "q": "Pickthall's Quran (2:75) speaks of those who \"used to change it, after they had understood it\". Which verse says \"they have rejected the word of the LORD\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Jeremiah 8:9"
+   ]
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
+  "TS2009 (read-along link only)"
+ ]
+}

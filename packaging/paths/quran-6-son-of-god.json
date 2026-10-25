@@ -1,0 +1,440 @@
+{
+ "id": "quran-6-son-of-god",
+ "title": "Session 6: Son of God",
+ "category": "Other Faiths",
+ "series": {
+  "id": "quran-and-the-bible",
+  "title": "What does the Quran say about the Bible?",
+  "of": 8,
+  "session": 6
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "stars"
+ },
+ "opening_question": "The Quran says God \"begetteth not nor was begotten\" and denies that Jesus is the Son of God. The Bible says the LORD is one, and calls Jesus the Son of God. What does each text actually say, and what does \"one\" mean in Hebrew?",
+ "required_refs": [
+  "Psalms 2:7",
+  "Matthew 16:16",
+  "Mark 14:61-62",
+  "John 1:1",
+  "John 1:14",
+  "Deuteronomy 6:4"
+ ],
+ "words": [
+  "H259",
+  "H1248",
+  "G5207",
+  "G3056"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "The Quran says God is One, who \"begetteth not nor was begotten\". What does Moses say about the LORD, and which word does he use for one?",
+   "refs": [
+    "Deuteronomy 6:4-5",
+    "Genesis 2:24"
+   ],
+   "outside": [
+    "Quran 112:1-4"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H259",
+     "H3068"
+    ],
+    "xref_top": 5,
+    "letters": "H259"
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "One is echad: \"properly united that is one\". The same word makes husband and wife \"one flesh\".",
+     "refs": [
+      "Genesis 2:24"
+     ],
+     "strongs": [
+      "H259"
+     ]
+    },
+    {
+     "text": "The Quran (112) and the Shema (Deuteronomy 6:4) agree that God is one. They differ on whether the one God has a Son.",
+     "refs": [
+      "Deuteronomy 6:4"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran says \"It befitteth not (the Majesty of) Allah that He should take unto Himself a son\". What does the LORD say to his king in Psalm 2?",
+   "refs": [
+    "Psalms 2:6-7",
+    "Psalms 2:12"
+   ],
+   "outside": [
+    "Quran 19:35",
+    "Quran 4:171"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H1121",
+     "H1248"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Son in Psalm 2:7 is ben; in Psalm 2:12, \"Kiss the Son\", it is bar, a word Strong's explains as \"the heir (apparent to the throne)\".",
+     "refs": [
+      "Psalms 2:12"
+     ],
+     "strongs": [
+      "H1121",
+      "H1248"
+     ]
+    },
+    {
+     "text": "The Quran (4:171) calls Jesus \"His word which He conveyed unto Mary, and a spirit from Him\". Sale's wording goes on: \"say not, There are three Gods\".",
+     "refs": [
+      "Psalms 2:7"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Jesus asked his disciples who they said he was. What did Peter answer, and where did Jesus say that answer came from?",
+   "refs": [
+    "Matthew 16:13-17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5207",
+     "G2316"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Son is huios: a \"son\". Jesus says Peter's answer came not from \"flesh and blood\" but from \"my Father which is in heaven\".",
+     "refs": [
+      "Matthew 16:17"
+     ],
+     "strongs": [
+      "G5207"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "At his trial the high priest asked Jesus, \"Art thou the Christ, the Son of the Blessed?\" What did Jesus answer, and what did the high priest do?",
+   "refs": [
+    "Mark 14:60-64"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2128",
+     "G988"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Blessed is eulogetos: \"adorable\". Jesus answers \"I am\", and adds Daniel 7:13: \"ye shall see the Son of man sitting on the right hand of power, and coming in the clouds of heaven\".",
+     "refs": [
+      "Mark 14:62"
+     ],
+     "strongs": [
+      "G2128"
+     ]
+    },
+    {
+     "text": "The high priest tore his clothes and called it blasphemy, blasphemia: \"vilification (especially against God)\".",
+     "refs": [
+      "Mark 14:63-64"
+     ],
+     "strongs": [
+      "G988"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran asks Jesus, \"Didst thou say unto mankind: Take me and my mother for two gods beside Allah?\" What does John say about the Word, and whom does Jesus name in Matthew 28:19?",
+   "refs": [
+    "John 1:1-3",
+    "John 1:14",
+    "Matthew 28:19"
+   ],
+   "outside": [
+    "Quran 5:116",
+    "Quran 5:73"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3056",
+     "G3439"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Word is logos: \"something said\". John says the Word \"was with God, and the Word was God\" and \"was made flesh\". The Quran also calls Jesus God's word (3:45, 4:171), but not God.",
+     "refs": [
+      "John 1:1",
+      "John 1:14"
+     ],
+     "strongs": [
+      "G3056"
+     ]
+    },
+    {
+     "text": "Quran 5:116 speaks of Jesus and his mother as \"two gods\", and 5:73 of God as \"the third of three\". The three Jesus names are \"the Father, and of the Son, and of the Holy Ghost\". Mary is not among them, and the Bible never calls her a god.",
+     "refs": [
+      "Matthew 28:19"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"Hear, O Israel: The LORD our God is one LORD\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Deuteronomy 6:4"
+   ]
+  },
+  {
+   "q": "In Deuteronomy 6:5, with what shall you love the LORD?",
+   "type": "multiple_choice",
+   "options": [
+    "All thine heart, soul and might",
+    "Half thy strength",
+    "Thy lips only",
+    "Thy gold and silver"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Deuteronomy 6:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "heart"
+   }
+  },
+  {
+   "q": "Fill in the word: \"and they shall be one ___\"",
+   "type": "fill_word",
+   "ref": "Genesis 2:24",
+   "bible": "KJV",
+   "word": "flesh"
+  },
+  {
+   "q": "Which verse says \"Thou art my Son; this day have I begotten thee\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 2:7"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"___ the Son, lest he be angry\"",
+   "type": "fill_word",
+   "ref": "Psalms 2:12",
+   "bible": "KJV",
+   "word": "Kiss"
+  },
+  {
+   "q": "Which translation says \"Give sincere homage to the Son\" in Psalm 2:12?",
+   "type": "which_translation",
+   "ref": "Psalms 2:12",
+   "bible": "ETH",
+   "phrase": "Give sincere homage to the Son"
+  },
+  {
+   "q": "In Psalm 2:6, where has the LORD set his king?",
+   "type": "multiple_choice",
+   "options": [
+    "Upon my holy hill of Zion",
+    "In Egypt",
+    "By the river of Babylon",
+    "On mount Carmel"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Psalms 2:6"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Zion"
+   }
+  },
+  {
+   "q": "Which verse asks \"Whom do men say that I the Son of man am?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 16:13"
+   ]
+  },
+  {
+   "q": "Which verse says \"Thou art the Christ, the Son of the living God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 16:16"
+   ]
+  },
+  {
+   "q": "In Matthew 16:17, who revealed it to Peter?",
+   "type": "multiple_choice",
+   "options": [
+    "My Father which is in heaven",
+    "Flesh and blood",
+    "The scribes",
+    "John the Baptist"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Matthew 16:17"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Father"
+   }
+  },
+  {
+   "q": "Which verse asks \"Art thou the Christ, the Son of the Blessed?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Mark 14:61"
+   ]
+  },
+  {
+   "q": "Which translation says \"Son of the Blessed One\" in Mark 14:61?",
+   "type": "which_translation",
+   "ref": "Mark 14:61",
+   "bible": "BSB",
+   "phrase": "Son of the Blessed One"
+  },
+  {
+   "q": "In Mark 14:63, what did the high priest rend?",
+   "type": "multiple_choice",
+   "options": [
+    "His clothes",
+    "The veil",
+    "The scroll",
+    "His staff"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Mark 14:63"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "clothes"
+   }
+  },
+  {
+   "q": "Which verse says \"In the beginning was the Word\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 1:1"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"And the Word was made ___\"",
+   "type": "fill_word",
+   "ref": "John 1:14",
+   "bible": "KJV",
+   "word": "flesh"
+  },
+  {
+   "q": "Which translation says \"only begotten of the Father\" in John 1:14?",
+   "type": "which_translation",
+   "ref": "John 1:14",
+   "bible": "KJV",
+   "phrase": "only begotten of the Father"
+  },
+  {
+   "q": "In John 1:3, what was made by him?",
+   "type": "multiple_choice",
+   "options": [
+    "All things",
+    "Only the angels",
+    "Only the heavens",
+    "Only Israel"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "John 1:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "things"
+   }
+  },
+  {
+   "q": "Which verse says \"in the name of the Father, and of the Son, and of the Holy Ghost\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 28:19"
+   ]
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
+  "TS2009 (read-along link only)"
+ ]
+}

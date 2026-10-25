@@ -1,0 +1,426 @@
+{
+ "id": "quran-8-search-the-scriptures",
+ "title": "Session 8: Search the Scriptures",
+ "category": "Other Faiths",
+ "series": {
+  "id": "quran-and-the-bible",
+  "title": "What does the Quran say about the Bible?",
+  "of": 8,
+  "session": 8
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "light",
+  "x": 50,
+  "y": 35,
+  "s": 40
+ },
+ "opening_question": "The Quran tells Muslims to argue with the People of the Scripture only in the better way, and to say \"our God and your God is One\". The Bible tells its readers to search the Scriptures and test everything. How should we study, talk and decide?",
+ "required_refs": [
+  "John 5:39",
+  "Acts 17:11",
+  "2 Timothy 3:16",
+  "Hebrews 4:12"
+ ],
+ "words": [
+  "G2045",
+  "G350",
+  "G2315",
+  "G627"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "The Quran says \"argue not with the People of the Scripture unless it be in (a way) that is better\". How does Peter tell Christians to give an answer for their hope?",
+   "refs": [
+    "1 Peter 3:15-16",
+    "Colossians 4:6"
+   ],
+   "outside": [
+    "Quran 29:46"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G627",
+     "G4240"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Answer is apologia: \"a plea\", a reasoned defence. Peter adds \"with meekness and fear\"; meekness is prautes: \"mildness\".",
+     "refs": [
+      "1 Peter 3:15"
+     ],
+     "strongs": [
+      "G627",
+      "G4240"
+     ]
+    },
+    {
+     "text": "Sale words 29:46 \"Dispute not against those who have received the scriptures, unless in the mildest manner\". Paul: \"Let your speech be alway with grace\".",
+     "refs": [
+      "Colossians 4:6"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Jesus told his hearers to \"Search the scriptures\". What did he say the Scriptures testify of, and what did Moses write?",
+   "refs": [
+    "John 5:39-40",
+    "John 5:45-47"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2045",
+     "G3140"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Search is ereunao: \"to seek\", \"to investigate\". Jesus says \"they are they which testify of me\" and of Moses, \"he wrote of me\".",
+     "refs": [
+      "John 5:39",
+      "John 5:46"
+     ],
+     "strongs": [
+      "G2045"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How did the Jews of Berea receive Paul's preaching, and what did they do every day?",
+   "refs": [
+    "Acts 17:10-12"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G350",
+     "G1124"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Searched is anakrino: \"to scrutinize\". The Bereans checked even an apostle against the Scriptures, \"whether those things were so\".",
+     "refs": [
+      "Acts 17:11"
+     ],
+     "strongs": [
+      "G350"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran says Muslims believe in \"that which Moses and Jesus received\". What does Paul say all Scripture is, and what is it for?",
+   "refs": [
+    "2 Timothy 3:14-17"
+   ],
+   "outside": [
+    "Quran 2:136"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2315",
+     "G1124"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Given by inspiration of God is theopneustos: \"divinely breathed in\".",
+     "refs": [
+      "2 Timothy 3:16"
+     ],
+     "strongs": [
+      "G2315"
+     ]
+    },
+    {
+     "text": "Timothy had known the holy scriptures \"from a child\". The Scriptures Paul meant were the Hebrew Bible: the law of Moses, the prophets and the psalms.",
+     "refs": [
+      "2 Timothy 3:15"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does Hebrews say the word of God is like, and what does Isaiah say God's word will do?",
+   "refs": [
+    "Hebrews 4:12",
+    "Isaiah 55:10-11"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2198",
+     "G1756"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Quick is zao: \"to live\"; powerful is energes: \"active, operative\".",
+     "refs": [
+      "Hebrews 4:12"
+     ],
+     "strongs": [
+      "G2198",
+      "G1756"
+     ]
+    },
+    {
+     "text": "This path set the Quran's words beside the Bible's and answered every question with a Bible verse. The choice is the reader's: \"Prove all things; hold fast that which is good\".",
+     "refs": [
+      "1 Thessalonians 5:21"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"be ready always to give an answer to every man\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Peter 3:15"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"with meekness and ___\"",
+   "type": "fill_word",
+   "ref": "1 Peter 3:15",
+   "bible": "KJV",
+   "word": "fear"
+  },
+  {
+   "q": "In Colossians 4:6, with what should your speech be seasoned?",
+   "type": "multiple_choice",
+   "options": [
+    "Salt",
+    "Honey",
+    "Oil",
+    "Fire"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Colossians 4:6"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "salt"
+   }
+  },
+  {
+   "q": "Which verse says \"Search the scriptures\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 5:39"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"And ye will not come to me, that ye might have ___\"",
+   "type": "fill_word",
+   "ref": "John 5:40",
+   "bible": "KJV",
+   "word": "life"
+  },
+  {
+   "q": "Which verse says \"had ye believed Moses, ye would have believed me: for he wrote of me\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 5:46"
+   ]
+  },
+  {
+   "q": "In John 5:47, if they believe not Moses' writings, what will they not believe?",
+   "type": "multiple_choice",
+   "options": [
+    "My words",
+    "The temple",
+    "The prophets' tombs",
+    "The elders"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "John 5:47"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "words"
+   }
+  },
+  {
+   "q": "Which verse says they \"searched the scriptures daily, whether those things were so\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Acts 17:11"
+   ]
+  },
+  {
+   "q": "In Acts 17:11, the Bereans were more noble than those in which city?",
+   "type": "multiple_choice",
+   "options": [
+    "Thessalonica",
+    "Athens",
+    "Corinth",
+    "Rome"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Acts 17:11"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Thessalonica"
+   }
+  },
+  {
+   "q": "Which translation says \"examined the Scriptures every day\" in Acts 17:11?",
+   "type": "which_translation",
+   "ref": "Acts 17:11",
+   "bible": "BSB",
+   "phrase": "examined the Scriptures every day"
+  },
+  {
+   "q": "In Acts 17:12, how many of them believed?",
+   "type": "multiple_choice",
+   "options": [
+    "Many of them",
+    "None of them",
+    "Only the rulers",
+    "Only one"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Acts 17:12"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "many"
+   }
+  },
+  {
+   "q": "Which verse says \"All scripture is given by inspiration of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Timothy 3:16"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"which are able to make thee ___ unto salvation\"",
+   "type": "fill_word",
+   "ref": "2 Timothy 3:15",
+   "bible": "KJV",
+   "word": "wise"
+  },
+  {
+   "q": "In 2 Timothy 3:17, the man of God is throughly furnished unto all good what?",
+   "type": "multiple_choice",
+   "options": [
+    "Works",
+    "Words",
+    "Feasts",
+    "Wars"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "2 Timothy 3:17"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "works"
+   }
+  },
+  {
+   "q": "Which verse says \"the word of God is quick, and powerful, and sharper than any twoedged sword\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Hebrews 4:12"
+   ]
+  },
+  {
+   "q": "Which translation says \"quick, and powerful\" in Hebrews 4:12?",
+   "type": "which_translation",
+   "ref": "Hebrews 4:12",
+   "bible": "KJV",
+   "phrase": "quick, and powerful"
+  },
+  {
+   "q": "Fill in the word: \"it shall not return unto me ___\"",
+   "type": "fill_word",
+   "ref": "Isaiah 55:11",
+   "bible": "KJV",
+   "word": "void"
+  },
+  {
+   "q": "Which translation says \"will not return to Me empty\" in Isaiah 55:11?",
+   "type": "which_translation",
+   "ref": "Isaiah 55:11",
+   "bible": "BSB",
+   "phrase": "will not return to Me empty"
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
+  "TS2009 (read-along link only)"
+ ]
+}

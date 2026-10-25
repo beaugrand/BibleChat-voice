@@ -1,0 +1,441 @@
+{
+ "id": "quran-3-judge-by-the-gospel",
+ "title": "Session 3: \"Let the People of the Gospel judge by it\"",
+ "category": "Other Faiths",
+ "series": {
+  "id": "quran-and-the-bible",
+  "title": "What does the Quran say about the Bible?",
+  "of": 8,
+  "session": 3
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "light",
+  "x": 50,
+  "y": 30,
+  "s": 35
+ },
+ "opening_question": "The Quran tells Christians to judge by the Gospel, and tells Muhammad to ask those who read the Scripture before him. It also says no one can change God's words. What does the Bible say about its own words, how they were written, and whether they last?",
+ "required_refs": [
+  "Isaiah 40:8",
+  "Matthew 24:35",
+  "1 Peter 1:23-25"
+ ],
+ "words": [
+  "G845",
+  "H1697",
+  "G3306",
+  "G4487"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "The Quran says \"Let the People of the Gospel judge by that which Allah hath revealed therein\". What does John say his Gospel was written for?",
+   "refs": [
+    "John 20:30-31"
+   ],
+   "outside": [
+    "Quran 5:47",
+    "Quran 5:68"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1125",
+     "G4592"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "John gives his own reason for writing: \"that ye might believe that Jesus is the Christ, the Son of God\".",
+     "refs": [
+      "John 20:31"
+     ]
+    },
+    {
+     "text": "In 5:68 Sale has \"ye are not grounded on anything, until ye observe the law and the gospel\"; Pickthall, \"Ye have naught (of guidance) till ye observe the Torah and the Gospel\".",
+     "refs": [
+      "John 20:31"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran tells Muhammad, if he is in doubt, to \"question those who read the Scripture (that was) before thee\". How does Luke say his Gospel was put together?",
+   "refs": [
+    "Luke 1:1-4"
+   ],
+   "outside": [
+    "Quran 10:94"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G845",
+     "G803"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Eyewitnesses is autoptes: \"self-seeing, i.e. an eye-witness\". Certainty is asphaleia: \"security\".",
+     "refs": [
+      "Luke 1:2",
+      "Luke 1:4"
+     ],
+     "strongs": [
+      "G845",
+      "G803"
+     ]
+    },
+    {
+     "text": "Quran 10:94 points to the people who read the earlier Scripture. Luke wrote his account in the first century, more than 500 years before the Quran.",
+     "refs": [
+      "Luke 1:3"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran says \"There is none who can change His words\". What does the Bible say about the word of God and the words of Jesus?",
+   "refs": [
+    "Isaiah 40:6-8",
+    "Matthew 24:35",
+    "Psalms 119:89"
+   ],
+   "outside": [
+    "Quran 6:115",
+    "Quran 18:27"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H1697",
+     "H6965"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Word is dabar: \"a word\". Isaiah says \"the word of our God shall stand for ever\"; the Quran (6:115), \"There is naught that can change His words\".",
+     "refs": [
+      "Isaiah 40:8"
+     ],
+     "strongs": [
+      "H1697"
+     ]
+    },
+    {
+     "text": "Stand is qum: \"to rise\". The same word is translated \"confirm\" and \"abide\" elsewhere.",
+     "refs": [
+      "Isaiah 40:8"
+     ],
+     "strongs": [
+      "H6965"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Peter quotes Isaiah 40. Which word does he say endures for ever, and what is that word?",
+   "refs": [
+    "1 Peter 1:23-25"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3306",
+     "G4487"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Abideth is meno: \"to stay\". Peter says the word that endures \"is the word which by the gospel is preached unto you\".",
+     "refs": [
+      "1 Peter 1:25"
+     ],
+     "strongs": [
+      "G3306"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "King Jehoiakim burned Jeremiah's scroll. What did God tell Jeremiah to do, and what went into the new roll?",
+   "refs": [
+    "Jeremiah 36:27-28",
+    "Jeremiah 36:32"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4039",
+     "H5612"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Roll is megillah: \"a roll\". The king burned the scroll; the words were written again.",
+     "refs": [
+      "Jeremiah 36:28"
+     ],
+     "strongs": [
+      "H4039"
+     ]
+    },
+    {
+     "text": "Old copies let anyone check the text. The Great Isaiah Scroll from Qumran, one of the Dead Sea Scrolls, was copied in the second century BC, more than 700 years before the Quran. It holds all 66 chapters of Isaiah, and its text is very close to the Hebrew that Bibles are translated from.",
+     "refs": [
+      "Isaiah 40:8"
+     ]
+    },
+    {
+     "text": "Codex Sinaiticus, copied in the fourth century AD, holds the whole New Testament. Muhammad died in 632.",
+     "refs": [
+      "Matthew 24:35"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"these are written, that ye might believe that Jesus is the Christ, the Son of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 20:31"
+   ]
+  },
+  {
+   "q": "In John 20:30, where are Jesus' many other signs?",
+   "type": "multiple_choice",
+   "options": [
+    "Not written in this book",
+    "Written in the law",
+    "Carved on stone",
+    "Kept in the temple"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "John 20:30"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "written"
+   }
+  },
+  {
+   "q": "Fill in the word: \"that believing ye might have ___ through his name\"",
+   "type": "fill_word",
+   "ref": "John 20:31",
+   "bible": "KJV",
+   "word": "life"
+  },
+  {
+   "q": "Which verse speaks of those \"which from the beginning were eyewitnesses, and ministers of the word\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 1:2"
+   ]
+  },
+  {
+   "q": "In Luke 1:3, to whom did Luke write?",
+   "type": "multiple_choice",
+   "options": [
+    "Theophilus",
+    "Timothy",
+    "Titus",
+    "Philemon"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 1:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Theophilus"
+   }
+  },
+  {
+   "q": "Fill in the word: \"That thou mightest know the ___ of those things\"",
+   "type": "fill_word",
+   "ref": "Luke 1:4",
+   "bible": "KJV",
+   "word": "certainty"
+  },
+  {
+   "q": "Which translation says \"carefully investigated everything\" in Luke 1:3?",
+   "type": "which_translation",
+   "ref": "Luke 1:3",
+   "bible": "BSB",
+   "phrase": "carefully investigated everything"
+  },
+  {
+   "q": "Which verse says \"the word of our God shall stand for ever\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 40:8"
+   ]
+  },
+  {
+   "q": "In Isaiah 40:8, what withereth?",
+   "type": "multiple_choice",
+   "options": [
+    "The grass",
+    "The cedar",
+    "The vine",
+    "The fig tree"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Isaiah 40:8"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "grass"
+   }
+  },
+  {
+   "q": "Which verse says \"Heaven and earth shall pass away, but my words shall not pass away\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 24:35"
+   ]
+  },
+  {
+   "q": "Which translation says \"My words will never pass away\" in Matthew 24:35?",
+   "type": "which_translation",
+   "ref": "Matthew 24:35",
+   "bible": "BSB",
+   "phrase": "My words will never pass away"
+  },
+  {
+   "q": "Which verse says \"For ever, O LORD, thy word is settled in heaven\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 119:89"
+   ]
+  },
+  {
+   "q": "Which translation says \"firmly fixed in the heavens\" in Psalm 119:89?",
+   "type": "which_translation",
+   "ref": "Psalms 119:89",
+   "bible": "BSB",
+   "phrase": "firmly fixed in the heavens"
+  },
+  {
+   "q": "Fill in the word: \"Being born again, not of corruptible seed, but of ___\"",
+   "type": "fill_word",
+   "ref": "1 Peter 1:23",
+   "bible": "KJV",
+   "word": "incorruptible"
+  },
+  {
+   "q": "In 1 Peter 1:24, what is all flesh like?",
+   "type": "multiple_choice",
+   "options": [
+    "Grass",
+    "Dust",
+    "Smoke",
+    "Stone"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 Peter 1:24"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "grass"
+   }
+  },
+  {
+   "q": "Which verse says \"the word of the Lord endureth for ever\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Peter 1:25"
+   ]
+  },
+  {
+   "q": "In Jeremiah 36:28, what was Jeremiah to write in another roll?",
+   "type": "multiple_choice",
+   "options": [
+    "All the former words that were in the first roll",
+    "A new law for the king",
+    "The names of the princes",
+    "A letter to Babylon"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Jeremiah 36:28"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "former"
+   }
+  },
+  {
+   "q": "Which verse says Baruch wrote again \"all the words of the book which Jehoiakim king of Judah had burned in the fire\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Jeremiah 36:32"
+   ]
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
+  "TS2009 (read-along link only)"
+ ]
+}

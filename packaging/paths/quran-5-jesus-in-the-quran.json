@@ -1,0 +1,443 @@
+{
+ "id": "quran-5-jesus-in-the-quran",
+ "title": "Session 5: Jesus in the Quran",
+ "category": "Other Faiths",
+ "series": {
+  "id": "quran-and-the-bible",
+  "title": "What does the Quran say about the Bible?",
+  "of": 8,
+  "session": 5
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "light",
+  "x": 50,
+  "y": 25,
+  "s": 45
+ },
+ "opening_question": "The Quran honours Jesus: born of the virgin Mary, called the Messiah and a word from God, a worker of miracles. Read its words beside the Bible's. Where do they agree, and where does the Bible say more?",
+ "required_refs": [
+  "Isaiah 7:14",
+  "Luke 1:26-35",
+  "Matthew 1:23"
+ ],
+ "words": [
+  "G3933",
+  "H5959",
+  "G1694",
+  "G3323"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "The Quran says the angels gave Mary glad tidings \"of a word from him, whose name is the Messiah\". What did the angel Gabriel tell Mary in Luke, and what did she ask?",
+   "refs": [
+    "Luke 1:26-35"
+   ],
+   "outside": [
+    "Quran 3:45-47"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3933",
+     "G5310"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Virgin is parthenos: \"a maiden\". The Quran and Luke agree on Mary's question. Sale: \"how shall I have a son, since a man hath not touched me?\" Luke: \"How shall this be, seeing I know not a man?\"",
+     "refs": [
+      "Luke 1:34"
+     ],
+     "strongs": [
+      "G3933"
+     ]
+    },
+    {
+     "text": "Luke's angel calls the child \"the Son of the Highest\" and \"the Son of God\". The Quran's angels call him \"the Messiah, Jesus, son of Mary\".",
+     "refs": [
+      "Luke 1:32",
+      "Luke 1:35"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Isaiah gave a sign to the house of David. What is the sign, and what does Matthew say the name Emmanuel means?",
+   "refs": [
+    "Isaiah 7:13-14",
+    "Matthew 1:22-23"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5959",
+     "G1694"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Isaiah's word is almah: \"a lass\", a young woman; the King James translates it \"damsel maid virgin\". The Greek Septuagint, made before Christ, has parthenos, virgin, and Matthew quotes it.",
+     "refs": [
+      "Isaiah 7:14"
+     ],
+     "strongs": [
+      "H5959"
+     ]
+    },
+    {
+     "text": "Matthew explains the name: Emmanuel is \"God with us\".",
+     "refs": [
+      "Matthew 1:23"
+     ],
+     "strongs": [
+      "G1694"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "In the Quran Jesus speaks from the cradle: \"Peace on me the day I was born, and the day I die\". What are the first words of Jesus the Bible records, and how old was he?",
+   "refs": [
+    "Luke 2:42-49"
+   ],
+   "outside": [
+    "Quran 19:30-34"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3962"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Bible records no words of Jesus as a baby. His first recorded words, at twelve, speak of \"my Father's business\".",
+     "refs": [
+      "Luke 2:49"
+     ]
+    },
+    {
+     "text": "The speaking baby is not in the Bible. A similar story is in the Arabic Infancy Gospel, a writing outside the Bible.",
+     "refs": [
+      "Luke 2:49"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran lists Jesus' miracles: healing the blind and the leper and raising the dead. What does Jesus tell John's disciples, and how did he heal the man born blind?",
+   "refs": [
+    "Luke 7:20-22",
+    "John 9:1-7"
+   ],
+   "outside": [
+    "Quran 5:110"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5185",
+     "G4592"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Sale's Quran has Jesus \"heal one blind from his birth\"; John 9 tells of \"a man which was blind from his birth\".",
+     "refs": [
+      "John 9:1"
+     ]
+    },
+    {
+     "text": "The bird of clay is not in the Bible. A boy Jesus who makes sparrows of clay that fly away is in the Infancy Gospel of Thomas, a second-century writing outside the Bible.",
+     "refs": [
+      "Luke 7:22"
+     ]
+    },
+    {
+     "text": "In the Quran every miracle is \"by My permission\". In John, Jesus says \"I must work the works of him that sent me\".",
+     "refs": [
+      "John 9:4"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran calls Jesus the Messiah. What does Messiah mean, and what did Jesus say when the woman of Samaria spoke of the Messiah?",
+   "refs": [
+    "John 1:41",
+    "John 4:25-26"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3323",
+     "G5547",
+     "H4899"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Messias comes from the Hebrew mashiach: \"anointed\". Christ is christos, the Greek word for the same thing: \"anointed\".",
+     "refs": [
+      "John 1:41"
+     ],
+     "strongs": [
+      "G3323",
+      "G5547",
+      "H4899"
+     ]
+    },
+    {
+     "text": "The Quran calls Jesus the Messiah (3:45, 4:171) but does not explain the title. In the Bible the Messiah is the anointed King promised to David's house, who \"shall reign over the house of Jacob for ever\".",
+     "refs": [
+      "Luke 1:33"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"the angel Gabriel was sent from God unto a city of Galilee\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 1:26"
+   ]
+  },
+  {
+   "q": "In Luke 1:27, what was the virgin's name?",
+   "type": "multiple_choice",
+   "options": [
+    "Mary",
+    "Elisabeth",
+    "Anna",
+    "Martha"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 1:27"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Mary"
+   }
+  },
+  {
+   "q": "In Luke 1:31, what name was the child to be given?",
+   "type": "multiple_choice",
+   "options": [
+    "Jesus",
+    "John",
+    "Joseph",
+    "David"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 1:31"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Jesus"
+   }
+  },
+  {
+   "q": "Fill in the word: \"shall be called the Son of the ___\"",
+   "type": "fill_word",
+   "ref": "Luke 1:32",
+   "bible": "KJV",
+   "word": "Highest"
+  },
+  {
+   "q": "Which verse says \"How shall this be, seeing I know not a man?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 1:34"
+   ]
+  },
+  {
+   "q": "Which translation says \"seeing I am a virgin\" in Luke 1:34?",
+   "type": "which_translation",
+   "ref": "Luke 1:34",
+   "bible": "ETH",
+   "phrase": "seeing I am a virgin"
+  },
+  {
+   "q": "Which verse says \"that holy thing which shall be born of thee shall be called the Son of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 1:35"
+   ]
+  },
+  {
+   "q": "Which verse says \"Behold, a virgin shall conceive, and bear a son\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 7:14"
+   ]
+  },
+  {
+   "q": "In Isaiah 7:14, what shall his name be called?",
+   "type": "multiple_choice",
+   "options": [
+    "Immanuel",
+    "Shearjashub",
+    "Hezekiah",
+    "Mahershalalhashbaz"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Isaiah 7:14"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Immanuel"
+   }
+  },
+  {
+   "q": "Fill in the word: \"which being interpreted is, God ___ us\"",
+   "type": "fill_word",
+   "ref": "Matthew 1:23",
+   "bible": "KJV",
+   "word": "with"
+  },
+  {
+   "q": "Which verse says \"after three days they found him in the temple\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 2:46"
+   ]
+  },
+  {
+   "q": "In Luke 2:47, what astonished all that heard him?",
+   "type": "multiple_choice",
+   "options": [
+    "His understanding and answers",
+    "His miracles",
+    "His height",
+    "His singing"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 2:47"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "understanding"
+   }
+  },
+  {
+   "q": "Which translation says \"about my Father's business\" in Luke 2:49?",
+   "type": "which_translation",
+   "ref": "Luke 2:49",
+   "bible": "KJV",
+   "phrase": "about my Father's business"
+  },
+  {
+   "q": "Which verse tells of \"a man which was blind from his birth\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 9:1"
+   ]
+  },
+  {
+   "q": "In John 9:7, where did Jesus send the blind man to wash?",
+   "type": "multiple_choice",
+   "options": [
+    "The pool of Siloam",
+    "The river Jordan",
+    "The pool of Bethesda",
+    "The sea of Galilee"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "John 9:7"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Siloam"
+   }
+  },
+  {
+   "q": "Fill in the word: \"the lepers are ___, the deaf hear\"",
+   "type": "fill_word",
+   "ref": "Luke 7:22",
+   "bible": "KJV",
+   "word": "cleansed"
+  },
+  {
+   "q": "Which verse says \"We have found the Messias, which is, being interpreted, the Christ\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 1:41"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"I that speak unto thee am ___\"",
+   "type": "fill_word",
+   "ref": "John 4:26",
+   "bible": "KJV",
+   "word": "he"
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
+  "TS2009 (read-along link only)"
+ ]
+}

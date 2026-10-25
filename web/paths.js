@@ -188,6 +188,10 @@ const BCPaths = (() => {
     }
     const p = S.path, st = p.steps[S.step];
     add(`${T("Step")} ${S.step + 1} ${T("of")} ${p.steps.length}. ${p.mine ? T(st.question) : st.question}`, root.querySelector(".pv-q"));
+    root.querySelectorAll(".pv-outside").forEach(b => { const r = (b.dataset.oref || "").match(/^(.*) (\d+):(\d+)(?:-(\d+))?$/);
+      add((r ? `From the ${r[1]}, chapter ${r[2]}, verse${r[4] ? "s " + r[3] + " to " + r[4] : " " + r[3]}` : plain(b.querySelector("h4"))) + ". " + T("Not Scripture."), b.querySelector("h4"));
+      b.querySelectorAll(".pv-ocol").forEach(c => add(plain(c.querySelector("b")) + ": " + plain(c.querySelector("p")), c)); });
+    if(root.querySelector(".pv-thebible")) add(T("The Bible."), root.querySelector(".pv-thebible"));
     root.querySelectorAll("#pvVerses .pv-ref").forEach(r => {
       const voice = r.dataset.key === "reader" ? "reader" : "path", vs = [...r.querySelectorAll(".pv-v")];
       add(sayRef(r.dataset.ref) + ".", r.querySelector(".pv-refh"));
@@ -263,7 +267,7 @@ const BCPaths = (() => {
     S.draft.steps.forEach(st => { st.look_closer = st.look_closer || {strongs: [], xref_top: 0}; st.look_closer.strongs = st.look_closer.strongs || []; st.notes = st.notes || []; st.compare = st.compare || []; st.my_note = st.my_note || ""; });
     S.view = "edit"; edRender(true);
   }
-  const CAT_CHOICES = ["Creation", "Prophecy", "Gospel", "Marriage", "Freedom", "Body & Life", "Name & Word", "Covenant", "Bible study group", "Other"];
+  const CAT_CHOICES = ["Creation", "Prophecy", "Gospel", "Marriage", "Freedom", "Body & Life", "Name & Word", "Covenant", "Other Faiths", "Bible study group", "Other"];
   function edRender(top){
     const d = S.draft, keep = top ? 0 : root.scrollTop, cb = (on, opt, i, lab) => `<label class="pv-edck"><input type="checkbox" data-opt="${opt}" data-s="${i}"${on ? " checked" : ""}> ${lab}</label>`;
     frame(d.isNew ? "＋ Make your own study path" : "✏️ Edit your study path", `<form class="pv-reqf pv-ed" id="pvEd" autocomplete="off">
@@ -515,6 +519,7 @@ const BCPaths = (() => {
       <div class="pv-track" role="navigation" aria-label="Steps">${p.steps.map((x, i) => `<button class="pv-dot${i === S.step ? " pv-dot-now" : ""}${done.has(i) ? " pv-dot-ok" : ""}" data-step="${i}" title="${esc("Step " + (i + 1) + ": " + x.question)}">${done.has(i) ? "✓" : i + 1}</button>`).join(`<i class="pv-track-line"></i>`)}</div>
       <div class="pv-bar"><i style="width:${Math.round(100 * done.size / n)}%"></i></div>
       <h3 class="pv-q pvx">${esc(p.mine ? T(s.question) : s.question)}</h3>
+      ${outsideBoxes(s)}
       <div class="pv-verses${s.side_by_side ? " pv-sbs" : ""}" id="pvVerses"><p class="pv-small">Loading the verses…</p></div>
       ${p.mine && s.my_note ? `<div class="pv-cnote"><h4>✍ Note from <span class="pvx">${esc(p.author || T("the maker of this path"))}</span></h4><p class="pv-cnote-why">Written by the person who made this path: not Scripture, and not checked by BibleChat.</p><div class="pvx">${esc(s.my_note)}</div></div>` : ""}
       ${s.facts ? `<div class="pv-facts"><h4>Facts about the words</h4>${s.facts.map(f => `<p class="pvx">${esc(f.text)}<br><small>${(f.refs || []).map(r => { const q = parseRef(r); return refLink(q.book, q.c1, q.v1, label(r)); }).join(" · ")}${f.refs && f.strongs ? " · " : ""}${(f.strongs || []).map(x => `<button class="pv-sn" data-n="${x}">Strong's ${x}</button>`).join(" ")}</small></p>`).join("")}</div>` : ""}
@@ -526,9 +531,20 @@ const BCPaths = (() => {
       <div class="pv-nav"><button class="pv-btn pv-prev"${S.step ? "" : " disabled"}>‹ Previous step</button>${S.step < n - 1 ? `<button class="pv-btn pv-primary pv-next">Next step ›</button>` : `<button class="pv-btn pv-primary pv-toquiz">Questions and answers ›</button>`}</div>
       <button class="pv-btn pv-share pv-sharewide">↗ Share this path with someone</button>
       ${p.mine ? `<button class="pv-btn pv-sharewide pv-edit" data-id="${esc(p.id)}">✏️ ${p.received ? "Make it your own (edit a copy)" : "Edit this path"}</button>` : ""}
-      <p class="pv-small"><span>Sources:</span> <span class="pvx">${esc((p.sources || []).join(" · "))}</span></p>`, true);
+      <p class="pv-small"><span>Sources:</span> <span class="pvx">${esc((p.sources || []).join(" · "))}</span></p>
+      ${(p.outside_sources || []).length ? `<p class="pv-small">${p.outside_sources.map(o => `<b class="pvx">${esc(o.name)}</b>: <span class="pvx">${esc(o.about)}</span> <a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.source)} ↗</a>`).join("<br>")}</p>` : ""}`, true);
     S.versesP = drawVerses(s);
     if(S.lsAuto){ S.lsAuto = false; lsStart("step"); }   // 🔊 Listen goes on into the next step
+  }
+  /* Words of another faith (the Quran in "What does the Quran say about the Bible?"): never Scripture. Each passage sits
+     in its own box above the Bible verses, labelled "not Scripture", every translation side by side under its
+     translator's name and year (packaging/build_outside.py checked every word). Then "The Bible" heads the verses. */
+  function outsideBoxes(s){
+    const boxes = (s.outside || []).filter(b => b && b.texts && b.label);
+    if(!boxes.length) return "";
+    return boxes.map((b, i) => `<div class="pv-outside" data-oref="${esc(b.ref)}"><h4>☪ <span class="pvx">${esc(b.ref.replace(/-/g, "–"))}</span> · ${esc(b.label.replace(/^From the [^:]+: /, ""))}</h4>`
+      + `${i ? "" : `<p class="pv-owhy">${esc(b.why)}</p>`}<div class="pv-ocols">${b.texts.map(t => `<div class="pv-ocol"><b>${esc(t.name)}</b><p class="pvx">${esc(t.text)}</p></div>`).join("")}</div></div>`).join("")
+      + `<h4 class="pv-thebible">📖 The Bible</h4>`;
   }
   async function drawVerses(s){
     const box = root.querySelector("#pvVerses"), my = S.step, html = [];
@@ -1077,6 +1093,10 @@ const BCPaths = (() => {
 .pv-text{font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.6}
 .pv-text sup{font-family:system-ui,sans-serif;font-size:.62em;color:var(--muted);margin-right:2px}
 .pv-from{font-weight:400;color:var(--muted)}
+.pv-outside{border:1px solid rgba(214,170,90,.55);background:rgba(214,170,90,.09);border-radius:10px;padding:8px 12px;margin:0 0 10px}.pv-outside h4{margin:2px 0}
+.pv-owhy{font-size:12.5px;color:var(--muted);font-style:italic;margin:0 0 6px}.pv-ocol b{display:block;font-size:13px;margin:6px 0 2px}.pv-ocol p{margin:0 0 4px;line-height:1.5}
+@media (min-width:700px){.pv-ocols{display:grid;grid-template-columns:1fr 1fr;gap:12px}}
+.pv-thebible{margin:4px 0 6px}
 .pv-niv{font-weight:400;font-size:13px;margin-left:auto}
 @media (min-width:700px){.pv-sbs{display:grid;grid-template-columns:1fr 1fr;gap:10px}}
 .pv-facts{border:1px dashed var(--line);border-radius:10px;padding:4px 12px;margin:0 0 10px}

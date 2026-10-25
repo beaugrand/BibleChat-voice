@@ -694,6 +694,340 @@
   }
  },
  {
+  "id": "quran-1-three-books",
+  "title": "Session 1: The three books",
+  "category": "Other Faiths",
+  "image": "img/quran-1-three-books.jpg",
+  "opening_question": "The Quran names three books that came before it: the Torah, the Psalms and the Gospel. What does the Bible itself say about the law Moses wrote, the psalms of David and the gospel of Jesus?",
+  "steps": 5,
+  "step_questions": [
+   "The Quran says the Torah and the Gospel were sent down before it. What did Moses do with the words of the law, and where was the book put?",
+   "The Quran says the Psalms were given to David. What does David say about the words he spoke, and what does Psalm 1 say about the law?",
+   "The Quran says the Torah has \"guidance and a light\". What does the Bible call God's word and his law?",
+   "The Quran says Jesus was given the Gospel, \"wherein is guidance and a light\". How does Mark begin, and what did Jesus preach?",
+   "After he rose, Jesus named the parts of Scripture that speak of him. Which three does he name, and what did he open?"
+  ],
+  "books": [
+   "2 Samuel",
+   "Deuteronomy",
+   "Luke",
+   "Mark",
+   "Proverbs",
+   "Psalms",
+   "Quran"
+  ],
+  "show": 8,
+  "verses": 15,
+  "minutes": 30,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "light",
+   "x": 50,
+   "y": 20,
+   "s": 40
+  },
+  "series": {
+   "id": "quran-and-the-bible",
+   "title": "What does the Quran say about the Bible?",
+   "of": 8,
+   "session": 1
+  }
+ },
+ {
+  "id": "quran-2-confirming",
+  "title": "Session 2: Confirming what came before",
+  "category": "Other Faiths",
+  "image": "img/quran-2-confirming.jpg",
+  "opening_question": "The Quran calls itself a confirmation of the Scripture before it and a guardian over it. The Bible gives its own tests for any later message. What are those tests, and how would you use them?",
+  "steps": 6,
+  "step_questions": [
+   "The Quran says it confirms the Scripture before it and is \"a watcher over it\". What test does Isaiah give for any voice that claims to speak for God?",
+   "The Quran asks the children of Israel to believe what confirms \"that which ye possess already\". By what test did Moses tell Israel to judge a prophet, even one whose sign comes to pass?",
+   "Moses promised a prophet \"like unto thee\". How does Israel know a word the LORD has not spoken, and to whom does Peter apply the promise?",
+   "Paul writes about \"another gospel\". What does he say if even an angel from heaven preaches a different one?",
+   "How does John say to try the spirits, and what must a spirit confess?",
+   "Jesus said he came not to destroy the law. What does he say will happen to the smallest letter of it?"
+  ],
+  "books": [
+   "1 John",
+   "Acts",
+   "Deuteronomy",
+   "Galatians",
+   "Isaiah",
+   "Matthew",
+   "Quran"
+  ],
+  "show": 8,
+  "verses": 26,
+  "minutes": 35,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "stars"
+  },
+  "series": {
+   "id": "quran-and-the-bible",
+   "title": "What does the Quran say about the Bible?",
+   "of": 8,
+   "session": 2
+  }
+ },
+ {
+  "id": "quran-3-judge-by-the-gospel",
+  "title": "Session 3: \"Let the People of the Gospel judge by it\"",
+  "category": "Other Faiths",
+  "image": "img/quran-3-judge-by-the-gospel.jpg",
+  "opening_question": "The Quran tells Christians to judge by the Gospel, and tells Muhammad to ask those who read the Scripture before him. It also says no one can change God's words. What does the Bible say about its own words, how they were written, and whether they last?",
+  "steps": 5,
+  "step_questions": [
+   "The Quran says \"Let the People of the Gospel judge by that which Allah hath revealed therein\". What does John say his Gospel was written for?",
+   "The Quran tells Muhammad, if he is in doubt, to \"question those who read the Scripture (that was) before thee\". How does Luke say his Gospel was put together?",
+   "The Quran says \"There is none who can change His words\". What does the Bible say about the word of God and the words of Jesus?",
+   "Peter quotes Isaiah 40. Which word does he say endures for ever, and what is that word?",
+   "King Jehoiakim burned Jeremiah's scroll. What did God tell Jeremiah to do, and what went into the new roll?"
+  ],
+  "books": [
+   "1 Peter",
+   "Isaiah",
+   "Jeremiah",
+   "John",
+   "Luke",
+   "Matthew",
+   "Psalms",
+   "Quran"
+  ],
+  "show": 8,
+  "verses": 17,
+  "minutes": 30,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "light",
+   "x": 50,
+   "y": 30,
+   "s": 35
+  },
+  "series": {
+   "id": "quran-and-the-bible",
+   "title": "What does the Quran say about the Bible?",
+   "of": 8,
+   "session": 3
+  }
+ },
+ {
+  "id": "quran-4-changed-words",
+  "title": "Session 4: The \"changed words\" verses",
+  "category": "Other Faiths",
+  "image": "img/quran-4-changed-words.jpg",
+  "opening_question": "Some Quran verses say people \"change words from their context\" or write scripture with their own hands. Muslim scholars read this two ways. What does the Bible itself say about adding to, taking from, or twisting God's word?",
+  "steps": 5,
+  "step_questions": [
+   "The Quran says a party \"used to listen to the word of Allah, then used to change it\". What does Jeremiah say about the scribes of his day?",
+   "The Quran warns those who write scripture with their own hands and say it is from God. What does Moses command about adding to God's word, and what does Proverbs add?",
+   "The Quran says some \"change words from their context\". What does Paul say many do with the word of God, and what does Peter say the unlearned do with Paul's letters?",
+   "What does the last chapter of the Bible warn anyone who adds to, or takes away from, the words of the book?",
+   "Paul says the Jews were trusted with \"the oracles of God\". If some did not believe, does that make God's faithfulness fail?"
+  ],
+  "books": [
+   "2 Corinthians",
+   "2 Peter",
+   "Deuteronomy",
+   "Jeremiah",
+   "Proverbs",
+   "Quran",
+   "Revelation",
+   "Romans"
+  ],
+  "show": 8,
+  "verses": 14,
+  "minutes": 30,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "storm"
+  },
+  "series": {
+   "id": "quran-and-the-bible",
+   "title": "What does the Quran say about the Bible?",
+   "of": 8,
+   "session": 4
+  }
+ },
+ {
+  "id": "quran-5-jesus-in-the-quran",
+  "title": "Session 5: Jesus in the Quran",
+  "category": "Other Faiths",
+  "image": "img/quran-5-jesus-in-the-quran.jpg",
+  "opening_question": "The Quran honours Jesus: born of the virgin Mary, called the Messiah and a word from God, a worker of miracles. Read its words beside the Bible's. Where do they agree, and where does the Bible say more?",
+  "steps": 5,
+  "step_questions": [
+   "The Quran says the angels gave Mary glad tidings \"of a word from him, whose name is the Messiah\". What did the angel Gabriel tell Mary in Luke, and what did she ask?",
+   "Isaiah gave a sign to the house of David. What is the sign, and what does Matthew say the name Emmanuel means?",
+   "In the Quran Jesus speaks from the cradle: \"Peace on me the day I was born, and the day I die\". What are the first words of Jesus the Bible records, and how old was he?",
+   "The Quran lists Jesus' miracles: healing the blind and the leper and raising the dead. What does Jesus tell John's disciples, and how did he heal the man born blind?",
+   "The Quran calls Jesus the Messiah. What does Messiah mean, and what did Jesus say when the woman of Samaria spoke of the Messiah?"
+  ],
+  "books": [
+   "Isaiah",
+   "John",
+   "Luke",
+   "Matthew",
+   "Quran"
+  ],
+  "show": 8,
+  "verses": 35,
+  "minutes": 35,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "light",
+   "x": 50,
+   "y": 25,
+   "s": 45
+  },
+  "series": {
+   "id": "quran-and-the-bible",
+   "title": "What does the Quran say about the Bible?",
+   "of": 8,
+   "session": 5
+  }
+ },
+ {
+  "id": "quran-6-son-of-god",
+  "title": "Session 6: Son of God",
+  "category": "Other Faiths",
+  "image": "img/quran-6-son-of-god.jpg",
+  "opening_question": "The Quran says God \"begetteth not nor was begotten\" and denies that Jesus is the Son of God. The Bible says the LORD is one, and calls Jesus the Son of God. What does each text actually say, and what does \"one\" mean in Hebrew?",
+  "steps": 5,
+  "step_questions": [
+   "The Quran says God is One, who \"begetteth not nor was begotten\". What does Moses say about the LORD, and which word does he use for one?",
+   "The Quran says \"It befitteth not (the Majesty of) Allah that He should take unto Himself a son\". What does the LORD say to his king in Psalm 2?",
+   "Jesus asked his disciples who they said he was. What did Peter answer, and where did Jesus say that answer came from?",
+   "At his trial the high priest asked Jesus, \"Art thou the Christ, the Son of the Blessed?\" What did Jesus answer, and what did the high priest do?",
+   "The Quran asks Jesus, \"Didst thou say unto mankind: Take me and my mother for two gods beside Allah?\" What does John say about the Word, and whom does Jesus name in Matthew 28:19?"
+  ],
+  "books": [
+   "Deuteronomy",
+   "Genesis",
+   "John",
+   "Mark",
+   "Matthew",
+   "Psalms",
+   "Quran"
+  ],
+  "show": 8,
+  "verses": 21,
+  "minutes": 35,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "stars"
+  },
+  "series": {
+   "id": "quran-and-the-bible",
+   "title": "What does the Quran say about the Bible?",
+   "of": 8,
+   "session": 6
+  }
+ },
+ {
+  "id": "quran-7-the-cross",
+  "title": "Session 7: The cross",
+  "category": "Other Faiths",
+  "image": "img/quran-7-the-cross.jpg",
+  "opening_question": "The Quran says of Jesus, \"they slew him not nor crucified\". The Bible's prophets, its eyewitness and its earliest creed say he was crucified, died and rose. Read both, and weigh what each says about its own witnesses.",
+  "steps": 5,
+  "step_questions": [
+   "The Quran says \"they slew him not nor crucified, but it appeared so unto them\". What does Psalm 22 describe, long before?",
+   "What does Isaiah 53 say happened to the servant of the LORD, and why?",
+   "What does the eyewitness in John 19 say he saw when the soldier pierced Jesus' side, and why does he tell it?",
+   "The Quran says God took Jesus up unto himself. What did the risen Jesus show his disciples, and how was he taken up?",
+   "What does Paul say he \"received\" and delivered first of all, and who saw the risen Jesus?"
+  ],
+  "books": [
+   "1 Corinthians",
+   "Acts",
+   "Isaiah",
+   "John",
+   "Luke",
+   "Psalms",
+   "Quran"
+  ],
+  "show": 8,
+  "verses": 36,
+  "minutes": 35,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "storm"
+  },
+  "series": {
+   "id": "quran-and-the-bible",
+   "title": "What does the Quran say about the Bible?",
+   "of": 8,
+   "session": 7
+  }
+ },
+ {
+  "id": "quran-8-search-the-scriptures",
+  "title": "Session 8: Search the Scriptures",
+  "category": "Other Faiths",
+  "image": "img/quran-8-search-the-scriptures.jpg",
+  "opening_question": "The Quran tells Muslims to argue with the People of the Scripture only in the better way, and to say \"our God and your God is One\". The Bible tells its readers to search the Scriptures and test everything. How should we study, talk and decide?",
+  "steps": 5,
+  "step_questions": [
+   "The Quran says \"argue not with the People of the Scripture unless it be in (a way) that is better\". How does Peter tell Christians to give an answer for their hope?",
+   "Jesus told his hearers to \"Search the scriptures\". What did he say the Scriptures testify of, and what did Moses write?",
+   "How did the Jews of Berea receive Paul's preaching, and what did they do every day?",
+   "The Quran says Muslims believe in \"that which Moses and Jesus received\". What does Paul say all Scripture is, and what is it for?",
+   "What does Hebrews say the word of God is like, and what does Isaiah say God's word will do?"
+  ],
+  "books": [
+   "1 Peter",
+   "2 Timothy",
+   "Acts",
+   "Colossians",
+   "Hebrews",
+   "Isaiah",
+   "John",
+   "Quran"
+  ],
+  "show": 8,
+  "verses": 18,
+  "minutes": 30,
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "light",
+   "x": 50,
+   "y": 35,
+   "s": 40
+  },
+  "series": {
+   "id": "quran-and-the-bible",
+   "title": "What does the Quran say about the Bible?",
+   "of": 8,
+   "session": 8
+  }
+ },
+ {
   "id": "the-name",
   "title": "The Name",
   "category": "Name & Word",

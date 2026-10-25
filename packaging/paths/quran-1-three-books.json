@@ -1,0 +1,456 @@
+{
+ "id": "quran-1-three-books",
+ "title": "Session 1: The three books",
+ "category": "Other Faiths",
+ "series": {
+  "id": "quran-and-the-bible",
+  "title": "What does the Quran say about the Bible?",
+  "of": 8,
+  "session": 1
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "light",
+  "x": 50,
+  "y": 20,
+  "s": 40
+ },
+ "opening_question": "The Quran names three books that came before it: the Torah, the Psalms and the Gospel. What does the Bible itself say about the law Moses wrote, the psalms of David and the gospel of Jesus?",
+ "required_refs": [
+  "Deuteronomy 31:24-26",
+  "Psalms 1:2",
+  "Luke 24:44"
+ ],
+ "words": [
+  "H8451",
+  "H2158",
+  "G2098",
+  "G5568"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "The Quran says the Torah and the Gospel were sent down before it. What did Moses do with the words of the law, and where was the book put?",
+   "refs": [
+    "Deuteronomy 31:24-26"
+   ],
+   "outside": [
+    "Quran 3:3-4"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H8451",
+     "H5612"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Hebrew word torah means \"a precept or statute\"; the King James Version translates it \"law\".",
+     "refs": [
+      "Deuteronomy 31:24"
+     ],
+     "strongs": [
+      "H8451"
+     ]
+    },
+    {
+     "text": "Sale (1734) calls the Torah \"the law\"; Pickthall (1930) keeps its name, \"the Torah\". Deuteronomy says Moses wrote it \"in a book\" and it was kept beside the ark.",
+     "refs": [
+      "Deuteronomy 31:24-26"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran says the Psalms were given to David. What does David say about the words he spoke, and what does Psalm 1 say about the law?",
+   "refs": [
+    "2 Samuel 23:1-2",
+    "Psalms 1:1-3"
+   ],
+   "outside": [
+    "Quran 4:163"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2158",
+     "H7307",
+     "H8451"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Psalmist\" in 2 Samuel 23:1 is zamir: \"a song to be accompanied with instrumental music\".",
+     "refs": [
+      "2 Samuel 23:1"
+     ],
+     "strongs": [
+      "H2158"
+     ]
+    },
+    {
+     "text": "David says \"his word was in my tongue\": the Spirit of the LORD spoke by him.",
+     "refs": [
+      "2 Samuel 23:2"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran says the Torah has \"guidance and a light\". What does the Bible call God's word and his law?",
+   "refs": [
+    "Psalms 119:105",
+    "Proverbs 6:23"
+   ],
+   "outside": [
+    "Quran 5:44"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5216",
+     "H216"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Psalm 119:105 uses ner, \"a lamp\", and or, light: \"Thy word is a lamp unto my feet\".",
+     "refs": [
+      "Psalms 119:105"
+     ],
+     "strongs": [
+      "H5216",
+      "H216"
+     ]
+    },
+    {
+     "text": "Sale's Quran says the law holds \"direction, and light\"; Proverbs 6:23 says \"the law is light\".",
+     "refs": [
+      "Proverbs 6:23"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran says Jesus was given the Gospel, \"wherein is guidance and a light\". How does Mark begin, and what did Jesus preach?",
+   "refs": [
+    "Mark 1:1",
+    "Mark 1:14-15"
+   ],
+   "outside": [
+    "Quran 5:46"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2098",
+     "G3340"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Gospel is euangelion: \"a good message\". Mark uses it for the message about Jesus, \"the gospel of Jesus Christ, the Son of God\", and for what Jesus preached, \"the gospel of the kingdom of God\".",
+     "refs": [
+      "Mark 1:1",
+      "Mark 1:14"
+     ],
+     "strongs": [
+      "G2098"
+     ]
+    },
+    {
+     "text": "In the Quran the Gospel (Injil) is a book given to Jesus. In the New Testament \"the gospel\" is the good news Jesus preached and the good news about him; the four accounts of his life were later called the Gospels.",
+     "refs": [
+      "Mark 1:1",
+      "Mark 1:15"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "After he rose, Jesus named the parts of Scripture that speak of him. Which three does he name, and what did he open?",
+   "refs": [
+    "Luke 24:44-45"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3551",
+     "G5568",
+     "G1124"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Quran names the Torah, the Psalms and the Gospel. Jesus names \"the law of Moses, and in the prophets, and in the psalms\": the Hebrew Scriptures in three parts.",
+     "refs": [
+      "Luke 24:44"
+     ]
+    },
+    {
+     "text": "Psalm is psalmos: \"a set piece of music, i.e. a sacred ode\"; it can mean \"the book of the Psalms\".",
+     "refs": [
+      "Luke 24:44"
+     ],
+     "strongs": [
+      "G5568"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says Moses \"had made an end of writing the words of this law in a book\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Deuteronomy 31:24"
+   ]
+  },
+  {
+   "q": "In Deuteronomy 31:26, where was the book of the law to be put?",
+   "type": "multiple_choice",
+   "options": [
+    "In the side of the ark of the covenant",
+    "On top of Mount Sinai",
+    "In the king's house",
+    "In the gate of the city"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Deuteronomy 31:26"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "ark"
+   }
+  },
+  {
+   "q": "Fill in the word: \"Take this book of the ___\"",
+   "type": "fill_word",
+   "ref": "Deuteronomy 31:26",
+   "bible": "KJV",
+   "word": "law"
+  },
+  {
+   "q": "Which translation says \"Yahweh's law\" in Psalm 1:2?",
+   "type": "which_translation",
+   "ref": "Psalms 1:2",
+   "bible": "ETH",
+   "phrase": "Yahweh's law"
+  },
+  {
+   "q": "Which verse calls David \"the sweet psalmist of Israel\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Samuel 23:1"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"The Spirit of the LORD spake by me, and his ___ was in my tongue\"",
+   "type": "fill_word",
+   "ref": "2 Samuel 23:2",
+   "bible": "KJV",
+   "word": "word"
+  },
+  {
+   "q": "In Psalm 1:2, when does the blessed man meditate in God's law?",
+   "type": "multiple_choice",
+   "options": [
+    "Day and night",
+    "Only on the sabbath",
+    "Once a year",
+    "At the feasts"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Psalms 1:2"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "night"
+   }
+  },
+  {
+   "q": "In Psalm 1:3, what is the man who delights in the law like?",
+   "type": "multiple_choice",
+   "options": [
+    "A tree planted by the rivers of water",
+    "A house built on the sand",
+    "A lion in the forest",
+    "A ship on the sea"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Psalms 1:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "tree"
+   }
+  },
+  {
+   "q": "Which verse says \"Thy word is a lamp unto my feet\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 119:105"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"and the law is ___\"",
+   "type": "fill_word",
+   "ref": "Proverbs 6:23",
+   "bible": "KJV",
+   "word": "light"
+  },
+  {
+   "q": "In Proverbs 6:23, what is the commandment?",
+   "type": "multiple_choice",
+   "options": [
+    "A lamp",
+    "A sword",
+    "A burden",
+    "A rock"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Proverbs 6:23"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "lamp"
+   }
+  },
+  {
+   "q": "Which verse says \"The beginning of the gospel of Jesus Christ, the Son of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Mark 1:1"
+   ]
+  },
+  {
+   "q": "In Mark 1:15, what did Jesus tell the people to believe?",
+   "type": "multiple_choice",
+   "options": [
+    "The gospel",
+    "The elders",
+    "A sign from heaven",
+    "The scribes"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Mark 1:15"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "gospel"
+   }
+  },
+  {
+   "q": "Which translation says \"believe in the Good News\" in Mark 1:15?",
+   "type": "which_translation",
+   "ref": "Mark 1:15",
+   "bible": "ETH",
+   "phrase": "believe in the Good News"
+  },
+  {
+   "q": "Which verse names \"the law of Moses, and in the prophets, and in the psalms\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 24:44"
+   ]
+  },
+  {
+   "q": "In Luke 24:45, what did Jesus open?",
+   "type": "multiple_choice",
+   "options": [
+    "Their understanding",
+    "The temple doors",
+    "The scroll of Isaiah",
+    "The tomb"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 24:45"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "understanding"
+   }
+  },
+  {
+   "q": "Which translation says \"written about Me\" in Luke 24:44?",
+   "type": "which_translation",
+   "ref": "Luke 24:44",
+   "bible": "BSB",
+   "phrase": "written about Me"
+  },
+  {
+   "q": "Pickthall's Quran (5:44) says the Torah has \"guidance and a light\". Which verse says \"the law is light\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Proverbs 6:23"
+   ]
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
+  "TS2009 (read-along link only)"
+ ]
+}

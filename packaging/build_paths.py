@@ -12,6 +12,9 @@ The rules it enforces (the build stops on the first broken rule):
   * Every quiz answer is a verse of that path; every verse Hans listed for the path is shown in a step.
   * Commentary is only Scofield or Matthew Henry, and the app shows it under its label (tests check that).
   * Every path has a category (the filter chips above the cards) and its own picture, web/paths/img/<id>.jpg.
+  * Words of another faith (the Quran in "What does the Quran say about the Bible?") come only from the checked files
+    in packaging/outside/ (packaging/build_outside.py); a step names them ("outside": ["Quran 5:47"]) next to its Bible
+    verses, the app shows them in their own box labelled "not Scripture", and no quiz answer is ever one of them.
 
 It also works out, for every question, why it is worth asking: how many cross-references point to its verse
 (OpenBible.info votes), how often the path's Hebrew/Greek words occur in its verses, and how much KJV, the
@@ -37,6 +40,9 @@ from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from build_outside import OutsideError, load_library, split_ref  # noqa: E402
 
 SRC_DIR = os.path.join(ROOT, "packaging", "paths")
 OUT_DIR = os.path.join(ROOT, "web", "paths")
@@ -169,12 +175,12 @@ def has_word(text: str, word: str) -> bool:
     return re.search(r"(?<![A-Za-z])" + re.escape(norm(word)) + r"(?![A-Za-z])", norm(text)) is not None
 
 
-def quotes_ok(text: str, keys: list, B: Bibles, strongs: list | None = None) -> str | None:
+def quotes_ok(text: str, keys: list, B: Bibles, strongs: list | None = None, outside: list | None = None) -> str | None:
     """Words in quotation marks inside a question or fact must stand in one of its verses (in the KJV, the Ethiopian
-    Canon or the BSB) or in the Strong's entry it names; "___" stands for the word to fill in. Returns the first
-    quote that doesn't, or None."""
+    Canon or the BSB), in the Strong's entry it names or in the checked words of another faith that its step shows
+    (outside); "___" stands for the word to fill in. Returns the first quote that doesn't, or None."""
     from bibleask.strongs import STRONGS
-    pool = [norm(B.text[k].get(v, "")) for v in keys for k in COMPARE if k not in B.missing]
+    pool = [norm(B.text[k].get(v, "")) for v in keys for k in COMPARE if k not in B.missing] + [norm(t) for t in outside or []]
     for n in strongs or []:
         e = STRONGS.entry(n) or {}
         pool.append(norm(" ".join(str(e.get(f, "")) for f in ("meaning", "kjv", "translit"))))
@@ -187,10 +193,29 @@ def quotes_ok(text: str, keys: list, B: Bibles, strongs: list | None = None) -> 
     return None
 
 
-def check_path(p: dict, B: Bibles, file_id: str | None = None) -> dict:
+def outside_texts(refs: list, lib: dict, where: str) -> list[str]:
+    """The checked words of another faith that a step names ("Quran 5:47"), in every translation; PathError if one
+    isn't in packaging/outside/."""
+    out = []
+    for r in refs:
+        name, ref = split_ref(r)
+        w = lib.get(name)
+        if not w or ref not in w["passages"]:
+            raise PathError(f"{where}: {r} is not in the checked words of packaging/outside/ (packaging/build_outside.py)")
+        out += [w["passages"][ref][t["key"]] for t in w["translations"]]
+    return out
+
+
+def check_path(p: dict, B: Bibles, file_id: str | None = None, lib: dict | None = None) -> dict:
     """Raise PathError for the first broken rule; return facts the build needs (verses of the path, checks done)."""
     from bibleask.strongs import STRONGS
     where = f"path {p.get('id')!r}"
+    if lib is None:
+        try:
+            lib = load_library()
+        except OutsideError as e:
+            raise PathError(str(e))
+    path_outside: list = []
     for k in ("id", "title", "category", "opening_question", "steps", "quiz", "sources", "required_refs"):
         if not p.get(k):
             raise PathError(f"{where}: missing {k!r}")
@@ -247,7 +272,9 @@ def check_path(p: dict, B: Bibles, file_id: str | None = None) -> dict:
             raise PathError(f"{where}: {ctx} has no question")
         skeys = refs_ok(s.get("refs"), ctx)
         path_verses += skeys
-        bad = quotes_ok(s["question"], skeys, B)
+        sout = outside_texts(s.get("outside", []), lib, f"{where}: {ctx}")
+        path_outside += sout
+        bad = quotes_ok(s["question"], skeys, B, outside=sout)
         if bad:
             raise PathError(f"{where}: {ctx}: \"{bad}\" is not in the step's verses")
         bad = set(s.get("compare", [])) - set(COMPARE)
@@ -264,7 +291,7 @@ def check_path(p: dict, B: Bibles, file_id: str | None = None) -> dict:
             if not (f.get("text") or "").strip() or not (f.get("refs") or f.get("strongs")):
                 raise PathError(f"{where}: {ctx} fact {j} must say something and point to a verse or a Strong's entry")
             fkeys = refs_ok(f["refs"], f"{ctx} fact {j}") if f.get("refs") else []
-            bad = quotes_ok(f["text"], fkeys, B, f.get("strongs"))
+            bad = quotes_ok(f["text"], fkeys, B, f.get("strongs"), sout)
             if bad:
                 raise PathError(f"{where}: {ctx} fact {j}: \"{bad}\" is not in its verses or Strong's entries")
             strongs_ok(f.get("strongs", []), f"{ctx} fact {j}")
@@ -289,7 +316,7 @@ def check_path(p: dict, B: Bibles, file_id: str | None = None) -> dict:
         if t in ("fill_word", "which_translation"):
             q.setdefault("answer_refs", [q.get("ref")] if q.get("ref") else [])
         ans = refs_ok(q.get("answer_refs"), ctx)
-        bad = quotes_ok(q["q"], sorted(seen), B)
+        bad = quotes_ok(q["q"], sorted(seen), B, outside=path_outside)
         if bad:
             raise PathError(f"{where}: {ctx}: \"{bad}\" is not in the verses of this path")
         outside = [k for k in ans if k not in seen]
@@ -450,19 +477,44 @@ def sha(path: str) -> str:
         return hashlib.sha256(f.read().replace(b"\r\n", b"\n")).hexdigest()[:16]
 
 
+def embed_outside(p: dict, lib: dict) -> None:
+    """Put the checked words into the built path: each step gets its boxes (the label, then every translation with its
+    name and year) and the path lists the translations it used, with their sources."""
+    used = {}
+    for s in p["steps"]:
+        if not s.get("outside"):
+            continue
+        boxes = []
+        for r in s["outside"]:
+            name, ref = split_ref(r)
+            w = lib[name]
+            used[name] = w
+            boxes.append({"ref": r, "label": w["label"], "why": w["why"],
+                          "texts": [{"name": t["name"], "text": w["passages"][ref][t["key"]]} for t in w["translations"]]})
+        s["outside"] = boxes
+    if used:
+        p["outside_sources"] = [{"name": t["name"], "about": t["about"], "source": t["source"], "url": t["url"]}
+                                for w in used.values() for t in w["translations"]]
+
+
 def build(B: Bibles) -> dict[str, dict]:
     from bibleask.strongs import STRONGS
+    try:
+        lib = load_library()
+    except OutsideError as e:
+        raise PathError(str(e))
     sig = Signals()
     sig.add_quoted(check_quoted(B), B)
     out: dict[str, dict] = {}
     for f in sorted(glob.glob(os.path.join(SRC_DIR, "*.json"))):
         with open(f, encoding="utf-8") as fh:
             p = json.load(fh)
-        info = check_path(p, B, os.path.basename(f)[:-5])
+        info = check_path(p, B, os.path.basename(f)[:-5], lib)
         for q in p["quiz"]:
             s = sig.for_question(q, p, B, info["verses"])
             q["signals"], q["why"], q["score"] = s, why(s, STRONGS), score(s)
         p["verse_count"] = len(set(info["verses"]))
+        embed_outside(p, lib)
         if not os.path.exists(os.path.join(IMG_DIR, p["id"] + ".jpg")):
             raise PathError(f"path {p['id']!r}: no picture web/paths/img/{p['id']}.jpg for its card")
         p["image"] = "img/" + p["id"] + ".jpg"
@@ -475,7 +527,7 @@ def build(B: Bibles) -> dict[str, dict]:
 
 def minutes(p: dict) -> int:
     """About how long a path takes: reading its verses, thinking about each step, answering the questions."""
-    m = 0.25 * p["verse_count"] + 3 * len(p["steps"]) + p.get("show", 8)
+    m = 0.25 * p["verse_count"] + 3 * len(p["steps"]) + p.get("show", 8) + sum(len(s.get("outside", [])) for s in p["steps"])   # + a minute per box of another faith's words
     return max(10, int(5 * round(m / 5)))
 
 
@@ -484,7 +536,8 @@ def index(paths: dict[str, dict]) -> list[dict]:
     return [{"id": p["id"], "title": p["title"], "category": p["category"], "image": p["image"],
              "opening_question": p["opening_question"], "steps": len(p["steps"]),
              "step_questions": [s["question"] for s in p["steps"]],
-             "books": sorted({parse_ref(r)[0] for s in p["steps"] for r in s["refs"]}),   # a search for "Genesis" or "Daniel" finds the path
+             "books": sorted({parse_ref(r)[0] for s in p["steps"] for r in s["refs"]}   # a search for "Genesis" or "Daniel" finds the path
+                            | {b["ref"].rpartition(" ")[0] for s in p["steps"] for b in s.get("outside", [])}),   # ...and "Quran"
              "show": p.get("show", 8), "verses": p["verse_count"], "minutes": minutes(p),
              **{k: p[k] for k in ("group", "study_date", "read_along", "anim", "series") if p.get(k)}}
             for p in paths.values()]

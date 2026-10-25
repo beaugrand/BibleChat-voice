@@ -1,0 +1,787 @@
+{
+ "id": "quran-1-three-books",
+ "title": "Session 1: The three books",
+ "category": "Other Faiths",
+ "series": {
+  "id": "quran-and-the-bible",
+  "title": "What does the Quran say about the Bible?",
+  "of": 8,
+  "session": 1
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "light",
+  "x": 50,
+  "y": 20,
+  "s": 40
+ },
+ "opening_question": "The Quran names three books that came before it: the Torah, the Psalms and the Gospel. What does the Bible itself say about the law Moses wrote, the psalms of David and the gospel of Jesus?",
+ "required_refs": [
+  "Deuteronomy 31:24-26",
+  "Psalms 1:2",
+  "Luke 24:44"
+ ],
+ "words": [
+  "H8451",
+  "H2158",
+  "G2098",
+  "G5568"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "The Quran says the Torah and the Gospel were sent down before it. What did Moses do with the words of the law, and where was the book put?",
+   "refs": [
+    "Deuteronomy 31:24-26"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 3:3-4",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "he hath sent down unto thee the book of the Koran with truth, confirming that which was revealed before it; for he had formerly sent down the law, and the gospel a direction unto men; and he had also sent down the distinction between good and evil. Verily those who believe not the signs of GOD shall suffer a grievous punishment; for GOD is mighty, able to revenge."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "He hath revealed unto thee (Muhammad) the Scripture with truth, confirming that which was (revealed) before it, even as He revealed the Torah and the Gospel aforetime, for a guidance to mankind; and hath revealed the Criterion (of right and wrong). Lo! those who disbelieve the revelations of Allah, theirs will be a heavy doom. Allah is Mighty, Able to Requite (the wrong)."
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "H8451",
+     "H5612"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Hebrew word torah means \"a precept or statute\"; the King James Version translates it \"law\".",
+     "refs": [
+      "Deuteronomy 31:24"
+     ],
+     "strongs": [
+      "H8451"
+     ]
+    },
+    {
+     "text": "Sale (1734) calls the Torah \"the law\"; Pickthall (1930) keeps its name, \"the Torah\". Deuteronomy says Moses wrote it \"in a book\" and it was kept beside the ark.",
+     "refs": [
+      "Deuteronomy 31:24-26"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran says the Psalms were given to David. What does David say about the words he spoke, and what does Psalm 1 say about the law?",
+   "refs": [
+    "2 Samuel 23:1-2",
+    "Psalms 1:1-3"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 4:163",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "Verily we have revealed our will unto thee, as we have revealed it unto Noah and the prophets who succeeded him; and as we revealed it unto Abraham, and Ismael, and Isaac, and Jacob, and the tribes, and unto Jesus, and Job, and Jonas, and Aaron, and Solomon; and we have given thee the Koran, as we gave the psalms unto David:"
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "Lo! We inspire thee as We inspired Noah and the prophets after him, as We inspired Abraham and Ishmael and Isaac and Jacob and the tribes, and Jesus and Job and Jonah and Aaron and Solomon, and as We imparted unto David the Psalms;"
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2158",
+     "H7307",
+     "H8451"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Psalmist\" in 2 Samuel 23:1 is zamir: \"a song to be accompanied with instrumental music\".",
+     "refs": [
+      "2 Samuel 23:1"
+     ],
+     "strongs": [
+      "H2158"
+     ]
+    },
+    {
+     "text": "David says \"his word was in my tongue\": the Spirit of the LORD spoke by him.",
+     "refs": [
+      "2 Samuel 23:2"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran says the Torah has \"guidance and a light\". What does the Bible call God's word and his law?",
+   "refs": [
+    "Psalms 119:105",
+    "Proverbs 6:23"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 5:44",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "We have surely sent down the law, containing direction, and light: thereby did the prophets, who professed the true religion, judge those who judaized; and the doctors and priests also judged by the book of GOD, which had been committed to their custody; and they were witnesses thereof. Therefore fear not men, but fear me; neither sell my signs for a small price. And whoso judgeth not according to what GOD hath revealed, they are infidels."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "Lo! We did reveal the Torah, wherein is guidance and a light, by which the prophets who surrendered (unto Allah) judged the Jews, and the rabbis and the priests (judged) by such of Allah's Scripture as they were bidden to observe, and thereunto were they witnesses. So fear not mankind, but fear Me. And barter not My revelations for a little gain. Whoso judgeth not by that which Allah hath revealed: such are disbelievers."
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5216",
+     "H216"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Psalm 119:105 uses ner, \"a lamp\", and or, light: \"Thy word is a lamp unto my feet\".",
+     "refs": [
+      "Psalms 119:105"
+     ],
+     "strongs": [
+      "H5216",
+      "H216"
+     ]
+    },
+    {
+     "text": "Sale's Quran says the law holds \"direction, and light\"; Proverbs 6:23 says \"the law is light\".",
+     "refs": [
+      "Proverbs 6:23"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran says Jesus was given the Gospel, \"wherein is guidance and a light\". How does Mark begin, and what did Jesus preach?",
+   "refs": [
+    "Mark 1:1",
+    "Mark 1:14-15"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 5:46",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "We also caused Jesus the son of Mary to follow the footsteps of the prophets, confirming the law which was sent down before him; and we gave him the gospel, containing direction and light; confirming also the law which was given before it, and a direction and admonition unto those who fear God:"
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "And We caused Jesus, son of Mary, to follow in their footsteps, confirming that which was (revealed) before him, and We bestowed on him the Gospel wherein is guidance and a light, confirming that which was (revealed) before it in the Torah - a guidance and an admonition unto those who ward off (evil)."
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2098",
+     "G3340"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Gospel is euangelion: \"a good message\". Mark uses it for the message about Jesus, \"the gospel of Jesus Christ, the Son of God\", and for what Jesus preached, \"the gospel of the kingdom of God\".",
+     "refs": [
+      "Mark 1:1",
+      "Mark 1:14"
+     ],
+     "strongs": [
+      "G2098"
+     ]
+    },
+    {
+     "text": "In the Quran the Gospel (Injil) is a book given to Jesus. In the New Testament \"the gospel\" is the good news Jesus preached and the good news about him; the four accounts of his life were later called the Gospels.",
+     "refs": [
+      "Mark 1:1",
+      "Mark 1:15"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "After he rose, Jesus named the parts of Scripture that speak of him. Which three does he name, and what did he open?",
+   "refs": [
+    "Luke 24:44-45"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3551",
+     "G5568",
+     "G1124"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Quran names the Torah, the Psalms and the Gospel. Jesus names \"the law of Moses, and in the prophets, and in the psalms\": the Hebrew Scriptures in three parts.",
+     "refs": [
+      "Luke 24:44"
+     ]
+    },
+    {
+     "text": "Psalm is psalmos: \"a set piece of music, i.e. a sacred ode\"; it can mean \"the book of the Psalms\".",
+     "refs": [
+      "Luke 24:44"
+     ],
+     "strongs": [
+      "G5568"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says Moses \"had made an end of writing the words of this law in a book\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Deuteronomy 31:24"
+   ],
+   "signals": {
+    "xref": 6,
+    "votes": 23,
+    "word": "H8451",
+    "word_count": 5,
+    "differ": 0.369,
+    "quoted": null
+   },
+   "why": [
+    "6 cross-references point here",
+    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+   ],
+   "score": 0.4767
+  },
+  {
+   "q": "In Deuteronomy 31:26, where was the book of the law to be put?",
+   "type": "multiple_choice",
+   "options": [
+    "In the side of the ark of the covenant",
+    "On top of Mount Sinai",
+    "In the king's house",
+    "In the gate of the city"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Deuteronomy 31:26"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "ark"
+   },
+   "signals": {
+    "xref": 11,
+    "votes": 45,
+    "word": "H8451",
+    "word_count": 5,
+    "differ": 0.367,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+   ],
+   "score": 0.525
+  },
+  {
+   "q": "Fill in the word: \"Take this book of the ___\"",
+   "type": "fill_word",
+   "ref": "Deuteronomy 31:26",
+   "bible": "KJV",
+   "word": "law",
+   "answer_refs": [
+    "Deuteronomy 31:26"
+   ],
+   "signals": {
+    "xref": 11,
+    "votes": 45,
+    "word": "H8451",
+    "word_count": 5,
+    "differ": 0.367,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+   ],
+   "score": 0.525
+  },
+  {
+   "q": "Which translation says \"Yahweh's law\" in Psalm 1:2?",
+   "type": "which_translation",
+   "ref": "Psalms 1:2",
+   "bible": "ETH",
+   "phrase": "Yahweh's law",
+   "answer_refs": [
+    "Psalms 1:2"
+   ],
+   "signals": {
+    "xref": 40,
+    "votes": 508,
+    "word": "H8451",
+    "word_count": 5,
+    "differ": 0.31,
+    "quoted": null
+   },
+   "why": [
+    "40 cross-references point here",
+    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+   ],
+   "score": 0.6733
+  },
+  {
+   "q": "Which verse calls David \"the sweet psalmist of Israel\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Samuel 23:1"
+   ],
+   "signals": {
+    "xref": 4,
+    "votes": 20,
+    "word": "H2158",
+    "word_count": 1,
+    "differ": 0.288,
+    "quoted": null
+   },
+   "why": [
+    "4 cross-references point here"
+   ],
+   "score": 0.3297
+  },
+  {
+   "q": "Fill in the word: \"The Spirit of the LORD spake by me, and his ___ was in my tongue\"",
+   "type": "fill_word",
+   "ref": "2 Samuel 23:2",
+   "bible": "KJV",
+   "word": "word",
+   "answer_refs": [
+    "2 Samuel 23:2"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 175,
+    "word": "H7307",
+    "word_count": 1,
+    "differ": 0.447,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here"
+   ],
+   "score": 0.5291
+  },
+  {
+   "q": "In Psalm 1:2, when does the blessed man meditate in God's law?",
+   "type": "multiple_choice",
+   "options": [
+    "Day and night",
+    "Only on the sabbath",
+    "Once a year",
+    "At the feasts"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Psalms 1:2"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "night"
+   },
+   "signals": {
+    "xref": 40,
+    "votes": 508,
+    "word": "H8451",
+    "word_count": 5,
+    "differ": 0.31,
+    "quoted": null
+   },
+   "why": [
+    "40 cross-references point here",
+    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+   ],
+   "score": 0.6733
+  },
+  {
+   "q": "In Psalm 1:3, what is the man who delights in the law like?",
+   "type": "multiple_choice",
+   "options": [
+    "A tree planted by the rivers of water",
+    "A house built on the sand",
+    "A lion in the forest",
+    "A ship on the sea"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Psalms 1:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "tree"
+   },
+   "signals": {
+    "xref": 51,
+    "votes": 608,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.483,
+    "quoted": null
+   },
+   "why": [
+    "51 cross-references point here"
+   ],
+   "score": 0.5707
+  },
+  {
+   "q": "Which verse says \"Thy word is a lamp unto my feet\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 119:105"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 190,
+    "word": "H5216",
+    "word_count": 2,
+    "differ": 0.249,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here",
+    "The Hebrew word nîyr (H5216) is in 2 verses of this path"
+   ],
+   "score": 0.5149
+  },
+  {
+   "q": "Fill in the word: \"and the law is ___\"",
+   "type": "fill_word",
+   "ref": "Proverbs 6:23",
+   "bible": "KJV",
+   "word": "light",
+   "answer_refs": [
+    "Proverbs 6:23"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 422,
+    "word": "H8451",
+    "word_count": 5,
+    "differ": 0.211,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here",
+    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+   ],
+   "score": 0.6486
+  },
+  {
+   "q": "In Proverbs 6:23, what is the commandment?",
+   "type": "multiple_choice",
+   "options": [
+    "A lamp",
+    "A sword",
+    "A burden",
+    "A rock"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Proverbs 6:23"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "lamp"
+   },
+   "signals": {
+    "xref": 26,
+    "votes": 422,
+    "word": "H8451",
+    "word_count": 5,
+    "differ": 0.211,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here",
+    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+   ],
+   "score": 0.6486
+  },
+  {
+   "q": "Which verse says \"The beginning of the gospel of Jesus Christ, the Son of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Mark 1:1"
+   ],
+   "signals": {
+    "xref": 9,
+    "votes": 47,
+    "word": "G2098",
+    "word_count": 3,
+    "differ": 0.306,
+    "quoted": null
+   },
+   "why": [
+    "9 cross-references point here",
+    "The Greek word euangélion (G2098) is in 3 verses of this path"
+   ],
+   "score": 0.4546
+  },
+  {
+   "q": "In Mark 1:15, what did Jesus tell the people to believe?",
+   "type": "multiple_choice",
+   "options": [
+    "The gospel",
+    "The elders",
+    "A sign from heaven",
+    "The scribes"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Mark 1:15"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "gospel"
+   },
+   "signals": {
+    "xref": 17,
+    "votes": 210,
+    "word": "G2098",
+    "word_count": 3,
+    "differ": 0.471,
+    "quoted": null
+   },
+   "why": [
+    "17 cross-references point here",
+    "The Greek word euangélion (G2098) is in 3 verses of this path"
+   ],
+   "score": 0.607
+  },
+  {
+   "q": "Which translation says \"believe in the Good News\" in Mark 1:15?",
+   "type": "which_translation",
+   "ref": "Mark 1:15",
+   "bible": "ETH",
+   "phrase": "believe in the Good News",
+   "answer_refs": [
+    "Mark 1:15"
+   ],
+   "signals": {
+    "xref": 17,
+    "votes": 210,
+    "word": "G2098",
+    "word_count": 3,
+    "differ": 0.471,
+    "quoted": null
+   },
+   "why": [
+    "17 cross-references point here",
+    "The Greek word euangélion (G2098) is in 3 verses of this path"
+   ],
+   "score": 0.607
+  },
+  {
+   "q": "Which verse names \"the law of Moses, and in the prophets, and in the psalms\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 24:44"
+   ],
+   "signals": {
+    "xref": 48,
+    "votes": 313,
+    "word": "G3551",
+    "word_count": 1,
+    "differ": 0.356,
+    "quoted": null
+   },
+   "why": [
+    "48 cross-references point here"
+   ],
+   "score": 0.5498
+  },
+  {
+   "q": "In Luke 24:45, what did Jesus open?",
+   "type": "multiple_choice",
+   "options": [
+    "Their understanding",
+    "The temple doors",
+    "The scroll of Isaiah",
+    "The tomb"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 24:45"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "understanding"
+   },
+   "signals": {
+    "xref": 44,
+    "votes": 312,
+    "word": "G1124",
+    "word_count": 1,
+    "differ": 0.321,
+    "quoted": null
+   },
+   "why": [
+    "44 cross-references point here"
+   ],
+   "score": 0.5408
+  },
+  {
+   "q": "Which translation says \"written about Me\" in Luke 24:44?",
+   "type": "which_translation",
+   "ref": "Luke 24:44",
+   "bible": "BSB",
+   "phrase": "written about Me",
+   "answer_refs": [
+    "Luke 24:44"
+   ],
+   "signals": {
+    "xref": 48,
+    "votes": 313,
+    "word": "G3551",
+    "word_count": 1,
+    "differ": 0.356,
+    "quoted": null
+   },
+   "why": [
+    "48 cross-references point here"
+   ],
+   "score": 0.5498
+  },
+  {
+   "q": "Pickthall's Quran (5:44) says the Torah has \"guidance and a light\". Which verse says \"the law is light\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Proverbs 6:23"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 422,
+    "word": "H8451",
+    "word_count": 5,
+    "differ": 0.211,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here",
+    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+   ],
+   "score": 0.6486
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
+  "TS2009 (read-along link only)"
+ ],
+ "verse_count": 15,
+ "outside_sources": [
+  {
+   "name": "George Sale (1734)",
+   "about": "The first English translation made directly from the Arabic. Sale was a Christian scholar. He did not number the verses; the numbers here are the standard ones.",
+   "source": "Project Gutenberg eBook #7440 (public domain)",
+   "url": "https://www.gutenberg.org/ebooks/7440"
+  },
+  {
+   "name": "Marmaduke Pickthall (1930)",
+   "about": "The first English translation by an English Muslim, read by scholars in Cairo before it was printed. Public domain in the US (published 1930) and wherever the term is life plus 70 years (Pickthall died in 1936).",
+   "source": "The 1930 London printing (George Allen & Unwin), checked word for word; text from Tanzil.net with its slips corrected",
+   "url": "https://archive.org/details/dli.csl.3756"
+  }
+ ],
+ "image": "img/quran-1-three-books.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/quran-1-three-books.json",
+  "sha": "d86ad557792d77c7",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

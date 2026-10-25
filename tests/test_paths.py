@@ -203,6 +203,61 @@ class PathPagesTest(unittest.TestCase):
                 series.setdefault(x["series"]["id"], []).append(x["series"]["session"])
         self.assertEqual(sorted(series["mirror-prophecies"]), list(range(1, 8)))
 
+    def test_quran_and_the_bible_series(self):
+        # "What does the Quran say about the Bible?": 8 sessions in Other Faiths; the Quran's words in their own box,
+        # labelled "not Scripture", in Sale (1734) and Pickthall (1930) side by side; every answer still a Bible verse
+        sys.path.insert(0, os.path.join(ROOT, "packaging")); import build_outside as bo
+        lib = bo.load_library()["Quran"]
+        self.assertIn("not Scripture", lib["label"])
+        self.assertEqual([t["name"] for t in lib["translations"]], ["George Sale (1734)", "Marmaduke Pickthall (1930)"])
+        for r in ("3:3-4", "5:47", "10:94", "4:157-158", "112:1-4", "29:46"):
+            self.assertIn(r, lib["passages"])
+        self.assertIn("One God", lib["passages"]["4:171"]["pickthall"])         # the 1930 printing, not Tanzil's "One Allah"
+        self.assertIn("barter not", lib["passages"]["5:44"]["pickthall"])
+        mine = sorted((load(f) for f in SOURCES if load(f).get("series", {}).get("id") == "quran-and-the-bible"), key=lambda p: p["series"]["session"])
+        self.assertEqual([p["series"]["session"] for p in mine], list(range(1, 9)))
+        boxes = 0
+        for p in mine:
+            self.assertEqual(p["category"], "Other Faiths"); self.assertEqual(len(p["quiz"]), 18)
+            built = load(os.path.join(bp.OUT_DIR, p["id"] + ".json"))
+            self.assertEqual([o["name"] for o in built["outside_sources"]], ["George Sale (1734)", "Marmaduke Pickthall (1930)"])
+            for s in built["steps"]:
+                for b in s.get("outside", []):
+                    boxes += 1
+                    self.assertTrue(b["ref"].startswith("Quran ")); self.assertIn("not Scripture", b["label"])
+                    self.assertEqual(len(b["texts"]), 2); self.assertTrue(all(t["text"] for t in b["texts"]))
+            for q in built["quiz"]:                                                # answers are Bible verses only
+                self.assertTrue(all(not r.startswith("Quran") for r in q["answer_refs"]))
+        self.assertGreaterEqual(boxes, 20)
+        for r in ("Isaiah 8:20", "Galatians 1:8"): self.assertIn(r, mine[1]["required_refs"])
+        for r in ("Psalms 2:7", "Matthew 16:16", "John 1:14", "Deuteronomy 6:4"): self.assertIn(r, mine[5]["required_refs"])
+        js = read("web", "paths.js")
+        for part in ("function outsideBoxes(", 'class="pv-outside"', "pv-ocols", "📖 The Bible", 'T("Not Scripture.")', "outside_sources", '"Other Faiths"'):
+            self.assertIn(part, js)
+
+    def test_outside_words_are_refused_when_wrong(self):
+        need_full_texts(self)
+        B = bibles()
+        good = load(os.path.join(bp.SRC_DIR, "quran-3-judge-by-the-gospel.json"))
+        def broken(change):
+            p = copy.deepcopy(good); change(p)
+            with self.assertRaises(bp.PathError):
+                bp.check_path(p, B, "quran-3-judge-by-the-gospel")
+        broken(lambda p: p["steps"][0].update(outside=["Quran 5:999"]))                   # a passage nobody checked
+        broken(lambda p: p["steps"][0].update(question='The Quran says "the Gospel was lost". What does John say?'))   # a made-up quote
+        broken(lambda p: p["quiz"][0].update(answer_refs=["Quran 5:47"]))                  # the answer must be a Bible verse
+        bp.check_path(copy.deepcopy(good), B, "quran-3-judge-by-the-gospel")
+        import tempfile
+        sys.path.insert(0, os.path.join(ROOT, "packaging")); import build_outside as bo
+        tmp = tempfile.gettempdir()
+        if all(os.path.exists(os.path.join(tmp, n)) for n in bo.FILES):              # the word-for-word check against the sources
+            lib, texts = bo.load_library(), bo.fetch(tmp)
+            self.assertGreaterEqual(bo.check(lib, texts), 30)
+            bad = copy.deepcopy(lib); bad["Quran"]["passages"]["5:47"]["sale"] += " and the gospel was lost"
+            with self.assertRaises(bo.OutsideError): bo.check(bad, texts)
+            bad = copy.deepcopy(lib); bad["Quran"]["passages"]["4:171"]["pickthall"] = bad["Quran"]["passages"]["4:171"]["pickthall"].replace("a messenger", "a prophet")
+            with self.assertRaises(bo.OutsideError): bo.check(bad, texts)
+
     def test_listen_on_every_study_path_screen(self):
         js = read("web", "paths.js")
         for part in ('data-ls="step"', 'data-ls="quiz"', "🔊 Listen to this step", "🔊 Listen to the questions", "lsSegments", "lsStart", "lsPause",

@@ -1,0 +1,223 @@
+{
+ "work": "quran",
+ "name": "Quran",
+ "title": "The Quran",
+ "label": "From the Quran: not Scripture",
+ "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+ "translations": [
+  {
+   "key": "sale",
+   "name": "George Sale (1734)",
+   "about": "The first English translation made directly from the Arabic. Sale was a Christian scholar. He did not number the verses; the numbers here are the standard ones.",
+   "source": "Project Gutenberg eBook #7440 (public domain)",
+   "url": "https://www.gutenberg.org/ebooks/7440"
+  },
+  {
+   "key": "pickthall",
+   "name": "Marmaduke Pickthall (1930)",
+   "about": "The first English translation by an English Muslim, read by scholars in Cairo before it was printed. Public domain in the US (published 1930) and wherever the term is life plus 70 years (Pickthall died in 1936).",
+   "source": "The 1930 London printing (George Allen & Unwin), checked word for word; text from Tanzil.net with its slips corrected",
+   "url": "https://archive.org/details/dli.csl.3756"
+  }
+ ],
+ "passages": [
+  {
+   "ref": "3:3-4",
+   "sale": "he hath sent down unto thee the book of the Koran with truth, confirming that which was revealed before it; for he had formerly sent down the law, and the gospel a direction unto men; and he had also sent down the distinction between good and evil. Verily those who believe not the signs of GOD shall suffer a grievous punishment; for GOD is mighty, able to revenge.",
+   "pickthall": "He hath revealed unto thee (Muhammad) the Scripture with truth, confirming that which was (revealed) before it, even as He revealed the Torah and the Gospel aforetime, for a guidance to mankind; and hath revealed the Criterion (of right and wrong). Lo! those who disbelieve the revelations of Allah, theirs will be a heavy doom. Allah is Mighty, Able to Requite (the wrong).",
+   "pickthall_1930": [
+    {
+     "tanzil": "Gospel. Aforetime",
+     "1930": "Gospel aforetime"
+    }
+   ]
+  },
+  {
+   "ref": "4:163",
+   "sale": "Verily we have revealed our will unto thee, as we have revealed it unto Noah and the prophets who succeeded him; and as we revealed it unto Abraham, and Ismael, and Isaac, and Jacob, and the tribes, and unto Jesus, and Job, and Jonas, and Aaron, and Solomon; and we have given thee the Koran, as we gave the psalms unto David:",
+   "pickthall": "Lo! We inspire thee as We inspired Noah and the prophets after him, as We inspired Abraham and Ishmael and Isaac and Jacob and the tribes, and Jesus and Job and Jonah and Aaron and Solomon, and as We imparted unto David the Psalms;"
+  },
+  {
+   "ref": "5:44",
+   "sale": "We have surely sent down the law, containing direction, and light: thereby did the prophets, who professed the true religion, judge those who judaized; and the doctors and priests also judged by the book of GOD, which had been committed to their custody; and they were witnesses thereof. Therefore fear not men, but fear me; neither sell my signs for a small price. And whoso judgeth not according to what GOD hath revealed, they are infidels.",
+   "pickthall": "Lo! We did reveal the Torah, wherein is guidance and a light, by which the prophets who surrendered (unto Allah) judged the Jews, and the rabbis and the priests (judged) by such of Allah's Scripture as they were bidden to observe, and thereunto were they witnesses. So fear not mankind, but fear Me. And barter not My revelations for a little gain. Whoso judgeth not by that which Allah hath revealed: such are disbelievers.",
+   "pickthall_1930": [
+    {
+     "tanzil": "And My revelations",
+     "1930": "And barter not My revelations"
+    }
+   ]
+  },
+  {
+   "ref": "5:46",
+   "sale": "We also caused Jesus the son of Mary to follow the footsteps of the prophets, confirming the law which was sent down before him; and we gave him the gospel, containing direction and light; confirming also the law which was given before it, and a direction and admonition unto those who fear God:",
+   "pickthall": "And We caused Jesus, son of Mary, to follow in their footsteps, confirming that which was (revealed) before him, and We bestowed on him the Gospel wherein is guidance and a light, confirming that which was (revealed) before it in the Torah - a guidance and an admonition unto those who ward off (evil).",
+   "pickthall_1930": [
+    {
+     "tanzil": "before him in the Torah, and",
+     "1930": "before him, and"
+    }
+   ]
+  },
+  {
+   "ref": "5:47",
+   "sale": "that they who have received the gospel might judge according to what GOD hath revealed therein: and whoso judgeth not according to what GOD hath revealed, they are transgressors.",
+   "pickthall": "Let the People of the Gospel judge by that which Allah hath revealed therein. Whoso judgeth not by that which Allah hath revealed: such are evil-livers."
+  },
+  {
+   "ref": "5:48",
+   "sale": "We have also sent down unto thee the book of the Koran with truth, confirming that scripture which was revealed before it; and preserving the same safe from corruption. Judge therefore between them according to that which GOD hath revealed; and follow not their desires, by swerving from the truth which hath come unto thee. Unto every of you have we given a law, and an open path; and if GOD had pleased, he had surely made you one people; but he hath thought fit to give you different laws, that he might try you in that which he hath given you respectively. Therefore strive to excel each other in good works: unto GOD shall ye all return, and then will he declare unto you that concerning which ye have disagreed.",
+   "pickthall": "And unto thee have We revealed the Scripture with the truth, confirming whatever Scripture was before it, and a watcher over it. So judge between them by that which Allah hath revealed, and follow not their desires away from the truth which hath come unto thee. For each We have appointed a divine law and a traced-out way. Had Allah willed He could have made you one community. But that He may try you by that which He hath given you (He hath made you as ye are). So vie one with another in good works. Unto Allah ye will all return, and He will then inform you of that wherein ye differ."
+  },
+  {
+   "ref": "2:41",
+   "sale": "…and believe in the revelation which I have sent down, confirming that which is with you, and be not the first who believe not therein, neither exchange my signs for a small price; and fear me.",
+   "pickthall": "And believe in that which I reveal, confirming that which ye possess already (of the Scripture), and be not first to disbelieve therein, and part not with My revelations for a trifling price, and keep your duty unto Me."
+  },
+  {
+   "ref": "10:37",
+   "sale": "This Koran could not have been composed by any except GOD; but it is a confirmation of that which was revealed before it, and an explanation of the scripture; there is no doubt thereof; sent down from the LORD of all creatures.",
+   "pickthall": "And this Qur'an is not such as could ever be invented in despite of Allah; but it is a confirmation of that which was before it and an exposition of that which is decreed for mankind - Therein is no doubt - from the Lord of the Worlds."
+  },
+  {
+   "ref": "5:68",
+   "sale": "Say, O ye who have received the scriptures, ye are not grounded on anything, until ye observe the law and the gospel and that which hath been sent down unto you from your LORD. That which hath been sent down unto thee from thy LORD will surely increase the transgression and infidelity of many of them: but be not thou solicitous for the unbelieving people.",
+   "pickthall": "Say O People of the Scripture! Ye have naught (of guidance) till ye observe the Torah and the Gospel and that which was revealed unto you from your Lord. That which is revealed unto thee (Muhammad) from thy Lord is certain to increase the contumacy and disbelief of many of them. But grieve not for the disbelieving folk."
+  },
+  {
+   "ref": "10:94",
+   "sale": "If thou art in a doubt concerning any part of that which we have sent down unto thee, ask them who have read the book of the law before thee. Now hath the truth come unto thee from thy LORD; be not therefore one of those who doubt;",
+   "pickthall": "And if thou (Muhammad) art in doubt concerning that which We reveal unto thee, then question those who read the Scripture (that was) before thee. Verily the Truth from thy Lord hath come unto thee. So be not thou of the waverers."
+  },
+  {
+   "ref": "6:115",
+   "sale": "The words of thy LORD are perfect, in truth and justice; there is none who can change his words: he both heareth and knoweth.",
+   "pickthall": "Perfected is the Word of thy Lord in truth and justice. There is naught that can change His words. He is the Hearer, the Knower."
+  },
+  {
+   "ref": "18:27",
+   "sale": "Read that which hath been revealed unto thee, of the book of thy LORD, without presuming to make any change therein: there is none who hath power to change his words; and thou shalt not find any to fly to, besides him, if thou attempt it.",
+   "pickthall": "And recite that which hath been revealed unto thee of the Scripture of thy Lord. There is none who can change His words, and thou wilt find no refuge beside Him."
+  },
+  {
+   "ref": "2:75",
+   "sale": "Do ye therefore desire that the Jews should believe you? yet a part of them heard the word of GOD, and then perverted it, after they had understood it, against their own conscience.",
+   "pickthall": "Have ye any hope that they will be true to you when a party of them used to listen to the word of Allah, then used to change it, after they had understood it, knowingly?"
+  },
+  {
+   "ref": "2:79",
+   "sale": "…And woe unto them, who transcribe corruptly the book of the law with their hands, and then say, This is from GOD: that they may sell it for a small price. Therefore woe unto them because of that which their hands have written; and woe unto them for that which they have gained.",
+   "pickthall": "Therefore woe be unto those who write the Scripture with their hands and then say, \"This is from Allah,\" that they may purchase a small gain therewith. Woe unto them for that their hands have written, and woe unto them for that they earn thereby."
+  },
+  {
+   "ref": "3:78",
+   "sale": "And there are certainly some of them who read the scriptures perversely, that ye may think what they read to be really in the scriptures, yet it is not in the scripture; and they say, This is from GOD; but it is not from GOD: and they speak that which is false concerning GOD, against their own knowledge.",
+   "pickthall": "And lo! there is a party of them who distort the Scripture with their tongues, that ye may think that what they say is from the Scripture, when it is not from the Scripture. And they say: It is from Allah, when it is not from Allah; and they speak a lie concerning Allah knowingly."
+  },
+  {
+   "ref": "4:46",
+   "sale": "Of the Jews there are some who pervert words from their places; and say, We have heard, and have disobeyed; and do thou hear without understanding our meaning, and look upon us: perplexing with their tongues, and reviling the true religion. But if they had said, We have heard, and do obey; and do thou hear, and regard us: certainly it were better for them, and more right. But GOD hath cursed them by reason of their infidelity; therefore a few of them only shall believe.",
+   "pickthall": "Some of those who are Jews change words from their context and say: \"We hear and disobey; hear thou as one who heareth not\" and \"Listen to us!\" distorting with their tongues and slandering religion. If they had said: \"We hear and we obey: hear thou, and look at us\" it had been better for them, and more upright. But Allah hath cursed them for their disbelief, so they believe not, save a few."
+  },
+  {
+   "ref": "5:13",
+   "sale": "Wherefore because they have broken their covenant, we have cursed them, and hardened their hearts; they dislocate the words of the Pentateuch from their places, and have forgotten part of what they were admonished; and thou wilt not cease to discover deceitful practices among them, except a few of them. But forgive them, and pardon them, for GOD loveth the beneficent.",
+   "pickthall": "And because of their breaking their covenant, We have cursed them and made hard their hearts. They change words from their context and forget a part of that whereof they were admonished. Thou wilt not cease to discover treachery from all save a few of them. But bear with them and pardon them. Lo! Allah loveth the kindly."
+  },
+  {
+   "ref": "3:45-47",
+   "sale": "When the angels said; O Mary, verily GOD sendeth thee good tidings, that thou shalt bear the Word proceeding from himself; his name shall be CHRIST JESUS the son of Mary, honourable in this world and in the world to come, and one of those who approach near to the presence of GOD; and he shall speak unto men in the cradle, and when he is grown up; and he shall be one of the righteous: she answered, LORD, how shall I have a son, since a man hath not touched me? the angel said, So GOD createth that which he pleaseth: when he decreeth a thing, he only saith unto it, Be, and it is:",
+   "pickthall": "(And remember) when the angels said: O Mary! Lo! Allah giveth thee glad tidings of a word from him, whose name is the Messiah, Jesus, son of Mary, illustrious in the world and the Hereafter, and one of those brought near (unto Allah). He will speak unto mankind in his cradle and in his manhood, and he is of the righteous. She said: My Lord! How can I have a child when no mortal hath touched me? He said: So (it will be). Allah createth what He will. If He decreeth a thing, He saith unto it only: Be! and it is."
+  },
+  {
+   "ref": "19:30-34",
+   "sale": "Whereupon the child said, Verily I am the servant of GOD; he hath given me the book of the gospel, and hath appointed me a prophet. And he hath made me blessed, wheresoever I shall be; and hath commanded me to observe prayer, and to give alms, so long as I shall live; and he hath made me dutiful towards my mother, and hath not made me proud or unhappy. And peace be on me the day whereon I was born, and the day whereon I shall die, and the day whereon I shall be raised to life. This was JESUS, the son of Mary; the Word of truth, concerning whom they doubt.",
+   "pickthall": "He spake: Lo! I am the slave of Allah. He hath given me the Scripture and hath appointed me a Prophet, And hath made me blessed wheresoever I may be, and hath enjoined upon me prayer and almsgiving so long as I remain alive, And (hath made me) dutiful toward her who bore me, and hath not made me arrogant, unblest. Peace on me the day I was born, and the day I die, and the day I shall be raised alive! Such was Jesus, son of Mary: (this is) a statement of the truth concerning which they doubt."
+  },
+  {
+   "ref": "19:33",
+   "sale": "And peace be on me the day whereon I was born, and the day whereon I shall die, and the day whereon I shall be raised to life.",
+   "pickthall": "Peace on me the day I was born, and the day I die, and the day I shall be raised alive!"
+  },
+  {
+   "ref": "5:110",
+   "sale": "When GOD shall say, O Jesus son of Mary, remember my favor towards thee, and towards thy mother; when I strengthened thee with the holy spirit, that thou shouldest speak unto men in the cradle, and when thou wast grown up; and when I taught thee the scripture, and wisdom and the law, and the gospel: and when thou didst create of clay as it were the figure of a bird, by my permission, and didst breathe thereon, and it became a bird, by my permission, and thou didst heal one blind from his birth, and the leper, by my permission; and when thou didst bring forth the dead from their graves by my permission; and when I withheld the children of Israel from killing thee, when thou hadst come unto them with evident miracles, and such of them as believed not said, This is nothing but manifest sorcery.",
+   "pickthall": "When Allah saith: O Jesus, son of Mary! Remember My favour unto thee and unto thy mother; how I strengthened thee with the holy Spirit, so that thou spakest unto mankind in the cradle as in maturity; and how I taught thee the Scripture and Wisdom and the Torah and the Gospel; and how thou didst shape of clay as it were the likeness of a bird by My permission, and didst blow upon it and it was a bird by My permission, and thou didst heal him who was born blind and the leper by My permission; and how thou didst raise the dead by My permission; and how I restrained the Children of Israel from (harming) thee when thou camest unto them with clear proofs, and those of them who disbelieved exclaimed: This is naught else than mere magic;"
+  },
+  {
+   "ref": "4:171",
+   "sale": "O ye who have received the scriptures, exceed not the just bounds in your religion, neither say of GOD any other than the truth. Verily Christ Jesus the son of Mary is the apostle of GOD, and his Word, which he conveyed into Mary, and a spirit proceeding from him. Believe therefore in GOD, and his apostles, and say not, There are three Gods; forbear this; it will be better for you. GOD is but one GOD. Far be it from him that he should have a son! unto him belongeth whatever is in heaven and on earth; and GOD is a sufficient protector.",
+   "pickthall": "O People of the Scripture! Do not exaggerate in your religion nor utter aught concerning Allah save the truth. The Messiah, Jesus son of Mary, was only a messenger of Allah, and His word which He conveyed unto Mary, and a spirit from Him. So believe in Allah and His messengers, and say not \"Three\" - Cease! (it is) better for you! - Allah is only One God. Far is it removed from His Transcendent Majesty that He should have a son. His is all that is in the heavens and all that is in the earth. And Allah is sufficient as Defender.",
+   "pickthall_1930": [
+    {
+     "tanzil": "Allah is only One Allah",
+     "1930": "Allah is only One God"
+    }
+   ]
+  },
+  {
+   "ref": "5:116",
+   "sale": "And when GOD shall say unto Jesus, at the last day, O Jesus son of Mary, hast thou said unto men, Take me and my mother for two gods, beside GOD? He shall answer, Praise be unto thee! it is not for me to say that which I ought not; if I had said so, thou wouldest surely have known it: thou knowest what is in me, but I know not what is in thee; for thou art the knower of secrets.",
+   "pickthall": "And when Allah saith: O Jesus, son of Mary! Didst thou say unto mankind: Take me and my mother for two gods beside Allah? he saith: Be glorified! It was not mine to utter that to which I had no right. If I used to say it, then Thou knewest it. Thou knowest what is in my mind, and I know not what is in Thy Mind. Lo! Thou, only Thou, art the Knower of Things Hidden?"
+  },
+  {
+   "ref": "112:1-4",
+   "sale": "SAY, God is one GOD; the eternal GOD: he begetteth not, neither is he begotten: and there is not any one like unto him.",
+   "pickthall": "Say: He is Allah, the One! Allah, the eternally Besought of all! He begetteth not nor was begotten. And there is none comparable unto Him.",
+   "sale_fixes": [
+    {
+     "gutenberg": "be begetteth",
+     "1734": "he begetteth"
+    }
+   ]
+  },
+  {
+   "ref": "5:73",
+   "sale": "They are certainly infidels, who say, GOD is the third of three: for there is no GOD, besides one GOD; and if they refrain not from what they say, a painful torment shall surely be inflicted on such of them as are unbelievers.",
+   "pickthall": "They surely disbelieve who say: Lo! Allah is the third of three; when there is no God save the One God. If they desist not from so saying a painful doom will fall on those of them who disbelieve.",
+   "pickthall_1930": [
+    {
+     "tanzil": "there is no Allah save the One Allah",
+     "1930": "there is no God save the One God"
+    }
+   ]
+  },
+  {
+   "ref": "19:35",
+   "sale": "It is not meet for GOD, that he should have any son; GOD forbid! When he decreeth a thing, he only saith unto it, Be; and it is.",
+   "pickthall": "It befitteth not (the Majesty of) Allah that He should take unto Himself a son. Glory be to Him! When He decreeth a thing, He saith unto it only: Be! and it is."
+  },
+  {
+   "ref": "4:157-158",
+   "sale": "and have said, Verily we have slain Christ Jesus the son of Mary, the apostle of GOD; yet they slew him not, neither crucified him, but he was represented by one in his likeness; and verily they who disagreed concerning him were in a doubt as to this matter, and had no sure knowledge thereof, but followed only an uncertain opinion. They did not really kill him; but GOD took him up unto himself: and GOD is mighty and wise.",
+   "pickthall": "And because of their saying: We slew the Messiah, Jesus son of Mary, Allah's messenger - they slew him not nor crucified, but it appeared so unto them; and lo! those who disagree concerning it are in doubt thereof; they have no knowledge thereof save pursuit of a conjecture; they slew him not for certain. But Allah took him up unto Himself. Allah was ever Mighty, Wise.",
+   "pickthall_1930": [
+    {
+     "tanzil": "nor crucified him,",
+     "1930": "nor crucified,"
+    }
+   ]
+  },
+  {
+   "ref": "3:55",
+   "sale": "When GOD said, O Jesus, verily I will cause thee to die, and I will take thee up unto me, and I will deliver thee from the unbelievers; and I will place those who follow thee above the unbelievers, until the day of resurrection: then unto me shall ye return, and I will judge between you of that concerning which ye disagree.",
+   "pickthall": "(And remember) when Allah said: O Jesus! Lo! I am gathering thee and causing thee to ascend unto Me, and am cleansing thee of those who disbelieve and am setting those who follow thee above those who disbelieve until the Day of Resurrection. Then unto Me ye will (all) return, and I shall judge between you as to that wherein ye used to differ."
+  },
+  {
+   "ref": "2:136",
+   "sale": "Say, We believe in GOD, and that which hath been sent down unto us, and that which hath been sent down unto Abraham, and Ismael, and Isaac, and Jacob, and the tribes, and that which was delivered unto Moses, and Jesus, and that which was delivered unto the prophets from their LORD: We make no distinction between any of them, and to GOD are we resigned.",
+   "pickthall": "Say (O Muslims): We believe in Allah and that which is revealed unto us and that which was revealed unto Abraham, and Ishmael, and Isaac, and Jacob, and the tribes, and that which Moses and Jesus received, and that which the prophets received from their Lord. We make no distinction between any of them, and unto Him we have surrendered."
+  },
+  {
+   "ref": "29:46",
+   "sale": "Dispute not against those who have received the scriptures, unless in the mildest manner; except against such of them as behave injuriously towards you: and say, We believe in the revelation which hath been sent down unto us, and also in that which hath been sent down unto you; our GOD and your GOD is one, and unto him are we resigned.",
+   "pickthall": "And argue not with the People of the Scripture unless it be in (a way) that is better, save with such of them as do wrong; and say: We believe in that which hath been revealed unto us and revealed unto you; our God and your God is One, and unto Him we surrender.",
+   "pickthall_1930": [
+    {
+     "tanzil": "our Allah and your Allah is One",
+     "1930": "our God and your God is One"
+    }
+   ]
+  }
+ ]
+}

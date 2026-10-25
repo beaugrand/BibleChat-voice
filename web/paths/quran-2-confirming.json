@@ -1,0 +1,784 @@
+{
+ "id": "quran-2-confirming",
+ "title": "Session 2: Confirming what came before",
+ "category": "Other Faiths",
+ "series": {
+  "id": "quran-and-the-bible",
+  "title": "What does the Quran say about the Bible?",
+  "of": 8,
+  "session": 2
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "stars"
+ },
+ "opening_question": "The Quran calls itself a confirmation of the Scripture before it and a guardian over it. The Bible gives its own tests for any later message. What are those tests, and how would you use them?",
+ "required_refs": [
+  "Isaiah 8:20",
+  "Deuteronomy 13:1-5",
+  "Galatians 1:8",
+  "1 John 4:1"
+ ],
+ "words": [
+  "H8584",
+  "H226",
+  "G331",
+  "G1381"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "The Quran says it confirms the Scripture before it and is \"a watcher over it\". What test does Isaiah give for any voice that claims to speak for God?",
+   "refs": [
+    "Isaiah 8:19-20"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 5:48",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "We have also sent down unto thee the book of the Koran with truth, confirming that scripture which was revealed before it; and preserving the same safe from corruption. Judge therefore between them according to that which GOD hath revealed; and follow not their desires, by swerving from the truth which hath come unto thee. Unto every of you have we given a law, and an open path; and if GOD had pleased, he had surely made you one people; but he hath thought fit to give you different laws, that he might try you in that which he hath given you respectively. Therefore strive to excel each other in good works: unto GOD shall ye all return, and then will he declare unto you that concerning which ye have disagreed."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "And unto thee have We revealed the Scripture with the truth, confirming whatever Scripture was before it, and a watcher over it. So judge between them by that which Allah hath revealed, and follow not their desires away from the truth which hath come unto thee. For each We have appointed a divine law and a traced-out way. Had Allah willed He could have made you one community. But that He may try you by that which He hath given you (He hath made you as ye are). So vie one with another in good works. Unto Allah ye will all return, and He will then inform you of that wherein ye differ."
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "H8451",
+     "H8584"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Testimony is te'udah: \"attestation\". Isaiah sends every voice back \"To the law and to the testimony\".",
+     "refs": [
+      "Isaiah 8:20"
+     ],
+     "strongs": [
+      "H8584"
+     ]
+    },
+    {
+     "text": "Sale words 5:48 \"preserving the same safe from corruption\"; Pickthall, \"a watcher over it\". In both, the Quran guards the books before it.",
+     "refs": [
+      "Isaiah 8:20"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran asks the children of Israel to believe what confirms \"that which ye possess already\". By what test did Moses tell Israel to judge a prophet, even one whose sign comes to pass?",
+   "refs": [
+    "Deuteronomy 13:1-5"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 2:41",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "…and believe in the revelation which I have sent down, confirming that which is with you, and be not the first who believe not therein, neither exchange my signs for a small price; and fear me."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "And believe in that which I reveal, confirming that which ye possess already (of the Scripture), and be not first to disbelieve therein, and part not with My revelations for a trifling price, and keep your duty unto Me."
+      }
+     ]
+    },
+    {
+     "ref": "Quran 10:37",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "This Koran could not have been composed by any except GOD; but it is a confirmation of that which was revealed before it, and an explanation of the scripture; there is no doubt thereof; sent down from the LORD of all creatures."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "And this Qur'an is not such as could ever be invented in despite of Allah; but it is a confirmation of that which was before it and an exposition of that which is decreed for mankind - Therein is no doubt - from the Lord of the Worlds."
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5030",
+     "H226"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Sign is oth: \"a signal\", \"evidence\". In Deuteronomy 13 a sign that comes to pass is not enough: the test is whether the prophet says \"Let us go after other gods\".",
+     "refs": [
+      "Deuteronomy 13:1-2"
+     ],
+     "strongs": [
+      "H226"
+     ]
+    },
+    {
+     "text": "The Quran (10:37) calls itself \"a confirmation of that which was before it\". Moses' test asks whether a new word leads to the same God: \"Ye shall walk after the LORD your God\".",
+     "refs": [
+      "Deuteronomy 13:4"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Moses promised a prophet \"like unto thee\". How does Israel know a word the LORD has not spoken, and to whom does Peter apply the promise?",
+   "refs": [
+    "Deuteronomy 18:18-22",
+    "Acts 3:22-26"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5030",
+     "H1697"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Many Muslim writers read Deuteronomy 18:18 as Muhammad, a prophet from the brethren of Israel. Peter applies the same words to Jesus: \"A prophet shall the Lord your God raise up unto you of your brethren, like unto me\".",
+     "refs": [
+      "Deuteronomy 18:18",
+      "Acts 3:22"
+     ]
+    },
+    {
+     "text": "Moses' second test: if the thing \"follow not, nor come to pass\", the LORD has not spoken it.",
+     "refs": [
+      "Deuteronomy 18:22"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Paul writes about \"another gospel\". What does he say if even an angel from heaven preaches a different one?",
+   "refs": [
+    "Galatians 1:6-9"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2098",
+     "G331"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Accursed is anathema: \"a (religious) ban\". Paul puts himself under the test first: \"though we, or an angel from heaven\".",
+     "refs": [
+      "Galatians 1:8"
+     ],
+     "strongs": [
+      "G331"
+     ]
+    },
+    {
+     "text": "The Quran says it was brought by the angel Gabriel (2:97). Galatians 1:8 sets its test above any messenger, even an angel.",
+     "refs": [
+      "Galatians 1:8"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How does John say to try the spirits, and what must a spirit confess?",
+   "refs": [
+    "1 John 4:1-3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1381",
+     "G4151"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Try is dokimazo: \"to test\". John's test is a confession about Jesus Christ: \"is come in the flesh\".",
+     "refs": [
+      "1 John 4:2"
+     ],
+     "strongs": [
+      "G1381"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Jesus said he came not to destroy the law. What does he say will happen to the smallest letter of it?",
+   "refs": [
+    "Matthew 5:17-18"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4137",
+     "G3551"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Fulfil is pleroo: \"to make replete\". A jot is yod, the smallest letter of the Hebrew alphabet.",
+     "refs": [
+      "Matthew 5:17"
+     ],
+     "strongs": [
+      "G4137"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"To the law and to the testimony\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 8:20"
+   ],
+   "signals": {
+    "xref": 33,
+    "votes": 191,
+    "word": "H1697",
+    "word_count": 8,
+    "differ": 0.452,
+    "quoted": null
+   },
+   "why": [
+    "33 cross-references point here",
+    "The Hebrew word dâbâr (H1697) is in 8 verses of this path"
+   ],
+   "score": 0.741
+  },
+  {
+   "q": "Which translation says \"no morning for them\" in Isaiah 8:20?",
+   "type": "which_translation",
+   "ref": "Isaiah 8:20",
+   "bible": "ETH",
+   "phrase": "no morning for them",
+   "answer_refs": [
+    "Isaiah 8:20"
+   ],
+   "signals": {
+    "xref": 33,
+    "votes": 191,
+    "word": "H1697",
+    "word_count": 8,
+    "differ": 0.452,
+    "quoted": null
+   },
+   "why": [
+    "33 cross-references point here",
+    "The Hebrew word dâbâr (H1697) is in 8 verses of this path"
+   ],
+   "score": 0.741
+  },
+  {
+   "q": "Which translation says \"light of dawn\" in Isaiah 8:20?",
+   "type": "which_translation",
+   "ref": "Isaiah 8:20",
+   "bible": "BSB",
+   "phrase": "light of dawn",
+   "answer_refs": [
+    "Isaiah 8:20"
+   ],
+   "signals": {
+    "xref": 33,
+    "votes": 191,
+    "word": "H1697",
+    "word_count": 8,
+    "differ": 0.452,
+    "quoted": null
+   },
+   "why": [
+    "33 cross-references point here",
+    "The Hebrew word dâbâr (H1697) is in 8 verses of this path"
+   ],
+   "score": 0.741
+  },
+  {
+   "q": "In Isaiah 8:19, whom should a people seek unto?",
+   "type": "multiple_choice",
+   "options": [
+    "Their God",
+    "Wizards that peep",
+    "The dead",
+    "The king of Assyria"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Isaiah 8:19"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "God"
+   },
+   "signals": {
+    "xref": 16,
+    "votes": 82,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.544,
+    "quoted": null
+   },
+   "why": [
+    "16 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.4677
+  },
+  {
+   "q": "Which verse speaks of a prophet who \"giveth thee a sign or a wonder\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Deuteronomy 13:1"
+   ],
+   "signals": {
+    "xref": 21,
+    "votes": 150,
+    "word": "H5030",
+    "word_count": 8,
+    "differ": 0.324,
+    "quoted": null
+   },
+   "why": [
+    "21 cross-references point here",
+    "The Hebrew word nâbîy' (H5030) is in 8 verses of this path"
+   ],
+   "score": 0.691
+  },
+  {
+   "q": "In Deuteronomy 13:2, what does the false prophet say?",
+   "type": "multiple_choice",
+   "options": [
+    "Let us go after other gods",
+    "Let us go up to Jerusalem",
+    "Let us keep the sabbath",
+    "Let us build an altar"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Deuteronomy 13:2"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "gods"
+   },
+   "signals": {
+    "xref": 20,
+    "votes": 135,
+    "word": "H226",
+    "word_count": 2,
+    "differ": 0.478,
+    "quoted": null
+   },
+   "why": [
+    "20 cross-references point here",
+    "The Hebrew word 'ôth (H226) is in 2 verses of this path"
+   ],
+   "score": 0.5467
+  },
+  {
+   "q": "Fill in the word: \"for the LORD your God ___ you\"",
+   "type": "fill_word",
+   "ref": "Deuteronomy 13:3",
+   "bible": "KJV",
+   "word": "proveth",
+   "answer_refs": [
+    "Deuteronomy 13:3"
+   ],
+   "signals": {
+    "xref": 25,
+    "votes": 171,
+    "word": "H1697",
+    "word_count": 8,
+    "differ": 0.35,
+    "quoted": null
+   },
+   "why": [
+    "25 cross-references point here",
+    "The Hebrew word dâbâr (H1697) is in 8 verses of this path"
+   ],
+   "score": 0.7073
+  },
+  {
+   "q": "In Deuteronomy 13:4, what shall Israel do unto the LORD?",
+   "type": "multiple_choice",
+   "options": [
+    "Cleave unto him",
+    "Bargain with him",
+    "Hide from him",
+    "Test him"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Deuteronomy 13:4"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "cleave"
+   },
+   "signals": {
+    "xref": 20,
+    "votes": 257,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.483,
+    "quoted": null
+   },
+   "why": [
+    "20 cross-references point here"
+   ],
+   "score": 0.5376
+  },
+  {
+   "q": "Which verse asks \"How shall we know the word which the LORD hath not spoken?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Deuteronomy 18:21"
+   ],
+   "signals": {
+    "xref": 2,
+    "votes": 44,
+    "word": "H1697",
+    "word_count": 8,
+    "differ": 0.578,
+    "quoted": null
+   },
+   "why": [
+    "2 cross-references point here",
+    "The Hebrew word dâbâr (H1697) is in 8 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6636
+  },
+  {
+   "q": "Fill in the word: \"I will raise them up a Prophet from among their brethren, like unto ___\"",
+   "type": "fill_word",
+   "ref": "Deuteronomy 18:18",
+   "bible": "KJV",
+   "word": "thee",
+   "answer_refs": [
+    "Deuteronomy 18:18"
+   ],
+   "signals": {
+    "xref": 29,
+    "votes": 351,
+    "word": "H5030",
+    "word_count": 8,
+    "differ": 0.272,
+    "quoted": null
+   },
+   "why": [
+    "29 cross-references point here",
+    "The Hebrew word nâbîy' (H5030) is in 8 verses of this path"
+   ],
+   "score": 0.7415
+  },
+  {
+   "q": "Which verse says \"A prophet shall the Lord your God raise up unto you of your brethren, like unto me\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Acts 3:22"
+   ],
+   "signals": {
+    "xref": 22,
+    "votes": 147,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.458,
+    "quoted": null
+   },
+   "why": [
+    "22 cross-references point here"
+   ],
+   "score": 0.4897
+  },
+  {
+   "q": "Which verse speaks of being removed \"unto another gospel\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Galatians 1:6"
+   ],
+   "signals": {
+    "xref": 21,
+    "votes": 139,
+    "word": "G2098",
+    "word_count": 2,
+    "differ": 0.61,
+    "quoted": null
+   },
+   "why": [
+    "21 cross-references point here",
+    "The Greek word euangélion (G2098) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5818
+  },
+  {
+   "q": "Which translation says \"under a curse\" in Galatians 1:8?",
+   "type": "which_translation",
+   "ref": "Galatians 1:8",
+   "bible": "BSB",
+   "phrase": "under a curse",
+   "answer_refs": [
+    "Galatians 1:8"
+   ],
+   "signals": {
+    "xref": 19,
+    "votes": 128,
+    "word": "G331",
+    "word_count": 2,
+    "differ": 0.479,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here",
+    "The Greek word anáthema (G331) is in 2 verses of this path"
+   ],
+   "score": 0.5429
+  },
+  {
+   "q": "In Galatians 1:7, what would some do to the gospel of Christ?",
+   "type": "multiple_choice",
+   "options": [
+    "Pervert it",
+    "Translate it",
+    "Hide it",
+    "Sell it"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Galatians 1:7"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "pervert"
+   },
+   "signals": {
+    "xref": 26,
+    "votes": 157,
+    "word": "G2098",
+    "word_count": 2,
+    "differ": 0.656,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here",
+    "The Greek word euangélion (G2098) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6024
+  },
+  {
+   "q": "Which verse says \"try the spirits whether they are of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 John 4:1"
+   ],
+   "signals": {
+    "xref": 48,
+    "votes": 468,
+    "word": "G4151",
+    "word_count": 5,
+    "differ": 0.285,
+    "quoted": null
+   },
+   "why": [
+    "48 cross-references point here",
+    "The Greek word pneûma (G4151) is in 5 verses of this path"
+   ],
+   "score": 0.6671
+  },
+  {
+   "q": "Fill in the word: \"Every spirit that confesseth that Jesus Christ is come in the ___ is of God\"",
+   "type": "fill_word",
+   "ref": "1 John 4:2",
+   "bible": "KJV",
+   "word": "flesh",
+   "answer_refs": [
+    "1 John 4:2"
+   ],
+   "signals": {
+    "xref": 24,
+    "votes": 245,
+    "word": "G4151",
+    "word_count": 5,
+    "differ": 0.329,
+    "quoted": null
+   },
+   "why": [
+    "24 cross-references point here",
+    "The Greek word pneûma (G4151) is in 5 verses of this path"
+   ],
+   "score": 0.6414
+  },
+  {
+   "q": "Which translation says \"jot or one tittle\" in Matthew 5:18?",
+   "type": "which_translation",
+   "ref": "Matthew 5:18",
+   "bible": "KJV",
+   "phrase": "jot or one tittle",
+   "answer_refs": [
+    "Matthew 5:18"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 477,
+    "word": "G3551",
+    "word_count": 2,
+    "differ": 0.651,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here",
+    "The Greek word nómos (G3551) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6711
+  },
+  {
+   "q": "In Matthew 5:17, what did Jesus come to do with the law and the prophets?",
+   "type": "multiple_choice",
+   "options": [
+    "Fulfil them",
+    "Destroy them",
+    "Replace them",
+    "Shorten them"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Matthew 5:17"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "fulfil"
+   },
+   "signals": {
+    "xref": 12,
+    "votes": 73,
+    "word": "G3551",
+    "word_count": 2,
+    "differ": 0.42,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here",
+    "The Greek word nómos (G3551) is in 2 verses of this path"
+   ],
+   "score": 0.4865
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
+  "TS2009 (read-along link only)"
+ ],
+ "verse_count": 26,
+ "outside_sources": [
+  {
+   "name": "George Sale (1734)",
+   "about": "The first English translation made directly from the Arabic. Sale was a Christian scholar. He did not number the verses; the numbers here are the standard ones.",
+   "source": "Project Gutenberg eBook #7440 (public domain)",
+   "url": "https://www.gutenberg.org/ebooks/7440"
+  },
+  {
+   "name": "Marmaduke Pickthall (1930)",
+   "about": "The first English translation by an English Muslim, read by scholars in Cairo before it was printed. Public domain in the US (published 1930) and wherever the term is life plus 70 years (Pickthall died in 1936).",
+   "source": "The 1930 London printing (George Allen & Unwin), checked word for word; text from Tanzil.net with its slips corrected",
+   "url": "https://archive.org/details/dli.csl.3756"
+  }
+ ],
+ "image": "img/quran-2-confirming.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/quran-2-confirming.json",
+  "sha": "2282ad1f7630ad29",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

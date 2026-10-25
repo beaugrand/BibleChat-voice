@@ -1,0 +1,798 @@
+{
+ "id": "quran-3-judge-by-the-gospel",
+ "title": "Session 3: \"Let the People of the Gospel judge by it\"",
+ "category": "Other Faiths",
+ "series": {
+  "id": "quran-and-the-bible",
+  "title": "What does the Quran say about the Bible?",
+  "of": 8,
+  "session": 3
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "light",
+  "x": 50,
+  "y": 30,
+  "s": 35
+ },
+ "opening_question": "The Quran tells Christians to judge by the Gospel, and tells Muhammad to ask those who read the Scripture before him. It also says no one can change God's words. What does the Bible say about its own words, how they were written, and whether they last?",
+ "required_refs": [
+  "Isaiah 40:8",
+  "Matthew 24:35",
+  "1 Peter 1:23-25"
+ ],
+ "words": [
+  "G845",
+  "H1697",
+  "G3306",
+  "G4487"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "The Quran says \"Let the People of the Gospel judge by that which Allah hath revealed therein\". What does John say his Gospel was written for?",
+   "refs": [
+    "John 20:30-31"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 5:47",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "that they who have received the gospel might judge according to what GOD hath revealed therein: and whoso judgeth not according to what GOD hath revealed, they are transgressors."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "Let the People of the Gospel judge by that which Allah hath revealed therein. Whoso judgeth not by that which Allah hath revealed: such are evil-livers."
+      }
+     ]
+    },
+    {
+     "ref": "Quran 5:68",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "Say, O ye who have received the scriptures, ye are not grounded on anything, until ye observe the law and the gospel and that which hath been sent down unto you from your LORD. That which hath been sent down unto thee from thy LORD will surely increase the transgression and infidelity of many of them: but be not thou solicitous for the unbelieving people."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "Say O People of the Scripture! Ye have naught (of guidance) till ye observe the Torah and the Gospel and that which was revealed unto you from your Lord. That which is revealed unto thee (Muhammad) from thy Lord is certain to increase the contumacy and disbelief of many of them. But grieve not for the disbelieving folk."
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1125",
+     "G4592"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "John gives his own reason for writing: \"that ye might believe that Jesus is the Christ, the Son of God\".",
+     "refs": [
+      "John 20:31"
+     ]
+    },
+    {
+     "text": "In 5:68 Sale has \"ye are not grounded on anything, until ye observe the law and the gospel\"; Pickthall, \"Ye have naught (of guidance) till ye observe the Torah and the Gospel\".",
+     "refs": [
+      "John 20:31"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran tells Muhammad, if he is in doubt, to \"question those who read the Scripture (that was) before thee\". How does Luke say his Gospel was put together?",
+   "refs": [
+    "Luke 1:1-4"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 10:94",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "If thou art in a doubt concerning any part of that which we have sent down unto thee, ask them who have read the book of the law before thee. Now hath the truth come unto thee from thy LORD; be not therefore one of those who doubt;"
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "And if thou (Muhammad) art in doubt concerning that which We reveal unto thee, then question those who read the Scripture (that was) before thee. Verily the Truth from thy Lord hath come unto thee. So be not thou of the waverers."
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "G845",
+     "G803"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Eyewitnesses is autoptes: \"self-seeing, i.e. an eye-witness\". Certainty is asphaleia: \"security\".",
+     "refs": [
+      "Luke 1:2",
+      "Luke 1:4"
+     ],
+     "strongs": [
+      "G845",
+      "G803"
+     ]
+    },
+    {
+     "text": "Quran 10:94 points to the people who read the earlier Scripture. Luke wrote his account in the first century, more than 500 years before the Quran.",
+     "refs": [
+      "Luke 1:3"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Quran says \"There is none who can change His words\". What does the Bible say about the word of God and the words of Jesus?",
+   "refs": [
+    "Isaiah 40:6-8",
+    "Matthew 24:35",
+    "Psalms 119:89"
+   ],
+   "outside": [
+    {
+     "ref": "Quran 6:115",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "The words of thy LORD are perfect, in truth and justice; there is none who can change his words: he both heareth and knoweth."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "Perfected is the Word of thy Lord in truth and justice. There is naught that can change His words. He is the Hearer, the Knower."
+      }
+     ]
+    },
+    {
+     "ref": "Quran 18:27",
+     "label": "From the Quran: not Scripture",
+     "why": "The Quran is the holy book of Islam. It is shown here only to set its words beside the Bible, in two public domain translations: one by a Christian scholar, one by a Muslim. It is not Scripture, and no question is answered from it.",
+     "texts": [
+      {
+       "name": "George Sale (1734)",
+       "text": "Read that which hath been revealed unto thee, of the book of thy LORD, without presuming to make any change therein: there is none who hath power to change his words; and thou shalt not find any to fly to, besides him, if thou attempt it."
+      },
+      {
+       "name": "Marmaduke Pickthall (1930)",
+       "text": "And recite that which hath been revealed unto thee of the Scripture of thy Lord. There is none who can change His words, and thou wilt find no refuge beside Him."
+      }
+     ]
+    }
+   ],
+   "look_closer": {
+    "strongs": [
+     "H1697",
+     "H6965"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Word is dabar: \"a word\". Isaiah says \"the word of our God shall stand for ever\"; the Quran (6:115), \"There is naught that can change His words\".",
+     "refs": [
+      "Isaiah 40:8"
+     ],
+     "strongs": [
+      "H1697"
+     ]
+    },
+    {
+     "text": "Stand is qum: \"to rise\". The same word is translated \"confirm\" and \"abide\" elsewhere.",
+     "refs": [
+      "Isaiah 40:8"
+     ],
+     "strongs": [
+      "H6965"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Peter quotes Isaiah 40. Which word does he say endures for ever, and what is that word?",
+   "refs": [
+    "1 Peter 1:23-25"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3306",
+     "G4487"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Abideth is meno: \"to stay\". Peter says the word that endures \"is the word which by the gospel is preached unto you\".",
+     "refs": [
+      "1 Peter 1:25"
+     ],
+     "strongs": [
+      "G3306"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "King Jehoiakim burned Jeremiah's scroll. What did God tell Jeremiah to do, and what went into the new roll?",
+   "refs": [
+    "Jeremiah 36:27-28",
+    "Jeremiah 36:32"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4039",
+     "H5612"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Roll is megillah: \"a roll\". The king burned the scroll; the words were written again.",
+     "refs": [
+      "Jeremiah 36:28"
+     ],
+     "strongs": [
+      "H4039"
+     ]
+    },
+    {
+     "text": "Old copies let anyone check the text. The Great Isaiah Scroll from Qumran, one of the Dead Sea Scrolls, was copied in the second century BC, more than 700 years before the Quran. It holds all 66 chapters of Isaiah, and its text is very close to the Hebrew that Bibles are translated from.",
+     "refs": [
+      "Isaiah 40:8"
+     ]
+    },
+    {
+     "text": "Codex Sinaiticus, copied in the fourth century AD, holds the whole New Testament. Muhammad died in 632.",
+     "refs": [
+      "Matthew 24:35"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"these are written, that ye might believe that Jesus is the Christ, the Son of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 20:31"
+   ],
+   "signals": {
+    "xref": 41,
+    "votes": 377,
+    "word": "G1125",
+    "word_count": 3,
+    "differ": 0.207,
+    "quoted": null
+   },
+   "why": [
+    "41 cross-references point here",
+    "The Greek word gráphō (G1125) is in 3 verses of this path"
+   ],
+   "score": 0.5848
+  },
+  {
+   "q": "In John 20:30, where are Jesus' many other signs?",
+   "type": "multiple_choice",
+   "options": [
+    "Not written in this book",
+    "Written in the law",
+    "Carved on stone",
+    "Kept in the temple"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "John 20:30"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "written"
+   },
+   "signals": {
+    "xref": 3,
+    "votes": 46,
+    "word": "G1125",
+    "word_count": 3,
+    "differ": 0.169,
+    "quoted": null
+   },
+   "why": [
+    "3 cross-references point here",
+    "The Greek word gráphō (G1125) is in 3 verses of this path"
+   ],
+   "score": 0.4188
+  },
+  {
+   "q": "Fill in the word: \"that believing ye might have ___ through his name\"",
+   "type": "fill_word",
+   "ref": "John 20:31",
+   "bible": "KJV",
+   "word": "life",
+   "answer_refs": [
+    "John 20:31"
+   ],
+   "signals": {
+    "xref": 41,
+    "votes": 377,
+    "word": "G1125",
+    "word_count": 3,
+    "differ": 0.207,
+    "quoted": null
+   },
+   "why": [
+    "41 cross-references point here",
+    "The Greek word gráphō (G1125) is in 3 verses of this path"
+   ],
+   "score": 0.5848
+  },
+  {
+   "q": "Which verse speaks of those \"which from the beginning were eyewitnesses, and ministers of the word\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 1:2"
+   ],
+   "signals": {
+    "xref": 6,
+    "votes": 26,
+    "word": "G845",
+    "word_count": 1,
+    "differ": 0.524,
+    "quoted": null
+   },
+   "why": [
+    "6 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.4076
+  },
+  {
+   "q": "In Luke 1:3, to whom did Luke write?",
+   "type": "multiple_choice",
+   "options": [
+    "Theophilus",
+    "Timothy",
+    "Titus",
+    "Philemon"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 1:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Theophilus"
+   },
+   "signals": {
+    "xref": 10,
+    "votes": 62,
+    "word": "G1125",
+    "word_count": 3,
+    "differ": 0.512,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "The Greek word gráphō (G1125) is in 3 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5265
+  },
+  {
+   "q": "Fill in the word: \"That thou mightest know the ___ of those things\"",
+   "type": "fill_word",
+   "ref": "Luke 1:4",
+   "bible": "KJV",
+   "word": "certainty",
+   "answer_refs": [
+    "Luke 1:4"
+   ],
+   "signals": {
+    "xref": 3,
+    "votes": 17,
+    "word": "G803",
+    "word_count": 1,
+    "differ": 0.654,
+    "quoted": null
+   },
+   "why": [
+    "3 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.4097
+  },
+  {
+   "q": "Which translation says \"carefully investigated everything\" in Luke 1:3?",
+   "type": "which_translation",
+   "ref": "Luke 1:3",
+   "bible": "BSB",
+   "phrase": "carefully investigated everything",
+   "answer_refs": [
+    "Luke 1:3"
+   ],
+   "signals": {
+    "xref": 10,
+    "votes": 62,
+    "word": "G1125",
+    "word_count": 3,
+    "differ": 0.512,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "The Greek word gráphō (G1125) is in 3 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.5265
+  },
+  {
+   "q": "Which verse says \"the word of our God shall stand for ever\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 40:8"
+   ],
+   "signals": {
+    "xref": 20,
+    "votes": 843,
+    "word": "H1697",
+    "word_count": 7,
+    "differ": 0.513,
+    "quoted": null
+   },
+   "why": [
+    "20 cross-references point here",
+    "The Hebrew word dâbâr (H1697) is in 7 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.7824
+  },
+  {
+   "q": "In Isaiah 40:8, what withereth?",
+   "type": "multiple_choice",
+   "options": [
+    "The grass",
+    "The cedar",
+    "The vine",
+    "The fig tree"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Isaiah 40:8"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "grass"
+   },
+   "signals": {
+    "xref": 20,
+    "votes": 843,
+    "word": "H1697",
+    "word_count": 7,
+    "differ": 0.513,
+    "quoted": null
+   },
+   "why": [
+    "20 cross-references point here",
+    "The Hebrew word dâbâr (H1697) is in 7 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.7824
+  },
+  {
+   "q": "Which verse says \"Heaven and earth shall pass away, but my words shall not pass away\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 24:35"
+   ],
+   "signals": {
+    "xref": 56,
+    "votes": 764,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.232,
+    "quoted": null
+   },
+   "why": [
+    "56 cross-references point here"
+   ],
+   "score": 0.508
+  },
+  {
+   "q": "Which translation says \"My words will never pass away\" in Matthew 24:35?",
+   "type": "which_translation",
+   "ref": "Matthew 24:35",
+   "bible": "BSB",
+   "phrase": "My words will never pass away",
+   "answer_refs": [
+    "Matthew 24:35"
+   ],
+   "signals": {
+    "xref": 56,
+    "votes": 764,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.232,
+    "quoted": null
+   },
+   "why": [
+    "56 cross-references point here"
+   ],
+   "score": 0.508
+  },
+  {
+   "q": "Which verse says \"For ever, O LORD, thy word is settled in heaven\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 119:89"
+   ],
+   "signals": {
+    "xref": 6,
+    "votes": 71,
+    "word": "H1697",
+    "word_count": 7,
+    "differ": 0.69,
+    "quoted": null
+   },
+   "why": [
+    "6 cross-references point here",
+    "The Hebrew word dâbâr (H1697) is in 7 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6977
+  },
+  {
+   "q": "Which translation says \"firmly fixed in the heavens\" in Psalm 119:89?",
+   "type": "which_translation",
+   "ref": "Psalms 119:89",
+   "bible": "BSB",
+   "phrase": "firmly fixed in the heavens",
+   "answer_refs": [
+    "Psalms 119:89"
+   ],
+   "signals": {
+    "xref": 6,
+    "votes": 71,
+    "word": "H1697",
+    "word_count": 7,
+    "differ": 0.69,
+    "quoted": null
+   },
+   "why": [
+    "6 cross-references point here",
+    "The Hebrew word dâbâr (H1697) is in 7 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6977
+  },
+  {
+   "q": "Fill in the word: \"Being born again, not of corruptible seed, but of ___\"",
+   "type": "fill_word",
+   "ref": "1 Peter 1:23",
+   "bible": "KJV",
+   "word": "incorruptible",
+   "answer_refs": [
+    "1 Peter 1:23"
+   ],
+   "signals": {
+    "xref": 40,
+    "votes": 636,
+    "word": "G3306",
+    "word_count": 2,
+    "differ": 0.537,
+    "quoted": null
+   },
+   "why": [
+    "40 cross-references point here",
+    "The Greek word ménō (G3306) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6426
+  },
+  {
+   "q": "In 1 Peter 1:24, what is all flesh like?",
+   "type": "multiple_choice",
+   "options": [
+    "Grass",
+    "Dust",
+    "Smoke",
+    "Stone"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 Peter 1:24"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "grass"
+   },
+   "signals": {
+    "xref": 31,
+    "votes": 331,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.502,
+    "quoted": null
+   },
+   "why": [
+    "31 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5613
+  },
+  {
+   "q": "Which verse says \"the word of the Lord endureth for ever\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Peter 1:25"
+   ],
+   "signals": {
+    "xref": 20,
+    "votes": 582,
+    "word": "G4487",
+    "word_count": 2,
+    "differ": 0.586,
+    "quoted": null
+   },
+   "why": [
+    "20 cross-references point here",
+    "The Greek word rhēma (G4487) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6548
+  },
+  {
+   "q": "In Jeremiah 36:28, what was Jeremiah to write in another roll?",
+   "type": "multiple_choice",
+   "options": [
+    "All the former words that were in the first roll",
+    "A new law for the king",
+    "The names of the princes",
+    "A letter to Babylon"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Jeremiah 36:28"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "former"
+   },
+   "signals": {
+    "xref": 4,
+    "votes": 18,
+    "word": "H1697",
+    "word_count": 7,
+    "differ": 0.367,
+    "quoted": null
+   },
+   "why": [
+    "4 cross-references point here",
+    "The Hebrew word dâbâr (H1697) is in 7 verses of this path"
+   ],
+   "score": 0.517
+  },
+  {
+   "q": "Which verse says Baruch wrote again \"all the words of the book which Jehoiakim king of Judah had burned in the fire\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Jeremiah 36:32"
+   ],
+   "signals": {
+    "xref": 8,
+    "votes": 32,
+    "word": "H1697",
+    "word_count": 7,
+    "differ": 0.287,
+    "quoted": null
+   },
+   "why": [
+    "8 cross-references point here",
+    "The Hebrew word dâbâr (H1697) is in 7 verses of this path"
+   ],
+   "score": 0.5384
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
+  "TS2009 (read-along link only)"
+ ],
+ "verse_count": 17,
+ "outside_sources": [
+  {
+   "name": "George Sale (1734)",
+   "about": "The first English translation made directly from the Arabic. Sale was a Christian scholar. He did not number the verses; the numbers here are the standard ones.",
+   "source": "Project Gutenberg eBook #7440 (public domain)",
+   "url": "https://www.gutenberg.org/ebooks/7440"
+  },
+  {
+   "name": "Marmaduke Pickthall (1930)",
+   "about": "The first English translation by an English Muslim, read by scholars in Cairo before it was printed. Public domain in the US (published 1930) and wherever the term is life plus 70 years (Pickthall died in 1936).",
+   "source": "The 1930 London printing (George Allen & Unwin), checked word for word; text from Tanzil.net with its slips corrected",
+   "url": "https://archive.org/details/dli.csl.3756"
+  }
+ ],
+ "image": "img/quran-3-judge-by-the-gospel.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/quran-3-judge-by-the-gospel.json",
+  "sha": "e1ef1efd28c73937",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}
