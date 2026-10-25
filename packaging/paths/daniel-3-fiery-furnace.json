@@ -1,0 +1,371 @@
+{
+ "id": "daniel-3-fiery-furnace",
+ "title": "Daniel 3: the fiery furnace",
+ "category": "Bible Study Groups",
+ "group": "Friday night Bible study",
+ "study_date": "2026-10-30",
+ "anim": {
+  "kind": "fire",
+  "x": 27,
+  "y": 55,
+  "s": 28
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "opening_question": "Nebuchadnezzar set up an image of gold and commanded all to bow; three young men would not. What did they answer the king, who walked with them in the fire, and what does that ask of us?",
+ "required_refs": [
+  "Daniel 3:1-7",
+  "Daniel 3:8-15",
+  "Daniel 3:16-18",
+  "Daniel 3:19-25",
+  "Daniel 3:26-30",
+  "Isaiah 43:2",
+  "Hebrews 11:33-34",
+  "Revelation 13:15"
+ ],
+ "words": [
+  "H6755",
+  "H5135",
+  "H7804"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What did Nebuchadnezzar set up, and what were all the people commanded to do at the sound of the music?",
+   "refs": [
+    "Daniel 3:1-7"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H6755",
+     "H5457"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "In Daniel 2:38 the king is told \"Thou art this head of gold\"; in Daniel 3:1 he \"made an image of gold\".",
+     "refs": [
+      "Daniel 2:38",
+      "Daniel 3:1"
+     ]
+    },
+    {
+     "text": "\"image\" is tselem, the same word as the great image of Daniel 2:31. Strong's: \"an idolatrous figure\".",
+     "refs": [
+      "Daniel 3:1",
+      "Daniel 2:31"
+     ],
+     "strongs": [
+      "H6755"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who accused the Jews, what did they say about the three men, and what did the king ask them?",
+   "refs": [
+    "Daniel 3:8-15"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H6399"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "What did the three men answer, and what did they say if God did not deliver them?",
+   "refs": [
+    "Daniel 3:16-18"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7804",
+     "H6399"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"deliver\" is shezab. Strong's: \"to leave that is (causatively) free\".",
+     "refs": [
+      "Daniel 3:17"
+     ],
+     "strongs": [
+      "H7804"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How hot was the furnace, what happened to the men who threw them in, and what did the king see in the fire?",
+   "refs": [
+    "Daniel 3:19-25"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H861",
+     "H5135",
+     "H1247"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The translations differ in Daniel 3:25: the King James says \"the Son of God\"; the Ethiopian Canon and the Berean Standard Bible say \"a son of the gods\". The Aramaic is bar elahin; elah is \"God\" or \"god\" (Strong's H426).",
+     "refs": [
+      "Daniel 3:25"
+     ],
+     "strongs": [
+      "H1247",
+      "H426"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What could the fire not do to them, and whom did the king bless?",
+   "refs": [
+    "Daniel 3:26-30"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4398",
+     "H7804"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Not \"an hair of their head singed\", and \"the smell of fire\" had not passed on them.",
+     "refs": [
+      "Daniel 3:27"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Where else does Scripture speak of walking through fire, of faith that quenched the violence of fire, and of an image all must worship?",
+   "refs": [
+    "Isaiah 43:2",
+    "Hebrews 11:33-34",
+    "Revelation 13:15"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1504"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel 3:6: whoso falleth not down \"shall the same hour be cast into the midst of a burning fiery furnace\". Revelation 13:15: as many as would not worship the image of the beast \"should be killed\".",
+     "refs": [
+      "Daniel 3:6",
+      "Revelation 13:15"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says the king \"made an image of gold, whose height was threescore cubits\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 3:1"
+   ]
+  },
+  {
+   "q": "In Daniel 3:6, what would happen to whoever did not fall down and worship?",
+   "type": "multiple_choice",
+   "options": [
+    "Be cast into a burning fiery furnace",
+    "Be sent out of Babylon",
+    "Pay a fine",
+    "Lose his house"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 3:6"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "furnace"
+   }
+  },
+  {
+   "q": "Which translation says \"golden statue\" in Daniel 3:5?",
+   "type": "which_translation",
+   "ref": "Daniel 3:5",
+   "bible": "BSB",
+   "phrase": "golden statue"
+  },
+  {
+   "q": "Which verse asks \"who is that God that shall deliver you\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 3:15"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"our God whom we serve is able to ___ us from the burning fiery furnace\"",
+   "type": "fill_word",
+   "ref": "Daniel 3:17",
+   "bible": "KJV",
+   "word": "deliver"
+  },
+  {
+   "q": "Which verse says \"But if not, be it known unto thee, O king\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 3:18"
+   ]
+  },
+  {
+   "q": "Which translation says \"But even if He does not\" in Daniel 3:18?",
+   "type": "which_translation",
+   "ref": "Daniel 3:18",
+   "bible": "BSB",
+   "phrase": "even if He does not"
+  },
+  {
+   "q": "In Daniel 3:19, how much hotter did the king command the furnace to be heated?",
+   "type": "multiple_choice",
+   "options": [
+    "Seven times more",
+    "Twice as hot",
+    "Ten times more",
+    "Three times more"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 3:19"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "seven"
+   }
+  },
+  {
+   "q": "Which verse says \"I see four men loose, walking in the midst of the fire\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 3:25"
+   ]
+  },
+  {
+   "q": "Which translation says \"like the Son of God\" in Daniel 3:25?",
+   "type": "which_translation",
+   "ref": "Daniel 3:25",
+   "bible": "KJV",
+   "phrase": "like the Son of God"
+  },
+  {
+   "q": "In Daniel 3:27, what had not passed on them?",
+   "type": "multiple_choice",
+   "options": [
+    "The smell of fire",
+    "The heat of the sun",
+    "The king's anger",
+    "The dust of the plain"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 3:27"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "smell"
+   }
+  },
+  {
+   "q": "Fill in the word: \"who hath sent his ___, and delivered his servants that trusted in him\"",
+   "type": "fill_word",
+   "ref": "Daniel 3:28",
+   "bible": "KJV",
+   "word": "angel"
+  },
+  {
+   "q": "Which verse says \"when thou walkest through the fire, thou shalt not be burned\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 43:2"
+   ]
+  },
+  {
+   "q": "Which verse says they \"Quenched the violence of fire\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Hebrews 11:34"
+   ]
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ]
+}

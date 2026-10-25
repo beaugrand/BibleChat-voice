@@ -4,6 +4,7 @@
   "category": "Bible Study Groups",
   "anim": {"kind": "stars"},
   "group": "Friday night Bible study",
+  "study_date": "2026-10-23",
   "read_along": {"label": "TS2009", "url": "https://www.bible.com/bible/316/DAN.{c}.TS2009"},
   "opening_question": "Nebuchadnezzar dreamed of a great image of gold, silver, brass, iron and clay, and a stone cut out without hands. What did the dream show, and whose kingdom stands for ever?",
   "required_refs": ["Daniel 2:1-49", "Daniel 3:1"],

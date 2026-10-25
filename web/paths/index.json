@@ -20,12 +20,50 @@
   "verses": 50,
   "minutes": 35,
   "group": "Friday night Bible study",
+  "study_date": "2026-10-23",
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/DAN.{c}.TS2009"
   },
   "anim": {
    "kind": "stars"
+  }
+ },
+ {
+  "id": "daniel-3-fiery-furnace",
+  "title": "Daniel 3: the fiery furnace",
+  "category": "Bible Study Groups",
+  "image": "img/daniel-3-fiery-furnace.jpg",
+  "opening_question": "Nebuchadnezzar set up an image of gold and commanded all to bow; three young men would not. What did they answer the king, who walked with them in the fire, and what does that ask of us?",
+  "steps": 6,
+  "step_questions": [
+   "What did Nebuchadnezzar set up, and what were all the people commanded to do at the sound of the music?",
+   "Who accused the Jews, what did they say about the three men, and what did the king ask them?",
+   "What did the three men answer, and what did they say if God did not deliver them?",
+   "How hot was the furnace, what happened to the men who threw them in, and what did the king see in the fire?",
+   "What could the fire not do to them, and whom did the king bless?",
+   "Where else does Scripture speak of walking through fire, of faith that quenched the violence of fire, and of an image all must worship?"
+  ],
+  "books": [
+   "Daniel",
+   "Hebrews",
+   "Isaiah",
+   "Revelation"
+  ],
+  "show": 8,
+  "verses": 34,
+  "minutes": 35,
+  "group": "Friday night Bible study",
+  "study_date": "2026-10-30",
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "fire",
+   "x": 27,
+   "y": 55,
+   "s": 28
   }
  },
  {

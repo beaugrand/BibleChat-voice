@@ -3,6 +3,7 @@
     p/<path-id>/index.html       opens  #/path/<id>/1          (a Study Path, at step 1)
     p/index.html                 opens  #/paths                (all the Study Paths)
     series/<series-id>/index.html opens #/paths/series/<id>    (a folder of study sessions)
+    group/<group-name>/index.html opens #/paths/group/<name>   (a Bible study group's folder, the next study first)
     pray/<prayer-id>/index.html  opens  #/prayers/<id>         (one prayer)
     pray/index.html              opens  #/prayers              (all the prayers)
 
@@ -20,6 +21,7 @@ from __future__ import annotations
 import html
 import json
 import os
+import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -134,6 +136,15 @@ def write_share_pages(out: str, web: str = WEB) -> list[str]:
     for sid, (se, first) in series.items():
         written.append(page(out, f"series/{sid}/", se.get("title", sid), f"{se.get('of', '')} study sessions, Daniel and Revelation side by side.".strip(),
                             images.get(first["id"], OG_PATHS), f"../../#/paths/series/{sid}", "Study sessions", "📂 Open the sessions"))
+    groups = {}
+    for p in paths:   # a Bible study group: its folder, with the picture of its newest study
+        if p.get("group"):
+            gid = re.sub(r"[^a-z0-9]+", "-", p["group"].lower().replace("’", "'")).strip("-")[:60]
+            if gid not in groups or p.get("study_date", "") > groups[gid][1].get("study_date", ""):
+                groups[gid] = (p["group"], p)
+    for gid, (name, newest) in groups.items():
+        written.append(page(out, f"group/{gid}/", name, "The chapters this Bible study group studies, the next one first: read ahead and come prepared.",
+                            images.get(newest["id"], OG_PATHS), f"../../#/paths/group/{gid}", "Bible study group", "👥 Open the group"))
     written.append(page(out, "pray/", "BibleChat Prayers", "Prayers drawn from the Bible, and the prayers the Bible itself records. Pray, listen, share.",
                         OG_PRAYERS, "../#/prayers", "Prayers", "🙏 Open the prayers"))
     for p in prayers["prayers"]:

@@ -171,11 +171,31 @@ class PathRulesTest(unittest.TestCase):
 
 
 class PathPagesTest(unittest.TestCase):
+    def test_bible_study_group_is_one_folder(self):
+        # a Bible study group's studies (official and the ones readers make) are one folder, the next study first
+        js = read("web", "paths.js")
+        for part in ("function folderOf(", "function groupOrder(", 'kind: "group"', "#/paths/group/", "showFolder(\"group\", slug(S.path.group))",
+                     'data-f="group"', 'data-f="study_date"', "g: p.group || undefined", "· \" + esc(T(\"next\"))"):
+            self.assertIn(part, js)
+        friday = [x for x in load(os.path.join(bp.OUT_DIR, "index.json")) if x.get("group") == "Friday night Bible study"]
+        self.assertEqual(sorted(x["id"] for x in friday), ["daniel-2-statue-and-stone", "daniel-3-fiery-furnace"])
+        self.assertTrue(all(re.fullmatch(r"\d{4}-\d{2}-\d{2}", x["study_date"]) and x["read_along"]["label"] == "TS2009" for x in friday))
+        import tempfile
+        sys.path.insert(0, os.path.join(ROOT, "web")); import build_share
+        with tempfile.TemporaryDirectory() as out:                              # the group's own share page
+            build_share.write_share_pages(out)
+            with open(os.path.join(out, "group", "friday-night-bible-study", "index.html"), encoding="utf-8") as fh:
+                pg = fh.read()
+            self.assertIn("Friday night Bible study", pg); self.assertIn("#/paths/group/friday-night-bible-study", pg)
+        self.assertIn('"group/" + g[1] + "/"', js)
+        d3 = load(os.path.join(bp.SRC_DIR, "daniel-3-fiery-furnace.json"))
+        self.assertIn("Daniel 3:16-18", d3["required_refs"]); self.assertIn("Daniel 3:19-25", d3["required_refs"])
+
     def test_series_is_one_folder(self):
         # a series (the 7 sessions of Revelation & Daniel) is one folder card on the main page; its sessions are inside
         js = read("web", "paths.js")
         for part in ("function folderCard(", "pv-folder", "pv-sopen", "async function showSeries(", 'S.view = "series"',
-                     "if(all[1]) await showSeries(all[1])", "S.path && S.path.series) showSeries(S.path.series.id)", "folders first"):
+                     "if(all[2]) await showFolder(all[1], all[2])", "S.path && S.path.series) showSeries(S.path.series.id)", "folders first"):
             self.assertIn(part, js)
         series = {}
         for x in load(os.path.join(bp.OUT_DIR, "index.json")):

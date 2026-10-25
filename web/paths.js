@@ -119,7 +119,7 @@ const BCPaths = (() => {
     const done = new Set(g.done || []);
     return {qs, n, done, finished: !!g.score, started: g.step != null || done.size > 0 || !!g.score};
   }
-  function card(p, g){
+  function card(p, g, isNext){
     const {qs, n, done, finished, started} = cardInfo(p, g), mineP = p.id.startsWith("mine-");
     const pct = n ? Math.round(100 * (finished ? n : done.size) / n) : 0;
     const status = finished ? `✓ Finished · ${g.score[0]} of ${g.score[1]} right` : done.size ? `${done.size} of ${n} steps done` : g.step != null ? `At step ${g.step + 1} of ${n}` : "Not started";
@@ -127,9 +127,9 @@ const BCPaths = (() => {
     const img = picture(p, false);
     const dots = qs.map((q, i) => `<i class="${done.has(i) || finished ? "pv-d-ok" : g.step === i ? "pv-d-now" : ""}" title="${esc("Step " + (i + 1))}"></i>`).join("");
     return `<article class="pv-pc${finished ? " pv-pc-fin" : ""}" data-id="${esc(p.id)}">
-      <button class="pv-pc-open" data-id="${esc(p.id)}" aria-label="${esc("Open " + p.title)}"><div class="pv-pc-img">${img}<span class="pv-pc-cat">${esc(mineP ? YOURS : p.series ? "Session " + p.series.session + " of " + p.series.of : p.group ? "👥 " + p.group : p.category || "")}</span>${finished ? `<span class="pv-pc-check" title="Finished">✓</span>` : ""}</div>
+      <button class="pv-pc-open" data-id="${esc(p.id)}" aria-label="${esc("Open " + p.title)}"><div class="pv-pc-img">${img}<span class="pv-pc-cat">${esc(mineP ? (p.group ? "👥 " + p.group : YOURS) : p.series ? "Session " + p.series.session + " of " + p.series.of : p.group ? "👥 " + p.group : p.category || "")}</span>${finished ? `<span class="pv-pc-check" title="Finished">✓</span>` : ""}</div>
         <div class="pv-pc-txt"><b class="pvx">${esc(p.title)}</b><span class="pvx">${esc(p.opening_question)}</span></div></button>
-      <div class="pv-pc-meta">${p.series ? `<span>📖 ${p.series.session}/${p.series.of}</span>` : ""}${p.minutes ? `<span title="About ${p.minutes} minutes">⏱ ${p.minutes} min</span>` : ""}<span>${n} <span>steps</span></span>${p.verses ? `<span>${p.verses} <span>verses</span></span>` : ""}</div>
+      <div class="pv-pc-meta">${p.study_date ? `<span class="${isNext ? "pv-next" : ""}">📅 ${esc(dayLabel(p.study_date))}${isNext ? " · " + esc(T("next")) : ""}</span>` : ""}${p.series ? `<span>📖 ${p.series.session}/${p.series.of}</span>` : ""}${p.minutes ? `<span title="About ${p.minutes} minutes">⏱ ${p.minutes} min</span>` : ""}<span>${n} <span>steps</span></span>${p.verses ? `<span>${p.verses} <span>verses</span></span>` : ""}</div>
       <div class="pv-pc-prog"><div class="pv-dots" aria-hidden="true">${dots}</div><small class="${finished ? "pv-ok" : started ? "pv-busy" : ""}">${esc(status)}</small></div>
       <div class="pv-bar"><i style="width:${pct}%"></i></div>
       <details class="pv-pc-steps"><summary>Steps</summary><ol>${qs.map((q, i) => `<li class="${done.has(i) ? "pv-li-ok" : ""}"><label class="pv-tickl" title="Tick this step as done"><input type="checkbox" class="pv-tick" data-id="${esc(p.id)}" data-step="${i}"${done.has(i) ? " checked" : ""}><span>${i + 1}</span></label><button class="pv-jump pvx" data-id="${esc(p.id)}" data-step="${i}">${esc(mineP ? T(q) : q)}</button></li>`).join("")}
@@ -251,7 +251,7 @@ const BCPaths = (() => {
       <div class="pv-who"><b>Who can see a path you make?</b><span>🔒 <b>Only you</b>: it stays on this device.</span><span>🔗 <b>Anyone with the link</b>: send the link or QR code; the whole path travels inside the link, nothing is stored on a server.</span><span>👥 <b>Community</b>: send it to Hans; once he has checked that every verse and word is right, it appears here for everyone.</span></div>
       <button class="pv-btn pv-primary pv-new">＋ Make your own study path</button>
       <h3 class="pv-grp">✍ Your study paths</h3>`
-      + (M.length ? `<div class="pv-grid">${M.map(p => card(p, P[p.id] || {})).join("")}</div>` : `<p class="pv-small">None yet. Press ＋ Make your own study path, or 📜 Make a study path under a search or chat answer.</p>`)
+      + (M.length ? gridWithSeries(M, P) : `<p class="pv-small">None yet. Press ＋ Make your own study path, or 📜 Make a study path under a search or chat answer.</p>`)
       + `<h3 class="pv-grp">👥 Community study paths</h3>`
       + (comm.length ? gridWithSeries(comm, P) : `<p class="pv-small">Paths readers send in appear here after Hans has checked them. Be the first: make one and choose 👥 Community.</p>`)
       + (groups.length ? `<h3 class="pv-grp">👥 Bible Study Groups</h3>` + groupsView(groups, P) : "");
@@ -271,6 +271,8 @@ const BCPaths = (() => {
       <label>The starting question <small>(what the path asks; the verses answer)</small><textarea data-f="opening_question" maxlength="400" rows="2" placeholder="What does the text say about the serpent, Eve and Cain?">${esc(d.opening_question)}</textarea></label>
       <div class="pv-edrow"><label>Topic<select data-f="category">${["", ...CAT_CHOICES].map(c => `<option${c === d.category ? " selected" : ""} value="${esc(c)}">${esc(c || "Choose…")}</option>`).join("")}</select></label>
         <label>Your name <small>(optional)</small><input data-f="author" maxlength="60" value="${esc(d.author || "")}"></label></div>
+      <label>Your group <small>(optional: your Bible study group's name; its studies are kept together in one folder)</small><input data-f="group" maxlength="80" list="pvGroups" value="${esc(d.group || "")}" placeholder="Friday night Bible study"><datalist id="pvGroups">${[...new Set((list || []).concat(mine()).map(p => p.group).filter(Boolean))].map(g => `<option value="${esc(g)}">`).join("")}</datalist></label>
+      <label>Date of the study <small>(optional: the day your group studies it)</small><input data-f="study_date" type="date" value="${esc(d.study_date || "")}"></label>
       ${d.steps.map((st, i) => `<div class="pv-eds" data-i="${i}">
         <div class="pv-edsh"><b>Step ${i + 1}</b><span><button type="button" class="pv-ib" data-ed="up" data-s="${i}" title="Move up"${i ? "" : " disabled"}>↑</button><button type="button" class="pv-ib" data-ed="down" data-s="${i}" title="Move down"${i < d.steps.length - 1 ? "" : " disabled"}>↓</button><button type="button" class="pv-ib" data-ed="delstep" data-s="${i}" title="Remove this step"${d.steps.length > 1 ? "" : " disabled"}>🗑</button></span></div>
         <label>Question for this step<input data-k="question" data-s="${i}" maxlength="240" value="${esc(st.question)}" placeholder="What did the serpent say to the woman?"></label>
@@ -355,6 +357,7 @@ const BCPaths = (() => {
     const vis = (root.querySelector('input[name="vis"]:checked') || {}).value || "private";
     const quiz = await autoQuiz(steps);
     const p = {id: d.id, title: d.title, opening_question: d.opening_question, author: (d.author || "").trim(), category: d.category || "", visibility: vis, steps, quiz,
+      group: (d.group || "").trim() || undefined, study_date: /^\d{4}-\d{2}-\d{2}$/.test(d.study_date || "") ? d.study_date : undefined,
       show: Math.min(10, Math.max(quiz.length, 1)), mine: true, updated: new Date().toISOString().slice(0, 10),
       sources: ["Made by " + ((d.author || "").trim() || "a BibleChat reader"), "KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references"]};
     if(d.author) set("author", d.author.trim());
@@ -387,43 +390,67 @@ const BCPaths = (() => {
   /* paths of a series (e.g. the 7 sessions of the mirror prophecies) stand together under the series' title, with its own ↗ / QR code */
   /* 📂 a series (e.g. the 7 sessions of Revelation & Daniel) is ONE folder card in the list; tapping it opens the folder
      with its sessions. Any future series made of several sessions ("series" in a path) works the same way. */
+  /* folders: a series' sessions, and a Bible study group's studies (official ones and the ones readers make in Community),
+     each become ONE folder card; Open shows what is inside. */
+  const slug = x => norm(x || "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
+  function folderOf(p){ return p.series ? {kind: "series", id: p.series.id} : p.group ? {kind: "group", id: slug(p.group)} : null; }
+  const day = d => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d || ""); return m ? new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3])) : null; };
+  const today = () => { const t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate()); };
+  const dayLabel = d => { const x = day(d); return x ? x.toLocaleDateString(undefined, {weekday: "short", month: "short", day: "numeric"}) : ""; };
+  /* a group's studies: the next one (today or later) first, then the later ones, then the past ones newest first */
+  function groupOrder(ps){
+    const t = today(), up = ps.filter(p => day(p.study_date) && day(p.study_date) >= t).sort((a, b) => day(a.study_date) - day(b.study_date));
+    const past = ps.filter(p => !up.includes(p)).sort((a, b) => (day(b.study_date) || 0) - (day(a.study_date) || 0) || String(a.title).localeCompare(b.title));
+    return {list: up.concat(past), next: up[0] || null};
+  }
   function gridWithSeries(shown, P){
     const cards = [], seen = {}, order = [];
-    for(const p of shown){ if(p.series){ if(!seen[p.series.id]){ seen[p.series.id] = []; order.push({series: p.series.id}); } seen[p.series.id].push(p); } else order.push(p); }
-    order.sort((a, b) => (b.series ? 1 : 0) - (a.series ? 1 : 0));   // folders first, then the single paths in their usual order
-    for(const x of order) cards.push(x.series ? folderCard(seen[x.series].sort((a, b) => a.series.session - b.series.session), P) : card(x, P[x.id] || {}));
+    for(const p of shown){ const f = folderOf(p);
+      if(f){ const k = f.kind + ":" + f.id; if(!seen[k]){ seen[k] = []; order.push({folder: k, kind: f.kind}); } seen[k].push(p); } else order.push(p); }
+    order.sort((a, b) => (b.folder ? 1 : 0) - (a.folder ? 1 : 0));   // folders first, then the single paths in their usual order
+    for(const x of order) cards.push(x.folder ? folderCard(seen[x.folder], P, x.kind) : card(x, P[x.id] || {}));
     return cards.length ? `<div class="pv-grid">${cards.join("")}</div>` : "";
   }
-  function folderCard(ps, P){
-    const se = ps[0].series, info = ps.map(p => cardInfo(p, P[p.id] || {})), fin = info.filter(i => i.finished).length, busy = info.filter(i => i.started && !i.finished).length;
-    const mins = ps.reduce((a, p) => a + (p.minutes || 0), 0), status = fin === ps.length ? `✓ All ${ps.length} sessions finished` : fin || busy ? `${fin} of ${ps.length} sessions finished` : "Not started";
-    return `<article class="pv-pc pv-folder" data-series="${esc(se.id)}">
-      <button class="pv-pc-open pv-sopen" data-series="${esc(se.id)}" aria-label="${esc("Open " + se.title)}"><div class="pv-pc-img">${picture(ps[0], false)}<span class="pv-pc-cat">📂 ${ps.length} sessions</span></div>
-        <div class="pv-pc-txt"><b class="pvx">${esc(se.title)}</b><span class="pvx">${esc(ps.map(p => p.title.replace(/^Session \d+:\s*/, "")).join(" · "))}</span></div></button>
-      <div class="pv-pc-meta"><span>📂 ${ps.length}${ps.length < se.of ? " of " + se.of : ""} sessions</span>${mins ? `<span title="About ${mins} minutes in all">⏱ ${mins} min</span>` : ""}</div>
-      <div class="pv-pc-prog"><div class="pv-dots" aria-hidden="true">${info.map(i => `<i class="${i.finished ? "pv-d-ok" : i.started ? "pv-d-now" : ""}"></i>`).join("")}</div><small class="${fin === ps.length ? "pv-ok" : fin || busy ? "pv-busy" : ""}">${esc(status)}</small></div>
-      <div class="pv-pc-acts"><button class="pv-btn pv-primary pv-sopen" data-series="${esc(se.id)}"><span>Open</span> ›</button><button class="pv-btn pv-serqr" data-series="${esc(se.id)}" title="Share this series by link or QR code" aria-label="Share this series">↗</button></div></article>`;
+  function folderCard(ps, P, kind){
+    const isG = kind === "group";
+    if(!isG) ps = ps.slice().sort((a, b) => a.series.session - b.series.session);
+    const g = isG ? groupOrder(ps) : null; if(isG) ps = g.list;
+    const id = isG ? slug(ps[0].group) : ps[0].series.id, title = isG ? ps[0].group : ps[0].series.title, word = isG ? (ps.length === 1 ? "study" : "studies") : "sessions";
+    const info = ps.map(p => cardInfo(p, P[p.id] || {})), fin = info.filter(i => i.finished).length, busy = info.filter(i => i.started && !i.finished).length;
+    const mins = ps.reduce((a, p) => a + (p.minutes || 0), 0), status = isG && g.next ? `📅 Next: ${g.next.title.replace(/:.*$/, "")} · ${dayLabel(g.next.study_date)}`
+      : fin === ps.length ? `✓ All ${ps.length} ${word} finished` : fin || busy ? `${fin} of ${ps.length} ${word} finished` : "Not started";
+    const lead = isG ? ps.map(p => p.title).join(" · ") : ps.map(p => p.title.replace(/^Session \d+:\s*/, "")).join(" · ");
+    return `<article class="pv-pc pv-folder" data-${isG ? "group" : "series"}="${esc(id)}">
+      <button class="pv-pc-open pv-sopen" data-kind="${isG ? "group" : "series"}" data-series="${esc(id)}" aria-label="${esc("Open " + title)}"><div class="pv-pc-img">${picture(ps[0], false)}<span class="pv-pc-cat">${isG ? "👥" : "📂"} ${ps.length} ${word}</span></div>
+        <div class="pv-pc-txt"><b class="pvx">${isG ? "👥 " : ""}${esc(title)}</b><span class="pvx">${esc(lead)}</span></div></button>
+      <div class="pv-pc-meta"><span>${isG ? "👥" : "📂"} ${ps.length}${!isG && ps.length < ps[0].series.of ? " of " + ps[0].series.of : ""} ${word}</span>${mins ? `<span title="About ${mins} minutes in all">⏱ ${mins} min</span>` : ""}</div>
+      <div class="pv-pc-prog"><div class="pv-dots" aria-hidden="true">${info.map(i => `<i class="${i.finished ? "pv-d-ok" : i.started ? "pv-d-now" : ""}"></i>`).join("")}</div><small class="${isG && g.next ? "pv-busy" : fin === ps.length ? "pv-ok" : fin || busy ? "pv-busy" : ""}">${esc(status)}</small></div>
+      <div class="pv-pc-acts"><button class="pv-btn pv-primary pv-sopen" data-kind="${isG ? "group" : "series"}" data-series="${esc(id)}"><span>Open</span> ›</button><button class="pv-btn pv-serqr" data-kind="${isG ? "group" : "series"}" data-series="${esc(id)}" title="Share this folder by link or QR code" aria-label="Share this folder">↗</button></div></article>`;
   }
-  /* inside the folder: the series' sessions, in order */
-  async function showSeries(id){
-    const L = await loadList(), ps = L.filter(p => p.series && p.series.id === id).sort((a, b) => a.series.session - b.series.session);
+  /* inside a folder: a series' sessions in order, or a group's studies (the next one first) */
+  async function folderPaths(kind, id){
+    const L = await loadList();
+    return kind === "group" ? groupOrder(L.concat(mine()).filter(p => p.group && slug(p.group) === id)) : {list: L.filter(p => p.series && p.series.id === id).sort((a, b) => a.series.session - b.series.session), next: null};
+  }
+  async function showSeries(id){ return showFolder("series", id); }
+  async function showFolder(kind, id){
+    const {list: ps, next} = await folderPaths(kind, id);
     if(!ps.length){ await showList(); return; }
-    const se = ps[0].series, P = progress(), arrived = S.arrivedList; S.arrivedList = false;
-    S.view = "series"; S.series = id; S.path = null;
-    frame("📂 " + se.title, (arrived ? `<div class="pv-welcome">👋 <b>Someone shared these study sessions with you.</b> Start with Session 1 and press <b>Start</b>. Free, no sign-up.</div>` : "")
-      + `<p class="pv-lead">${ps.length}${ps.length < se.of ? " of " + se.of : ""} sessions, one after another. Each starts with a question and walks through the verses; the questions at the end are answered with a verse.</p>`
-      + `<button class="pv-btn pv-serqr pv-sharewide" data-series="${esc(id)}">↗ Share these sessions · link or QR code</button>`
-      + `<div class="pv-grid">${ps.map(p => card(p, P[p.id] || {})).join("")}</div>`
+    const isG = kind === "group", P = progress(), arrived = S.arrivedList; S.arrivedList = false;
+    S.view = "series"; S.series = id; S.folderKind = kind; S.path = null;
+    const title = isG ? ps[0].group : ps[0].series.title, ra = ps.find(p => p.read_along);
+    frame((isG ? "👥 " : "📂 ") + title, (arrived ? `<div class="pv-welcome">👋 <b>Someone shared ${isG ? "this Bible study group" : "these study sessions"} with you.</b> ${isG ? "The next study is first: read it ahead and come prepared." : "Start with Session 1 and press <b>Start</b>."} Free, no sign-up.</div>` : "")
+      + (isG ? `<p class="pv-lead">The chapters this group studies${next ? ", the next one first" : ""}. Read ahead to come prepared: every study has the verses, the Hebrew and Greek words and questions${ra ? `, and <b>Read in ${esc(ra.read_along.label)} ↗</b> next to every passage to read it in the group's own Bible` : ""}.</p>`
+        : `<p class="pv-lead">${ps.length}${ps.length < ps[0].series.of ? " of " + ps[0].series.of : ""} sessions, one after another. Each starts with a question and walks through the verses; the questions at the end are answered with a verse.</p>`)
+      + `<button class="pv-btn pv-serqr pv-sharewide" data-kind="${kind}" data-series="${esc(id)}">↗ Share ${isG ? "this group" : "these sessions"} · link or QR code</button>`
+      + `<div class="pv-grid">${ps.map(p => card(p, P[p.id] || {}, next && p.id === next.id)).join("")}${isG && ps.some(p => p.category === GROUPS) ? ADD_CARD : ""}</div>`
       + `<div class="pv-nav"><button class="pv-btn pv-backlist">‹ All Study Paths</button></div>`, true);
   }
   /* 👥 Bible Study Groups: one folder per group, then "+ Add your own study path" */
   function groupsView(shown, P){
-    const by = {};
-    for(const p of shown) (by[p.group || "Other groups"] = by[p.group || "Other groups"] || []).push(p);
     const reqs = get("requests", []);
-    return `<p class="pv-lead">Studies made for Bible study groups: the group picks the Bible and the verses, and the study path is written for them. Share a path with your group (↗) so everyone follows the same verses on their phone during the call or meeting.</p>`
-      + Object.keys(by).map((g, i, all) => `<h3 class="pv-grp">👥 <span class="pvx">${esc(g)}</span></h3><div class="pv-grid">${by[g].map(p => card(p, P[p.id] || {})).join("")}${i === all.length - 1 ? ADD_CARD : ""}</div>`).join("")
-      + (Object.keys(by).length ? "" : `<div class="pv-grid">${ADD_CARD}</div>`)
+    return `<p class="pv-lead">Studies made for Bible study groups: the group picks the Bible and the verses, and the study path is written for them. Each group has its own folder, the next study first, so everyone can read ahead. Share the folder or a study with your group (↗).</p>`
+      + `<div class="pv-grid">${(gridWithSeries(shown, P).replace(/^<div class="pv-grid">|<\/div>$/g, ""))}${ADD_CARD}</div>`
       + (reqs.length ? `<h3 class="pv-grp">📨 Your requests</h3>` + reqs.map(r => `<div class="pv-req"><b class="pvx">${esc(r.passage)}</b> <span class="pvx">· ${esc(r.group)} · ${esc(r.bible)}</span><small>Sent ${esc(r.date)}. It will appear in your group's folder here when it's ready.</small></div>`).join("") : "");
   }
   const ADD_CARD = `<button class="pv-pc pv-add"><span class="pv-add-plus" aria-hidden="true">+</span><b>Add your own study path</b><span>For your Bible study group: pick your Bible and the verses, and Hans will write the study path for you.</span></button>`;
@@ -756,12 +783,15 @@ const BCPaths = (() => {
      prayer's own picture, title and question, and the page opens it in BibleChat. A path someone made travels in the link. */
   const SHORT = [[/^#\/path\/(?!mine\/)([a-z0-9-]+)\/1$/, "p/$1/"], [/^#\/paths\/?$/, "p/"], [/^#\/paths\/series\/([a-z0-9-]+)\/?$/, "series/$1/"],
     [/^#\/prayers\/([a-z0-9-]+)$/, "pray/$1/"], [/^#\/prayers\/?$/, "pray/"]];
-  function shortPath(hash){ for(const [re, to] of SHORT) if(re.test(hash)) return hash.replace(re, to); return null; }
+  function shortPath(hash){
+    const g = /^#\/paths\/group\/([a-z0-9-]+)\/?$/.exec(hash);   // a Bible study group: a short page only for the groups on the site
+    if(g) return (list || []).some(p => p.group && slug(p.group) === g[1]) ? "group/" + g[1] + "/" : null;
+    for(const [re, to] of SHORT) if(re.test(hash)) return hash.replace(re, to); return null; }
   function linkOf(hash){ const sp = shortPath(hash); return sp ? A.shareUrl("") + sp : A.shareUrl(hash); }
   function shareHash(p, step){
     if(p.mine){   // version 2: the whole path travels in the link (title, question, steps, options, words, notes); nothing is stored on a server
       const o = st => (st.compare && st.compare.length > 1 ? 1 : 0) | ((st.notes || []).includes("scofield") ? 2 : 0) | ((st.notes || []).includes("henry") ? 4 : 0) | (st.look_closer && st.look_closer.xref_top ? 8 : 0);
-      const d = {v: 2, ti: p.title, q: p.opening_question, a: p.author || undefined, c: p.category || undefined,
+      const d = {v: 2, ti: p.title, q: p.opening_question, a: p.author || undefined, c: p.category || undefined, g: p.group || undefined, dt: p.study_date || undefined,
         s: p.steps.map(st => ({q: st.question, r: st.refs, o: o(st), w: (st.look_closer || {}).strongs || [], n: st.my_note ? String(st.my_note).slice(0, 800) : undefined}))};
       const data = btoa(unescape(encodeURIComponent(JSON.stringify(d)))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, ""); return "#/path/mine/" + data; }
     return "#/path/" + encodeURIComponent(p.id) + "/" + (step + 1);
@@ -770,18 +800,20 @@ const BCPaths = (() => {
      browser, no sign-up), at step 1. Send it by the phone's own share sheet, a text message, WhatsApp or email, or show the
      QR code to someone next to you. */
   function shareText(t){ return t.kind === "all" ? "Have a look at the BibleChat Study Paths (free, no sign-up): guided Bible studies with the verses side by side, the Hebrew and Greek words, and questions. Pick one and start."
+    : t.kind === "group" ? `Join "${t.title}" in BibleChat (free, no sign-up): ${t.question}`
     : t.kind === "series" ? `Let's study "${t.title}" together in BibleChat (free, no sign-up): ${t.question}`
     : `Let's study "${t.title}" together in BibleChat (free, no sign-up): ${t.opening_question || t.question}`; }
   /* what is shared: one path (step 1), a whole series, or the page with all the Study Paths */
   function target(kind, p){
     if(kind === "all") return {kind, title: "BibleChat Study Paths", question: "Every path starts with a question and walks through the verses.", hash: "#/paths", image: null};
+    if(kind === "group") return {kind, title: p.group, question: "The chapters this Bible study group studies, the next one first: read ahead and come prepared.", hash: "#/paths/group/" + slug(p.group), image: p.image};
     if(kind === "series") return {kind, title: p.series.title, question: `${p.series.of} sessions, Daniel and Revelation side by side.`, hash: "#/paths/series/" + p.series.id, image: p.image};
     return Object.assign({kind: "path", hash: shareHash(p, 0), question: p.opening_question}, p);
   }
   function share(p, from, kind){
     p = p || S.path; if(!p && kind !== "all") return;
     const t = target(kind || "path", p), url = linkOf(t.hash), text = shareText(t), both = text + "\n" + url;
-    const what = t.kind === "all" ? "the page with all the Study Paths" : t.kind === "series" ? "this series of study paths" : "this study path, at step 1";
+    const what = t.kind === "all" ? "the page with all the Study Paths" : t.kind === "group" ? "this Bible study group's folder" : t.kind === "series" ? "this series of study paths" : "this study path, at step 1";
     S.shareFrom = from || "path"; S.shareP = t; S.view = "share";
     const back = S.shareFrom === "list" || S.shareFrom === "series" ? `<button class="pv-btn pv-backlist">‹ Back to the paths</button>` : `<button class="pv-btn pv-backpath">‹ Back to the path</button>`;
     const wide = matchMedia("(min-width: 760px)").matches;   // on a computer the QR code comes first: hold the phone up to the screen
@@ -864,7 +896,7 @@ const BCPaths = (() => {
     const sig = JSON.stringify([d.ti, d.q, steps.map(s => s.refs)]), M = mine(), have = M.find(x => x.sig === sig);
     if(have){ await open(have.id, 0); return; }
     const quiz = await autoQuiz(steps);
-    const p = {id: "mine-" + Date.now().toString(36), sig, title: str(d.ti).slice(0, 90) || "A shared study path", opening_question: str(d.q).slice(0, 400), author: str(d.a).slice(0, 60), category: str(d.c).slice(0, 40),
+    const p = {id: "mine-" + Date.now().toString(36), sig, group: str(d.g).slice(0, 80) || undefined, study_date: /^\d{4}-\d{2}-\d{2}$/.test(d.dt || "") ? d.dt : undefined, title: str(d.ti).slice(0, 90) || "A shared study path", opening_question: str(d.q).slice(0, 400), author: str(d.a).slice(0, 60), category: str(d.c).slice(0, 40),
       steps, quiz, show: Math.min(10, Math.max(quiz.length, 1)), mine: true, received: true, visibility: "link",
       sources: ["Made by " + (str(d.a) || "a BibleChat reader"), "KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references"]};
     M.unshift(p); set("mine", M.slice(0, 50)); await open(p.id, 0);
@@ -872,10 +904,10 @@ const BCPaths = (() => {
   /* a link "#/path/<id>/<step>" or "#/path/mine/<data>" */
   async function openHash(h){
     h = cleanHash(h);
-    const all = /^#\/paths(?:\/series\/([a-z0-9-]+))?\/?$/.exec(h || "");
+    const all = /^#\/paths(?:\/(series|group)\/([a-z0-9-]+))?\/?$/.exec(h || "");
     if(all){
       S.arrivedList = true; S.filter = ALL; S.section = "paths";
-      if(all[1]) await showSeries(all[1]); else await showList();
+      if(all[2]) await showFolder(all[1], all[2]); else await showList();
       return true;
     }
     const m = /^#\/path\/([^/]+)(?:\/([^/]+))?/.exec(h || ""); if(!m) return false;
@@ -901,7 +933,7 @@ const BCPaths = (() => {
   function onClick(e){
     const t = e.target;
     if(t.closest(".pv-close")){ close(); return; }
-    if(t.closest(".pv-back")){ if(S.view === "edit"){ S.draft = null; showList(); return; } if(S.view === "share" && S.shareFrom === "series" && S.series) showSeries(S.series); else if(S.view === "request" || (S.view === "share" && S.shareFrom === "list")) showList(); else if(S.view === "word" || S.view === "share") showPath(S.path.id, S.step); else if((S.view === "step" || S.view === "quiz") && S.path && S.path.series) showSeries(S.path.series.id); else if(S.view === "step" || S.view === "quiz" || S.view === "quoted" || S.view === "series") showList(); else close(); return; }
+    if(t.closest(".pv-back")){ if(S.view === "edit"){ S.draft = null; showList(); return; } if(S.view === "share" && S.shareFrom === "series" && S.series) showFolder(S.folderKind || "series", S.series); else if(S.view === "request" || (S.view === "share" && S.shareFrom === "list")) showList(); else if(S.view === "word" || S.view === "share") showPath(S.path.id, S.step); else if((S.view === "step" || S.view === "quiz") && S.path && S.path.series) showSeries(S.path.series.id); else if((S.view === "step" || S.view === "quiz") && S.path && S.path.group) showFolder("group", slug(S.path.group)); else if(S.view === "step" || S.view === "quiz" || S.view === "quoted" || S.view === "series") showList(); else close(); return; }
     const sc = t.closest(".pv-pc-share"); if(sc){ shareFromCard(sc.dataset.id); return; }
     if(t.closest(".pv-add")){ showRequest(); return; }
     const lb = t.closest(".pv-listen"); if(lb){ if(LS.on && LS.kind === lb.dataset.ls && !LS.paused) lsPause(); else lsStart(lb.dataset.ls); return; }
@@ -914,8 +946,8 @@ const BCPaths = (() => {
     if(t.closest(".pv-eddel")){ if(confirm(T("Delete this study path from this device?"))){ set("mine", mine().filter(x => x.id !== S.draft.id)); S.draft = null; showList(); } return; }
     const eb = t.closest("[data-ed]"); if(eb && S.view === "edit"){ e.preventDefault(); edAction(eb); return; }
     if(t.closest(".pv-shareall")){ share(null, "list", "all"); return; }
-    const so = t.closest(".pv-sopen"); if(so){ showSeries(so.dataset.series); return; }
-    const sq = t.closest(".pv-serqr"); if(sq){ loadList().then(L => { const p = L.find(x => x.series && x.series.id === sq.dataset.series); if(p) share(p, S.view === "series" ? "series" : "list", "series"); }); return; }
+    const so = t.closest(".pv-sopen"); if(so){ showFolder(so.dataset.kind || "series", so.dataset.series); return; }
+    const sq = t.closest(".pv-serqr"); if(sq){ const kind = sq.dataset.kind || "series"; folderPaths(kind, sq.dataset.series).then(({list}) => { if(list[0]) share(list[0], S.view === "series" ? "series" : "list", kind); }); return; }
     if(t.closest(".pv-qrbig")){ bigQr(); return; }
     if(t.closest(".pv-card-dl")){ shareCard(S.shareP).catch(() => A.toast(T("Couldn't make the picture."))); return; }
     if(t.closest(".pv-so-tt")){ const u = root.querySelector(".pv-url").value, h = root.querySelector(".pv-tthint"); if(h) h.hidden = false;
@@ -924,7 +956,7 @@ const BCPaths = (() => {
     if(t.closest(".pv-reqgit")){ e.preventDefault(); const d = reqData();
       window.open("https://github.com/beaugrand/BibleChat-voice/issues/new?title=" + encodeURIComponent("Study path request: " + (d.passage || "?") + " (" + (d.group || "?") + ")") + "&body=" + encodeURIComponent(reqText(d)), "_blank", "noopener"); return; }
     if(t.closest(".pv-share")){ share(); return; }
-    if(t.closest(".pv-backlist")){ if(S.view === "share" && S.shareFrom === "series" && S.series) showSeries(S.series); else showList(); return; }
+    if(t.closest(".pv-backlist")){ if(S.view === "share" && S.shareFrom === "series" && S.series) showFolder(S.folderKind || "series", S.series); else showList(); return; }
     if(t.closest(".pv-backpath")){ showPath(S.path.id, S.step); return; }
     if(t.closest(".pv-copy")){ const i = root.querySelector(".pv-url"); i.select(); (navigator.clipboard ? navigator.clipboard.writeText(i.value) : Promise.reject()).then(() => A.toast("Link copied"), () => { document.execCommand("copy"); A.toast("Link copied"); }); return; }
     if(t.closest(".pv-sys")){ const p = S.shareP || target("path", S.path); navigator.share({title: p.title, text: shareText(p), url: root.querySelector(".pv-url").value}).catch(() => {}); return; }
@@ -1198,6 +1230,7 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-serh b{display:block;font-size:16px;color:var(--accent)}.pv-serh small{color:var(--muted)}.pv-serqr{flex:none;font-weight:700}
 .pv-serline{margin:-4px 0 8px;color:var(--accent)}
 .pv-folder{border-color:rgba(217,180,74,.55)}
+.pv-pc-meta>span.pv-next{background:rgba(217,180,74,.25);color:var(--accent)}
 .pv-shead .pv-shico{display:block;font-size:40px;line-height:64px;width:96px;margin:0;text-align:center;color:inherit;flex:none}
 .pv-socl{margin:12px 0 6px}.pv-social{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.pv-social .pv-btn{text-align:center;text-decoration:none;font-weight:650;font-size:14px;padding:8px 4px;color:#fff;border:0}
 @media (max-width:560px){.pv-social{grid-template-columns:repeat(3,1fr)}}

@@ -6,6 +6,7 @@
   "kind": "stars"
  },
  "group": "Friday night Bible study",
+ "study_date": "2026-10-23",
  "read_along": {
   "label": "TS2009",
   "url": "https://www.bible.com/bible/316/DAN.{c}.TS2009"
@@ -559,7 +560,7 @@
  },
  "built_from": {
   "file": "packaging/paths/daniel-2-statue-and-stone.json",
-  "sha": "68973b092077c87f",
+  "sha": "a991dc850cdd0f56",
   "checked_in": [
    "KJV",
    "ETH",

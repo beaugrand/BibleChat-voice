@@ -110,7 +110,8 @@ class SharePagesTest(unittest.TestCase):
         index = json.loads(read("web", "paths", "index.json"))
         prayers = json.loads(read("web", "prayers.json"))["prayers"]
         series = {p["series"]["id"] for p in index if isinstance(p.get("series"), dict)}
-        self.assertEqual(len(self.files), 2 + len(index) + len(series) + len(prayers))
+        groups = {p["group"] for p in index if p.get("group")}                   # a Bible study group's folder has a page too
+        self.assertEqual(len(self.files), 2 + len(index) + len(series) + len(groups) + len(prayers))
         for p in index:
             h = self.page("p", p["id"])
             self.assertEqual(self.meta(h, "og:image"), build_share.SITE + "paths/" + p["image"] + "?v=2")   # its own picture

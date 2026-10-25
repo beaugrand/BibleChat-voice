@@ -200,6 +200,9 @@ def check_path(p: dict, B: Bibles, file_id: str | None = None) -> dict:
     se = p.get("series")
     if se is not None and not (re.fullmatch(r"[a-z0-9-]+", str(se.get("id", ""))) and se.get("title") and isinstance(se.get("session"), int)):
         raise PathError(f"{where}: series needs an id (a-z, 0-9, -), a title and the session number")
+    sd = p.get("study_date")
+    if sd is not None and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(sd)):
+        raise PathError(f"{where}: study_date is the day the group studies it, written 2026-10-30")
     ra = p.get("read_along")
     if ra is not None and (not ra.get("label") or not str(ra.get("url", "")).startswith("https://")):
         raise PathError(f"{where}: read_along needs a label and an https:// link (a link only, never copied text)")
@@ -483,7 +486,7 @@ def index(paths: dict[str, dict]) -> list[dict]:
              "step_questions": [s["question"] for s in p["steps"]],
              "books": sorted({parse_ref(r)[0] for s in p["steps"] for r in s["refs"]}),   # a search for "Genesis" or "Daniel" finds the path
              "show": p.get("show", 8), "verses": p["verse_count"], "minutes": minutes(p),
-             **{k: p[k] for k in ("group", "read_along", "anim", "series") if p.get(k)}}
+             **{k: p[k] for k in ("group", "study_date", "read_along", "anim", "series") if p.get(k)}}
             for p in paths.values()]
 
 
