@@ -35,7 +35,7 @@ jobs:
           curl -fsSL "$URL" -o /tmp/p.diff
           echo "$SUM  /tmp/p.diff" | sha256sum -c -
           git apply --index /tmp/p.diff
-          pip install -q -r requirements.txt || true
+          pip install -q numpy pypdfium2 certifi
           python -m unittest discover -s tests
           git -c user.name="BibleChat assistant" -c user.email="wbeaugrand@gmail.com" commit -q -m "$MSG"
           git push
