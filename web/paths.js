@@ -747,6 +747,17 @@ const BCPaths = (() => {
     const M = mine(); M.unshift(p); set("mine", M.slice(0, 30));
     open(p.id, 0);
   }
+  /* Links come back from Facebook, Messenger, Instagram, email and text messages with extra bits on the end: the app's own
+     tracking (?fbclid=…, &utm_source=…), sometimes put after the "#", and the full stop or bracket of the sentence the link
+     ended. cleanHash cuts that off, so the link still opens what was shared instead of falling back to Home. */
+  function cleanHash(h){ return String(h || "").replace(/(%3F|%26|[?&]).*$/i, "").replace(/[\s.,;:!)\]}'"»”’]+$/, ""); }
+  /* The address to send. A path, a series, a prayer and the two lists each have a short page of their own on the phone site
+     (p/<id>/, series/<id>/, pray/<id>/, p/, pray/; web/build_study.py writes them). A posted link then shows that path's or
+     prayer's own picture, title and question, and the page opens it in BibleChat. A path someone made travels in the link. */
+  const SHORT = [[/^#\/path\/(?!mine\/)([a-z0-9-]+)\/1$/, "p/$1/"], [/^#\/paths\/?$/, "p/"], [/^#\/paths\/series\/([a-z0-9-]+)\/?$/, "series/$1/"],
+    [/^#\/prayers\/([a-z0-9-]+)$/, "pray/$1/"], [/^#\/prayers\/?$/, "pray/"]];
+  function shortPath(hash){ for(const [re, to] of SHORT) if(re.test(hash)) return hash.replace(re, to); return null; }
+  function linkOf(hash){ const sp = shortPath(hash); return sp ? A.shareUrl("") + sp : A.shareUrl(hash); }
   function shareHash(p, step){
     if(p.mine){   // version 2: the whole path travels in the link (title, question, steps, options, words, notes); nothing is stored on a server
       const o = st => (st.compare && st.compare.length > 1 ? 1 : 0) | ((st.notes || []).includes("scofield") ? 2 : 0) | ((st.notes || []).includes("henry") ? 4 : 0) | (st.look_closer && st.look_closer.xref_top ? 8 : 0);
@@ -769,7 +780,7 @@ const BCPaths = (() => {
   }
   function share(p, from, kind){
     p = p || S.path; if(!p && kind !== "all") return;
-    const t = target(kind || "path", p), url = A.shareUrl(t.hash), text = shareText(t), both = text + "\n" + url;
+    const t = target(kind || "path", p), url = linkOf(t.hash), text = shareText(t), both = text + "\n" + url;
     const what = t.kind === "all" ? "the page with all the Study Paths" : t.kind === "series" ? "this series of study paths" : "this study path, at step 1";
     S.shareFrom = from || "path"; S.shareP = t; S.view = "share";
     const back = S.shareFrom === "list" || S.shareFrom === "series" ? `<button class="pv-btn pv-backlist">‹ Back to the paths</button>` : `<button class="pv-btn pv-backpath">‹ Back to the path</button>`;
@@ -819,19 +830,19 @@ const BCPaths = (() => {
       out.forEach((l, i) => g.fillText(l, x, y + i * lh)); return y + out.length * lh; };
     g.fillStyle = "#d9b44a"; g.font = "bold 64px Georgia, serif"; let y = wrap(t.title, 70, 790, W - 140, 74, 2);
     g.fillStyle = "#e9ecef"; g.font = "36px system-ui, sans-serif"; y = wrap(t.question || "", 70, y + 20, W - 140, 48, 3);
-    const qr = A.qr(A.shareUrl(t.hash), 260); if(qr) g.drawImage(qr, W - 330, H - 330, 260, 260);
+    const qr = A.qr(linkOf(t.hash), 260); if(qr) g.drawImage(qr, W - 330, H - 330, 260, 260);
     g.fillStyle = "#e9ecef"; g.font = "bold 40px system-ui, sans-serif"; g.fillText("Study it free in BibleChat", 70, H - 210);
     g.fillStyle = "#9aa3ad"; g.font = "30px system-ui, sans-serif"; g.fillText("Scan the code, or open", 70, H - 160); g.fillText("beaugrand.github.io/BibleChat-voice", 70, H - 118); g.fillText("No sign-up · no app needed", 70, H - 76);
     const blob = await new Promise(r => c.toBlob(r, "image/png")), name = "BibleChat-" + (t.id || t.kind || "study").replace(/[^a-z0-9-]/gi, "") + ".png";
     const file = typeof File === "function" ? new File([blob], name, {type: "image/png"}) : null;
-    if(file && navigator.canShare && navigator.canShare({files: [file]})){ try{ await navigator.share({files: [file], title: t.title, text: shareText(t) + "\n" + A.shareUrl(t.hash)}); return; }catch(e){ if(e && e.name === "AbortError") return; } }
+    if(file && navigator.canShare && navigator.canShare({files: [file]})){ try{ await navigator.share({files: [file], title: t.title, text: shareText(t) + "\n" + linkOf(t.hash)}); return; }catch(e){ if(e && e.name === "AbortError") return; } }
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
     A.toast(T("Picture saved. Post it with the link."));
   }
   /* the QR code over the whole screen, as big as it fits: for a TV, a projector or a room */
   function bigQr(){
     const t = S.shareP; if(!t) return;
-    const url = A.shareUrl(t.hash), px = Math.max(220, Math.min(innerWidth, innerHeight) - 250);
+    const url = linkOf(t.hash), px = Math.max(220, Math.min(innerWidth, innerHeight) - 250);
     const o = document.createElement("div"); o.className = "pv-qrfull";
     o.innerHTML = `<div class="pv-qrf-in"><b class="pvx">${esc(t.title)}</b><div class="pv-qrf-code"></div><span>Scan with your phone camera · BibleChat</span><button class="pv-btn pv-qrclose">✕ Close</button></div>`;
     const cv = A.qr(url, px); if(cv) o.querySelector(".pv-qrf-code").appendChild(cv);
@@ -860,6 +871,7 @@ const BCPaths = (() => {
   }
   /* a link "#/path/<id>/<step>" or "#/path/mine/<data>" */
   async function openHash(h){
+    h = cleanHash(h);
     const all = /^#\/paths(?:\/series\/([a-z0-9-]+))?\/?$/.exec(h || "");
     if(all){
       S.arrivedList = true; S.filter = ALL; S.section = "paths";
@@ -876,8 +888,13 @@ const BCPaths = (() => {
       }catch(e){}
       return false;
     }
+    let id = m[1]; try{ id = decodeURIComponent(id); }catch(e){}
+    const L = await loadList();
+    if(L.length && !L.some(x => x.id === id) && !mine().some(x => x.id === id)){   // an old or mistyped link: show all the paths instead
+      S.arrivedList = true; S.filter = ALL; S.section = "paths"; await showList(); return true; }
+    const n = parseInt(m[2], 10);   // the step number; anything else on the end is ignored
     S.arrived = true;   // came by a shared link: say so once on the first page
-    await open(decodeURIComponent(m[1]), m[2] ? Math.max(0, +m[2] - 1) : null); return true;
+    await open(id, n > 0 ? n - 1 : null); return true;
   }
 
   /* ---------- events ---------- */
@@ -986,7 +1003,8 @@ const BCPaths = (() => {
   async function open(id, step){ if(!root) return; if(id) await showPath(id, step); else await showList(); }
   async function reopen(){
     const v = lastView; if(!v){ await showList(); return; }
-    if(v.view === "quoted") await showQuoted(); else if(v.id && v.view === "step") await showPath(v.id, v.step); else await showList();
+    if(v.view === "quoted") await showQuoted(); else if(v.id && v.view === "step") await showPath(v.id, v.step);
+    else if(v.id && v.view === "quiz"){ await showPath(v.id, v.step); await showQuiz(); } else await showList();
     if(v.top) root.scrollTop = v.top;
   }
   function close(){ lsStop(); if(root){ root.hidden = true; root.innerHTML = ""; S.view = "list"; S.draft = null; if(A.onClose) A.onClose(); } }
@@ -1211,7 +1229,9 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 :root[data-theme="dark"] .pv-tag,.pv-dark .pv-tag{color:#1f1e1b}
 .pv-dark .pnote{background:#191c21}`;
   async function openCommunity(){ S.section = "community"; await open(); }
-  return {mount, open, close, reopen, openHash, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden,
+  /* remember where the reader is before another screen covers the path (🙏 sharing the closing prayer), so reopen() returns there */
+  function remember(){ if(root && !root.hidden) lastView = {view: S.view === "quiz" ? "quiz" : S.view === "word" || S.view === "share" ? "step" : S.view, id: S.path && S.path.id, step: S.step, top: root.scrollTop}; }
+  return {mount, open, close, reopen, remember, openHash, cleanHash, shortPath, linkOf, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden,
     findPaths, openCommunity, preload: () => loadList(), normRef,
     adapter: () => A, readVerses, title: id => { const x = (list || []).find(q => q.id === id); return x ? x.title : ""; }};   // 🙏 Prayers (web/prayers.js) borrow these
 })();

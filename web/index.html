@@ -591,6 +591,9 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 <script src="prayers.js"></script>
 <script>
 "use strict";
+/* a shared link that came back from Facebook, Messenger, Instagram, email or a text message: cut off what those apps add
+   on the end (?fbclid=…, &utm_source=…, a full stop), so it opens the path, prayer or verse that was shared (paths.js cleanHash) */
+if(location.hash){ const ch = BCPaths.cleanHash(location.hash); if(ch !== location.hash) history.replaceState(null, "", location.pathname + location.search + ch); }
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const store = {
@@ -2169,7 +2172,8 @@ function parseHash(){
     if(!(h && h.v)) show("home", true);   // a normal start opens on the Bible cover; a link to a verse goes straight to it
     if(!store.get("tip", false)){ store.set("tip", true); setTimeout(() => toast("Tip: tap any verse to share or study it"), 1200); }
   }
-  addEventListener("hashchange", () => { if(/^#\/paths?(\/|$)/.test(location.hash)){ BCPaths.openHash(location.hash); return; } if(/^#\/prayers?(\/|$)/.test(location.hash)){ BCPrayers.openHash(location.hash); return; } const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]){ go(x.book, x.ch, x.v); if(x.shared && x.v) markShared(x.v); } });
+  addEventListener("hashchange", () => { const ch = BCPaths.cleanHash(location.hash); if(ch !== location.hash) history.replaceState(null, "", location.pathname + ch);
+    if(/^#\/paths?(\/|$)/.test(location.hash)){ BCPaths.openHash(location.hash); return; } if(/^#\/prayers?(\/|$)/.test(location.hash)){ BCPrayers.openHash(location.hash); return; } const x = parseHash(); if(x && x.bible === place.bible && bible.byName[x.book]){ go(x.book, x.ch, x.v); if(x.shared && x.v) markShared(x.v); } });
 })();
 /* ---------- 📲 Add BibleChat to your home screen ----------
    Android, Chrome and Edge: the button opens the browser's own "Add to Home screen / Install" box (beforeinstallprompt).

@@ -118,6 +118,10 @@ def main(out: str) -> None:
     for f in ("paths.js", "quoted.json", "prayers.js", "prayers.json"):   # 🙏 Prayers ride along with the Study Paths
         shutil.copy2(os.path.join(web, f), os.path.join(out, f))
     shutil.copytree(os.path.join(web, "paths"), os.path.join(out, "paths"), dirs_exist_ok=True)
+    # ↗ short share pages with their own preview: p/<id>/, series/<id>/, pray/<id>/ (web/build_share.py)
+    sys.path.insert(0, web)
+    from build_share import write_share_pages
+    print(f"share pages: {len(write_share_pages(out, web))}")
     total = sum(os.path.getsize(os.path.join(dp, f)) for dp, _, fs in os.walk(base) for f in fs)
     nfiles = sum(len(fs) for _, _, fs in os.walk(base))
     print(f"study data: {nfiles} files, {total / 1e6:.1f} MB")

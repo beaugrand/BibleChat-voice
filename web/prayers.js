@@ -13,7 +13,7 @@
 "use strict";
 const BCPrayers = (() => {
   let P = null, A = null, root = null, data = null, loading = null;
-  const S = {view: "list", cat: "all", q: "", id: null, back: null, about: null};
+  const S = {view: "list", cat: "all", q: "", id: null, back: null, about: null, arrived: false};
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
   const T = x => (typeof tr === "function" ? tr(x) : x);
   const WRITTEN_NOTE = "A prayer written for BibleChat from these verses. The prayer is the words of a man, not Scripture; the verses are Scripture.";
@@ -145,7 +145,9 @@ const BCPrayers = (() => {
     const chips = [{id: "all", icon: "", name: "All"}].concat(d.categories).map(c => `<button class="pv-chip${S.cat === c.id ? " pv-chip-on" : ""}" data-cat="${esc(c.id)}">${c.icon ? c.icon + " " : ""}${esc(T(c.name))}</button>`).join("");
     const list = (S.q ? search(S.q) : d.prayers).filter(p => S.cat === "all" || p.category === S.cat);
     const groups = d.categories.filter(c => S.cat === "all" || c.id === S.cat).map(c => { const ps = list.filter(p => p.category === c.id); return ps.length ? `<h3 class="pr-grp">${c.icon} ${esc(T(c.name))}</h3><div class="pr-grid">${ps.map(cardHtml).join("")}</div>` : ""; }).join("");
-    frame("🙏 " + T("Prayers"), `<p class="pv-lead">${esc(T("Prayers drawn from the Bible, and the prayers the Bible itself records. Tap one to pray it, listen to it or share it."))}</p>
+    const arrived = S.arrived; S.arrived = false;
+    frame("🙏 " + T("Prayers"), `${arrived ? `<div class="pv-welcome">👋 <b>${esc(T("Someone shared the BibleChat Prayers with you."))}</b> ${esc(T("Tap a prayer to pray it, listen to it, or read the verses it comes from. Free, no sign-up."))}</div>` : ""}<p class="pv-lead">${esc(T("Prayers drawn from the Bible, and the prayers the Bible itself records. Tap one to pray it, listen to it or share it."))}</p>
+      <div class="pv-allshare"><button class="pv-btn pr-shareall">↗ ${esc(T("Share the Prayers · link or QR code"))}</button></div>
       ${!S.q && S.cat === "all" ? `<div class="pr-today"><div class="pr-lab">☀ ${esc(T("Today's prayer"))}</div>${cardHtml(t)}</div>` : ""}
       <input type="search" class="pr-find" placeholder="${esc(T("Find a prayer: fear, sleep, children, Psalm 91…"))}" value="${esc(S.q)}" aria-label="${esc(T("Find a prayer"))}">
       <div class="pv-chips">${chips}</div>
@@ -156,9 +158,11 @@ const BCPrayers = (() => {
     const d = await load(), p = d.byId[id];
     if(!p){ frame("🙏 " + T("Prayers"), `<p class="pv-err">${esc(T("That prayer isn't in this version of BibleChat."))}</p>`, true); S.back = null; return; }
     S.view = "prayer"; S.id = id; if(opts && "back" in opts) S.back = opts.back;
+    const arrived = S.arrived; S.arrived = false;
     const c = cat(p.category), more = (opts && opts.more) || d.prayers.filter(x => x.category === p.category && x !== p).slice(0, 6);
     const pathTitle = p.paths && P.pathTitle ? P.pathTitle(p.paths[0]) : "";
     frame(p.title, `<div class="pr-cat">${c.icon} ${esc(T(c.name))}${p.by ? ` · <span class="pvx">${esc(p.by)}</span>` : ""}${pathTitle ? ` · <a href="#" class="pr-path" data-path="${esc(p.paths[0])}">📜 <span class="pvx">${esc(pathTitle)}</span></a>` : ""}</div>
+      ${arrived ? `<div class="pv-welcome">👋 <b>${esc(T("Someone shared this prayer with you."))}</b> ${esc(T("Pray it, listen to it, or read the verses it comes from. Free, no sign-up."))}</div>` : ""}
       ${opts && opts.intro ? `<p class="pv-lead">${esc(opts.intro)}</p>` : ""}
       ${written(p) ? `<div class="pr-text pvx">${p.text.map(t => `<p>${esc(t)}</p>`).join("")}</div>` : ""}
       <div class="pr-acts"><button class="pv-btn pr-listen">🔊 ${esc(T("Listen"))}</button><button class="pv-btn pr-share">↗ ${esc(T("Share"))}</button><button class="pv-btn pr-copy">⧉ ${esc(T("Copy"))}</button></div>
@@ -216,10 +220,47 @@ const BCPrayers = (() => {
     const head = written(p) ? p.text.join("\n\n") : p.title;
     return `${p.title}\n\n${head}\n\n(${p.refs.map(label).join("; ")})`;
   }
-  async function share(p){
-    const url = A.shareUrl ? A.shareUrl("#/prayers/" + p.id) : location.href, text = shareText(p);
-    if(navigator.share){ try{ await navigator.share({title: p.title, text: text + "\n\nBibleChat:", url}); return; }catch(e){ if(e && e.name === "AbortError") return; } }
-    copy(text + "\n\nBibleChat: " + url);
+  /* ↗ Share a prayer (or the whole Prayers page): one link that opens it in BibleChat on any phone or computer, no sign-up.
+     Its own short page (pray/<id>/) shows the prayer's title when the link is posted. Send it by the phone's share sheet, a
+     text message, WhatsApp, email or social media, show the QR code, or copy the whole prayer as text. */
+  const linkFor = id => BCPaths.linkOf ? BCPaths.linkOf(id ? "#/prayers/" + id : "#/prayers") : A.shareUrl(id ? "#/prayers/" + id : "#/prayers");
+  function inviteText(p){
+    return p ? `${T("A prayer for you")}: "${p.title}" (${p.refs.map(label).join("; ")}). ${T("Pray it in BibleChat (free, no sign-up):")}`
+      : T("Prayers drawn from the Bible, and the prayers the Bible itself records. In BibleChat, free, no sign-up:");
+  }
+  function share(p, back){
+    stopListen();
+    const url = linkFor(p && p.id), text = inviteText(p), both = text + "\n" + url, wide = matchMedia("(min-width: 760px)").matches, e = encodeURIComponent;
+    S.view = "share"; S.id = p ? p.id : null; S.shareP = p || null; S.shareUrl = url; S.back = back || (p ? () => showPrayer(p.id) : () => showList());
+    const qr = `<div class="pv-qrbox"><p class="pv-small">${esc(T(wide ? "Point a phone camera at the screen:" : "Or let them scan this code with their phone camera:"))}</p><div class="pv-qr"></div></div>`;
+    frame(p ? "↗ " + T("Share this prayer") : "↗ " + T("Share the Prayers"), `<div class="pv-shead"><span class="pv-shico">🙏</span><div><b class="pvx">${esc(p ? p.title : T("BibleChat Prayers"))}</b><span class="pvx">${esc(p ? p.refs.map(label).join(" · ") : T("Prayers drawn from the Bible, and the prayers the Bible itself records."))}</span></div></div>
+      <p class="pv-small">${esc(T(p ? "Send this link to someone. It opens this prayer in BibleChat on their phone or computer, with the verses it comes from. No sign-up, nothing to install." : "Send this link to someone. It opens all the prayers in BibleChat on their phone or computer. No sign-up, nothing to install."))}</p>
+      ${wide ? qr : ""}
+      <div class="pv-shbtns">${navigator.share ? `<button class="pv-btn pv-primary pr-sys">📤 ${esc(T("Send to someone"))}</button>` : ""}
+        <a class="pv-btn" href="sms:?&body=${e(both)}">💬 ${esc(T("Text message"))}</a>
+        <a class="pv-btn" href="https://wa.me/?text=${e(both)}" target="_blank" rel="noopener">🟢 WhatsApp</a>
+        <a class="pv-btn" href="mailto:?subject=${e((p ? T("A prayer") + ": " + p.title : "BibleChat " + T("Prayers")))}&body=${e(both)}">✉ ${esc(T("Email"))}</a>
+        <button class="pv-btn pr-copylink">⧉ ${esc(T("Copy link"))}</button>${p ? `<button class="pv-btn pr-copyall">📋 ${esc(T("Copy the whole prayer"))}</button>` : ""}</div>
+      <p class="pv-small pv-socl">${esc(T("Post it on social media:"))}</p>
+      <div class="pv-social">
+        <a class="pv-btn pv-so-fb" href="https://www.facebook.com/sharer/sharer.php?u=${e(url)}" target="_blank" rel="noopener">Facebook</a>
+        <a class="pv-btn pv-so-x" href="https://x.com/intent/post?text=${e(text)}&url=${e(url)}" target="_blank" rel="noopener">X</a>
+        <a class="pv-btn pv-so-tg" href="https://t.me/share/url?url=${e(url)}&text=${e(text)}" target="_blank" rel="noopener">Telegram</a>
+        <a class="pv-btn pv-so-li" href="https://www.linkedin.com/sharing/share-offsite/?url=${e(url)}" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <input class="pv-url" readonly value="${esc(url)}">
+      ${wide ? "" : qr}`, true);
+    const cv = A.qr ? A.qr(url, wide ? 260 : 210) : null, box = root.querySelector(".pv-qr"); if(cv && box) box.appendChild(cv); else if(box) box.parentNode.hidden = true;
+  }
+  /* from Home (today's prayer) or the end of a Study Path: open the share screen over the page; Back returns there */
+  function shareFrom(p, from){
+    P.ensure && P.ensure();
+    const fromPath = BCPaths.isOpen && BCPaths.isOpen(); if(fromPath){ BCPaths.remember && BCPaths.remember(); BCPaths.close(); }
+    share(p, fromPath ? () => { close(); BCPaths.reopen && BCPaths.reopen(); } : () => close());
+  }
+  async function sysShare(){
+    const p = S.shareP;
+    try{ await navigator.share({title: p ? p.title : "BibleChat " + T("Prayers"), text: inviteText(p), url: S.shareUrl}); }catch(e){ if(!(e && e.name === "AbortError")) copy(inviteText(p) + "\n" + S.shareUrl); }
   }
   function copy(text){
     const done = () => toast(T("Copied"));
@@ -238,7 +279,12 @@ const BCPrayers = (() => {
     const pa = t.closest(".pr-path"); if(pa){ e.preventDefault(); stopListen(); close(); BCPaths.open(pa.dataset.path); return; }
     const p = S.id && data.byId[S.id];
     if(t.closest(".pr-listen") && p){ const b = t.closest(".pr-listen"); partsOf(p, S.verses).then(parts => listen(parts, b)); return; }
-    if(t.closest(".pr-share") && p){ share(p); return; }
+    if(t.closest(".pr-share") && p){ const id = p.id, prev = S.back; share(p, () => showPrayer(id, {back: prev})); return; }
+    if(t.closest(".pr-shareall")){ share(null, () => showList()); return; }
+    if(t.closest(".pr-sys")){ sysShare(); return; }
+    if(t.closest(".pr-copylink") && S.shareUrl){ copy(S.shareUrl); return; }
+    if(t.closest(".pr-copyall") && S.shareP){ copy(shareText(S.shareP) + "\n\nBibleChat: " + S.shareUrl); return; }
+    if(t.closest(".pv-url")){ t.closest(".pv-url").select(); return; }
     if(t.closest(".pr-copy") && p){ copy(shareText(p)); return; }
     if(t.closest(".pr-aiask")){ if(P.askAI) P.askAI(aiPrompt()); return; }
     if(t.closest(".pr-aiwrite")){ aiWrite(t.closest(".pr-aiwrite")); return; }
@@ -261,10 +307,10 @@ const BCPrayers = (() => {
     try{ await load(); }catch(e){ el.hidden = true; return; }
     const p = today(P.votd ? P.votd() : null); if(!p){ el.hidden = true; return; }
     el.innerHTML = `<div class="lab">🙏 ${esc(T("Today's prayer"))}</div><b class="pr-tt pvx">${esc(p.title)}</b><div class="vt pvx">${esc(written(p) ? p.text[0] : p.by || "")}</div><div class="rf">${esc(p.refs.map(label).join(" · "))}</div>
-      <div class="alt row"><button class="btn" data-prt="open">🙏 ${esc(T("Pray it"))}</button><button class="btn" data-prt="listen">🔊 ${esc(T("Listen"))}</button><button class="btn" data-prt="all">${esc(T("All prayers"))}</button></div>`;
+      <div class="alt row"><button class="btn" data-prt="open">🙏 ${esc(T("Pray it"))}</button><button class="btn" data-prt="listen">🔊 ${esc(T("Listen"))}</button><button class="btn" data-prt="share">↗ ${esc(T("Share"))}</button><button class="btn" data-prt="all">${esc(T("All prayers"))}</button></div>`;
     el.hidden = false;
     el.onclick = e => { const b = e.target.closest("[data-prt]"); if(!b) return;
-      if(b.dataset.prt === "open") open(p.id); else if(b.dataset.prt === "all") open();
+      if(b.dataset.prt === "open") open(p.id); else if(b.dataset.prt === "all") open(); else if(b.dataset.prt === "share") shareFrom(p);
       else partsOf(p).then(parts => listen(parts, b)); };
   }
   /* 📜 the closing prayer at the end of a Study Path (paths.js calls this under Questions and answers) */
@@ -276,9 +322,10 @@ const BCPrayers = (() => {
       ${written(p) ? `<div class="pr-text pvx">${p.text.map(t => `<p>${esc(t)}</p>`).join("")}</div>` : `<p class="pv-small pvx">${esc(p.by || "")}</p>`}
       <p class="pv-small">${p.refs.map(r => { const q = parse(r); return `<a href="#" class="pv-go" data-b="${esc(q.book)}" data-c="${q.c1}" data-v="${q.v1 || ""}">${esc(A.bookName(q.book) + " " + label(r.slice(q.book.length + 1)))}</a>`; }).join(" · ")}</p>
       <p class="pr-note">${esc(T(written(p) ? WRITTEN_NOTE : BIBLE_NOTE))}</p>
-      <div class="pr-acts"><button class="pv-btn pr-cl-listen">🔊 ${esc(T("Listen to the prayer"))}</button><button class="pv-btn pr-cl-open">🙏 ${esc(T("Open in Prayers"))}</button></div></div>`;
+      <div class="pr-acts"><button class="pv-btn pr-cl-listen">🔊 ${esc(T("Listen to the prayer"))}</button><button class="pv-btn pr-cl-open">🙏 ${esc(T("Open in Prayers"))}</button><button class="pv-btn pr-cl-share">↗ ${esc(T("Share the prayer"))}</button></div></div>`;
     el.querySelector(".pr-cl-listen").onclick = ev => { ev.stopPropagation(); partsOf(p).then(parts => listen(parts, ev.target.closest("button"))); };
     el.querySelector(".pr-cl-open").onclick = ev => { ev.stopPropagation(); stopListen(); open(p.id, {back: null}); };
+    el.querySelector(".pr-cl-share").onclick = ev => { ev.stopPropagation(); stopListen(); shareFrom(p); };
   }
 
   /* ---------- open / close ---------- */
@@ -289,7 +336,15 @@ const BCPrayers = (() => {
     catch(e){ frame("🙏 " + T("Prayers"), `<p class="pv-err">${esc(T("The prayers couldn't load. Check the internet connection and try again."))}</p>`, false); }
   }
   function close(){ stopListen(); if(root){ root.hidden = true; root.innerHTML = ""; } if(P && P.onClose) P.onClose(); }
-  function openHash(h){ const m = /^#\/prayers?(?:\/([a-z0-9-]+))?/.exec(h || ""); if(!m) return false; open(m[1] || null); return true; }
+  /* a shared link "#/prayers/<id>" or "#/prayers" (the tracking Facebook and others add on the end is cut off first);
+     an unknown prayer opens the list. The person who opens it is told someone shared it with them. */
+  async function openHash(h){
+    h = BCPaths.cleanHash ? BCPaths.cleanHash(h) : String(h || "");
+    const m = /^#\/prayers?(?:\/([a-z0-9-]+))?/.exec(h); if(!m) return false;
+    let id = m[1] || null;
+    try{ const d = await load(); if(id && !d.byId[id]) id = null; }catch(e){}
+    S.arrived = true; await open(id); return true;
+  }
   function mount(opts){
     P = opts; A = BCPaths.adapter(); root = opts.container;
     root.classList.add("pv", "pv-dark", "pr"); root.hidden = true;
@@ -318,7 +373,7 @@ const BCPrayers = (() => {
 .pr-note{color:var(--muted);font-size:12.5px;font-style:italic;margin:6px 0 10px}
 .pr-ai{border:1px dashed var(--line);border-radius:14px;padding:8px 12px;margin:6px 0 10px}
 .pr-close-box{margin:22px 0 8px;border-top:1px solid var(--line);padding-top:12px}.pr-close-box h3{margin:0 0 4px;color:var(--accent)}.pr-close-box>b{display:block;margin:0 0 8px}`;
-  return {mount, open, close, openChapter, prayAbout, todayCard, closing, openHash, isOpen: () => !!root && !root.hidden,
+  return {mount, open, close, openChapter, prayAbout, todayCard, closing, openHash, share: shareFrom, isOpen: () => !!root && !root.hidden,
     load, forChapter: (b, c) => data ? forChapter(b, c) : [], forAnswer: (q, r, n) => data ? forAnswer(q, r, n) : [], today: (v, d) => data ? today(v, d) : null,
     forPath: p => forPath(p), _data: () => data, _setData: d => { data = d; d.byId = {}; for(const p of d.prayers){ d.byId[p.id] = p; p._refs = p.refs.map(r => parse(r)).filter(Boolean); } }};
 })();
