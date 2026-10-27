@@ -38,6 +38,13 @@
     {"question": "Who does Jesus say is \"the light of the world\", and what does the one who follows Him have?", "refs": ["John 8:12"],
      "look_closer": {"strongs": ["G5457"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]}
   ],
+  "remember": [
+    {"text": "God set His bow in the cloud \"for a token of a covenant\".", "refs": ["Genesis 9:13"]},
+    {"text": "\"my kindness shall not depart from thee\"", "refs": ["Isaiah 54:10"]},
+    {"text": "The bow in the cloud was \"the appearance of the likeness of the glory of the LORD\".", "refs": ["Ezekiel 1:28"]},
+    {"text": "\"a rainbow round about the throne\"", "refs": ["Revelation 4:3"]},
+    {"text": "\"I am the light of the world\"", "refs": ["John 8:12"]}
+  ],
   "quiz": [
     {"q": "Which verse says \"I do set my bow in the cloud\"?", "type": "find_the_verse", "answer_refs": ["Genesis 9:13"]},
     {"q": "In Genesis 9:13, what does God say the bow in the cloud shall be?", "type": "multiple_choice",

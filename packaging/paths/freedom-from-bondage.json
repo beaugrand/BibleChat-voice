@@ -41,6 +41,14 @@
     {"question": "What happens when we confess our sins, and what is there where the Spirit of the Lord is?", "refs": ["1 John 1:9", "2 Corinthians 3:17"],
      "look_closer": {"strongs": ["G3670", "G1657"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]}
   ],
+  "remember": [
+    {"text": "\"Whosoever committeth sin is the servant of sin\"", "refs": ["John 8:34"]},
+    {"text": "\"If the Son therefore shall make you free, ye shall be free indeed\"", "refs": ["John 8:36"]},
+    {"text": "\"sin shall not have dominion over you\"", "refs": ["Romans 6:14"]},
+    {"text": "With every temptation God will \"make a way to escape\".", "refs": ["1 Corinthians 10:13"]},
+    {"text": "His mercies \"are new every morning\".", "refs": ["Lamentations 3:22-23"]},
+    {"text": "\"If we confess our sins, he is faithful and just to forgive us\"", "refs": ["1 John 1:9"]}
+  ],
   "quiz": [
     {"q": "Which verse says \"Whosoever committeth sin is the servant of sin\"?", "type": "find_the_verse", "answer_refs": ["John 8:34"]},
     {"q": "Which translation says \"a slave to sin\" in John 8:34?", "type": "which_translation", "ref": "John 8:34", "bible": "BSB", "phrase": "slave to sin"},

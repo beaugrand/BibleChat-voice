@@ -158,6 +158,12 @@
    ]
   }
  ],
+ "remember": [
+   {"text": "The stone cut out without hands \"became a great mountain, and filled the whole earth\".", "refs": ["Daniel 2:34-35"]},
+   {"text": "The kingdom of the God of heaven \"shall stand for ever\".", "refs": ["Daniel 2:44"]},
+   {"text": "The rider on the white horse is \"called Faithful and True\"; \"his name is called The Word of God\".", "refs": ["Revelation 19:11", "Revelation 19:13"]},
+   {"text": "\"he shall reign for ever and ever\"", "refs": ["Revelation 11:15"]}
+ ],
  "quiz": [
   {
    "q": "Which verse says \"a stone was cut out without hands\"?",

@@ -181,6 +181,32 @@
    ]
   }
  ],
+ "remember": [
+  {
+   "text": "\"one like the Son of man came with the clouds of heaven\"",
+   "refs": [
+    "Daniel 7:13"
+   ]
+  },
+  {
+   "text": "\"his dominion is an everlasting dominion\"",
+   "refs": [
+    "Daniel 7:14"
+   ]
+  },
+  {
+   "text": "\"Behold, he cometh with clouds; and every eye shall see him\"",
+   "refs": [
+    "Revelation 1:7"
+   ]
+  },
+  {
+   "text": "Before the high priest Jesus used Daniel's words: \"coming in the clouds of heaven\".",
+   "refs": [
+    "Matthew 26:64"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse says \"one like the Son of man came with the clouds of heaven\"?",
@@ -461,7 +487,7 @@
  },
  "built_from": {
   "file": "packaging/paths/mirror-3-son-of-man.json",
-  "sha": "7059d88b013b7470",
+  "sha": "55a20bff5daf6339",
   "checked_in": [
    "KJV",
    "ETH",

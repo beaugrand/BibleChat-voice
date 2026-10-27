@@ -166,6 +166,35 @@
    "notes": []
   }
  ],
+ "remember": [
+  {
+   "text": "God made the firmament and set the lights in it.",
+   "refs": [
+    "Genesis 1:7",
+    "Genesis 1:17"
+   ]
+  },
+  {
+   "text": "\"The heavens declare the glory of God\"",
+   "refs": [
+    "Psalms 19:1"
+   ]
+  },
+  {
+   "text": "Isaiah speaks of \"the circle of the earth\"; Job says He \"hangeth the earth upon nothing\".",
+   "refs": [
+    "Isaiah 40:22",
+    "Job 26:7"
+   ]
+  },
+  {
+   "text": "Other verses speak of the foundations and \"the pillars of the earth\". Read each in its own sentence.",
+   "refs": [
+    "Job 38:4",
+    "1 Samuel 2:8"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse speaks of \"the circle of the earth\"?",
@@ -473,7 +502,7 @@
  },
  "built_from": {
   "file": "packaging/paths/heavens-and-earth.json",
-  "sha": "fa0182ac8d235687",
+  "sha": "96a8238ea7818619",
   "checked_in": [
    "KJV",
    "ETH",

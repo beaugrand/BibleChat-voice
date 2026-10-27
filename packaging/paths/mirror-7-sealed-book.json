@@ -151,6 +151,11 @@
    ]
   }
  ],
+ "remember": [
+   {"text": "\"shut up the words, and seal the book, even to the time of the end\"", "refs": ["Daniel 12:4"]},
+   {"text": "The Lion of the tribe of Juda \"hath prevailed to open the book\".", "refs": ["Revelation 5:5"]},
+   {"text": "\"Seal not the sayings of the prophecy of this book: for the time is at hand\"", "refs": ["Revelation 22:10"]}
+ ],
  "quiz": [
   {
    "q": "Which verse says \"shut up the words, and seal the book, even to the time of the end\"?",

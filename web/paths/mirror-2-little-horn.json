@@ -189,6 +189,38 @@
    ]
   }
  ],
+ "remember": [
+  {
+   "text": "The little horn has \"a mouth speaking great things\".",
+   "refs": [
+    "Daniel 7:8"
+   ]
+  },
+  {
+   "text": "The same horn \"made war with the saints\".",
+   "refs": [
+    "Daniel 7:21"
+   ]
+  },
+  {
+   "text": "\"until a time and times and the dividing of time\"",
+   "refs": [
+    "Daniel 7:25"
+   ]
+  },
+  {
+   "text": "The beast is given power \"forty and two months\".",
+   "refs": [
+    "Revelation 13:5"
+   ]
+  },
+  {
+   "text": "\"But the judgment shall sit\"",
+   "refs": [
+    "Daniel 7:26"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse says \"there came up among them another little horn\"?",
@@ -498,7 +530,7 @@
  },
  "built_from": {
   "file": "packaging/paths/mirror-2-little-horn.json",
-  "sha": "26c8594dba7cc943",
+  "sha": "73b2d1bf866a3337",
   "checked_in": [
    "KJV",
    "ETH",

@@ -225,6 +225,13 @@
    ]
   }
  ],
+ "remember": [
+   {"text": "At the sound of the music all the people bowed to the image of gold. Three did not.", "refs": ["Daniel 3:7", "Daniel 3:12"]},
+   {"text": "\"our God whom we serve is able to deliver us\" ... \"But if not\", they would still not bow.", "refs": ["Daniel 3:17-18"]},
+   {"text": "In the fire the king saw \"four men loose, walking in the midst of the fire\".", "refs": ["Daniel 3:25"]},
+   {"text": "The fire had no power on them, \"nor was an hair of their head singed\".", "refs": ["Daniel 3:27"]},
+   {"text": "\"when thou walkest through the fire, thou shalt not be burned\"", "refs": ["Isaiah 43:2"]}
+ ],
  "quiz": [
   {
    "q": "Which verse says the king \"made an image of gold, whose height was threescore cubits\"?",

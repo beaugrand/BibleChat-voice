@@ -168,6 +168,38 @@
    ]
   }
  ],
+ "remember": [
+  {
+   "text": "\"the Word was made flesh\"",
+   "refs": [
+    "John 1:14"
+   ]
+  },
+  {
+   "text": "\"I am the way, the truth, and the life\"",
+   "refs": [
+    "John 14:6"
+   ]
+  },
+  {
+   "text": "\"If ye love me, keep my commandments\"",
+   "refs": [
+    "John 14:15"
+   ]
+  },
+  {
+   "text": "\"For by grace are ye saved through faith\"",
+   "refs": [
+    "Ephesians 2:8"
+   ]
+  },
+  {
+   "text": "In Revelation 22:14 the translations differ. Compare them.",
+   "refs": [
+    "Revelation 22:14"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse says \"the Word was made flesh, and dwelt among us\"?",
@@ -461,7 +493,7 @@
  },
  "built_from": {
   "file": "packaging/paths/word-made-flesh.json",
-  "sha": "cad1635388a275b2",
+  "sha": "a845fc78de95d413",
   "checked_in": [
    "KJV",
    "ETH",

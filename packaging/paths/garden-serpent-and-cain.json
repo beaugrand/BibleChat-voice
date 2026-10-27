@@ -500,6 +500,14 @@
    ]
   }
  ],
+ "remember": [
+   {"text": "God said the man should not eat of the tree; the serpent said \"Ye shall not surely die\".", "refs": ["Genesis 2:17", "Genesis 3:4"]},
+   {"text": "The woman said \"The serpent beguiled me, and I did eat\".", "refs": ["Genesis 3:13"]},
+   {"text": "God put enmity between the serpent's seed and her seed: \"it shall bruise thy head\".", "refs": ["Genesis 3:15"]},
+   {"text": "\"Adam knew Eve his wife; and she conceived, and bare Cain\"", "refs": ["Genesis 4:1"]},
+   {"text": "Before Cain slew Abel, the LORD asked him: \"If thou doest well, shalt thou not be accepted?\"", "refs": ["Genesis 4:7"]},
+   {"text": "John gives the reason Cain slew his brother: \"Because his own works were evil\".", "refs": ["1 John 3:12"]}
+ ],
  "quiz": [
   {
    "q": "Which verse says \"The serpent beguiled me, and I did eat\"?",

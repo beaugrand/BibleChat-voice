@@ -101,9 +101,10 @@ const BCPaths = (() => {
 
   /* ---------- drawing ---------- */
   function frame(title, body, back){
+    stillStop();
     if(LS.on && !LS.moving) lsStop();
     root.innerHTML = `<div class="pv-in"><header class="pv-head">${back ? `<button class="pv-ib pv-back" aria-label="Back">‹</button>` : ""}<h2 class="pvx">${esc(title)}</h2>
-      ${S.path && (S.view === "step" || S.view === "quiz") ? `<button class="pv-ib pv-share" title="Share this path">↗</button>` : ""}<button class="pv-ib pv-close" aria-label="Close">✕</button></header><div class="pv-body">${body}</div></div>`;
+      ${S.path && (S.view === "step" || S.view === "quiz" || S.view === "reflect") ? `<button class="pv-ib pv-share" title="Share this path">↗</button>` : ""}<button class="pv-ib pv-close" aria-label="Close">✕</button></header><div class="pv-body">${body}</div></div>`;
     root.classList.toggle("pv-wide", S.view === "list");
     root.hidden = false; root.scrollTop = 0; const b = root.querySelector(".pv-body"); if(b) b.scrollTop = 0;
   }
@@ -117,12 +118,12 @@ const BCPaths = (() => {
   function cardInfo(p, g){
     const qs = p.step_questions || (Array.isArray(p.steps) ? p.steps.map(x => x.question) : []), n = qs.length || +p.steps || 0;
     const done = new Set(g.done || []);
-    return {qs, n, done, finished: !!g.score, started: g.step != null || done.size > 0 || !!g.score};
+    return {qs, n, done, finished: !!(g.score || g.reflected), started: g.step != null || done.size > 0 || !!(g.score || g.reflected)};
   }
   function card(p, g, isNext){
     const {qs, n, done, finished, started} = cardInfo(p, g), mineP = p.id.startsWith("mine-");
     const pct = n ? Math.round(100 * (finished ? n : done.size) / n) : 0;
-    const status = finished ? `✓ Finished · ${g.score[0]} of ${g.score[1]} right` : done.size ? `${done.size} of ${n} steps done` : g.step != null ? `At step ${g.step + 1} of ${n}` : "Not started";
+    const status = finished ? (g.score ? `✓ Finished · ${g.score[0]} of ${g.score[1]} right` : "✓ Finished · reflected") : done.size ? `${done.size} of ${n} steps done` : g.step != null ? `At step ${g.step + 1} of ${n}` : "Not started";
     const go = finished ? "Do it again" : started ? "Continue" : "Start";
     const img = picture(p, false);
     const dots = qs.map((q, i) => `<i class="${done.has(i) || finished ? "pv-d-ok" : g.step === i ? "pv-d-now" : ""}" title="${esc("Step " + (i + 1))}"></i>`).join("");
@@ -133,7 +134,7 @@ const BCPaths = (() => {
       <div class="pv-pc-prog"><div class="pv-dots" aria-hidden="true">${dots}</div><small class="${finished ? "pv-ok" : started ? "pv-busy" : ""}">${esc(status)}</small></div>
       <div class="pv-bar"><i style="width:${pct}%"></i></div>
       <details class="pv-pc-steps"><summary>Steps</summary><ol>${qs.map((q, i) => `<li class="${done.has(i) ? "pv-li-ok" : ""}"><label class="pv-tickl" title="Tick this step as done"><input type="checkbox" class="pv-tick" data-id="${esc(p.id)}" data-step="${i}"${done.has(i) ? " checked" : ""}><span>${i + 1}</span></label><button class="pv-jump pvx" data-id="${esc(p.id)}" data-step="${i}">${esc(mineP ? T(q) : q)}</button></li>`).join("")}
-        <li><span class="pv-tickl pv-qa">?</span><button class="pv-jump pv-jumpquiz" data-id="${esc(p.id)}">Questions and answers${finished ? ` · ${g.score[0]} of ${g.score[1]}` : ""}</button></li></ol></details>
+        <li><span class="pv-tickl pv-qa">🕊</span><button class="pv-jump pv-jumpquiz" data-id="${esc(p.id)}">Reflect${finished ? " · ✓" : ""}</button></li></ol></details>
       ${mineP ? `<div class="pv-pc-mine"><span class="pv-vis">${esc(VIS[p.visibility || "private"] || VIS.private)}${p.community ? " · " + esc(T("sent")) + " " + esc(p.community) : ""}</span><button class="pv-link pv-edit" data-id="${esc(p.id)}">✏️ Edit</button></div>` : ""}
       <div class="pv-pc-acts"><button class="pv-btn pv-primary pv-pc-go" data-id="${esc(p.id)}"><span>${esc(go)}</span> ›</button><button class="pv-btn pv-pc-share" data-id="${esc(p.id)}" title="Share this path with someone" aria-label="Share this path with someone">↗</button></div></article>`;
   }
@@ -180,6 +181,12 @@ const BCPaths = (() => {
   function speakCancel(){ const c = LS.ctl; if(c){ c.stop = true; if(c.audio) try{ c.audio.pause(); }catch(e){} } if(A.speakCancel) A.speakCancel(); try{ speechSynthesis.cancel(); }catch(e){} }
   function lsSegments(kind){
     const segs = [], add = (text, el, voice) => { text = String(text || "").trim(); if(text) segs.push({text, el, kind: voice || "path"}); };
+    if(kind === "reflect"){
+      add(T("Reflect. What this path showed you."), root.querySelector(".pv-rh"));
+      root.querySelectorAll(".pv-rem li").forEach(li => add(plain(li.querySelector(".pv-remt")), li));
+      add(T("Now sit with it in silence for two minutes. Press Start when you are ready."), root.querySelector(".pv-still h4"));
+      return segs;
+    }
     if(kind === "quiz"){
       add(T("Questions and answers. The answer to every question is a verse."), root.querySelector(".pv-in h3"));
       root.querySelectorAll(".pv-qc").forEach((c, i) => { const q = plain(c.querySelector(".pv-qb p")), opts = [...c.querySelectorAll(".pv-opts .pv-o")].map(plain);
@@ -229,7 +236,7 @@ const BCPaths = (() => {
       try{ await showPath(S.path.id, S.step + 1); }finally{ LS.moving = false; }
       return;
     }
-    if(LS.kind === "step"){ LS.segs.push({text: T("That was the last step. The questions and answers come next."), kind: "path"}); const t2 = ++LS.tok; LS.kind = "end"; return lsRun(t2); }
+    if(LS.kind === "step"){ LS.segs.push({text: T("That was the last step. Now a moment to reflect."), kind: "path"}); const t2 = ++LS.tok; LS.kind = "end"; return lsRun(t2); }
     lsStop();
   }
   function lsPause(){ if(!LS.on) return; if(LS.paused){ LS.paused = false; LS.tok++; lsRun(LS.tok); } else { LS.paused = true; LS.tok++; speakCancel(); } lsBar(); }
@@ -240,7 +247,7 @@ const BCPaths = (() => {
     let b = root.querySelector(".pv-player");
     if(!b){ b = document.createElement("div"); b.className = "pv-player"; b.setAttribute("role", "region"); b.setAttribute("aria-label", "Listen");
       b.innerHTML = `<span class="pv-plw"></span><button class="pv-btn pv-lspause"></button><button class="pv-btn pv-lsskip" title="Skip this part">⏭</button><button class="pv-btn pv-lsstop" title="Stop">■</button>`; root.appendChild(b); }
-    const sg = LS.segs[LS.i], where = msg || (LS.kind === "quiz" ? T("Questions") + " · " + Math.min(LS.i + 1, LS.segs.length) + "/" + LS.segs.length
+    const sg = LS.segs[LS.i], where = msg || (LS.kind === "reflect" ? T("Reflect") + " · " + Math.min(LS.i + 1, LS.segs.length) + "/" + LS.segs.length : LS.kind === "quiz" ? T("Questions") + " · " + Math.min(LS.i + 1, LS.segs.length) + "/" + LS.segs.length
       : S.path ? T("Step") + " " + (S.step + 1) + " · " + Math.min(LS.i + 1, LS.segs.length) + "/" + LS.segs.length : "");
     b.querySelector(".pv-plw").textContent = "🔊 " + where;
     b.querySelector(".pv-lspause").textContent = LS.paused ? "▶ " + T("Resume") : "⏸ " + T("Pause");
@@ -528,7 +535,7 @@ const BCPaths = (() => {
       ${(s.notes || []).length ? `<details class="pv-sec pv-notesec" data-sec="notes"><summary>📝 Text and notes: what the commentaries say</summary><div class="pv-secbody"></div></details>` : ""}
       <label class="pv-see" for="pvSee">What do you see?</label>
       <textarea id="pvSee" class="pvx" maxlength="4000" placeholder="${esc(T("Your own notes on these verses. They stay on this device."))}">${esc(mineNote)}</textarea>
-      <div class="pv-nav"><button class="pv-btn pv-prev"${S.step ? "" : " disabled"}>‹ Previous step</button>${S.step < n - 1 ? `<button class="pv-btn pv-primary pv-next">Next step ›</button>` : `<button class="pv-btn pv-primary pv-toquiz">Questions and answers ›</button>`}</div>
+      <div class="pv-nav"><button class="pv-btn pv-prev"${S.step ? "" : " disabled"}>‹ Previous step</button>${S.step < n - 1 ? `<button class="pv-btn pv-primary pv-next">Next step ›</button>` : `<button class="pv-btn pv-primary pv-toquiz">🕊 Reflect ›</button>`}</div>
       <button class="pv-btn pv-share pv-sharewide">↗ Share this path with someone</button>
       ${p.mine ? `<button class="pv-btn pv-sharewide pv-edit" data-id="${esc(p.id)}">✏️ ${p.received ? "Make it your own (edit a copy)" : "Edit this path"}</button>` : ""}
       <p class="pv-small"><span>Sources:</span> <span class="pvx">${esc((p.sources || []).join(" · "))}</span></p>
@@ -699,6 +706,64 @@ const BCPaths = (() => {
     const past = (A.pastQuestions ? A.pastQuestions() : []).slice(-40); if(!past.length) return null;
     try{ const sims = await A.similar(p.quiz.map(q => q.q), past); return sims ? sims.map(x => 0.3 * Math.max(0, x)) : null; }catch(e){ return null; }
   }
+  /* ---------- 🕊 Reflect: the end of every path ----------
+     A few things to remember, in the text's own words, each with its verses (packaging/build_paths.py checks them), then two
+     minutes of silence with a countdown, then the closing prayer. The questions and answers stay available, optional. */
+  const STILL_SECS = 120, ST = {left: STILL_SECS, end: 0, run: false, timer: null, wake: null};
+  async function showReflect(){
+    const p = S.path; if(!p) return; S.view = "reflect";
+    const pts = (p.remember && p.remember.length) ? p.remember : p.steps.map(st => ({text: p.mine ? T(st.question) : st.question, refs: st.refs}));
+    const g = progress()[p.id] || {};
+    frame(p.title, `${p.image ? `<div class="pv-hero">${picture(p, true)}</div>` : ""}<div class="pv-open pvx"><small>The question</small>${esc(p.opening_question)}</div>
+      <h3 class="pv-rh">🕊 Reflect</h3>
+      <button class="pv-btn pv-listen" data-ls="reflect">🔊 Listen to the reminders</button>
+      <p class="pv-small">${p.remember ? "What this path showed you, in the text's own words:" : "What this path walked through:"}</p>
+      <ul class="pv-rem">${pts.map(pt => `<li><span class="pv-remt pvx">${esc(pt.text)}</span><small>${(pt.refs || []).map(r => { const q = parseRef(r); return q ? refLink(q.book, q.c1, q.v1, label(r)) : esc(r); }).join(" · ")}</small></li>`).join("")}</ul>
+      <div class="pv-still"><h4>Sit with it in silence</h4>
+        <p class="pv-small">Put the phone down if you like. Let the verses speak, and listen. Two minutes.</p>
+        <div class="pv-ring" id="pvRing" style="--p:0"><div class="pv-ringin"><span id="pvClock">2:00</span><small id="pvClockSub">${g.reflected ? "✓ " + esc(T("kept before")) : ""}</small></div></div>
+        <div class="pv-tbtns"><button class="pv-btn pv-primary pv-tstart">▶ Start the two minutes</button><button class="pv-btn pv-treset" hidden title="Start again">↺</button></div>
+        <p class="pv-tdone" id="pvTdone" hidden>🕊 Amen. Take what you have seen with you.</p></div>
+      <div id="pvPrayer"></div>
+      <div class="pv-nav"><button class="pv-btn pv-backsteps">‹ Back to the steps</button><button class="pv-link pv-toqa">Questions and answers (optional)</button></div>`, true);
+    ST.left = STILL_SECS; ST.run = false; stillDraw();
+    if(typeof BCPrayers !== "undefined") BCPrayers.closing(root.querySelector("#pvPrayer"), p);   // 🙏 the closing prayer (web/prayers.js)
+  }
+  const mmss = n => Math.floor(n / 60) + ":" + String(n % 60).padStart(2, "0");
+  function stillDraw(){
+    const c = root && root.querySelector("#pvClock"); if(!c) return;
+    const secs = Math.ceil(ST.left); c.textContent = mmss(Math.max(0, secs));
+    root.querySelector("#pvRing").style.setProperty("--p", (1 - ST.left / STILL_SECS).toFixed(4));
+    const b = root.querySelector(".pv-tstart"); b.textContent = ST.run ? "⏸ " + T("Pause") : ST.left < STILL_SECS && ST.left > 0 ? "▶ " + T("Go on") : ST.left <= 0 ? "▶ " + T("Again") : "▶ " + T("Start the two minutes");
+    root.querySelector(".pv-treset").hidden = ST.run || ST.left >= STILL_SECS;
+  }
+  function stillToggle(){
+    if(ST.run){ ST.left = Math.max(0, (ST.end - Date.now()) / 1000); stillHalt(); stillDraw(); return; }
+    if(ST.left <= 0) ST.left = STILL_SECS;
+    lsStop();   // silence: no reading aloud now
+    const done = root.querySelector("#pvTdone"); if(done) done.hidden = true;
+    ST.run = true; ST.end = Date.now() + ST.left * 1000;
+    try{ if(navigator.wakeLock) navigator.wakeLock.request("screen").then(w => { ST.wake = w; }).catch(() => {}); }catch(e){}   // keep the screen on
+    ST.timer = setInterval(() => { ST.left = Math.max(0, (ST.end - Date.now()) / 1000); stillDraw(); if(ST.left <= 0) stillDone(); }, 250);
+    stillDraw();
+  }
+  function stillHalt(){ ST.run = false; if(ST.timer) clearInterval(ST.timer); ST.timer = null; try{ if(ST.wake) ST.wake.release(); }catch(e){} ST.wake = null; }
+  function stillStop(){ if(ST.run || ST.timer) stillHalt(); ST.left = STILL_SECS; }
+  function stillReset(){ stillHalt(); ST.left = STILL_SECS; const d = root.querySelector("#pvTdone"); if(d) d.hidden = true; stillDraw(); }
+  function stillDone(){
+    stillHalt(); ST.left = 0; stillDraw();
+    const d = root.querySelector("#pvTdone"); if(d) d.hidden = false;
+    const sub = root.querySelector("#pvClockSub"); if(sub) sub.textContent = "🕊";
+    if(S.path) saveProgress(S.path.id, {reflected: new Date().toISOString().slice(0, 10)});
+    try{ if(navigator.vibrate) navigator.vibrate([120, 80, 120]); }catch(e){}
+    try{   // a soft bell: two quiet tones, fading
+      const AC = window.AudioContext || window.webkitAudioContext; if(!AC) return; const ac = new AC();
+      [[528, 0], [396, .55]].forEach(([hz, at]) => { const o = ac.createOscillator(), g = ac.createGain(); o.type = "sine"; o.frequency.value = hz;
+        g.gain.setValueAtTime(0, ac.currentTime + at); g.gain.linearRampToValueAtTime(.12, ac.currentTime + at + .04); g.gain.exponentialRampToValueAtTime(.0001, ac.currentTime + at + 2.2);
+        o.connect(g); g.connect(ac.destination); o.start(ac.currentTime + at); o.stop(ac.currentTime + at + 2.3); });
+      setTimeout(() => { try{ ac.close(); }catch(e){} }, 3500);
+    }catch(e){}
+  }
   async function showQuiz(more){
     const p = S.path; S.view = "quiz";
     if(!more || !S.quiz){ const extra = await closeness(p); S.quiz = Object.assign(choose(p, extra), {answers: {}, past: !!extra}); }
@@ -709,7 +774,7 @@ const BCPaths = (() => {
       ${A.similar ? `<label class="pv-opt"><input type="checkbox" id="pvPast"${prefs.past ? " checked" : ""}> Put questions close to what I asked before first (uses the meaning search on this device; off unless you tick it)</label>` : ""}
       <div id="pvQs">${S.quiz.pick.map((q, n) => qCard(q, n)).join("")}</div>
       <div id="pvScore"></div>
-      <div class="pv-nav"><button class="pv-btn pv-backsteps">‹ Back to the steps</button>${S.quiz.rest.length ? `<button class="pv-btn pv-more">More questions (${S.quiz.rest.length})</button>` : ""}</div>
+      <div class="pv-nav"><button class="pv-btn pv-backreflect">‹ Back to Reflect</button>${S.quiz.rest.length ? `<button class="pv-btn pv-more">More questions (${S.quiz.rest.length})</button>` : ""}</div>
       <div id="pvPrayer"></div>`, true);
     if(typeof BCPrayers !== "undefined") BCPrayers.closing(root.querySelector("#pvPrayer"), p);   // 🙏 a closing prayer (web/prayers.js)
     for(const q of S.quiz.pick) if(q.type === "fill_word") fillText(q);
@@ -949,7 +1014,7 @@ const BCPaths = (() => {
   function onClick(e){
     const t = e.target;
     if(t.closest(".pv-close")){ close(); return; }
-    if(t.closest(".pv-back")){ if(S.view === "edit"){ S.draft = null; showList(); return; } if(S.view === "share" && S.shareFrom === "series" && S.series) showFolder(S.folderKind || "series", S.series); else if(S.view === "request" || (S.view === "share" && S.shareFrom === "list")) showList(); else if(S.view === "word" || S.view === "share") showPath(S.path.id, S.step); else if((S.view === "step" || S.view === "quiz") && S.path && S.path.series) showSeries(S.path.series.id); else if((S.view === "step" || S.view === "quiz") && S.path && S.path.group) showFolder("group", slug(S.path.group)); else if(S.view === "step" || S.view === "quiz" || S.view === "quoted" || S.view === "series") showList(); else close(); return; }
+    if(t.closest(".pv-back")){ if(S.view === "edit"){ S.draft = null; showList(); return; } if(S.view === "share" && S.shareFrom === "series" && S.series) showFolder(S.folderKind || "series", S.series); else if(S.view === "request" || (S.view === "share" && S.shareFrom === "list")) showList(); else if(S.view === "word" || S.view === "share") showPath(S.path.id, S.step); else if((S.view === "step" || S.view === "quiz" || S.view === "reflect") && S.path && S.path.series) showSeries(S.path.series.id); else if((S.view === "step" || S.view === "quiz" || S.view === "reflect") && S.path && S.path.group) showFolder("group", slug(S.path.group)); else if(S.view === "step" || S.view === "quiz" || S.view === "reflect" || S.view === "quoted" || S.view === "series") showList(); else close(); return; }
     const sc = t.closest(".pv-pc-share"); if(sc){ shareFromCard(sc.dataset.id); return; }
     if(t.closest(".pv-add")){ showRequest(); return; }
     const lb = t.closest(".pv-listen"); if(lb){ if(LS.on && LS.kind === lb.dataset.ls && !LS.paused) lsPause(); else lsStart(lb.dataset.ls); return; }
@@ -978,19 +1043,23 @@ const BCPaths = (() => {
     if(t.closest(".pv-sys")){ const p = S.shareP || target("path", S.path); navigator.share({title: p.title, text: shareText(p), url: root.querySelector(".pv-url").value}).catch(() => {}); return; }
     const c = t.closest(".pv-card"); if(c){ if(c.classList.contains("pv-quoted")) showQuoted(); else open(c.dataset.id); return; }
     const chip = t.closest(".pv-chip"); if(chip){ S.filter = chip.dataset.f; showList(); return; }
-    const jq = t.closest(".pv-jumpquiz"); if(jq){ loadPath(jq.dataset.id).then(p => { S.path = p; S.step = p.steps.length - 1; S.quiz = null; showQuiz(false); }).catch(() => open(jq.dataset.id)); return; }
+    const jq = t.closest(".pv-jumpquiz"); if(jq){ loadPath(jq.dataset.id).then(p => { S.path = p; S.step = p.steps.length - 1; S.quiz = null; showReflect(); }).catch(() => open(jq.dataset.id)); return; }
     const j = t.closest(".pv-jump"); if(j){ open(j.dataset.id, +j.dataset.step); return; }
     const pc = t.closest(".pv-pc-open, .pv-pc-go"); if(pc){ const g = progress()[pc.dataset.id] || {}; open(pc.dataset.id, g.score ? 0 : null); return; }
     const dot = t.closest(".pv-dot"); if(dot){ showPath(S.path.id, +dot.dataset.step); return; }
     if(t.closest(".pv-prev")){ showPath(S.path.id, S.step - 1); return; }
     if(t.closest(".pv-next")){ markDone(S.path.id, S.step); showPath(S.path.id, S.step + 1); return; }
-    if(t.closest(".pv-toquiz")){ markDone(S.path.id, S.step); showQuiz(false); return; }
+    if(t.closest(".pv-toquiz")){ markDone(S.path.id, S.step); showReflect(); return; }
+    if(t.closest(".pv-toqa")){ showQuiz(false); return; }
+    if(t.closest(".pv-tstart")){ stillToggle(); return; }
+    if(t.closest(".pv-treset")){ stillReset(); return; }
+    if(t.closest(".pv-backreflect")){ showReflect(); return; }
     if(t.closest(".pv-backsteps")){ showPath(S.path.id, S.step); return; }
     if(t.closest(".pv-more")){ showQuiz(true); return; }
     if(t.closest(".pv-get")){ A.getBibles(); return; }
     const sn = t.closest(".pv-sn"); if(sn){ showWord(sn.dataset.n); return; }
     const go = t.closest(".pv-go"); if(go){ e.preventDefault();
-      lastView = {view: S.view === "quiz" || S.view === "word" || S.view === "share" ? "step" : S.view, id: S.path && S.path.id, step: S.step, top: root.scrollTop};
+      lastView = {view: S.view === "quiz" || S.view === "reflect" || S.view === "word" || S.view === "share" ? "step" : S.view, id: S.path && S.path.id, step: S.step, top: root.scrollTop};
       close(); A.openVerse(go.dataset.b, +go.dataset.c, go.dataset.v ? +go.dataset.v : null); return; }
     const o = t.closest(".pv-o"); if(o){ const q = S.path.quiz[+o.dataset.q]; q.i = +o.dataset.q;
       const ok = o.dataset.t ? o.dataset.t === q.bible : +o.dataset.o === q.answer; o.classList.add(ok ? "pv-right" : "pv-wrong"); answer(q, ok); return; }
@@ -1052,7 +1121,8 @@ const BCPaths = (() => {
   async function reopen(){
     const v = lastView; if(!v){ await showList(); return; }
     if(v.view === "quoted") await showQuoted(); else if(v.id && v.view === "step") await showPath(v.id, v.step);
-    else if(v.id && v.view === "quiz"){ await showPath(v.id, v.step); await showQuiz(); } else await showList();
+    else if(v.id && v.view === "quiz"){ await showPath(v.id, v.step); await showQuiz(); }
+    else if(v.id && v.view === "reflect"){ await showPath(v.id, v.step); await showReflect(); } else await showList();
     if(v.top) root.scrollTop = v.top;
   }
   function close(){ lsStop(); if(root){ root.hidden = true; root.innerHTML = ""; S.view = "list"; S.draft = null; if(A.onClose) A.onClose(); } }
@@ -1198,6 +1268,16 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-shbtns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.pv-shbtns .pv-btn{text-align:center;text-decoration:none;font-weight:650}.pv-shbtns .pv-primary{grid-column:1/-1}
 .pv-welcome{background:rgba(217,180,74,.14);border:1px solid rgba(217,180,74,.45);border-radius:12px;padding:10px 12px;margin:6px 0 10px;font-size:14.5px;line-height:1.45}
 .pv-empty{padding:20px 0}
+.pv-rh{font-size:21px;margin:14px 0 6px}
+.pv-rem{list-style:none;margin:6px 0 14px;padding:0}.pv-rem li{border-left:4px solid var(--accent);background:var(--card);border-radius:8px;padding:9px 12px;margin:0 0 8px}
+.pv-remt{display:block;font-family:Georgia,serif;font-size:17px;line-height:1.5}.pv-rem small{display:block;margin-top:3px;font-size:13px}
+.pv-still{text-align:center;border:1px solid rgba(217,180,74,.45);background:linear-gradient(180deg,rgba(217,180,74,.08),transparent);border-radius:16px;padding:14px 12px 16px;margin:6px 0 14px}
+.pv-still h4{margin:0 0 4px;font-size:18px}
+.pv-ring{--p:0;width:190px;height:190px;margin:12px auto;border-radius:50%;background:conic-gradient(var(--accent) calc(var(--p)*360deg),var(--line) 0);display:flex;align-items:center;justify-content:center;transition:background .25s linear}
+.pv-ringin{width:160px;height:160px;border-radius:50%;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center}
+#pvClock{font-size:44px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:1px}#pvClockSub{color:var(--muted);font-size:13px;min-height:16px}
+.pv-tbtns{display:flex;gap:8px;justify-content:center}.pv-tstart{min-width:210px;font-weight:700;font-size:16px;padding:11px}
+.pv-tdone{font-family:Georgia,serif;font-size:17px;color:var(--accent);margin:10px 0 0}
 .pv-listen{display:block;width:100%;margin:2px 0 10px;font-weight:700;font-size:15.5px;padding:11px;background:rgba(217,180,74,.14);border-color:rgba(217,180,74,.55)}
 .pv-player{position:sticky;bottom:0;z-index:5;display:flex;align-items:center;gap:6px;max-width:760px;margin:0 auto;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:#0f1215;border-top:1px solid var(--line);box-shadow:0 -6px 18px rgba(0,0,0,.35)}
 .pv-plw{flex:1;min-width:0;font-size:13.5px;font-weight:650;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pv-player .pv-btn{padding:7px 11px;font-weight:700}
@@ -1283,7 +1363,7 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-dark .pnote{background:#191c21}`;
   async function openCommunity(){ S.section = "community"; await open(); }
   /* remember where the reader is before another screen covers the path (🙏 sharing the closing prayer), so reopen() returns there */
-  function remember(){ if(root && !root.hidden) lastView = {view: S.view === "quiz" ? "quiz" : S.view === "word" || S.view === "share" ? "step" : S.view, id: S.path && S.path.id, step: S.step, top: root.scrollTop}; }
+  function remember(){ if(root && !root.hidden) lastView = {view: S.view === "quiz" || S.view === "reflect" ? S.view : S.view === "word" || S.view === "share" ? "step" : S.view, id: S.path && S.path.id, step: S.step, top: root.scrollTop}; }
   return {mount, open, close, reopen, remember, openHash, cleanHash, shortPath, linkOf, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden,
     findPaths, openCommunity, preload: () => loadList(), normRef,
     adapter: () => A, readVerses, title: id => { const x = (list || []).find(q => q.id === id); return x ? x.title : ""; }};   // 🙏 Prayers (web/prayers.js) borrow these

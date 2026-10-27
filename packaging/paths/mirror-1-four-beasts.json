@@ -34,6 +34,12 @@
        {"text": "Daniel is told \"the ten horns out of this kingdom are ten kings\"; John is told \"the ten horns which thou sawest are ten kings\".", "refs": ["Daniel 7:24", "Revelation 17:12"]}
      ]}
   ],
+  "remember": [
+    {"text": "Four great beasts came up from the sea: like a lion, a bear, a leopard, and a fourth with ten horns.", "refs": ["Daniel 7:3-7"]},
+    {"text": "\"These great beasts, which are four, are four kings\"", "refs": ["Daniel 7:17"]},
+    {"text": "John's beast is like a leopard, with the feet of a bear and the mouth of a lion.", "refs": ["Revelation 13:2"]},
+    {"text": "\"the ten horns which thou sawest are ten kings\"", "refs": ["Revelation 17:12"]}
+  ],
   "quiz": [
     {"q": "Which verse says \"four great beasts came up from the sea\"?", "type": "find_the_verse", "answer_refs": ["Daniel 7:3"]},
     {"q": "In Daniel 7:4, what did the first beast, like a lion, have?", "type": "multiple_choice",

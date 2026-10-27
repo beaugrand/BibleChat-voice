@@ -306,6 +306,21 @@ def check_path(p: dict, B: Bibles, file_id: str | None = None, lib: dict | None 
         missing = [k for k in refs_ok([r], "required verses") if k not in seen]
         if missing:
             raise PathError(f"{where}: {r} is on the list but no step shows {missing[0][0]} {missing[0][1]}:{missing[0][2]}")
+    # 🕊 Reflect: a few things to remember, each in the text's own words, each pointing to verses of this path
+    rem = p.get("remember") or []
+    if not 2 <= len(rem) <= 8:
+        raise PathError(f"{where}: remember needs 2 to 8 points (the Reflect page at the end), not {len(rem)}")
+    for j, pt in enumerate(rem, 1):
+        ctx = f"remember {j}"
+        if not (pt.get("text") or "").strip():
+            raise PathError(f"{where}: {ctx} says nothing")
+        rkeys = refs_ok(pt.get("refs"), ctx)
+        outside = [k for k in rkeys if k not in seen]
+        if outside:
+            raise PathError(f"{where}: {ctx}: {outside[0][0]} {outside[0][1]}:{outside[0][2]} is not a verse of this path")
+        bad = quotes_ok(pt["text"], rkeys, B)
+        if bad:
+            raise PathError(f"{where}: {ctx}: \"{bad}\" is not in its verses")
     for i, q in enumerate(p["quiz"], 1):
         ctx = f"question {i}"
         if not (q.get("q") or "").strip():

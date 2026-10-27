@@ -262,6 +262,44 @@
    ]
   }
  ],
+ "remember": [
+  {
+   "text": "\"Whosoever committeth sin is the servant of sin\"",
+   "refs": [
+    "John 8:34"
+   ]
+  },
+  {
+   "text": "\"If the Son therefore shall make you free, ye shall be free indeed\"",
+   "refs": [
+    "John 8:36"
+   ]
+  },
+  {
+   "text": "\"sin shall not have dominion over you\"",
+   "refs": [
+    "Romans 6:14"
+   ]
+  },
+  {
+   "text": "With every temptation God will \"make a way to escape\".",
+   "refs": [
+    "1 Corinthians 10:13"
+   ]
+  },
+  {
+   "text": "His mercies \"are new every morning\".",
+   "refs": [
+    "Lamentations 3:22-23"
+   ]
+  },
+  {
+   "text": "\"If we confess our sins, he is faithful and just to forgive us\"",
+   "refs": [
+    "1 John 1:9"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse says \"Whosoever committeth sin is the servant of sin\"?",
@@ -652,7 +690,7 @@
  },
  "built_from": {
   "file": "packaging/paths/freedom-from-bondage.json",
-  "sha": "c015e21efb6a675e",
+  "sha": "43f7fb97df4021f7",
   "checked_in": [
    "KJV",
    "ETH",

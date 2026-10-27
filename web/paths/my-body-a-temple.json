@@ -197,6 +197,33 @@
    ]
   }
  ],
+ "remember": [
+  {
+   "text": "\"your body is the temple of the Holy Ghost\" ... \"ye are bought with a price\"",
+   "refs": [
+    "1 Corinthians 6:19-20"
+   ]
+  },
+  {
+   "text": "\"present your bodies a living sacrifice\"",
+   "refs": [
+    "Romans 12:1"
+   ]
+  },
+  {
+   "text": "The Samaritan bound up the wounds, pouring in oil and wine; \"They that be whole need not a physician\".",
+   "refs": [
+    "Luke 10:34",
+    "Matthew 9:12"
+   ]
+  },
+  {
+   "text": "\"in the multitude of counsellors there is safety\"",
+   "refs": [
+    "Proverbs 11:14"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse says \"your body is the temple of the Holy Ghost\"?",
@@ -530,7 +557,7 @@
  },
  "built_from": {
   "file": "packaging/paths/my-body-a-temple.json",
-  "sha": "59d3cf9f7663b17a",
+  "sha": "c96ecaebf1700bba",
   "checked_in": [
    "KJV",
    "ETH",

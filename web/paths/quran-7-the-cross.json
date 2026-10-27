@@ -288,6 +288,38 @@
    ]
   }
  ],
+ "remember": [
+  {
+   "text": "\"they pierced my hands and my feet\"",
+   "refs": [
+    "Psalms 22:16"
+   ]
+  },
+  {
+   "text": "\"he was wounded for our transgressions\"",
+   "refs": [
+    "Isaiah 53:5"
+   ]
+  },
+  {
+   "text": "\"he that saw it bare record\"",
+   "refs": [
+    "John 19:35"
+   ]
+  },
+  {
+   "text": "The risen Jesus said \"handle me, and see\".",
+   "refs": [
+    "Luke 24:39"
+   ]
+  },
+  {
+   "text": "\"he was seen of above five hundred brethren at once\"",
+   "refs": [
+    "1 Corinthians 15:6"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse says \"they pierced my hands and my feet\"?",
@@ -749,7 +781,7 @@
  },
  "built_from": {
   "file": "packaging/paths/quran-7-the-cross.json",
-  "sha": "5e882948635457c1",
+  "sha": "9476a8ce8aef683e",
   "checked_in": [
    "KJV",
    "ETH",

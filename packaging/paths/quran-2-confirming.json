@@ -259,6 +259,13 @@
    ]
   }
  ],
+ "remember": [
+   {"text": "\"To the law and to the testimony\"", "refs": ["Isaiah 8:20"]},
+   {"text": "A prophet with a sign who leads after other gods is not to be followed.", "refs": ["Deuteronomy 13:1-3"]},
+   {"text": "\"though we, or an angel from heaven, preach any other gospel\"", "refs": ["Galatians 1:8"]},
+   {"text": "\"every spirit that confesseth that Jesus Christ is come in the flesh is of God\"", "refs": ["1 John 4:2"]},
+   {"text": "\"one jot or one tittle shall in no wise pass from the law\"", "refs": ["Matthew 5:18"]}
+ ],
  "quiz": [
   {
    "q": "Which verse says \"To the law and to the testimony\"?",

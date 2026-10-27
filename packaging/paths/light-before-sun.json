@@ -25,6 +25,13 @@
      "refs": ["Job 38:19-20", "Psalms 74:16", "Psalms 104:2", "Psalms 136:7-9", "Isaiah 45:7", "2 Corinthians 4:6", "1 Timothy 6:16", "James 1:17"],
      "look_closer": {"strongs": ["H3974", "H216"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]}
   ],
+  "remember": [
+    {"text": "God said \"Let there be light\" on the first day; the sun and moon came on the fourth.", "refs": ["Genesis 1:3", "Genesis 1:16"]},
+    {"text": "\"God is light, and in him is no darkness at all\"", "refs": ["1 John 1:5"]},
+    {"text": "Jesus said \"I am the light of the world\".", "refs": ["John 8:12"]},
+    {"text": "In the city, \"the Lamb is the light thereof\".", "refs": ["Revelation 21:23"]},
+    {"text": "Some verses say God forms light, some that He is light, some that He dwells in it. You weigh them.", "refs": ["Isaiah 45:7", "1 Timothy 6:16"]}
+  ],
   "quiz": [
     {"q": "On which day were the greater and lesser lights made?", "type": "find_the_verse", "answer_refs": ["Genesis 1:16-19"]},
     {"q": "What did God call the light on Day 1?", "type": "multiple_choice", "options": ["Day", "Sun", "Glory", "Morning"], "answer": 0,

@@ -151,6 +151,32 @@
    ]
   }
  ],
+ "remember": [
+  {
+   "text": "\"the LORD God had not caused it to rain upon the earth\" ... \"there went up a mist from the earth\"",
+   "refs": [
+    "Genesis 2:5-6"
+   ]
+  },
+  {
+   "text": "The fountains of the great deep were broken up and the windows of heaven were opened.",
+   "refs": [
+    "Genesis 7:11"
+   ]
+  },
+  {
+   "text": "\"I do set my bow in the cloud\"",
+   "refs": [
+    "Genesis 9:13"
+   ]
+  },
+  {
+   "text": "Noah was \"warned of God of things not seen as yet\".",
+   "refs": [
+    "Hebrews 11:7"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse says \"there went up a mist from the earth\"?",
@@ -453,7 +479,7 @@
  },
  "built_from": {
   "file": "packaging/paths/mist-not-rain.json",
-  "sha": "3602c611dea6bfff",
+  "sha": "c869fd449d09d3b1",
   "checked_in": [
    "KJV",
    "ETH",

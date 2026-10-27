@@ -155,6 +155,12 @@
    ]
   }
  ],
+ "remember": [
+   {"text": "\"the judgment was set, and the books were opened\"", "refs": ["Daniel 7:10"]},
+   {"text": "John saw \"a rainbow round about the throne\".", "refs": ["Revelation 4:3"]},
+   {"text": "Ten thousand times ten thousand stood before the throne in both visions.", "refs": ["Daniel 7:10", "Revelation 5:11"]},
+   {"text": "\"another book was opened, which is the book of life\"", "refs": ["Revelation 20:12"]}
+ ],
  "quiz": [
   {
    "q": "Which verse says \"the Ancient of days did sit, whose garment was white as snow\"?",

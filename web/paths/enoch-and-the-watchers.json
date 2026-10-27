@@ -167,6 +167,41 @@
    "notes": []
   }
  ],
+ "remember": [
+  {
+   "text": "\"Enoch walked with God: and he was not; for God took him\"",
+   "refs": [
+    "Genesis 5:24"
+   ]
+  },
+  {
+   "text": "By faith Enoch was \"translated that he should not see death\".",
+   "refs": [
+    "Hebrews 11:5"
+   ]
+  },
+  {
+   "text": "Genesis 6 and Job 1 both speak of the \"sons of God\".",
+   "refs": [
+    "Genesis 6:2",
+    "Job 1:6"
+   ]
+  },
+  {
+   "text": "Jude quotes a prophecy of Enoch; 1 Enoch 1:9 has words like it.",
+   "refs": [
+    "Jude 1:14-15",
+    "1 Enoch 1:9"
+   ]
+  },
+  {
+   "text": "Peter writes of the \"angels that sinned\"; Jesus says in the resurrection they are \"as the angels of God in heaven\".",
+   "refs": [
+    "2 Peter 2:4",
+    "Matthew 22:30"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse says \"Enoch walked with God: and he was not; for God took him\"?",
@@ -461,7 +496,7 @@
  },
  "built_from": {
   "file": "packaging/paths/enoch-and-the-watchers.json",
-  "sha": "9a0ce470292219ac",
+  "sha": "84c4d92fb3342d34",
   "checked_in": [
    "KJV",
    "ETH",

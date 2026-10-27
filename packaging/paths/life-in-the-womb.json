@@ -31,6 +31,12 @@
     {"question": "What does David say about the moment his mother conceived him?", "refs": ["Psalms 51:5"],
      "look_closer": {"strongs": ["H3179"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]}
   ],
+  "remember": [
+    {"text": "\"thou hast covered me in my mother's womb\"", "refs": ["Psalms 139:13"]},
+    {"text": "\"Before I formed thee in the belly I knew thee\"", "refs": ["Jeremiah 1:5"]},
+    {"text": "The babe \"leaped in my womb for joy\".", "refs": ["Luke 1:44"]},
+    {"text": "In Exodus 21:22 the translations differ. Read them side by side.", "refs": ["Exodus 21:22"]}
+  ],
   "quiz": [
     {"q": "Which verse says \"thou hast covered me in my mother's womb\"?", "type": "find_the_verse", "answer_refs": ["Psalms 139:13"]},
     {"q": "Fill in the word: \"I am fearfully and ___ made\"", "type": "fill_word", "ref": "Psalms 139:14", "bible": "KJV", "word": "wonderfully"},

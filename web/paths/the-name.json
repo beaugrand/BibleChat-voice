@@ -285,6 +285,39 @@
    ]
   }
  ],
+ "remember": [
+  {
+   "text": "\"I AM THAT I AM\" ... \"this is my name for ever\"",
+   "refs": [
+    "Exodus 3:14-15"
+   ]
+  },
+  {
+   "text": "\"Thou shalt not take the name of the LORD thy God in vain\"",
+   "refs": [
+    "Exodus 20:7"
+   ]
+  },
+  {
+   "text": "\"whosoever shall call on the name of the LORD shall be delivered\"",
+   "refs": [
+    "Joel 2:32"
+   ]
+  },
+  {
+   "text": "Moses called Oshea \"Jehoshua\"; Mary's son: \"thou shalt call his name JESUS\".",
+   "refs": [
+    "Numbers 13:16",
+    "Matthew 1:21"
+   ]
+  },
+  {
+   "text": "\"there is none other name under heaven given among men\"",
+   "refs": [
+    "Acts 4:12"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse says \"I AM THAT I AM\"?",
@@ -624,7 +657,7 @@
  },
  "built_from": {
   "file": "packaging/paths/the-name.json",
-  "sha": "9dd66172dc7832af",
+  "sha": "b933482bada747a8",
   "checked_in": [
    "KJV",
    "ETH",

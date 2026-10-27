@@ -244,6 +244,12 @@
    ]
   }
  ],
+ "remember": [
+   {"text": "\"these are written, that ye might believe that Jesus is the Christ, the Son of God\"", "refs": ["John 20:31"]},
+   {"text": "Luke wrote from those who \"were eyewitnesses\".", "refs": ["Luke 1:2"]},
+   {"text": "\"the word of our God shall stand for ever\"; \"my words shall not pass away\".", "refs": ["Isaiah 40:8", "Matthew 24:35"]},
+   {"text": "When the king burned the roll, Jeremiah wrote \"another roll\".", "refs": ["Jeremiah 36:28"]}
+ ],
  "quiz": [
   {
    "q": "Which verse says \"these are written, that ye might believe that Jesus is the Christ, the Son of God\"?",

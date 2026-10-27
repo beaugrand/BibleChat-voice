@@ -180,6 +180,40 @@
    ]
   }
  ],
+ "remember": [
+  {
+   "text": "God said \"Let there be light\" on the first day; the sun and moon came on the fourth.",
+   "refs": [
+    "Genesis 1:3",
+    "Genesis 1:16"
+   ]
+  },
+  {
+   "text": "\"God is light, and in him is no darkness at all\"",
+   "refs": [
+    "1 John 1:5"
+   ]
+  },
+  {
+   "text": "Jesus said \"I am the light of the world\".",
+   "refs": [
+    "John 8:12"
+   ]
+  },
+  {
+   "text": "In the city, \"the Lamb is the light thereof\".",
+   "refs": [
+    "Revelation 21:23"
+   ]
+  },
+  {
+   "text": "Some verses say God forms light, some that He is light, some that He dwells in it. You weigh them.",
+   "refs": [
+    "Isaiah 45:7",
+    "1 Timothy 6:16"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "On which day were the greater and lesser lights made?",
@@ -539,7 +573,7 @@
  },
  "built_from": {
   "file": "packaging/paths/light-before-sun.json",
-  "sha": "afc209862f5330b5",
+  "sha": "64445ab87b924b5e",
   "checked_in": [
    "KJV",
    "ETH",

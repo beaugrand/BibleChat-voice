@@ -21,6 +21,12 @@
     {"question": "Where are waters still spoken of, and what was Noah warned about?", "refs": ["Psalms 148:4", "Hebrews 11:7"],
      "look_closer": {"strongs": ["H4325"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]}
   ],
+  "remember": [
+    {"text": "\"the LORD God had not caused it to rain upon the earth\" ... \"there went up a mist from the earth\"", "refs": ["Genesis 2:5-6"]},
+    {"text": "The fountains of the great deep were broken up and the windows of heaven were opened.", "refs": ["Genesis 7:11"]},
+    {"text": "\"I do set my bow in the cloud\"", "refs": ["Genesis 9:13"]},
+    {"text": "Noah was \"warned of God of things not seen as yet\".", "refs": ["Hebrews 11:7"]}
+  ],
   "quiz": [
     {"q": "Which verse says \"there went up a mist from the earth\"?", "type": "find_the_verse", "answer_refs": ["Genesis 2:6"]},
     {"q": "According to Genesis 2:5, what had the LORD God not yet caused to happen on the earth?", "type": "multiple_choice",

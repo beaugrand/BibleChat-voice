@@ -21,6 +21,13 @@
     {"question": "How does Revelation describe the saints, and who has right to the tree of life? Compare the translations of 22:14.", "refs": ["Revelation 14:12", "Revelation 22:14"],
      "look_closer": {"strongs": ["G1785", "G4111"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]}
   ],
+  "remember": [
+    {"text": "\"the Word was made flesh\"", "refs": ["John 1:14"]},
+    {"text": "\"I am the way, the truth, and the life\"", "refs": ["John 14:6"]},
+    {"text": "\"If ye love me, keep my commandments\"", "refs": ["John 14:15"]},
+    {"text": "\"For by grace are ye saved through faith\"", "refs": ["Ephesians 2:8"]},
+    {"text": "In Revelation 22:14 the translations differ. Compare them.", "refs": ["Revelation 22:14"]}
+  ],
   "quiz": [
     {"q": "Which verse says \"the Word was made flesh, and dwelt among us\"?", "type": "find_the_verse", "answer_refs": ["John 1:14"]},
     {"q": "In John 14:6, what three things does Jesus say He is?", "type": "multiple_choice",

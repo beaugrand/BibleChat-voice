@@ -288,6 +288,38 @@
    ]
   }
  ],
+ "remember": [
+  {
+   "text": "The angel told Mary she \"shalt call his name JESUS\".",
+   "refs": [
+    "Luke 1:31"
+   ]
+  },
+  {
+   "text": "\"Emmanuel, which being interpreted is, God with us\"",
+   "refs": [
+    "Matthew 1:23"
+   ]
+  },
+  {
+   "text": "His first recorded words: \"I must be about my Father's business\".",
+   "refs": [
+    "Luke 2:49"
+   ]
+  },
+  {
+   "text": "\"the blind see, the lame walk, the lepers are cleansed\"",
+   "refs": [
+    "Luke 7:22"
+   ]
+  },
+  {
+   "text": "To the woman of Samaria: \"I that speak unto thee am he\".",
+   "refs": [
+    "John 4:26"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse says \"the angel Gabriel was sent from God unto a city of Galilee\"?",
@@ -750,7 +782,7 @@
  },
  "built_from": {
   "file": "packaging/paths/quran-5-jesus-in-the-quran.json",
-  "sha": "5011d2dcaa58d2d6",
+  "sha": "522a493bfea78204",
   "checked_in": [
    "KJV",
    "ETH",

@@ -229,6 +229,13 @@
    ]
   }
  ],
+ "remember": [
+   {"text": "Give an answer \"with meekness and fear\".", "refs": ["1 Peter 3:15"]},
+   {"text": "\"Search the scriptures\" ... \"they are they which testify of me\"", "refs": ["John 5:39"]},
+   {"text": "The Bereans \"searched the scriptures daily\".", "refs": ["Acts 17:11"]},
+   {"text": "\"All scripture is given by inspiration of God\"", "refs": ["2 Timothy 3:16"]},
+   {"text": "\"it shall not return unto me void\"", "refs": ["Isaiah 55:11"]}
+ ],
  "quiz": [
   {
    "q": "Which verse says \"be ready always to give an answer to every man\"?",

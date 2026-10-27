@@ -23,6 +23,13 @@
     {"question": "Jubilees 4–5 (Ethiopian Canon): what does it say about Jared's days, Enoch, and the angels of God?", "refs": ["Jubilees 4-5"],
      "look_closer": {"strongs": [], "xref_top": 0}, "compare": ["ETH"], "notes": []}
   ],
+  "remember": [
+    {"text": "\"Enoch walked with God: and he was not; for God took him\"", "refs": ["Genesis 5:24"]},
+    {"text": "By faith Enoch was \"translated that he should not see death\".", "refs": ["Hebrews 11:5"]},
+    {"text": "Genesis 6 and Job 1 both speak of the \"sons of God\".", "refs": ["Genesis 6:2", "Job 1:6"]},
+    {"text": "Jude quotes a prophecy of Enoch; 1 Enoch 1:9 has words like it.", "refs": ["Jude 1:14-15", "1 Enoch 1:9"]},
+    {"text": "Peter writes of the \"angels that sinned\"; Jesus says in the resurrection they are \"as the angels of God in heaven\".", "refs": ["2 Peter 2:4", "Matthew 22:30"]}
+  ],
   "quiz": [
     {"q": "Which verse says \"Enoch walked with God: and he was not; for God took him\"?", "type": "find_the_verse", "answer_refs": ["Genesis 5:24"]},
     {"q": "Jude 1:14 calls Enoch what?", "type": "multiple_choice", "options": ["The seventh from Adam", "The father of Noah", "The first prophet", "A priest of the most high God"], "answer": 0,

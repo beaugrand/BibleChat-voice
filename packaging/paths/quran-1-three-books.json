@@ -248,6 +248,12 @@
    ]
   }
  ],
+ "remember": [
+   {"text": "Moses wrote the law, and it was put \"in the side of the ark\".", "refs": ["Deuteronomy 31:24-26"]},
+   {"text": "\"Thy word is a lamp unto my feet\"", "refs": ["Psalms 119:105"]},
+   {"text": "\"The beginning of the gospel of Jesus Christ, the Son of God\"", "refs": ["Mark 1:1"]},
+   {"text": "Jesus named \"the law of Moses, and in the prophets, and in the psalms\" as written of him.", "refs": ["Luke 24:44"]}
+ ],
  "quiz": [
   {
    "q": "Which verse says Moses \"had made an end of writing the words of this law in a book\"?",

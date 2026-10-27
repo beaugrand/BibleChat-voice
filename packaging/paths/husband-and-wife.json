@@ -45,6 +45,13 @@
     {"question": "How is marriage to be held, and who will God judge?", "refs": ["Hebrews 13:4"],
      "look_closer": {"strongs": ["G1062"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]}
   ],
+  "remember": [
+    {"text": "\"they shall be one flesh\"", "refs": ["Genesis 2:24"]},
+    {"text": "\"What therefore God hath joined together, let not man put asunder\"", "refs": ["Mark 10:9"]},
+    {"text": "\"Husbands, love your wives, even as Christ also loved the church\"", "refs": ["Ephesians 5:25"]},
+    {"text": "\"Charity never faileth\"", "refs": ["1 Corinthians 13:8"]},
+    {"text": "\"a threefold cord is not quickly broken\"", "refs": ["Ecclesiastes 4:12"]}
+  ],
   "quiz": [
     {"q": "Which verse says \"It is not good that the man should be alone\"?", "type": "find_the_verse", "answer_refs": ["Genesis 2:18"]},
     {"q": "Fill in the word: \"and they shall be one ___\"", "type": "fill_word", "ref": "Genesis 2:24", "bible": "KJV", "word": "flesh"},

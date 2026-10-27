@@ -168,6 +168,11 @@
    ]
   }
  ],
+ "remember": [
+   {"text": "Daniel hears \"a time and times and the dividing of time\" and \"a time, times, and an half\".", "refs": ["Daniel 7:25", "Daniel 12:7"]},
+   {"text": "Revelation 12 gives the same stay two ways: \"a thousand two hundred and threescore days\" and \"a time, and times, and half a time\".", "refs": ["Revelation 12:6", "Revelation 12:14"]},
+   {"text": "\"forty and two months\" stands in Revelation 11 and 13.", "refs": ["Revelation 11:2", "Revelation 13:5"]}
+ ],
  "quiz": [
   {
    "q": "Which verse says \"until a time and times and the dividing of time\"?",

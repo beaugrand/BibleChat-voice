@@ -171,6 +171,25 @@ class PathRulesTest(unittest.TestCase):
 
 
 class PathPagesTest(unittest.TestCase):
+    def test_reflect_replaces_the_quiz_at_the_end(self):
+        # 🕊 Reflect: remember points (checked against the Bibles by the build), two minutes of silence, then the closing prayer
+        js = read("web", "paths.js")
+        for part in ("async function showReflect(", 'pv-toquiz">🕊 Reflect ›', "STILL_SECS = 120", "function stillToggle(", "function stillDone(",
+                     "navigator.wakeLock", "reflected: new Date()", 'data-ls="reflect"', "Questions and answers (optional)", "stillStop();",
+                     "BCPrayers.closing(root.querySelector(\"#pvPrayer\"), p);   // 🙏 the closing prayer"):
+            self.assertIn(part, js)
+        self.assertIn("finished: !!(g.score || g.reflected)", js)
+        for f in SOURCES:
+            rem = load(f).get("remember") or []
+            self.assertTrue(2 <= len(rem) <= 8, os.path.basename(f))
+            self.assertTrue(all(pt["text"].strip() and pt["refs"] for pt in rem), os.path.basename(f))
+        B = bibles(); need_full_texts(self)
+        good = load(os.path.join(bp.SRC_DIR, "light-before-sun.json"))
+        p = copy.deepcopy(good); p["remember"][0]["refs"] = ["Romans 8:28"]          # a reminder outside the path is refused
+        with self.assertRaises(bp.PathError): bp.check_path(p, B, "light-before-sun")
+        p = copy.deepcopy(good); p["remember"][1]["text"] = '"God is darkness"'       # a made-up quotation is refused
+        with self.assertRaises(bp.PathError): bp.check_path(p, B, "light-before-sun")
+
     def test_bible_study_group_is_one_folder(self):
         # a Bible study group's studies (official and the ones readers make) are one folder, the next study first
         js = read("web", "paths.js")

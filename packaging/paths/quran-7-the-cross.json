@@ -246,6 +246,13 @@
    ]
   }
  ],
+ "remember": [
+   {"text": "\"they pierced my hands and my feet\"", "refs": ["Psalms 22:16"]},
+   {"text": "\"he was wounded for our transgressions\"", "refs": ["Isaiah 53:5"]},
+   {"text": "\"he that saw it bare record\"", "refs": ["John 19:35"]},
+   {"text": "The risen Jesus said \"handle me, and see\".", "refs": ["Luke 24:39"]},
+   {"text": "\"he was seen of above five hundred brethren at once\"", "refs": ["1 Corinthians 15:6"]}
+ ],
  "quiz": [
   {
    "q": "Which verse says \"they pierced my hands and my feet\"?",

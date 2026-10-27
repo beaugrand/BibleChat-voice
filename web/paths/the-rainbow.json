@@ -262,6 +262,38 @@
    ]
   }
  ],
+ "remember": [
+  {
+   "text": "God set His bow in the cloud \"for a token of a covenant\".",
+   "refs": [
+    "Genesis 9:13"
+   ]
+  },
+  {
+   "text": "\"my kindness shall not depart from thee\"",
+   "refs": [
+    "Isaiah 54:10"
+   ]
+  },
+  {
+   "text": "The bow in the cloud was \"the appearance of the likeness of the glory of the LORD\".",
+   "refs": [
+    "Ezekiel 1:28"
+   ]
+  },
+  {
+   "text": "\"a rainbow round about the throne\"",
+   "refs": [
+    "Revelation 4:3"
+   ]
+  },
+  {
+   "text": "\"I am the light of the world\"",
+   "refs": [
+    "John 8:12"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse says \"I do set my bow in the cloud\"?",
@@ -646,7 +678,7 @@
  },
  "built_from": {
   "file": "packaging/paths/the-rainbow.json",
-  "sha": "a245dc7ca98e8c9e",
+  "sha": "e3eb7f1a8a8bc50d",
   "checked_in": [
    "KJV",
    "ETH",

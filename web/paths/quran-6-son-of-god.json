@@ -313,6 +313,32 @@
    ]
   }
  ],
+ "remember": [
+  {
+   "text": "\"Hear, O Israel: The LORD our God is one LORD\"",
+   "refs": [
+    "Deuteronomy 6:4"
+   ]
+  },
+  {
+   "text": "\"Thou art my Son; this day have I begotten thee\"",
+   "refs": [
+    "Psalms 2:7"
+   ]
+  },
+  {
+   "text": "\"Thou art the Christ, the Son of the living God\"",
+   "refs": [
+    "Matthew 16:16"
+   ]
+  },
+  {
+   "text": "\"the Word was made flesh, and dwelt among us\"",
+   "refs": [
+    "John 1:14"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse says \"Hear, O Israel: The LORD our God is one LORD\"?",
@@ -781,7 +807,7 @@
  },
  "built_from": {
   "file": "packaging/paths/quran-6-son-of-god.json",
-  "sha": "c4e62e4797814c17",
+  "sha": "3102663bdbf2b898",
   "checked_in": [
    "KJV",
    "ETH",

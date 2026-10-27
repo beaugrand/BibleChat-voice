@@ -195,6 +195,32 @@
    ]
   }
  ],
+ "remember": [
+  {
+   "text": "\"thou hast covered me in my mother's womb\"",
+   "refs": [
+    "Psalms 139:13"
+   ]
+  },
+  {
+   "text": "\"Before I formed thee in the belly I knew thee\"",
+   "refs": [
+    "Jeremiah 1:5"
+   ]
+  },
+  {
+   "text": "The babe \"leaped in my womb for joy\".",
+   "refs": [
+    "Luke 1:44"
+   ]
+  },
+  {
+   "text": "In Exodus 21:22 the translations differ. Read them side by side.",
+   "refs": [
+    "Exodus 21:22"
+   ]
+  }
+ ],
  "quiz": [
   {
    "q": "Which verse says \"thou hast covered me in my mother's womb\"?",
@@ -530,7 +556,7 @@
  },
  "built_from": {
   "file": "packaging/paths/life-in-the-womb.json",
-  "sha": "f70329c417e9debd",
+  "sha": "bfce59dc557b193e",
   "checked_in": [
    "KJV",
    "ETH",

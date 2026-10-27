@@ -243,6 +243,12 @@
    ]
   }
  ],
+ "remember": [
+   {"text": "Jeremiah: \"the pen of the scribes is in vain\".", "refs": ["Jeremiah 8:8"]},
+   {"text": "\"Ye shall not add unto the word which I command you\"", "refs": ["Deuteronomy 4:2"]},
+   {"text": "Paul and Peter warn of those who corrupt or wrest the scriptures.", "refs": ["2 Corinthians 2:17", "2 Peter 3:16"]},
+   {"text": "\"let God be true, but every man a liar\"", "refs": ["Romans 3:4"]}
+ ],
  "quiz": [
   {
    "q": "Which verse says \"the pen of the scribes is in vain\"?",

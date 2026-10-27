@@ -433,6 +433,13 @@
    ]
   }
  ],
+ "remember": [
+   {"text": "\"he was wounded for our transgressions\" ... \"with his stripes we are healed\"", "refs": ["Isaiah 53:5"]},
+   {"text": "\"he is brought as a lamb to the slaughter\"", "refs": ["Isaiah 53:7"]},
+   {"text": "Philip \"began at the same scripture, and preached unto him Jesus\".", "refs": ["Acts 8:35"]},
+   {"text": "Christ died for our sins \"according to the scriptures\".", "refs": ["1 Corinthians 15:3"]},
+   {"text": "He \"made intercession for the transgressors\".", "refs": ["Isaiah 53:12"]}
+ ],
  "quiz": [
   {
    "q": "Which verse says \"he was wounded for our transgressions, he was bruised for our iniquities\"?",
