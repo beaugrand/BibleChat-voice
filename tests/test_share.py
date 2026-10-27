@@ -88,6 +88,27 @@ class LinkCodeTest(unittest.TestCase):
             self.assertIn(f'\n"{phrase}": [', i18n, phrase)
 
 
+class PrayerPictureTest(unittest.TestCase):
+    """Hans, 27 October: the prayer on Home could only be opened with "Pray it", and a prayer shared to Facebook arrived as
+    a bare "github.io" link. Facebook takes no text from other apps, so a prayer goes as a picture, like the verse of the day."""
+    def test_todays_prayer_opens_when_tapped(self):
+        js = read("web", "prayers.js")
+        self.assertIn('<div class="pr-tap" data-prt="open" role="button" tabindex="0"', js)   # title, text and verses are one tap target
+        self.assertIn("Read the whole prayer", js)
+        self.assertIn('e.key === "Enter"', js)
+
+    def test_a_prayer_can_be_shared_as_a_picture(self):
+        js = read("web", "prayers.js")
+        for part in ("async function picture(p, url)", "function sharePicture()", "navigator.share({files: [pic.file]", "pr-pic", "pr-picprev",
+                     "pr-fb", "navigator.clipboard.writeText", "Share as a picture (Facebook, Instagram…)", "Save the prayer as a picture",
+                     "S.pic = pic"):
+            self.assertIn(part, js, part)
+        self.assertIn("    S.back = back || (p ? () => showPrayer(p.id) : () => showList());", js)   # Back on the share screen (it had slipped into a comment)
+        i18n = read("web", "i18n.js")
+        for phrase in ("Read the whole prayer", "Share as a picture (Facebook, Instagram…)", "The prayer and its link are copied: paste them into your post."):
+            self.assertIn(f'\n"{phrase}": [', i18n, phrase)
+
+
 class SharePagesTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

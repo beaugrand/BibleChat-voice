@@ -243,19 +243,23 @@ const BCPrayers = (() => {
     stopListen();
     const url = linkFor(p && p.id), text = inviteText(p), both = text + "\n" + url, wide = matchMedia("(min-width: 760px)").matches, e = encodeURIComponent;
     S.view = "share"; S.id = p ? p.id : null; S.shareP = p || null; S.shareUrl = url;
-    if(p && !written(p) && !versesCached(p)) versesFor(p).then(vs => { S.verses = vs; S.versesId = p.id; });   // ready for 📋 Copy the whole prayer S.back = back || (p ? () => showPrayer(p.id) : () => showList());
+    if(p && !written(p) && !versesCached(p)) versesFor(p).then(vs => { S.verses = vs; S.versesId = p.id; });   // ready for 📋 Copy the whole prayer
+    S.back = back || (p ? () => showPrayer(p.id) : () => showList());
     const qr = `<div class="pv-qrbox"><p class="pv-small">${esc(T(wide ? "Point a phone camera at the screen:" : "Or let them scan this code with their phone camera:"))}</p><div class="pv-qr"></div></div>`;
     frame(p ? "↗ " + T("Share this prayer") : "↗ " + T("Share the Prayers"), `<div class="pv-shead"><img class="pv-shimg" src="${esc(A.base + "img/thumb-prayers.jpg")}" alt="" onerror="this.outerHTML='<span class=&quot;pv-shico&quot;>🙏</span>'"><div><b class="pvx">${esc(p ? p.title : T("BibleChat Prayers"))}</b><span class="pvx">${esc(p ? p.refs.map(label).join(" · ") : T("Prayers drawn from the Bible, and the prayers the Bible itself records."))}</span></div></div>
       <p class="pv-small">${esc(T(p ? "Send this link to someone. It opens this prayer in BibleChat on their phone or computer, with the verses it comes from. No sign-up, nothing to install." : "Send this link to someone. It opens all the prayers in BibleChat on their phone or computer. No sign-up, nothing to install."))}</p>
       ${wide ? qr : ""}
-      <div class="pv-shbtns">${navigator.share ? `<button class="pv-btn pv-primary pr-sys">📤 ${esc(T("Send to someone"))}</button>` : ""}
+      <div class="pr-picbox"><img class="pr-picprev" alt="${esc(T("The prayer as a picture"))}" hidden>
+        <div class="pr-acts"><button class="pv-btn pv-primary pr-pic">🖼 ${esc(T(canFiles() ? "Share as a picture (Facebook, Instagram…)" : "Save the prayer as a picture"))}</button></div>
+        <p class="pv-small">${esc(T("Facebook and Instagram don't take text from other apps, so the prayer goes as a picture: the whole prayer, its verses and the link. The prayer and its link are also copied, to paste into your post."))}</p></div>
+      <div class="pv-shbtns">${navigator.share ? `<button class="pv-btn pr-sys">📤 ${esc(T("Send to someone"))}</button>` : ""}
         <a class="pv-btn" href="sms:?&body=${e(both)}">💬 ${esc(T("Text message"))}</a>
         <a class="pv-btn" href="https://wa.me/?text=${e(both)}" target="_blank" rel="noopener">🟢 WhatsApp</a>
         <a class="pv-btn" href="mailto:?subject=${e((p ? T("A prayer") + ": " + p.title : "BibleChat " + T("Prayers")))}&body=${e(both)}">✉ ${esc(T("Email"))}</a>
         <button class="pv-btn pr-copylink">⧉ ${esc(T("Copy link"))}</button>${p ? `<button class="pv-btn pr-copyall">📋 ${esc(T("Copy the whole prayer"))}</button>` : ""}</div>
       <p class="pv-small pv-socl">${esc(T("Post it on social media:"))}</p>
       <div class="pv-social">
-        <a class="pv-btn pv-so-fb" href="https://www.facebook.com/sharer/sharer.php?u=${e(url)}" target="_blank" rel="noopener">Facebook</a>
+        <a class="pv-btn pv-so-fb pr-fb" href="https://www.facebook.com/sharer/sharer.php?u=${e(url)}" target="_blank" rel="noopener">Facebook</a>
         <a class="pv-btn pv-so-x" href="https://x.com/intent/post?text=${e(text)}&url=${e(url)}" target="_blank" rel="noopener" aria-label="X (Twitter)">X (Twitter)</a>
         <a class="pv-btn pv-so-tg" href="https://t.me/share/url?url=${e(url)}&text=${e(text)}" target="_blank" rel="noopener">Telegram</a>
         <a class="pv-btn pv-so-li" href="https://www.linkedin.com/sharing/share-offsite/?url=${e(url)}" target="_blank" rel="noopener">LinkedIn</a>
@@ -263,6 +267,74 @@ const BCPrayers = (() => {
       <input class="pv-url" readonly value="${esc(url)}">
       ${wide ? "" : qr}`, true);
     const cv = A.qr ? A.qr(url, wide ? 260 : 210) : null, box = root.querySelector(".pv-qr"); if(cv && box) box.appendChild(cv); else if(box) box.parentNode.hidden = true;
+    S.pic = null; const my = S.shareP;
+    picture(p, url).then(pic => { if(S.view !== "share" || S.shareP !== my) return; S.pic = pic;   // made now, so the tap can share it at once (iPhone)
+      const im = root.querySelector(".pr-picprev"); if(im && pic){ im.src = pic.src; im.hidden = false; } }).catch(() => {});
+  }
+  /* ---------- 🖼 the prayer as a picture (like the verse of the day): what Facebook and Instagram can take ----------
+     1080 × 1350: the praying hands, the title, the whole prayer (or, for a prayer of the Bible, its verses from the reader's
+     Bible), its references, and a QR code with the link. For the whole Prayers page: its preview picture. */
+  const canFiles = () => { try{ return !!(navigator.canShare && typeof File === "function" && navigator.canShare({files: [new File([""], "x.png", {type: "image/png"})]})); }catch(e){ return false; } };
+  const loadImg = src => new Promise(res => { const i = new Image(); i.crossOrigin = "anonymous"; i.onload = () => res(i); i.onerror = () => res(null); i.src = src; });
+  async function picture(p, url){
+    const W = 1080, H = 1350, c = document.createElement("canvas"); c.width = W; c.height = H; const g = c.getContext("2d");
+    const photo = await loadImg(A.base + "img/og-prayers.jpg");
+    g.fillStyle = "#16191d"; g.fillRect(0, 0, W, H);
+    const top = p ? 330 : 560;
+    if(photo){ const sh = 400, sc = Math.max(W / photo.width, top / sh); g.drawImage(photo, 0, 0, photo.width, sh, (W - photo.width * sc) / 2, 0, photo.width * sc, sh * sc);
+      const gr = g.createLinearGradient(0, top - 140, 0, top); gr.addColorStop(0, "rgba(22,25,29,0)"); gr.addColorStop(1, "#16191d"); g.fillStyle = gr; g.fillRect(0, top - 140, W, 141); }
+    const wrapLines = (text, maxW) => { const out = []; let line = "";
+      for(const w of String(text).split(/\s+/).filter(Boolean)){ const t = line ? line + " " + w : w; if(g.measureText(t).width > maxW && line){ out.push(line); line = w; } else line = t; }
+      if(line) out.push(line); return out; };
+    const X = 70, MW = W - 140, foot = H - 250;
+    let y = top + 10;
+    g.fillStyle = "#d9b44a"; g.font = "bold 26px system-ui, sans-serif"; g.fillText(p ? "🙏  " + T("A prayer").toUpperCase() : "🙏  BIBLECHAT", X, y); y += 22;
+    g.font = "bold 58px Georgia, serif"; for(const l of wrapLines(p ? p.title : T("BibleChat Prayers"), MW).slice(0, 2)){ y += 66; g.fillText(l, X, y); }
+    y += 26;
+    let paras;
+    if(!p) paras = [T("Prayers drawn from the Bible, and the prayers the Bible itself records."), T("Pray, listen, share. Free, no sign-up.")];
+    else if(written(p)) paras = p.text;
+    else { const vs = versesCached(p) || await versesFor(p).then(v => { S.verses = v; S.versesId = p.id; return v; }).catch(() => []);
+      paras = vs.filter(x => x.vs && x.vs.length).map(x => x.vs.map(v => v[3]).join(" ")); if(!paras.length) paras = [p.by || ""]; }
+    const refs = p ? p.refs.map(label).join(" · ") : "";
+    // the biggest type that fits the whole prayer (a half line between paragraphs), set in the middle of the space; if even
+    // the smallest type doesn't fit, it ends with … and the link has the rest
+    const refH = refs ? 70 : 0, layout = sz => { g.font = `${sz}px Georgia, serif`; const out = []; paras.forEach((pa, i) => wrapLines(pa, MW).forEach((l, j) => out.push({l, gap: i && !j}))); return out; };
+    let size = 44, lines = [], lh = 0, height = () => lines.length * lh + lines.filter(x => x.gap).length * lh * 0.5;
+    for(; size >= 24; size -= 2){ lines = layout(size); lh = size * 1.42; if(y + height() + refH <= foot) break; }
+    if(size < 24){ size = 24; lh = size * 1.42; lines = layout(size);
+      while(lines.length > 1 && y + height() + refH > foot) lines.pop();
+      let l = lines[lines.length - 1].l; while(l && g.measureText(l + " …").width > MW) l = l.replace(/\s*\S+$/, ""); lines[lines.length - 1].l = l + " …"; }
+    y += Math.max(0, (foot - y - height() - refH) / 2.5);
+    g.fillStyle = "#eef0f2"; g.font = `${size}px Georgia, serif`;
+    for(const x of lines){ y += lh + (x.gap ? lh * 0.5 : 0); g.fillText(x.l, X, y); }
+    if(refs){ g.fillStyle = "#d9b44a"; g.font = "600 28px system-ui, sans-serif"; y += 56; const rl = wrapLines(refs, MW); g.fillText(rl[0] + (rl.length > 1 ? " …" : ""), X, y); }
+    g.fillStyle = "rgba(255,255,255,.12)"; g.fillRect(X, H - 230, MW, 2);
+    const qr = A.qr ? A.qr(url, 180) : null; if(qr) { g.fillStyle = "#fff"; g.fillRect(W - 70 - 196, H - 206, 196, 196); g.drawImage(qr, W - 70 - 188, H - 198, 180, 180); }
+    g.fillStyle = "#eef0f2"; g.font = "bold 38px system-ui, sans-serif"; g.fillText(T(p ? "Pray it in BibleChat" : "Open BibleChat"), X, H - 150);
+    g.fillStyle = "#9aa3ad"; g.font = "28px system-ui, sans-serif";
+    const shortUrl = url.replace(/^https?:\/\//, ""), cut = shortUrl.indexOf("/", shortUrl.indexOf("/") + 1);
+    g.fillText(cut > 0 ? shortUrl.slice(0, cut + 1) : shortUrl, X, H - 104); if(cut > 0) g.fillText(shortUrl.slice(cut + 1), X, H - 66);
+    if(p && p.text) { g.fillStyle = "#7d8690"; g.font = "italic 21px system-ui, sans-serif"; g.fillText(T("A prayer from these verses; the verses are Scripture."), X, H - 24); }
+    const blob = await new Promise(r => c.toBlob(r, "image/png")); if(!blob) return null;
+    const name = "BibleChat-" + (p ? p.id : "prayers") + ".png";
+    return {blob, name, src: URL.createObjectURL(blob), file: typeof File === "function" ? new File([blob], name, {type: "image/png"}) : null};
+  }
+  /* 🖼 share the picture (phone: the share sheet, pick Facebook, Instagram, WhatsApp…; computer: save it), and copy the
+     prayer with its link so it can be pasted as the text of the post. Called straight from the tap. */
+  function sharePicture(){
+    const p = S.shareP, pic = S.pic, text = (p ? shareText(p) : inviteText(null)) + "\n\n" + S.shareUrl;
+    if(!pic){ toast(T("The picture is still being made. Try again in a moment.")); return; }
+    try{ if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).catch(() => {}); }catch(e){}
+    if(pic.file && canFiles()){
+      navigator.share({files: [pic.file], title: p ? p.title : "BibleChat " + T("Prayers")}).then(() => toast(T("The prayer and its link are copied: paste them into your post."))).catch(e => { if(!(e && e.name === "AbortError")) savePicture(pic); });
+      return;
+    }
+    savePicture(pic);
+  }
+  function savePicture(pic){
+    const a = document.createElement("a"); a.href = pic.src; a.download = pic.name; document.body.appendChild(a); a.click(); a.remove();
+    toast(T("Picture saved. The prayer and its link are copied: paste them into your post."));
   }
   /* from Home (today's prayer) or the end of a Study Path: open the share screen over the page; Back returns there */
   function shareFrom(p, from){
@@ -294,6 +366,12 @@ const BCPrayers = (() => {
     if(t.closest(".pr-share") && p){ const id = p.id, prev = S.back; share(p, () => showPrayer(id, {back: prev})); return; }
     if(t.closest(".pr-shareall")){ share(null, () => showList()); return; }
     if(t.closest(".pr-sys")){ sysShare(); return; }
+    if(t.closest(".pr-pic")){ sharePicture(); return; }
+    if(t.closest(".pr-picprev")){ sharePicture(); return; }
+    if(t.closest(".pr-fb")){   // Facebook takes only the link from a website: on a phone the picture goes instead; always copy the prayer to paste
+      const p = S.shareP; try{ navigator.clipboard && navigator.clipboard.writeText((p ? shareText(p) : inviteText(null)) + "\n\n" + S.shareUrl).catch(() => {}); }catch(err){}
+      if(S.pic && S.pic.file && canFiles()){ e.preventDefault(); sharePicture(); return; }
+      toast(T("The prayer and its link are copied: paste them into your post.")); return; }
     if(t.closest(".pr-copylink") && S.shareUrl){ copy(S.shareUrl); return; }
     if(t.closest(".pr-copyall") && S.shareP){ copyPrayer(S.shareP, "\n\nBibleChat: " + S.shareUrl); return; }
     if(t.closest(".pv-url")){ t.closest(".pv-url").select(); return; }
@@ -318,10 +396,11 @@ const BCPrayers = (() => {
     if(!P){ pendingCard = el; return; }   // the page asked before mount(): drawn as soon as it mounts
     try{ await load(); }catch(e){ el.hidden = true; return; }
     const p = today(P.votd ? P.votd() : null); if(!p){ el.hidden = true; return; }
-    el.innerHTML = `<div class="lab">🙏 ${esc(T("Today's prayer"))}</div><b class="pr-tt pvx">${esc(p.title)}</b><div class="vt pvx">${esc(written(p) ? p.text[0] : p.by || "")}</div><div class="rf">${esc(p.refs.map(label).join(" · "))}</div>
+    el.innerHTML = `<div class="lab">🙏 ${esc(T("Today's prayer"))}</div><div class="pr-tap" data-prt="open" role="button" tabindex="0" aria-label="${esc(T("Read the whole prayer") + ": " + p.title)}"><b class="pr-tt pvx">${esc(p.title)}</b><div class="vt pvx">${esc(written(p) ? p.text.join(" ") : p.by || "")}</div><div class="rf">${esc(p.refs.map(label).join(" · "))}</div><span class="pr-more">${esc(T("Read the whole prayer"))} ›</span></div>
       <div class="alt row"><button class="btn" data-prt="open">🙏 ${esc(T("Pray it"))}</button><button class="btn" data-prt="listen">🔊 ${esc(T("Listen"))}</button><button class="btn" data-prt="share">↗ ${esc(T("Share"))}</button><button class="btn" data-prt="all">${esc(T("All prayers"))}</button></div>`;
     el.hidden = false;
-    el.onclick = e => { const b = e.target.closest("[data-prt]"); if(!b) return;
+    el.onkeydown = e => { if((e.key === "Enter" || e.key === " ") && e.target.closest(".pr-tap")){ e.preventDefault(); open(p.id); } };
+    el.onclick = e => { const b = e.target.closest("[data-prt]"); if(!b) return;   // tap the title or the text to read the whole prayer
       if(b.dataset.prt === "open") open(p.id); else if(b.dataset.prt === "all") open(); else if(b.dataset.prt === "share") shareFrom(p);
       else partsOf(p).then(parts => listen(parts, b)); };
   }
@@ -367,6 +446,9 @@ const BCPrayers = (() => {
     if(pendingCard){ const el = pendingCard; pendingCard = null; todayCard(el); }
   }
   const CSS = `
+.pr-tap{cursor:pointer;border-radius:10px;margin:0 -6px;padding:2px 6px;-webkit-tap-highlight-color:rgba(217,180,74,.25)}.pr-tap:hover,.pr-tap:focus-visible{background:rgba(217,180,74,.10);outline:none}
+.pr-more{display:inline-block;margin-top:4px;font:600 13.5px system-ui,sans-serif;color:var(--accent)}
+.pr-picbox{margin:0 0 6px}.pr-picprev{display:block;width:min(260px,70%);margin:0 auto 6px;border-radius:12px;border:1px solid var(--line);cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.35)}
 .pr-today{margin:0 0 12px}.pr-lab{font:700 12px system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
 .pr-find{display:block;width:100%;margin:0 0 10px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--card);color:inherit;font:inherit}
 .pr-grp{font-size:16px;margin:16px 0 8px;color:var(--accent)}
