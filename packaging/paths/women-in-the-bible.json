@@ -1,0 +1,124 @@
+{
+  "id": "women-in-the-bible",
+  "title": "Women in the Bible: what does the Bible say?",
+  "category": "Women",
+  "anim": {"kind": "light", "x": 79, "y": 8, "s": 30},
+  "opening_question": "What does the Bible say about women? Read it from the beginning: how God made the woman, the prophetesses and women of faith in Israel, the virtuous woman, Mary, the women who followed Jesus and saw Him risen, the women of the early church, what Paul writes about women in the churches, and what all are in Christ. Read every verse, also the ones that seem to point another way, and let the text speak.",
+  "required_refs": ["Genesis 1:26-28", "Genesis 2:18-23", "Genesis 3:20", "Exodus 15:20-21", "Micah 6:4", "Judges 4:4-9", "Judges 5:7", "2 Kings 22:14-15", "Ruth 1:16-17", "Ruth 3:11", "1 Samuel 1:10-11", "1 Samuel 1:27-28", "Hebrews 11:11", "Esther 4:14-16", "Proverbs 31:10-31", "1 Peter 3:3-4", "Luke 1:30-38", "Luke 1:45-48", "John 19:25-27", "Luke 8:1-3", "Luke 10:38-42", "John 4:25-29", "John 4:39", "Mark 5:25-34", "Matthew 27:55-56", "Luke 24:1-11", "John 20:11-18", "Acts 1:14", "Acts 2:17-18", "Acts 9:36", "Acts 16:14-15", "Acts 18:24-26", "Acts 21:8-9", "Romans 16:1-7", "Philippians 4:2-3", "1 Corinthians 11:3-12", "1 Corinthians 14:33-35", "1 Timothy 2:9-15", "Titus 2:3-5", "Galatians 3:26-28", "1 Peter 3:7"],
+  "words": ["H802", "G1135", "H2428", "H5031"],
+  "show": 8,
+  "steps": [
+    {"question": "In whose image did God make man, male and female? Why did God make the woman, and what did Adam call her?", "refs": ["Genesis 1:26-28", "Genesis 2:18-23", "Genesis 3:20"],
+     "look_closer": {"strongs": ["H6754", "H5828", "H802", "H2332"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"man\" in Genesis 1:27 is the Hebrew 'adam, \"a human being\" or \"the species mankind\". The same verse says \"male and female created he them\", and both are told to \"have dominion\".", "refs": ["Genesis 1:27", "Genesis 1:28"], "strongs": ["H120"]},
+       {"text": "Strong's gives 'ezer, \"aid\", for \"help\" in Genesis 2:18. The Bible uses the same word for God Himself: \"My help cometh from the LORD\" and \"he is our help and our shield\".", "refs": ["Genesis 2:18", "Psalms 121:2", "Psalms 33:20"], "strongs": ["H5828"]},
+       {"text": "\"Eve\" is the Hebrew Chavvah, \"lifegiver\": Adam called her so \"because she was the mother of all living\".", "refs": ["Genesis 3:20"], "strongs": ["H2332"]}
+     ]},
+    {"question": "Who led the women of Israel in song, whom did the LORD send before Israel with Moses and Aaron, who judged Israel, and to whom did the priest go to enquire of the LORD?", "refs": ["Exodus 15:20-21", "Micah 6:4", "Judges 4:4-9", "Judges 5:7", "2 Kings 22:14-15"],
+     "look_closer": {"strongs": ["H5031", "H8199"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"prophetess\" is the Hebrew nebiy'ah, \"a prophetess or (generally) inspired woman\". The text gives that name to Miriam, Deborah and Huldah.", "refs": ["Exodus 15:20", "Judges 4:4", "2 Kings 22:14"], "strongs": ["H5031"]},
+       {"text": "Barak would not go to battle without Deborah. She went, and said the LORD would \"sell Sisera into the hand of a woman\".", "refs": ["Judges 4:8-9"]},
+       {"text": "Deborah calls herself \"a mother in Israel\".", "refs": ["Judges 5:7"]}
+     ]},
+    {"question": "What did Ruth promise Naomi, what did Hannah pray, how did Sarah conceive, and what did Esther risk?", "refs": ["Ruth 1:16-17", "Ruth 3:11", "1 Samuel 1:10-11", "1 Samuel 1:27-28", "Hebrews 11:11", "Esther 4:14-16"],
+     "look_closer": {"strongs": ["H2428", "H519"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"virtuous\" in Ruth 3:11 is chayil, the same Hebrew word as in \"Who can find a virtuous woman?\" Strong's gives \"virtue\", \"valor\" and \"strength\" among its meanings.", "refs": ["Ruth 3:11", "Proverbs 31:10"], "strongs": ["H2428"]},
+       {"text": "Hannah calls herself \"thine handmaid\" three times in one prayer, and says afterwards: \"For this child I prayed\".", "refs": ["1 Samuel 1:11", "1 Samuel 1:27"]},
+       {"text": "Sarah \"received strength to conceive seed\" when she was past age, \"because she judged him faithful who had promised\".", "refs": ["Hebrews 11:11"]}
+     ]},
+    {"question": "Who can find a virtuous woman? What does she do with her hands, her mouth and her household, and what adorning is of great price in the sight of God?", "refs": ["Proverbs 31:10-31", "1 Peter 3:3-4"],
+     "look_closer": {"strongs": ["H2428", "G4239", "G2272"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "The virtuous woman \"considereth a field, and buyeth it\", \"planteth a vineyard\", \"maketh fine linen, and selleth it\" and \"stretcheth out her hand to the poor\".", "refs": ["Proverbs 31:16", "Proverbs 31:24", "Proverbs 31:20"]},
+       {"text": "\"meek\" in 1 Peter 3:4 is praus, \"mild\"; \"quiet\" is hesuchios, \"still (undisturbed, undisturbing)\".", "refs": ["1 Peter 3:4"], "strongs": ["G4239", "G2272"]}
+     ]},
+    {"question": "What did the angel tell Mary, what did she answer, what did Elisabeth say of her faith, and to whom did Jesus give His mother at the cross?", "refs": ["Luke 1:30-38", "Luke 1:45-48", "John 19:25-27"],
+     "look_closer": {"strongs": ["G1399", "G3106"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"handmaid\" in Luke 1:38 and \"handmaiden\" in Luke 1:48 is the Greek doule, \"a female slave (involuntarily or voluntarily)\". Mary gives herself the lowest name.", "refs": ["Luke 1:38", "Luke 1:48"], "strongs": ["G1399"]},
+       {"text": "\"blessed is she that believed\": Elisabeth blesses Mary for her faith.", "refs": ["Luke 1:45"]}
+     ]},
+    {"question": "Which women travelled with Jesus and ministered to Him, which sister chose that good part, whose word brought a Samaritan city to believe, and what did Jesus call the woman He healed?", "refs": ["Luke 8:1-3", "Luke 10:38-42", "John 4:25-29", "John 4:39", "Mark 5:25-34"],
+     "look_closer": {"strongs": ["G1247", "G2364"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"ministered\" in Luke 8:3 is diakoneo, \"to be an attendant, i.e. wait upon\". The women ministered to Him \"of their substance\".", "refs": ["Luke 8:3"], "strongs": ["G1247"]},
+       {"text": "Mary \"sat at Jesus' feet, and heard his word\". Paul uses the same picture for his own schooling: brought up \"at the feet of Gamaliel\".", "refs": ["Luke 10:39", "Acts 22:3"]},
+       {"text": "To the woman at the well Jesus said \"I that speak unto thee am he\". His disciples \"marvelled that he talked with the woman\".", "refs": ["John 4:26", "John 4:27"]}
+     ]},
+    {"question": "Who stood by the cross, who came to the sepulchre on the first day of the week, and to whom did the risen Jesus say \"go to my brethren\"?", "refs": ["Matthew 27:55-56", "Luke 24:1-11", "John 20:11-18"],
+     "look_closer": {"strongs": ["G4462", "G518"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Luke names the women who told the apostles: \"Mary Magdalene, and Joanna, and Mary the mother of James\". At first \"their words seemed to them as idle tales\".", "refs": ["Luke 24:10", "Luke 24:11"]},
+       {"text": "\"Mary Magdalene came and told the disciples that she had seen the Lord\".", "refs": ["John 20:18"]},
+       {"text": "Many women followed Jesus from Galilee, \"ministering unto him\", and stood \"beholding afar off\" at the cross.", "refs": ["Matthew 27:55"]}
+     ]},
+    {"question": "Who prayed with the apostles before Pentecost, on whom did God say He would pour out His Spirit, and which women served the church in Acts and in Paul's letters?", "refs": ["Acts 1:14", "Acts 2:17-18", "Acts 9:36", "Acts 16:14-15", "Acts 18:24-26", "Acts 21:8-9", "Romans 16:1-7", "Philippians 4:2-3"],
+     "look_closer": {"strongs": ["G4395", "G1249", "G4904"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "On the day of Pentecost Peter quotes the prophet Joel: \"your sons and your daughters shall prophesy\", and \"on my handmaidens I will pour out in those days of my Spirit\".", "refs": ["Acts 2:17", "Acts 2:18", "Joel 2:28"]},
+       {"text": "\"servant\" in Romans 16:1 is diakonos, \"an attendant\"; Strong's adds \"(technically, a deacon or deaconess)\". The KJV translates the word \"deacon, minister, servant\".", "refs": ["Romans 16:1"], "strongs": ["G1249"]},
+       {"text": "\"helpers\" in Romans 16:3 is synergos, \"a co-laborer\". Priscilla and Aquila together \"expounded unto him the way of God more perfectly\".", "refs": ["Romans 16:3", "Acts 18:26"], "strongs": ["G4904"]},
+       {"text": "Romans 16:7 says Andronicus and Junia \"are of note among the apostles\"; the BSB says \"outstanding among the apostles\". Readers differ on whether this means they were counted among the apostles or were well known to them.", "refs": ["Romans 16:7"]}
+     ]},
+    {"question": "What does Paul write about a woman who prays or prophesies, about silence in the churches, about teaching, and about what the aged women teach? Read every verse in full, side by side.", "refs": ["1 Corinthians 11:3-12", "1 Corinthians 14:33-35", "1 Timothy 2:9-15", "Titus 2:3-5"],
+     "look_closer": {"strongs": ["G2776", "G4601", "G2271", "G831"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "In 1 Corinthians 11:5 a woman \"prayeth or prophesieth\"; in 14:34 Paul writes \"Let your women keep silence in the churches\". Christians read these verses together in different ways. The path shows them all; the commentary below is labelled as the words of men.", "refs": ["1 Corinthians 11:5", "1 Corinthians 14:34"]},
+       {"text": "\"silence\" in 1 Timothy 2:11-12 is hesuchia, \"stillness\"; the KJV has the same word as \"quietness\" in 2 Thessalonians 3:12. \"silence\" in 1 Corinthians 14:34 is another word, sigao, \"to keep silent\".", "refs": ["1 Timothy 2:11", "1 Timothy 2:12", "2 Thessalonians 3:12", "1 Corinthians 14:34"], "strongs": ["G2271", "G4601"]},
+       {"text": "\"usurp authority\" in 1 Timothy 2:12 is authenteo, \"to act of oneself\", \"dominate\". Strong's counts it only once in the New Testament.", "refs": ["1 Timothy 2:12"], "strongs": ["G831"]},
+       {"text": "The aged women are to be \"teachers of good things\", that \"they may teach the young women\".", "refs": ["Titus 2:3", "Titus 2:4"]},
+       {"text": "In the same chapter Paul writes: \"neither is the man without the woman, neither the woman without the man, in the Lord\".", "refs": ["1 Corinthians 11:11"]}
+     ]},
+    {"question": "What are all who are baptized into Christ, and what are husband and wife together?", "refs": ["Galatians 3:26-28", "1 Peter 3:7"],
+     "look_closer": {"strongs": ["G730", "G2338", "G4789"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"male\" and \"female\" in Galatians 3:28 are the Greek arsen and thelus, the same words Jesus uses when He goes back to the beginning: \"made them male and female\".", "refs": ["Galatians 3:28", "Matthew 19:4"], "strongs": ["G730", "G2338"]},
+       {"text": "\"heirs together\" in 1 Peter 3:7 is one Greek word, synkleronomos, \"a co-heir\".", "refs": ["1 Peter 3:7"], "strongs": ["G4789"]}
+     ]}
+  ],
+  "remember": [
+    {"text": "\"in the image of God created he him; male and female created he them\"", "refs": ["Genesis 1:27"]},
+    {"text": "\"a woman that feareth the LORD, she shall be praised\"", "refs": ["Proverbs 31:30"]},
+    {"text": "\"Behold the handmaid of the Lord; be it unto me according to thy word\"", "refs": ["Luke 1:38"]},
+    {"text": "\"Mary hath chosen that good part, which shall not be taken away from her\" ... \"she had seen the Lord\"", "refs": ["Luke 10:42", "John 20:18"]},
+    {"text": "\"your sons and your daughters shall prophesy\" ... \"neither is the man without the woman, neither the woman without the man, in the Lord\"", "refs": ["Acts 2:17", "1 Corinthians 11:11"]},
+    {"text": "\"ye are all one in Christ Jesus\" ... \"heirs together of the grace of life\"", "refs": ["Galatians 3:28", "1 Peter 3:7"]}
+  ],
+  "quiz": [
+    {"q": "Which verse says \"male and female created he them\"?", "type": "find_the_verse", "answer_refs": ["Genesis 1:27"]},
+    {"q": "In Genesis 3:20, why did Adam call his wife's name Eve?", "type": "multiple_choice",
+     "options": ["She was the mother of all living", "She was taken out of the dust", "She was made on the seventh day", "She was the first to speak"], "answer": 0, "answer_refs": ["Genesis 3:20"], "check": {"bible": "KJV", "word": "mother"}},
+    {"q": "Which translation says \"suitable helper\" in Genesis 2:18?", "type": "which_translation", "ref": "Genesis 2:18", "bible": "BSB", "phrase": "suitable helper"},
+    {"q": "According to Judges 4:4, who judged Israel at that time?", "type": "multiple_choice",
+     "options": ["Deborah, a prophetess", "Barak", "Sisera", "Jabin"], "answer": 0, "answer_refs": ["Judges 4:4"], "check": {"bible": "KJV", "word": "Deborah"}},
+    {"q": "Fill in the word: \"I sent before thee Moses, Aaron, and ___\"", "type": "fill_word", "ref": "Micah 6:4", "bible": "KJV", "word": "Miriam"},
+    {"q": "Which verse says \"thy people shall be my people, and thy God my God\"?", "type": "find_the_verse", "answer_refs": ["Ruth 1:16"]},
+    {"q": "Fill in the word: \"who knoweth whether thou art come to the kingdom for such a ___ as this?\"", "type": "fill_word", "ref": "Esther 4:14", "bible": "KJV", "word": "time"},
+    {"q": "In 1 Samuel 1:27, what did Hannah say?", "type": "multiple_choice",
+     "options": ["For this child I prayed", "This child shall be a king", "This child is a stranger", "This child came out of Egypt"], "answer": 0, "answer_refs": ["1 Samuel 1:27"], "check": {"bible": "KJV", "word": "prayed"}},
+    {"q": "Fill in the word: \"Who can find a virtuous ___? for her price is far above rubies.\"", "type": "fill_word", "ref": "Proverbs 31:10", "bible": "KJV", "word": "woman"},
+    {"q": "Which verse says \"Favour is deceitful, and beauty is vain\"?", "type": "find_the_verse", "answer_refs": ["Proverbs 31:30"]},
+    {"q": "Which verse says \"Behold the handmaid of the Lord; be it unto me according to thy word\"?", "type": "find_the_verse", "answer_refs": ["Luke 1:38"]},
+    {"q": "In Luke 10:42, what has Mary chosen?", "type": "multiple_choice",
+     "options": ["That good part", "The best seat", "Much serving", "A house of her own"], "answer": 0, "answer_refs": ["Luke 10:42"], "check": {"bible": "KJV", "word": "good"}},
+    {"q": "According to John 4:39, many of the Samaritans believed on Him for the saying of whom?", "type": "multiple_choice",
+     "options": ["The woman", "The disciples", "The priests", "Nicodemus"], "answer": 0, "answer_refs": ["John 4:39"], "check": {"bible": "KJV", "word": "woman"}},
+    {"q": "Fill in the word: \"Daughter, thy ___ hath made thee whole\"", "type": "fill_word", "ref": "Mark 5:34", "bible": "KJV", "word": "faith"},
+    {"q": "Which verse says \"Mary Magdalene came and told the disciples that she had seen the Lord\"?", "type": "find_the_verse", "answer_refs": ["John 20:18"]},
+    {"q": "According to Acts 21:9, how many daughters did Philip the evangelist have, which did prophesy?", "type": "multiple_choice",
+     "options": ["Four", "Two", "Seven", "Twelve"], "answer": 0, "answer_refs": ["Acts 21:9"], "check": {"bible": "KJV", "word": "four"}},
+    {"q": "In Acts 16:14, what did Lydia sell?", "type": "multiple_choice",
+     "options": ["Purple", "Tents", "Fish", "Oil"], "answer": 0, "answer_refs": ["Acts 16:14"], "check": {"bible": "KJV", "word": "purple"}},
+    {"q": "Which translation says \"outstanding among the apostles\" in Romans 16:7?", "type": "which_translation", "ref": "Romans 16:7", "bible": "BSB", "phrase": "outstanding among the apostles"},
+    {"q": "In Titus 2:3, the aged women are to be teachers of what?", "type": "multiple_choice",
+     "options": ["Good things", "The law of Moses", "Kings", "Strangers"], "answer": 0, "answer_refs": ["Titus 2:3"], "check": {"bible": "KJV", "word": "good"}},
+    {"q": "In 1 Timothy 2:10, women are to adorn themselves with what?", "type": "multiple_choice",
+     "options": ["Good works", "Gold", "Pearls", "Costly array"], "answer": 0, "answer_refs": ["1 Timothy 2:10"], "check": {"bible": "KJV", "word": "works"}},
+    {"q": "Fill in the word: \"there is neither male nor female: for ye are all ___ in Christ Jesus\"", "type": "fill_word", "ref": "Galatians 3:28", "bible": "KJV", "word": "one"},
+    {"q": "Which verse says \"heirs together of the grace of life\"?", "type": "find_the_verse", "answer_refs": ["1 Peter 3:7"]}
+  ],
+  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]
+}
