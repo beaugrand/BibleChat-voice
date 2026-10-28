@@ -186,6 +186,52 @@
   }
  },
  {
+  "id": "halloween-light-in-darkness",
+  "title": "Halloween: what does the Bible say?",
+  "category": "Light & Darkness",
+  "image": "img/halloween-light-in-darkness.jpg",
+  "opening_question": "The Bible never names Halloween. What does it say about the things the day touches: witchcraft and spirits of the dead, darkness and light, special days, and fear? Read what the text says, and be fully persuaded in your own mind.",
+  "steps": 6,
+  "step_questions": [
+   "Which practices does the LORD list in Deuteronomy 18, what does He call them, and does witchcraft come up again in the New Testament?",
+   "Where should a people seek: to the dead, or to their God? And why did Saul die?",
+   "What were we once, what are we now, and what does the text say to do with the unfruitful works of darkness? What did the believers at Ephesus do with their books?",
+   "One man esteems one day above another, another esteems every day alike: what does the text say about special days, and how is each person to decide?",
+   "Why does a Christian not have to fear the darkness? What did Christ do to the principalities and powers, and to him that had the power of death?",
+   "What does the light do in the darkness, what does Jesus call Himself, and what does He call those who follow Him?"
+  ],
+  "books": [
+   "1 Chronicles",
+   "1 Corinthians",
+   "1 John",
+   "1 Peter",
+   "1 Thessalonians",
+   "2 Timothy",
+   "Acts",
+   "Colossians",
+   "Deuteronomy",
+   "Ephesians",
+   "Galatians",
+   "Hebrews",
+   "Isaiah",
+   "John",
+   "Leviticus",
+   "Matthew",
+   "Philippians",
+   "Psalms",
+   "Romans"
+  ],
+  "show": 8,
+  "verses": 43,
+  "minutes": 35,
+  "anim": {
+   "kind": "light",
+   "x": 70,
+   "y": 14,
+   "s": 34
+  }
+ },
+ {
   "id": "heavens-and-earth",
   "title": "The heavens and the earth in the text's own words",
   "category": "Creation",
