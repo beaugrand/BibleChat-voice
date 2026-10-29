@@ -232,6 +232,23 @@ class LanguagesTest(unittest.TestCase):
         self.assertIn("web/smart.js", read(os.path.join(ROOT, ".github", "workflows", "pages.yml")))  # the phone search
         self.assertIn("smart.js", read(os.path.join(ROOT, "web", "sw.js")))   # kept for offline use
 
+    def test_phone_keeps_everything_for_offline_use(self):
+        """After the first visit the phone keeps the KJV and the Ethiopian Canon first, then the rest, in the background."""
+        page, sw = read(PAGES[0]), read(os.path.join(ROOT, "web", "sw.js"))
+        self.assertIn('const OFFLINE_BIBLES = ["eng-kjv", "eng-ethiopian-canon"];', page)   # these two come first
+        self.assertIn("setTimeout(offline, 4000)", page)
+        body = page[page.index("async function offline()"):page.index("/* ---------- start ---------- */")]
+        for part in ("OFFLINE_BIBLES", "PATH_BIBLES", '"paths/index.json"', 'SD + "files.json"', "caches.match(url)", "saveData"):
+            self.assertIn(part, body)
+        self.assertLess(body.index("OFFLINE_BIBLES"), body.index('SD + "files.json"'))
+        self.assertIn('"📥 KJV and Ethiopian Bible saved on this phone: they work without internet":', read(os.path.join(ROOT, "web", "i18n.js")))
+        self.assertIn('STUDY = "bc-study-v1"', sw)                     # the study data survives an app update
+        self.assertIn("[SHELL, DATA, MEANING, STUDY]", sw)
+        self.assertIn('"data/catalog.json"]', sw)                       # the list of Bibles: the app starts offline
+        self.assertIn("Promise.allSettled(", sw)                        # one failed Study Path file can't stop the others
+        self.assertIn("const copy = r.clone();", sw)                    # copied before the page reads the answer
+        self.assertIn('"files.json"', read(os.path.join(ROOT, "web", "build_study.py")))
+
     def test_book_names_table(self):
         import json
         with open(os.path.join(ROOT, "bibleask", "data", "booknames.json"), encoding="utf-8") as f:

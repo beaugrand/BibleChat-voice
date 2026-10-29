@@ -13,6 +13,7 @@ every verse with a word) and Nave's topics, split into small files the phone loa
     data/study/orig/<book#>.json   {"1:1": "בְּרֵאשִׁית…", "4:1": ["…", "3:19"]}  (Hebrew WLC / Greek TR line; Hebrew number if different)
     data/study/versemap.json       Septuagint verse numbers in King James numbering (bibleask/versemap.py)
     data/study/gloss.json          English words -> the Hebrew/Greek words that mean them (bibleask/strongs.py)
+    data/study/files.json          every file above, in the order the phone keeps them for offline use
     data/meaning/                  the meaning model and verse fingerprints (bibleask/data/meaning, copied as is)
 
 Usage:  python web/build_study.py OUT_DIR
@@ -21,6 +22,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 from collections import defaultdict
 
@@ -122,6 +124,14 @@ def main(out: str) -> None:
     sys.path.insert(0, web)
     from build_share import write_share_pages
     print(f"share pages: {len(write_share_pages(out, web))}")
+    # 📥 the list of every study file, so the phone can keep all of them for offline use in the background (index.html
+    # offline()): the small lists first, then Hebrew/Greek words and cross-references, then the notes
+    order = ["books.json", "versemap.json", "gloss.json", "topics.json", "kjv/", "xref/", "orig/", "dict/", "where/",
+             "scofield/", "henry/", "easton/"]
+    files = sorted((os.path.relpath(os.path.join(dp, f), base).replace(os.sep, "/") for dp, _, fs in os.walk(base) for f in fs),
+                   key=lambda f: (next((i for i, o in enumerate(order) if f == o or f.startswith(o)), len(order)),
+                                  [int(x) if x.isdigit() else x for x in re.split(r"(\d+)", f)]))
+    dump(os.path.join(base, "files.json"), {"files": files, "bytes": sum(os.path.getsize(os.path.join(base, f)) for f in files)})
     total = sum(os.path.getsize(os.path.join(dp, f)) for dp, _, fs in os.walk(base) for f in fs)
     nfiles = sum(len(fs) for _, _, fs in os.walk(base))
     print(f"study data: {nfiles} files, {total / 1e6:.1f} MB")
