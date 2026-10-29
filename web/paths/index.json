@@ -1150,6 +1150,48 @@
   }
  },
  {
+  "id": "the-rapture",
+  "title": "The rapture: what does the Bible say?",
+  "category": "Prophecy",
+  "image": "img/the-rapture.jpg",
+  "opening_question": "The word rapture is not in English Bibles. It comes from the Latin Bible's word for \"caught up\" in 1 Thessalonians 4:17. What does the Bible say about believers being caught up to meet the Lord, about Jesus coming again in the clouds, and about when it happens? Read every verse, also the ones Christians read in different ways, and let the text speak.",
+  "steps": 8,
+  "step_questions": [
+   "Why did Paul write about \"them which are asleep\"? When the Lord descends from heaven, who rises first, who is caught up, to meet whom, and what are we to do with these words?",
+   "What mystery does Paul show? When are we changed, how fast, and what will our bodies be like?",
+   "What did Jesus promise His disciples before He went away? And when He was taken up, how did the two men in white apparel say He will come back?",
+   "What happens \"Immediately after the tribulation of those days\"? What appears in heaven, who sees the Son of man coming, and whom do His angels gather, with what sound? Where did Daniel see the Son of man come with the clouds?",
+   "How do Mark and Luke tell the same moment? From where are the elect gathered, and what are believers to do \"when these things begin to come to pass\"?",
+   "Who knows the day and hour? What happened in the days of Noe, who is taken and who is left, and what does Jesus tell us to do?",
+   "What did Paul say must come first, before \"the day of Christ\"? What do the verses say about wrath, and about being kept \"from the hour of temptation\"? Compare what Jesus prayed for His disciples.",
+   "How does the day of the Lord come, and why need it not overtake believers \"as a thief\"? What is \"that blessed hope\", what does that hope do in us, and how does the Bible end?"
+  ],
+  "books": [
+   "1 Corinthians",
+   "1 John",
+   "1 Thessalonians",
+   "2 Thessalonians",
+   "Acts",
+   "Daniel",
+   "John",
+   "Luke",
+   "Mark",
+   "Matthew",
+   "Philippians",
+   "Revelation",
+   "Titus"
+  ],
+  "show": 8,
+  "verses": 61,
+  "minutes": 45,
+  "anim": {
+   "kind": "light",
+   "x": 83,
+   "y": 12,
+   "s": 32
+  }
+ },
+ {
   "id": "wheat-and-tares",
   "title": "The wheat and the tares: who is gathered first?",
   "category": "Prophecy",
