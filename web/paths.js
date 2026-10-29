@@ -864,6 +864,19 @@ const BCPaths = (() => {
      prayer's own picture, title and question, and the page opens it in BibleChat. A path someone made travels in the link. */
   const SHORT = [[/^#\/path\/(?!mine\/)([a-z0-9-]+)\/1$/, "p/$1/"], [/^#\/paths\/?$/, "p/"], [/^#\/paths\/series\/([a-z0-9-]+)\/?$/, "series/$1/"],
     [/^#\/prayers\/([a-z0-9-]+)$/, "pray/$1/"], [/^#\/prayers\/?$/, "pray/"]];
+  /* X (Twitter) on a phone: X's website asks people to sign up even when the X app is logged in, and the iPhone share
+     menu often doesn't list X. So on a phone the button copies the post (text and link) and says to open X and paste.
+     On a computer it opens X's post page as before. */
+  const isPhone = () => typeof navigator !== "undefined" && (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1));
+  function xPhone(e, btn, box, say){
+    if(!isPhone()) return false;
+    e.preventDefault();
+    const text = btn.dataset.copy || btn.href, msg = T("Copied. Now open the X app, start a new post, and tap and hold in the text box to paste.");
+    const done = () => { say(msg); const h = box.querySelector(".pv-xhint"); if(h) h.hidden = false; };
+    const old = () => { const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select(); try{ document.execCommand("copy"); }catch(err){} ta.remove(); done(); };
+    if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, old); else old();
+    return true;
+  }
   function shortPath(hash){
     const g = /^#\/paths\/group\/([a-z0-9-]+)\/?$/.exec(hash);   // a Bible study group: a short page only for the groups on the site
     if(g) return (list || []).some(p => p.group && slug(p.group) === g[1]) ? "group/" + g[1] + "/" : null;
@@ -910,7 +923,7 @@ const BCPaths = (() => {
       <p class="pv-small pv-socl">Post it on social media:</p>
       <div class="pv-social">
         <a class="pv-btn pv-so-fb" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}" target="_blank" rel="noopener">Facebook</a>
-        <a class="pv-btn pv-so-x" href="https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}" target="_blank" rel="noopener" aria-label="X (Twitter)">X (Twitter)</a>
+        <a class="pv-btn pv-so-x" href="https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}" data-copy="${esc(both)}" target="_blank" rel="noopener" aria-label="X (Twitter)">X (Twitter)</a>
         <a class="pv-btn pv-so-tg" href="https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}" target="_blank" rel="noopener">Telegram</a>
         <a class="pv-btn pv-so-pin" href="https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&media=${encodeURIComponent(absImg(t))}&description=${encodeURIComponent(text)}" target="_blank" rel="noopener">Pinterest</a>
         <a class="pv-btn pv-so-li" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}" target="_blank" rel="noopener">LinkedIn</a>
@@ -919,6 +932,7 @@ const BCPaths = (() => {
         <button class="pv-btn pv-so-tt pv-so-ig">Instagram</button>
         <button class="pv-btn pv-card-dl">🖼 Picture to post</button>
       </div>
+      <p class="pv-small pv-xhint" hidden>${esc(T("Copied. Now open the X app, start a new post, and tap and hold in the text box to paste."))}</p>
       <p class="pv-small pv-tthint" hidden>TikTok and Instagram don't take links from websites. Post the picture (it has the QR code and the address on it), and paste the link in your caption, bio or story link: it is copied.</p>
       <input class="pv-url" readonly value="${esc(url)}">
       ${wide ? "" : qr}
@@ -1031,6 +1045,7 @@ const BCPaths = (() => {
     const sq = t.closest(".pv-serqr"); if(sq){ const kind = sq.dataset.kind || "series"; folderPaths(kind, sq.dataset.series).then(({list}) => { if(list[0]) share(list[0], S.view === "series" ? "series" : "list", kind); }); return; }
     if(t.closest(".pv-qrbig")){ bigQr(); return; }
     if(t.closest(".pv-card-dl")){ shareCard(S.shareP).catch(() => A.toast(T("Couldn't make the picture."))); return; }
+    const xb = t.closest(".pv-so-x"); if(xb && xPhone(e, xb, root, A.toast)) return;
     if(t.closest(".pv-so-tt")){ const u = root.querySelector(".pv-url").value, h = root.querySelector(".pv-tthint"); if(h) h.hidden = false;
       (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(() => A.toast(T("Link copied")), () => {});
       if(navigator.share){ const p = S.shareP; navigator.share({title: p.title, text: shareText(p), url: u}).catch(() => {}); } return; }
@@ -1364,7 +1379,7 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
   async function openCommunity(){ S.section = "community"; await open(); }
   /* remember where the reader is before another screen covers the path (🙏 sharing the closing prayer), so reopen() returns there */
   function remember(){ if(root && !root.hidden) lastView = {view: S.view === "quiz" || S.view === "reflect" ? S.view : S.view === "word" || S.view === "share" ? "step" : S.view, id: S.path && S.path.id, step: S.step, top: root.scrollTop}; }
-  return {mount, open, close, reopen, remember, openHash, cleanHash, shortPath, linkOf, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden,
+  return {mount, open, close, reopen, remember, openHash, cleanHash, shortPath, linkOf, xPhone, isPhone, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden,
     findPaths, openCommunity, preload: () => loadList(), normRef,
     adapter: () => A, readVerses, title: id => { const x = (list || []).find(q => q.id === id); return x ? x.title : ""; }};   // 🙏 Prayers (web/prayers.js) borrow these
 })();

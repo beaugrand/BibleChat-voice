@@ -260,10 +260,11 @@ const BCPrayers = (() => {
       <p class="pv-small pv-socl">${esc(T("Post it on social media:"))}</p>
       <div class="pv-social">
         <a class="pv-btn pv-so-fb pr-fb" href="https://www.facebook.com/sharer/sharer.php?u=${e(url)}" target="_blank" rel="noopener">Facebook</a>
-        <a class="pv-btn pv-so-x" href="https://x.com/intent/post?text=${e(text)}&url=${e(url)}" target="_blank" rel="noopener" aria-label="X (Twitter)">X (Twitter)</a>
+        <a class="pv-btn pv-so-x" href="https://x.com/intent/post?text=${e(text)}&url=${e(url)}" data-copy="${esc(both)}" target="_blank" rel="noopener" aria-label="X (Twitter)">X (Twitter)</a>
         <a class="pv-btn pv-so-tg" href="https://t.me/share/url?url=${e(url)}&text=${e(text)}" target="_blank" rel="noopener">Telegram</a>
         <a class="pv-btn pv-so-li" href="https://www.linkedin.com/sharing/share-offsite/?url=${e(url)}" target="_blank" rel="noopener">LinkedIn</a>
       </div>
+      <p class="pv-small pv-xhint" hidden>${esc(T("Copied. Now open the X app, start a new post, and tap and hold in the text box to paste."))}</p>
       <input class="pv-url" readonly value="${esc(url)}">
       ${wide ? "" : qr}`, true);
     const cv = A.qr ? A.qr(url, wide ? 260 : 210) : null, box = root.querySelector(".pv-qr"); if(cv && box) box.appendChild(cv); else if(box) box.parentNode.hidden = true;
@@ -366,6 +367,7 @@ const BCPrayers = (() => {
     if(t.closest(".pr-share") && p){ const id = p.id, prev = S.back; share(p, () => showPrayer(id, {back: prev})); return; }
     if(t.closest(".pr-shareall")){ share(null, () => showList()); return; }
     if(t.closest(".pr-sys")){ sysShare(); return; }
+    const xb = t.closest(".pv-so-x"); if(xb && BCPaths.xPhone && BCPaths.xPhone(e, xb, root, toast)) return;   // X on a phone: copy, then open X and paste
     if(t.closest(".pr-pic")){ sharePicture(); return; }
     if(t.closest(".pr-picprev")){ sharePicture(); return; }
     if(t.closest(".pr-fb")){   // Facebook takes only the link from a website: on a phone the picture goes instead; always copy the prayer to paste

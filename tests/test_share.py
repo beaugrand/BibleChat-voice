@@ -109,6 +109,20 @@ class PrayerPictureTest(unittest.TestCase):
             self.assertIn(f'\n"{phrase}": [', i18n, phrase)
 
 
+class XButtonTest(unittest.TestCase):
+    """Hans, 29 October: X (Twitter) on the iPhone opened X's sign-up page, and the iPhone share menu didn't list X.
+    On a phone the button now copies the post and says to open the X app and paste; on a computer it opens X as before."""
+    def test_x_on_a_phone_copies_the_post(self):
+        js = read("web", "paths.js")
+        for part in ("function xPhone(e, btn, box, say)", "if(!isPhone()) return false;", "e.preventDefault();", "navigator.clipboard.writeText(text)",
+                     'const xb = t.closest(".pv-so-x"); if(xb && xPhone(e, xb, root, A.toast)) return;', "pv-xhint", 'data-copy="${esc(both)}"'):
+            self.assertIn(part, js, part)
+        pr = read("web", "prayers.js")
+        for part in ("BCPaths.xPhone(e, xb, root, toast)", "pv-xhint", 'data-copy="${esc(both)}"', "x.com/intent/post"):
+            self.assertIn(part, pr, part)
+        self.assertIn('\n"Copied. Now open the X app, start a new post, and tap and hold in the text box to paste.": [', read("web", "i18n.js"))
+
+
 class SharePagesTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
