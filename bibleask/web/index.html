@@ -389,6 +389,7 @@ details.src[open]>summary::after{transform:rotate(180deg)}
 .vihead{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:space-between;margin:0 0 8px}
 .vihead b{font-size:16px}
 #viRange{display:flex;gap:6px}
+#viRange[hidden]{display:none}
 #viRange .btn{padding:4px 10px;font-size:14px}
 #viImg{display:block;max-width:100%;max-height:44vh;margin:0 auto 10px;border-radius:10px;box-shadow:var(--shadow);background:#ddd}
 #viBgs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:6px 0}
@@ -1764,7 +1765,7 @@ async function fillVotd(){
   $("#votd").innerHTML = `<div class="votd"><div class="lab">☀ Verse of the day</div><div class="vt">${esc(x.text)}</div><div class="rf">${esc(r.ref)} · ${esc(b.name)}</div>
     <div class="row"><button class="btn" id="votdRead">📖 Read the chapter</button><button class="btn" id="votdImg">🖼 Image</button><button class="btn" id="votdAsk">💬 Ask about it</button><button class="btn" id="votdAI">✨ Ask an AI</button></div></div>`;
   $("#votdRead").onclick = () => { rd = {bible: b.id, book: r.book, chapter: r.ch}; rChap = null; setMode("read"); rToken++; (async () => { await loadBooks(b.id); showChapter(r.book, r.ch, r.v); })(); };
-  $("#votdImg").onclick = () => viOpen("", 0, 0, 0, {text: x.text, ref: r.ref, label: b.name});
+  $("#votdImg").onclick = () => viOpen(r.book, r.ch, r.v, r.v, null, {book: r.book, chapter: r.ch, bible: b.name, verses: j.verses || []});   // ＋ verse / − verse work here too
   $("#votdAsk").onclick = () => { $("#q").value = `Explain ${r.ref}`; send(); };
   $("#votdAI").onclick = () => askAI(`Explain ${r.ref}: "${$("#votd .vt") ? $("#votd .vt").innerText : ""}"\n\nWhat does it mean, and how can I live it out today?`);
 }
@@ -1996,8 +1997,9 @@ $("#churchSetup").onclick = () => churchOpen(!church);
 
 const VI_KEY = "bc.vi.";
 function viGetVerses(book, ch, a, b){
-  const vs = rChap && rChap.book === book && rChap.chapter === ch ? rChap.verses.filter(v => v.verse >= a && v.verse <= b) : [];
-  return {text: vs.map(v => v.text).join(" "), label: rChap ? rChap.bible : ""};
+  const src = vi.chap && vi.chap.book === book && vi.chap.chapter === ch ? vi.chap : rChap;   // the verse of the day brings its own chapter
+  const vs = src && src.book === book && src.chapter === ch ? src.verses.filter(v => v.verse >= a && v.verse <= b) : [];
+  return {text: vs.map(v => v.text).join(" "), label: src ? src.bible : ""};
 }
 /* ---------- verse image maker: pick verses, a background or one of your photos, then save or share ---------- */
 const VI_BGS = [
@@ -2007,8 +2009,8 @@ const VI_BGS = [
 const VI_SIZES = {post: [1080, 1080, "Post (square)"], story: [1080, 1920, "Story"], phone: [1170, 2532, "Lock screen"]};
 const vi = {book: "", ch: 0, v1: 0, v2: 0, fixed: null, bg: store.get(VI_KEY + "bg", 0), size: store.get(VI_KEY + "size", "post"),
             scale: 1, serif: store.get(VI_KEY + "serif", true), photo: null, canvas: null};
-function viOpen(book, ch, v1, v2, fixed){
-  Object.assign(vi, {book, ch, v1, v2: v2 || v1, fixed: fixed || null, scale: 1});
+function viOpen(book, ch, v1, v2, fixed, chap){
+  Object.assign(vi, {book, ch, v1, v2: v2 || v1, fixed: fixed || null, chap: chap || null, scale: 1});
   $("#viDlg").hidden = false; viControls(); viDraw();
 }
 function viRef(){ return vi.fixed ? vi.fixed.ref : vi.book + " " + vi.ch + ":" + vi.v1 + (vi.v2 > vi.v1 ? "-" + vi.v2 : ""); }

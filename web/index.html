@@ -329,6 +329,7 @@ body.has-church #top .brand{display:none}
 .vihead{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:space-between;margin:0 0 8px}
 .vihead b{font-size:16px}
 #viRange{display:flex;gap:6px}
+#viRange[hidden]{display:none}
 #viRange .btn{padding:4px 10px;font-size:14px}
 #viImg{display:block;max-width:100%;max-height:44vh;margin:0 auto 10px;border-radius:10px;box-shadow:var(--shadow);background:#ddd}
 #viBgs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:6px 0}
@@ -1194,7 +1195,8 @@ $("#blist").addEventListener("click", async e => {
 /* ---------- share one verse (tap it) ---------- */
 let shareV = null;
 function openApp(url){ location.href = url; }   // hands the message to the phone's Messages or Mail app
-function verseLink(v){ return location.origin + location.pathname + "#/" + encodeURIComponent(place.bible) + "/" + encodeURIComponent(place.book) + "/" + place.ch + "/" + v + "/s"; }
+function verseLink(v){ return verseLinkAt(place.book, place.ch, v); }
+function verseLinkAt(book, ch, v){ return location.origin + location.pathname + "#/" + encodeURIComponent(place.bible) + "/" + encodeURIComponent(book) + "/" + ch + "/" + v + "/s"; }
 function bibleAbbr(){ const m = catalog.find(c => c.id === place.bible); return m ? (m.abbr || m.name) : bible.name; }
 function verseText(v){ const x = (bible.byName[place.book].map.get(place.ch) || []).find(e => e[0] === v); return x ? x[1] : ""; }
 function shareMessage(v){ return "\u201C" + verseText(v) + "\u201D \u2014 " + bName(place.book) + " " + place.ch + ":" + v + " (" + bibleAbbr() + ")\n\nRead it in BibleChat: " + verseLink(v); }
@@ -1727,7 +1729,7 @@ function votdShow(){
     <div class="alt"><button class="btn" id="votdRead">📖 Read the chapter</button><button class="btn" id="votdImg">🖼 Image</button><button class="btn" id="votdAI">✨ Ask AI</button></div>`;
   $("#votd").hidden = false;
   $("#votdRead").onclick = () => go(r.book, r.ch, r.v);
-  $("#votdImg").onclick = () => viOpen("", 0, 0, 0, {text: x[1], ref: lref, label: bibleAbbr()});
+  $("#votdImg").onclick = () => viOpen(r.book, r.ch, r.v, r.v);   // a real verse, so ＋ verse / − verse work here too
   $("#votdAI").onclick = () => askAI(`Help me understand ${r.ref} (${bibleAbbr()}): "${x[1]}" What does it mean, and how can I live it out today?`);
 }
 
@@ -1908,7 +1910,7 @@ const VI_SIZES = {post: [1080, 1080, "Post (square)"], story: [1080, 1920, "Stor
 const vi = {book: "", ch: 0, v1: 0, v2: 0, fixed: null, bg: store.get(VI_KEY + "bg", 0), size: store.get(VI_KEY + "size", "post"),
             scale: 1, serif: store.get(VI_KEY + "serif", true), qr: store.get(VI_KEY + "qr", true), link: null, photo: null, canvas: null};
 function viOpen(book, ch, v1, v2, fixed){
-  Object.assign(vi, {book, ch, v1, v2: v2 || v1, fixed: fixed || null, scale: 1, link: fixed ? (fixed.link || null) : verseLink(v1)});
+  Object.assign(vi, {book, ch, v1, v2: v2 || v1, fixed: fixed || null, scale: 1, link: fixed ? (fixed.link || null) : verseLinkAt(book, ch, v1)});
   $("#viDlg").hidden = false; viControls(); viDraw();
 }
 function viRef(){ return vi.fixed ? vi.fixed.ref : bName(vi.book) + " " + vi.ch + ":" + vi.v1 + (vi.v2 > vi.v1 ? "-" + vi.v2 : ""); }
