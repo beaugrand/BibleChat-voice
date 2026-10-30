@@ -1,0 +1,605 @@
+{
+ "id": "daniel-5-writing-on-the-wall",
+ "title": "Daniel 5: the writing on the wall",
+ "category": "Bible Study Groups",
+ "group": "Friday night Bible study",
+ "study_date": "2026-11-13",
+ "anim": {
+  "kind": "stars"
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "opening_question": "Belshazzar made a great feast, drank from the vessels of God's temple and praised gods of gold and silver. A hand wrote on the wall: MENE, MENE, TEKEL, UPHARSIN. What did it mean, why was the king found wanting, and what does it ask of us?",
+ "required_refs": [
+  "Daniel 5:1-4",
+  "Daniel 1:1-2",
+  "Daniel 5:5-9",
+  "Daniel 5:10-16",
+  "Daniel 5:17-24",
+  "Daniel 5:25-28",
+  "Daniel 5:29-31",
+  "Daniel 2:39",
+  "Isaiah 21:5",
+  "Isaiah 21:9",
+  "Jeremiah 51:39",
+  "Proverbs 16:2",
+  "1 Samuel 2:3",
+  "Psalms 90:12",
+  "Romans 2:4",
+  "Galatians 6:7",
+  "2 Corinthians 5:10"
+ ],
+ "words": [
+  "H4484",
+  "H8625",
+  "H6537",
+  "H1113"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What did Belshazzar do at his feast? Whose vessels did he drink from, where had they come from, and which gods did they praise?",
+   "refs": [
+    "Daniel 5:1-4",
+    "Daniel 1:1-2"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H1113",
+     "H3984"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The vessels were the ones Nebuchadnezzar had carried away when he took Jerusalem: \"part of the vessels of the house of God\".",
+     "refs": [
+      "Daniel 1:2"
+     ]
+    },
+    {
+     "text": "They praised \"the gods of gold, and of silver, of brass, of iron, of wood, and of stone\": the metals of the great image in Daniel 2, and more.",
+     "refs": [
+      "Daniel 5:4",
+      "Daniel 2:32-33"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What appeared in the same hour, and where did it write? What happened to the king, and what could the wise men not do?",
+   "refs": [
+    "Daniel 5:5-9"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3790",
+     "H3792"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The hand wrote \"over against the candlestick\", where the light was brightest: no one could miss it.",
+     "refs": [
+      "Daniel 5:5"
+     ]
+    },
+    {
+     "text": "The king who drank to his gods now shook: \"his knees smote one against another\".",
+     "refs": [
+      "Daniel 5:6"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who remembered Daniel, and what did she say about him? What did the king promise Daniel, and what rank did he offer?",
+   "refs": [
+    "Daniel 5:10-16"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H8531"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The queen remembered what the king had forgotten: \"There is a man in thy kingdom, in whom is the spirit of the holy gods\".",
+     "refs": [
+      "Daniel 5:11"
+     ]
+    },
+    {
+     "text": "Belshazzar offered \"the third ruler in the kingdom\". Babylonian records show his father Nabonidus was king and Belshazzar ruled beside him, so third was the highest rank he could give.",
+     "refs": [
+      "Daniel 5:16",
+      "Daniel 5:29"
+     ],
+     "strongs": [
+      "H8531"
+     ]
+    },
+    {
+     "text": "Nebuchadnezzar is called Belshazzar's \"father\". In Aramaic, as in Hebrew, the word can also mean forefather or one who went before.",
+     "refs": [
+      "Daniel 5:11"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Daniel say about the gifts? What did he remind the king about Nebuchadnezzar, and what had Belshazzar done though he knew all this?",
+   "refs": [
+    "Daniel 5:17-24"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H8214"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel would not be paid: \"Let thy gifts be to thyself, and give thy rewards to another\".",
+     "refs": [
+      "Daniel 5:17"
+     ]
+    },
+    {
+     "text": "Belshazzar's fault was not ignorance: \"thou his son, O Belshazzar, hast not humbled thine heart, though thou knewest all this\".",
+     "refs": [
+      "Daniel 5:22"
+     ],
+     "strongs": [
+      "H8214"
+     ]
+    },
+    {
+     "text": "He praised gods \"which see not, nor hear, nor know\", but not the God \"in whose hand thy breath is\".",
+     "refs": [
+      "Daniel 5:23"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What was written on the wall, and what does each word mean?",
+   "refs": [
+    "Daniel 5:25-28"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4484",
+     "H8625",
+     "H6537"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "MENE is mene': \"numbered\". It is written twice.",
+     "refs": [
+      "Daniel 5:25",
+      "Daniel 5:26"
+     ],
+     "strongs": [
+      "H4484"
+     ]
+    },
+    {
+     "text": "TEKEL is teqal: \"to balance\". \"Thou art weighed in the balances, and art found wanting\".",
+     "refs": [
+      "Daniel 5:27"
+     ],
+     "strongs": [
+      "H8625"
+     ]
+    },
+    {
+     "text": "PERES is peras: \"to split up\". It sounds like paras, \"Persians\", the people who would take the kingdom. UPHARSIN is the same word with \"and\" in front.",
+     "refs": [
+      "Daniel 5:28"
+     ],
+     "strongs": [
+      "H6537",
+      "H6540"
+     ]
+    },
+    {
+     "text": "The Berean Standard Bible writes \"PARSIN\" in Daniel 5:25 where the King James has \"UPHARSIN\".",
+     "refs": [
+      "Daniel 5:25"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Belshazzar do for Daniel, and what happened that same night? Who took the kingdom?",
+   "refs": [
+    "Daniel 5:29-31",
+    "Daniel 2:39"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H6540"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"In that night was Belshazzar the king of the Chaldeans slain\". Daniel 2:39 had said \"after thee shall arise another kingdom\".",
+     "refs": [
+      "Daniel 5:30",
+      "Daniel 2:39"
+     ]
+    },
+    {
+     "text": "The Greek historians Herodotus and Xenophon write that Babylon was taken while the city was feasting.",
+     "refs": [
+      "Daniel 5:30"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What had Isaiah and Jeremiah said about Babylon's feast? What do Proverbs and Hannah say about how God weighs us?",
+   "refs": [
+    "Isaiah 21:5",
+    "Isaiah 21:9",
+    "Jeremiah 51:39",
+    "Proverbs 16:2",
+    "1 Samuel 2:3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H8505"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Isaiah saw it: \"Prepare the table, watch in the watchtower, eat, drink: arise, ye princes\", and then \"Babylon is fallen, is fallen\".",
+     "refs": [
+      "Isaiah 21:5",
+      "Isaiah 21:9"
+     ]
+    },
+    {
+     "text": "Jeremiah: \"In their heat I will make their feasts, and I will make them drunken\".",
+     "refs": [
+      "Jeremiah 51:39"
+     ]
+    },
+    {
+     "text": "\"the LORD weigheth the spirits\" and \"by him actions are weighed\": TEKEL was not only for one king.",
+     "refs": [
+      "Proverbs 16:2",
+      "1 Samuel 2:3"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: what does Moses ask God to teach us about our days? What does God's goodness lead to, and what will each of us receive?",
+   "refs": [
+    "Psalms 90:12",
+    "Romans 2:4",
+    "Galatians 6:7",
+    "2 Corinthians 5:10"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4487"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "God \"numbered\" Belshazzar's kingdom; Moses prays \"So teach us to number our days, that we may apply our hearts unto wisdom\".",
+     "refs": [
+      "Psalms 90:12",
+      "Daniel 5:26"
+     ]
+    },
+    {
+     "text": "Belshazzar knew what God had done to Nebuchadnezzar and did not turn. Paul: \"the goodness of God leadeth thee to repentance\".",
+     "refs": [
+      "Romans 2:4",
+      "Daniel 5:22"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "They drank from the vessels of God's house and \"praised the gods of gold, and of silver\".",
+   "refs": [
+    "Daniel 5:4"
+   ]
+  },
+  {
+   "text": "\"In the same hour came forth fingers of a man's hand, and wrote\".",
+   "refs": [
+    "Daniel 5:5"
+   ]
+  },
+  {
+   "text": "\"thou his son, O Belshazzar, hast not humbled thine heart, though thou knewest all this\"",
+   "refs": [
+    "Daniel 5:22"
+   ]
+  },
+  {
+   "text": "\"MENE, MENE, TEKEL, UPHARSIN\"",
+   "refs": [
+    "Daniel 5:25"
+   ]
+  },
+  {
+   "text": "\"Thou art weighed in the balances, and art found wanting\"",
+   "refs": [
+    "Daniel 5:27"
+   ]
+  },
+  {
+   "text": "\"In that night was Belshazzar the king of the Chaldeans slain\"",
+   "refs": [
+    "Daniel 5:30"
+   ]
+  },
+  {
+   "text": "\"So teach us to number our days, that we may apply our hearts unto wisdom\"",
+   "refs": [
+    "Psalms 90:12"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "In Daniel 5:1, to how many of his lords did Belshazzar make a great feast?",
+   "type": "multiple_choice",
+   "options": [
+    "A thousand",
+    "A hundred",
+    "Seventy",
+    "Twelve"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 5:1"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "thousand"
+   }
+  },
+  {
+   "q": "Which verse says Belshazzar commanded to bring \"the golden and silver vessels\" from the temple in Jerusalem?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 5:2"
+   ]
+  },
+  {
+   "q": "Which verse says they \"praised the gods of gold, and of silver, of brass, of iron, of wood, and of stone\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 5:4"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"In the same hour came forth ___ of a man's hand\"",
+   "type": "fill_word",
+   "ref": "Daniel 5:5",
+   "bible": "KJV",
+   "word": "fingers"
+  },
+  {
+   "q": "Which verse says \"his knees smote one against another\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 5:6"
+   ]
+  },
+  {
+   "q": "In Daniel 5:10, who came into the banquet house and told the king about Daniel?",
+   "type": "multiple_choice",
+   "options": [
+    "The queen",
+    "The chief of the eunuchs",
+    "Darius",
+    "Nebuchadnezzar"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 5:10"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "queen"
+   }
+  },
+  {
+   "q": "Which verse says \"There is a man in thy kingdom, in whom is the spirit of the holy gods\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 5:11"
+   ]
+  },
+  {
+   "q": "Which translation says \"clothed in purple\" in Daniel 5:7?",
+   "type": "which_translation",
+   "ref": "Daniel 5:7",
+   "bible": "BSB",
+   "phrase": "clothed in purple"
+  },
+  {
+   "q": "Which verse says \"Let thy gifts be to thyself, and give thy rewards to another\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 5:17"
+   ]
+  },
+  {
+   "q": "Which verse says \"thou his son, O Belshazzar, hast not humbled thine heart, though thou knewest all this\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 5:22"
+   ]
+  },
+  {
+   "q": "Which verse says \"MENE, MENE, TEKEL, UPHARSIN\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 5:25"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"MENE; God hath ___ thy kingdom, and finished it\"",
+   "type": "fill_word",
+   "ref": "Daniel 5:26",
+   "bible": "KJV",
+   "word": "numbered"
+  },
+  {
+   "q": "Which verse says \"Thou art weighed in the balances, and art found wanting\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 5:27"
+   ]
+  },
+  {
+   "q": "Which translation says \"found deficient\" in Daniel 5:27?",
+   "type": "which_translation",
+   "ref": "Daniel 5:27",
+   "bible": "BSB",
+   "phrase": "found deficient"
+  },
+  {
+   "q": "In Daniel 5:28, to whom was the kingdom given?",
+   "type": "multiple_choice",
+   "options": [
+    "The Medes and Persians",
+    "The Greeks",
+    "The Egyptians",
+    "The Assyrians"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 5:28"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Persians"
+   }
+  },
+  {
+   "q": "Which verse says \"In that night was Belshazzar the king of the Chaldeans slain\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 5:30"
+   ]
+  },
+  {
+   "q": "Which verse says \"Babylon is fallen, is fallen\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 21:9"
+   ]
+  },
+  {
+   "q": "Which verse says \"So teach us to number our days, that we may apply our hearts unto wisdom\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 90:12"
+   ]
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ]
+}

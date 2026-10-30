@@ -1,0 +1,1009 @@
+{
+ "id": "salvation-how-are-we-saved",
+ "title": "Salvation: how are we saved?",
+ "category": "Foundations",
+ "anim": {
+  "kind": "light"
+ },
+ "opening_question": "What does the Bible say about being saved: what we are saved from, what God has done, what we are to do, and whether we can be sure? Read every side the text shows, also the verses Christians read in different ways, and let the text speak.",
+ "required_refs": [
+  "Romans 3:10-12",
+  "Romans 3:23",
+  "Romans 6:23",
+  "Isaiah 53:6",
+  "John 3:16-17",
+  "Romans 5:8",
+  "Isaiah 53:5",
+  "John 14:6",
+  "Acts 4:12",
+  "1 Timothy 2:5",
+  "Ephesians 2:8-9",
+  "Titus 3:5",
+  "Acts 16:30-31",
+  "Romans 10:9-13",
+  "John 1:12",
+  "Acts 2:37-38",
+  "Mark 1:15",
+  "1 Peter 3:21",
+  "Mark 16:16",
+  "Luke 23:42-43",
+  "John 3:3-7",
+  "2 Corinthians 5:17",
+  "1 John 5:11-13",
+  "John 10:27-29",
+  "Romans 8:1",
+  "Matthew 24:13",
+  "Hebrews 6:4-6",
+  "Hebrews 10:26-27",
+  "Philippians 2:12-13",
+  "2 Peter 1:10",
+  "Romans 3:28",
+  "James 2:24",
+  "Ephesians 2:10",
+  "1 Timothy 2:3-4",
+  "2 Peter 3:9",
+  "Ezekiel 33:11",
+  "Revelation 7:9-10",
+  "2 Corinthians 6:2",
+  "Romans 10:14-15",
+  "1 Peter 3:15"
+ ],
+ "words": [
+  "G4991",
+  "G4982",
+  "G5485",
+  "G4102",
+  "G3340"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What does Paul say about all people, and what are the wages of sin? What does Isaiah say we have done like sheep?",
+   "refs": [
+    "Romans 3:10-12",
+    "Romans 3:23",
+    "Romans 6:23",
+    "Isaiah 53:6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G266",
+     "G3800"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"sin\" is hamartia. Strong's: \"a sin (properly abstract)\". The verb behind it means to miss the mark.",
+     "refs": [
+      "Romans 3:23"
+     ],
+     "strongs": [
+      "G266"
+     ]
+    },
+    {
+     "text": "Romans 6:23 sets two things side by side: wages, which are earned, and a gift, which is not: \"the gift of God is eternal life\".",
+     "refs": [
+      "Romans 6:23"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did God give, and why? When did Christ die for us, and by whom alone can we be saved?",
+   "refs": [
+    "John 3:16-17",
+    "Romans 5:8",
+    "Isaiah 53:5",
+    "John 14:6",
+    "Acts 4:12",
+    "1 Timothy 2:5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G25",
+     "G3316"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "God did not wait for us to improve: \"while we were yet sinners, Christ died for us\".",
+     "refs": [
+      "Romans 5:8"
+     ]
+    },
+    {
+     "text": "Peter before the council: \"there is none other name under heaven given among men, whereby we must be saved\".",
+     "refs": [
+      "Acts 4:12"
+     ]
+    },
+    {
+     "text": "\"mediator\" is mesites, one who stands in the middle. Paul says there is \"one mediator between God and men\".",
+     "refs": [
+      "1 Timothy 2:5"
+     ],
+     "strongs": [
+      "G3316"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What is grace? How does Paul say we are saved, and what does he say it is not of?",
+   "refs": [
+    "Ephesians 2:8-9",
+    "Titus 3:5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5485"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"grace\" is charis: favour that is given, not earned. \"it is the gift of God\", \"Not of works, lest any man should boast\".",
+     "refs": [
+      "Ephesians 2:8-9"
+     ],
+     "strongs": [
+      "G5485"
+     ]
+    },
+    {
+     "text": "Titus 3:5 says the same from another side: \"Not by works of righteousness which we have done, but according to his mercy he saved us\".",
+     "refs": [
+      "Titus 3:5"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did the jailer ask Paul and Silas, and what did they answer? What does Paul say about the mouth and the heart?",
+   "refs": [
+    "Acts 16:30-31",
+    "Romans 10:9-13",
+    "John 1:12"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4100",
+     "G3670"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The jailer asked the plainest question in the Bible: \"Sirs, what must I do to be saved?\"",
+     "refs": [
+      "Acts 16:30"
+     ]
+    },
+    {
+     "text": "Paul quotes Joel: \"whosoever shall call upon the name of the Lord shall be saved\".",
+     "refs": [
+      "Romans 10:13",
+      "Joel 2:32"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Peter tell the crowd at Pentecost to do? What do these verses say about repentance and baptism, and what did Jesus promise the thief on the cross?",
+   "refs": [
+    "Acts 2:37-38",
+    "Mark 1:15",
+    "1 Peter 3:21",
+    "Mark 16:16",
+    "Luke 23:42-43"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3340",
+     "G907"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Christians read the place of baptism in different ways: some see it as the outward sign of a salvation already received, others as part of how God saves. Read these verses side by side.",
+     "refs": [
+      "Acts 2:38",
+      "1 Peter 3:21"
+     ]
+    },
+    {
+     "text": "The thief on the cross was not baptized, yet Jesus told him: \"To day shalt thou be with me in paradise\".",
+     "refs": [
+      "Luke 23:43"
+     ]
+    },
+    {
+     "text": "Mark 16:9-20 is missing from some of the oldest Greek copies of Mark. Many Bibles print it with a note.",
+     "refs": [
+      "Mark 16:16"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jesus tell Nicodemus? What does Paul say happens to anyone who is in Christ?",
+   "refs": [
+    "John 3:3-7",
+    "2 Corinthians 5:17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G509",
+     "G2537"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"again\" is anothen. Strong's gives both \"from above\" and \"anew\". Nicodemus heard \"again\" and asked how a man can be born \"when he is old\".",
+     "refs": [
+      "John 3:3-4"
+     ],
+     "strongs": [
+      "G509"
+     ]
+    },
+    {
+     "text": "\"if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new\".",
+     "refs": [
+      "2 Corinthians 5:17"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Can we know we have eternal life? What does John say, what does Jesus say of His sheep, and what does Paul say about condemnation?",
+   "refs": [
+    "1 John 5:11-13",
+    "John 10:27-29",
+    "Romans 8:1"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1492"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "John wrote \"that ye may know that ye have eternal life\". The word is know, not hope.",
+     "refs": [
+      "1 John 5:13"
+     ]
+    },
+    {
+     "text": "Of His sheep Jesus says: \"neither shall any man pluck them out of my hand\".",
+     "refs": [
+      "John 10:28"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What do these verses say about enduring to the end and about falling away? Read them next to the verses about assurance.",
+   "refs": [
+    "Matthew 24:13",
+    "Hebrews 6:4-6",
+    "Hebrews 10:26-27",
+    "Philippians 2:12-13",
+    "2 Peter 1:10"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5278",
+     "G3895"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Christians read assurance and these warnings together in different ways. Some teach that a true believer cannot be lost and the warnings keep him; others, among them the Wesleyan churches, teach that a believer can fall away. The text gives both, and many read them as meant to be held together.",
+     "refs": [
+      "Hebrews 6:4-6",
+      "John 10:28"
+     ]
+    },
+    {
+     "text": "Paul puts both in one sentence: \"work out your own salvation with fear and trembling\", and \"it is God which worketh in you\".",
+     "refs": [
+      "Philippians 2:12-13"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Paul says we are justified by faith without the deeds of the law; James says by works, and not by faith only. Read them side by side. What does Ephesians 2:10 add?",
+   "refs": [
+    "Romans 3:28",
+    "James 2:24",
+    "Ephesians 2:10"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1344",
+     "G2041"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Both use \"justified\" (dikaioo). Paul is speaking against works of the law as a way to be accepted; James against a faith that does nothing. Both point to Abraham.",
+     "refs": [
+      "Romans 4:3",
+      "James 2:21"
+     ],
+     "strongs": [
+      "G1344"
+     ]
+    },
+    {
+     "text": "Ephesians 2:10 follows straight after \"Not of works\": \"we are his workmanship, created in Christ Jesus unto good works\".",
+     "refs": [
+      "Ephesians 2:9",
+      "Ephesians 2:10"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Whom does God want to be saved? What does He say about the death of the wicked, and who stands before the throne at the end?",
+   "refs": [
+    "1 Timothy 2:3-4",
+    "2 Peter 3:9",
+    "Ezekiel 33:11",
+    "Revelation 7:9-10"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2309"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "God \"will have all men to be saved, and to come unto the knowledge of the truth\".",
+     "refs": [
+      "1 Timothy 2:4"
+     ]
+    },
+    {
+     "text": "\"I have no pleasure in the death of the wicked; but that the wicked turn from his way and live\".",
+     "refs": [
+      "Ezekiel 33:11"
+     ]
+    },
+    {
+     "text": "John sees \"a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues\".",
+     "refs": [
+      "Revelation 7:9"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: when is the day of salvation? How shall people hear, and how are we to give an answer for the hope in us?",
+   "refs": [
+    "2 Corinthians 6:2",
+    "Romans 10:14-15",
+    "1 Peter 3:15"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2540"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"behold, now is the accepted time; behold, now is the day of salvation\".",
+     "refs": [
+      "2 Corinthians 6:2"
+     ]
+    },
+    {
+     "text": "Peter asks for an answer given \"with meekness and fear\".",
+     "refs": [
+      "1 Peter 3:15"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"all have sinned, and come short of the glory of God\"",
+   "refs": [
+    "Romans 3:23"
+   ]
+  },
+  {
+   "text": "\"while we were yet sinners, Christ died for us\"",
+   "refs": [
+    "Romans 5:8"
+   ]
+  },
+  {
+   "text": "\"by grace are ye saved through faith; and that not of yourselves: it is the gift of God\"",
+   "refs": [
+    "Ephesians 2:8"
+   ]
+  },
+  {
+   "text": "\"Believe on the Lord Jesus Christ, and thou shalt be saved\"",
+   "refs": [
+    "Acts 16:31"
+   ]
+  },
+  {
+   "text": "\"if any man be in Christ, he is a new creature\"",
+   "refs": [
+    "2 Corinthians 5:17"
+   ]
+  },
+  {
+   "text": "\"that ye may know that ye have eternal life\"",
+   "refs": [
+    "1 John 5:13"
+   ]
+  },
+  {
+   "text": "\"now is the day of salvation\"",
+   "refs": [
+    "2 Corinthians 6:2"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"There is none righteous, no, not one\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 3:10"
+   ],
+   "signals": {
+    "xref": 19,
+    "votes": 285,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.127,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here"
+   ],
+   "score": 0.4564
+  },
+  {
+   "q": "Fill in the word: \"For all have ___, and come short of the glory of God\"",
+   "type": "fill_word",
+   "ref": "Romans 3:23",
+   "bible": "KJV",
+   "word": "sinned",
+   "answer_refs": [
+    "Romans 3:23"
+   ],
+   "signals": {
+    "xref": 37,
+    "votes": 610,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.111,
+    "quoted": null
+   },
+   "why": [
+    "37 cross-references point here"
+   ],
+   "score": 0.4778
+  },
+  {
+   "q": "Which verse says \"the wages of sin is death; but the gift of God is eternal life\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 6:23"
+   ],
+   "signals": {
+    "xref": 49,
+    "votes": 443,
+    "word": "G266",
+    "word_count": 3,
+    "differ": 0.108,
+    "quoted": null
+   },
+   "why": [
+    "49 cross-references point here",
+    "The Greek word hamartía (G266) is in 3 verses of this path"
+   ],
+   "score": 0.5645
+  },
+  {
+   "q": "Which verse says \"All we like sheep have gone astray\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 53:6"
+   ],
+   "signals": {
+    "xref": 69,
+    "votes": 964,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.247,
+    "quoted": null
+   },
+   "why": [
+    "69 cross-references point here"
+   ],
+   "score": 0.5118
+  },
+  {
+   "q": "Which verse says \"For God so loved the world, that he gave his only begotten Son\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 3:16"
+   ],
+   "signals": {
+    "xref": 79,
+    "votes": 1315,
+    "word": "G4100",
+    "word_count": 13,
+    "differ": 0.292,
+    "quoted": null
+   },
+   "why": [
+    "79 cross-references point here",
+    "The Greek word pisteúō (G4100) is in 13 verses of this path"
+   ],
+   "score": 0.873
+  },
+  {
+   "q": "Fill in the word: \"I am the way, the truth, and the ___\"",
+   "type": "fill_word",
+   "ref": "John 14:6",
+   "bible": "KJV",
+   "word": "life",
+   "answer_refs": [
+    "John 14:6"
+   ],
+   "signals": {
+    "xref": 72,
+    "votes": 1099,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.4,
+    "quoted": null
+   },
+   "why": [
+    "72 cross-references point here"
+   ],
+   "score": 0.55
+  },
+  {
+   "q": "In 1 Timothy 2:5, how many mediators between God and men does Paul name?",
+   "type": "multiple_choice",
+   "options": [
+    "One",
+    "Two",
+    "Three",
+    "Many"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 Timothy 2:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "one"
+   },
+   "signals": {
+    "xref": 27,
+    "votes": 369,
+    "word": "G3316",
+    "word_count": 1,
+    "differ": 0.0,
+    "quoted": null
+   },
+   "why": [
+    "27 cross-references point here"
+   ],
+   "score": 0.4731
+  },
+  {
+   "q": "Fill in the word: \"For by ___ are ye saved through faith\"",
+   "type": "fill_word",
+   "ref": "Ephesians 2:8",
+   "bible": "KJV",
+   "word": "grace",
+   "answer_refs": [
+    "Ephesians 2:8"
+   ],
+   "signals": {
+    "xref": 64,
+    "votes": 833,
+    "word": "G4982",
+    "word_count": 13,
+    "differ": 0.243,
+    "quoted": null
+   },
+   "why": [
+    "64 cross-references point here",
+    "The Greek word sṓzō (G4982) is in 13 verses of this path"
+   ],
+   "score": 0.8608
+  },
+  {
+   "q": "Which verse asks \"Sirs, what must I do to be saved?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Acts 16:30"
+   ],
+   "signals": {
+    "xref": 29,
+    "votes": 217,
+    "word": "G4982",
+    "word_count": 13,
+    "differ": 0.167,
+    "quoted": null
+   },
+   "why": [
+    "29 cross-references point here",
+    "The Greek word sṓzō (G4982) is in 13 verses of this path"
+   ],
+   "score": 0.796
+  },
+  {
+   "q": "Which verse says \"if thou shalt confess with thy mouth the Lord Jesus\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 10:9"
+   ],
+   "signals": {
+    "xref": 30,
+    "votes": 544,
+    "word": "G4100",
+    "word_count": 13,
+    "differ": 0.214,
+    "quoted": null
+   },
+   "why": [
+    "30 cross-references point here",
+    "The Greek word pisteúō (G4100) is in 13 verses of this path"
+   ],
+   "score": 0.8535
+  },
+  {
+   "q": "Which verse says \"Repent, and be baptized every one of you in the name of Jesus Christ\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Acts 2:38"
+   ],
+   "signals": {
+    "xref": 63,
+    "votes": 767,
+    "word": "G266",
+    "word_count": 3,
+    "differ": 0.305,
+    "quoted": null
+   },
+   "why": [
+    "63 cross-references point here",
+    "The Greek word hamartía (G266) is in 3 verses of this path"
+   ],
+   "score": 0.6138
+  },
+  {
+   "q": "Which verse says \"To day shalt thou be with me in paradise\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 23:43"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 93,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.421,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here"
+   ],
+   "score": 0.4463
+  },
+  {
+   "q": "Fill in the word: \"Except a man be born ___, he cannot see the kingdom of God\"",
+   "type": "fill_word",
+   "ref": "John 3:3",
+   "bible": "KJV",
+   "word": "again",
+   "answer_refs": [
+    "John 3:3"
+   ],
+   "signals": {
+    "xref": 42,
+    "votes": 598,
+    "word": "G1492",
+    "word_count": 3,
+    "differ": 0.674,
+    "quoted": null
+   },
+   "why": [
+    "42 cross-references point here",
+    "The Greek word eídō (G1492) is in 3 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.706
+  },
+  {
+   "q": "Which verse says \"neither shall any man pluck them out of my hand\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 10:28"
+   ],
+   "signals": {
+    "xref": 89,
+    "votes": 1800,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.341,
+    "quoted": null
+   },
+   "why": [
+    "89 cross-references point here"
+   ],
+   "score": 0.5353
+  },
+  {
+   "q": "Which verse says \"There is therefore now no condemnation to them which are in Christ Jesus\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 8:1"
+   ],
+   "signals": {
+    "xref": 37,
+    "votes": 606,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.414,
+    "quoted": null
+   },
+   "why": [
+    "37 cross-references point here"
+   ],
+   "score": 0.5535
+  },
+  {
+   "q": "Fill in the word: \"But he that shall ___ unto the end, the same shall be saved\"",
+   "type": "fill_word",
+   "ref": "Matthew 24:13",
+   "bible": "KJV",
+   "word": "endure",
+   "answer_refs": [
+    "Matthew 24:13"
+   ],
+   "signals": {
+    "xref": 25,
+    "votes": 348,
+    "word": "G4982",
+    "word_count": 13,
+    "differ": 0.535,
+    "quoted": null
+   },
+   "why": [
+    "25 cross-references point here",
+    "The Greek word sṓzō (G4982) is in 13 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.9233
+  },
+  {
+   "q": "Which verse says \"a man is justified by faith without the deeds of the law\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 3:28"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 101,
+    "word": "G2041",
+    "word_count": 5,
+    "differ": 0.312,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here",
+    "The Greek word érgon (G2041) is in 5 verses of this path"
+   ],
+   "score": 0.5711
+  },
+  {
+   "q": "Which verse says \"by works a man is justified, and not by faith only\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "James 2:24"
+   ],
+   "signals": {
+    "xref": 25,
+    "votes": 226,
+    "word": "G2041",
+    "word_count": 5,
+    "differ": 0.411,
+    "quoted": null
+   },
+   "why": [
+    "25 cross-references point here",
+    "The Greek word érgon (G2041) is in 5 verses of this path"
+   ],
+   "score": 0.6559
+  },
+  {
+   "q": "Which verse says the Lord is \"not willing that any should perish\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Peter 3:9"
+   ],
+   "signals": {
+    "xref": 44,
+    "votes": 586,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.491,
+    "quoted": null
+   },
+   "why": [
+    "44 cross-references point here"
+   ],
+   "score": 0.5727
+  },
+  {
+   "q": "Which verse says \"behold, now is the day of salvation\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Corinthians 6:2"
+   ],
+   "signals": {
+    "xref": 16,
+    "votes": 260,
+    "word": "G4991",
+    "word_count": 6,
+    "differ": 0.442,
+    "quoted": null
+   },
+   "why": [
+    "16 cross-references point here",
+    "The Greek word sōtēría (G4991) is in 6 verses of this path"
+   ],
+   "score": 0.7033
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 66,
+ "image": "img/salvation-how-are-we-saved.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/salvation-how-are-we-saved.json",
+  "sha": "230153b1d7b398e4",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

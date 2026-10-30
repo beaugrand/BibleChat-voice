@@ -1,0 +1,635 @@
+{
+ "id": "prayer-teach-us-to-pray",
+ "title": "Prayer: Lord, teach us to pray",
+ "category": "Foundations",
+ "anim": {
+  "kind": "light"
+ },
+ "opening_question": "One of His disciples said: \"Lord, teach us to pray\". What did Jesus teach about prayer, how did He pray Himself, and what does the Bible say about asking, waiting, honest complaint, and praying for one another?",
+ "required_refs": [
+  "Luke 11:1-4",
+  "Matthew 6:5-13",
+  "Mark 1:35",
+  "Luke 6:12",
+  "Luke 22:41-44",
+  "John 17:20-21",
+  "Matthew 7:7-11",
+  "John 14:13-14",
+  "1 John 5:14-15",
+  "James 1:5-7",
+  "James 4:3",
+  "John 15:7",
+  "Luke 18:1-8",
+  "1 Thessalonians 5:17",
+  "Colossians 4:2",
+  "Philippians 4:6-7",
+  "1 Peter 5:7",
+  "Psalms 55:22",
+  "Psalms 51:1-4",
+  "1 John 1:9",
+  "Mark 11:25",
+  "Psalms 13:1-6",
+  "Psalms 22:1-2",
+  "Habakkuk 1:2",
+  "2 Corinthians 12:7-9",
+  "Romans 8:26-27",
+  "Matthew 18:19-20",
+  "Acts 2:42",
+  "James 5:14-16",
+  "1 Timothy 2:1-2"
+ ],
+ "words": [
+  "G4336",
+  "G4335",
+  "G154",
+  "H6419"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What did the disciple ask when Jesus had finished praying? What did Jesus teach about praying in secret, about many words, and what prayer did He give them?",
+   "refs": [
+    "Luke 11:1-4",
+    "Matthew 6:5-13"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4336",
+     "G3945"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The disciples asked after they had watched Him pray: \"as he was praying in a certain place, when he ceased\".",
+     "refs": [
+      "Luke 11:1"
+     ]
+    },
+    {
+     "text": "\"use not vain repetitions, as the heathen do\": God is not moved by the number of words, for \"your Father knoweth what things ye have need of\".",
+     "refs": [
+      "Matthew 6:7",
+      "Matthew 6:8"
+     ]
+    },
+    {
+     "text": "The prayer begins with God's name, kingdom and will before it asks for bread, forgiveness and deliverance.",
+     "refs": [
+      "Matthew 6:9-13"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "When and where did Jesus pray? What did He pray in the garden, and for whom did He pray on the night before He died?",
+   "refs": [
+    "Mark 1:35",
+    "Luke 6:12",
+    "Luke 22:41-44",
+    "John 17:20-21"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4335"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Before He chose the twelve, \"he went out into a mountain to pray, and continued all night in prayer to God\".",
+     "refs": [
+      "Luke 6:12"
+     ]
+    },
+    {
+     "text": "In the garden He asked for the cup to pass, and added: \"nevertheless not my will, but thine, be done\".",
+     "refs": [
+      "Luke 22:42"
+     ]
+    },
+    {
+     "text": "In John 17 He prays \"for them also which shall believe on me through their word\": for believers today.",
+     "refs": [
+      "John 17:20"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does Jesus say about asking, seeking and knocking? What will the Father give to them that ask Him?",
+   "refs": [
+    "Matthew 7:7-11",
+    "John 14:13-14"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G154"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Jesus argues from earthly fathers: if you give good gifts to your children, \"how much more shall your Father which is in heaven give good things to them that ask him?\"",
+     "refs": [
+      "Matthew 7:11"
+     ]
+    },
+    {
+     "text": "\"in my name\" is more than words at the end of a prayer: it is asking as one who belongs to Him, \"that the Father may be glorified in the Son\".",
+     "refs": [
+      "John 14:13"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How are we to ask: in faith, according to His will, and abiding in Him? Why does James say some ask and receive not?",
+   "refs": [
+    "1 John 5:14-15",
+    "James 1:5-7",
+    "James 4:3",
+    "John 15:7"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2307"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "John's confidence has a condition: \"if we ask any thing according to his will, he heareth us\".",
+     "refs": [
+      "1 John 5:14"
+     ]
+    },
+    {
+     "text": "James names a wrong reason for asking: \"that ye may consume it upon your lusts\".",
+     "refs": [
+      "James 4:3"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What parable did Jesus tell so that men ought always to pray? What do Paul's letters say about praying without ceasing?",
+   "refs": [
+    "Luke 18:1-8",
+    "1 Thessalonians 5:17",
+    "Colossians 4:2"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1574"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Luke gives the point before the parable: \"men ought always to pray, and not to faint\".",
+     "refs": [
+      "Luke 18:1"
+     ]
+    },
+    {
+     "text": "\"Pray without ceasing\" is three words in English and two in Greek: adialeiptos proseuchesthe.",
+     "refs": [
+      "1 Thessalonians 5:17"
+     ],
+     "strongs": [
+      "G89"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What are we to do with worry? What does Paul promise will keep our hearts, and what does Peter say to cast on God?",
+   "refs": [
+    "Philippians 4:6-7",
+    "1 Peter 5:7",
+    "Psalms 55:22"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3309"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Be careful for nothing\" means do not be anxious. The word is merimnao, the same as \"Take therefore no thought\" in Matthew 6:34.",
+     "refs": [
+      "Philippians 4:6",
+      "Matthew 6:34"
+     ],
+     "strongs": [
+      "G3309"
+     ]
+    },
+    {
+     "text": "Paul does not promise every request granted; he promises \"the peace of God, which passeth all understanding\".",
+     "refs": [
+      "Philippians 4:7"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did David pray after his sin? What does John promise when we confess, and what must we do when we stand praying?",
+   "refs": [
+    "Psalms 51:1-4",
+    "1 John 1:9",
+    "Mark 11:25"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2398",
+     "G3670"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "David's confession: \"Against thee, thee only, have I sinned\".",
+     "refs": [
+      "Psalms 51:4"
+     ]
+    },
+    {
+     "text": "Forgiving others is part of prayer: \"when ye stand praying, forgive, if ye have ought against any\".",
+     "refs": [
+      "Mark 11:25"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Can we tell God our complaint? How do David and Habakkuk pray when God seems silent, what did Paul hear when he asked three times, and who helps when we do not know what to pray?",
+   "refs": [
+    "Psalms 13:1-6",
+    "Psalms 22:1-2",
+    "Habakkuk 1:2",
+    "2 Corinthians 12:7-9",
+    "Romans 8:26-27"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4151"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "David asks \"How long\" four times in two verses, and still ends: \"I will sing unto the LORD\".",
+     "refs": [
+      "Psalms 13:1-2",
+      "Psalms 13:6"
+     ]
+    },
+    {
+     "text": "Paul asked three times and heard no: \"My grace is sufficient for thee\".",
+     "refs": [
+      "2 Corinthians 12:9"
+     ]
+    },
+    {
+     "text": "\"the Spirit itself maketh intercession for us with groanings which cannot be uttered\".",
+     "refs": [
+      "Romans 8:26"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: what does Jesus promise where two or three agree? How did the first church pray, and for whom does Paul ask us to pray?",
+   "refs": [
+    "Matthew 18:19-20",
+    "Acts 2:42",
+    "James 5:14-16",
+    "1 Timothy 2:1-2"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1783"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The first believers \"continued stedfastly\" in four things, and prayers is one of them.",
+     "refs": [
+      "Acts 2:42"
+     ]
+    },
+    {
+     "text": "Paul asks prayer \"For kings, and for all that are in authority\", whoever they are.",
+     "refs": [
+      "1 Timothy 2:2"
+     ]
+    },
+    {
+     "text": "\"pray one for another, that ye may be healed\".",
+     "refs": [
+      "James 5:16"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"Lord, teach us to pray\"",
+   "refs": [
+    "Luke 11:1"
+   ]
+  },
+  {
+   "text": "\"nevertheless not my will, but thine, be done\"",
+   "refs": [
+    "Luke 22:42"
+   ]
+  },
+  {
+   "text": "\"Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you\"",
+   "refs": [
+    "Matthew 7:7"
+   ]
+  },
+  {
+   "text": "\"men ought always to pray, and not to faint\"",
+   "refs": [
+    "Luke 18:1"
+   ]
+  },
+  {
+   "text": "\"Casting all your care upon him; for he careth for you\"",
+   "refs": [
+    "1 Peter 5:7"
+   ]
+  },
+  {
+   "text": "\"My grace is sufficient for thee\"",
+   "refs": [
+    "2 Corinthians 12:9"
+   ]
+  },
+  {
+   "text": "\"pray one for another\"",
+   "refs": [
+    "James 5:16"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"Lord, teach us to pray, as John also taught his disciples\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 11:1"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"But when ye pray, use not vain ___, as the heathen do\"",
+   "type": "fill_word",
+   "ref": "Matthew 6:7",
+   "bible": "KJV",
+   "word": "repetitions"
+  },
+  {
+   "q": "Which verse says \"Our Father which art in heaven, Hallowed be thy name\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 6:9"
+   ]
+  },
+  {
+   "q": "In Mark 1:35, when did Jesus rise up to pray?",
+   "type": "multiple_choice",
+   "options": [
+    "A great while before day",
+    "At noon",
+    "At the ninth hour",
+    "At midnight"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Mark 1:35"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "before"
+   }
+  },
+  {
+   "q": "Which verse says \"nevertheless not my will, but thine, be done\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 22:42"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"___, and it shall be given you; seek, and ye shall find\"",
+   "type": "fill_word",
+   "ref": "Matthew 7:7",
+   "bible": "KJV",
+   "word": "Ask"
+  },
+  {
+   "q": "Which verse says \"if we ask any thing according to his will, he heareth us\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 John 5:14"
+   ]
+  },
+  {
+   "q": "Which verse says \"Ye ask, and receive not, because ye ask amiss\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "James 4:3"
+   ]
+  },
+  {
+   "q": "In Luke 18:2-3, who kept coming to the unjust judge?",
+   "type": "multiple_choice",
+   "options": [
+    "A widow",
+    "A blind man",
+    "A publican",
+    "A centurion"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 18:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "widow"
+   }
+  },
+  {
+   "q": "Fill in the word: \"Pray without ___\"",
+   "type": "fill_word",
+   "ref": "1 Thessalonians 5:17",
+   "bible": "KJV",
+   "word": "ceasing"
+  },
+  {
+   "q": "Which verse says \"Be careful for nothing; but in every thing by prayer and supplication with thanksgiving\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Philippians 4:6"
+   ]
+  },
+  {
+   "q": "Which verse says \"Casting all your care upon him; for he careth for you\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Peter 5:7"
+   ]
+  },
+  {
+   "q": "Which verse says \"If we confess our sins, he is faithful and just to forgive us our sins\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 John 1:9"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"How long wilt thou ___ me, O LORD? for ever?\"",
+   "type": "fill_word",
+   "ref": "Psalms 13:1",
+   "bible": "KJV",
+   "word": "forget"
+  },
+  {
+   "q": "In 2 Corinthians 12:8, how many times did Paul ask the Lord to take the thorn away?",
+   "type": "multiple_choice",
+   "options": [
+    "Thrice",
+    "Once",
+    "Seven times",
+    "Every day"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "2 Corinthians 12:8"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "thrice"
+   }
+  },
+  {
+   "q": "Which verse says \"the Spirit itself maketh intercession for us with groanings which cannot be uttered\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 8:26"
+   ]
+  },
+  {
+   "q": "Which verse says \"where two or three are gathered together in my name, there am I in the midst of them\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 18:20"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"The effectual fervent prayer of a ___ man availeth much\"",
+   "type": "fill_word",
+   "ref": "James 5:16",
+   "bible": "KJV",
+   "word": "righteous"
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ]
+}

@@ -127,6 +127,47 @@
   }
  },
  {
+  "id": "daniel-5-writing-on-the-wall",
+  "title": "Daniel 5: the writing on the wall",
+  "category": "Bible Study Groups",
+  "image": "img/daniel-5-writing-on-the-wall.jpg",
+  "opening_question": "Belshazzar made a great feast, drank from the vessels of God's temple and praised gods of gold and silver. A hand wrote on the wall: MENE, MENE, TEKEL, UPHARSIN. What did it mean, why was the king found wanting, and what does it ask of us?",
+  "steps": 8,
+  "step_questions": [
+   "What did Belshazzar do at his feast? Whose vessels did he drink from, where had they come from, and which gods did they praise?",
+   "What appeared in the same hour, and where did it write? What happened to the king, and what could the wise men not do?",
+   "Who remembered Daniel, and what did she say about him? What did the king promise Daniel, and what rank did he offer?",
+   "What did Daniel say about the gifts? What did he remind the king about Nebuchadnezzar, and what had Belshazzar done though he knew all this?",
+   "What was written on the wall, and what does each word mean?",
+   "What did Belshazzar do for Daniel, and what happened that same night? Who took the kingdom?",
+   "What had Isaiah and Jeremiah said about Babylon's feast? What do Proverbs and Hannah say about how God weighs us?",
+   "Living it out: what does Moses ask God to teach us about our days? What does God's goodness lead to, and what will each of us receive?"
+  ],
+  "books": [
+   "1 Samuel",
+   "2 Corinthians",
+   "Daniel",
+   "Galatians",
+   "Isaiah",
+   "Jeremiah",
+   "Proverbs",
+   "Psalms",
+   "Romans"
+  ],
+  "show": 8,
+  "verses": 43,
+  "minutes": 45,
+  "group": "Friday night Bible study",
+  "study_date": "2026-11-13",
+  "read_along": {
+   "label": "TS2009",
+   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+  },
+  "anim": {
+   "kind": "stars"
+  }
+ },
+ {
   "id": "enoch-and-the-watchers",
   "title": "Enoch and the Watchers",
   "category": "Enoch",
@@ -436,6 +477,38 @@
    "x": 23,
    "y": 12,
    "s": 36
+  }
+ },
+ {
+  "id": "jesus-in-the-gospels",
+  "title": "Jesus in the Gospels: who is He?",
+  "category": "Foundations",
+  "image": "img/jesus-in-the-gospels.jpg",
+  "opening_question": "The four Gospels tell the life of Jesus: His birth, His preaching, His miracles, His death and His rising again. Read it from the manger to the empty tomb. Who is He, what did He teach, and what does He ask of those who follow Him?",
+  "steps": 10,
+  "step_questions": [
+   "Who brought the news of His birth, and to whom? What name was He to be given, and why?",
+   "What happened when Jesus was baptized, and what were the first words of His preaching? Whom did He call first?",
+   "What did Jesus teach on the mountain? Whom does He call blessed, and what kind of man builds on the rock?",
+   "Who came near to hear Him, what did the Pharisees murmur, and what do the parables of the lost sheep and the lost coin say about God?",
+   "What did Jesus do in the storm and at the grave of Lazarus? What did His disciples ask, and what did He say He is?",
+   "Who did people say Jesus was, who did Peter say He was, and what did Jesus say about knowing Him and knowing the Father?",
+   "What did Jesus do for His disciples on the night He was betrayed? What did He say about the bread and the cup?",
+   "What did Jesus pray for those who crucified Him? What happened at the ninth hour, and what did the centurion say?",
+   "What did the women find on the first day of the week? What did the angels say, and what did the risen Jesus send His disciples to do?",
+   "Living it out: whom does Jesus invite, what new commandment did He give, and why was the Gospel of John written?"
+  ],
+  "books": [
+   "John",
+   "Luke",
+   "Mark",
+   "Matthew"
+  ],
+  "show": 8,
+  "verses": 95,
+  "minutes": 60,
+  "anim": {
+   "kind": "light"
   }
  },
  {
@@ -875,6 +948,49 @@
   }
  },
  {
+  "id": "prayer-teach-us-to-pray",
+  "title": "Prayer: Lord, teach us to pray",
+  "category": "Foundations",
+  "image": "img/prayer-teach-us-to-pray.jpg",
+  "opening_question": "One of His disciples said: \"Lord, teach us to pray\". What did Jesus teach about prayer, how did He pray Himself, and what does the Bible say about asking, waiting, honest complaint, and praying for one another?",
+  "steps": 9,
+  "step_questions": [
+   "What did the disciple ask when Jesus had finished praying? What did Jesus teach about praying in secret, about many words, and what prayer did He give them?",
+   "When and where did Jesus pray? What did He pray in the garden, and for whom did He pray on the night before He died?",
+   "What does Jesus say about asking, seeking and knocking? What will the Father give to them that ask Him?",
+   "How are we to ask: in faith, according to His will, and abiding in Him? Why does James say some ask and receive not?",
+   "What parable did Jesus tell so that men ought always to pray? What do Paul's letters say about praying without ceasing?",
+   "What are we to do with worry? What does Paul promise will keep our hearts, and what does Peter say to cast on God?",
+   "What did David pray after his sin? What does John promise when we confess, and what must we do when we stand praying?",
+   "Can we tell God our complaint? How do David and Habakkuk pray when God seems silent, what did Paul hear when he asked three times, and who helps when we do not know what to pray?",
+   "Living it out: what does Jesus promise where two or three agree? How did the first church pray, and for whom does Paul ask us to pray?"
+  ],
+  "books": [
+   "1 John",
+   "1 Peter",
+   "1 Thessalonians",
+   "1 Timothy",
+   "2 Corinthians",
+   "Acts",
+   "Colossians",
+   "Habakkuk",
+   "James",
+   "John",
+   "Luke",
+   "Mark",
+   "Matthew",
+   "Philippians",
+   "Psalms",
+   "Romans"
+  ],
+  "show": 8,
+  "verses": 77,
+  "minutes": 55,
+  "anim": {
+   "kind": "light"
+  }
+ },
+ {
   "id": "quran-1-three-books",
   "title": "Session 1: The three books",
   "category": "Other Faiths",
@@ -1228,6 +1344,98 @@
   }
  },
  {
+  "id": "salvation-how-are-we-saved",
+  "title": "Salvation: how are we saved?",
+  "category": "Foundations",
+  "image": "img/salvation-how-are-we-saved.jpg",
+  "opening_question": "What does the Bible say about being saved: what we are saved from, what God has done, what we are to do, and whether we can be sure? Read every side the text shows, also the verses Christians read in different ways, and let the text speak.",
+  "steps": 11,
+  "step_questions": [
+   "What does Paul say about all people, and what are the wages of sin? What does Isaiah say we have done like sheep?",
+   "What did God give, and why? When did Christ die for us, and by whom alone can we be saved?",
+   "What is grace? How does Paul say we are saved, and what does he say it is not of?",
+   "What did the jailer ask Paul and Silas, and what did they answer? What does Paul say about the mouth and the heart?",
+   "What did Peter tell the crowd at Pentecost to do? What do these verses say about repentance and baptism, and what did Jesus promise the thief on the cross?",
+   "What did Jesus tell Nicodemus? What does Paul say happens to anyone who is in Christ?",
+   "Can we know we have eternal life? What does John say, what does Jesus say of His sheep, and what does Paul say about condemnation?",
+   "What do these verses say about enduring to the end and about falling away? Read them next to the verses about assurance.",
+   "Paul says we are justified by faith without the deeds of the law; James says by works, and not by faith only. Read them side by side. What does Ephesians 2:10 add?",
+   "Whom does God want to be saved? What does He say about the death of the wicked, and who stands before the throne at the end?",
+   "Living it out: when is the day of salvation? How shall people hear, and how are we to give an answer for the hope in us?"
+  ],
+  "books": [
+   "1 John",
+   "1 Peter",
+   "1 Timothy",
+   "2 Corinthians",
+   "2 Peter",
+   "Acts",
+   "Ephesians",
+   "Ezekiel",
+   "Hebrews",
+   "Isaiah",
+   "James",
+   "John",
+   "Luke",
+   "Mark",
+   "Matthew",
+   "Philippians",
+   "Revelation",
+   "Romans",
+   "Titus"
+  ],
+  "show": 8,
+  "verses": 66,
+  "minutes": 60,
+  "anim": {
+   "kind": "light"
+  }
+ },
+ {
+  "id": "the-holy-spirit",
+  "title": "The Holy Spirit: who is He, and what does He do?",
+  "category": "Foundations",
+  "image": "img/the-holy-spirit.jpg",
+  "opening_question": "Jesus promised \"another Comforter\". Who is the Holy Spirit? Read what the Bible says about the Spirit in creation and in the prophets, at Pentecost, in every believer, His fruit and His gifts, and the warnings about grieving Him. Read every verse, also the ones Christians read in different ways.",
+  "steps": 10,
+  "step_questions": [
+   "Where is the Spirit at the very beginning? Where can David go from God's Spirit, and how did the prophets speak?",
+   "What did Jesus promise before He went away? What does He call the Spirit, and what will the Spirit teach and do?",
+   "What happened on the day of Pentecost? Which prophet did Peter quote, and on whom would the Spirit be poured out?",
+   "Where does the Spirit live now? What does Paul say about our bodies, and what is the Spirit called in Ephesians 1?",
+   "What does the Spirit witness with our spirit? How does He help us pray, and what does walking in the Spirit keep us from?",
+   "What is the fruit of the Spirit? How many things does Paul name, and what does he say about those that are Christ's?",
+   "What gifts does the Spirit give, to whom, and for what? What does Paul say about tongues and prophecy?",
+   "What are we told not to do to the Spirit? When Ananias lied to the Holy Ghost, to whom does Peter say he lied?",
+   "What did Jesus say about blasphemy against the Holy Ghost? Read it with the verses around it in Mark: why did He say it?",
+   "Living it out: what does Jesus say the Father will give to them that ask? What does Paul tell us to be filled with?"
+  ],
+  "books": [
+   "1 Corinthians",
+   "1 Peter",
+   "1 Thessalonians",
+   "2 Peter",
+   "Acts",
+   "Ephesians",
+   "Galatians",
+   "Genesis",
+   "Joel",
+   "John",
+   "Luke",
+   "Mark",
+   "Matthew",
+   "Numbers",
+   "Psalms",
+   "Romans"
+  ],
+  "show": 8,
+  "verses": 77,
+  "minutes": 55,
+  "anim": {
+   "kind": "light"
+  }
+ },
+ {
   "id": "the-name",
   "title": "The Name",
   "category": "Name & Word",
@@ -1271,6 +1479,41 @@
    "x": 25,
    "y": 34,
    "s": 26
+  }
+ },
+ {
+  "id": "the-psalms",
+  "title": "The Psalms: songs and prayers for every season",
+  "category": "Foundations",
+  "image": "img/the-psalms.jpg",
+  "opening_question": "The Psalms were Israel's songbook and prayer book, and Jesus prayed them on the cross. They praise, they weep, they confess, they ask \"How long?\" Read ten of them: what do they teach us to say to God, in joy and in trouble?",
+  "steps": 10,
+  "step_questions": [
+   "What are the two ways in Psalm 1? Where does the blessed man find his delight, and what is he like?",
+   "Who is David's shepherd, and what does the shepherd do for him? Whom does Jesus call the good shepherd?",
+   "How long, O LORD? What does David ask in Psalm 13, and how does the psalm end?",
+   "What does David cry in Psalm 22, and what does he describe? Who prayed its first words from the cross?",
+   "What did David say when Nathan came to him? What does he ask God for in Psalm 51?",
+   "What does God know about David? Where can David go from God's presence, and what does darkness hide from Him?",
+   "What is God to us in trouble? What does Psalm 46 say when the earth is removed, and what are we told to do?",
+   "What does David tell his soul in Psalm 103? Which benefits does he name, and how far does God remove our sins?",
+   "How shall a young man cleanse his way? What does Psalm 119 call God's word?",
+   "Living it out: what did Jesus say the psalms speak of? How are we to sing them, and how does the book end?"
+  ],
+  "books": [
+   "2 Samuel",
+   "Colossians",
+   "Ephesians",
+   "John",
+   "Luke",
+   "Matthew",
+   "Psalms"
+  ],
+  "show": 8,
+  "verses": 92,
+  "minutes": 60,
+  "anim": {
+   "kind": "light"
   }
  },
  {

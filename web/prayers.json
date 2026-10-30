@@ -433,6 +433,13 @@
        "Forgive me where I have said, like the king, \"that I have built\", and taken the glory that is Yours. Lift my eyes to heaven, and give me back a right mind and a humble heart.",
        "Thank You that You left the stump in the ground and waited for him to turn. Be patient with us too, keep our group humble before You, and lift us up in Your time. In Jesus' name, Amen."
      ]},
+    {"id": "path-daniel-5-writing-on-the-wall", "category": "paths", "title": "After Daniel 5: the writing on the wall", "paths": ["daniel-5-writing-on-the-wall"],
+     "refs": ["Daniel 5:22-23", "Psalms 90:12"],
+     "text": [
+       "God in whose hand my breath is, and whose are all my ways: Belshazzar knew what You had done and still lifted himself up. Keep me from knowing the truth and living as if I did not.",
+       "Weigh my heart, and where I am found wanting, do not leave me there. Teach me to number my days, that I may apply my heart unto wisdom.",
+       "Keep our group humble as we read on, and let us give You the glory that is Yours alone. In Jesus' name, Amen."
+     ]},
     {"id": "path-quran-1-three-books", "category": "paths", "title": "After the Quran and the Bible, session 1: the three books", "paths": ["quran-1-three-books"],
      "refs": ["Psalms 119:105", "Luke 24:44-45"],
      "text": [
@@ -658,6 +665,41 @@
        "Lord Jesus, You are the Word, and the Word was made flesh and dwelt among us, full of grace and truth. You are the way, the truth and the life.",
        "By grace I am saved through faith, and that not of myself: it is Your gift. And I am Your workmanship, created in Christ Jesus unto good works.",
        "You said, If ye love me, keep my commandments. I love You, Lord. Help me keep them, not to earn Your love but because I have it. In Your name, Amen."
+     ]},
+    {"id": "path-jesus-in-the-gospels", "category": "paths", "title": "After Jesus in the Gospels", "paths": ["jesus-in-the-gospels"],
+     "refs": ["Matthew 16:16", "Matthew 11:28"],
+     "text": [
+       "Lord Jesus, You are the Christ, the Son of the living God. You came to save Your people from their sins, You touched the sick, You welcomed sinners, and You forgave the men who crucified You.",
+       "You are not here; You are risen. I come to You, weary and heavy laden, and I take Your rest.",
+       "Make me a disciple who loves as You loved, so that others may know whose I am. Be with me alway, as You promised. Amen."
+     ]},
+    {"id": "path-salvation-how-are-we-saved", "category": "paths", "title": "After Salvation: how are we saved?", "paths": ["salvation-how-are-we-saved"],
+     "refs": ["Romans 5:8", "Ephesians 2:8-9"],
+     "text": [
+       "Father, I have sinned and come short of Your glory. While I was yet a sinner, Christ died for me. Thank You for a gift I could never earn.",
+       "I believe on the Lord Jesus Christ. Make me a new creature, keep me in Your hand, and let my life be the good works You prepared for me to walk in.",
+       "You are not willing that any should perish. Give me words for those who have not heard, and let today be the day of salvation for someone I love. In Jesus' name, Amen."
+     ]},
+    {"id": "path-prayer-teach-us-to-pray", "category": "paths", "title": "After Prayer: Lord, teach us to pray", "paths": ["prayer-teach-us-to-pray"],
+     "refs": ["Luke 11:1", "Philippians 4:6-7"],
+     "text": [
+       "Lord, teach me to pray. Our Father which art in heaven, hallowed be Thy name; Thy kingdom come, Thy will be done.",
+       "I bring You every care, because You care for me. When I ask and wait, when I ask how long, and when Your answer is no, let Your grace be sufficient for me, and Your peace keep my heart.",
+       "When I do not know what to pray, let Your Spirit pray for me. Teach us to pray for one another, and for all who are in authority. In Jesus' name, Amen."
+     ]},
+    {"id": "path-the-holy-spirit", "category": "paths", "title": "After The Holy Spirit", "paths": ["the-holy-spirit"],
+     "refs": ["John 14:16", "Galatians 5:22-25"],
+     "text": [
+       "Father, thank You for the Comforter Jesus promised, who teaches us and brings His words to our remembrance. Thank You that my body is the temple of the Holy Ghost.",
+       "Grow in me the fruit of the Spirit: love, joy, peace, longsuffering, gentleness, goodness, faith, meekness, temperance. Use the gifts You give me to build up others.",
+       "Keep me from grieving Your Spirit. You give the Holy Spirit to them that ask: I ask You now, fill me. In Jesus' name, Amen."
+     ]},
+    {"id": "path-the-psalms", "category": "paths", "title": "After The Psalms", "paths": ["the-psalms"],
+     "refs": ["Psalms 23:1", "Psalms 150:6"],
+     "text": [
+       "LORD, You are my shepherd; I shall not want. When I walk through the valley, You are with me. When I ask how long, teach me to trust in Your mercy.",
+       "Create in me a clean heart, O God. Search me and know me. Let me be still and know that You are God, and let Your word be a lamp unto my feet.",
+       "Bless the LORD, O my soul. Let every thing that hath breath praise the LORD. Amen."
      ]}
   ],
   "books": {

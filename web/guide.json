@@ -135,7 +135,7 @@
       ]
     },
     {
-      "id": "prayer", "title": "Prayer",
+      "id": "prayer", "title": "Prayer", "path": "prayer-teach-us-to-pray",
       "words": ["pray", "prays", "praying", "prayed", "prayer", "prayers", "intercession", "intercede"],
       "themes": [
         {"point": "Jesus taught how to pray", "refs": ["Matthew 6:5-13", "Luke 11:1-4"], "words": ["how to pray", "lord s prayer"]},
@@ -182,7 +182,7 @@
       ]
     },
     {
-      "id": "salvation", "title": "Salvation",
+      "id": "salvation", "title": "Salvation", "path": "salvation-how-are-we-saved",
       "words": ["salvation", "saved", "saviour", "savior", "born again", "redemption", "redeemed", "redeemer", "how to be saved", "justification", "justified"],
       "themes": [
         {"point": "All have sinned, and the wages of sin is death", "refs": ["Romans 3:10-12", "Romans 3:23", "Romans 6:23", "Isaiah 53:6"]},
@@ -227,7 +227,7 @@
       ]
     },
     {
-      "id": "holy-spirit", "title": "The Holy Spirit",
+      "id": "holy-spirit", "title": "The Holy Spirit", "path": "the-holy-spirit",
       "words": ["holy spirit", "holy ghost", "spirit of god", "comforter", "pentecost", "gifts of the spirit", "fruit of the spirit", "spiritual gifts", "tongues"],
       "themes": [
         {"point": "The Spirit in creation and in the prophets", "refs": ["Genesis 1:2", "Psalms 139:7", "Numbers 11:25", "2 Peter 1:21"]},

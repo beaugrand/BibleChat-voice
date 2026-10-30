@@ -1,0 +1,974 @@
+{
+ "id": "jesus-in-the-gospels",
+ "title": "Jesus in the Gospels: who is He?",
+ "category": "Foundations",
+ "anim": {
+  "kind": "light"
+ },
+ "opening_question": "The four Gospels tell the life of Jesus: His birth, His preaching, His miracles, His death and His rising again. Read it from the manger to the empty tomb. Who is He, what did He teach, and what does He ask of those who follow Him?",
+ "required_refs": [
+  "Luke 2:8-14",
+  "Matthew 1:21-23",
+  "Matthew 3:13-17",
+  "Mark 1:14-18",
+  "Matthew 5:1-12",
+  "Matthew 7:24-27",
+  "Luke 15:1-10",
+  "Mark 4:35-41",
+  "John 11:25-26",
+  "John 11:43-44",
+  "Matthew 16:13-17",
+  "John 10:30",
+  "John 14:8-9",
+  "John 13:3-5",
+  "Luke 22:19-20",
+  "Luke 23:33-34",
+  "Luke 23:44-46",
+  "Mark 15:37-39",
+  "Luke 24:1-7",
+  "Matthew 28:18-20",
+  "Matthew 11:28-30",
+  "John 13:34-35",
+  "John 20:30-31"
+ ],
+ "words": [
+  "G2424",
+  "G5547",
+  "G3340",
+  "G4592",
+  "G386"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Who brought the news of His birth, and to whom? What name was He to be given, and why?",
+   "refs": [
+    "Luke 2:8-14",
+    "Matthew 1:21-23"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2424",
+     "G5547"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Jesus\" is the Greek form of the Hebrew name Joshua. Matthew gives the reason for the name: \"for he shall save his people from their sins\".",
+     "refs": [
+      "Matthew 1:21"
+     ],
+     "strongs": [
+      "G2424"
+     ]
+    },
+    {
+     "text": "The angel calls Him \"a Saviour, which is Christ the Lord\". Christ is the Greek word for Messiah, \"anointed\".",
+     "refs": [
+      "Luke 2:11"
+     ],
+     "strongs": [
+      "G5547"
+     ]
+    },
+    {
+     "text": "Matthew quotes Isaiah 7:14: \"they shall call his name Emmanuel, which being interpreted is, God with us\".",
+     "refs": [
+      "Matthew 1:23"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What happened when Jesus was baptized, and what were the first words of His preaching? Whom did He call first?",
+   "refs": [
+    "Matthew 3:13-17",
+    "Mark 1:14-18"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G907",
+     "G3340"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "At His baptism the Son is in the water, the Spirit comes \"like a dove\", and the Father speaks: \"This is my beloved Son, in whom I am well pleased\".",
+     "refs": [
+      "Matthew 3:16-17"
+     ]
+    },
+    {
+     "text": "\"repent\" is metanoeo. Strong's: \"to think differently or afterwards, i.e. reconsider\".",
+     "refs": [
+      "Mark 1:15"
+     ],
+     "strongs": [
+      "G3340"
+     ]
+    },
+    {
+     "text": "Simon and Andrew were fishermen. They left their nets \"straightway\".",
+     "refs": [
+      "Mark 1:16-18"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jesus teach on the mountain? Whom does He call blessed, and what kind of man builds on the rock?",
+   "refs": [
+    "Matthew 5:1-12",
+    "Matthew 7:24-27"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3107"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Blessed\" is makarios. Every blessing in Matthew 5:3-11 goes to people the world would not call blessed: the poor in spirit, the mourners, the meek, the persecuted.",
+     "refs": [
+      "Matthew 5:3-11"
+     ],
+     "strongs": [
+      "G3107"
+     ]
+    },
+    {
+     "text": "The sermon ends with two builders. Both hear; the wise man is the one who hears \"and doeth them\".",
+     "refs": [
+      "Matthew 7:24"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who came near to hear Him, what did the Pharisees murmur, and what do the parables of the lost sheep and the lost coin say about God?",
+   "refs": [
+    "Luke 15:1-10"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3850"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Pharisees' complaint was \"This man receiveth sinners, and eateth with them\". The three parables of Luke 15 are His answer.",
+     "refs": [
+      "Luke 15:2"
+     ]
+    },
+    {
+     "text": "Both parables end the same way: there is joy \"over one sinner that repenteth\".",
+     "refs": [
+      "Luke 15:7",
+      "Luke 15:10"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jesus do in the storm and at the grave of Lazarus? What did His disciples ask, and what did He say He is?",
+   "refs": [
+    "Mark 4:35-41",
+    "John 11:25-26",
+    "John 11:43-44"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4592"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The disciples asked: \"What manner of man is this, that even the wind and the sea obey him?\"",
+     "refs": [
+      "Mark 4:41"
+     ]
+    },
+    {
+     "text": "John calls the miracles \"signs\" (semeion): each one points to who Jesus is.",
+     "refs": [
+      "John 20:30"
+     ],
+     "strongs": [
+      "G4592"
+     ]
+    },
+    {
+     "text": "Before He raised Lazarus, Jesus said: \"I am the resurrection, and the life\".",
+     "refs": [
+      "John 11:25"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who did people say Jesus was, who did Peter say He was, and what did Jesus say about knowing Him and knowing the Father?",
+   "refs": [
+    "Matthew 16:13-17",
+    "John 10:30",
+    "John 14:8-9"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5547"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Peter answered: \"Thou art the Christ, the Son of the living God\". Jesus said this was revealed to him by \"my Father which is in heaven\".",
+     "refs": [
+      "Matthew 16:16-17"
+     ]
+    },
+    {
+     "text": "To Philip, Jesus said: \"he that hath seen me hath seen the Father\".",
+     "refs": [
+      "John 14:9"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jesus do for His disciples on the night He was betrayed? What did He say about the bread and the cup?",
+   "refs": [
+    "John 13:3-5",
+    "Luke 22:19-20"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1242"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"testament\" is diatheke, \"a disposition, i.e. (specially) a contract\": a covenant. Jeremiah had promised \"a new covenant\".",
+     "refs": [
+      "Luke 22:20",
+      "Jeremiah 31:31"
+     ],
+     "strongs": [
+      "G1242"
+     ]
+    },
+    {
+     "text": "Knowing \"that he was come from God, and went to God\", He took a towel and washed their feet.",
+     "refs": [
+      "John 13:3-5"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jesus pray for those who crucified Him? What happened at the ninth hour, and what did the centurion say?",
+   "refs": [
+    "Luke 23:33-34",
+    "Luke 23:44-46",
+    "Mark 15:37-39"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4717"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "On the cross He prayed: \"Father, forgive them; for they know not what they do\".",
+     "refs": [
+      "Luke 23:34"
+     ]
+    },
+    {
+     "text": "A Roman soldier, not a disciple, said: \"Truly this man was the Son of God\".",
+     "refs": [
+      "Mark 15:39"
+     ]
+    },
+    {
+     "text": "His last words in Luke: \"Father, into thy hands I commend my spirit\". Psalm 31:5 says the same.",
+     "refs": [
+      "Luke 23:46",
+      "Psalms 31:5"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did the women find on the first day of the week? What did the angels say, and what did the risen Jesus send His disciples to do?",
+   "refs": [
+    "Luke 24:1-7",
+    "Matthew 28:18-20"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G386",
+     "G3100"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The angels said: \"He is not here, but is risen\", and reminded the women of what He had told them in Galilee.",
+     "refs": [
+      "Luke 24:6"
+     ]
+    },
+    {
+     "text": "Paul lists the witnesses of the risen Jesus, among them \"above five hundred brethren at once\".",
+     "refs": [
+      "1 Corinthians 15:6"
+     ]
+    },
+    {
+     "text": "The commission is to \"teach all nations\", and it ends with a promise: \"lo, I am with you alway\".",
+     "refs": [
+      "Matthew 28:19-20"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: whom does Jesus invite, what new commandment did He give, and why was the Gospel of John written?",
+   "refs": [
+    "Matthew 11:28-30",
+    "John 13:34-35",
+    "John 20:30-31"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G25"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The invitation is open: \"Come unto me, all ye that labour and are heavy laden, and I will give you rest\".",
+     "refs": [
+      "Matthew 11:28"
+     ]
+    },
+    {
+     "text": "Jesus says how the world will know His disciples: \"if ye have love one to another\".",
+     "refs": [
+      "John 13:35"
+     ]
+    },
+    {
+     "text": "John says why he wrote: \"that ye might believe that Jesus is the Christ, the Son of God; and that believing ye might have life through his name\".",
+     "refs": [
+      "John 20:31"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"thou shalt call his name JESUS: for he shall save his people from their sins\"",
+   "refs": [
+    "Matthew 1:21"
+   ]
+  },
+  {
+   "text": "At His baptism the Father said: \"This is my beloved Son, in whom I am well pleased\".",
+   "refs": [
+    "Matthew 3:17"
+   ]
+  },
+  {
+   "text": "He came preaching: \"repent ye, and believe the gospel\".",
+   "refs": [
+    "Mark 1:15"
+   ]
+  },
+  {
+   "text": "\"I am the resurrection, and the life\"",
+   "refs": [
+    "John 11:25"
+   ]
+  },
+  {
+   "text": "Peter: \"Thou art the Christ, the Son of the living God\".",
+   "refs": [
+    "Matthew 16:16"
+   ]
+  },
+  {
+   "text": "\"Father, forgive them; for they know not what they do\"",
+   "refs": [
+    "Luke 23:34"
+   ]
+  },
+  {
+   "text": "\"He is not here, but is risen\"",
+   "refs": [
+    "Luke 24:6"
+   ]
+  },
+  {
+   "text": "\"Come unto me, all ye that labour and are heavy laden\"",
+   "refs": [
+    "Matthew 11:28"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"For unto you is born this day in the city of David a Saviour\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 2:11"
+   ],
+   "signals": {
+    "xref": 47,
+    "votes": 479,
+    "word": "G5547",
+    "word_count": 3,
+    "differ": 0.505,
+    "quoted": null
+   },
+   "why": [
+    "47 cross-references point here",
+    "The Greek word Christós (G5547) is in 3 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6637
+  },
+  {
+   "q": "Fill in the word: \"they shall call his name ___, which being interpreted is, God with us\"",
+   "type": "fill_word",
+   "ref": "Matthew 1:23",
+   "bible": "KJV",
+   "word": "Emmanuel",
+   "answer_refs": [
+    "Matthew 1:23"
+   ],
+   "signals": {
+    "xref": 59,
+    "votes": 775,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.399,
+    "quoted": null
+   },
+   "why": [
+    "59 cross-references point here"
+   ],
+   "score": 0.5497
+  },
+  {
+   "q": "In Matthew 3:16, how did the Spirit of God descend upon Jesus?",
+   "type": "multiple_choice",
+   "options": [
+    "Like a dove",
+    "Like a flame of fire",
+    "Like a mighty wind",
+    "Like the dew"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Matthew 3:16"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "dove"
+   },
+   "signals": {
+    "xref": 21,
+    "votes": 224,
+    "word": "G2424",
+    "word_count": 19,
+    "differ": 0.356,
+    "quoted": null
+   },
+   "why": [
+    "21 cross-references point here",
+    "The Greek word Iēsoûs (G2424) is in 19 verses of this path"
+   ],
+   "score": 0.8456
+  },
+  {
+   "q": "Which verse says \"The time is fulfilled, and the kingdom of God is at hand\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Mark 1:15"
+   ],
+   "signals": {
+    "xref": 17,
+    "votes": 210,
+    "word": "G3340",
+    "word_count": 3,
+    "differ": 0.471,
+    "quoted": null
+   },
+   "why": [
+    "17 cross-references point here",
+    "The Greek word metanoéō (G3340) is in 3 verses of this path"
+   ],
+   "score": 0.607
+  },
+  {
+   "q": "Fill in the word: \"Blessed are the ___: for they shall inherit the earth\"",
+   "type": "fill_word",
+   "ref": "Matthew 5:5",
+   "bible": "KJV",
+   "word": "meek",
+   "answer_refs": [
+    "Matthew 5:5"
+   ],
+   "signals": {
+    "xref": 27,
+    "votes": 352,
+    "word": "G3107",
+    "word_count": 10,
+    "differ": 0.255,
+    "quoted": null
+   },
+   "why": [
+    "27 cross-references point here",
+    "The Greek word makários (G3107) is in 10 verses of this path"
+   ],
+   "score": 0.7958
+  },
+  {
+   "q": "Which verse says \"Blessed are the pure in heart: for they shall see God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 5:8"
+   ],
+   "signals": {
+    "xref": 27,
+    "votes": 483,
+    "word": "G3107",
+    "word_count": 10,
+    "differ": 0.111,
+    "quoted": null
+   },
+   "why": [
+    "27 cross-references point here",
+    "The Greek word makários (G3107) is in 10 verses of this path"
+   ],
+   "score": 0.7694
+  },
+  {
+   "q": "In Matthew 7:24, on what did the wise man build his house?",
+   "type": "multiple_choice",
+   "options": [
+    "A rock",
+    "The sand",
+    "A hill",
+    "The river bank"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Matthew 7:24"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "rock"
+   },
+   "signals": {
+    "xref": 42,
+    "votes": 446,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.472,
+    "quoted": null
+   },
+   "why": [
+    "42 cross-references point here"
+   ],
+   "score": 0.568
+  },
+  {
+   "q": "In Luke 15:4, how many sheep does the man leave to go after the one that is lost?",
+   "type": "multiple_choice",
+   "options": [
+    "Ninety and nine",
+    "Nine",
+    "Forty",
+    "Twelve"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 15:4"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "ninety"
+   },
+   "signals": {
+    "xref": 21,
+    "votes": 289,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.41,
+    "quoted": null
+   },
+   "why": [
+    "21 cross-references point here"
+   ],
+   "score": 0.5282
+  },
+  {
+   "q": "Which verse asks \"What manner of man is this, that even the wind and the sea obey him?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Mark 4:41"
+   ],
+   "signals": {
+    "xref": 14,
+    "votes": 102,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.447,
+    "quoted": null
+   },
+   "why": [
+    "14 cross-references point here"
+   ],
+   "score": 0.4597
+  },
+  {
+   "q": "Fill in the word: \"I am the resurrection, and the ___\"",
+   "type": "fill_word",
+   "ref": "John 11:25",
+   "bible": "KJV",
+   "word": "life",
+   "answer_refs": [
+    "John 11:25"
+   ],
+   "signals": {
+    "xref": 56,
+    "votes": 1254,
+    "word": "G2424",
+    "word_count": 19,
+    "differ": 0.417,
+    "quoted": null
+   },
+   "why": [
+    "56 cross-references point here",
+    "The Greek word Iēsoûs (G2424) is in 19 verses of this path"
+   ],
+   "score": 0.9042
+  },
+  {
+   "q": "Which verse says \"Thou art the Christ, the Son of the living God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 16:16"
+   ],
+   "signals": {
+    "xref": 31,
+    "votes": 191,
+    "word": "G5547",
+    "word_count": 3,
+    "differ": 0.267,
+    "quoted": null
+   },
+   "why": [
+    "31 cross-references point here",
+    "The Greek word Christós (G5547) is in 3 verses of this path"
+   ],
+   "score": 0.549
+  },
+  {
+   "q": "Which verse says \"I and my Father are one\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 10:30"
+   ],
+   "signals": {
+    "xref": 91,
+    "votes": 1457,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.19,
+    "quoted": null
+   },
+   "why": [
+    "91 cross-references point here"
+   ],
+   "score": 0.4975
+  },
+  {
+   "q": "Which verse says \"This cup is the new testament in my blood\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 22:20"
+   ],
+   "signals": {
+    "xref": 20,
+    "votes": 178,
+    "word": "G1242",
+    "word_count": 1,
+    "differ": 0.308,
+    "quoted": null
+   },
+   "why": [
+    "20 cross-references point here"
+   ],
+   "score": 0.4956
+  },
+  {
+   "q": "Which verse says \"Father, forgive them; for they know not what they do\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 23:34"
+   ],
+   "signals": {
+    "xref": 21,
+    "votes": 191,
+    "word": "G2424",
+    "word_count": 19,
+    "differ": 0.454,
+    "quoted": null
+   },
+   "why": [
+    "21 cross-references point here",
+    "The Greek word Iēsoûs (G2424) is in 19 verses of this path"
+   ],
+   "score": 0.8582
+  },
+  {
+   "q": "In Mark 15:39, who said \"Truly this man was the Son of God\"?",
+   "type": "multiple_choice",
+   "options": [
+    "The centurion",
+    "Peter",
+    "Pilate",
+    "The high priest"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Mark 15:39"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "centurion"
+   },
+   "signals": {
+    "xref": 7,
+    "votes": 63,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.526,
+    "quoted": null
+   },
+   "why": [
+    "7 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.4437
+  },
+  {
+   "q": "Which verse says \"He is not here, but is risen\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 24:6"
+   ],
+   "signals": {
+    "xref": 13,
+    "votes": 78,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.44,
+    "quoted": null
+   },
+   "why": [
+    "13 cross-references point here"
+   ],
+   "score": 0.438
+  },
+  {
+   "q": "Fill in the word: \"Go ye therefore, and teach all ___\"",
+   "type": "fill_word",
+   "ref": "Matthew 28:19",
+   "bible": "KJV",
+   "word": "nations",
+   "answer_refs": [
+    "Matthew 28:19"
+   ],
+   "signals": {
+    "xref": 57,
+    "votes": 591,
+    "word": "G907",
+    "word_count": 4,
+    "differ": 0.236,
+    "quoted": null
+   },
+   "why": [
+    "57 cross-references point here",
+    "The Greek word baptízō (G907) is in 4 verses of this path"
+   ],
+   "score": 0.6257
+  },
+  {
+   "q": "Which verse says \"Come unto me, all ye that labour and are heavy laden, and I will give you rest\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 11:28"
+   ],
+   "signals": {
+    "xref": 46,
+    "votes": 502,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.404,
+    "quoted": null
+   },
+   "why": [
+    "46 cross-references point here"
+   ],
+   "score": 0.551
+  },
+  {
+   "q": "Fill in the word: \"By this shall all men know that ye are my disciples, if ye have ___ one to another\"",
+   "type": "fill_word",
+   "ref": "John 13:35",
+   "bible": "KJV",
+   "word": "love",
+   "answer_refs": [
+    "John 13:35"
+   ],
+   "signals": {
+    "xref": 21,
+    "votes": 302,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.335,
+    "quoted": null
+   },
+   "why": [
+    "21 cross-references point here"
+   ],
+   "score": 0.5127
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 95,
+ "image": "img/jesus-in-the-gospels.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/jesus-in-the-gospels.json",
+  "sha": "d7c0bdb138c5452c",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

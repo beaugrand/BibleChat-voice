@@ -1,0 +1,908 @@
+{
+ "id": "the-holy-spirit",
+ "title": "The Holy Spirit: who is He, and what does He do?",
+ "category": "Foundations",
+ "anim": {
+  "kind": "light"
+ },
+ "opening_question": "Jesus promised \"another Comforter\". Who is the Holy Spirit? Read what the Bible says about the Spirit in creation and in the prophets, at Pentecost, in every believer, His fruit and His gifts, and the warnings about grieving Him. Read every verse, also the ones Christians read in different ways.",
+ "required_refs": [
+  "Genesis 1:2",
+  "Psalms 139:7",
+  "Numbers 11:25",
+  "2 Peter 1:21",
+  "John 14:16-17",
+  "John 14:26",
+  "John 16:7-14",
+  "Acts 2:1-4",
+  "Acts 2:16-18",
+  "Joel 2:28-29",
+  "Romans 8:9-11",
+  "1 Corinthians 6:19-20",
+  "Ephesians 1:13-14",
+  "Romans 8:14-16",
+  "Romans 8:26-27",
+  "Galatians 5:16",
+  "Galatians 5:22-25",
+  "1 Corinthians 12:4-11",
+  "Romans 12:6-8",
+  "1 Peter 4:10-11",
+  "1 Corinthians 14:1-5",
+  "Ephesians 4:30",
+  "1 Thessalonians 5:19",
+  "Acts 5:3-4",
+  "Matthew 12:31-32",
+  "Mark 3:22-30",
+  "Luke 11:13",
+  "Ephesians 5:18-19",
+  "Galatians 5:25"
+ ],
+ "words": [
+  "H7307",
+  "G4151",
+  "G3875",
+  "G5486",
+  "G2590"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Where is the Spirit at the very beginning? Where can David go from God's Spirit, and how did the prophets speak?",
+   "refs": [
+    "Genesis 1:2",
+    "Psalms 139:7",
+    "Numbers 11:25",
+    "2 Peter 1:21"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7307"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Spirit\" is ruach in Hebrew. Strong's: \"wind; by resemblance breath\". The Greek pneuma also means breath and wind (John 3:8).",
+     "refs": [
+      "Genesis 1:2",
+      "John 3:8"
+     ],
+     "strongs": [
+      "H7307",
+      "G4151"
+     ]
+    },
+    {
+     "text": "Peter says the prophets \"spake as they were moved by the Holy Ghost\".",
+     "refs": [
+      "2 Peter 1:21"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jesus promise before He went away? What does He call the Spirit, and what will the Spirit teach and do?",
+   "refs": [
+    "John 14:16-17",
+    "John 14:26",
+    "John 16:7-14"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3875"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Comforter\" is parakletos. Strong's: \"an intercessor, consoler\": one called alongside to help.",
+     "refs": [
+      "John 14:16"
+     ],
+     "strongs": [
+      "G3875"
+     ]
+    },
+    {
+     "text": "Jesus speaks of the Spirit as \"he\", who teaches, reminds, guides and shows: a person, not a force.",
+     "refs": [
+      "John 14:26",
+      "John 16:13"
+     ]
+    },
+    {
+     "text": "Jesus said it was better for them that He go away: \"if I go not away, the Comforter will not come unto you\".",
+     "refs": [
+      "John 16:7"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What happened on the day of Pentecost? Which prophet did Peter quote, and on whom would the Spirit be poured out?",
+   "refs": [
+    "Acts 2:1-4",
+    "Acts 2:16-18",
+    "Joel 2:28-29"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4005"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Peter tells the crowd: \"this is that which was spoken by the prophet Joel\".",
+     "refs": [
+      "Acts 2:16"
+     ]
+    },
+    {
+     "text": "Joel names sons and daughters, old and young, servants and handmaids: the Spirit is poured \"upon all flesh\".",
+     "refs": [
+      "Joel 2:28-29"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Where does the Spirit live now? What does Paul say about our bodies, and what is the Spirit called in Ephesians 1?",
+   "refs": [
+    "Romans 8:9-11",
+    "1 Corinthians 6:19-20",
+    "Ephesians 1:13-14"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G728"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Paul says plainly: \"if any man have not the Spirit of Christ, he is none of his\".",
+     "refs": [
+      "Romans 8:9"
+     ]
+    },
+    {
+     "text": "\"earnest\" is arrhabon: a pledge paid in advance, the first part of what is promised.",
+     "refs": [
+      "Ephesians 1:14"
+     ],
+     "strongs": [
+      "G728"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does the Spirit witness with our spirit? How does He help us pray, and what does walking in the Spirit keep us from?",
+   "refs": [
+    "Romans 8:14-16",
+    "Romans 8:26-27",
+    "Galatians 5:16"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "By the Spirit we cry \"Abba, Father\". Abba is the Aramaic word for father.",
+     "refs": [
+      "Romans 8:15"
+     ],
+     "strongs": [
+      "G5"
+     ]
+    },
+    {
+     "text": "\"Walk in the Spirit, and ye shall not fulfil the lust of the flesh\".",
+     "refs": [
+      "Galatians 5:16"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What is the fruit of the Spirit? How many things does Paul name, and what does he say about those that are Christ's?",
+   "refs": [
+    "Galatians 5:22-25"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2590"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Paul writes \"fruit\", one word, not fruits: nine qualities grown together, set against the many \"works of the flesh\" just before.",
+     "refs": [
+      "Galatians 5:22",
+      "Galatians 5:19"
+     ],
+     "strongs": [
+      "G2590"
+     ]
+    },
+    {
+     "text": "\"If we live in the Spirit, let us also walk in the Spirit\".",
+     "refs": [
+      "Galatians 5:25"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What gifts does the Spirit give, to whom, and for what? What does Paul say about tongues and prophecy?",
+   "refs": [
+    "1 Corinthians 12:4-11",
+    "Romans 12:6-8",
+    "1 Peter 4:10-11",
+    "1 Corinthians 14:1-5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5486"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"gifts\" is charisma, from charis, grace. Each gift is given \"to every man to profit withal\", for the good of all.",
+     "refs": [
+      "1 Corinthians 12:4",
+      "1 Corinthians 12:7"
+     ],
+     "strongs": [
+      "G5486"
+     ]
+    },
+    {
+     "text": "Christians read these chapters in different ways: some believe every gift, tongues and prophecy included, continues today; others believe some gifts ended with the apostles. 1 Corinthians 13:8-10 is read both ways.",
+     "refs": [
+      "1 Corinthians 12:10",
+      "1 Corinthians 13:8"
+     ]
+    },
+    {
+     "text": "Paul asks that all be done for building up: he that prophesieth \"edifieth the church\".",
+     "refs": [
+      "1 Corinthians 14:4"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What are we told not to do to the Spirit? When Ananias lied to the Holy Ghost, to whom does Peter say he lied?",
+   "refs": [
+    "Ephesians 4:30",
+    "1 Thessalonians 5:19",
+    "Acts 5:3-4"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3076"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Peter says to Ananias \"lie to the Holy Ghost\", then \"thou hast not lied unto men, but unto God\".",
+     "refs": [
+      "Acts 5:3",
+      "Acts 5:4"
+     ]
+    },
+    {
+     "text": "Only a person can be grieved: \"grieve not the holy Spirit of God\".",
+     "refs": [
+      "Ephesians 4:30"
+     ],
+     "strongs": [
+      "G3076"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jesus say about blasphemy against the Holy Ghost? Read it with the verses around it in Mark: why did He say it?",
+   "refs": [
+    "Matthew 12:31-32",
+    "Mark 3:22-30"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G988"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Mark gives the reason: \"Because they said, He hath an unclean spirit\". They called the Spirit's work the devil's.",
+     "refs": [
+      "Mark 3:30"
+     ]
+    },
+    {
+     "text": "In the same breath Jesus says \"All manner of sin and blasphemy shall be forgiven unto men\". Many pastors note that a person afraid of having committed this sin is showing the very concern the scribes did not have.",
+     "refs": [
+      "Matthew 12:31"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: what does Jesus say the Father will give to them that ask? What does Paul tell us to be filled with?",
+   "refs": [
+    "Luke 11:13",
+    "Ephesians 5:18-19",
+    "Galatians 5:25"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4137"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"how much more shall your heavenly Father give the Holy Spirit to them that ask him?\"",
+     "refs": [
+      "Luke 11:13"
+     ]
+    },
+    {
+     "text": "\"be filled with the Spirit\" is a present command in Greek: keep on being filled.",
+     "refs": [
+      "Ephesians 5:18"
+     ],
+     "strongs": [
+      "G4137"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"the Spirit of God moved upon the face of the waters\"",
+   "refs": [
+    "Genesis 1:2"
+   ]
+  },
+  {
+   "text": "\"he shall give you another Comforter, that he may abide with you for ever\"",
+   "refs": [
+    "John 14:16"
+   ]
+  },
+  {
+   "text": "At Pentecost \"they were all filled with the Holy Ghost\".",
+   "refs": [
+    "Acts 2:4"
+   ]
+  },
+  {
+   "text": "\"your body is the temple of the Holy Ghost which is in you\"",
+   "refs": [
+    "1 Corinthians 6:19"
+   ]
+  },
+  {
+   "text": "\"the fruit of the Spirit is love, joy, peace\"",
+   "refs": [
+    "Galatians 5:22"
+   ]
+  },
+  {
+   "text": "\"grieve not the holy Spirit of God\"",
+   "refs": [
+    "Ephesians 4:30"
+   ]
+  },
+  {
+   "text": "\"how much more shall your heavenly Father give the Holy Spirit to them that ask him?\"",
+   "refs": [
+    "Luke 11:13"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"the Spirit of God moved upon the face of the waters\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 1:2"
+   ],
+   "signals": {
+    "xref": 11,
+    "votes": 148,
+    "word": "H7307",
+    "word_count": 6,
+    "differ": 0.467,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Hebrew word rûach (H7307) is in 6 verses of this path"
+   ],
+   "score": 0.6674
+  },
+  {
+   "q": "Which verse asks \"Whither shall I go from thy spirit?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 139:7"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 134,
+    "word": "H7307",
+    "word_count": 6,
+    "differ": 0.482,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here",
+    "The Hebrew word rûach (H7307) is in 6 verses of this path"
+   ],
+   "score": 0.6638
+  },
+  {
+   "q": "Which verse says \"holy men of God spake as they were moved by the Holy Ghost\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Peter 1:21"
+   ],
+   "signals": {
+    "xref": 41,
+    "votes": 463,
+    "word": "G4151",
+    "word_count": 53,
+    "differ": 0.52,
+    "quoted": null
+   },
+   "why": [
+    "41 cross-references point here",
+    "The Greek word pneûma (G4151) is in 53 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.93
+  },
+  {
+   "q": "Fill in the word: \"he shall give you another ___, that he may abide with you for ever\"",
+   "type": "fill_word",
+   "ref": "John 14:16",
+   "bible": "KJV",
+   "word": "Comforter",
+   "answer_refs": [
+    "John 14:16"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 328,
+    "word": "G3875",
+    "word_count": 3,
+    "differ": 0.43,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here",
+    "The Greek word paráklētos (G3875) is in 3 verses of this path"
+   ],
+   "score": 0.6301
+  },
+  {
+   "q": "Which verse says the Spirit \"shall teach you all things, and bring all things to your remembrance\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 14:26"
+   ],
+   "signals": {
+    "xref": 35,
+    "votes": 552,
+    "word": "G4151",
+    "word_count": 53,
+    "differ": 0.435,
+    "quoted": null
+   },
+   "why": [
+    "35 cross-references point here",
+    "The Greek word pneûma (G4151) is in 53 verses of this path"
+   ],
+   "score": 0.9088
+  },
+  {
+   "q": "In Acts 2:3, what appeared unto them and sat upon each of them?",
+   "type": "multiple_choice",
+   "options": [
+    "Cloven tongues like as of fire",
+    "A dove",
+    "A bright cloud",
+    "A rainbow"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Acts 2:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "tongues"
+   },
+   "signals": {
+    "xref": 13,
+    "votes": 183,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.61,
+    "quoted": null
+   },
+   "why": [
+    "13 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.544
+  },
+  {
+   "q": "Fill in the word: \"I will pour out my spirit upon all ___\"",
+   "type": "fill_word",
+   "ref": "Joel 2:28",
+   "bible": "KJV",
+   "word": "flesh",
+   "answer_refs": [
+    "Joel 2:28"
+   ],
+   "signals": {
+    "xref": 43,
+    "votes": 1541,
+    "word": "H7307",
+    "word_count": 6,
+    "differ": 0.253,
+    "quoted": null
+   },
+   "why": [
+    "43 cross-references point here",
+    "The Hebrew word rûach (H7307) is in 6 verses of this path"
+   ],
+   "score": 0.6883
+  },
+  {
+   "q": "Which verse says \"your body is the temple of the Holy Ghost which is in you\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Corinthians 6:19"
+   ],
+   "signals": {
+    "xref": 37,
+    "votes": 653,
+    "word": "G4151",
+    "word_count": 53,
+    "differ": 0.339,
+    "quoted": null
+   },
+   "why": [
+    "37 cross-references point here",
+    "The Greek word pneûma (G4151) is in 53 verses of this path"
+   ],
+   "score": 0.8848
+  },
+  {
+   "q": "Which verse says \"The Spirit itself beareth witness with our spirit, that we are the children of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 8:16"
+   ],
+   "signals": {
+    "xref": 44,
+    "votes": 507,
+    "word": "G4151",
+    "word_count": 53,
+    "differ": 0.355,
+    "quoted": null
+   },
+   "why": [
+    "44 cross-references point here",
+    "The Greek word pneûma (G4151) is in 53 verses of this path"
+   ],
+   "score": 0.8888
+  },
+  {
+   "q": "Which verse says \"the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Galatians 5:22"
+   ],
+   "signals": {
+    "xref": 108,
+    "votes": 1895,
+    "word": "G4151",
+    "word_count": 53,
+    "differ": 0.262,
+    "quoted": null
+   },
+   "why": [
+    "108 cross-references point here",
+    "The Greek word pneûma (G4151) is in 53 verses of this path"
+   ],
+   "score": 0.8655
+  },
+  {
+   "q": "Fill in the word: \"Meekness, temperance: against such there is no ___\"",
+   "type": "fill_word",
+   "ref": "Galatians 5:23",
+   "bible": "KJV",
+   "word": "law",
+   "answer_refs": [
+    "Galatians 5:23"
+   ],
+   "signals": {
+    "xref": 64,
+    "votes": 911,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.359,
+    "quoted": null
+   },
+   "why": [
+    "64 cross-references point here"
+   ],
+   "score": 0.5397
+  },
+  {
+   "q": "Which verse says \"there are diversities of gifts, but the same Spirit\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Corinthians 12:4"
+   ],
+   "signals": {
+    "xref": 23,
+    "votes": 211,
+    "word": "G4151",
+    "word_count": 53,
+    "differ": 0.343,
+    "quoted": null
+   },
+   "why": [
+    "23 cross-references point here",
+    "The Greek word pneûma (G4151) is in 53 verses of this path"
+   ],
+   "score": 0.8379
+  },
+  {
+   "q": "Fill in the word: \"___ not the Spirit\"",
+   "type": "fill_word",
+   "ref": "1 Thessalonians 5:19",
+   "bible": "KJV",
+   "word": "Quench",
+   "answer_refs": [
+    "1 Thessalonians 5:19"
+   ],
+   "signals": {
+    "xref": 9,
+    "votes": 114,
+    "word": "G4151",
+    "word_count": 53,
+    "differ": 0.538,
+    "quoted": null
+   },
+   "why": [
+    "9 cross-references point here",
+    "The Greek word pneûma (G4151) is in 53 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.8407
+  },
+  {
+   "q": "In Acts 5:3, who lied to the Holy Ghost?",
+   "type": "multiple_choice",
+   "options": [
+    "Ananias",
+    "Simon",
+    "Judas",
+    "Demas"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Acts 5:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Ananias"
+   },
+   "signals": {
+    "xref": 35,
+    "votes": 179,
+    "word": "G4151",
+    "word_count": 53,
+    "differ": 0.447,
+    "quoted": null
+   },
+   "why": [
+    "35 cross-references point here",
+    "The Greek word pneûma (G4151) is in 53 verses of this path"
+   ],
+   "score": 0.8516
+  },
+  {
+   "q": "Which verse says \"the blasphemy against the Holy Ghost shall not be forgiven unto men\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 12:31"
+   ],
+   "signals": {
+    "xref": 13,
+    "votes": 104,
+    "word": "G4151",
+    "word_count": 53,
+    "differ": 0.359,
+    "quoted": null
+   },
+   "why": [
+    "13 cross-references point here",
+    "The Greek word pneûma (G4151) is in 53 verses of this path"
+   ],
+   "score": 0.7891
+  },
+  {
+   "q": "Which verse says \"be not drunk with wine, wherein is excess; but be filled with the Spirit\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Ephesians 5:18"
+   ],
+   "signals": {
+    "xref": 32,
+    "votes": 201,
+    "word": "G4151",
+    "word_count": 53,
+    "differ": 0.629,
+    "quoted": null
+   },
+   "why": [
+    "32 cross-references point here",
+    "The Greek word pneûma (G4151) is in 53 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.9058
+  },
+  {
+   "q": "Which verse asks \"how much more shall your heavenly Father give the Holy Spirit to them that ask him?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 11:13"
+   ],
+   "signals": {
+    "xref": 36,
+    "votes": 484,
+    "word": "G4151",
+    "word_count": 53,
+    "differ": 0.337,
+    "quoted": null
+   },
+   "why": [
+    "36 cross-references point here",
+    "The Greek word pneûma (G4151) is in 53 verses of this path"
+   ],
+   "score": 0.8843
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 77,
+ "image": "img/the-holy-spirit.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/the-holy-spirit.json",
+  "sha": "6d12d74b4d8c0549",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

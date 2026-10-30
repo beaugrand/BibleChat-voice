@@ -197,7 +197,7 @@ class PathPagesTest(unittest.TestCase):
                      'data-f="group"', 'data-f="study_date"', "g: p.group || undefined", "· \" + esc(T(\"next\"))"):
             self.assertIn(part, js)
         friday = [x for x in load(os.path.join(bp.OUT_DIR, "index.json")) if x.get("group") == "Friday night Bible study"]
-        self.assertEqual(sorted(x["id"] for x in friday), ["daniel-2-statue-and-stone", "daniel-3-fiery-furnace", "daniel-4-the-tree-and-the-king"])
+        self.assertEqual(sorted(x["id"] for x in friday), ["daniel-2-statue-and-stone", "daniel-3-fiery-furnace", "daniel-4-the-tree-and-the-king", "daniel-5-writing-on-the-wall"])
         self.assertTrue(all(re.fullmatch(r"\d{4}-\d{2}-\d{2}", x["study_date"]) and x["read_along"]["label"] == "TS2009" for x in friday))
         import tempfile
         sys.path.insert(0, os.path.join(ROOT, "web")); import build_share
