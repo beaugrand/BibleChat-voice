@@ -57,6 +57,9 @@ ANIMS = ("fire", "light", "mist", "rainbow", "stars", "storm")   # the moving pi
 GROUPS = "Bible Study Groups"   # the category for studies made for a Bible study group; "group" names the group's folder
 NOTES = {"scofield": "Commentary (Scofield, 1917)", "henry": "Commentary (Matthew Henry, Concise)"}
 FILES = {"KJV": "eng-kjv.osis.xml", "BSB": "eng-bsb.usfx.xml"}
+# 🌍 a path in another app language (packaging/paths/i18n/<lang>/<id>.json) quotes the Bible of that language
+LANG_BIBLES = {"es": ("RV1909", "spa-rv1909.usfx.xml"), "de": ("LUT", "deu-luther1912.osis.xml")}
+I18N_DIR = os.path.join(SRC_DIR, "i18n")
 REF_RE = re.compile(r"^(.+?) (\d+)(?::(\d+))?(?:-(\d+)(?::(\d+))?)?$")
 
 
@@ -92,7 +95,7 @@ class Bibles:
         from bibleask.loaders import load_bible
         self._add("ETH", load_bible(os.path.join(ROOT, "bibles", "eng-ethiopian-canon.zefania.xml")).verses)
         self._add("JASHER", load_bible(os.path.join(ROOT, "bibles", "eng-jasher-1840.zefania.xml")).verses)
-        for key, file in FILES.items():
+        for key, file in list(FILES.items()) + list(LANG_BIBLES.values()):
             path = self._find(file, src, download)
             if path:
                 self._add(key, load_bible(path).verses)
@@ -538,8 +541,67 @@ def build(B: Bibles) -> dict[str, dict]:
         p["labels"] = NOTES
         p["built_from"] = {"file": "packaging/paths/" + os.path.basename(f), "sha": sha(f),
                            "checked_in": [k for k in ("KJV", "ETH", "BSB") if k not in B.missing]}
+        tr = translations(p, B)
+        if tr:
+            p["i18n"] = tr
         out[p["id"]] = p
     balance(out)
+    return out
+
+
+def translations(p: dict, B: Bibles) -> dict:
+    """🌍 The path in Spanish and German, from packaging/paths/i18n/<lang>/<id>.json:
+    {"title", "opening_question", "steps": [{"question", "facts": [text, ...]}, ...], "remember": [text, ...]}.
+    It must have every step, fact and point of the English path, in the same order. Words in "straight quotes"
+    are Scripture and must stand in that language's Bible (Reina-Valera 1909, Luther 1912) in the chapters the
+    verses are in or next to them (Luther, for one, numbers Daniel 4:1-3 as 3:31-33). Word meanings from Strong's
+    (an English dictionary) go in «guillemets» (Spanish) or »guillemets« (German), which are not checked.
+    The quiz stays in English: its questions test English wording."""
+    out = {}
+    for lang, (key, _) in LANG_BIBLES.items():
+        f = os.path.join(I18N_DIR, lang, p["id"] + ".json")
+        if not os.path.exists(f):
+            continue
+        where = f"path {p['id']!r} ({lang})"
+        with open(f, encoding="utf-8") as fh:
+            t = json.load(fh)
+        for k in ("title", "opening_question"):
+            if not str(t.get(k) or "").strip():
+                raise PathError(f"{where}: missing {k!r}")
+        if len(t.get("steps", [])) != len(p["steps"]):
+            raise PathError(f"{where}: {len(t.get('steps', []))} steps, the English has {len(p['steps'])}")
+        if len(t.get("remember", [])) != len(p.get("remember", [])):
+            raise PathError(f"{where}: {len(t.get('remember', []))} things to remember, the English has {len(p.get('remember', []))}")
+
+        def pool(refs):
+            keys = set()
+            for r in refs:
+                book, (c1, _), (c2, _) = parse_ref(r)
+                keys |= {k for k in B.text[key] if k[0] == book and c1 - 1 <= k[1] <= c2 + 1}
+            return " ".join(norm(B.text[key][k]) for k in keys)
+
+        def quotes(text, refs, ctx):
+            if not str(text).strip():
+                raise PathError(f"{where}: {ctx} is empty")
+            whole = None
+            for q in re.findall(r'"([^"]+)"', text):
+                whole = whole if whole is not None else pool(refs)
+                if norm(q).strip(" .,;:!?¿¡") not in whole:
+                    raise PathError(f"{where}: {ctx}: \"{q}\" is not in the {key} near {', '.join(refs)}")
+
+        every = [r for s in p["steps"] for r in s["refs"]]
+        quotes(t["title"], every, "title")
+        quotes(t["opening_question"], every, "opening question")
+        for i, (s, ts) in enumerate(zip(p["steps"], t["steps"]), 1):
+            facts = s.get("facts", [])
+            if len(ts.get("facts", [])) != len(facts):
+                raise PathError(f"{where}: step {i} has {len(ts.get('facts', []))} facts, the English has {len(facts)}")
+            quotes(ts.get("question"), s["refs"], f"step {i}")
+            for j, (fe, ft) in enumerate(zip(facts, ts["facts"]), 1):
+                quotes(ft, (fe.get("refs") or []) + s["refs"], f"step {i} fact {j}")
+        for j, (re_, rt) in enumerate(zip(p.get("remember", []), t.get("remember", [])), 1):
+            quotes(rt, re_["refs"], f"remember {j}")
+        out[lang] = t
     return out
 
 
@@ -572,7 +634,10 @@ def index(paths: dict[str, dict]) -> list[dict]:
              "books": sorted({parse_ref(r)[0] for s in p["steps"] for r in s["refs"]}   # a search for "Genesis" or "Daniel" finds the path
                             | {b["ref"].rpartition(" ")[0] for s in p["steps"] for b in s.get("outside", [])}),   # ...and "Quran"
              "show": p.get("show", 8), "verses": p["verse_count"], "minutes": minutes(p),
-             **{k: p[k] for k in ("group", "study_date", "read_along", "anim", "series") if p.get(k)}}
+             **{k: p[k] for k in ("group", "study_date", "read_along", "anim", "series") if p.get(k)},
+             **({"i18n": {l: {"title": t["title"], "opening_question": t["opening_question"],
+                              "step_questions": [s["question"] for s in t["steps"]]} for l, t in p["i18n"].items()}}
+                if p.get("i18n") else {})}
             for p in paths.values()]
 
 

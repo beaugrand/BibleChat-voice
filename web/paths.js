@@ -85,14 +85,43 @@ const BCPaths = (() => {
   function mine(){ return A ? get("mine", []) : []; }   // no page yet (a test): none
 
   /* ---------- loading ---------- */
+  // 🌍 a path written in Spanish or German (packaging/paths/i18n/): its words follow the app language. The English stays
+  // in _en, so switching back (or to a language the path doesn't have) shows the English again. Verses, refs and the quiz
+  // are untouched. Done in place, so the path object stays the same one everywhere.
+  function inLang(p){
+    if(!p || typeof p !== "object") return p;
+    const L = typeof UI_LANG !== "undefined" ? UI_LANG : "en";
+    if(p._lang === L || (!p.i18n && !p._en)) return p;
+    const steps = Array.isArray(p.steps) ? p.steps : [], rem = Array.isArray(p.remember) ? p.remember : [];
+    if(!p._en) p._en = {title: p.title, opening_question: p.opening_question,
+      steps: steps.map(s => ({question: s.question, facts: (s.facts || []).map(x => x && typeof x === "object" ? x.text : x)})),
+      remember: rem.map(x => x && typeof x === "object" ? x.text : x),
+      step_questions: Array.isArray(p.step_questions) ? p.step_questions.slice() : null};
+    const t = (p.i18n && p.i18n[L]) || null, en = p._en, pick = (a, b) => (a != null && a !== "" ? a : b);
+    p.title = pick(t && t.title, en.title);
+    p.opening_question = pick(t && t.opening_question, en.opening_question);
+    steps.forEach((s, i) => {
+      const ts = t && ((t.steps && t.steps[i]) || (t.step_questions && {question: t.step_questions[i]})), es = en.steps[i] || {};
+      s.question = pick(ts && ts.question, es.question);
+      (s.facts || []).forEach((x, j) => {
+        const v = pick(ts && ts.facts && ts.facts[j], (es.facts || [])[j]);
+        if(x && typeof x === "object") x.text = v; else s.facts[j] = v;
+      });
+    });
+    if(en.step_questions) p.step_questions = en.step_questions.map((q, i) => pick(t && t.step_questions && t.step_questions[i], q));
+    rem.forEach((x, k) => { const v = pick(t && t.remember && t.remember[k], en.remember[k]); if(x && typeof x === "object") x.text = v; else rem[k] = v; });
+    p._lang = L;
+    return p;
+  }
   async function loadList(){
     if(!list){ try{ list = await (await fetch(A.base + "index.json")).json(); }catch(e){ list = []; } }
+    if(Array.isArray(list)) list.forEach(inLang);
     return list;
   }
   async function loadPath(id){
     if(id.startsWith("mine-")){ const p = mine().find(x => x.id === id); if(p) return p; throw new Error("not found"); }
     if(!cache[id]) cache[id] = fetch(A.base + encodeURIComponent(id) + ".json").then(r => { if(!r.ok) throw new Error(r.status); return r.json(); });
-    return cache[id];
+    return inLang(await cache[id]);
   }
   async function loadQuoted(){
     if(!quoted){ try{ quoted = await (await fetch(A.quotedUrl)).json(); }catch(e){ quoted = {items: []}; } }
@@ -1411,7 +1440,7 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
   /* remember where the reader is before another screen covers the path (🙏 sharing the closing prayer), so reopen() returns there */
   function remember(){ if(root && !root.hidden) lastView = {view: S.view === "quiz" || S.view === "reflect" ? S.view : S.view === "word" || S.view === "share" ? "step" : S.view, id: S.path && S.path.id, step: S.step, top: root.scrollTop}; }
   return {mount, open, close, reopen, remember, openHash, cleanHash, shortPath, linkOf, xPhone, isPhone, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden,
-    findPaths, openCommunity, preload: () => loadList(), normRef, _setList: l => { list = l; },   // _setList: tests hand in paths/index.json
+    findPaths, openCommunity, preload: () => loadList(), normRef, _setList: l => { list = l; }, _inLang: inLang,   // _setList: tests hand in paths/index.json
     adapter: () => A, readVerses, title: id => { const x = (list || []).find(q => q.id === id); return x ? x.title : ""; }};   // 🙏 Prayers (web/prayers.js) borrow these
 })();
 if(typeof module !== "undefined") module.exports = BCPaths;

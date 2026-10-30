@@ -36,6 +36,36 @@
   },
   "anim": {
    "kind": "stars"
+  },
+  "i18n": {
+   "es": {
+    "title": "Daniel 2: la estatua y la piedra",
+    "opening_question": "Nabucodonosor soñó con una gran imagen de oro, plata, bronce, hierro y barro, y con una piedra cortada no con mano. ¿Qué mostraba el sueño, y de quién es el reino que permanece para siempre?",
+    "step_questions": [
+     "Antes del sueño: ¿quiénes eran Daniel y sus tres compañeros, cómo llegaron a Babilonia y qué les dio Dios?",
+     "¿Qué exigió el rey a los sabios, y por qué no pudieron hacerlo?",
+     "¿A quiénes acudió Daniel primero, y qué le reveló Dios en visión de noche?",
+     "¿De qué estaba hecha la gran imagen, y qué le pasó cuando la piedra la hirió?",
+     "¿Qué reinos representan los metales, y qué reino nunca será destruido? Lee Daniel 8:20-21 al lado: ¿qué reinos nombra allí el ángel?",
+     "La piedra: ¿de qué piedra hablan los Salmos e Isaías, y qué dicen de ella Jesús y Pedro?",
+     "¿Qué confesó el rey acerca del Dios de Daniel, y qué hizo justo después?",
+     "Para vivirlo: Daniel bendijo al Dios que \"quita reyes, y pone reyes\", y la piedra fue cortada \"no con mano\". ¿Quién gobierna la historia, y qué nos piden estos versículos bajo los gobernantes de hoy?"
+    ]
+   },
+   "de": {
+    "title": "Daniel 2: das Standbild und der Stein",
+    "opening_question": "Nebukadnezar träumte von einem großen Bild aus Gold, Silber, Erz, Eisen und Ton und von einem Stein, ohne Hände herabgerissen. Was zeigte der Traum, und wessen Reich bleibt ewiglich?",
+    "step_questions": [
+     "Vor dem Traum: Wer waren Daniel und seine drei Freunde, wie kamen sie nach Babel, und was gab ihnen Gott?",
+     "Was verlangte der König von den Weisen, und warum konnten sie es nicht?",
+     "Zu wem ging Daniel zuerst, und was offenbarte ihm Gott im Gesicht der Nacht?",
+     "Woraus war das große Bild gemacht, und was geschah mit ihm, als der Stein es traf?",
+     "Für welche Reiche stehen die Metalle, und welches Reich wird nimmermehr zerstört? Lies Daniel 8,20-21 daneben: Welche Reiche nennt dort der Engel?",
+     "Der Stein: Von welchem Stein reden die Psalmen und Jesaja, und was sagen Jesus und Petrus von ihm?",
+     "Was bekannte der König über Daniels Gott, und was tat er gleich danach?",
+     "Für das Leben: Daniel lobte den Gott, der \"setzt Könige ab und setzt Könige ein\", und der Stein ward \"ohne Hände\" herabgerissen. Wer regiert die Geschichte, und was verlangen diese Verse von uns unter den Herrschern von heute?"
+    ]
+   }
   }
  },
  {
@@ -82,6 +112,38 @@
    "x": 27,
    "y": 55,
    "s": 28
+  },
+  "i18n": {
+   "es": {
+    "title": "Daniel 3: el horno de fuego",
+    "opening_question": "Nabucodonosor levantó una estatua de oro y mandó que todos se postraran; tres jóvenes no lo hicieron. ¿Quiénes eran, por qué no se inclinaron, quién anduvo con ellos en el fuego, y qué nos pide eso a nosotros?",
+    "step_questions": [
+     "¿Quiénes eran Sadrach, Mesach y Abed-nego, cómo llegaron a Babilonia, y sobre qué los había puesto el rey?",
+     "¿Qué levantó Nabucodonosor, y qué se mandó hacer a todo el pueblo al oír la música?",
+     "¿Quiénes acusaron a los judíos, qué dijeron de los tres hombres, y qué les preguntó el rey?",
+     "¿Qué respondieron los tres hombres, y qué dijeron por si Dios no los libraba?",
+     "¿Por qué no se inclinaban? ¿Qué había mandado Dios acerca de otros dioses y de las imágenes, y a quién dijo Jesús que debemos adorar y servir?",
+     "¿Cuánto se calentó el horno, qué les pasó a los que los arrojaron dentro, y qué vio el rey en el fuego?",
+     "¿Qué no pudo hacerles el fuego, a quién bendijo el rey, y qué decretó?",
+     "¿Quién más no obedeció una orden contra Dios? ¿Qué hizo Daniel cuando se firmó el decreto del rey, y qué respondieron Pedro y los apóstoles al concilio?",
+     "Para vivirlo: ¿Qué nos pide esto? ¿Qué promete Dios cuando pasamos por el fuego, para qué es la prueba de fuego, y a quién se nos dice que temamos?"
+    ]
+   },
+   "de": {
+    "title": "Daniel 3: der feurige Ofen",
+    "opening_question": "Nebukadnezar ließ ein goldenes Bild aufstellen und befahl allen, niederzufallen; drei junge Männer taten es nicht. Wer waren sie, warum beugten sie sich nicht, wer ging mit ihnen im Feuer, und was verlangt das von uns?",
+    "step_questions": [
+     "Wer waren Sadrach, Mesach und Abed-Nego, wie kamen sie nach Babel, und worüber hatte der König sie gesetzt?",
+     "Was ließ Nebukadnezar aufstellen, und was sollte alles Volk tun, wenn die Musik erklang?",
+     "Wer verklagte die Juden, was sagten sie über die drei Männer, und was fragte sie der König?",
+     "Was antworteten die drei Männer, und was sagten sie für den Fall, dass Gott sie nicht errettet?",
+     "Warum beugten sie sich nicht? Was hatte Gott über andere Götter und Bildnisse geboten, und wen sollen wir nach Jesu Wort anbeten und wem dienen?",
+     "Wie heiß war der Ofen, was geschah mit den Männern, die sie hineinwarfen, und was sah der König im Feuer?",
+     "Was konnte das Feuer ihnen nicht anhaben, wen pries der König, und was gebot er?",
+     "Wer gehorchte sonst einem Befehl gegen Gott nicht? Was tat Daniel, als das Gebot des Königs unterschrieben war, und was antworteten Petrus und die Apostel dem Rat?",
+     "Für das Leben: Was verlangt das von uns? Was verheißt Gott, wenn wir durchs Feuer gehen, wozu dient die Feuerprobe, und wen sollen wir fürchten?"
+    ]
+   }
   }
  },
  {
@@ -124,6 +186,36 @@
   },
   "anim": {
    "kind": "stars"
+  },
+  "i18n": {
+   "es": {
+    "title": "Daniel 4: el árbol y el rey humillado",
+    "opening_question": "Nabucodonosor soñó con un gran árbol cortado hasta la cepa. Doce meses después se jactó de Babilonia y perdió el juicio y el trono, hasta que alzó los ojos al cielo. ¿Quién gobierna el reino de los hombres, y qué hace Dios con los soberbios?",
+    "step_questions": [
+     "¿Quién escribe este capítulo, y a quién? ¿Qué dice primero del reino de Dios, y a quién mandó llamar cuando los sabios no pudieron declarar su sueño?",
+     "¿Qué vio el rey en su sueño? ¿Qué le pasó al árbol, qué quedó en la tierra, y por qué fue decretado?",
+     "¿Cómo se sintió Daniel al oír el sueño? ¿Quién es el árbol, qué significa la cepa, y qué consejo dio Daniel al rey?",
+     "¿Cuánto esperó Dios? ¿Qué dijo el rey al pasearse por su palacio, y qué pasó cuando la palabra aún estaba en su boca?",
+     "¿Qué hizo el rey al fin del tiempo, qué le fue devuelto, y qué dice ahora de Dios y de la soberbia?",
+     "¿Qué dice la Escritura que va delante de la caída? ¿Qué le dijo Daniel después al hijo de Nabucodonosor acerca de su padre, y qué les pasó a Herodes y al rico insensato cuando tomaron la gloria para sí?",
+     "¿Quién pone reyes y los quita? Lee lo que dicen Daniel, el salmista, María y Pablo sobre de dónde viene el poder.",
+     "Para vivirlo: ¿Qué nos pide esto? ¿A quién resiste Dios y a quién da gracia, qué pide de nosotros, y cómo se humilló Cristo?"
+    ]
+   },
+   "de": {
+    "title": "Daniel 4: der Baum und der gedemütigte König",
+    "opening_question": "Nebukadnezar träumte von einem großen Baum, der bis auf den Stock umgehauen wurde. Zwölf Monate später rühmte er sich Babels und verlor Verstand und Thron, bis er seine Augen zum Himmel aufhob. Wer regiert über der Menschen Königreiche, und was tut Gott mit den Stolzen?",
+    "step_questions": [
+     "Wer schreibt dieses Kapitel, und an wen? Was sagt er zuerst über Gottes Reich, und wen ließ er holen, als die Weisen seinen Traum nicht deuten konnten?",
+     "Was sah der König in seinem Traum? Was geschah mit dem Baum, was blieb in der Erde, und warum war es beschlossen?",
+     "Wie ging es Daniel, als er den Traum hörte? Wer ist der Baum, was bedeutet der Stock, und welchen Rat gab Daniel dem König?",
+     "Wie lange wartete Gott? Was sagte der König, als er auf seiner Burg umherging, und was geschah, als das Wort noch in seinem Mund war?",
+     "Was tat der König am Ende der Zeit, was wurde ihm wiedergegeben, und was sagt er nun über Gott und über den Stolz?",
+     "Was sagt die Schrift, kommt vor dem Fall? Was sagte Daniel später dem Sohn Nebukadnezars über seinen Vater, und was geschah mit Herodes und dem reichen Narren, als sie die Ehre für sich nahmen?",
+     "Wer setzt Könige ein und ab? Lies, was Daniel, der Psalmist, Maria und Paulus darüber sagen, woher die Macht kommt.",
+     "Für das Leben: Was verlangt das von uns? Wem widersteht Gott und wem gibt er Gnade, was verlangt er von uns, und wie hat sich Christus erniedrigt?"
+    ]
+   }
   }
  },
  {
@@ -165,6 +257,36 @@
   },
   "anim": {
    "kind": "stars"
+  },
+  "i18n": {
+   "es": {
+    "title": "Daniel 5: la escritura en la pared",
+    "opening_question": "Belsasar hizo un gran banquete, bebió en los vasos del templo de Dios y alabó a dioses de oro y de plata. Una mano escribió en la pared: MENE, MENE, TEKEL, UPHARSIN. ¿Qué significaba, por qué fue hallado falto el rey, y qué nos pide esto a nosotros?",
+    "step_questions": [
+     "¿Qué hizo Belsasar en su banquete? ¿En qué vasos bebió, de dónde venían, y a qué dioses alabaron?",
+     "¿Qué apareció en aquella misma hora, y dónde escribió? ¿Qué le pasó al rey, y qué no pudieron hacer los sabios?",
+     "¿Quién se acordó de Daniel, y qué dijo de él? ¿Qué le prometió el rey a Daniel, y qué rango le ofreció?",
+     "¿Qué dijo Daniel de los regalos? ¿Qué le recordó al rey acerca de Nabucodonosor, y qué había hecho Belsasar aunque sabía todo esto?",
+     "¿Qué estaba escrito en la pared, y qué significa cada palabra?",
+     "¿Qué hizo Belsasar por Daniel, y qué pasó aquella misma noche? ¿Quién tomó el reino?",
+     "¿Qué habían dicho Isaías y Jeremías del banquete de Babilonia? ¿Qué dicen Proverbios y Ana sobre cómo nos pesa Dios?",
+     "Para vivirlo: ¿qué pide Moisés que Dios nos enseñe sobre nuestros días? ¿A qué nos guía la bondad de Dios, y qué recibirá cada uno de nosotros?"
+    ]
+   },
+   "de": {
+    "title": "Daniel 5: die Schrift an der Wand",
+    "opening_question": "Belsazer hielt ein großes Mahl, trank aus den Gefäßen des Tempels Gottes und lobte goldene und silberne Götter. Eine Hand schrieb an die Wand: Mene, mene, Tekel, U-pharsin. Was bedeutete es, warum wurde der König zu leicht gefunden, und was verlangt das von uns?",
+    "step_questions": [
+     "Was tat Belsazer bei seinem Mahl? Aus wessen Gefäßen trank er, woher kamen sie, und welche Götter lobten sie?",
+     "Was erschien zu derselben Stunde, und wohin schrieb es? Was geschah mit dem König, und was konnten die Weisen nicht?",
+     "Wer erinnerte sich an Daniel, und was sagte sie über ihn? Was versprach der König Daniel, und welchen Rang bot er ihm an?",
+     "Was sagte Daniel zu den Geschenken? Woran erinnerte er den König über Nebukadnezar, und was hatte Belsazer getan, obwohl er das alles wusste?",
+     "Was stand an der Wand, und was bedeutet jedes Wort?",
+     "Was tat Belsazer für Daniel, und was geschah in derselben Nacht? Wer nahm das Reich?",
+     "Was hatten Jesaja und Jeremia über Babels Fest gesagt? Was sagen die Sprüche und Hanna darüber, wie Gott uns wägt?",
+     "Für das Leben: Was sollen wir nach Moses Gebet über unsere Tage lernen? Wozu leitet uns Gottes Güte, und was wird jeder von uns empfangen?"
+    ]
+   }
   }
  },
  {

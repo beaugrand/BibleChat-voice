@@ -740,5 +740,145 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "Daniel 2: la estatua y la piedra",
+   "opening_question": "Nabucodonosor soñó con una gran imagen de oro, plata, bronce, hierro y barro, y con una piedra cortada no con mano. ¿Qué mostraba el sueño, y de quién es el reino que permanece para siempre?",
+   "steps": [
+    {
+     "question": "Antes del sueño: ¿quiénes eran Daniel y sus tres compañeros, cómo llegaron a Babilonia y qué les dio Dios?",
+     "facts": [
+      "Daniel llegó a Babilonia cuando Nabucodonosor sitió Jerusalén \"EN el año tercero del reinado de Joacim\". El príncipe de los eunucos dio nombres nuevos a los cuatro: \"Beltsasar\", \"Sadrach\", \"Mesach\" y \"Abed-nego\".",
+      "\"dióles Dios conocimiento é inteligencia en todas letras y ciencia\", y el rey los halló \"diez veces mejores\" que todos los magos."
+     ]
+    },
+    {
+     "question": "¿Qué exigió el rey a los sabios, y por qué no pudieron hacerlo?",
+     "facts": [
+      "Donde los caldeos responden al rey \"en lengua aramea\" (Daniel 2:4), el libro mismo pasa del hebreo al arameo, y sigue en arameo hasta el capítulo 7.",
+      "El rey pedía el sueño mismo, no solo su significado: \"decidme el sueño, para que yo entienda que me podéis mostrar su declaración\"."
+     ]
+    },
+    {
+     "question": "¿A quiénes acudió Daniel primero, y qué le reveló Dios en visión de noche?",
+     "facts": [
+      "La palabra aramea para \"misterio\" es raz. Strong la explica como «un misterio»."
+     ]
+    },
+    {
+     "question": "¿De qué estaba hecha la gran imagen, y qué le pasó cuando la piedra la hirió?",
+     "facts": [
+      "La palabra para \"imagen\" es tselem. Strong la explica como «una figura idolátrica».",
+      "La cabeza \"de fino oro\", los pechos y los brazos \"de plata\", el vientre y los muslos \"de metal\", las piernas \"de hierro\", los pies \"en parte de hierro, y en parte de barro cocido\".",
+      "\"fué cortada\" traduce gezar, «cortar de la cantera». El texto no dice quién cortó la piedra, solo que fue \"no con mano\"."
+     ]
+    },
+    {
+     "question": "¿Qué reinos representan los metales, y qué reino nunca será destruido? Lee Daniel 8:20-21 al lado: ¿qué reinos nombra allí el ángel?",
+     "facts": [
+      "La palabra para \"reino\" es malku, «dominio». Se usa para cada reino de la imagen y para el reino que levanta el Dios del cielo.",
+      "\"desmenuzó\" traduce deqaq, «desmenuzar o triturar».",
+      "Otros versículos sobre los reinos que caen y el reinado que permanece (las referencias cruzadas que la TS2009 da en el versículo 44).",
+      "El capítulo 2 nombra solo la cabeza de oro: \"tú eres aquella cabeza de oro\". En Daniel 8 el ángel nombra dos reinos: \"los reyes de Media y de Persia\" y \"el rey de Javán\" (Grecia). Dejar que un capítulo explique otro lleva a la serie del Espejo."
+     ]
+    },
+    {
+     "question": "La piedra: ¿de qué piedra hablan los Salmos e Isaías, y qué dicen de ella Jesús y Pedro?",
+     "facts": [
+      "Jesús cita el Salmo 118:22, \"La piedra que desecharon los que edificaban\", y dice: \"el que cayere sobre esta piedra, será quebrantado; y sobre quien ella cayere, le desmenuzará\".",
+      "Pedro une Isaías 28:16 y el Salmo 118:22: \"la principal piedra del ángulo, escogida, preciosa\" y \"Piedra de tropiezo, y roca de escándalo\"."
+     ]
+    },
+    {
+     "question": "¿Qué confesó el rey acerca del Dios de Daniel, y qué hizo justo después?",
+     "facts": [
+      "En 2:47 el rey dice que \"el Dios vuestro es Dios de dioses, y el Señor de los reyes\"; en el siguiente versículo de la historia, 3:1, \"hizo una estatua de oro\"."
+     ]
+    },
+    {
+     "question": "Para vivirlo: Daniel bendijo al Dios que \"quita reyes, y pone reyes\", y la piedra fue cortada \"no con mano\". ¿Quién gobierna la historia, y qué nos piden estos versículos bajo los gobernantes de hoy?",
+     "facts": [
+      "Pablo pide oración \"Por los reyes y por todos los que están en eminencia, para que vivamos quieta y reposadamente\". Hebreos habla del \"reino inmóvil\"."
+     ]
+    }
+   ],
+   "remember": [
+    "Daniel fue primero a sus compañeros, para pedir juntos misericordia del Dios del cielo.",
+    "\"hay un Dios en los cielos, el cual revela los misterios\"",
+    "Oro, plata, bronce, hierro y barro: todo desmenuzado por una piedra cortada \"no con mano\".",
+    "El Dios del cielo levantará \"un reino que nunca jamás se corromperá\".",
+    "El rey confesó al Dios de Daniel, y después hizo una estatua de oro."
+   ]
+  },
+  "de": {
+   "title": "Daniel 2: das Standbild und der Stein",
+   "opening_question": "Nebukadnezar träumte von einem großen Bild aus Gold, Silber, Erz, Eisen und Ton und von einem Stein, ohne Hände herabgerissen. Was zeigte der Traum, und wessen Reich bleibt ewiglich?",
+   "steps": [
+    {
+     "question": "Vor dem Traum: Wer waren Daniel und seine drei Freunde, wie kamen sie nach Babel, und was gab ihnen Gott?",
+     "facts": [
+      "Daniel kam nach Babel, als Nebukadnezar Jerusalem belagerte, \"Im dritten Jahr des Reiches Jojakims\". Der oberste Kämmerer gab den vieren neue Namen: \"Beltsazar\", \"Sadrach\", \"Mesach\" und \"Abed-Nego\".",
+      "\"diesen vier Knaben gab Gott Kunst und Verstand in allerlei Schrift und Weisheit\", und der König fand sie \"zehnmal klüger\" als alle Sternseher und Weisen."
+     ]
+    },
+    {
+     "question": "Was verlangte der König von den Weisen, und warum konnten sie es nicht?",
+     "facts": [
+      "Wo die Chaldäer dem König \"auf chaldäisch\" antworten (Daniel 2,4), wechselt das Buch selbst vom Hebräischen ins Aramäische und bleibt aramäisch bis Kapitel 7.",
+      "Der König verlangte den Traum selbst, nicht nur seine Deutung: \"so sagt mir den Traum, so kann ich merken, daß ihr auch die Deutung trefft\"."
+     ]
+    },
+    {
+     "question": "Zu wem ging Daniel zuerst, und was offenbarte ihm Gott im Gesicht der Nacht?",
+     "facts": [
+      "Das aramäische Wort für das \"verborgene Ding\" ist raz. Strong erklärt es als »ein Geheimnis«."
+     ]
+    },
+    {
+     "question": "Woraus war das große Bild gemacht, und was geschah mit ihm, als der Stein es traf?",
+     "facts": [
+      "Das Wort für \"Bild\" ist tselem. Strong erklärt es als »ein Götzenbild«.",
+      "Das Haupt \"von feinem Golde\", Brust und Arme \"von Silber\", Bauch und Lenden \"von Erz\", die Schenkel \"Eisen\", die Füße \"eines Teils Eisen und eines Teils Ton\".",
+      "\"herabgerissen\" steht für gezar, »aus dem Steinbruch hauen«. Der Text sagt nicht, wer den Stein losriss, nur dass es \"ohne Hände\" geschah."
+     ]
+    },
+    {
+     "question": "Für welche Reiche stehen die Metalle, und welches Reich wird nimmermehr zerstört? Lies Daniel 8,20-21 daneben: Welche Reiche nennt dort der Engel?",
+     "facts": [
+      "Das Wort für \"Königreich\" ist malku, »Herrschaft«. Es steht für jedes Reich des Bildes und für das Reich, das der Gott des Himmels aufrichtet.",
+      "\"zermalmte\" steht für deqaq, »zerbröckeln, zerreiben«.",
+      "Weitere Verse über die Reiche, die fallen, und die Herrschaft, die bleibt (die Querverweise, die die TS2009 bei Vers 44 nennt).",
+      "Kapitel 2 nennt nur das goldene Haupt: \"Du bist das goldene Haupt\". In Daniel 8 nennt der Engel zwei Reiche: \"die Könige in Medien und Persien\" und \"der König in Griechenland\". Wer ein Kapitel durch ein anderes erklären lässt, kommt zur Spiegel-Reihe."
+     ]
+    },
+    {
+     "question": "Der Stein: Von welchem Stein reden die Psalmen und Jesaja, und was sagen Jesus und Petrus von ihm?",
+     "facts": [
+      "Jesus zitiert Psalm 118,22, \"Der Stein, den die Bauleute verworfen haben\", und sagt: \"wer auf diesen Stein fällt, der wird zerschellen; auf wen aber er fällt, den wird er zermalmen\".",
+      "Petrus verbindet Jesaja 28,16 und Psalm 118,22: \"einen auserwählten, köstlichen Eckstein\" und \"ein Stein des Anstoßens und ein Fels des Ärgernisses\"."
+     ]
+    },
+    {
+     "question": "Was bekannte der König über Daniels Gott, und was tat er gleich danach?",
+     "facts": [
+      "In 2,47 sagt der König: \"euer Gott ist ein Gott über alle Götter und ein HERR über alle Könige\"; im nächsten Vers der Geschichte, 3,1, \"ließ ein goldenes Bild machen\"."
+     ]
+    },
+    {
+     "question": "Für das Leben: Daniel lobte den Gott, der \"setzt Könige ab und setzt Könige ein\", und der Stein ward \"ohne Hände\" herabgerissen. Wer regiert die Geschichte, und was verlangen diese Verse von uns unter den Herrschern von heute?",
+     "facts": [
+      "Paulus bittet um Gebet \"für die Könige und alle Obrigkeit, auf daß wir ein ruhiges und stilles Leben führen mögen\". Der Hebräerbrief spricht von einem \"unbeweglich Reich\"."
+     ]
+    }
+   ],
+   "remember": [
+    "Daniel ging zuerst zu seinen Gefährten, um gemeinsam den Gott des Himmels um Gnade zu bitten.",
+    "\"es ist ein Gott im Himmel, der kann verborgene Dinge offenbaren\"",
+    "Gold, Silber, Erz, Eisen und Ton: alles zermalmt von einem Stein, \"ohne Hände\" herabgerissen.",
+    "Der Gott des Himmels wird \"ein Königreich aufrichten, das nimmermehr zerstört wird\".",
+    "Der König bekannte Daniels Gott und ließ danach ein goldenes Bild machen."
+   ]
+  }
  }
 }
