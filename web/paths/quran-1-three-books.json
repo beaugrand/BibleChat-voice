@@ -847,5 +847,113 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "Sesión 1: Los tres libros",
+   "opening_question": "El Corán nombra tres libros que vinieron antes de él: la Torá, los Salmos y el Evangelio. ¿Qué dice la Biblia misma de la ley que escribió Moisés, de los salmos de David y del evangelio de Jesús?",
+   "steps": [
+    {
+     "question": "El Corán dice que la Torá y el Evangelio fueron enviados antes de él. ¿Qué hizo Moisés con las palabras de la ley, y dónde se puso el libro?",
+     "facts": [
+      "La palabra hebrea torah significa «un precepto o estatuto»; la Reina-Valera la traduce \"ley\".",
+      "Sale (1734) llama a la Torá «la ley»; Pickthall (1930) conserva su nombre, «la Torá». Deuteronomio dice que Moisés la escribió \"en un libro\" y que se guardó \"al lado del arca\"."
+     ]
+    },
+    {
+     "question": "El Corán dice que los Salmos fueron dados a David. ¿Qué dice David de las palabras que habló, y qué dice el Salmo 1 de la ley?",
+     "facts": [
+      "\"suave en cánticos\" en 2 Samuel 23:1 viene de zamir: «un canto para acompañar con música de instrumentos».",
+      "David dice: \"su palabra ha sido en mi lengua\": el espíritu de Jehová habló por él."
+     ]
+    },
+    {
+     "question": "El Corán dice que la Torá tiene «guía y luz». ¿Cómo llama la Biblia a la palabra de Dios y a su ley?",
+     "facts": [
+      "El Salmo 119:105 usa ner, «una lámpara», y or, luz: \"Lámpara es á mis pies tu palabra\".",
+      "El Corán de Sale dice que la ley contiene «dirección y luz»; Proverbios 6:23 dice: \"la enseñanza luz\"."
+     ]
+    },
+    {
+     "question": "El Corán dice que a Jesús le fue dado el Evangelio, «en el cual hay guía y luz». ¿Cómo empieza Marcos, y qué predicaba Jesús?",
+     "facts": [
+      "Evangelio es euangelion: «un buen mensaje». Marcos lo usa para el mensaje acerca de Jesús, \"evangelio de Jesucristo, Hijo de Dios\", y para lo que Jesús predicaba, \"el evangelio del reino de Dios\".",
+      "En el Corán el Evangelio (Inyil) es un libro dado a Jesús. En el Nuevo Testamento \"el evangelio\" es la buena noticia que Jesús predicó y la buena noticia acerca de Él; los cuatro relatos de su vida se llamaron Evangelios más tarde."
+     ]
+    },
+    {
+     "question": "Después de resucitar, Jesús nombró las partes de la Escritura que hablan de Él. ¿Qué tres nombra, y qué abrió?",
+     "facts": [
+      "El Corán nombra la Torá, los Salmos y el Evangelio. Jesús nombra \"la ley de Moisés, y en los profetas, y en los salmos\": las Escrituras hebreas en tres partes.",
+      "Salmo es psalmos: «una pieza de música fija, es decir, una oda sagrada»; puede significar «el libro de los Salmos»."
+     ]
+    },
+    {
+     "question": "Para vivirlo: el Salmo 119 llama a la palabra \"Lámpara es á mis pies\". ¿Qué nos piden estos versículos frente a las Escrituras que tenemos?",
+     "facts": [
+      "\"de día y de noche meditarás en él\"; \"sed hacedores de la palabra, y no tan solamente oidores\"."
+     ]
+    }
+   ],
+   "remember": [
+    "Moisés escribió la ley, y fue puesta \"al lado del arca del pacto\".",
+    "\"Lámpara es á mis pies tu palabra\"",
+    "\"PRINCIPIO del evangelio de Jesucristo, Hijo de Dios\"",
+    "Jesús nombró \"la ley de Moisés, y en los profetas, y en los salmos\" como lo escrito de Él."
+   ]
+  },
+  "de": {
+   "title": "Teil 1: Die drei Bücher",
+   "opening_question": "Der Koran nennt drei Bücher, die vor ihm kamen: die Tora, die Psalmen und das Evangelium. Was sagt die Bibel selbst über das Gesetz, das Mose schrieb, die Psalmen Davids und das Evangelium Jesu?",
+   "steps": [
+    {
+     "question": "Der Koran sagt, die Tora und das Evangelium seien vor ihm herabgesandt worden. Was tat Mose mit den Worten des Gesetzes, und wohin wurde das Buch gelegt?",
+     "facts": [
+      "Das hebräische Wort torah bedeutet »eine Vorschrift oder Satzung«; Luther übersetzt es mit \"Gesetz\".",
+      "Sale (1734) nennt die Tora »das Gesetz«; Pickthall (1930) behält ihren Namen, »die Tora«. Das 5. Buch Mose sagt, Mose schrieb sie \"in ein Buch\", und sie wurde \"an die Seite der Lade\" gelegt."
+     ]
+    },
+    {
+     "question": "Der Koran sagt, die Psalmen seien David gegeben worden. Was sagt David über die Worte, die er sprach, und was sagt Psalm 1 über das Gesetz?",
+     "facts": [
+      "\"Psalmen\" in 2. Samuel 23,1 steht für zamir: »ein Lied, das mit Instrumenten begleitet wird«.",
+      "David sagt: \"seine Rede ist auf meiner Zunge\": der Geist des HERRN hat durch ihn geredet."
+     ]
+    },
+    {
+     "question": "Der Koran sagt, die Tora enthalte »Rechtleitung und Licht«. Wie nennt die Bibel Gottes Wort und sein Gesetz?",
+     "facts": [
+      "Psalm 119,105 gebraucht ner, »eine Leuchte«, und or, Licht: \"Dein Wort ist meine Fußes Leuchte\".",
+      "Sales Koran sagt, das Gesetz enthalte »Weisung und Licht«; Sprüche 6,23 sagt: \"das Gesetz ein Licht\"."
+     ]
+    },
+    {
+     "question": "Der Koran sagt, Jesus sei das Evangelium gegeben worden, »darin Rechtleitung und Licht ist«. Wie beginnt Markus, und was predigte Jesus?",
+     "facts": [
+      "Evangelium ist euangelion: »eine gute Botschaft«. Markus gebraucht es für die Botschaft über Jesus, \"des Evangeliums von Jesus Christus, dem Sohn Gottes\", und für das, was Jesus predigte, \"das Evangelium vom Reich Gottes\".",
+      "Im Koran ist das Evangelium (Indschil) ein Buch, das Jesus gegeben wurde. Im Neuen Testament ist \"das Evangelium\" die gute Nachricht, die Jesus predigte, und die gute Nachricht über Ihn; die vier Berichte über sein Leben wurden später Evangelien genannt."
+     ]
+    },
+    {
+     "question": "Nach seiner Auferstehung nannte Jesus die Teile der Schrift, die von Ihm reden. Welche drei nennt Er, und was öffnete Er?",
+     "facts": [
+      "Der Koran nennt Tora, Psalmen und Evangelium. Jesus nennt \"im Gesetz Mose's, in den Propheten und in den Psalmen\": die hebräischen Schriften in drei Teilen.",
+      "Psalm ist psalmos: »ein festes Musikstück, das heißt ein heiliges Lied«; es kann »das Buch der Psalmen« bedeuten."
+     ]
+    },
+    {
+     "question": "Für das Leben: Psalm 119 nennt das Wort \"meine Fußes Leuchte\". Was verlangen diese Verse von uns gegenüber den Schriften, die wir haben?",
+     "facts": [
+      "\"betrachte es Tag und Nacht\"; \"Seid aber Täter des Worts und nicht Hörer allein\"."
+     ]
+    }
+   ],
+   "remember": [
+    "Mose schrieb das Gesetz, und es wurde \"an die Seite der Lade des Bundes\" gelegt.",
+    "\"Dein Wort ist meine Fußes Leuchte\"",
+    "\"Dies ist der Anfang des Evangeliums von Jesus Christus, dem Sohn Gottes\"",
+    "Jesus nannte das, was von Ihm geschrieben ist, \"im Gesetz Mose's, in den Propheten und in den Psalmen\"."
+   ]
+  }
  }
 }

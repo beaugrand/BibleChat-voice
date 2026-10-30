@@ -1402,6 +1402,32 @@
    "title": "What does the Quran say about the Bible?",
    "of": 8,
    "session": 1
+  },
+  "i18n": {
+   "es": {
+    "title": "Sesión 1: Los tres libros",
+    "opening_question": "El Corán nombra tres libros que vinieron antes de él: la Torá, los Salmos y el Evangelio. ¿Qué dice la Biblia misma de la ley que escribió Moisés, de los salmos de David y del evangelio de Jesús?",
+    "step_questions": [
+     "El Corán dice que la Torá y el Evangelio fueron enviados antes de él. ¿Qué hizo Moisés con las palabras de la ley, y dónde se puso el libro?",
+     "El Corán dice que los Salmos fueron dados a David. ¿Qué dice David de las palabras que habló, y qué dice el Salmo 1 de la ley?",
+     "El Corán dice que la Torá tiene «guía y luz». ¿Cómo llama la Biblia a la palabra de Dios y a su ley?",
+     "El Corán dice que a Jesús le fue dado el Evangelio, «en el cual hay guía y luz». ¿Cómo empieza Marcos, y qué predicaba Jesús?",
+     "Después de resucitar, Jesús nombró las partes de la Escritura que hablan de Él. ¿Qué tres nombra, y qué abrió?",
+     "Para vivirlo: el Salmo 119 llama a la palabra \"Lámpara es á mis pies\". ¿Qué nos piden estos versículos frente a las Escrituras que tenemos?"
+    ]
+   },
+   "de": {
+    "title": "Teil 1: Die drei Bücher",
+    "opening_question": "Der Koran nennt drei Bücher, die vor ihm kamen: die Tora, die Psalmen und das Evangelium. Was sagt die Bibel selbst über das Gesetz, das Mose schrieb, die Psalmen Davids und das Evangelium Jesu?",
+    "step_questions": [
+     "Der Koran sagt, die Tora und das Evangelium seien vor ihm herabgesandt worden. Was tat Mose mit den Worten des Gesetzes, und wohin wurde das Buch gelegt?",
+     "Der Koran sagt, die Psalmen seien David gegeben worden. Was sagt David über die Worte, die er sprach, und was sagt Psalm 1 über das Gesetz?",
+     "Der Koran sagt, die Tora enthalte »Rechtleitung und Licht«. Wie nennt die Bibel Gottes Wort und sein Gesetz?",
+     "Der Koran sagt, Jesus sei das Evangelium gegeben worden, »darin Rechtleitung und Licht ist«. Wie beginnt Markus, und was predigte Jesus?",
+     "Nach seiner Auferstehung nannte Jesus die Teile der Schrift, die von Ihm reden. Welche drei nennt Er, und was öffnete Er?",
+     "Für das Leben: Psalm 119 nennt das Wort \"meine Fußes Leuchte\". Was verlangen diese Verse von uns gegenüber den Schriften, die wir haben?"
+    ]
+   }
   }
  },
  {
@@ -1445,6 +1471,34 @@
    "title": "What does the Quran say about the Bible?",
    "of": 8,
    "session": 2
+  },
+  "i18n": {
+   "es": {
+    "title": "Sesión 2: Confirmar lo que vino antes",
+    "opening_question": "El Corán se llama a sí mismo confirmación de la Escritura anterior y guardián sobre ella. La Biblia da sus propias pruebas para cualquier mensaje posterior. ¿Cuáles son esas pruebas, y cómo las usarías?",
+    "step_questions": [
+     "El Corán dice que confirma la Escritura anterior y que es «guardián sobre ella». ¿Qué prueba da Isaías para toda voz que dice hablar de parte de Dios?",
+     "El Corán pide a los hijos de Israel que crean lo que confirma «lo que ya poseéis». ¿Con qué prueba mandó Moisés a Israel juzgar a un profeta, aun uno cuya señal se cumple?",
+     "Moisés prometió un profeta \"como tú\". ¿Cómo sabe Israel cuál palabra no ha hablado Jehová, y a quién aplica Pedro la promesa?",
+     "Pablo escribe de \"otro evangelio\". ¿Qué dice si aun un ángel del cielo anuncia uno distinto?",
+     "¿Cómo dice Juan que se prueben los espíritus, y qué debe confesar un espíritu?",
+     "Jesús dijo que no vino a abrogar la ley. ¿Qué dice que pasará con la letra más pequeña de ella?",
+     "Para vivirlo: Juan dice que probemos los espíritus si son de Dios. ¿Cómo dicen estos versículos que probemos lo que oímos?"
+    ]
+   },
+   "de": {
+    "title": "Teil 2: Bestätigen, was vorher kam",
+    "opening_question": "Der Koran nennt sich eine Bestätigung der Schrift vor ihm und einen Wächter über sie. Die Bibel gibt ihre eigenen Prüfsteine für jede spätere Botschaft. Welche sind das, und wie würdest du sie gebrauchen?",
+    "step_questions": [
+     "Der Koran sagt, er bestätige die Schrift vor ihm und sei »ein Wächter über sie«. Welchen Prüfstein gibt Jesaja für jede Stimme, die behauptet, für Gott zu reden?",
+     "Der Koran bittet die Kinder Israel, an das zu glauben, was bestätigt, »was ihr schon besitzt«. Nach welchem Prüfstein sollte Israel nach Mose einen Propheten beurteilen, selbst einen, dessen Zeichen eintrifft?",
+     "Mose verhieß einen Propheten \"wie du bist\". Woran erkennt Israel ein Wort, das der HERR nicht geredet hat, und auf wen bezieht Petrus die Verheißung?",
+     "Paulus schreibt von einem anderen Evangelium. Was sagt er, wenn selbst ein Engel vom Himmel ein anderes predigt?",
+     "Wie soll man nach Johannes die Geister prüfen, und was muss ein Geist bekennen?",
+     "Jesus sagte, Er sei nicht gekommen, das Gesetz aufzulösen. Was wird nach seinem Wort mit dem kleinsten Buchstaben geschehen?",
+     "Für das Leben: Johannes sagt, wir sollen die Geister prüfen, ob sie von Gott sind. Wie sollen wir nach diesen Versen prüfen, was wir hören?"
+    ]
+   }
   }
  },
  {
@@ -1491,6 +1545,32 @@
    "title": "What does the Quran say about the Bible?",
    "of": 8,
    "session": 3
+  },
+  "i18n": {
+   "es": {
+    "title": "Sesión 3: «Que la gente del Evangelio juzgue por él»",
+    "opening_question": "El Corán dice a los cristianos que juzguen por el Evangelio, y dice a Mahoma que pregunte a los que leían la Escritura antes de él. También dice que nadie puede cambiar las palabras de Dios. ¿Qué dice la Biblia de sus propias palabras, de cómo fueron escritas, y de si permanecen?",
+    "step_questions": [
+     "El Corán dice: «Que la gente del Evangelio juzgue por lo que Alá ha revelado en él». ¿Para qué dice Juan que fue escrito su Evangelio?",
+     "El Corán dice a Mahoma que, si duda, «pregunte a los que leen la Escritura (que fue) antes de ti». ¿Cómo dice Lucas que se compuso su Evangelio?",
+     "El Corán dice: «No hay quien pueda cambiar sus palabras». ¿Qué dice la Biblia de la palabra de Dios y de las palabras de Jesús?",
+     "Pedro cita Isaías 40. ¿Qué palabra dice que permanece para siempre, y cuál es esa palabra?",
+     "El rey Joacim quemó el rollo de Jeremías. ¿Qué le dijo Dios a Jeremías que hiciera, y qué se escribió en el nuevo rollo?",
+     "Para vivirlo: Juan escribió \"para que creáis que Jesús es el Cristo\". ¿Qué piden estos versículos al que lee el Evangelio?"
+    ]
+   },
+   "de": {
+    "title": "Teil 3: »Die Leute des Evangeliums sollen danach richten«",
+    "opening_question": "Der Koran sagt den Christen, sie sollen nach dem Evangelium richten, und sagt Mohammed, er solle die fragen, die vor ihm die Schrift lasen. Er sagt auch, niemand könne Gottes Worte ändern. Was sagt die Bibel über ihre eigenen Worte, wie sie geschrieben wurden und ob sie bleiben?",
+    "step_questions": [
+     "Der Koran sagt: »Die Leute des Evangeliums sollen nach dem richten, was Allah darin offenbart hat«. Wozu wurde das Johannesevangelium nach Johannes geschrieben?",
+     "Der Koran sagt Mohammed, er solle, wenn er zweifelt, »die fragen, die die Schrift (die) vor dir (war) lesen«. Wie entstand das Lukasevangelium nach Lukas?",
+     "Der Koran sagt: »Niemand kann seine Worte ändern«. Was sagt die Bibel über Gottes Wort und die Worte Jesu?",
+     "Petrus zitiert Jesaja 40. Welches Wort bleibt nach ihm in Ewigkeit, und was ist dieses Wort?",
+     "König Jojakim verbrannte die Schriftrolle Jeremias. Was sollte Jeremia nach Gottes Wort tun, und was kam in das neue Buch?",
+     "Für das Leben: Johannes schrieb, \"daß ihr glaubet, Jesus sei Christus\". Was verlangen diese Verse von dem, der das Evangelium liest?"
+    ]
+   }
   }
  },
  {
@@ -1534,6 +1614,32 @@
    "title": "What does the Quran say about the Bible?",
    "of": 8,
    "session": 4
+  },
+  "i18n": {
+   "es": {
+    "title": "Sesión 4: Los versículos de las «palabras cambiadas»",
+    "opening_question": "Algunos versículos del Corán dicen que hay quienes «cambian las palabras de su contexto» o escriben la Escritura con sus propias manos. Los eruditos musulmanes lo leen de dos maneras. ¿Qué dice la Biblia misma de añadir, quitar o torcer la palabra de Dios?",
+    "step_questions": [
+     "El Corán dice que un grupo «escuchaba la palabra de Alá y después la cambiaba». ¿Qué dice Jeremías de los escribas de su tiempo?",
+     "El Corán advierte a los que escriben la Escritura con sus propias manos y dicen que es de Dios. ¿Qué manda Moisés sobre añadir a la palabra de Dios, y qué añade Proverbios?",
+     "El Corán dice que algunos «cambian las palabras de su contexto». ¿Qué dice Pablo que hacen muchos con la palabra de Dios, y qué dice Pedro que hacen los indoctos con las cartas de Pablo?",
+     "¿Qué advierte el último capítulo de la Biblia a cualquiera que añada o quite de las palabras del libro?",
+     "Pablo dice que a los judíos les fue confiada \"la palabra de Dios\". Si algunos no creyeron, ¿hace eso que falle la fidelidad de Dios?",
+     "Para vivirlo: Pablo dice \"sea Dios verdadero, mas todo hombre mentiroso\". ¿Cómo debemos manejar nosotros la palabra de Dios, según estos versículos?"
+    ]
+   },
+   "de": {
+    "title": "Teil 4: Die Verse von den »veränderten Worten«",
+    "opening_question": "Einige Verse des Korans sagen, Leute »verdrehen die Worte von ihrer Stelle« oder schreiben die Schrift mit eigenen Händen. Muslimische Gelehrte lesen das auf zwei Weisen. Was sagt die Bibel selbst über das Hinzufügen, Wegnehmen oder Verdrehen von Gottes Wort?",
+    "step_questions": [
+     "Der Koran sagt, eine Gruppe »hörte das Wort Allahs und veränderte es dann«. Was sagt Jeremia über die Schriftgelehrten seiner Zeit?",
+     "Der Koran warnt die, die die Schrift mit eigenen Händen schreiben und sagen, sie sei von Gott. Was gebietet Mose über das Hinzufügen zu Gottes Wort, und was fügen die Sprüche hinzu?",
+     "Der Koran sagt, manche »verdrehen die Worte von ihrer Stelle«. Was tun nach Paulus viele mit dem Wort Gottes, und was tun nach Petrus die Ungelehrigen mit den Briefen des Paulus?",
+     "Wovor warnt das letzte Kapitel der Bibel jeden, der zu den Worten des Buches etwas hinzufügt oder davon wegnimmt?",
+     "Paulus sagt, den Juden sei vertraut worden, \"was Gott geredet hat\". Wenn manche nicht glaubten, hört dann Gottes Treue auf?",
+     "Für das Leben: Paulus sagt, \"daß Gott sei wahrhaftig und alle Menschen Lügner\". Wie sollen wir nach diesen Versen selbst mit Gottes Wort umgehen?"
+    ]
+   }
   }
  },
  {

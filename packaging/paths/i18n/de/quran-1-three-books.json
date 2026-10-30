@@ -1,0 +1,41 @@
+{
+ "title": "Teil 1: Die drei Bücher",
+ "opening_question": "Der Koran nennt drei Bücher, die vor ihm kamen: die Tora, die Psalmen und das Evangelium. Was sagt die Bibel selbst über das Gesetz, das Mose schrieb, die Psalmen Davids und das Evangelium Jesu?",
+ "steps": [
+  {"question": "Der Koran sagt, die Tora und das Evangelium seien vor ihm herabgesandt worden. Was tat Mose mit den Worten des Gesetzes, und wohin wurde das Buch gelegt?",
+   "facts": [
+    "Das hebräische Wort torah bedeutet »eine Vorschrift oder Satzung«; Luther übersetzt es mit \"Gesetz\".",
+    "Sale (1734) nennt die Tora »das Gesetz«; Pickthall (1930) behält ihren Namen, »die Tora«. Das 5. Buch Mose sagt, Mose schrieb sie \"in ein Buch\", und sie wurde \"an die Seite der Lade\" gelegt."
+   ]},
+  {"question": "Der Koran sagt, die Psalmen seien David gegeben worden. Was sagt David über die Worte, die er sprach, und was sagt Psalm 1 über das Gesetz?",
+   "facts": [
+    "\"Psalmen\" in 2. Samuel 23,1 steht für zamir: »ein Lied, das mit Instrumenten begleitet wird«.",
+    "David sagt: \"seine Rede ist auf meiner Zunge\": der Geist des HERRN hat durch ihn geredet."
+   ]},
+  {"question": "Der Koran sagt, die Tora enthalte »Rechtleitung und Licht«. Wie nennt die Bibel Gottes Wort und sein Gesetz?",
+   "facts": [
+    "Psalm 119,105 gebraucht ner, »eine Leuchte«, und or, Licht: \"Dein Wort ist meine Fußes Leuchte\".",
+    "Sales Koran sagt, das Gesetz enthalte »Weisung und Licht«; Sprüche 6,23 sagt: \"das Gesetz ein Licht\"."
+   ]},
+  {"question": "Der Koran sagt, Jesus sei das Evangelium gegeben worden, »darin Rechtleitung und Licht ist«. Wie beginnt Markus, und was predigte Jesus?",
+   "facts": [
+    "Evangelium ist euangelion: »eine gute Botschaft«. Markus gebraucht es für die Botschaft über Jesus, \"des Evangeliums von Jesus Christus, dem Sohn Gottes\", und für das, was Jesus predigte, \"das Evangelium vom Reich Gottes\".",
+    "Im Koran ist das Evangelium (Indschil) ein Buch, das Jesus gegeben wurde. Im Neuen Testament ist \"das Evangelium\" die gute Nachricht, die Jesus predigte, und die gute Nachricht über Ihn; die vier Berichte über sein Leben wurden später Evangelien genannt."
+   ]},
+  {"question": "Nach seiner Auferstehung nannte Jesus die Teile der Schrift, die von Ihm reden. Welche drei nennt Er, und was öffnete Er?",
+   "facts": [
+    "Der Koran nennt Tora, Psalmen und Evangelium. Jesus nennt \"im Gesetz Mose's, in den Propheten und in den Psalmen\": die hebräischen Schriften in drei Teilen.",
+    "Psalm ist psalmos: »ein festes Musikstück, das heißt ein heiliges Lied«; es kann »das Buch der Psalmen« bedeuten."
+   ]},
+  {"question": "Für das Leben: Psalm 119 nennt das Wort \"meine Fußes Leuchte\". Was verlangen diese Verse von uns gegenüber den Schriften, die wir haben?",
+   "facts": [
+    "\"betrachte es Tag und Nacht\"; \"Seid aber Täter des Worts und nicht Hörer allein\"."
+   ]}
+ ],
+ "remember": [
+  "Mose schrieb das Gesetz, und es wurde \"an die Seite der Lade des Bundes\" gelegt.",
+  "\"Dein Wort ist meine Fußes Leuchte\"",
+  "\"Dies ist der Anfang des Evangeliums von Jesus Christus, dem Sohn Gottes\"",
+  "Jesus nannte das, was von Ihm geschrieben ist, \"im Gesetz Mose's, in den Propheten und in den Psalmen\"."
+ ]
+}

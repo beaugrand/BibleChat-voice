@@ -865,5 +865,115 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "Sesión 3: «Que la gente del Evangelio juzgue por él»",
+   "opening_question": "El Corán dice a los cristianos que juzguen por el Evangelio, y dice a Mahoma que pregunte a los que leían la Escritura antes de él. También dice que nadie puede cambiar las palabras de Dios. ¿Qué dice la Biblia de sus propias palabras, de cómo fueron escritas, y de si permanecen?",
+   "steps": [
+    {
+     "question": "El Corán dice: «Que la gente del Evangelio juzgue por lo que Alá ha revelado en él». ¿Para qué dice Juan que fue escrito su Evangelio?",
+     "facts": [
+      "Juan da su propia razón para escribir: \"para que creáis que Jesús es el Cristo, el Hijo de Dios\".",
+      "En 5:68 Sale tiene «no os fundáis en nada, hasta que observéis la ley y el evangelio»; Pickthall, «No tenéis nada (de guía) hasta que observéis la Torá y el Evangelio»."
+     ]
+    },
+    {
+     "question": "El Corán dice a Mahoma que, si duda, «pregunte a los que leen la Escritura (que fue) antes de ti». ¿Cómo dice Lucas que se compuso su Evangelio?",
+     "facts": [
+      "Testigos de vista es autoptes: «que ve por sí mismo, es decir, un testigo ocular». La verdad aquí es asphaleia: «seguridad». Lucas escribe de los que \"lo vieron por sus ojos\".",
+      "Corán 10:94 señala a los que leían la Escritura anterior. Lucas escribió su relato en el primer siglo, más de 500 años antes del Corán: \"escribírtelas por orden, oh muy buen Teófilo\"."
+     ]
+    },
+    {
+     "question": "El Corán dice: «No hay quien pueda cambiar sus palabras». ¿Qué dice la Biblia de la palabra de Dios y de las palabras de Jesús?",
+     "facts": [
+      "Palabra es dabar: «una palabra». Isaías dice: \"la palabra del Dios nuestro permanece para siempre\"; el Corán (6:115): «No hay nada que pueda cambiar sus palabras».",
+      "Permanecer es qum: «levantarse». La misma palabra se traduce «confirmar» y «durar» en otros lugares.",
+      "Fuera de la Escritura, en la historia: los Rollos del Mar Muerto (copiados entre 250 a. C. y 68 d. C.) contienen partes de todos los libros del Antiguo Testamento menos Ester, y se conservan miles de manuscritos griegos del Nuevo Testamento, muchos más antiguos que el Corán: el Códice Sinaítico y el Códice Vaticano se copiaron en el siglo IV, unos 300 años antes de Mahoma. Cualquiera puede comparar la Biblia de hoy con ellos."
+     ]
+    },
+    {
+     "question": "Pedro cita Isaías 40. ¿Qué palabra dice que permanece para siempre, y cuál es esa palabra?",
+     "facts": [
+      "Permanece es meno: «quedarse». Pedro dice que la palabra que permanece es \"la palabra que por el evangelio os ha sido anunciada\"."
+     ]
+    },
+    {
+     "question": "El rey Joacim quemó el rollo de Jeremías. ¿Qué le dijo Dios a Jeremías que hiciera, y qué se escribió en el nuevo rollo?",
+     "facts": [
+      "Rollo es megillah: «un rollo». El rey quemó el rollo; las palabras se escribieron otra vez: \"Vuelve á tomar otro rollo\".",
+      "Las copias antiguas permiten a cualquiera revisar el texto. El Gran Rollo de Isaías de Qumrán, uno de los Rollos del Mar Muerto, se copió en el siglo II a. C., más de 700 años antes del Corán. Contiene los 66 capítulos de Isaías, y su texto es muy cercano al hebreo del que se traducen las Biblias.",
+      "El Códice Sinaítico, copiado en el siglo IV d. C., contiene el Nuevo Testamento entero. Mahoma murió en 632. Jesús dijo: \"mis palabras no pasarán\"."
+     ]
+    },
+    {
+     "question": "Para vivirlo: Juan escribió \"para que creáis que Jesús es el Cristo\". ¿Qué piden estos versículos al que lee el Evangelio?",
+     "facts": [
+      "\"la fe es por el oir; y el oir por la palabra de Dios\"; \"El que oye mi palabra, y cree al que me ha enviado, tiene vida eterna\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"Estas empero son escritas, para que creáis que Jesús es el Cristo, el Hijo de Dios\"",
+    "Lucas escribió de los que \"lo vieron por sus ojos\".",
+    "\"la palabra del Dios nuestro permanece para siempre\"; \"mis palabras no pasarán\".",
+    "Cuando el rey quemó el rollo, Jeremías escribió \"otro rollo\"."
+   ]
+  },
+  "de": {
+   "title": "Teil 3: »Die Leute des Evangeliums sollen danach richten«",
+   "opening_question": "Der Koran sagt den Christen, sie sollen nach dem Evangelium richten, und sagt Mohammed, er solle die fragen, die vor ihm die Schrift lasen. Er sagt auch, niemand könne Gottes Worte ändern. Was sagt die Bibel über ihre eigenen Worte, wie sie geschrieben wurden und ob sie bleiben?",
+   "steps": [
+    {
+     "question": "Der Koran sagt: »Die Leute des Evangeliums sollen nach dem richten, was Allah darin offenbart hat«. Wozu wurde das Johannesevangelium nach Johannes geschrieben?",
+     "facts": [
+      "Johannes nennt seinen eigenen Grund zu schreiben: \"daß ihr glaubet, Jesus sei Christus, der Sohn Gottes\".",
+      "In 5,68 hat Sale »ihr steht auf keinem Grund, bis ihr das Gesetz und das Evangelium haltet«; Pickthall: »Ihr habt nichts (an Rechtleitung), bis ihr die Tora und das Evangelium haltet«."
+     ]
+    },
+    {
+     "question": "Der Koran sagt Mohammed, er solle, wenn er zweifelt, »die fragen, die die Schrift (die) vor dir (war) lesen«. Wie entstand das Lukasevangelium nach Lukas?",
+     "facts": [
+      "Augenzeugen ist autoptes: »selbst sehend, das heißt ein Augenzeuge«. Gewissheit ist asphaleia: »Sicherheit«. Lukas schreibt nach denen, \"die es von Anfang selbst gesehen\", damit Theophilus \"gewissen Grund\" erfahre.",
+      "Koran 10,94 verweist auf die Leute, die die frühere Schrift lasen. Lukas schrieb seinen Bericht im ersten Jahrhundert, mehr als 500 Jahre vor dem Koran: \"daß ich's dir, mein guter Theophilus, in Ordnung schriebe\"."
+     ]
+    },
+    {
+     "question": "Der Koran sagt: »Niemand kann seine Worte ändern«. Was sagt die Bibel über Gottes Wort und die Worte Jesu?",
+     "facts": [
+      "Wort ist dabar: »ein Wort«. Jesaja sagt: \"das Wort unsres Gottes bleibt ewiglich\"; der Koran (6,115): »Es gibt nichts, was seine Worte ändern könnte«.",
+      "Bleiben ist qum: »aufstehen«. Dasselbe Wort wird an anderen Stellen mit »bestätigen« und »bestehen« übersetzt.",
+      "Außerhalb der Schrift, aus der Geschichte: Die Schriftrollen vom Toten Meer (abgeschrieben etwa 250 v. Chr. bis 68 n. Chr.) enthalten Teile jedes alttestamentlichen Buches außer Ester, und Tausende griechische Handschriften des Neuen Testaments sind erhalten, viele älter als der Koran: der Codex Sinaiticus und der Codex Vaticanus wurden im 4. Jahrhundert abgeschrieben, etwa 300 Jahre vor Mohammed. Jeder kann die heutige Bibel mit ihnen vergleichen."
+     ]
+    },
+    {
+     "question": "Petrus zitiert Jesaja 40. Welches Wort bleibt nach ihm in Ewigkeit, und was ist dieses Wort?",
+     "facts": [
+      "Bleiben ist meno: »bleiben, verweilen«. Petrus sagt, das Wort, das bleibt, ist \"das Wort, welches unter euch verkündigt ist\"."
+     ]
+    },
+    {
+     "question": "König Jojakim verbrannte die Schriftrolle Jeremias. Was sollte Jeremia nach Gottes Wort tun, und was kam in das neue Buch?",
+     "facts": [
+      "Rolle ist megillah: »eine Rolle«. Der König verbrannte die Rolle; die Worte wurden noch einmal geschrieben: \"Nimm dir wiederum ein anderes Buch\".",
+      "Alte Abschriften erlauben jedem, den Text zu prüfen. Die große Jesajarolle aus Qumran, eine der Schriftrollen vom Toten Meer, wurde im 2. Jahrhundert v. Chr. abgeschrieben, mehr als 700 Jahre vor dem Koran. Sie enthält alle 66 Kapitel Jesajas, und ihr Text steht dem Hebräischen, aus dem die Bibeln übersetzt werden, sehr nahe.",
+      "Der Codex Sinaiticus, im 4. Jahrhundert n. Chr. abgeschrieben, enthält das ganze Neue Testament. Mohammed starb 632. Jesus sagte: \"meine Worte werden nicht vergehen\"."
+     ]
+    },
+    {
+     "question": "Für das Leben: Johannes schrieb, \"daß ihr glaubet, Jesus sei Christus\". Was verlangen diese Verse von dem, der das Evangelium liest?",
+     "facts": [
+      "\"So kommt der Glaube aus der Predigt, das Predigen aber aus dem Wort Gottes\"; \"Wer mein Wort hört und glaubt dem, der mich gesandt hat, der hat das ewige Leben\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"Diese aber sind geschrieben, daß ihr glaubet, Jesus sei Christus, der Sohn Gottes\"",
+    "Lukas schrieb nach denen, \"die es von Anfang selbst gesehen\".",
+    "\"das Wort unsres Gottes bleibt ewiglich\"; \"meine Worte werden nicht vergehen\".",
+    "Als der König die Rolle verbrannte, schrieb Jeremia \"ein anderes Buch\"."
+   ]
+  }
  }
 }
