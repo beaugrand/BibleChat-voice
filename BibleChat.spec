@@ -6,7 +6,7 @@ import importlib.util
 
 datas = [("bibleask/web", "bibleask/web"), ("bibleask/data", "bibleask/data"), ("LICENSE", "."), ("NOTICE", "."), ("THIRD_PARTY_NOTICES.md", "."),
          ("web/paths.js", "web"), ("web/quoted.json", "web"), ("web/paths", "web/paths"),   # 📜 Study Paths, shared with the phone
-         ("web/prayers.js", "web"), ("web/prayers.json", "web"), ("web/guide.js", "web"), ("web/guide.json", "web")]   # 🙏 Prayers; 📌 the search guide
+         ("web/prayers.js", "web"), ("web/prayers.json", "web"), ("web/prayers.es.json", "web"), ("web/prayers.de.json", "web"), ("web/guide.js", "web"), ("web/guide.json", "web")]   # 🙏 Prayers; 📌 the search guide
 if os.environ.get("BIBLECHAT_COMPAT"):  # engine compiled without AVX2, for older processors
     open("bibleask/compat_build.flag", "w").write("1")
     datas.append(("bibleask/compat_build.flag", "bibleask"))

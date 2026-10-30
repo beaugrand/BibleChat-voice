@@ -117,7 +117,7 @@ def main(out: str) -> None:
     shutil.copytree(src, os.path.join(out, "data", "meaning"), dirs_exist_ok=True)
     # 📜 Study Paths: the paths built by packaging/build_paths.py, their page code and "Quoted or named in Scripture"
     web = os.path.join(ROOT, "web")
-    for f in ("paths.js", "quoted.json", "prayers.js", "prayers.json", "guide.js", "guide.json", "news.js", "prophecy.json"):   # 🙏 Prayers and the search guide ride along
+    for f in ("paths.js", "quoted.json", "prayers.js", "prayers.json", "prayers.es.json", "prayers.de.json", "guide.js", "guide.json", "news.js", "prophecy.json"):   # 🙏 Prayers and the search guide ride along
         shutil.copy2(os.path.join(web, f), os.path.join(out, f))
     shutil.copytree(os.path.join(web, "paths"), os.path.join(out, "paths"), dirs_exist_ok=True)
     # ↗ short share pages with their own preview: p/<id>/, series/<id>/, pray/<id>/ (web/build_share.py)

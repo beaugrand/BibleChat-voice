@@ -21,7 +21,25 @@ const BCPrayers = (() => {
   const AI_NOTE = "Written by an AI from the verses below. It is not Scripture: read it against them.";
 
   /* ---------- the data ---------- */
-  function load(){
+  /* 🌍 the prayers in the app's language: web/prayers.<lang>.json holds a title, text and "by" for each prayer
+     (Spanish and German so far); anything missing stays in English. The verses always come from the reader's Bible. */
+  const LANGS = ["es", "de"], trans = {};
+  const uiLang = () => (typeof UI_LANG !== "undefined" ? UI_LANG : "en");
+  async function inLanguage(d){
+    const L = uiLang();
+    if(LANGS.includes(L) && !trans[L])
+      trans[L] = await fetch(P.url.replace(/prayers\.json$/, "prayers." + L + ".json")).then(r => r.ok ? r.json() : {prayers: {}}).catch(() => ({prayers: {}}));
+    const t = (LANGS.includes(L) && trans[L] && trans[L].prayers) || {};
+    for(const p of d.prayers){
+      if(!p._en) p._en = {title: p.title, text: p.text, by: p.by};
+      const x = t[p.id] || {};
+      p.title = x.title || p._en.title; p.by = x.by || p._en.by;
+      if(p._en.text) p.text = x.text && x.text.length === p._en.text.length ? x.text : p._en.text;
+    }
+    return d;
+  }
+  function load(){ return loadEnglish().then(inLanguage); }
+  function loadEnglish(){
     if(data) return Promise.resolve(data);
     return loading || (loading = fetch(P.url).then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
       .then(d => { data = d; d.byId = {}; for(const p of d.prayers){ d.byId[p.id] = p; p._refs = p.refs.map(r => parse(r)).filter(Boolean); } return d; })
