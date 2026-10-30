@@ -638,5 +638,107 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "Sesión 1: Las cuatro bestias",
+   "opening_question": "Daniel vio cuatro bestias subir de la gran mar; Juan vio una bestia subir del mar. ¿Qué tienen en común las dos visiones, y qué dice el texto mismo que son las bestias?",
+   "steps": [
+    {
+     "question": "¿Qué vio Daniel que hacían los cuatro vientos, y de dónde subieron las cuatro bestias grandes?",
+     "facts": [
+      "La palabra aramea para \"bestias\" es cheyva: «un animal». Daniel 7 está escrito en arameo, como Daniel 2.",
+      "Los cristianos leen Daniel y Apocalipsis de cuatro maneras principales: los hechos ya pasaron (cumplidos en los primeros siglos), se van desarrollando a lo largo de la historia de la iglesia, aún son futuros, o son una imagen de la lucha de cada época. Las notas de Scofield que se muestran en esta serie los leen como aún futuros. Saber que hay cuatro lecturas ayuda a pesar cualquiera de ellas."
+     ]
+    },
+    {
+     "question": "Describe cada una de las cuatro bestias. ¿Qué tenía la cuarta bestia que no tenían las otras?",
+     "facts": [
+      "La primera \"era como león\", la segunda \"semejante á un oso\", la tercera \"semejante á un tigre\" (leopardo en el arameo) con \"cuatro cabezas\"; la cuarta \"tenía diez cuernos\"."
+     ]
+    },
+    {
+     "question": "¿Qué le dice a Daniel el que estaba allí que son las bestias, y qué son los diez cuernos? ¿Quiénes reciben el reino, y qué reinos nombra el ángel en Daniel 8?",
+     "facts": [
+      "\"tomarán el reino los santos del Altísimo\". En Daniel 8 el ángel nombra a \"los reyes de Media y de Persia\" y al \"rey de Javán\" (Grecia)."
+     ]
+    },
+    {
+     "question": "¿De dónde sube la bestia de Juan, a qué animales se parece, y cuántas cabezas y cuernos tiene? Ahora cuenta las cabezas de las cuatro bestias de Daniel.",
+     "facts": [
+      "Daniel ve un león, luego un oso, luego un leopardo (la Reina-Valera dice \"tigre\"). Juan ve una bestia \"semejante á un leopardo\", con pies \"como de oso\" y boca \"como boca de león\": los mismos tres animales, nombrados en el orden inverso.",
+      "La palabra griega para \"bestia\" es therion: «un animal peligroso». Las dos visiones empiezan en el mar: \"la gran mar\" y \"subir del mar\"."
+     ]
+    },
+    {
+     "question": "¿Qué dice Apocalipsis que son los diez cuernos, y qué son las aguas?",
+     "facts": [
+      "A Daniel se le dice: \"los diez cuernos significan que de aquel reino se levantarán diez reyes\"; a Juan: \"los diez cuernos que has visto, son diez reyes\"."
+     ]
+    },
+    {
+     "question": "Para vivirlo: las bestias se levantan y caen, pero \"tomarán el reino los santos del Altísimo\". ¿Qué nos piden estos versículos mientras los reinos de este mundo siguen en pie?",
+     "facts": [
+      "\"Aquí está la paciencia y la fe de los santos\"; \"Sed templados, y velad\", \"Al cual resistid firmes en la fe\"."
+     ]
+    }
+   ],
+   "remember": [
+    "Cuatro bestias grandes subieron de la mar: como león, como oso, como tigre o leopardo, y una cuarta con diez cuernos.",
+    "\"Estas grandes bestias, las cuales son cuatro, cuatro reyes son\"",
+    "La bestia de Juan es semejante a un leopardo, con pies como de oso y boca como de león.",
+    "\"los diez cuernos que has visto, son diez reyes\""
+   ]
+  },
+  "de": {
+   "title": "Teil 1: Die vier Tiere",
+   "opening_question": "Daniel sah vier Tiere aus dem großen Meer steigen; Johannes sah ein Tier aus dem Meer steigen. Was haben die beiden Gesichte gemeinsam, und was sagt der Text selbst, was die Tiere sind?",
+   "steps": [
+    {
+     "question": "Was sah Daniel die vier Winde tun, und woher stiegen die vier großen Tiere herauf?",
+     "facts": [
+      "Das aramäische Wort für \"Tiere\" ist cheyva: »ein Tier«. Daniel 7 ist auf Aramäisch geschrieben, wie Daniel 2.",
+      "Christen lesen Daniel und die Offenbarung auf vier Hauptweisen: die Ereignisse sind vergangen (in den ersten Jahrhunderten erfüllt), sie entfalten sich durch die Kirchengeschichte, sie stehen noch bevor, oder sie sind ein Bild des Kampfes in jeder Zeit. Die Scofield-Anmerkungen in dieser Reihe lesen sie als noch zukünftig. Wer weiß, dass es vier Sichtweisen gibt, kann jede einzelne besser abwägen."
+     ]
+    },
+    {
+     "question": "Beschreibe jedes der vier Tiere. Was hatte das vierte Tier, das die anderen nicht hatten?",
+     "facts": [
+      "Das erste \"wie ein Löwe\", das zweite \"gleich einem Bären\", das dritte \"gleich einem Parder\" (Leopard) mit \"vier Köpfe\"; das vierte \"hatte zehn Hörner\"."
+     ]
+    },
+    {
+     "question": "Was sagt der, der dabeistand, was die Tiere sind, und was sind die zehn Hörner? Wer empfängt das Reich, und welche Reiche nennt der Engel in Daniel 8?",
+     "facts": [
+      "\"die Heiligen des Höchsten werden das Reich einnehmen\". In Daniel 8 nennt der Engel \"die Könige in Medien und Persien\" und \"der König in Griechenland\"."
+     ]
+    },
+    {
+     "question": "Woher steigt das Tier des Johannes, welchen Tieren gleicht es, und wie viele Häupter und Hörner hat es? Zähle nun die Köpfe der vier Tiere Daniels.",
+     "facts": [
+      "Daniel sieht einen Löwen, dann einen Bären, dann einen Parder. Johannes sieht ein Tier \"gleich einem Parder\", mit Füßen \"wie Bärenfüße\" und einem Mund \"wie eines Löwen Mund\": dieselben drei Tiere, in umgekehrter Reihenfolge genannt.",
+      "Das griechische Wort für \"Tier\" ist therion: »ein gefährliches Tier«. Beide Gesichte beginnen am Meer: \"auf dem großen Meer\" und \"aus dem Meer steigen\"."
+     ]
+    },
+    {
+     "question": "Was sind nach der Offenbarung die zehn Hörner, und was sind die Wasser?",
+     "facts": [
+      "Daniel wird gesagt: \"Die Zehn Hörner bedeuten zehn Könige\"; Johannes wird gesagt: \"die zehn Hörner, die du gesehen hast, das sind zehn Könige\"."
+     ]
+    },
+    {
+     "question": "Für das Leben: Die Tiere steigen auf und fallen, aber \"die Heiligen des Höchsten werden das Reich einnehmen\". Was verlangen diese Verse von uns, solange die Reiche dieser Welt bestehen?",
+     "facts": [
+      "\"Hier ist Geduld und Glaube der Heiligen\"; \"Seid nüchtern und wachet\", \"Dem widerstehet, fest im Glauben\"."
+     ]
+    }
+   ],
+   "remember": [
+    "Vier große Tiere stiegen aus dem Meer: wie ein Löwe, ein Bär, ein Parder und ein viertes mit zehn Hörnern.",
+    "\"Diese vier großen Tiere sind vier Reiche\" (King James: vier Könige).",
+    "Das Tier des Johannes ist gleich einem Parder, mit Bärenfüßen und einem Löwenmund.",
+    "\"die zehn Hörner, die du gesehen hast, das sind zehn Könige\""
+   ]
+  }
  }
 }

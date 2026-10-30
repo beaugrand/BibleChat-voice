@@ -571,5 +571,105 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "Sesión 4: La sala del trono",
+   "opening_question": "Daniel y Juan ven los dos un trono en el cielo con fuego, multitudes y libros. ¿Qué ve cada uno, y qué es igual?",
+   "steps": [
+    {
+     "question": "¿Qué vio Daniel en el trono y alrededor de él, y qué se abrió?",
+     "facts": [
+      "\"Anciano\" traduce attiyq: «venerable»."
+     ]
+    },
+    {
+     "question": "¿Qué había alrededor del trono que vio Juan, y qué había delante de él?",
+     "facts": [
+      "Daniel ve \"su silla llama de fuego\"; Juan ve \"siete lámparas de fuego estaban ardiendo delante del trono\"."
+     ]
+    },
+    {
+     "question": "¿Cuántos estaban delante del trono en cada visión?",
+     "facts": [
+      "Daniel: \"millares de millares le servían, y millones de millones asistían delante de él\". Juan: \"la multitud de ellos era millones de millones\"."
+     ]
+    },
+    {
+     "question": "Otras visiones del trono: ¿qué vieron Isaías y Ezequiel, y quién está en medio del trono en Apocalipsis 5?",
+     "facts": [
+      "Isaías oyó: \"Santo, santo, santo, Jehová de los ejércitos\"; los animales de Apocalipsis 4:8 dicen: \"Santo, santo, santo el Señor Dios Todopoderoso\".",
+      "En medio del trono estaba \"un Cordero como inmolado\", y cantaban: \"Digno eres de tomar el libro\"."
+     ]
+    },
+    {
+     "question": "¿Qué ve Juan en el gran trono blanco, y qué fue abierto?",
+     "facts": [
+      "Las dos visiones dicen que se abrieron los libros: \"los libros se abrieron\" y \"los libros fueron abiertos\"."
+     ]
+    },
+    {
+     "question": "Para vivirlo: Isaías respondió a su visión \"Heme aquí, envíame á mí\". ¿Qué dicen estos versículos que significa el trono para cómo vivimos ahora?",
+     "facts": [
+      "\"es menester que todos nosotros parezcamos ante el tribunal de Cristo\"; \"Lleguémonos pues confiadamente al trono de la gracia\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"el Juez se sentó, y los libros se abrieron\"",
+    "Juan vio que \"un arco celeste había alrededor del trono\".",
+    "En las dos visiones había millones de millones delante del trono.",
+    "\"otro libro fué abierto, el cual es de la vida\""
+   ]
+  },
+  "de": {
+   "title": "Teil 4: Der Thronsaal",
+   "opening_question": "Daniel und Johannes sehen beide einen Thron im Himmel mit Feuer, unzähligen Scharen und Büchern. Was sieht jeder, und was ist gleich?",
+   "steps": [
+    {
+     "question": "Was sah Daniel auf dem Thron und um ihn her, und was wurde aufgetan?",
+     "facts": [
+      "\"Alte\" steht für attiyq: »ehrwürdig«."
+     ]
+    },
+    {
+     "question": "Was war um den Thron, den Johannes sah, und was war vor ihm?",
+     "facts": [
+      "Daniel sieht: \"sein Stuhl war eitel Feuerflammen\"; Johannes sieht \"sieben Fackeln mit Feuer brannten vor dem Stuhl\"."
+     ]
+    },
+    {
+     "question": "Wie viele standen in jedem Gesicht vor dem Thron?",
+     "facts": [
+      "Daniel: \"Tausend mal tausend dienten ihm, und zehntausend mal zehntausend standen vor ihm\". Johannes: \"ihre Zahl war vieltausendmal tausend\"."
+     ]
+    },
+    {
+     "question": "Andere Thron-Gesichte: Was sahen Jesaja und Hesekiel, und wer steht in Offenbarung 5 mitten vor dem Thron?",
+     "facts": [
+      "Jesaja hörte: \"Heilig, heilig, heilig ist der HERR Zebaoth\"; die Tiere in Offenbarung 4,8 sprechen: \"Heilig, heilig, heilig ist Gott der HERR, der Allmächtige\".",
+      "Mitten vor dem Thron stand \"ein Lamm, wie wenn es erwürgt wäre\", und sie sangen: \"Du bist würdig, zu nehmen das Buch\"."
+     ]
+    },
+    {
+     "question": "Was sieht Johannes am großen weißen Thron, und was wurde aufgetan?",
+     "facts": [
+      "Beide Gesichte sagen, dass Bücher aufgetan wurden: \"die Bücher wurden aufgetan\" und \"Bücher wurden aufgetan\"."
+     ]
+    },
+    {
+     "question": "Für das Leben: Jesaja antwortete auf sein Gesicht: \"Hier bin ich; sende mich!\" Was bedeutet der Thron nach diesen Versen dafür, wie wir jetzt leben?",
+     "facts": [
+      "\"wir müssen alle offenbar werden vor dem Richtstuhl Christi\"; \"laßt uns hinzutreten mit Freudigkeit zu dem Gnadenstuhl\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"Das Gericht ward gehalten, und die Bücher wurden aufgetan.\"",
+    "Johannes sah: \"ein Regenbogen war um den Stuhl\".",
+    "In beiden Gesichten standen unzählige Tausende vor dem Thron.",
+    "\"ein anderes Buch ward aufgetan, welches ist das Buch des Lebens\""
+   ]
+  }
  }
 }

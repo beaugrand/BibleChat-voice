@@ -543,5 +543,105 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "Sesión 3: Viene el Hijo del hombre",
+   "opening_question": "Daniel vio como un hijo de hombre que venía en las nubes del cielo; Juan escribe \"viene con las nubes\". ¿Quién viene, y qué le es dado?",
+   "steps": [
+    {
+     "question": "¿Quién venía en las nubes del cielo, hasta quién llegó, y qué le fue dado?",
+     "facts": [
+      "\"hijo de hombre\" en Daniel 7:13 es en arameo bar enash: bar es «un hijo», enash es «un hombre»."
+     ]
+    },
+    {
+     "question": "¿Quién viene con las nubes, y quiénes le verán?",
+     "facts": [
+      "Daniel ve a uno que venía \"en las nubes del cielo\"; Juan escribe: \"He aquí que viene con las nubes\"."
+     ]
+    },
+    {
+     "question": "¿Cómo describe Juan a uno semejante al Hijo del hombre, y cómo describe Daniel al Anciano de grande edad?",
+     "facts": [
+      "El Anciano de grande edad de Daniel tiene un vestido \"blanco como la nieve\" y el pelo \"como lana limpia\"; en Apocalipsis 1:14 el semejante al Hijo del hombre tiene cabellos \"blancos como la lana blanca, como la nieve\"."
+     ]
+    },
+    {
+     "question": "¿Qué ve Juan sobre la nube blanca, y qué tiene en la mano?",
+     "facts": [
+      "Juan ve sobre la nube blanca a uno \"semejante al Hijo del hombre, que tenía en su cabeza una corona de oro, y en su mano una hoz aguda\"."
+     ]
+    },
+    {
+     "question": "Cuando el sumo sacerdote interrogó a Jesús, ¿qué palabras de Daniel usó Jesús?",
+     "facts": [
+      "Jesús dice \"viene en las nubes del cielo\", las palabras de Daniel 7:13.",
+      "Marcos cuenta la misma respuesta: \"Yo soy; y veréis al Hijo del hombre sentado á la diestra de la potencia de Dios\". Esteban, el primer mártir: \"veo los cielos abiertos, y al Hijo del hombre que está á la diestra de Dios\"."
+     ]
+    },
+    {
+     "question": "Para vivirlo: Jesús se aplicó a sí mismo las palabras de Daniel. ¿Quiénes dicen estos versículos que le verán, y cómo hemos de esperarle?",
+     "facts": [
+      "\"Velad pues, orando en todo tiempo\"; \"perseverad en él; para que cuando apareciere, tengamos confianza\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"en las nubes del cielo como un hijo de hombre que venía\"",
+    "\"su señorío, señorío eterno\"",
+    "\"He aquí que viene con las nubes, y todo ojo le verá\"",
+    "Ante el sumo sacerdote Jesús usó las palabras de Daniel: \"viene en las nubes del cielo\"."
+   ]
+  },
+  "de": {
+   "title": "Teil 3: Des Menschen Sohn kommt",
+   "opening_question": "Daniel sah einen in des Himmels Wolken kommen wie eines Menschen Sohn; Johannes schreibt: \"er kommt mit den Wolken\". Wer kommt, und was wird ihm gegeben?",
+   "steps": [
+    {
+     "question": "Wer kam in des Himmels Wolken, zu wem, und was wurde ihm gegeben?",
+     "facts": [
+      "\"Menschen Sohn\" in Daniel 7,13 ist aramäisch bar enash: bar ist »ein Sohn«, enash ist »ein Mensch«."
+     ]
+    },
+    {
+     "question": "Wer kommt mit den Wolken, und wer wird ihn sehen?",
+     "facts": [
+      "Daniel sieht einen, der \"in des Himmels Wolken\" kam; Johannes schreibt: \"Siehe, er kommt mit den Wolken\"."
+     ]
+    },
+    {
+     "question": "Wie beschreibt Johannes den, der eines Menschen Sohn gleich war, und wie beschreibt Daniel den Alten?",
+     "facts": [
+      "Daniels Alter hat ein Kleid, das \"schneeweiß\" war, und Haar \"wie reine Wolle\"; in Offenbarung 1,14 ist sein Haar \"weiß wie weiße Wolle, wie der Schnee\"."
+     ]
+    },
+    {
+     "question": "Was sieht Johannes auf der weißen Wolke, und was hat Er in der Hand?",
+     "facts": [
+      "Johannes sieht auf der weißen Wolke einen, \"der gleich war eines Menschen Sohn; der hatte eine goldene Krone auf seinem Haupt und in seiner Hand eine scharfe Sichel\"."
+     ]
+    },
+    {
+     "question": "Als der Hohepriester Jesus verhörte, welche Worte Daniels gebrauchte Jesus?",
+     "facts": [
+      "Jesus sagt: \"kommen in den Wolken des Himmels\", die Worte aus Daniel 7,13.",
+      "Markus erzählt dieselbe Antwort: \"Ich bin's; und ihr werdet sehen des Menschen Sohn sitzen zur rechten Hand der Kraft\". Stephanus, der erste Märtyrer: \"ich sehe den Himmel offen und des Menschen Sohn zur Rechten Gottes stehen\"."
+     ]
+    },
+    {
+     "question": "Für das Leben: Jesus bezog Daniels Worte auf sich selbst. Wer wird Ihn nach diesen Versen sehen, und wie sollen wir auf Ihn warten?",
+     "facts": [
+      "\"So seid nun wach allezeit und betet\"; \"bleibet bei ihm, auf daß, wenn er offenbart wird, wir Freudigkeit haben\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"es kam einer in des Himmels Wolken wie eines Menschen Sohn\"",
+    "\"Seine Gewalt ist ewig, die nicht vergeht\"",
+    "\"Siehe, er kommt mit den Wolken, und es werden ihn sehen alle Augen\"",
+    "Vor dem Hohenpriester gebrauchte Jesus Daniels Worte: \"kommen in den Wolken des Himmels\"."
+   ]
+  }
  }
 }
