@@ -761,6 +761,40 @@
    "x": 23,
    "y": 12,
    "s": 36
+  },
+  "i18n": {
+   "es": {
+    "title": "Isaías 53: el Siervo sufriente",
+    "opening_question": "Isaías escribió de un Siervo que \"herido fué por nuestras rebeliones\" y \"como cordero fué llevado al matadero\". Siglos después un etíope leyó estas palabras en su carro y preguntó: «¿de quién dice el profeta esto?» ¿Quién es el Siervo?",
+    "step_questions": [
+     "¿Qué le pasará al Siervo, y qué vieron muchos cuando lo miraron?",
+     "¿Quién ha creído a nuestro anuncio? ¿Cómo trataron los hombres al varón de dolores, y quiénes no creyeron en Jesús?",
+     "¿Quién es el Siervo? Isaías también llama a Israel siervo de Dios. Lee estos versículos, y aquel en que el Siervo hace volver a Israel.",
+     "¿Qué enfermedades y dolores llevó, por qué fue herido, y qué hace su llaga?",
+     "¿Qué hizo cuando fue angustiado y afligido, y a qué se le compara?",
+     "¿Qué escritura leía el etíope en su carro, qué le preguntó a Felipe, y dónde comenzó Felipe?",
+     "¿Con quiénes se dispuso su sepultura, quién lo puso en un sepulcro, y qué nunca se halló en su boca?",
+     "Fue \"cortado\" \"de la tierra de los vivientes\", y aun así \"verá linaje, vivirá por largos días\". ¿Cómo pueden ser ciertas las dos cosas?",
+     "¿Con quiénes fue contado, de quiénes llevó el pecado, y por quiénes oró?",
+     "Para vivirlo: Jesús dijo que vino a dar su vida en rescate por muchos. ¿Qué dicen estos versículos que hizo por nosotros, y qué dice Pedro que sigue de ello?"
+    ]
+   },
+   "de": {
+    "title": "Jesaja 53: der leidende Knecht",
+    "opening_question": "Jesaja schrieb von einem Knecht, der \"um unsrer Missetat willen verwundet\" wurde und \"wie ein Lamm, das zur Schlachtbank geführt wird\". Jahrhunderte später las ein Mann aus Mohrenland diese Worte auf seinem Wagen und fragte: »Von wem redet der Prophet das?« Wer ist der Knecht?",
+    "step_questions": [
+     "Was wird mit dem Knecht geschehen, und was sahen viele, als sie ihn ansahen?",
+     "Wer glaubt unserer Predigt? Wie behandelten die Menschen den Mann der Schmerzen, und wer glaubte nicht an Jesus?",
+     "Wer ist der Knecht? Jesaja nennt auch Israel Gottes Knecht. Lies diese Verse und den, in dem der Knecht Israel zurückbringt.",
+     "Wessen Krankheit und Schmerzen trug er, warum wurde er verwundet, und was bewirken seine Wunden?",
+     "Was tat er, als er gestraft und gemartert wurde, und womit wird er verglichen?",
+     "Welche Schrift las der Mann aus Mohrenland auf seinem Wagen, was fragte er Philippus, und wo fing Philippus an?",
+     "Bei wem gab man ihm sein Grab, wer legte ihn in ein Grab, und was wurde nie in seinem Mund gefunden?",
+     "Er ist \"aus dem Lande der Lebendigen weggerissen\", und doch \"wird er Samen haben und in die Länge leben\". Wie kann beides wahr sein?",
+     "Unter wen wurde er gerechnet, wessen Sünde trug er, und für wen bat er?",
+     "Für das Leben: Jesus sagte, Er sei gekommen, sein Leben zu geben zur Erlösung für viele. Was hat Er nach diesen Versen für uns getan, und was folgt daraus nach Petrus?"
+    ]
+   }
   }
  },
  {
