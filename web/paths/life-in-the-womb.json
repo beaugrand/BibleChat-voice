@@ -642,5 +642,119 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "La vida en el vientre",
+   "opening_question": "¿Qué dice la Biblia del niño en el vientre: quién lo forma, quién lo conoce, y cómo lo llama el texto?",
+   "steps": [
+    {
+     "question": "¿Quién me cubrió en el vientre de mi madre, y qué vieron sus ojos?",
+     "facts": [
+      "\"Mi embrión\" es una sola palabra hebrea, golem: «una masa envuelta (y sin forma, es decir, el embrión)»."
+     ]
+    },
+    {
+     "question": "¿Cuándo conoció Dios a Jeremías, y cuándo lo santificó?",
+     "facts": []
+    },
+    {
+     "question": "¿Quién hizo a Job y a su siervo en el vientre, y quién te formó desde el vientre?",
+     "facts": []
+    },
+    {
+     "question": "¿Qué hizo la criatura en el vientre de Elisabet cuando sonó la salutación de María?",
+     "facts": [
+      "La \"criatura\" en el vientre de Elisabet es brephos, la misma palabra que Lucas usa para Jesús recién nacido en el pesebre. Strong: «un infante (propiamente, no nacido)»."
+     ]
+    },
+    {
+     "question": "¿De quiénes más habla la Biblia antes de nacer: gemelos, un nazareo, Juan y Pablo? ¿Cómo llama el salmo a los hijos?",
+     "facts": [
+      "\"los hijos se combatían dentro de ella\", y Jehová dijo: \"Dos gentes hay en tu seno\".",
+      "Juan sería \"lleno del Espíritu Santo, aun desde el seno de su madre\"; Pablo dice que Dios \"me apartó desde el vientre de mi madre\"; el salmo: \"heredad de Jehová son los hijos\"."
+     ]
+    },
+    {
+     "question": "¿Qué dice la ley cuando se hiere a una mujer encinta, si no hay daño y si lo hay?",
+     "facts": [
+      "Las traducciones difieren aquí. La King James dice «su fruto sale de ella»; la Berean Standard Bible, «su hijo nace prematuramente»; la Reina-Valera, \"y ésta abortare\".",
+      "La palabra hebrea para el niño en Éxodo 21:22 es yeled: «algo nacido, es decir, un muchacho o descendiente». La palabra para el daño es ason: «lesión»."
+     ]
+    },
+    {
+     "question": "¿Qué dice David del momento en que su madre lo concibió?",
+     "facts": []
+    },
+    {
+     "question": "Para vivirlo: para quien ha perdido un hijo, o carga con un remordimiento, ¿qué dicen estos versículos de la cercanía de Jehová y de su perdón?",
+     "facts": [
+      "\"Cercano está Jehová á los quebrantados de corazón\"; \"Si confesamos nuestros pecados, él es fiel y justo para que nos perdone nuestros pecados\"; \"Cuanto está lejos el oriente del occidente, hizo alejar de nosotros nuestras rebeliones\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"cubrísteme en el vientre de mi madre\"",
+    "\"Antes que te formase en el vientre te conocí\"",
+    "La criatura \"saltó de alegría en mi vientre\".",
+    "En Éxodo 21:22 las traducciones difieren. Léelas lado a lado."
+   ]
+  },
+  "de": {
+   "title": "Leben im Mutterleib",
+   "opening_question": "Was sagt die Bibel über das Kind im Mutterleib: wer es bildet, wer es kennt, und wie nennt es der Text?",
+   "steps": [
+    {
+     "question": "Wer hat mich im Mutterleib gebildet, und was sahen seine Augen?",
+     "facts": [
+      "\"da ich noch unbereitet war\" ist ein einziges hebräisches Wort, golem: »eine eingehüllte (ungeformte Masse, das heißt der Embryo)«."
+     ]
+    },
+    {
+     "question": "Wann kannte Gott Jeremia, und wann sonderte Er ihn aus?",
+     "facts": []
+    },
+    {
+     "question": "Wer hat Hiob und seinen Knecht im Mutterleib gemacht, und wer hat dich von Mutterleib an bereitet?",
+     "facts": []
+    },
+    {
+     "question": "Was tat das Kind im Leib der Elisabeth, als der Gruß Marias erklang?",
+     "facts": [
+      "Das \"Kind\" im Leib der Elisabeth ist brephos, dasselbe Wort, das Lukas für den neugeborenen Jesus in der Krippe gebraucht: \"das Kind in Windeln gewickelt\". Strong: »ein Säugling (eigentlich ungeboren)«."
+     ]
+    },
+    {
+     "question": "Von wem spricht die Bibel noch vor der Geburt: Zwillinge, ein Nasiräer, Johannes und Paulus? Wie nennt der Psalm die Kinder?",
+     "facts": [
+      "\"die Kinder stießen sich miteinander in ihrem Leibe\", und der HERR sprach: \"Zwei Völker sind in deinem Leibe\".",
+      "Johannes sollte \"noch im Mutterleibe erfüllt werden mit dem heiligen Geist\"; Paulus sagt, Gott habe ihn \"von meiner Mutter Leibe an hat ausgesondert\"; der Psalm: \"Kinder sind eine Gabe des HERRN\"."
+     ]
+    },
+    {
+     "question": "Was sagt das Gesetz, wenn eine schwangere Frau verletzt wird, wenn kein Schaden folgt und wenn Schaden folgt?",
+     "facts": [
+      "Die Übersetzungen unterscheiden sich hier. Die King James sagt »ihre Frucht geht von ihr«; die Berean Standard Bible »ihr Kind wird zu früh geboren«; Luther: \"daß ihr die Frucht abgeht\".",
+      "Das hebräische Wort für die Frucht in 2. Mose 21,22 ist yeled: »etwas Geborenes, das heißt ein Knabe oder Nachkomme«. Das Wort für \"Schade\" ist ason: »Verletzung«."
+     ]
+    },
+    {
+     "question": "Was sagt David über den Augenblick, als seine Mutter ihn empfing?",
+     "facts": []
+    },
+    {
+     "question": "Für das Leben: Für jeden, der ein Kind verloren hat oder Reue trägt, was sagen diese Verse über die Nähe des HERRN und seine Vergebung?",
+     "facts": [
+      "\"Der HERR ist nahe bei denen, die zerbrochnes Herzens sind\" (bei Luther Psalm 34,19); \"So wir aber unsre Sünden bekennen, so ist er treu und gerecht, daß er uns die Sünden vergibt\"; \"So ferne der Morgen ist vom Abend, läßt er unsre Übertretungen von uns sein\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"hast mich gebildet im Mutterleib\"",
+    "\"Ich kannte dich, ehe denn ich dich im Mutterleibe bereitete\"",
+    "Das Kind \"hüpfte mit Freuden\" im Leib der Elisabeth.",
+    "In 2. Mose 21,22 unterscheiden sich die Übersetzungen. Lies sie nebeneinander."
+   ]
+  }
  }
 }

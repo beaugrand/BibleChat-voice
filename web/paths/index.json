@@ -373,6 +373,38 @@
    "x": 70,
    "y": 8,
    "s": 32
+  },
+  "i18n": {
+   "es": {
+    "title": "Libres de la esclavitud",
+    "opening_question": "¿Qué dice la Biblia de estar cautivo del pecado, como en una adicción, y quién nos hace libres?",
+    "step_questions": [
+     "¿Cómo llama Jesús a todo aquel que hace pecado, y qué dice Pablo de hacer lo que aborrece?",
+     "¿Qué hicieron en su angustia, y qué hizo Jehová con sus prisiones?",
+     "¿Quién puede haceros libres, y qué le pasó a \"nuestro viejo hombre\"?",
+     "¿Qué no se enseñoreará de vosotros, y hay alguna condenación para los que están en Cristo Jesús?",
+     "¿Qué hace Dios con cada tentación, y en qué se dice a los libres que estén firmes?",
+     "¿De dónde viene la fuerza, cuán a menudo son nuevas sus misericordias, y dónde podemos hallar misericordia y socorro?",
+     "Cuando alguien vuelve a caer: ¿qué dice el texto del justo que cae, y cómo recibió el padre al hijo que volvió a casa?",
+     "¿Qué pasa cuando confesamos nuestros pecados, y qué hay donde está el Espíritu del Señor?",
+     "Para vivirlo: la libertad no se camina a solas. ¿Qué dicen estos versículos de confesarse unos a otros, sobrellevar las cargas los unos de los otros y renovar el entendimiento? ¿Con quién podrías hablar: un pastor, un grupo de recuperación, un consejero o un amigo de confianza?"
+    ]
+   },
+   "de": {
+    "title": "Frei aus der Knechtschaft",
+    "opening_question": "Was sagt die Bibel darüber, von der Sünde gefangen zu sein, wie in einer Sucht, und wer macht uns frei?",
+    "step_questions": [
+     "Wie nennt Jesus jeden, der Sünde tut, und was sagt Paulus darüber, das zu tun, was er hasst?",
+     "Was taten sie in ihrer Not, und was tat der HERR mit ihren Banden?",
+     "Wer kann euch frei machen, und was geschah mit unserem alten Menschen?",
+     "Was wird nicht über euch herrschen, und gibt es eine Verdammnis für die, die in Christus Jesus sind?",
+     "Was macht Gott mit jeder Versuchung, und worin sollen die Freien bestehen?",
+     "Woher kommt die Kraft, wie oft ist seine Barmherzigkeit neu, und wo finden wir Barmherzigkeit und Hilfe?",
+     "Wenn jemand wieder fällt: Was sagt der Text über den Gerechten, der fällt, und wie nahm der Vater den Sohn auf, der heimkam?",
+     "Was geschieht, wenn wir unsere Sünden bekennen, und was ist dort, wo der Geist des Herrn ist?",
+     "Für das Leben: Freiheit geht man nicht allein. Was sagen diese Verse darüber, einander zu bekennen, einander die Lasten zu tragen und den Sinn zu erneuern? Mit wem könntest du reden: einem Pastor, einer Selbsthilfegruppe, einem Berater oder einem vertrauten Freund?"
+    ]
+   }
   }
  },
  {
@@ -704,6 +736,36 @@
    "x": 95,
    "y": 30,
    "s": 40
+  },
+  "i18n": {
+   "es": {
+    "title": "La vida en el vientre",
+    "opening_question": "¿Qué dice la Biblia del niño en el vientre: quién lo forma, quién lo conoce, y cómo lo llama el texto?",
+    "step_questions": [
+     "¿Quién me cubrió en el vientre de mi madre, y qué vieron sus ojos?",
+     "¿Cuándo conoció Dios a Jeremías, y cuándo lo santificó?",
+     "¿Quién hizo a Job y a su siervo en el vientre, y quién te formó desde el vientre?",
+     "¿Qué hizo la criatura en el vientre de Elisabet cuando sonó la salutación de María?",
+     "¿De quiénes más habla la Biblia antes de nacer: gemelos, un nazareo, Juan y Pablo? ¿Cómo llama el salmo a los hijos?",
+     "¿Qué dice la ley cuando se hiere a una mujer encinta, si no hay daño y si lo hay?",
+     "¿Qué dice David del momento en que su madre lo concibió?",
+     "Para vivirlo: para quien ha perdido un hijo, o carga con un remordimiento, ¿qué dicen estos versículos de la cercanía de Jehová y de su perdón?"
+    ]
+   },
+   "de": {
+    "title": "Leben im Mutterleib",
+    "opening_question": "Was sagt die Bibel über das Kind im Mutterleib: wer es bildet, wer es kennt, und wie nennt es der Text?",
+    "step_questions": [
+     "Wer hat mich im Mutterleib gebildet, und was sahen seine Augen?",
+     "Wann kannte Gott Jeremia, und wann sonderte Er ihn aus?",
+     "Wer hat Hiob und seinen Knecht im Mutterleib gemacht, und wer hat dich von Mutterleib an bereitet?",
+     "Was tat das Kind im Leib der Elisabeth, als der Gruß Marias erklang?",
+     "Von wem spricht die Bibel noch vor der Geburt: Zwillinge, ein Nasiräer, Johannes und Paulus? Wie nennt der Psalm die Kinder?",
+     "Was sagt das Gesetz, wenn eine schwangere Frau verletzt wird, wenn kein Schaden folgt und wenn Schaden folgt?",
+     "Was sagt David über den Augenblick, als seine Mutter ihn empfing?",
+     "Für das Leben: Für jeden, der ein Kind verloren hat oder Reue trägt, was sagen diese Verse über die Nähe des HERRN und seine Vergebung?"
+    ]
+   }
   }
  },
  {
@@ -2129,6 +2191,36 @@
    "x": 25,
    "y": 34,
    "s": 26
+  },
+  "i18n": {
+   "es": {
+    "title": "El Nombre",
+    "opening_question": "¿Cuál es el nombre de Dios, y cuál es el nombre en que podemos ser salvos?",
+    "step_questions": [
+     "¿Qué le dijo Dios a Moisés que dijera cuando el pueblo preguntara su nombre? ¿Qué dijo Jesús antes de Abraham?",
+     "¿Con qué nombre dice Dios que no fue conocido por Abraham, Isaac y Jacob? Léelo junto a los versículos anteriores que usan el nombre.",
+     "¿Qué dicen estos versículos del nombre de Dios: cómo ha de tratarse, y hasta dónde llega?",
+     "¿Qué dicen los profetas de olvidar el nombre y de invocarlo? Compara Joel con el versículo que lo cita.",
+     "¿Qué nombre le dio Moisés a Oseas, y qué nombre había de recibir el hijo de María?",
+     "¿Qué dice Jesús que hizo con el nombre del Padre?",
+     "¿Qué dicen estos versículos del nombre dado a los hombres, y del nombre que es sobre todo nombre?",
+     "Para vivirlo: \"todo aquel que invocare el nombre del Señor, será salvo\". ¿Qué nos piden estos versículos con el nombre: correr a él, santificarlo, ser bautizados en él, hacerlo todo en él?"
+    ]
+   },
+   "de": {
+    "title": "Der Name",
+    "opening_question": "Wie lautet Gottes Name, und welches ist der Name, in dem wir selig werden sollen?",
+    "step_questions": [
+     "Was sollte Mose nach Gottes Wort sagen, wenn das Volk nach seinem Namen fragt? Was sagte Jesus über die Zeit vor Abraham?",
+     "Unter welchem Namen war Gott nach seinem Wort Abraham, Isaak und Jakob nicht bekannt? Lies es neben den früheren Versen, die den Namen gebrauchen.",
+     "Was sagen diese Verse über Gottes Namen: wie er zu behandeln ist und wie weit er reicht?",
+     "Was sagen die Propheten über das Vergessen des Namens und das Anrufen des Namens? Vergleiche Joel mit dem Vers, der ihn zitiert.",
+     "Welchen Namen gab Mose dem Hosea, und welchen Namen sollte Marias Sohn bekommen?",
+     "Was hat Jesus nach seinen Worten mit dem Namen des Vaters getan?",
+     "Was sagen diese Verse über den Namen, der den Menschen gegeben ist, und den Namen, der über alle Namen ist?",
+     "Für das Leben: \"wer den Namen des HERRN wird anrufen, soll selig werden\". Was verlangen diese Verse von uns mit dem Namen: zu ihm laufen, ihn heiligen, auf ihn getauft werden, alles in ihm tun?"
+    ]
+   }
   }
  },
  {
@@ -2235,6 +2327,38 @@
   "minutes": 45,
   "anim": {
    "kind": "rainbow"
+  },
+  "i18n": {
+   "es": {
+    "title": "El arco iris: el arco de Dios en las nubes",
+    "opening_question": "¿De quién es la señal del arco iris, qué dice Dios que significa, y dónde más lo muestra la Biblia?",
+    "step_questions": [
+     "Antes de cualquier arco iris, ¿qué hizo Dios primero, y de qué lo separó?",
+     "¿Con quién hace Dios este pacto, qué pone en las nubes, y por cuánto tiempo?",
+     "¿Qué compara Dios con \"las aguas de Noé\", y qué dice que no se apartará?",
+     "Ezequiel vio \"el arco del cielo que está en las nubes el día que llueve\". ¿De quién era la gloria, y qué colores nombra?",
+     "¿Qué hay alrededor del trono en el cielo, y a qué se parece?",
+     "¿Qué había sobre la cabeza del ángel fuerte, y de qué estaba vestido?",
+     "¿Qué hay alrededor de Jehová, y qué sale de su mano?",
+     "¿Quién dice Jesús que es \"la luz del mundo\", y qué tiene el que le sigue?",
+     "Para vivirlo: Dios dice \"no se apartará de ti mi misericordia\". ¿Qué dicen estos versículos que significa su fidelidad para nosotros?"
+    ]
+   },
+   "de": {
+    "title": "Der Regenbogen: Gottes Bogen in den Wolken",
+    "opening_question": "Wessen Zeichen ist der Regenbogen, was bedeutet er nach Gottes Wort, und wo zeigt ihn die Bibel noch?",
+    "step_questions": [
+     "Vor jedem Regenbogen: Was machte Gott zuerst, und wovon schied Er es?",
+     "Mit wem schließt Gott diesen Bund, was setzt Er in die Wolken, und für wie lange?",
+     "Was vergleicht Gott mit dem \"Wasser Noahs\", und was soll nach seinem Wort nicht weichen?",
+     "Hesekiel sah, \"Gleichwie der Regenbogen sieht in den Wolken, wenn es geregnet hat\". Wessen Herrlichkeit war es, und welche Farben nennt er?",
+     "Was ist um den Thron im Himmel, und wie sieht es aus?",
+     "Was war auf dem Haupt des starken Engels, und womit war er bekleidet?",
+     "Was ist um den HERRN her, und was geht aus seiner Hand?",
+     "Wer ist nach Jesu Wort \"das Licht der Welt\", und was hat der, der Ihm nachfolgt?",
+     "Für das Leben: Gott sagt: \"meine Gnade soll nicht von dir weichen\". Was bedeutet seine Treue nach diesen Versen für uns?"
+    ]
+   }
   }
  },
  {

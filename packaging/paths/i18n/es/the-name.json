@@ -1,0 +1,35 @@
+{
+ "title": "El Nombre",
+ "opening_question": "¿Cuál es el nombre de Dios, y cuál es el nombre en que podemos ser salvos?",
+ "steps": [
+  {"question": "¿Qué le dijo Dios a Moisés que dijera cuando el pueblo preguntara su nombre? ¿Qué dijo Jesús antes de Abraham?",
+   "facts": [
+    "Dios: \"YO SOY EL QUE SOY\". Jesús: \"Antes que Abraham fuese, yo soy\". En Juan 8:59: \"Tomaron entonces piedras para tirarle\"."
+   ]},
+  {"question": "¿Con qué nombre dice Dios que no fue conocido por Abraham, Isaac y Jacob? Léelo junto a los versículos anteriores que usan el nombre.", "facts": []},
+  {"question": "¿Qué dicen estos versículos del nombre de Dios: cómo ha de tratarse, y hasta dónde llega?", "facts": []},
+  {"question": "¿Qué dicen los profetas de olvidar el nombre y de invocarlo? Compara Joel con el versículo que lo cita.", "facts": []},
+  {"question": "¿Qué nombre le dio Moisés a Oseas, y qué nombre había de recibir el hijo de María?",
+   "facts": [
+    "Números 13:16 (en la Reina-Valera 13:17): \"á Oseas hijo de Nun, le puso Moisés el nombre de Josué\" (Oshea, H1954; Yehoshua, H3091).",
+    "Yehoshua (H3091): Strong da sus partes como H3068 (YHWH) y H3467 (salvar): «Jehová salvó».",
+    "Yeshua (H3442): Strong dice «por H3091», el mismo nombre en forma más corta. Nehemías 8:17 llama a Josué hijo de Nun «Jesúa» en hebreo; la Reina-Valera escribe \"Josué hijo de Nun\".",
+    "Iesous (G2424): Strong dice «de origen hebreo (H03091)», es decir, H3091. El griego lo usa también para Josué: en Hechos 7:45 y Hebreos 4:8 la King James imprime «Jesús» donde el Canon etíope, la Berean Standard Bible y la Reina-Valera imprimen \"Josué\".",
+    "La Reina-Valera imprime el nombre en Mateo 1:21 como \"JESUS\"."
+   ]},
+  {"question": "¿Qué dice Jesús que hizo con el nombre del Padre?", "facts": []},
+  {"question": "¿Qué dicen estos versículos del nombre dado a los hombres, y del nombre que es sobre todo nombre?", "facts": []},
+  {"question": "Para vivirlo: \"todo aquel que invocare el nombre del Señor, será salvo\". ¿Qué nos piden estos versículos con el nombre: correr a él, santificarlo, ser bautizados en él, hacerlo todo en él?",
+   "facts": [
+    "\"Torre fuerte es el nombre de Jehová: á él correrá el justo\"; \"santificado sea tu nombre\".",
+    "Jesús envía a los discípulos a bautizar \"en el nombre\" (un nombre, en singular) \"del Padre, y del Hijo, y del Espíritu Santo\". Pablo: \"hacedlo todo en el nombre del Señor Jesús\"."
+   ]}
+ ],
+ "remember": [
+  "\"YO SOY EL QUE SOY\" ... \"Este es mi nombre para siempre\"",
+  "\"No tomarás el nombre de Jehová tu Dios en vano\"",
+  "\"cualquiera que invocare el nombre de Jehová, será salvo\"",
+  "Moisés llamó a Oseas \"Josué\"; al hijo de María: \"llamarás su nombre JESUS\".",
+  "\"no hay otro nombre debajo del cielo, dado á los hombres\""
+ ]
+}
