@@ -23,7 +23,14 @@
   "Daniel 7:9-10",
   "Revelation 4:2-6",
   "Revelation 5:11",
-  "Revelation 20:11-12"
+  "Revelation 20:11-12",
+  "Isaiah 6:1-4",
+  "Ezekiel 1:26-28",
+  "Revelation 4:8",
+  "Revelation 5:6-10",
+  "Isaiah 6:8",
+  "2 Corinthians 5:10",
+  "Hebrews 4:16"
  ],
  "words": [
   "H3764",
@@ -125,6 +132,45 @@
    ]
   },
   {
+   "question": "Other throne visions: what did Isaiah and Ezekiel see, and who stands in the midst of the throne in Revelation 5?",
+   "refs": [
+    "Isaiah 6:1-4",
+    "Ezekiel 1:26-28",
+    "Revelation 4:8",
+    "Revelation 5:6-10"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G721"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Isaiah heard \"Holy, holy, holy, is the LORD of hosts\"; the living creatures in Revelation 4:8 say \"Holy, holy, holy, Lord God Almighty\".",
+     "refs": [
+      "Isaiah 6:3",
+      "Revelation 4:8"
+     ]
+    },
+    {
+     "text": "In the midst of the throne stood \"a Lamb as it had been slain\", and they sang \"Thou art worthy to take the book\".",
+     "refs": [
+      "Revelation 5:6",
+      "Revelation 5:9"
+     ]
+    }
+   ]
+  },
+  {
    "question": "What does John see at the great white throne, and what was opened?",
    "refs": [
     "Revelation 20:11-12"
@@ -150,6 +196,35 @@
      "refs": [
       "Daniel 7:10",
       "Revelation 20:12"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Isaiah answered his vision \"Here am I; send me\". What do these verses say the throne means for how we live now?",
+   "refs": [
+    "Isaiah 6:8",
+    "2 Corinthians 5:10",
+    "Hebrews 4:16"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"we must all appear before the judgment seat of Christ\"; \"Let us therefore come boldly unto the throne of grace\".",
+     "refs": [
+      "2 Corinthians 5:10",
+      "Hebrews 4:16"
      ]
     }
    ]
@@ -288,13 +363,13 @@
     "xref": 18,
     "votes": 107,
     "word": "G2362",
-    "word_count": 13,
+    "word_count": 16,
     "differ": 0.519,
     "quoted": null
    },
    "why": [
     "18 cross-references point here",
-    "The Greek word thrónos (G2362) is in 13 verses of this path",
+    "The Greek word thrónos (G2362) is in 16 verses of this path",
     "Translations differ here"
    ],
    "score": 0.8313
@@ -320,13 +395,13 @@
     "xref": 18,
     "votes": 106,
     "word": "G2362",
-    "word_count": 13,
+    "word_count": 16,
     "differ": 0.46,
     "quoted": null
    },
    "why": [
     "18 cross-references point here",
-    "The Greek word thrónos (G2362) is in 13 verses of this path"
+    "The Greek word thrónos (G2362) is in 16 verses of this path"
    ],
    "score": 0.8158
   },
@@ -340,13 +415,13 @@
     "xref": 16,
     "votes": 67,
     "word": "G2362",
-    "word_count": 13,
+    "word_count": 16,
     "differ": 0.533,
     "quoted": null
    },
    "why": [
     "16 cross-references point here",
-    "The Greek word thrónos (G2362) is in 13 verses of this path",
+    "The Greek word thrónos (G2362) is in 16 verses of this path",
     "Translations differ here"
    ],
    "score": 0.8
@@ -364,13 +439,13 @@
     "xref": 20,
     "votes": 115,
     "word": "G2362",
-    "word_count": 13,
+    "word_count": 16,
     "differ": 0.545,
     "quoted": null
    },
    "why": [
     "20 cross-references point here",
-    "The Greek word thrónos (G2362) is in 13 verses of this path",
+    "The Greek word thrónos (G2362) is in 16 verses of this path",
     "Translations differ here"
    ],
    "score": 0.8431
@@ -385,13 +460,13 @@
     "xref": 55,
     "votes": 370,
     "word": "G2362",
-    "word_count": 13,
+    "word_count": 16,
     "differ": 0.517,
     "quoted": null
    },
    "why": [
     "55 cross-references point here",
-    "The Greek word thrónos (G2362) is in 13 verses of this path",
+    "The Greek word thrónos (G2362) is in 16 verses of this path",
     "Translations differ here"
    ],
    "score": 0.9234
@@ -417,13 +492,13 @@
     "xref": 18,
     "votes": 107,
     "word": "G2362",
-    "word_count": 13,
+    "word_count": 16,
     "differ": 0.519,
     "quoted": null
    },
    "why": [
     "18 cross-references point here",
-    "The Greek word thrónos (G2362) is in 13 verses of this path",
+    "The Greek word thrónos (G2362) is in 16 verses of this path",
     "Translations differ here"
    ],
    "score": 0.8313
@@ -438,15 +513,15 @@
     "xref": 68,
     "votes": 548,
     "word": "G975",
-    "word_count": 3,
+    "word_count": 6,
     "differ": 0.376,
     "quoted": null
    },
    "why": [
     "68 cross-references point here",
-    "The Greek word biblíon (G975) is in 3 verses of this path"
+    "The Greek word biblíon (G975) is in 6 verses of this path"
    ],
-   "score": 0.6315
+   "score": 0.719
   },
   {
    "q": "Which translation says \"flaming with fire\" in Daniel 7:9?",
@@ -482,7 +557,7 @@
   "Matthew Henry",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 10,
+ "verse_count": 26,
  "image": "img/mirror-4-throne-room.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -490,7 +565,7 @@
  },
  "built_from": {
   "file": "packaging/paths/mirror-4-throne-room.json",
-  "sha": "96304edba7ee73a8",
+  "sha": "dff969d54280600e",
   "checked_in": [
    "KJV",
    "ETH",

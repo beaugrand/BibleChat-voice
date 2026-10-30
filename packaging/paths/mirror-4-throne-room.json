@@ -23,7 +23,14 @@
   "Daniel 7:9-10",
   "Revelation 4:2-6",
   "Revelation 5:11",
-  "Revelation 20:11-12"
+  "Revelation 20:11-12",
+  "Isaiah 6:1-4",
+  "Ezekiel 1:26-28",
+  "Revelation 4:8",
+  "Revelation 5:6-10",
+  "Isaiah 6:8",
+  "2 Corinthians 5:10",
+  "Hebrews 4:16"
  ],
  "words": [
   "H3764",
@@ -125,6 +132,45 @@
    ]
   },
   {
+   "question": "Other throne visions: what did Isaiah and Ezekiel see, and who stands in the midst of the throne in Revelation 5?",
+   "refs": [
+    "Isaiah 6:1-4",
+    "Ezekiel 1:26-28",
+    "Revelation 4:8",
+    "Revelation 5:6-10"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G721"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Isaiah heard \"Holy, holy, holy, is the LORD of hosts\"; the living creatures in Revelation 4:8 say \"Holy, holy, holy, Lord God Almighty\".",
+     "refs": [
+      "Isaiah 6:3",
+      "Revelation 4:8"
+     ]
+    },
+    {
+     "text": "In the midst of the throne stood \"a Lamb as it had been slain\", and they sang \"Thou art worthy to take the book\".",
+     "refs": [
+      "Revelation 5:6",
+      "Revelation 5:9"
+     ]
+    }
+   ]
+  },
+  {
    "question": "What does John see at the great white throne, and what was opened?",
    "refs": [
     "Revelation 20:11-12"
@@ -153,13 +199,63 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: Isaiah answered his vision \"Here am I; send me\". What do these verses say the throne means for how we live now?",
+   "refs": [
+    "Isaiah 6:8",
+    "2 Corinthians 5:10",
+    "Hebrews 4:16"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"we must all appear before the judgment seat of Christ\"; \"Let us therefore come boldly unto the throne of grace\".",
+     "refs": [
+      "2 Corinthians 5:10",
+      "Hebrews 4:16"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
-   {"text": "\"the judgment was set, and the books were opened\"", "refs": ["Daniel 7:10"]},
-   {"text": "John saw \"a rainbow round about the throne\".", "refs": ["Revelation 4:3"]},
-   {"text": "Ten thousand times ten thousand stood before the throne in both visions.", "refs": ["Daniel 7:10", "Revelation 5:11"]},
-   {"text": "\"another book was opened, which is the book of life\"", "refs": ["Revelation 20:12"]}
+  {
+   "text": "\"the judgment was set, and the books were opened\"",
+   "refs": [
+    "Daniel 7:10"
+   ]
+  },
+  {
+   "text": "John saw \"a rainbow round about the throne\".",
+   "refs": [
+    "Revelation 4:3"
+   ]
+  },
+  {
+   "text": "Ten thousand times ten thousand stood before the throne in both visions.",
+   "refs": [
+    "Daniel 7:10",
+    "Revelation 5:11"
+   ]
+  },
+  {
+   "text": "\"another book was opened, which is the book of life\"",
+   "refs": [
+    "Revelation 20:12"
+   ]
+  }
  ],
  "quiz": [
   {

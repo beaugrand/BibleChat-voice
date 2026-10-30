@@ -24,7 +24,11 @@
   "Job 38:7",
   "Genesis 4:25-26",
   "Numbers 13:32-33",
-  "Deuteronomy 2:10-11"
+  "Deuteronomy 2:10-11",
+  "Genesis 5:24",
+  "Hebrews 11:5-6",
+  "Micah 6:8",
+  "Jude 1:20-21"
  ],
  "words": [
   "H2585",
@@ -338,6 +342,36 @@
      "text": "Jubilees retells Genesis and the start of Exodus by dates counted in weeks of years and jubilees of 49 years: \"in the third week in the second jubilee\".",
      "refs": [
       "Jubilees 4:1"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Enoch \"walked with God\" and \"pleased God\". What does Hebrews say pleases God, and what does Micah say walking with God means?",
+   "refs": [
+    "Genesis 5:24",
+    "Hebrews 11:5-6",
+    "Micah 6:8",
+    "Jude 1:20-21"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"without faith it is impossible to please him\"; \"to do justly, and to love mercy, and to walk humbly with thy God\".",
+     "refs": [
+      "Hebrews 11:6",
+      "Micah 6:8"
      ]
     }
    ]

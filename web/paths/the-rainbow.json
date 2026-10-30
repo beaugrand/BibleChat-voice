@@ -15,7 +15,11 @@
   "Revelation 10:1",
   "Psalms 97:1-6",
   "Habakkuk 3:3-4",
-  "John 8:12"
+  "John 8:12",
+  "Isaiah 54:10",
+  "Lamentations 3:22-23",
+  "2 Corinthians 1:20",
+  "Hebrews 10:23"
  ],
  "words": [
   "H7198",
@@ -88,6 +92,12 @@
      "refs": [
       "Genesis 9:16"
      ]
+    },
+    {
+     "text": "Genesis 9:16 says the sign is also for God: \"I will look upon it, that I may remember the everlasting covenant\". The bow reminds God, not only us.",
+     "refs": [
+      "Genesis 9:16"
+     ]
     }
    ]
   },
@@ -110,6 +120,15 @@
    ],
    "notes": [
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"For the mountains shall depart, and the hills be removed; but my kindness shall not depart from thee\". God compares this promise to His oath that the waters of Noah \"should no more go over the earth\".",
+     "refs": [
+      "Isaiah 54:9",
+      "Isaiah 54:10"
+     ]
+    }
    ]
   },
   {
@@ -259,6 +278,36 @@
    "notes": [
     "scofield",
     "henry"
+   ]
+  },
+  {
+   "question": "Living it out: God says \"my kindness shall not depart from thee\". What do these verses say His faithfulness means for us?",
+   "refs": [
+    "Isaiah 54:10",
+    "Lamentations 3:22-23",
+    "2 Corinthians 1:20",
+    "Hebrews 10:23"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"his compassions fail not\", \"They are new every morning\"; \"all the promises of God in him are yea, and in him Amen\".",
+     "refs": [
+      "Lamentations 3:22-23",
+      "2 Corinthians 1:20"
+     ]
+    }
    ]
   }
  ],
@@ -670,7 +719,7 @@
   "Scofield (1917)",
   "Matthew Henry"
  ],
- "verse_count": 30,
+ "verse_count": 34,
  "image": "img/the-rainbow.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -678,7 +727,7 @@
  },
  "built_from": {
   "file": "packaging/paths/the-rainbow.json",
-  "sha": "e3eb7f1a8a8bc50d",
+  "sha": "96a3367bd5a45e7c",
   "checked_in": [
    "KJV",
    "ETH",

@@ -1,59 +1,439 @@
 {
-  "id": "life-in-the-womb",
-  "title": "Life in the womb",
-  "category": "Body & Life",
-  "anim": {"kind": "light", "x": 95, "y": 30, "s": 40},
-  "opening_question": "What does the Bible say about the child in the womb: who forms it, who knows it, and what does the text call it?",
-  "required_refs": ["Psalms 139:13-16", "Jeremiah 1:5", "Job 31:15", "Isaiah 44:24", "Luke 1:41-44", "Exodus 21:22-25", "Psalms 51:5"],
-  "words": ["H990", "G2836", "H3335"],
-  "show": 8,
-  "steps": [
-    {"question": "Who covered me in my mother's womb, and what did His eyes see?", "refs": ["Psalms 139:13-16"],
-     "look_closer": {"strongs": ["H5526", "H1564"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "\"my substance, yet being unperfect\" is one Hebrew word, golem: \"a wrapped (and unformed mass that is as the embryo)\".", "refs": ["Psalms 139:16"], "strongs": ["H1564"]}
-     ]},
-    {"question": "When did God know Jeremiah, and when did He sanctify him?", "refs": ["Jeremiah 1:5"],
-     "look_closer": {"strongs": ["H3045", "H6942"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
-    {"question": "Who made both Job and his servant in the womb, and who formed thee from the womb?", "refs": ["Job 31:15", "Isaiah 44:24"],
-     "look_closer": {"strongs": ["H3335"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "What did the babe in Elisabeth's womb do when Mary's greeting sounded?", "refs": ["Luke 1:41-44"],
-     "look_closer": {"strongs": ["G1025"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "The \"babe\" in Elisabeth's womb is brephos, the same word Luke uses for the newborn Jesus in the manger. Strong's: \"an infant (properly, unborn)\".", "refs": ["Luke 1:41", "Luke 2:12"], "strongs": ["G1025"]}
-     ]},
-    {"question": "What does the law say when a woman with child is hurt, if no mischief follows and if mischief follows?", "refs": ["Exodus 21:22-25"],
-     "look_closer": {"strongs": ["H3206", "H611"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "The translations differ here. The King James says \"her fruit depart from her\"; the Berean Standard Bible says \"her child is born prematurely\".", "refs": ["Exodus 21:22"]},
-       {"text": "The Hebrew word for \"fruit\" in Exodus 21:22 is yeled: \"something born that is a lad or offspring\". The word for \"mischief\" is ason: \"hurt\".", "refs": ["Exodus 21:22"], "strongs": ["H3206", "H611"]}
-     ]},
-    {"question": "What does David say about the moment his mother conceived him?", "refs": ["Psalms 51:5"],
-     "look_closer": {"strongs": ["H3179"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]}
-  ],
-  "remember": [
-    {"text": "\"thou hast covered me in my mother's womb\"", "refs": ["Psalms 139:13"]},
-    {"text": "\"Before I formed thee in the belly I knew thee\"", "refs": ["Jeremiah 1:5"]},
-    {"text": "The babe \"leaped in my womb for joy\".", "refs": ["Luke 1:44"]},
-    {"text": "In Exodus 21:22 the translations differ. Read them side by side.", "refs": ["Exodus 21:22"]}
-  ],
-  "quiz": [
-    {"q": "Which verse says \"thou hast covered me in my mother's womb\"?", "type": "find_the_verse", "answer_refs": ["Psalms 139:13"]},
-    {"q": "Fill in the word: \"I am fearfully and ___ made\"", "type": "fill_word", "ref": "Psalms 139:14", "bible": "KJV", "word": "wonderfully"},
-    {"q": "Which translation says \"unformed body\" in Psalm 139:16?", "type": "which_translation", "ref": "Psalms 139:16", "bible": "BSB", "phrase": "unformed body"},
-    {"q": "Which verse says \"Before I formed thee in the belly I knew thee\"?", "type": "find_the_verse", "answer_refs": ["Jeremiah 1:5"]},
-    {"q": "In Jeremiah 1:5, what did God ordain Jeremiah to be?", "type": "multiple_choice",
-     "options": ["A prophet unto the nations", "A king", "A priest", "A judge"], "answer": 0, "answer_refs": ["Jeremiah 1:5"], "check": {"bible": "KJV", "word": "prophet"}},
-    {"q": "Which verse asks \"did not one fashion us in the womb?\"", "type": "find_the_verse", "answer_refs": ["Job 31:15"]},
-    {"q": "In Luke 1:44, why did the babe leap in Elisabeth's womb?", "type": "multiple_choice",
-     "options": ["For joy", "For fear", "In sorrow", "In pain"], "answer": 0, "answer_refs": ["Luke 1:44"], "check": {"bible": "KJV", "word": "joy"}},
-    {"q": "Fill in the word: \"blessed is the ___ of thy womb\"", "type": "fill_word", "ref": "Luke 1:42", "bible": "KJV", "word": "fruit"},
-    {"q": "Which translation says \"her fruit depart from her\" in Exodus 21:22?", "type": "which_translation", "ref": "Exodus 21:22", "bible": "KJV", "phrase": "her fruit depart from her"},
-    {"q": "Which translation says \"gives birth prematurely\" in Exodus 21:22?", "type": "which_translation", "ref": "Exodus 21:22", "bible": "ETH", "phrase": "gives birth prematurely"},
-    {"q": "Which verse says \"thou shalt give life for life\"?", "type": "find_the_verse", "answer_refs": ["Exodus 21:23"]},
-    {"q": "Which verse says \"he that formed thee from the womb\"?", "type": "find_the_verse", "answer_refs": ["Isaiah 44:24"]},
-    {"q": "According to Psalm 51:5, in what did my mother conceive me?", "type": "multiple_choice",
-     "options": ["In sin", "In joy", "In the temple", "In Egypt"], "answer": 0, "answer_refs": ["Psalms 51:5"], "check": {"bible": "KJV", "word": "sin"}}
-  ],
-  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]
+ "id": "life-in-the-womb",
+ "title": "Life in the womb",
+ "category": "Body & Life",
+ "anim": {
+  "kind": "light",
+  "x": 95,
+  "y": 30,
+  "s": 40
+ },
+ "opening_question": "What does the Bible say about the child in the womb: who forms it, who knows it, and what does the text call it?",
+ "required_refs": [
+  "Psalms 139:13-16",
+  "Jeremiah 1:5",
+  "Job 31:15",
+  "Isaiah 44:24",
+  "Luke 1:41-44",
+  "Exodus 21:22-25",
+  "Psalms 51:5",
+  "Genesis 25:22-23",
+  "Judges 13:3-7",
+  "Luke 1:15",
+  "Galatians 1:15",
+  "Psalms 22:9-10",
+  "Psalms 127:3",
+  "Psalms 34:18",
+  "1 John 1:9",
+  "Psalms 103:12-14"
+ ],
+ "words": [
+  "H990",
+  "G2836",
+  "H3335"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Who covered me in my mother's womb, and what did His eyes see?",
+   "refs": [
+    "Psalms 139:13-16"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5526",
+     "H1564"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"my substance, yet being unperfect\" is one Hebrew word, golem: \"a wrapped (and unformed mass that is as the embryo)\".",
+     "refs": [
+      "Psalms 139:16"
+     ],
+     "strongs": [
+      "H1564"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "When did God know Jeremiah, and when did He sanctify him?",
+   "refs": [
+    "Jeremiah 1:5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3045",
+     "H6942"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "Who made both Job and his servant in the womb, and who formed thee from the womb?",
+   "refs": [
+    "Job 31:15",
+    "Isaiah 44:24"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3335"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "What did the babe in Elisabeth's womb do when Mary's greeting sounded?",
+   "refs": [
+    "Luke 1:41-44"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1025"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The \"babe\" in Elisabeth's womb is brephos, the same word Luke uses for the newborn Jesus in the manger. Strong's: \"an infant (properly, unborn)\".",
+     "refs": [
+      "Luke 1:41",
+      "Luke 2:12"
+     ],
+     "strongs": [
+      "G1025"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who else does the Bible speak of before birth: twins, a Nazarite, John and Paul? What does the psalm call children?",
+   "refs": [
+    "Genesis 25:22-23",
+    "Judges 13:3-7",
+    "Luke 1:15",
+    "Galatians 1:15",
+    "Psalms 22:9-10",
+    "Psalms 127:3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2836"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"the children struggled together within her\", and the LORD said \"Two nations are in thy womb\".",
+     "refs": [
+      "Genesis 25:22-23"
+     ]
+    },
+    {
+     "text": "John would be \"filled with the Holy Ghost, even from his mother's womb\"; Paul says God \"separated me from my mother's womb\"; the psalm: \"children are an heritage of the LORD\".",
+     "refs": [
+      "Luke 1:15",
+      "Galatians 1:15",
+      "Psalms 127:3"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does the law say when a woman with child is hurt, if no mischief follows and if mischief follows?",
+   "refs": [
+    "Exodus 21:22-25"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3206",
+     "H611"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The translations differ here. The King James says \"her fruit depart from her\"; the Berean Standard Bible says \"her child is born prematurely\".",
+     "refs": [
+      "Exodus 21:22"
+     ]
+    },
+    {
+     "text": "The Hebrew word for \"fruit\" in Exodus 21:22 is yeled: \"something born that is a lad or offspring\". The word for \"mischief\" is ason: \"hurt\".",
+     "refs": [
+      "Exodus 21:22"
+     ],
+     "strongs": [
+      "H3206",
+      "H611"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does David say about the moment his mother conceived him?",
+   "refs": [
+    "Psalms 51:5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3179"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "Living it out: for anyone who has lost a child, or who carries regret, what do these verses say about the LORD's nearness and His forgiveness?",
+   "refs": [
+    "Psalms 34:18",
+    "1 John 1:9",
+    "Psalms 103:12-14"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"The LORD is nigh unto them that are of a broken heart\"; \"If we confess our sins, he is faithful and just to forgive us our sins\"; \"As far as the east is from the west, so far hath he removed our transgressions from us\".",
+     "refs": [
+      "Psalms 34:18",
+      "1 John 1:9",
+      "Psalms 103:12"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"thou hast covered me in my mother's womb\"",
+   "refs": [
+    "Psalms 139:13"
+   ]
+  },
+  {
+   "text": "\"Before I formed thee in the belly I knew thee\"",
+   "refs": [
+    "Jeremiah 1:5"
+   ]
+  },
+  {
+   "text": "The babe \"leaped in my womb for joy\".",
+   "refs": [
+    "Luke 1:44"
+   ]
+  },
+  {
+   "text": "In Exodus 21:22 the translations differ. Read them side by side.",
+   "refs": [
+    "Exodus 21:22"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"thou hast covered me in my mother's womb\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 139:13"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"I am fearfully and ___ made\"",
+   "type": "fill_word",
+   "ref": "Psalms 139:14",
+   "bible": "KJV",
+   "word": "wonderfully"
+  },
+  {
+   "q": "Which translation says \"unformed body\" in Psalm 139:16?",
+   "type": "which_translation",
+   "ref": "Psalms 139:16",
+   "bible": "BSB",
+   "phrase": "unformed body"
+  },
+  {
+   "q": "Which verse says \"Before I formed thee in the belly I knew thee\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Jeremiah 1:5"
+   ]
+  },
+  {
+   "q": "In Jeremiah 1:5, what did God ordain Jeremiah to be?",
+   "type": "multiple_choice",
+   "options": [
+    "A prophet unto the nations",
+    "A king",
+    "A priest",
+    "A judge"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Jeremiah 1:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "prophet"
+   }
+  },
+  {
+   "q": "Which verse asks \"did not one fashion us in the womb?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Job 31:15"
+   ]
+  },
+  {
+   "q": "In Luke 1:44, why did the babe leap in Elisabeth's womb?",
+   "type": "multiple_choice",
+   "options": [
+    "For joy",
+    "For fear",
+    "In sorrow",
+    "In pain"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 1:44"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "joy"
+   }
+  },
+  {
+   "q": "Fill in the word: \"blessed is the ___ of thy womb\"",
+   "type": "fill_word",
+   "ref": "Luke 1:42",
+   "bible": "KJV",
+   "word": "fruit"
+  },
+  {
+   "q": "Which translation says \"her fruit depart from her\" in Exodus 21:22?",
+   "type": "which_translation",
+   "ref": "Exodus 21:22",
+   "bible": "KJV",
+   "phrase": "her fruit depart from her"
+  },
+  {
+   "q": "Which translation says \"gives birth prematurely\" in Exodus 21:22?",
+   "type": "which_translation",
+   "ref": "Exodus 21:22",
+   "bible": "ETH",
+   "phrase": "gives birth prematurely"
+  },
+  {
+   "q": "Which verse says \"thou shalt give life for life\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Exodus 21:23"
+   ]
+  },
+  {
+   "q": "Which verse says \"he that formed thee from the womb\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 44:24"
+   ]
+  },
+  {
+   "q": "According to Psalm 51:5, in what did my mother conceive me?",
+   "type": "multiple_choice",
+   "options": [
+    "In sin",
+    "In joy",
+    "In the temple",
+    "In Egypt"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Psalms 51:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "sin"
+   }
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ]
 }

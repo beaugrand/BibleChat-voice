@@ -27,7 +27,13 @@
   "1 Thessalonians 5:1-8",
   "Titus 2:11-13",
   "1 John 3:2-3",
-  "Revelation 22:20"
+  "Revelation 22:20",
+  "Revelation 11:15",
+  "Matthew 25:1-13",
+  "Revelation 20:4-6",
+  "1 John 3:3",
+  "2 Peter 3:11-14",
+  "Luke 12:35-37"
  ],
  "words": [
   "G726",
@@ -108,7 +114,8 @@
    "question": "What mystery does Paul show? When are we changed, how fast, and what will our bodies be like?",
    "refs": [
     "1 Corinthians 15:51-54",
-    "Philippians 3:20-21"
+    "Philippians 3:20-21",
+    "Revelation 11:15"
    ],
    "look_closer": {
     "strongs": [
@@ -154,6 +161,13 @@
      "text": "The BSB says \"our citizenship is in heaven\" where the KJV says \"our conversation is in heaven\".",
      "refs": [
       "Philippians 3:20"
+     ]
+    },
+    {
+     "text": "Paul speaks of \"the last trump\"; Revelation 11:15 tells how \"the seventh angel sounded\". Some read them as the same trumpet, some do not.",
+     "refs": [
+      "1 Corinthians 15:52",
+      "Revelation 11:15"
      ]
     }
    ]
@@ -436,6 +450,49 @@
      "strongs": [
       "G3709"
      ]
+    },
+    {
+     "text": "Outside history, not Scripture: the debate over the timing (before, in the middle of, or after the tribulation) grew mainly in the 1800s and 1900s; John Nelson Darby and later the Scofield Reference Bible (1909) taught a rapture before it. This helps explain why churches differ.",
+     "refs": [
+      "2 Thessalonians 2:1"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Two more passages readers bring: the ten virgins, and the first resurrection. Who was ready, and who lives and reigns with Christ?",
+   "refs": [
+    "Matthew 25:1-13",
+    "Revelation 20:4-6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G386"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"they that were ready went in with him to the marriage: and the door was shut\"; \"Watch therefore, for ye know neither the day nor the hour\".",
+     "refs": [
+      "Matthew 25:10",
+      "Matthew 25:13"
+     ]
+    },
+    {
+     "text": "Revelation 20:5: \"This is the first resurrection\"; they \"lived and reigned with Christ a thousand years\".",
+     "refs": [
+      "Revelation 20:4-5"
+     ]
     }
    ]
   },
@@ -493,6 +550,35 @@
      ],
      "strongs": [
       "G3870"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: whatever the timing, what do these verses ask of us while we wait?",
+   "refs": [
+    "1 John 3:3",
+    "2 Peter 3:11-14",
+    "Luke 12:35-37"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"what manner of persons ought ye to be in all holy conversation and godliness\"; \"Let your loins be girded about, and your lights burning\".",
+     "refs": [
+      "2 Peter 3:11",
+      "Luke 12:35"
      ]
     }
    ]
@@ -921,16 +1007,16 @@
     "xref": 26,
     "votes": 371,
     "word": "G1127",
-    "word_count": 3,
+    "word_count": 5,
     "differ": 0.631,
     "quoted": null
    },
    "why": [
     "26 cross-references point here",
-    "The Greek word grēgoreúō (G1127) is in 3 verses of this path",
+    "The Greek word grēgoreúō (G1127) is in 5 verses of this path",
     "Translations differ here"
    ],
-   "score": 0.6896
+   "score": 0.7479
   },
   {
    "q": "According to 2 Thessalonians 2:3, what must come first before that day?",
@@ -1067,7 +1153,7 @@
   "Scofield (1917)",
   "Matthew Henry"
  ],
- "verse_count": 61,
+ "verse_count": 85,
  "image": "img/the-rapture.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -1075,7 +1161,7 @@
  },
  "built_from": {
   "file": "packaging/paths/the-rapture.json",
-  "sha": "ad3e91eff5d844e6",
+  "sha": "3acc8eb406422704",
   "checked_in": [
    "KJV",
    "ETH",

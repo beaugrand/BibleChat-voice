@@ -25,7 +25,11 @@
   "Revelation 1:13-14",
   "Daniel 7:9",
   "Revelation 14:14",
-  "Matthew 26:63-64"
+  "Matthew 26:63-64",
+  "Mark 14:62",
+  "Acts 7:56",
+  "Luke 21:36",
+  "1 John 2:28"
  ],
  "words": [
   "H1247",
@@ -148,12 +152,22 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "John sees on the white cloud one \"like unto the Son of man, having on his head a golden crown, and in his hand a sharp sickle\".",
+     "refs": [
+      "Revelation 14:14"
+     ]
+    }
    ]
   },
   {
    "question": "When the high priest questioned Jesus, which words of Daniel did Jesus use?",
    "refs": [
-    "Matthew 26:63-64"
+    "Matthew 26:63-64",
+    "Mark 14:62",
+    "Acts 7:56"
    ],
    "look_closer": {
     "strongs": [
@@ -176,6 +190,42 @@
      "refs": [
       "Matthew 26:64",
       "Daniel 7:13"
+     ]
+    },
+    {
+     "text": "Mark tells the same answer: \"I am: and ye shall see the Son of man sitting on the right hand of power\". Stephen, the first martyr: \"I see the heavens opened, and the Son of man standing on the right hand of God\".",
+     "refs": [
+      "Mark 14:62",
+      "Acts 7:56"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Jesus applied Daniel's words to Himself. Who do these verses say will see Him, and how are we to wait for Him?",
+   "refs": [
+    "Revelation 1:7",
+    "Luke 21:36",
+    "1 John 2:28"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Watch ye therefore, and pray always\"; \"abide in him; that, when he shall appear, we may have confidence\".",
+     "refs": [
+      "Luke 21:36",
+      "1 John 2:28"
      ]
     }
    ]
@@ -270,15 +320,15 @@
     "xref": 45,
     "votes": 443,
     "word": "G3507",
-    "word_count": 4,
+    "word_count": 5,
     "differ": 0.38,
     "quoted": null
    },
    "why": [
     "45 cross-references point here",
-    "The Greek word nephélē (G3507) is in 4 verses of this path"
+    "The Greek word nephélē (G3507) is in 5 verses of this path"
    ],
-   "score": 0.6617
+   "score": 0.6908
   },
   {
    "q": "Which verse says \"every eye shall see him, and they also which pierced him\"?",
@@ -290,15 +340,15 @@
     "xref": 45,
     "votes": 443,
     "word": "G3507",
-    "word_count": 4,
+    "word_count": 5,
     "differ": 0.38,
     "quoted": null
    },
    "why": [
     "45 cross-references point here",
-    "The Greek word nephélē (G3507) is in 4 verses of this path"
+    "The Greek word nephélē (G3507) is in 5 verses of this path"
    ],
-   "score": 0.6617
+   "score": 0.6908
   },
   {
    "q": "Which translation says \"one like a son of man\" in Daniel 7:13?",
@@ -391,16 +441,16 @@
    "signals": {
     "xref": 11,
     "votes": 160,
-    "word": "G3507",
-    "word_count": 4,
+    "word": "G5207",
+    "word_count": 7,
     "differ": 0.233,
     "quoted": null
    },
    "why": [
     "11 cross-references point here",
-    "The Greek word nephélē (G3507) is in 4 verses of this path"
+    "The Greek word huiós (G5207) is in 7 verses of this path"
    ],
-   "score": 0.5564
+   "score": 0.6439
   },
   {
    "q": "Fill in the word: \"having on his head a golden ___\"",
@@ -414,16 +464,16 @@
    "signals": {
     "xref": 11,
     "votes": 160,
-    "word": "G3507",
-    "word_count": 4,
+    "word": "G5207",
+    "word_count": 7,
     "differ": 0.233,
     "quoted": null
    },
    "why": [
     "11 cross-references point here",
-    "The Greek word nephélē (G3507) is in 4 verses of this path"
+    "The Greek word huiós (G5207) is in 7 verses of this path"
    ],
-   "score": 0.5564
+   "score": 0.6439
   },
   {
    "q": "Which verse says \"Hereafter shall ye see the Son of man sitting on the right hand of power\"?",
@@ -435,15 +485,15 @@
     "xref": 39,
     "votes": 344,
     "word": "G5207",
-    "word_count": 4,
+    "word_count": 7,
     "differ": 0.471,
     "quoted": null
    },
    "why": [
     "39 cross-references point here",
-    "The Greek word huiós (G5207) is in 4 verses of this path"
+    "The Greek word huiós (G5207) is in 7 verses of this path"
    ],
-   "score": 0.6731
+   "score": 0.7606
   },
   {
    "q": "Which translation says \"all kindreds of the earth shall wail\" in Revelation 1:7?",
@@ -458,15 +508,15 @@
     "xref": 45,
     "votes": 443,
     "word": "G3507",
-    "word_count": 4,
+    "word_count": 5,
     "differ": 0.38,
     "quoted": null
    },
    "why": [
     "45 cross-references point here",
-    "The Greek word nephélē (G3507) is in 4 verses of this path"
+    "The Greek word nephélē (G3507) is in 5 verses of this path"
    ],
-   "score": 0.6617
+   "score": 0.6908
   }
  ],
  "sources": [
@@ -479,7 +529,7 @@
   "Matthew Henry",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 9,
+ "verse_count": 13,
  "image": "img/mirror-3-son-of-man.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -487,7 +537,7 @@
  },
  "built_from": {
   "file": "packaging/paths/mirror-3-son-of-man.json",
-  "sha": "55a20bff5daf6339",
+  "sha": "7ea4f684fee1e2f1",
   "checked_in": [
    "KJV",
    "ETH",

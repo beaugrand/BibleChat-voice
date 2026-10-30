@@ -16,7 +16,16 @@
   "Isaiah 44:24",
   "Luke 1:41-44",
   "Exodus 21:22-25",
-  "Psalms 51:5"
+  "Psalms 51:5",
+  "Genesis 25:22-23",
+  "Judges 13:3-7",
+  "Luke 1:15",
+  "Galatians 1:15",
+  "Psalms 22:9-10",
+  "Psalms 127:3",
+  "Psalms 34:18",
+  "1 John 1:9",
+  "Psalms 103:12-14"
  ],
  "words": [
   "H990",
@@ -135,6 +144,47 @@
    ]
   },
   {
+   "question": "Who else does the Bible speak of before birth: twins, a Nazarite, John and Paul? What does the psalm call children?",
+   "refs": [
+    "Genesis 25:22-23",
+    "Judges 13:3-7",
+    "Luke 1:15",
+    "Galatians 1:15",
+    "Psalms 22:9-10",
+    "Psalms 127:3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2836"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"the children struggled together within her\", and the LORD said \"Two nations are in thy womb\".",
+     "refs": [
+      "Genesis 25:22-23"
+     ]
+    },
+    {
+     "text": "John would be \"filled with the Holy Ghost, even from his mother's womb\"; Paul says God \"separated me from my mother's womb\"; the psalm: \"children are an heritage of the LORD\".",
+     "refs": [
+      "Luke 1:15",
+      "Galatians 1:15",
+      "Psalms 127:3"
+     ]
+    }
+   ]
+  },
+  {
    "question": "What does the law say when a woman with child is hurt, if no mischief follows and if mischief follows?",
    "refs": [
     "Exodus 21:22-25"
@@ -193,6 +243,36 @@
    "notes": [
     "henry"
    ]
+  },
+  {
+   "question": "Living it out: for anyone who has lost a child, or who carries regret, what do these verses say about the LORD's nearness and His forgiveness?",
+   "refs": [
+    "Psalms 34:18",
+    "1 John 1:9",
+    "Psalms 103:12-14"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"The LORD is nigh unto them that are of a broken heart\"; \"If we confess our sins, he is faithful and just to forgive us our sins\"; \"As far as the east is from the west, so far hath he removed our transgressions from us\".",
+     "refs": [
+      "Psalms 34:18",
+      "1 John 1:9",
+      "Psalms 103:12"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
@@ -232,15 +312,15 @@
     "xref": 8,
     "votes": 69,
     "word": "H990",
-    "word_count": 4,
+    "word_count": 10,
     "differ": 0.431,
     "quoted": null
    },
    "why": [
     "8 cross-references point here",
-    "The Hebrew word beţen (H990) is in 4 verses of this path"
+    "The Hebrew word beţen (H990) is in 10 verses of this path"
    ],
-   "score": 0.5434
+   "score": 0.7184
   },
   {
    "q": "Fill in the word: \"I am fearfully and ___ made\"",
@@ -255,16 +335,16 @@
     "xref": 12,
     "votes": 122,
     "word": "H3045",
-    "word_count": 2,
+    "word_count": 3,
     "differ": 0.526,
     "quoted": null
    },
    "why": [
     "12 cross-references point here",
-    "The Hebrew word yâda‛ (H3045) is in 2 verses of this path",
+    "The Hebrew word yâda‛ (H3045) is in 3 verses of this path",
     "Translations differ here"
    ],
-   "score": 0.5511
+   "score": 0.5803
   },
   {
    "q": "Which translation says \"unformed body\" in Psalm 139:16?",
@@ -300,16 +380,16 @@
     "xref": 17,
     "votes": 1655,
     "word": "H990",
-    "word_count": 4,
+    "word_count": 10,
     "differ": 0.5,
     "quoted": null
    },
    "why": [
     "17 cross-references point here",
-    "The Hebrew word beţen (H990) is in 4 verses of this path",
+    "The Hebrew word beţen (H990) is in 10 verses of this path",
     "Translations differ here"
    ],
-   "score": 0.6917
+   "score": 0.8667
   },
   {
    "q": "In Jeremiah 1:5, what did God ordain Jeremiah to be?",
@@ -332,16 +412,16 @@
     "xref": 17,
     "votes": 1655,
     "word": "H990",
-    "word_count": 4,
+    "word_count": 10,
     "differ": 0.5,
     "quoted": null
    },
    "why": [
     "17 cross-references point here",
-    "The Hebrew word beţen (H990) is in 4 verses of this path",
+    "The Hebrew word beţen (H990) is in 10 verses of this path",
     "Translations differ here"
    ],
-   "score": 0.6917
+   "score": 0.8667
   },
   {
    "q": "Which verse asks \"did not one fashion us in the womb?\"",
@@ -353,15 +433,15 @@
     "xref": 15,
     "votes": 129,
     "word": "H990",
-    "word_count": 4,
+    "word_count": 10,
     "differ": 0.426,
     "quoted": null
    },
    "why": [
     "15 cross-references point here",
-    "The Hebrew word beţen (H990) is in 4 verses of this path"
+    "The Hebrew word beţen (H990) is in 10 verses of this path"
    ],
-   "score": 0.5886
+   "score": 0.7636
   },
   {
    "q": "In Luke 1:44, why did the babe leap in Elisabeth's womb?",
@@ -384,16 +464,16 @@
     "xref": 2,
     "votes": 15,
     "word": "G2836",
-    "word_count": 4,
+    "word_count": 6,
     "differ": 0.517,
     "quoted": null
    },
    "why": [
     "2 cross-references point here",
-    "The Greek word koilía (G2836) is in 4 verses of this path",
+    "The Greek word koilía (G2836) is in 6 verses of this path",
     "Translations differ here"
    ],
-   "score": 0.4541
+   "score": 0.5124
   },
   {
    "q": "Fill in the word: \"blessed is the ___ of thy womb\"",
@@ -408,15 +488,15 @@
     "xref": 5,
     "votes": 36,
     "word": "G2836",
-    "word_count": 4,
+    "word_count": 6,
     "differ": 0.362,
     "quoted": null
    },
    "why": [
     "5 cross-references point here",
-    "The Greek word koilía (G2836) is in 4 verses of this path"
+    "The Greek word koilía (G2836) is in 6 verses of this path"
    ],
-   "score": 0.4783
+   "score": 0.5366
   },
   {
    "q": "Which translation says \"her fruit depart from her\" in Exodus 21:22?",
@@ -497,15 +577,15 @@
     "xref": 31,
     "votes": 433,
     "word": "H990",
-    "word_count": 4,
+    "word_count": 10,
     "differ": 0.499,
     "quoted": null
    },
    "why": [
     "31 cross-references point here",
-    "The Hebrew word beţen (H990) is in 4 verses of this path"
+    "The Hebrew word beţen (H990) is in 10 verses of this path"
    ],
-   "score": 0.6914
+   "score": 0.8664
   },
   {
    "q": "According to Psalm 51:5, in what did my mother conceive me?",
@@ -548,7 +628,7 @@
   "Scofield (1917)",
   "Matthew Henry"
  ],
- "verse_count": 16,
+ "verse_count": 33,
  "image": "img/life-in-the-womb.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -556,7 +636,7 @@
  },
  "built_from": {
   "file": "packaging/paths/life-in-the-womb.json",
-  "sha": "bfce59dc557b193e",
+  "sha": "e8317657b4ec30ac",
   "checked_in": [
    "KJV",
    "ETH",

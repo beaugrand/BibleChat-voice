@@ -27,7 +27,10 @@
   "Ephesians 2:8-10",
   "Romans 3:31",
   "Romans 6:1-2",
-  "James 2:14-26"
+  "James 2:14-26",
+  "John 13:34-35",
+  "1 John 3:23",
+  "James 2:18"
  ],
  "words": [
   "G3056",
@@ -322,6 +325,36 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: Jesus said \"If ye love me, keep my commandments\". What new commandment does He give, and how will people know His disciples?",
+   "refs": [
+    "John 14:15",
+    "John 13:34-35",
+    "1 John 3:23",
+    "James 2:18"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"A new commandment I give unto you, That ye love one another\"; \"By this shall all men know that ye are my disciples\".",
+     "refs": [
+      "John 13:34",
+      "John 13:35"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
@@ -421,15 +454,15 @@
     "xref": 25,
     "votes": 364,
     "word": "G1785",
-    "word_count": 8,
+    "word_count": 11,
     "differ": 0.236,
     "quoted": null
    },
    "why": [
     "25 cross-references point here",
-    "The Greek word entolḗ (G1785) is in 8 verses of this path"
+    "The Greek word entolḗ (G1785) is in 11 verses of this path"
    ],
-   "score": 0.7353
+   "score": 0.8228
   },
   {
    "q": "Which translation says \"Blessed are those who wash their robes\" in Revelation 22:14?",
@@ -444,15 +477,15 @@
     "xref": 49,
     "votes": 565,
     "word": "G1785",
-    "word_count": 8,
+    "word_count": 11,
     "differ": 0.324,
     "quoted": null
    },
    "why": [
     "49 cross-references point here",
-    "The Greek word entolḗ (G1785) is in 8 verses of this path"
+    "The Greek word entolḗ (G1785) is in 11 verses of this path"
    ],
-   "score": 0.7643
+   "score": 0.8518
   },
   {
    "q": "Which verse says \"Think not that I am come to destroy the law, or the prophets\"?",
@@ -484,15 +517,15 @@
     "xref": 24,
     "votes": 661,
     "word": "G1785",
-    "word_count": 8,
+    "word_count": 11,
     "differ": 0.429,
     "quoted": null
    },
    "why": [
     "24 cross-references point here",
-    "The Greek word entolḗ (G1785) is in 8 verses of this path"
+    "The Greek word entolḗ (G1785) is in 11 verses of this path"
    ],
-   "score": 0.7906
+   "score": 0.8781
   },
   {
    "q": "Fill in the word: \"For this is the love of God, that we keep his commandments: and his commandments are not ___.\"",
@@ -507,15 +540,15 @@
     "xref": 38,
     "votes": 905,
     "word": "G1785",
-    "word_count": 8,
+    "word_count": 11,
     "differ": 0.267,
     "quoted": null
    },
    "why": [
     "38 cross-references point here",
-    "The Greek word entolḗ (G1785) is in 8 verses of this path"
+    "The Greek word entolḗ (G1785) is in 11 verses of this path"
    ],
-   "score": 0.7501
+   "score": 0.8376
   },
   {
    "q": "Revelation 14:12 says the saints keep the commandments of God and what else?",
@@ -641,7 +674,7 @@
   "Scofield (1917)",
   "Matthew Henry"
  ],
- "verse_count": 55,
+ "verse_count": 58,
  "image": "img/word-made-flesh.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -649,7 +682,7 @@
  },
  "built_from": {
   "file": "packaging/paths/word-made-flesh.json",
-  "sha": "19bf5f2ae8dafe8f",
+  "sha": "f1d06a7c85b9c831",
   "checked_in": [
    "KJV",
    "ETH",

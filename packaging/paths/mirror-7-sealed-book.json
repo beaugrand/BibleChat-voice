@@ -24,7 +24,12 @@
   "Daniel 12:8-9",
   "Revelation 5:1-5",
   "Revelation 10:4",
-  "Revelation 22:10"
+  "Revelation 22:10",
+  "Isaiah 29:11",
+  "Revelation 5:6-10",
+  "Revelation 1:3",
+  "Revelation 22:7",
+  "James 1:22"
  ],
  "words": [
   "H2856",
@@ -36,7 +41,8 @@
   {
    "question": "What was Daniel told to do with the words and the book, and until when?",
    "refs": [
-    "Daniel 12:4"
+    "Daniel 12:4",
+    "Isaiah 29:11"
    ],
    "look_closer": {
     "strongs": [
@@ -62,6 +68,12 @@
      "strongs": [
       "H2856"
      ]
+    },
+    {
+     "text": "Isaiah also speaks of \"the words of a book that is sealed\".",
+     "refs": [
+      "Isaiah 29:11"
+     ]
     }
    ]
   },
@@ -84,12 +96,21 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel is told \"the words are closed up and sealed till the time of the end\".",
+     "refs": [
+      "Daniel 12:9"
+     ]
+    }
    ]
   },
   {
    "question": "What was in the right hand of him that sat on the throne, and who prevailed to open it?",
    "refs": [
-    "Revelation 5:1-5"
+    "Revelation 5:1-5",
+    "Revelation 5:6-10"
    ],
    "look_closer": {
     "strongs": [
@@ -115,6 +136,12 @@
      ],
      "strongs": [
       "G975"
+     ]
+    },
+    {
+     "text": "Why the Lamb is worthy: \"Thou art worthy to take the book, and to open the seals thereof: for thou wast slain\".",
+     "refs": [
+      "Revelation 5:9"
      ]
     }
    ]
@@ -149,12 +176,57 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: John is told \"Seal not the sayings of the prophecy of this book\", and the book opens with a blessing on the one who reads. What do these verses ask of us?",
+   "refs": [
+    "Revelation 22:10",
+    "Revelation 1:3",
+    "Revelation 22:7",
+    "James 1:22"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Blessed is he that readeth, and they that hear the words of this prophecy, and keep those things\"; \"be ye doers of the word, and not hearers only\".",
+     "refs": [
+      "Revelation 1:3",
+      "James 1:22"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
-   {"text": "\"shut up the words, and seal the book, even to the time of the end\"", "refs": ["Daniel 12:4"]},
-   {"text": "The Lion of the tribe of Juda \"hath prevailed to open the book\".", "refs": ["Revelation 5:5"]},
-   {"text": "\"Seal not the sayings of the prophecy of this book: for the time is at hand\"", "refs": ["Revelation 22:10"]}
+  {
+   "text": "\"shut up the words, and seal the book, even to the time of the end\"",
+   "refs": [
+    "Daniel 12:4"
+   ]
+  },
+  {
+   "text": "The Lion of the tribe of Juda \"hath prevailed to open the book\".",
+   "refs": [
+    "Revelation 5:5"
+   ]
+  },
+  {
+   "text": "\"Seal not the sayings of the prophecy of this book: for the time is at hand\"",
+   "refs": [
+    "Revelation 22:10"
+   ]
+  }
  ],
  "quiz": [
   {

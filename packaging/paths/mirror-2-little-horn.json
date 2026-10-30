@@ -22,7 +22,12 @@
   "Daniel 7:24-26",
   "Revelation 13:5-7",
   "Daniel 7:11",
-  "Revelation 19:20"
+  "Revelation 19:20",
+  "2 Thessalonians 2:3-4",
+  "Daniel 7:25",
+  "Daniel 7:22",
+  "Revelation 2:10",
+  "James 1:12"
  ],
  "words": [
   "H7162",
@@ -80,12 +85,22 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"the same horn made war with the saints, and prevailed against them\" until \"judgment was given to the saints of the most High\".",
+     "refs": [
+      "Daniel 7:21",
+      "Daniel 7:22"
+     ]
+    }
    ]
   },
   {
    "question": "What shall he speak, what shall he think to change, and for how long?",
    "refs": [
-    "Daniel 7:24-26"
+    "Daniel 7:24-26",
+    "2 Thessalonians 2:3-4"
    ],
    "look_closer": {
     "strongs": [
@@ -110,6 +125,12 @@
      ],
      "strongs": [
       "H5732"
+     ]
+    },
+    {
+     "text": "Many read Paul's \"man of sin\" beside the little horn: he \"opposeth and exalteth himself above all that is called God\".",
+     "refs": [
+      "2 Thessalonians 2:3-4"
      ]
     }
    ]
@@ -187,14 +208,69 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: the horn \"shall wear out the saints\", yet judgment is given to them. What do these verses say to believers under pressure?",
+   "refs": [
+    "Daniel 7:25",
+    "Daniel 7:22",
+    "Revelation 2:10",
+    "James 1:12"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"be thou faithful unto death, and I will give thee a crown of life\"; \"Blessed is the man that endureth temptation\".",
+     "refs": [
+      "Revelation 2:10",
+      "James 1:12"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
-   {"text": "The little horn has \"a mouth speaking great things\".", "refs": ["Daniel 7:8"]},
-   {"text": "The same horn \"made war with the saints\".", "refs": ["Daniel 7:21"]},
-   {"text": "\"until a time and times and the dividing of time\"", "refs": ["Daniel 7:25"]},
-   {"text": "The beast is given power \"forty and two months\".", "refs": ["Revelation 13:5"]},
-   {"text": "\"But the judgment shall sit\"", "refs": ["Daniel 7:26"]}
+  {
+   "text": "The little horn has \"a mouth speaking great things\".",
+   "refs": [
+    "Daniel 7:8"
+   ]
+  },
+  {
+   "text": "The same horn \"made war with the saints\".",
+   "refs": [
+    "Daniel 7:21"
+   ]
+  },
+  {
+   "text": "\"until a time and times and the dividing of time\"",
+   "refs": [
+    "Daniel 7:25"
+   ]
+  },
+  {
+   "text": "The beast is given power \"forty and two months\".",
+   "refs": [
+    "Revelation 13:5"
+   ]
+  },
+  {
+   "text": "\"But the judgment shall sit\"",
+   "refs": [
+    "Daniel 7:26"
+   ]
+  }
  ],
  "quiz": [
   {

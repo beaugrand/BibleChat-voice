@@ -26,7 +26,10 @@
   "Isaiah 45:7",
   "2 Corinthians 4:6",
   "1 Timothy 6:16",
-  "James 1:17"
+  "James 1:17",
+  "Genesis 1:3",
+  "Matthew 5:16",
+  "1 John 1:7"
  ],
  "words": [
   "H216",
@@ -274,6 +277,37 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: God who said \"Let there be light\" has \"shined in our hearts\". What does Jesus say about following Him, and what are we to do with the light?",
+   "refs": [
+    "Genesis 1:3",
+    "2 Corinthians 4:6",
+    "John 8:12",
+    "Matthew 5:16",
+    "1 John 1:7"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"if we walk in the light, as he is in the light, we have fellowship one with another\"; \"Let your light so shine before men, that they may see your good works\".",
+     "refs": [
+      "1 John 1:7",
+      "Matthew 5:16"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
@@ -448,13 +482,13 @@
     "xref": 8,
     "votes": 149,
     "word": "G5457",
-    "word_count": 15,
+    "word_count": 17,
     "differ": 0.382,
     "quoted": null
    },
    "why": [
     "8 cross-references point here",
-    "The Greek word phōs (G5457) is in 15 verses of this path"
+    "The Greek word phōs (G5457) is in 17 verses of this path"
    ],
    "score": 0.8217
   },
@@ -479,13 +513,13 @@
     "xref": 49,
     "votes": 1055,
     "word": "G5457",
-    "word_count": 15,
+    "word_count": 17,
     "differ": 0.449,
     "quoted": null
    },
    "why": [
     "49 cross-references point here",
-    "The Greek word phōs (G5457) is in 15 verses of this path"
+    "The Greek word phōs (G5457) is in 17 verses of this path"
    ],
    "score": 0.9123
   },
@@ -523,13 +557,13 @@
     "xref": 35,
     "votes": 365,
     "word": "G5457",
-    "word_count": 15,
+    "word_count": 17,
     "differ": 0.522,
     "quoted": null
    },
    "why": [
     "35 cross-references point here",
-    "The Greek word phōs (G5457) is in 15 verses of this path",
+    "The Greek word phōs (G5457) is in 17 verses of this path",
     "Translations differ here"
    ],
    "score": 0.9236
@@ -544,13 +578,13 @@
     "xref": 79,
     "votes": 1085,
     "word": "G5457",
-    "word_count": 15,
+    "word_count": 17,
     "differ": 0.345,
     "quoted": null
    },
    "why": [
     "79 cross-references point here",
-    "The Greek word phōs (G5457) is in 15 verses of this path"
+    "The Greek word phōs (G5457) is in 17 verses of this path"
    ],
    "score": 0.8862
   },
@@ -618,13 +652,13 @@
     "xref": 94,
     "votes": 974,
     "word": "G5457",
-    "word_count": 15,
+    "word_count": 17,
     "differ": 0.347,
     "quoted": null
    },
    "why": [
     "94 cross-references point here",
-    "The Greek word phōs (G5457) is in 15 verses of this path"
+    "The Greek word phōs (G5457) is in 17 verses of this path"
    ],
    "score": 0.8868
   },
@@ -641,13 +675,13 @@
     "xref": 41,
     "votes": 371,
     "word": "G5457",
-    "word_count": 15,
+    "word_count": 17,
     "differ": 0.416,
     "quoted": null
    },
    "why": [
     "41 cross-references point here",
-    "The Greek word phōs (G5457) is in 15 verses of this path"
+    "The Greek word phōs (G5457) is in 17 verses of this path"
    ],
    "score": 0.8984
   }
@@ -661,7 +695,7 @@
   "Scofield (1917)",
   "Matthew Henry"
  ],
- "verse_count": 40,
+ "verse_count": 41,
  "image": "img/light-before-sun.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -669,7 +703,7 @@
  },
  "built_from": {
   "file": "packaging/paths/light-before-sun.json",
-  "sha": "ad22b32711816c23",
+  "sha": "456587bdc1164da4",
   "checked_in": [
    "KJV",
    "ETH",

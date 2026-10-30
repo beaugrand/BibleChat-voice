@@ -24,7 +24,11 @@
   "Job 38:7",
   "Genesis 4:25-26",
   "Numbers 13:32-33",
-  "Deuteronomy 2:10-11"
+  "Deuteronomy 2:10-11",
+  "Genesis 5:24",
+  "Hebrews 11:5-6",
+  "Micah 6:8",
+  "Jude 1:20-21"
  ],
  "words": [
   "H2585",
@@ -341,6 +345,36 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: Enoch \"walked with God\" and \"pleased God\". What does Hebrews say pleases God, and what does Micah say walking with God means?",
+   "refs": [
+    "Genesis 5:24",
+    "Hebrews 11:5-6",
+    "Micah 6:8",
+    "Jude 1:20-21"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"without faith it is impossible to please him\"; \"to do justly, and to love mercy, and to walk humbly with thy God\".",
+     "refs": [
+      "Hebrews 11:6",
+      "Micah 6:8"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
@@ -389,15 +423,15 @@
     "xref": 15,
     "votes": 105,
     "word": "H430",
-    "word_count": 8,
+    "word_count": 9,
     "differ": 0.406,
     "quoted": null
    },
    "why": [
     "15 cross-references point here",
-    "The Hebrew word 'ĕlôhîym (H430) is in 8 verses of this path"
+    "The Hebrew word 'ĕlôhîym (H430) is in 9 verses of this path"
    ],
-   "score": 0.6849
+   "score": 0.7141
   },
   {
    "q": "Jude 1:14 calls Enoch what?",
@@ -664,7 +698,7 @@
   "Matthew Henry",
   "1 Enoch and Jubilees (R. H. Charles, 1917)"
  ],
- "verse_count": 191,
+ "verse_count": 195,
  "image": "img/enoch-and-the-watchers.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -672,7 +706,7 @@
  },
  "built_from": {
   "file": "packaging/paths/enoch-and-the-watchers.json",
-  "sha": "305734b384f1d775",
+  "sha": "87d3696f55f95c38",
   "checked_in": [
    "KJV",
    "ETH",

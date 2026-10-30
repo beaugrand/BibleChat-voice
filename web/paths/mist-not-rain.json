@@ -16,7 +16,10 @@
   "Hebrews 11:7",
   "Genesis 6:17",
   "Job 36:27-28",
-  "2 Peter 3:5-6"
+  "2 Peter 3:5-6",
+  "Genesis 6:22",
+  "Hebrews 11:1",
+  "2 Corinthians 5:7"
  ],
  "words": [
   "H108",
@@ -264,6 +267,36 @@
      "text": "Psalm 148, written long after the flood, still speaks of \"waters that be above the heavens\".",
      "refs": [
       "Psalms 148:4"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Noah was \"warned of God of things not seen as yet\" and \"prepared an ark\". What do these verses say about trusting God's word before we see it?",
+   "refs": [
+    "Hebrews 11:7",
+    "Genesis 6:22",
+    "Hebrews 11:1",
+    "2 Corinthians 5:7"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Thus did Noah; according to all that God commanded him, so did he\". \"For we walk by faith, not by sight\".",
+     "refs": [
+      "Genesis 6:22",
+      "2 Corinthians 5:7"
      ]
     }
    ]
@@ -589,7 +622,7 @@
   "Scofield (1917)",
   "Matthew Henry"
  ],
- "verse_count": 22,
+ "verse_count": 25,
  "image": "img/mist-not-rain.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -597,7 +630,7 @@
  },
  "built_from": {
   "file": "packaging/paths/mist-not-rain.json",
-  "sha": "05ddc95a99ed26ab",
+  "sha": "ab568d07bdda4642",
   "checked_in": [
    "KJV",
    "ETH",

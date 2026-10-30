@@ -26,7 +26,10 @@
   "Isaiah 45:7",
   "2 Corinthians 4:6",
   "1 Timothy 6:16",
-  "James 1:17"
+  "James 1:17",
+  "Genesis 1:3",
+  "Matthew 5:16",
+  "1 John 1:7"
  ],
  "words": [
   "H216",
@@ -271,6 +274,37 @@
      "refs": [
       "James 1:17",
       "1 Timothy 6:16"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: God who said \"Let there be light\" has \"shined in our hearts\". What does Jesus say about following Him, and what are we to do with the light?",
+   "refs": [
+    "Genesis 1:3",
+    "2 Corinthians 4:6",
+    "John 8:12",
+    "Matthew 5:16",
+    "1 John 1:7"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"if we walk in the light, as he is in the light, we have fellowship one with another\"; \"Let your light so shine before men, that they may see your good works\".",
+     "refs": [
+      "1 John 1:7",
+      "Matthew 5:16"
      ]
     }
    ]

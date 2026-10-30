@@ -1,87 +1,656 @@
 {
-  "id": "husband-and-wife",
-  "title": "Husband and wife",
-  "category": "Marriage",
-  "anim": {"kind": "light", "x": 72, "y": 4, "s": 30},
-  "opening_question": "What does the Bible say about husband and wife: how it began, how they are to love each other, and what holds them together?",
-  "required_refs": ["Genesis 2:18-25", "Proverbs 31:10-31", "Song of Solomon 2:1-16", "Ephesians 5:21-33", "Colossians 3:18-19", "1 Corinthians 7:1-16", "1 Corinthians 13:4-8", "1 Peter 3:1-7", "Hebrews 13:4", "Ecclesiastes 4:9-12", "Mark 10:6-9", "Matthew 19:3-12", "Matthew 22:29-30"],
-  "words": ["H802", "G435", "G1135", "G25"],
-  "show": 8,
-  "steps": [
-    {"question": "Why did God make the woman, and what does the man say when he sees her?", "refs": ["Genesis 2:18-25"],
-     "look_closer": {"strongs": ["H5828", "H1692"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "Strong's gives two Hebrew words behind \"help meet\": 'ezer, \"aid\", and neged, \"a counterpart or mate\".", "refs": ["Genesis 2:18"], "strongs": ["H5828", "H5048"]},
-       {"text": "The word for \"cleave\" in Genesis 2:24 is dabaq: \"cling or adhere\".", "refs": ["Genesis 2:24"], "strongs": ["H1692"]}
-     ]},
-    {"question": "Where does Jesus go back to when He speaks of marriage, and who joins husband and wife together?", "refs": ["Mark 10:6-9"],
-     "look_closer": {"strongs": ["G4801"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"],
-     "facts": [
-       {"text": "\"joined together\" is one Greek word, syzeugnymi: \"to yoke together\".", "refs": ["Mark 10:9"], "strongs": ["G4801"]}
-     ]},
-    {"question": "What is the wife told, what is the husband told, and how did Christ love the church?", "refs": ["Ephesians 5:21-33"],
-     "look_closer": {"strongs": ["G25", "G5293"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "The passage opens with \"Submitting yourselves one to another\" before it speaks to wives and to husbands.", "refs": ["Ephesians 5:21"]},
-       {"text": "Paul quotes Genesis 2:24 here: \"they two shall be one flesh\".", "refs": ["Ephesians 5:31", "Genesis 2:24"]}
-     ]},
-    {"question": "What are wives told, and what are husbands told not to be?", "refs": ["Colossians 3:18-19"],
-     "look_closer": {"strongs": ["G4087"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "What adorning is of great price in the sight of God, and how are husbands to dwell with their wives?", "refs": ["1 Peter 3:1-7"],
-     "look_closer": {"strongs": ["G1108", "G5092"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
-    {"question": "What do husband and wife owe each other, and what does the Lord command about leaving?", "refs": ["1 Corinthians 7:1-16"],
-     "look_closer": {"strongs": ["G2133"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
-    {"question": "What is love like, and what never fails?", "refs": ["1 Corinthians 13:4-8"],
-     "look_closer": {"strongs": ["G26"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "The King James word \"Charity\" here is the Greek agape. Strong's gives it as \"love, i.e. affection or benevolence\".", "refs": ["1 Corinthians 13:4"], "strongs": ["G26"]}
-     ]},
-    {"question": "Why are two better than one, and what is not quickly broken?", "refs": ["Ecclesiastes 4:9-12"],
-     "look_closer": {"strongs": ["H8027"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "What does her husband do, and what is she praised for at the end?", "refs": ["Proverbs 31:10-31"],
-     "look_closer": {"strongs": ["H2428"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "How do the beloved and his love speak of each other?", "refs": ["Song of Solomon 2:1-16"],
-     "look_closer": {"strongs": ["H1730"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
-    {"question": "How is marriage to be held, and who will God judge?", "refs": ["Hebrews 13:4"],
-     "look_closer": {"strongs": ["G1062"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "What did Jesus answer when He was asked about putting away a wife, who can receive the saying about not marrying, and what is marriage in the resurrection?", "refs": ["Matthew 19:3-12", "Matthew 22:29-30"],
-     "look_closer": {"strongs": ["G630", "G1060"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"],
-     "facts": [
-       {"text": "Matthew has \"except it be for fornication\"; Mark gives the same teaching with no exception. Christians differ on when divorce and remarriage are allowed.", "refs": ["Matthew 19:9", "Mark 10:11-12"]},
-       {"text": "Not marrying is a gift too: \"All men cannot receive this saying, save they to whom it is given\".", "refs": ["Matthew 19:11"]},
-       {"text": "In the resurrection \"they neither marry, nor are given in marriage, but are as the angels of God in heaven\".", "refs": ["Matthew 22:30"]}
-     ]}
-  ],
-  "remember": [
-    {"text": "\"they shall be one flesh\"", "refs": ["Genesis 2:24"]},
-    {"text": "\"What therefore God hath joined together, let not man put asunder\"", "refs": ["Mark 10:9"]},
-    {"text": "\"Husbands, love your wives, even as Christ also loved the church\"", "refs": ["Ephesians 5:25"]},
-    {"text": "\"Charity never faileth\"", "refs": ["1 Corinthians 13:8"]},
-    {"text": "\"a threefold cord is not quickly broken\"", "refs": ["Ecclesiastes 4:12"]}
-  ],
-  "quiz": [
-    {"q": "Which verse says \"It is not good that the man should be alone\"?", "type": "find_the_verse", "answer_refs": ["Genesis 2:18"]},
-    {"q": "Fill in the word: \"and they shall be one ___\"", "type": "fill_word", "ref": "Genesis 2:24", "bible": "KJV", "word": "flesh"},
-    {"q": "Which verse says \"let not man put asunder\"?", "type": "find_the_verse", "answer_refs": ["Mark 10:9"]},
-    {"q": "In Ephesians 5:25, husbands are to love their wives even as whom loved the church?", "type": "multiple_choice",
-     "options": ["Christ", "Moses", "Abraham", "David"], "answer": 0, "answer_refs": ["Ephesians 5:25"], "check": {"bible": "KJV", "word": "Christ"}},
-    {"q": "Which translation says \"help meet\" in Genesis 2:18?", "type": "which_translation", "ref": "Genesis 2:18", "bible": "KJV", "phrase": "help meet"},
-    {"q": "Fill in the word: \"Husbands, love your wives, and be not ___ against them\"", "type": "fill_word", "ref": "Colossians 3:19", "bible": "KJV", "word": "bitter"},
-    {"q": "Which verse asks \"Who can find a virtuous woman?\"", "type": "find_the_verse", "answer_refs": ["Proverbs 31:10"]},
-    {"q": "Which translation says \"Charity suffereth long\" in 1 Corinthians 13:4?", "type": "which_translation", "ref": "1 Corinthians 13:4", "bible": "KJV", "phrase": "Charity suffereth long"},
-    {"q": "According to Ecclesiastes 4:12, what kind of cord is not quickly broken?", "type": "multiple_choice",
-     "options": ["A threefold cord", "A twofold cord", "A golden cord", "A silver cord"], "answer": 0, "answer_refs": ["Ecclesiastes 4:12"], "check": {"bible": "KJV", "word": "threefold"}},
-    {"q": "Which verse says \"My beloved is mine, and I am his\"?", "type": "find_the_verse", "answer_refs": ["Song of Solomon 2:16"]},
-    {"q": "In 1 Peter 3:7, husbands are to dwell with their wives according to what?", "type": "multiple_choice",
-     "options": ["Knowledge", "Custom", "Riches", "Strength"], "answer": 0, "answer_refs": ["1 Peter 3:7"], "check": {"bible": "KJV", "word": "knowledge"}},
-    {"q": "Which verse says \"Marriage is honourable in all\"?", "type": "find_the_verse", "answer_refs": ["Hebrews 13:4"]},
-    {"q": "Which verse says \"they neither marry, nor are given in marriage\"?", "type": "find_the_verse", "answer_refs": ["Matthew 22:30"]},
-    {"q": "Fill in the word: \"All men cannot receive this ___, save they to whom it is given\"", "type": "fill_word", "ref": "Matthew 19:11", "bible": "KJV", "word": "saying"},
-    {"q": "Fill in the word: \"Charity never ___\"", "type": "fill_word", "ref": "1 Corinthians 13:8", "bible": "KJV", "word": "faileth"},
-    {"q": "Which translation says \"a wife of noble character\" in Proverbs 31:10?", "type": "which_translation", "ref": "Proverbs 31:10", "bible": "BSB", "phrase": "wife of noble character"},
-    {"q": "In Proverbs 31:28, who arise up and call her blessed?", "type": "multiple_choice",
-     "options": ["Her children", "Her maidens", "The elders", "The merchants"], "answer": 0, "answer_refs": ["Proverbs 31:28"], "check": {"bible": "KJV", "word": "children"}},
-    {"q": "Which verse says \"his banner over me was love\"?", "type": "find_the_verse", "answer_refs": ["Song of Solomon 2:4"]}
-  ],
-  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]
+ "id": "husband-and-wife",
+ "title": "Husband and wife",
+ "category": "Marriage",
+ "anim": {
+  "kind": "light",
+  "x": 72,
+  "y": 4,
+  "s": 30
+ },
+ "opening_question": "What does the Bible say about husband and wife: how it began, how they are to love each other, and what holds them together?",
+ "required_refs": [
+  "Genesis 2:18-25",
+  "Proverbs 31:10-31",
+  "Song of Solomon 2:1-16",
+  "Ephesians 5:21-33",
+  "Colossians 3:18-19",
+  "1 Corinthians 7:1-16",
+  "1 Corinthians 13:4-8",
+  "1 Peter 3:1-7",
+  "Hebrews 13:4",
+  "Ecclesiastes 4:9-12",
+  "Mark 10:6-9",
+  "Matthew 19:3-12",
+  "Matthew 22:29-30",
+  "Ephesians 4:26-32",
+  "Colossians 3:12-14",
+  "Proverbs 5:15-19",
+  "Hosea 3:1-3",
+  "Malachi 2:14-16",
+  "Romans 12:10",
+  "Philippians 2:3-4",
+  "1 John 4:19"
+ ],
+ "words": [
+  "H802",
+  "G435",
+  "G1135",
+  "G25"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Why did God make the woman, and what does the man say when he sees her?",
+   "refs": [
+    "Genesis 2:18-25"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5828",
+     "H1692"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Strong's gives two Hebrew words behind \"help meet\": 'ezer, \"aid\", and neged, \"a counterpart or mate\".",
+     "refs": [
+      "Genesis 2:18"
+     ],
+     "strongs": [
+      "H5828",
+      "H5048"
+     ]
+    },
+    {
+     "text": "The word for \"cleave\" in Genesis 2:24 is dabaq: \"cling or adhere\".",
+     "refs": [
+      "Genesis 2:24"
+     ],
+     "strongs": [
+      "H1692"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Where does Jesus go back to when He speaks of marriage, and who joins husband and wife together?",
+   "refs": [
+    "Mark 10:6-9"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4801"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"joined together\" is one Greek word, syzeugnymi: \"to yoke together\".",
+     "refs": [
+      "Mark 10:9"
+     ],
+     "strongs": [
+      "G4801"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What is the wife told, what is the husband told, and how did Christ love the church?",
+   "refs": [
+    "Ephesians 5:21-33"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G25",
+     "G5293"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The passage opens with \"Submitting yourselves one to another\" before it speaks to wives and to husbands.",
+     "refs": [
+      "Ephesians 5:21"
+     ]
+    },
+    {
+     "text": "Paul quotes Genesis 2:24 here: \"they two shall be one flesh\".",
+     "refs": [
+      "Ephesians 5:31",
+      "Genesis 2:24"
+     ]
+    },
+    {
+     "text": "The passage opens with one verse to both: \"Submitting yourselves one to another in the fear of God\" (5:21), before it speaks to wives and to husbands.",
+     "refs": [
+      "Ephesians 5:21"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What are wives told, and what are husbands told not to be? And when there is conflict: what do these verses say about anger, words and forgiving?",
+   "refs": [
+    "Colossians 3:18-19",
+    "Ephesians 4:26-32",
+    "Colossians 3:12-14"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4087"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"let not the sun go down upon your wrath\"; \"forgiving one another, even as God for Christ's sake hath forgiven you\"; \"above all these things put on charity, which is the bond of perfectness\".",
+     "refs": [
+      "Ephesians 4:26",
+      "Ephesians 4:32",
+      "Colossians 3:14"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What adorning is of great price in the sight of God, and how are husbands to dwell with their wives?",
+   "refs": [
+    "1 Peter 3:1-7"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1108",
+     "G5092"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "What do husband and wife owe each other, and what does the Lord command about leaving?",
+   "refs": [
+    "1 Corinthians 7:1-16"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2133"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "What is love like, and what never fails?",
+   "refs": [
+    "1 Corinthians 13:4-8"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G26"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The King James word \"Charity\" here is the Greek agape. Strong's gives it as \"love, i.e. affection or benevolence\".",
+     "refs": [
+      "1 Corinthians 13:4"
+     ],
+     "strongs": [
+      "G26"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Why are two better than one, and what is not quickly broken?",
+   "refs": [
+    "Ecclesiastes 4:9-12"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H8027"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "What does her husband do, and what is she praised for at the end?",
+   "refs": [
+    "Proverbs 31:10-31"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2428"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "How do the beloved and his love speak of each other? What does Proverbs say about the wife of thy youth, and what did the LORD tell Hosea about faithful love?",
+   "refs": [
+    "Song of Solomon 2:1-16",
+    "Proverbs 5:15-19",
+    "Hosea 3:1-3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H1730"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"rejoice with the wife of thy youth\"; Hosea is told to love again \"according to the love of the LORD toward the children of Israel\".",
+     "refs": [
+      "Proverbs 5:18",
+      "Hosea 3:1"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How is marriage to be held, and who will God judge? What does Malachi call the wife, and what does the LORD say about putting away?",
+   "refs": [
+    "Hebrews 13:4",
+    "Malachi 2:14-16"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1062"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Malachi calls marriage a covenant the LORD witnessed: \"the wife of thy covenant\". \"For the LORD, the God of Israel, saith that he hateth putting away\".",
+     "refs": [
+      "Malachi 2:14",
+      "Malachi 2:16"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jesus answer when He was asked about putting away a wife, who can receive the saying about not marrying, and what is marriage in the resurrection?",
+   "refs": [
+    "Matthew 19:3-12",
+    "Matthew 22:29-30"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G630",
+     "G1060"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Matthew has \"except it be for fornication\"; Mark gives the same teaching with no exception. Christians differ on when divorce and remarriage are allowed.",
+     "refs": [
+      "Matthew 19:9",
+      "Mark 10:11-12"
+     ]
+    },
+    {
+     "text": "Not marrying is a gift too: \"All men cannot receive this saying, save they to whom it is given\".",
+     "refs": [
+      "Matthew 19:11"
+     ]
+    },
+    {
+     "text": "In the resurrection \"they neither marry, nor are given in marriage, but are as the angels of God in heaven\".",
+     "refs": [
+      "Matthew 22:30"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: which one thing from these verses could you do for your husband or wife this week?",
+   "refs": [
+    "Romans 12:10",
+    "Philippians 2:3-4",
+    "1 John 4:19"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"in honour preferring one another\"; \"Look not every man on his own things, but every man also on the things of others\"; \"We love him, because he first loved us\".",
+     "refs": [
+      "Romans 12:10",
+      "Philippians 2:4",
+      "1 John 4:19"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"they shall be one flesh\"",
+   "refs": [
+    "Genesis 2:24"
+   ]
+  },
+  {
+   "text": "\"What therefore God hath joined together, let not man put asunder\"",
+   "refs": [
+    "Mark 10:9"
+   ]
+  },
+  {
+   "text": "\"Husbands, love your wives, even as Christ also loved the church\"",
+   "refs": [
+    "Ephesians 5:25"
+   ]
+  },
+  {
+   "text": "\"Charity never faileth\"",
+   "refs": [
+    "1 Corinthians 13:8"
+   ]
+  },
+  {
+   "text": "\"a threefold cord is not quickly broken\"",
+   "refs": [
+    "Ecclesiastes 4:12"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"It is not good that the man should be alone\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 2:18"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"and they shall be one ___\"",
+   "type": "fill_word",
+   "ref": "Genesis 2:24",
+   "bible": "KJV",
+   "word": "flesh"
+  },
+  {
+   "q": "Which verse says \"let not man put asunder\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Mark 10:9"
+   ]
+  },
+  {
+   "q": "In Ephesians 5:25, husbands are to love their wives even as whom loved the church?",
+   "type": "multiple_choice",
+   "options": [
+    "Christ",
+    "Moses",
+    "Abraham",
+    "David"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Ephesians 5:25"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Christ"
+   }
+  },
+  {
+   "q": "Which translation says \"help meet\" in Genesis 2:18?",
+   "type": "which_translation",
+   "ref": "Genesis 2:18",
+   "bible": "KJV",
+   "phrase": "help meet"
+  },
+  {
+   "q": "Fill in the word: \"Husbands, love your wives, and be not ___ against them\"",
+   "type": "fill_word",
+   "ref": "Colossians 3:19",
+   "bible": "KJV",
+   "word": "bitter"
+  },
+  {
+   "q": "Which verse asks \"Who can find a virtuous woman?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Proverbs 31:10"
+   ]
+  },
+  {
+   "q": "Which translation says \"Charity suffereth long\" in 1 Corinthians 13:4?",
+   "type": "which_translation",
+   "ref": "1 Corinthians 13:4",
+   "bible": "KJV",
+   "phrase": "Charity suffereth long"
+  },
+  {
+   "q": "According to Ecclesiastes 4:12, what kind of cord is not quickly broken?",
+   "type": "multiple_choice",
+   "options": [
+    "A threefold cord",
+    "A twofold cord",
+    "A golden cord",
+    "A silver cord"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Ecclesiastes 4:12"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "threefold"
+   }
+  },
+  {
+   "q": "Which verse says \"My beloved is mine, and I am his\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Song of Solomon 2:16"
+   ]
+  },
+  {
+   "q": "In 1 Peter 3:7, husbands are to dwell with their wives according to what?",
+   "type": "multiple_choice",
+   "options": [
+    "Knowledge",
+    "Custom",
+    "Riches",
+    "Strength"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 Peter 3:7"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "knowledge"
+   }
+  },
+  {
+   "q": "Which verse says \"Marriage is honourable in all\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Hebrews 13:4"
+   ]
+  },
+  {
+   "q": "Which verse says \"they neither marry, nor are given in marriage\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 22:30"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"All men cannot receive this ___, save they to whom it is given\"",
+   "type": "fill_word",
+   "ref": "Matthew 19:11",
+   "bible": "KJV",
+   "word": "saying"
+  },
+  {
+   "q": "Fill in the word: \"Charity never ___\"",
+   "type": "fill_word",
+   "ref": "1 Corinthians 13:8",
+   "bible": "KJV",
+   "word": "faileth"
+  },
+  {
+   "q": "Which translation says \"a wife of noble character\" in Proverbs 31:10?",
+   "type": "which_translation",
+   "ref": "Proverbs 31:10",
+   "bible": "BSB",
+   "phrase": "wife of noble character"
+  },
+  {
+   "q": "In Proverbs 31:28, who arise up and call her blessed?",
+   "type": "multiple_choice",
+   "options": [
+    "Her children",
+    "Her maidens",
+    "The elders",
+    "The merchants"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Proverbs 31:28"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "children"
+   }
+  },
+  {
+   "q": "Which verse says \"his banner over me was love\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Song of Solomon 2:4"
+   ]
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ]
 }

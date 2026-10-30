@@ -22,7 +22,15 @@
   "Daniel 7:23-24",
   "Revelation 13:1-2",
   "Revelation 17:12",
-  "Revelation 17:15"
+  "Revelation 17:15",
+  "Daniel 7:1-3",
+  "Daniel 7:4-8",
+  "Daniel 7:15-18",
+  "Daniel 8:20-21",
+  "Daniel 7:18",
+  "Daniel 7:27",
+  "Revelation 13:10",
+  "1 Peter 5:8-9"
  ],
  "words": [
   "H2423",
@@ -62,6 +70,12 @@
      "strongs": [
       "H2423"
      ]
+    },
+    {
+     "text": "Christians read Daniel and Revelation in four main ways: the events are past (fulfilled in the first centuries), unfolding through church history, still future, or a picture of the struggle in every age. The Scofield notes shown in this series read them as still future. Knowing there are four views helps you weigh any one of them.",
+     "refs": [
+      "Daniel 7:1"
+     ]
     }
    ]
   },
@@ -98,10 +112,11 @@
    ]
   },
   {
-   "question": "What does the one who stood by tell Daniel the beasts are, and what are the ten horns?",
+   "question": "What does the one who stood by tell Daniel the beasts are, and what are the ten horns? Who receives the kingdom, and which kingdoms does the angel name in Daniel 8?",
    "refs": [
-    "Daniel 7:15-17",
-    "Daniel 7:23-24"
+    "Daniel 7:15-18",
+    "Daniel 7:23-24",
+    "Daniel 8:20-21"
    ],
    "look_closer": {
     "strongs": [
@@ -117,6 +132,15 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"the saints of the most High shall take the kingdom\". In Daniel 8 the angel names \"the kings of Media and Persia\" and \"the king of Grecia\".",
+     "refs": [
+      "Daniel 7:18",
+      "Daniel 8:20-21"
+     ]
+    }
    ]
   },
   {
@@ -189,6 +213,36 @@
      "refs": [
       "Daniel 7:24",
       "Revelation 17:12"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: the beasts rise and fall, but \"the saints of the most High shall take the kingdom\". What do these verses ask of us while the kingdoms of this world stand?",
+   "refs": [
+    "Daniel 7:18",
+    "Daniel 7:27",
+    "Revelation 13:10",
+    "1 Peter 5:8-9"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Here is the patience and the faith of the saints\"; \"Be sober, be vigilant\", \"Whom resist stedfast in the faith\".",
+     "refs": [
+      "Revelation 13:10",
+      "1 Peter 5:8-9"
      ]
     }
    ]
@@ -570,7 +624,7 @@
   "Matthew Henry",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 17,
+ "verse_count": 24,
  "image": "img/mirror-1-four-beasts.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -578,7 +632,7 @@
  },
  "built_from": {
   "file": "packaging/paths/mirror-1-four-beasts.json",
-  "sha": "a79ae2efff94b0ac",
+  "sha": "f42b16e35953863f",
   "checked_in": [
    "KJV",
    "ETH",

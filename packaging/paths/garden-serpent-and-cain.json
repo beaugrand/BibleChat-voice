@@ -39,7 +39,13 @@
   "Genesis 4:9-16",
   "Genesis 4:26",
   "Genesis 5:3",
-  "Luke 3:38"
+  "Luke 3:38",
+  "Genesis 3:20",
+  "Genesis 5:1-2",
+  "Genesis 4:7",
+  "1 John 3:11",
+  "1 John 3:18",
+  "Matthew 5:23-24"
  ],
  "words": [
   "H5175",
@@ -229,7 +235,9 @@
    "refs": [
     "Genesis 4:1-2",
     "Genesis 4:25",
-    "Genesis 5:3"
+    "Genesis 5:3",
+    "Genesis 3:20",
+    "Genesis 5:1-2"
    ],
    "look_closer": {
     "strongs": [
@@ -280,6 +288,13 @@
      "text": "When Seth was born, Eve said God \"hath appointed me another seed instead of Abel, whom Cain slew\".",
      "refs": [
       "Genesis 4:25"
+     ]
+    },
+    {
+     "text": "Adam called his wife's name Eve \"because she was the mother of all living\", and Genesis 5:1 begins \"the book of the generations of Adam\".",
+     "refs": [
+      "Genesis 3:20",
+      "Genesis 5:1"
      ]
     }
    ]
@@ -498,15 +513,76 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: the LORD told Cain \"sin lieth at the door\" and \"thou shalt rule over him\". What does John say love looks like, and what does Jesus say to do before bringing a gift?",
+   "refs": [
+    "Genesis 4:7",
+    "1 John 3:11",
+    "1 John 3:18",
+    "Matthew 5:23-24"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "John: \"let us not love in word, neither in tongue; but in deed and in truth\". Jesus: \"first be reconciled to thy brother, and then come and offer thy gift\".",
+     "refs": [
+      "1 John 3:18",
+      "Matthew 5:24"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
-   {"text": "God said the man should not eat of the tree; the serpent said \"Ye shall not surely die\".", "refs": ["Genesis 2:17", "Genesis 3:4"]},
-   {"text": "The woman said \"The serpent beguiled me, and I did eat\".", "refs": ["Genesis 3:13"]},
-   {"text": "God put enmity between the serpent's seed and her seed: \"it shall bruise thy head\".", "refs": ["Genesis 3:15"]},
-   {"text": "\"Adam knew Eve his wife; and she conceived, and bare Cain\"", "refs": ["Genesis 4:1"]},
-   {"text": "Before Cain slew Abel, the LORD asked him: \"If thou doest well, shalt thou not be accepted?\"", "refs": ["Genesis 4:7"]},
-   {"text": "John gives the reason Cain slew his brother: \"Because his own works were evil\".", "refs": ["1 John 3:12"]}
+  {
+   "text": "God said the man should not eat of the tree; the serpent said \"Ye shall not surely die\".",
+   "refs": [
+    "Genesis 2:17",
+    "Genesis 3:4"
+   ]
+  },
+  {
+   "text": "The woman said \"The serpent beguiled me, and I did eat\".",
+   "refs": [
+    "Genesis 3:13"
+   ]
+  },
+  {
+   "text": "God put enmity between the serpent's seed and her seed: \"it shall bruise thy head\".",
+   "refs": [
+    "Genesis 3:15"
+   ]
+  },
+  {
+   "text": "\"Adam knew Eve his wife; and she conceived, and bare Cain\"",
+   "refs": [
+    "Genesis 4:1"
+   ]
+  },
+  {
+   "text": "Before Cain slew Abel, the LORD asked him: \"If thou doest well, shalt thou not be accepted?\"",
+   "refs": [
+    "Genesis 4:7"
+   ]
+  },
+  {
+   "text": "John gives the reason Cain slew his brother: \"Because his own works were evil\".",
+   "refs": [
+    "1 John 3:12"
+   ]
+  }
  ],
  "quiz": [
   {

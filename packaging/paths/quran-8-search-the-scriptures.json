@@ -23,7 +23,17 @@
   "John 5:39",
   "Acts 17:11",
   "2 Timothy 3:16",
-  "Hebrews 4:12"
+  "Hebrews 4:12",
+  "1 Peter 3:15-16",
+  "Colossians 4:6",
+  "John 5:39-40",
+  "John 5:45-47",
+  "Acts 17:10-12",
+  "2 Timothy 3:14-17",
+  "Isaiah 55:10-11",
+  "1 Peter 3:15",
+  "Romans 12:18",
+  "2 Timothy 2:24-25"
  ],
  "words": [
   "G2045",
@@ -227,14 +237,68 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: Peter says to be ready \"to give an answer\" with \"meekness and fear\". What do these verses ask of a Christian talking with a Muslim friend?",
+   "refs": [
+    "1 Peter 3:15",
+    "Romans 12:18",
+    "2 Timothy 2:24-25"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"If it be possible, as much as lieth in you, live peaceably with all men\"; \"the servant of the Lord must not strive; but be gentle unto all men\".",
+     "refs": [
+      "Romans 12:18",
+      "2 Timothy 2:24"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
-   {"text": "Give an answer \"with meekness and fear\".", "refs": ["1 Peter 3:15"]},
-   {"text": "\"Search the scriptures\" ... \"they are they which testify of me\"", "refs": ["John 5:39"]},
-   {"text": "The Bereans \"searched the scriptures daily\".", "refs": ["Acts 17:11"]},
-   {"text": "\"All scripture is given by inspiration of God\"", "refs": ["2 Timothy 3:16"]},
-   {"text": "\"it shall not return unto me void\"", "refs": ["Isaiah 55:11"]}
+  {
+   "text": "Give an answer \"with meekness and fear\".",
+   "refs": [
+    "1 Peter 3:15"
+   ]
+  },
+  {
+   "text": "\"Search the scriptures\" ... \"they are they which testify of me\"",
+   "refs": [
+    "John 5:39"
+   ]
+  },
+  {
+   "text": "The Bereans \"searched the scriptures daily\".",
+   "refs": [
+    "Acts 17:11"
+   ]
+  },
+  {
+   "text": "\"All scripture is given by inspiration of God\"",
+   "refs": [
+    "2 Timothy 3:16"
+   ]
+  },
+  {
+   "text": "\"it shall not return unto me void\"",
+   "refs": [
+    "Isaiah 55:11"
+   ]
+  }
  ],
  "quiz": [
   {

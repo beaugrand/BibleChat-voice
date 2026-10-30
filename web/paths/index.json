@@ -5,20 +5,29 @@
   "category": "Bible Study Groups",
   "image": "img/daniel-2-statue-and-stone.jpg",
   "opening_question": "Nebuchadnezzar dreamed of a great image of gold, silver, brass, iron and clay, and a stone cut out without hands. What did the dream show, and whose kingdom stands for ever?",
-  "steps": 5,
+  "steps": 8,
   "step_questions": [
+   "Before the dream: who were Daniel and his three friends, how did they come to Babylon, and what did God give them?",
    "What did the king demand of the wise men, and why could they not do it?",
    "Whom did Daniel go to first, and what did God reveal to him in a night vision?",
    "What was the great image made of, and what happened to it when the stone struck it?",
-   "Which kingdoms do the metals stand for, and what kingdom shall never be destroyed?",
-   "What did the king confess about Daniel's God, and what did he make right after?"
+   "Which kingdoms do the metals stand for, and what kingdom shall never be destroyed? Read Daniel 8:20-21 beside it: which kingdoms does the angel name there?",
+   "The stone: which stone do the Psalms and Isaiah speak of, and what do Jesus and Peter say about it?",
+   "What did the king confess about Daniel's God, and what did he make right after?",
+   "Living it out: Daniel blessed the God who \"removeth kings, and setteth up kings\", and the stone was \"cut out without hands\". Who rules history, and what do these verses ask of us under the rulers of today?"
   ],
   "books": [
-   "Daniel"
+   "1 Peter",
+   "1 Timothy",
+   "Daniel",
+   "Hebrews",
+   "Isaiah",
+   "Matthew",
+   "Psalms"
   ],
   "show": 8,
-  "verses": 50,
-  "minutes": 35,
+  "verses": 75,
+  "minutes": 50,
   "group": "Friday night Bible study",
   "study_date": "2026-10-23",
   "read_along": {
@@ -43,7 +52,7 @@
    "How hot was the furnace, what happened to the men who threw them in, and what did the king see in the fire?",
    "What could the fire not do to them, and whom did the king bless?",
    "Where else does Scripture speak of walking through fire, of faith that quenched the violence of fire, and of an image all must worship?",
-   "The opening asked: what does that ask of us? Which commandment were the three men keeping, and what do these verses say about whom to obey and about faith tried by fire?"
+   "Living it out: The opening asked: what does that ask of us? Which commandment were the three men keeping, and what do these verses say about whom to obey and about faith tried by fire?"
   ],
   "books": [
    "1 John",
@@ -77,7 +86,7 @@
   "category": "Enoch",
   "image": "img/enoch-and-the-watchers.jpg",
   "opening_question": "Who was Enoch, who were \"the sons of God\" in Genesis 6, and what does the New Testament say about them?",
-  "steps": 8,
+  "steps": 9,
   "step_questions": [
    "What does Genesis say about Enoch, and what does Hebrews add?",
    "Who took wives in Genesis 6, and who were born? Where else does the Old Testament say \"sons of God\", and what does Genesis say about the line of Seth?",
@@ -86,7 +95,8 @@
    "What do Peter's letters say about spirits in prison and angels that sinned?",
    "What does Jesus say about angels and marriage? Read it as part of the whole counsel.",
    "The Book of the Watchers (1 Enoch 6–16, Ethiopian Canon): who came down, what did they teach, and what was their judgement?",
-   "Jubilees 4–5 (Ethiopian Canon): what does it say about Jared's days, Enoch, and the angels of God?"
+   "Jubilees 4–5 (Ethiopian Canon): what does it say about Jared's days, Enoch, and the angels of God?",
+   "Living it out: Enoch \"walked with God\" and \"pleased God\". What does Hebrews say pleases God, and what does Micah say walking with God means?"
   ],
   "books": [
    "1 Enoch",
@@ -99,11 +109,12 @@
    "Jubilees",
    "Jude",
    "Matthew",
+   "Micah",
    "Numbers"
   ],
   "show": 8,
-  "verses": 191,
-  "minutes": 80,
+  "verses": 195,
+  "minutes": 85,
   "anim": {
    "kind": "light",
    "x": 62,
@@ -117,7 +128,7 @@
   "category": "Freedom",
   "image": "img/freedom-from-bondage.jpg",
   "opening_question": "What does the Bible say about being held captive by sin, like an addiction, and who sets us free?",
-  "steps": 7,
+  "steps": 9,
   "step_questions": [
    "What does Jesus call whoever commits sin, and what does Paul say about doing what he hates?",
    "What did they do in their trouble, and what did the LORD do with their bands?",
@@ -125,7 +136,9 @@
    "What shall not have dominion over you, and is there any condemnation for those in Christ Jesus?",
    "What does God make with every temptation, and what are the free told to stand fast in?",
    "Where does strength come from, how often are His mercies new, and where can we find mercy and help?",
-   "What happens when we confess our sins, and what is there where the Spirit of the Lord is?"
+   "When someone falls again: what does the text say about the just man who falls, and how did the father receive the son who came home?",
+   "What happens when we confess our sins, and what is there where the Spirit of the Lord is?",
+   "Living it out: freedom is not walked alone. What do these verses say about confessing to one another, bearing one another's burdens and renewing the mind? Who could you talk to: a pastor, a recovery group, a counsellor or a trusted friend?"
   ],
   "books": [
    "1 Corinthians",
@@ -133,15 +146,19 @@
    "2 Corinthians",
    "Galatians",
    "Hebrews",
+   "James",
    "John",
    "Lamentations",
+   "Luke",
+   "Micah",
    "Philippians",
+   "Proverbs",
    "Psalms",
    "Romans"
   ],
   "show": 8,
-  "verses": 26,
-  "minutes": 35,
+  "verses": 48,
+  "minutes": 45,
   "anim": {
    "kind": "light",
    "x": 70,
@@ -155,7 +172,7 @@
   "category": "Creation",
   "image": "img/garden-serpent-and-cain.jpg",
   "opening_question": "Some teach that the serpent fathered Cain: Genesis 4 says Adam knew Eve once, yet she bare Cain and \"again bare his brother Abel\", so (they say) the two were twins with two fathers. What does the text say about the serpent, Eve, Cain and Abel, and what did God tell Cain before he slew his brother?",
-  "steps": 8,
+  "steps": 9,
   "step_questions": [
    "What did God command the man, what did the serpent say, and what did the woman do with the fruit?",
    "When God asked the woman \"What is this that thou hast done?\", what did she answer, and what does Paul say happened to Eve?",
@@ -164,7 +181,8 @@
    "Judah \"went in unto her\": how many sons followed, and where was the third one born? When the Bible tells of twins, what word does it use, and by how many fathers were Rebekah's twins conceived?",
    "Why was Cain wroth, and what did the LORD tell him before he rose up against Abel?",
    "John says Cain \"was of that wicked one\". What makes someone a child of the devil in 1 John 3, and to whom did Jesus say \"Ye are of your father the devil\"?",
-   "What did the LORD do for Cain after Abel's blood cried from the ground, and through which son does the line run to Enos and to Luke's genealogy?"
+   "What did the LORD do for Cain after Abel's blood cried from the ground, and through which son does the line run to Enos and to Luke's genealogy?",
+   "Living it out: the LORD told Cain \"sin lieth at the door\" and \"thou shalt rule over him\". What does John say love looks like, and what does Jesus say to do before bringing a gift?"
   ],
   "books": [
    "1 John",
@@ -176,12 +194,13 @@
    "John",
    "Jude",
    "Luke",
+   "Matthew",
    "Revelation",
    "Romans"
   ],
   "show": 10,
-  "verses": 80,
-  "minutes": 55,
+  "verses": 86,
+  "minutes": 60,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -199,20 +218,23 @@
   "category": "Light & Darkness",
   "image": "img/halloween-light-in-darkness.jpg",
   "opening_question": "The Bible never names Halloween. What does it say about the things the day touches: witchcraft and spirits of the dead, darkness and light, special days, and fear? Read what the text says, and be fully persuaded in your own mind.",
-  "steps": 6,
+  "steps": 8,
   "step_questions": [
    "Which practices does the LORD list in Deuteronomy 18, what does He call them, and does witchcraft come up again in the New Testament?",
    "Where should a people seek: to the dead, or to their God? And why did Saul die?",
    "What were we once, what are we now, and what does the text say to do with the unfruitful works of darkness? What did the believers at Ephesus do with their books?",
    "One man esteems one day above another, another esteems every day alike: what does the text say about special days, and how is each person to decide?",
+   "Paul on things tied to idols: what does he say about knowledge, about the weaker brother, and about doing all to the glory of God?",
    "Why does a Christian not have to fear the darkness? What did Christ do to the principalities and powers, and to him that had the power of death?",
-   "What does the light do in the darkness, what does Jesus call Himself, and what does He call those who follow Him?"
+   "What does the light do in the darkness, what does Jesus call Himself, and what does He call those who follow Him?",
+   "Living it out: on a night of costumes and darkness, what do these verses ask of a believer toward neighbours, children and anyone who knocks at the door?"
   ],
   "books": [
    "1 Chronicles",
    "1 Corinthians",
    "1 John",
    "1 Peter",
+   "1 Samuel",
    "1 Thessalonians",
    "2 Timothy",
    "Acts",
@@ -230,8 +252,8 @@
    "Romans"
   ],
   "show": 8,
-  "verses": 43,
-  "minutes": 35,
+  "verses": 84,
+  "minutes": 55,
   "anim": {
    "kind": "light",
    "x": 70,
@@ -245,14 +267,15 @@
   "category": "Creation",
   "image": "img/heavens-and-earth.jpg",
   "opening_question": "What does the text itself say about the shape of the earth, the firmament and what holds the earth?",
-  "steps": 6,
+  "steps": 7,
   "step_questions": [
    "What is the firmament, where are the lights set, and what is above and below it?",
    "How do these verses describe the sky?",
    "Which words describe the shape: circle, compass, ball, corners? Read each one in its own sentence.",
    "What does the earth hang on or rest on? Read the verses about nothing, foundations and pillars side by side.",
    "What do these verses say about the earth being moved, and about the sun?",
-   "The Book of the Luminaries (Ethiopian Canon): how does it describe the sun, moon and stars and their gates?"
+   "The Book of the Luminaries (Ethiopian Canon): how does it describe the sun, moon and stars and their gates?",
+   "Living it out: Job was asked \"Where wast thou when I laid the foundations of the earth?\" What did Job answer, and what does the psalmist ask when he considers the heavens?"
   ],
   "books": [
    "1 Chronicles",
@@ -267,8 +290,8 @@
    "Revelation"
   ],
   "show": 8,
-  "verses": 194,
-  "minutes": 75,
+  "verses": 202,
+  "minutes": 80,
   "anim": {
    "kind": "stars"
   }
@@ -279,37 +302,43 @@
   "category": "Marriage",
   "image": "img/husband-and-wife.jpg",
   "opening_question": "What does the Bible say about husband and wife: how it began, how they are to love each other, and what holds them together?",
-  "steps": 12,
+  "steps": 13,
   "step_questions": [
    "Why did God make the woman, and what does the man say when he sees her?",
    "Where does Jesus go back to when He speaks of marriage, and who joins husband and wife together?",
    "What is the wife told, what is the husband told, and how did Christ love the church?",
-   "What are wives told, and what are husbands told not to be?",
+   "What are wives told, and what are husbands told not to be? And when there is conflict: what do these verses say about anger, words and forgiving?",
    "What adorning is of great price in the sight of God, and how are husbands to dwell with their wives?",
    "What do husband and wife owe each other, and what does the Lord command about leaving?",
    "What is love like, and what never fails?",
    "Why are two better than one, and what is not quickly broken?",
    "What does her husband do, and what is she praised for at the end?",
-   "How do the beloved and his love speak of each other?",
-   "How is marriage to be held, and who will God judge?",
-   "What did Jesus answer when He was asked about putting away a wife, who can receive the saying about not marrying, and what is marriage in the resurrection?"
+   "How do the beloved and his love speak of each other? What does Proverbs say about the wife of thy youth, and what did the LORD tell Hosea about faithful love?",
+   "How is marriage to be held, and who will God judge? What does Malachi call the wife, and what does the LORD say about putting away?",
+   "What did Jesus answer when He was asked about putting away a wife, who can receive the saying about not marrying, and what is marriage in the resurrection?",
+   "Living it out: which one thing from these verses could you do for your husband or wife this week?"
   ],
   "books": [
    "1 Corinthians",
+   "1 John",
    "1 Peter",
    "Colossians",
    "Ecclesiastes",
    "Ephesians",
    "Genesis",
    "Hebrews",
+   "Hosea",
+   "Malachi",
    "Mark",
    "Matthew",
+   "Philippians",
    "Proverbs",
+   "Romans",
    "Song of Solomon"
   ],
   "show": 8,
-  "verses": 110,
-  "minutes": 70,
+  "verses": 135,
+  "minutes": 80,
   "anim": {
    "kind": "light",
    "x": 72,
@@ -323,20 +352,23 @@
   "category": "Prophecy",
   "image": "img/isaiah-53-suffering-servant.jpg",
   "opening_question": "Isaiah wrote of a Servant who was \"wounded for our transgressions\" and \"brought as a lamb to the slaughter\". Centuries later a man of Ethiopia read these words in his chariot and asked: \"of whom speaketh the prophet this?\" Who is the Servant?",
-  "steps": 8,
+  "steps": 10,
   "step_questions": [
    "What will happen to the Servant, and what did many see when they looked at him?",
    "Who hath believed our report? How did men treat the man of sorrows, and who did not believe on Jesus?",
+   "Who is the Servant? Isaiah also calls Israel God's servant. Read these verses, and the one where the Servant brings Israel back.",
    "Whose griefs and sorrows did he carry, why was he wounded, and what do his stripes do?",
    "What did he do when he was oppressed and afflicted, and what is he compared to?",
    "Which scripture was the man of Ethiopia reading in his chariot, what did he ask Philip, and where did Philip begin?",
    "With whom was his grave made, who laid him in a tomb, and what was never found in his mouth?",
    "He was \"cut off out of the land of the living\", yet \"he shall see his seed, he shall prolong his days\". How can both be true?",
-   "With whom was he numbered, whose sin did he bear, and for whom did he make intercession?"
+   "With whom was he numbered, whose sin did he bear, and for whom did he make intercession?",
+   "Living it out: Jesus said He came \"to give his life a ransom for many\". What do these verses say He did for us, and what does Peter say follows from it?"
   ],
   "books": [
    "1 Corinthians",
    "1 Peter",
+   "2 Corinthians",
    "Acts",
    "Hebrews",
    "Isaiah",
@@ -347,8 +379,8 @@
    "Romans"
   ],
   "show": 10,
-  "verses": 56,
-  "minutes": 50,
+  "verses": 64,
+  "minutes": 55,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -366,26 +398,32 @@
   "category": "Body & Life",
   "image": "img/life-in-the-womb.jpg",
   "opening_question": "What does the Bible say about the child in the womb: who forms it, who knows it, and what does the text call it?",
-  "steps": 6,
+  "steps": 8,
   "step_questions": [
    "Who covered me in my mother's womb, and what did His eyes see?",
    "When did God know Jeremiah, and when did He sanctify him?",
    "Who made both Job and his servant in the womb, and who formed thee from the womb?",
    "What did the babe in Elisabeth's womb do when Mary's greeting sounded?",
+   "Who else does the Bible speak of before birth: twins, a Nazarite, John and Paul? What does the psalm call children?",
    "What does the law say when a woman with child is hurt, if no mischief follows and if mischief follows?",
-   "What does David say about the moment his mother conceived him?"
+   "What does David say about the moment his mother conceived him?",
+   "Living it out: for anyone who has lost a child, or who carries regret, what do these verses say about the LORD's nearness and His forgiveness?"
   ],
   "books": [
+   "1 John",
    "Exodus",
+   "Galatians",
+   "Genesis",
    "Isaiah",
    "Jeremiah",
    "Job",
+   "Judges",
    "Luke",
    "Psalms"
   ],
   "show": 8,
-  "verses": 16,
-  "minutes": 30,
+  "verses": 33,
+  "minutes": 40,
   "anim": {
    "kind": "light",
    "x": 95,
@@ -399,7 +437,7 @@
   "category": "Creation",
   "image": "img/light-before-sun.jpg",
   "opening_question": "If the sun was made on Day 4, what was the light on Day 1?",
-  "steps": 7,
+  "steps": 8,
   "step_questions": [
    "What does the text say happened on Day 1?",
    "What was made on Day 4, and what does the text say it is for?",
@@ -407,7 +445,8 @@
    "Who is called \"the light of the world\" in these verses?",
    "What does this verse say God is?",
    "What gives light where there is no sun or moon?",
-   "More verses on light and where it comes from. Some say God forms light, some say God is light, some say He dwells in it. What does each one say?"
+   "More verses on light and where it comes from. Some say God forms light, some say God is light, some say He dwells in it. What does each one say?",
+   "Living it out: God who said \"Let there be light\" has \"shined in our hearts\". What does Jesus say about following Him, and what are we to do with the light?"
   ],
   "books": [
    "1 John",
@@ -423,7 +462,7 @@
    "Revelation"
   ],
   "show": 8,
-  "verses": 40,
+  "verses": 41,
   "minutes": 40,
   "anim": {
    "kind": "light",
@@ -438,21 +477,23 @@
   "category": "Prophecy",
   "image": "img/mirror-1-four-beasts.jpg",
   "opening_question": "Daniel saw four beasts come up out of the great sea; John saw one beast rise up out of the sea. What do the two visions share, and what does the text itself say the beasts are?",
-  "steps": 5,
+  "steps": 6,
   "step_questions": [
    "What did Daniel see the four winds do, and where did the four great beasts come up from?",
    "Describe each of the four beasts. What did the fourth beast have that the others did not?",
-   "What does the one who stood by tell Daniel the beasts are, and what are the ten horns?",
+   "What does the one who stood by tell Daniel the beasts are, and what are the ten horns? Who receives the kingdom, and which kingdoms does the angel name in Daniel 8?",
    "Where does John's beast rise from, what animals is it like, and how many heads and horns does it have? Now count the heads of Daniel's four beasts.",
-   "What does Revelation say the ten horns are, and what are the waters?"
+   "What does Revelation say the ten horns are, and what are the waters?",
+   "Living it out: the beasts rise and fall, but \"the saints of the most High shall take the kingdom\". What do these verses ask of us while the kingdoms of this world stand?"
   ],
   "books": [
+   "1 Peter",
    "Daniel",
    "Revelation"
   ],
   "show": 8,
-  "verses": 17,
-  "minutes": 25,
+  "verses": 24,
+  "minutes": 30,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -473,21 +514,24 @@
   "category": "Prophecy",
   "image": "img/mirror-2-little-horn.jpg",
   "opening_question": "Among the ten horns of Daniel's fourth beast a little horn comes up with a mouth speaking great things. What does it do, how long, and what does Revelation 13 say about the beast's mouth?",
-  "steps": 5,
+  "steps": 6,
   "step_questions": [
    "Where did the little horn come up, what fell before it, and what did it have?",
    "What did the horn do to the saints, and until when?",
    "What shall he speak, what shall he think to change, and for how long?",
    "What was given to the beast from the sea, for how long, and against whom does it make war?",
-   "What happens in the end to Daniel's beast, and to the beast of Revelation?"
+   "What happens in the end to Daniel's beast, and to the beast of Revelation?",
+   "Living it out: the horn \"shall wear out the saints\", yet judgment is given to them. What do these verses say to believers under pressure?"
   ],
   "books": [
+   "2 Thessalonians",
    "Daniel",
+   "James",
    "Revelation"
   ],
   "show": 8,
-  "verses": 13,
-  "minutes": 25,
+  "verses": 17,
+  "minutes": 30,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -508,22 +552,27 @@
   "category": "Prophecy",
   "image": "img/mirror-3-son-of-man.jpg",
   "opening_question": "Daniel saw one like the Son of man come with the clouds of heaven; John writes \"he cometh with clouds\". Who is coming, and what is given him?",
-  "steps": 5,
+  "steps": 6,
   "step_questions": [
    "Who came with the clouds of heaven, to whom, and what was given him?",
    "Who is coming with clouds, and who shall see him?",
    "How does John describe one like unto the Son of man, and how does Daniel describe the Ancient of days?",
    "What does John see upon the white cloud, and what is in his hand?",
-   "When the high priest questioned Jesus, which words of Daniel did Jesus use?"
+   "When the high priest questioned Jesus, which words of Daniel did Jesus use?",
+   "Living it out: Jesus applied Daniel's words to Himself. Who do these verses say will see Him, and how are we to wait for Him?"
   ],
   "books": [
+   "1 John",
+   "Acts",
    "Daniel",
+   "Luke",
+   "Mark",
    "Matthew",
    "Revelation"
   ],
   "show": 8,
-  "verses": 9,
-  "minutes": 25,
+  "verses": 13,
+  "minutes": 30,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -547,20 +596,26 @@
   "category": "Prophecy",
   "image": "img/mirror-4-throne-room.jpg",
   "opening_question": "Daniel and John both see a throne in heaven with fire, multitudes and books. What does each one see, and what is the same?",
-  "steps": 4,
+  "steps": 6,
   "step_questions": [
    "What did Daniel see on and around the throne, and what was opened?",
    "What was round about the throne John saw, and what was before it?",
    "How many stood before the throne in each vision?",
-   "What does John see at the great white throne, and what was opened?"
+   "Other throne visions: what did Isaiah and Ezekiel see, and who stands in the midst of the throne in Revelation 5?",
+   "What does John see at the great white throne, and what was opened?",
+   "Living it out: Isaiah answered his vision \"Here am I; send me\". What do these verses say the throne means for how we live now?"
   ],
   "books": [
+   "2 Corinthians",
    "Daniel",
+   "Ezekiel",
+   "Hebrews",
+   "Isaiah",
    "Revelation"
   ],
   "show": 8,
-  "verses": 10,
-  "minutes": 20,
+  "verses": 26,
+  "minutes": 30,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -584,21 +639,24 @@
   "category": "Prophecy",
   "image": "img/mirror-5-stone-and-rider.jpg",
   "opening_question": "In Daniel 2 a stone cut out without hands breaks the kingdoms and fills the earth; in Revelation 19 a rider on a white horse comes out of heaven. What does each one do, and whose kingdom stands for ever?",
-  "steps": 5,
+  "steps": 6,
   "step_questions": [
    "What was the stone cut out without, what did it strike, and what did it become?",
    "What kingdom shall the God of heaven set up, and how long shall it stand?",
    "Who sat upon the white horse, and what is his name called?",
    "What goes out of his mouth, with what shall he rule, and what name is written on him?",
-   "What do the great voices in heaven say about the kingdoms of this world?"
+   "What do the great voices in heaven say about the kingdoms of this world?",
+   "Living it out: the kingdom is not made by human effort, yet Jesus taught us to pray for it. What do these verses ask of us?"
   ],
   "books": [
    "Daniel",
+   "Isaiah",
+   "Matthew",
    "Revelation"
   ],
   "show": 8,
-  "verses": 11,
-  "minutes": 25,
+  "verses": 14,
+  "minutes": 30,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -622,20 +680,26 @@
   "category": "Prophecy",
   "image": "img/mirror-6-the-times.jpg",
   "opening_question": "Daniel and Revelation both name a time of trouble: \"a time and times\", forty and two months, 1,260 days. Where does each one stand, and what happens in that time?",
-  "steps": 4,
+  "steps": 6,
   "step_questions": [
    "How long are the saints given into his hand?",
    "What did the man clothed in linen swear, and how long shall it be?",
    "How long is the woman nourished in the wilderness, in days and in times?",
-   "How long is the holy city trodden, how long do the two witnesses prophesy, and how long does the beast continue?"
+   "How long is the holy city trodden, how long do the two witnesses prophesy, and how long does the beast continue?",
+   "The verses readers ask about most: what do Daniel 12:11-12 and 9:27 say, and where does the Bible count a day for a year?",
+   "Living it out: Jesus said \"of that day and hour knoweth no man\". What do these verses ask of us instead of counting?"
   ],
   "books": [
+   "Acts",
    "Daniel",
+   "Ezekiel",
+   "Matthew",
+   "Numbers",
    "Revelation"
   ],
   "show": 8,
-  "verses": 8,
-  "minutes": 20,
+  "verses": 17,
+  "minutes": 30,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -656,20 +720,23 @@
   "category": "Prophecy",
   "image": "img/mirror-7-sealed-book.jpg",
   "opening_question": "Daniel is told to seal the book until the time of the end; John sees a book sealed with seven seals, and at the end is told \"Seal not\". Who opens the book, and why is it no longer sealed?",
-  "steps": 4,
+  "steps": 5,
   "step_questions": [
    "What was Daniel told to do with the words and the book, and until when?",
    "What did Daniel ask, and why was he told to go his way?",
    "What was in the right hand of him that sat on the throne, and who prevailed to open it?",
-   "What was John once told to seal up, and what is he told at the end of the book?"
+   "What was John once told to seal up, and what is he told at the end of the book?",
+   "Living it out: John is told \"Seal not the sayings of the prophecy of this book\", and the book opens with a blessing on the one who reads. What do these verses ask of us?"
   ],
   "books": [
    "Daniel",
+   "Isaiah",
+   "James",
    "Revelation"
   ],
   "show": 8,
-  "verses": 10,
-  "minutes": 20,
+  "verses": 19,
+  "minutes": 30,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -693,16 +760,18 @@
   "category": "Creation",
   "image": "img/mist-not-rain.jpg",
   "opening_question": "What watered the ground before the flood, and what does the text say about rain?",
-  "steps": 6,
+  "steps": 7,
   "step_questions": [
    "What did God make on Day 2, and what did it divide?",
    "Why had no plant grown yet, and what watered the ground?",
    "The word for \"mist\" is used only twice. What does the other verse say about it?",
    "Where did the flood waters come from, and how long did it rain?",
    "What did God set in the cloud, and what is it a token of?",
-   "Where are waters still spoken of, and what was Noah warned about?"
+   "Where are waters still spoken of, and what was Noah warned about?",
+   "Living it out: Noah was \"warned of God of things not seen as yet\" and \"prepared an ark\". What do these verses say about trusting God's word before we see it?"
   ],
   "books": [
+   "2 Corinthians",
    "2 Peter",
    "Genesis",
    "Hebrews",
@@ -710,8 +779,8 @@
    "Psalms"
   ],
   "show": 8,
-  "verses": 22,
-  "minutes": 30,
+  "verses": 25,
+  "minutes": 35,
   "anim": {
    "kind": "mist"
   }
@@ -722,27 +791,36 @@
   "category": "Body & Life",
   "image": "img/my-body-a-temple.jpg",
   "opening_question": "My body is a temple: what does the text say about honouring it, and about physicians and remedies? The Bible does not name vaccines; this path shows what it does say, and you decide.",
-  "steps": 6,
+  "steps": 9,
   "step_questions": [
    "Whose temple is your body, and why are you not your own?",
    "Who dwells in the temple of God, and what does the text say about anyone who defiles it?",
    "What are we asked to present our bodies as?",
    "What did the Samaritan do for the wounded man's body?",
    "Who does Jesus say needs a physician, what is Luke called, and what did Paul tell Timothy to use?",
-   "Where is there safety, according to Proverbs?"
+   "Remedies in the Bible: what was laid on Hezekiah's boil, what are the leaves for in Ezekiel, and what does James say to do for the sick?",
+   "The other side: what does the text say of King Asa in his disease, and of the woman who had spent all she had on physicians?",
+   "Where is there safety, according to Proverbs?",
+   "Living it out: the path leaves the decision to you. What does Paul say about deciding by conscience, and about not judging the one who decides otherwise?"
   ],
   "books": [
    "1 Corinthians",
    "1 Timothy",
+   "2 Chronicles",
+   "2 Kings",
    "Colossians",
+   "Ezekiel",
+   "Isaiah",
+   "James",
    "Luke",
+   "Mark",
    "Matthew",
    "Proverbs",
    "Romans"
   ],
   "show": 8,
-  "verses": 11,
-  "minutes": 30,
+  "verses": 28,
+  "minutes": 40,
   "anim": {
    "kind": "light",
    "x": 52,
@@ -756,17 +834,20 @@
   "category": "Other Faiths",
   "image": "img/quran-1-three-books.jpg",
   "opening_question": "The Quran names three books that came before it: the Torah, the Psalms and the Gospel. What does the Bible itself say about the law Moses wrote, the psalms of David and the gospel of Jesus?",
-  "steps": 5,
+  "steps": 6,
   "step_questions": [
    "The Quran says the Torah and the Gospel were sent down before it. What did Moses do with the words of the law, and where was the book put?",
    "The Quran says the Psalms were given to David. What does David say about the words he spoke, and what does Psalm 1 say about the law?",
    "The Quran says the Torah has \"guidance and a light\". What does the Bible call God's word and his law?",
    "The Quran says Jesus was given the Gospel, \"wherein is guidance and a light\". How does Mark begin, and what did Jesus preach?",
-   "After he rose, Jesus named the parts of Scripture that speak of him. Which three does he name, and what did he open?"
+   "After he rose, Jesus named the parts of Scripture that speak of him. Which three does he name, and what did he open?",
+   "Living it out: Psalm 119 calls the word \"a lamp unto my feet\". What do these verses ask of us toward the Scriptures we have?"
   ],
   "books": [
    "2 Samuel",
    "Deuteronomy",
+   "James",
+   "Joshua",
    "Luke",
    "Mark",
    "Proverbs",
@@ -774,8 +855,8 @@
    "Quran"
   ],
   "show": 8,
-  "verses": 15,
-  "minutes": 30,
+  "verses": 17,
+  "minutes": 35,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -799,17 +880,19 @@
   "category": "Other Faiths",
   "image": "img/quran-2-confirming.jpg",
   "opening_question": "The Quran calls itself a confirmation of the Scripture before it and a guardian over it. The Bible gives its own tests for any later message. What are those tests, and how would you use them?",
-  "steps": 6,
+  "steps": 7,
   "step_questions": [
    "The Quran says it confirms the Scripture before it and is \"a watcher over it\". What test does Isaiah give for any voice that claims to speak for God?",
    "The Quran asks the children of Israel to believe what confirms \"that which ye possess already\". By what test did Moses tell Israel to judge a prophet, even one whose sign comes to pass?",
    "Moses promised a prophet \"like unto thee\". How does Israel know a word the LORD has not spoken, and to whom does Peter apply the promise?",
    "Paul writes about \"another gospel\". What does he say if even an angel from heaven preaches a different one?",
    "How does John say to try the spirits, and what must a spirit confess?",
-   "Jesus said he came not to destroy the law. What does he say will happen to the smallest letter of it?"
+   "Jesus said he came not to destroy the law. What does he say will happen to the smallest letter of it?",
+   "Living it out: John says \"try the spirits whether they are of God\". How do these verses say we test what we hear?"
   ],
   "books": [
    "1 John",
+   "1 Thessalonians",
    "Acts",
    "Deuteronomy",
    "Galatians",
@@ -818,8 +901,8 @@
    "Quran"
   ],
   "show": 8,
-  "verses": 26,
-  "minutes": 35,
+  "verses": 28,
+  "minutes": 40,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -840,13 +923,14 @@
   "category": "Other Faiths",
   "image": "img/quran-3-judge-by-the-gospel.jpg",
   "opening_question": "The Quran tells Christians to judge by the Gospel, and tells Muhammad to ask those who read the Scripture before him. It also says no one can change God's words. What does the Bible say about its own words, how they were written, and whether they last?",
-  "steps": 5,
+  "steps": 6,
   "step_questions": [
    "The Quran says \"Let the People of the Gospel judge by that which Allah hath revealed therein\". What does John say his Gospel was written for?",
    "The Quran tells Muhammad, if he is in doubt, to \"question those who read the Scripture (that was) before thee\". How does Luke say his Gospel was put together?",
    "The Quran says \"There is none who can change His words\". What does the Bible say about the word of God and the words of Jesus?",
    "Peter quotes Isaiah 40. Which word does he say endures for ever, and what is that word?",
-   "King Jehoiakim burned Jeremiah's scroll. What did God tell Jeremiah to do, and what went into the new roll?"
+   "King Jehoiakim burned Jeremiah's scroll. What did God tell Jeremiah to do, and what went into the new roll?",
+   "Living it out: John wrote \"that ye might believe that Jesus is the Christ\". What do these verses ask of the one who reads the Gospel?"
   ],
   "books": [
    "1 Peter",
@@ -856,11 +940,12 @@
    "Luke",
    "Matthew",
    "Psalms",
-   "Quran"
+   "Quran",
+   "Romans"
   ],
   "show": 8,
-  "verses": 17,
-  "minutes": 30,
+  "verses": 19,
+  "minutes": 35,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -884,17 +969,19 @@
   "category": "Other Faiths",
   "image": "img/quran-4-changed-words.jpg",
   "opening_question": "Some Quran verses say people \"change words from their context\" or write scripture with their own hands. Muslim scholars read this two ways. What does the Bible itself say about adding to, taking from, or twisting God's word?",
-  "steps": 5,
+  "steps": 6,
   "step_questions": [
    "The Quran says a party \"used to listen to the word of Allah, then used to change it\". What does Jeremiah say about the scribes of his day?",
    "The Quran warns those who write scripture with their own hands and say it is from God. What does Moses command about adding to God's word, and what does Proverbs add?",
    "The Quran says some \"change words from their context\". What does Paul say many do with the word of God, and what does Peter say the unlearned do with Paul's letters?",
    "What does the last chapter of the Bible warn anyone who adds to, or takes away from, the words of the book?",
-   "Paul says the Jews were trusted with \"the oracles of God\". If some did not believe, does that make God's faithfulness fail?"
+   "Paul says the Jews were trusted with \"the oracles of God\". If some did not believe, does that make God's faithfulness fail?",
+   "Living it out: Paul says \"let God be true, but every man a liar\". How should we handle God's word ourselves, according to these verses?"
   ],
   "books": [
    "2 Corinthians",
    "2 Peter",
+   "2 Timothy",
    "Deuteronomy",
    "Jeremiah",
    "Proverbs",
@@ -903,8 +990,8 @@
    "Romans"
   ],
   "show": 8,
-  "verses": 14,
-  "minutes": 30,
+  "verses": 16,
+  "minutes": 35,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -925,15 +1012,18 @@
   "category": "Other Faiths",
   "image": "img/quran-5-jesus-in-the-quran.jpg",
   "opening_question": "The Quran honours Jesus: born of the virgin Mary, called the Messiah and a word from God, a worker of miracles. Read its words beside the Bible's. Where do they agree, and where does the Bible say more?",
-  "steps": 5,
+  "steps": 7,
   "step_questions": [
    "The Quran says the angels gave Mary glad tidings \"of a word from him, whose name is the Messiah\". What did the angel Gabriel tell Mary in Luke, and what did she ask?",
    "Isaiah gave a sign to the house of David. What is the sign, and what does Matthew say the name Emmanuel means?",
    "In the Quran Jesus speaks from the cradle: \"Peace on me the day I was born, and the day I die\". What are the first words of Jesus the Bible records, and how old was he?",
    "The Quran lists Jesus' miracles: healing the blind and the leper and raising the dead. What does Jesus tell John's disciples, and how did he heal the man born blind?",
-   "The Quran calls Jesus the Messiah. What does Messiah mean, and what did Jesus say when the woman of Samaria spoke of the Messiah?"
+   "The Quran calls Jesus the Messiah. What does Messiah mean, and what did Jesus say when the woman of Samaria spoke of the Messiah?",
+   "Jesus promised \"another Comforter\". Who is the Comforter, according to these verses, and when would he come?",
+   "Living it out: the woman of Samaria left her waterpot and said \"Come, see a man\". What did she do with what she heard, and what did Jesus ask His disciples?"
   ],
   "books": [
+   "Acts",
    "Isaiah",
    "John",
    "Luke",
@@ -941,8 +1031,8 @@
    "Quran"
   ],
   "show": 8,
-  "verses": 35,
-  "minutes": 35,
+  "verses": 45,
+  "minutes": 45,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -966,25 +1056,28 @@
   "category": "Other Faiths",
   "image": "img/quran-6-son-of-god.jpg",
   "opening_question": "The Quran says God \"begetteth not nor was begotten\" and denies that Jesus is the Son of God. The Bible says the LORD is one, and calls Jesus the Son of God. What does each text actually say, and what does \"one\" mean in Hebrew?",
-  "steps": 5,
+  "steps": 6,
   "step_questions": [
    "The Quran says God is One, who \"begetteth not nor was begotten\". What does Moses say about the LORD, and which word does he use for one?",
    "The Quran says \"It befitteth not (the Majesty of) Allah that He should take unto Himself a son\". What does the LORD say to his king in Psalm 2?",
    "Jesus asked his disciples who they said he was. What did Peter answer, and where did Jesus say that answer came from?",
    "At his trial the high priest asked Jesus, \"Art thou the Christ, the Son of the Blessed?\" What did Jesus answer, and what did the high priest do?",
-   "The Quran asks Jesus, \"Didst thou say unto mankind: Take me and my mother for two gods beside Allah?\" What does John say about the Word, and whom does Jesus name in Matthew 28:19?"
+   "The Quran asks Jesus, \"Didst thou say unto mankind: Take me and my mother for two gods beside Allah?\" What does John say about the Word, and whom does Jesus name in Matthew 28:19?",
+   "Living it out: Peter answered \"Thou art the Christ, the Son of the living God\". What do these verses say follows from that confession?"
   ],
   "books": [
+   "1 John",
    "Deuteronomy",
    "Genesis",
    "John",
    "Mark",
    "Matthew",
    "Psalms",
-   "Quran"
+   "Quran",
+   "Romans"
   ],
   "show": 8,
-  "verses": 21,
+  "verses": 23,
   "minutes": 35,
   "read_along": {
    "label": "TS2009",
@@ -1006,17 +1099,19 @@
   "category": "Other Faiths",
   "image": "img/quran-7-the-cross.jpg",
   "opening_question": "The Quran says of Jesus, \"they slew him not nor crucified\". The Bible's prophets, its eyewitness and its earliest creed say he was crucified, died and rose. Read both, and weigh what each says about its own witnesses.",
-  "steps": 5,
+  "steps": 6,
   "step_questions": [
    "The Quran says \"they slew him not nor crucified, but it appeared so unto them\". What does Psalm 22 describe, long before?",
    "What does Isaiah 53 say happened to the servant of the LORD, and why?",
    "What does the eyewitness in John 19 say he saw when the soldier pierced Jesus' side, and why does he tell it?",
    "The Quran says God took Jesus up unto himself. What did the risen Jesus show his disciples, and how was he taken up?",
-   "What does Paul say he \"received\" and delivered first of all, and who saw the risen Jesus?"
+   "What does Paul say he \"received\" and delivered first of all, and who saw the risen Jesus?",
+   "Living it out: Paul delivered the cross and the resurrection \"first of all\". What does he say it means for those who believe it?"
   ],
   "books": [
    "1 Corinthians",
    "Acts",
+   "Galatians",
    "Isaiah",
    "John",
    "Luke",
@@ -1024,8 +1119,8 @@
    "Quran"
   ],
   "show": 8,
-  "verses": 36,
-  "minutes": 35,
+  "verses": 42,
+  "minutes": 40,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -1046,13 +1141,14 @@
   "category": "Other Faiths",
   "image": "img/quran-8-search-the-scriptures.jpg",
   "opening_question": "The Quran tells Muslims to argue with the People of the Scripture only in the better way, and to say \"our God and your God is One\". The Bible tells its readers to search the Scriptures and test everything. How should we study, talk and decide?",
-  "steps": 5,
+  "steps": 6,
   "step_questions": [
    "The Quran says \"argue not with the People of the Scripture unless it be in (a way) that is better\". How does Peter tell Christians to give an answer for their hope?",
    "Jesus told his hearers to \"Search the scriptures\". What did he say the Scriptures testify of, and what did Moses write?",
    "How did the Jews of Berea receive Paul's preaching, and what did they do every day?",
    "The Quran says Muslims believe in \"that which Moses and Jesus received\". What does Paul say all Scripture is, and what is it for?",
-   "What does Hebrews say the word of God is like, and what does Isaiah say God's word will do?"
+   "What does Hebrews say the word of God is like, and what does Isaiah say God's word will do?",
+   "Living it out: Peter says to be ready \"to give an answer\" with \"meekness and fear\". What do these verses ask of a Christian talking with a Muslim friend?"
   ],
   "books": [
    "1 Peter",
@@ -1062,11 +1158,12 @@
    "Hebrews",
    "Isaiah",
    "John",
-   "Quran"
+   "Quran",
+   "Romans"
   ],
   "show": 8,
-  "verses": 18,
-  "minutes": 30,
+  "verses": 21,
+  "minutes": 35,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -1090,7 +1187,7 @@
   "category": "Name & Word",
   "image": "img/the-name.jpg",
   "opening_question": "What is God's name, and what is the name by which we must be saved?",
-  "steps": 7,
+  "steps": 8,
   "step_questions": [
    "What did God tell Moses to say when the people ask for His name? What did Jesus say before Abraham?",
    "By which name does God say He was not known to Abraham, Isaac and Jacob? Read it next to the earlier verses that use the name.",
@@ -1098,10 +1195,12 @@
    "What do the prophets say about forgetting the name and calling on it? Compare Joel with the verse that quotes him.",
    "What name did Moses give Hoshea, and what name was Mary's son to be given?",
    "What does Jesus say He did with the Father's name?",
-   "What do these verses say about the name given among men, and the name above every name?"
+   "What do these verses say about the name given among men, and the name above every name?",
+   "Living it out: \"whosoever shall call upon the name of the Lord shall be saved\". What do these verses ask of us with the name: running to it, hallowing it, being baptized in it, doing all in it?"
   ],
   "books": [
    "Acts",
+   "Colossians",
    "Exodus",
    "Genesis",
    "Hebrews",
@@ -1114,12 +1213,13 @@
    "Nehemiah",
    "Numbers",
    "Philippians",
+   "Proverbs",
    "Psalms",
    "Romans"
   ],
   "show": 8,
-  "verses": 29,
-  "minutes": 35,
+  "verses": 33,
+  "minutes": 40,
   "anim": {
    "kind": "fire",
    "x": 25,
@@ -1133,7 +1233,7 @@
   "category": "Covenant",
   "image": "img/the-rainbow.jpg",
   "opening_question": "Whose sign is the rainbow, what does God say it means, and where else does the Bible show it?",
-  "steps": 8,
+  "steps": 9,
   "step_questions": [
    "Before any rainbow, what did God make first, and what did He divide it from?",
    "With whom does God make this covenant, what does He set in the cloud, and for how long?",
@@ -1142,20 +1242,24 @@
    "What is round about the throne in heaven, and what is it like to look upon?",
    "What was upon the head of the mighty angel, and what was he clothed with?",
    "What is round about the LORD, and what comes out of His hand?",
-   "Who does Jesus say is \"the light of the world\", and what does the one who follows Him have?"
+   "Who does Jesus say is \"the light of the world\", and what does the one who follows Him have?",
+   "Living it out: God says \"my kindness shall not depart from thee\". What do these verses say His faithfulness means for us?"
   ],
   "books": [
+   "2 Corinthians",
    "Ezekiel",
    "Genesis",
    "Habakkuk",
+   "Hebrews",
    "Isaiah",
    "John",
+   "Lamentations",
    "Psalms",
    "Revelation"
   ],
   "show": 8,
-  "verses": 30,
-  "minutes": 40,
+  "verses": 34,
+  "minutes": 45,
   "anim": {
    "kind": "rainbow"
   }
@@ -1166,7 +1270,7 @@
   "category": "Prophecy",
   "image": "img/the-rapture.jpg",
   "opening_question": "The word rapture is not in English Bibles. It comes from the Latin Bible's word for \"caught up\" in 1 Thessalonians 4:17. What does the Bible say about believers being caught up to meet the Lord, about Jesus coming again in the clouds, and about when it happens? Read every verse, also the ones Christians read in different ways, and let the text speak.",
-  "steps": 8,
+  "steps": 10,
   "step_questions": [
    "Why did Paul write about \"them which are asleep\"? When the Lord descends from heaven, who rises first, who is caught up, to meet whom, and what are we to do with these words?",
    "What mystery does Paul show? When are we changed, how fast, and what will our bodies be like?",
@@ -1175,12 +1279,15 @@
    "How do Mark and Luke tell the same moment? From where are the elect gathered, and what are believers to do \"when these things begin to come to pass\"?",
    "Who knows the day and hour? What happened in the days of Noe, who is taken and who is left, and what does Jesus tell us to do?",
    "What did Paul say must come first, before \"the day of Christ\"? What do the verses say about wrath, and about being kept \"from the hour of temptation\"? Compare what Jesus prayed for His disciples.",
-   "How does the day of the Lord come, and why need it not overtake believers \"as a thief\"? What is \"that blessed hope\", what does that hope do in us, and how does the Bible end?"
+   "Two more passages readers bring: the ten virgins, and the first resurrection. Who was ready, and who lives and reigns with Christ?",
+   "How does the day of the Lord come, and why need it not overtake believers \"as a thief\"? What is \"that blessed hope\", what does that hope do in us, and how does the Bible end?",
+   "Living it out: whatever the timing, what do these verses ask of us while we wait?"
   ],
   "books": [
    "1 Corinthians",
    "1 John",
    "1 Thessalonians",
+   "2 Peter",
    "2 Thessalonians",
    "Acts",
    "Daniel",
@@ -1193,8 +1300,8 @@
    "Titus"
   ],
   "show": 8,
-  "verses": 61,
-  "minutes": 45,
+  "verses": 85,
+  "minutes": 60,
   "anim": {
    "kind": "light",
    "x": 83,
@@ -1207,8 +1314,8 @@
   "title": "The wheat and the tares: who is gathered first?",
   "category": "Prophecy",
   "image": "img/wheat-and-tares.jpg",
-  "opening_question": "At the harvest the householder says: \"Gather ye together first the tares … but gather the wheat into my barn.\" Some ask whether the wicked are taken away first, and whether a false \"rapture\" could be what brings the great falling away. Who is gathered first, when, by whom, and what does Scripture say comes before that day?",
-  "steps": 8,
+  "opening_question": "At the harvest the householder says: \"Gather ye together first the tares … but gather the wheat into my barn.\" Who is gathered first, when, by whom, and what does Scripture say comes before that day?",
+  "steps": 10,
   "step_questions": [
    "Who sowed the tares, why did the householder say not to gather them up yet, and what is gathered first at the harvest?",
    "In Jesus' own explanation, who is the sower, what is the field, who are the reapers, and when is the harvest?",
@@ -1217,11 +1324,14 @@
    "Lot's wife, one taken and one left: when the disciples asked \"Where, Lord?\", what did Jesus answer? Whom do the angels gather in Matthew 24:31?",
    "Who rises first, who is caught up, and to meet whom? What did Paul tell the Thessalonians not to be shaken by?",
    "What must come first before that day, how does the man of sin come, and why do they who perish believe a lie?",
-   "What did Jesus say to do if anyone says Christ is in the desert or in the secret chambers? How will his coming be seen, and who reaps the harvest of the earth?"
+   "What did Jesus say to do if anyone says Christ is in the desert or in the secret chambers? How will his coming be seen, and who reaps the harvest of the earth?",
+   "The other separation parable: whom does the King set on His right hand and on His left, and what did each one do?",
+   "Living it out: the servants were told \"Let both grow together until the harvest\". What do these verses ask of us toward judging others, and toward our own readiness?"
   ],
   "books": [
    "1 Thessalonians",
    "1 Timothy",
+   "2 Corinthians",
    "2 Thessalonians",
    "John",
    "Luke",
@@ -1229,8 +1339,8 @@
    "Revelation"
   ],
   "show": 10,
-  "verses": 68,
-  "minutes": 50,
+  "verses": 94,
+  "minutes": 65,
   "read_along": {
    "label": "TS2009",
    "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
@@ -1248,18 +1358,20 @@
   "category": "Women",
   "image": "img/women-in-the-bible.jpg",
   "opening_question": "What does the Bible say about women? Read it from the beginning: how God made the woman, the prophetesses and women of faith in Israel, the virtuous woman, Mary, the women who followed Jesus and saw Him risen, the women of the early church, what Paul writes about women in the churches with the verses around it, and what all are in Christ. Read every verse, also the ones that seem to point another way, and let the text speak.",
-  "steps": 10,
+  "steps": 12,
   "step_questions": [
    "In whose image did God make man, male and female? Why did God make the woman, and what did Adam call her?",
    "Who led the women of Israel in song, whom did the LORD send before Israel with Moses and Aaron, who judged Israel, to whom did the priest go to enquire of the LORD, and who published the word in Psalm 68?",
    "What did Ruth promise Naomi, and what did the women of Bethlehem say when Ruth's son was born? What did Hannah pray, how did Sarah conceive, and what did Esther risk?",
+   "Women of faith from outside Israel and in the family line of Jesus: what did Rahab say and do, how did Abigail stop David, and which women does Matthew name?",
    "Who can find a virtuous woman? What does she do with her hands, her mouth and her household? What adorning is of great price in the sight of God, and which women does Peter hold up as examples?",
    "What did the angel tell Mary, what did she answer, what did Elisabeth say of her faith, and to whom did Jesus give His mother at the cross?",
    "Which women travelled with Jesus and ministered to Him, which sister chose that good part, whose word brought a Samaritan city to believe, and what did Jesus call the woman He healed?",
    "Who stood by the cross, who came to the sepulchre on the first day of the week, and to whom did the risen Jesus say \"go to my brethren\"?",
    "Who prayed with the apostles before Pentecost, on whom did God say He would pour out His Spirit, and which women served the church in Acts and in Paul's letters?",
    "What does Paul write about a woman who prays or prophesies, about silence in the churches, about teaching, and about what the aged women teach? Read every verse in full, with the verses around it, side by side.",
-   "What are all who are baptized into Christ, and what are husband and wife together?"
+   "What are all who are baptized into Christ, and what are husband and wife together?",
+   "Living it out: Paul says \"ye are all one in Christ Jesus\". What do these verses ask of men and women together, each with the gift they have been given?"
   ],
   "books": [
    "1 Corinthians",
@@ -1274,6 +1386,7 @@
    "Genesis",
    "Hebrews",
    "John",
+   "Joshua",
    "Judges",
    "Luke",
    "Mark",
@@ -1287,8 +1400,8 @@
    "Titus"
   ],
   "show": 8,
-  "verses": 184,
-  "minutes": 85,
+  "verses": 199,
+  "minutes": 95,
   "anim": {
    "kind": "light",
    "x": 79,
@@ -1302,7 +1415,7 @@
   "category": "Name & Word",
   "image": "img/word-made-flesh.jpg",
   "opening_question": "Who is the Word, and what does the text say about keeping His commandments?",
-  "steps": 7,
+  "steps": 8,
   "step_questions": [
    "Who is the Word, and what became of Him?",
    "Who else does the New Testament say made all things, and whose image is He?",
@@ -1310,7 +1423,8 @@
    "What did Jesus say about the law and the commandments?",
    "How does John say we know that we know Him?",
    "What do these verses say about faith, works and the law? Read Paul and James side by side, next to the verses above.",
-   "How does Revelation describe the saints, and who has right to the tree of life? Compare the translations of 22:14."
+   "How does Revelation describe the saints, and who has right to the tree of life? Compare the translations of 22:14.",
+   "Living it out: Jesus said \"If ye love me, keep my commandments\". What new commandment does He give, and how will people know His disciples?"
   ],
   "books": [
    "1 John",
@@ -1325,7 +1439,7 @@
    "Romans"
   ],
   "show": 8,
-  "verses": 55,
+  "verses": 58,
   "minutes": 45,
   "anim": {
    "kind": "fire",

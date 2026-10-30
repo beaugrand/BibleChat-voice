@@ -1,83 +1,652 @@
 {
-  "id": "halloween-light-in-darkness",
-  "title": "Halloween: what does the Bible say?",
-  "category": "Light & Darkness",
-  "anim": {"kind": "light", "x": 70, "y": 14, "s": 34},
-  "opening_question": "The Bible never names Halloween. What does it say about the things the day touches: witchcraft and spirits of the dead, darkness and light, special days, and fear? Read what the text says, and be fully persuaded in your own mind.",
-  "required_refs": ["Deuteronomy 18:9-14", "Galatians 5:19-21", "Leviticus 19:31", "Isaiah 8:19-20", "1 Chronicles 10:13-14", "Ephesians 5:8-11", "Acts 19:18-20", "1 Thessalonians 5:21-22", "Romans 14:5-6", "Romans 14:22-23", "Colossians 2:16-17", "1 Corinthians 10:31", "Colossians 2:15", "Hebrews 2:14-15", "1 John 4:4", "2 Timothy 1:7", "Psalms 139:12", "John 1:5", "John 8:12", "Matthew 5:14-16", "Philippians 2:15", "1 Peter 2:9"],
-  "words": ["H178", "H3784", "G4655", "G5457"],
-  "show": 8,
-  "steps": [
-    {"question": "Which practices does the LORD list in Deuteronomy 18, what does He call them, and does witchcraft come up again in the New Testament?", "refs": ["Deuteronomy 18:9-14", "Galatians 5:19-21"],
-     "look_closer": {"strongs": ["H3784", "H178", "G5331"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "The KJV \"necromancer\" is two Hebrew words: darash, \"to seek or ask\", and muth, \"to die\": one who asks of the dead. The BSB says \"inquires of the dead\".", "refs": ["Deuteronomy 18:11"], "strongs": ["H1875", "H4191"]},
-       {"text": "\"witch\" in Deuteronomy 18:10 is kashaph: \"to whisper a spell\".", "refs": ["Deuteronomy 18:10"], "strongs": ["H3784"]},
-       {"text": "\"witchcraft\" in Galatians 5:20 is pharmakeia, the word behind \"pharmacy\": \"magic\". It stands in the list of the works of the flesh.", "refs": ["Galatians 5:20"], "strongs": ["G5331"]}
-     ]},
-    {"question": "Where should a people seek: to the dead, or to their God? And why did Saul die?", "refs": ["Leviticus 19:31", "Isaiah 8:19-20", "1 Chronicles 10:13-14"],
-     "look_closer": {"strongs": ["H178", "H3049", "H1875"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "\"familiar spirits\" is the Hebrew 'ob; Strong's gives \"a necromancer\" among its meanings.", "refs": ["Leviticus 19:31", "Isaiah 8:19"], "strongs": ["H178"]},
-       {"text": "The text says what comes after death: \"it is appointed unto men once to die, but after this the judgment\".", "refs": ["Hebrews 9:27"]}
-     ]},
-    {"question": "What were we once, what are we now, and what does the text say to do with the unfruitful works of darkness? What did the believers at Ephesus do with their books?", "refs": ["Ephesians 5:8-11", "Acts 19:18-20", "1 Thessalonians 5:21-22"],
-     "look_closer": {"strongs": ["G4655", "G1651", "G4021"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "\"reprove\" in Ephesians 5:11 is elencho: \"to confute, admonish\". The BSB says \"expose them\".", "refs": ["Ephesians 5:11"], "strongs": ["G1651"]},
-       {"text": "\"curious arts\" in Acts 19:19 is periergos, \"magic\". The books they burned were counted at \"fifty thousand pieces of silver\".", "refs": ["Acts 19:19"], "strongs": ["G4021"]}
-     ]},
-    {"question": "One man esteems one day above another, another esteems every day alike: what does the text say about special days, and how is each person to decide?", "refs": ["Romans 14:5-6", "Romans 14:22-23", "Colossians 2:16-17", "1 Corinthians 10:31"],
-     "look_closer": {"strongs": ["G4135", "G2250"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "\"fully persuaded\" in Romans 14:5 is plerophoreo: \"completely assure (or convince)\".", "refs": ["Romans 14:5"], "strongs": ["G4135"]}
-     ]},
-    {"question": "Why does a Christian not have to fear the darkness? What did Christ do to the principalities and powers, and to him that had the power of death?", "refs": ["Colossians 2:15", "Hebrews 2:14-15", "1 John 4:4", "2 Timothy 1:7", "Psalms 139:12"],
-     "look_closer": {"strongs": ["G554", "G1167", "G5401"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "\"spoiled\" in Colossians 2:15 is apekduomai: \"despoil\". The BSB says \"disarmed\".", "refs": ["Colossians 2:15"], "strongs": ["G554"]},
-       {"text": "\"fear\" in 2 Timothy 1:7 is deilia: \"timidity\".", "refs": ["2 Timothy 1:7"], "strongs": ["G1167"]}
-     ]},
-    {"question": "What does the light do in the darkness, what does Jesus call Himself, and what does He call those who follow Him?", "refs": ["John 1:5", "John 8:12", "Matthew 5:14-16", "Philippians 2:15", "1 Peter 2:9"],
-     "look_closer": {"strongs": ["G5457", "G2638"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "\"comprehended\" in John 1:5 is katalambano: \"to take eagerly, i.e. seize\". The BSB and the Ethiopian Canon say the darkness has not \"overcome it\".", "refs": ["John 1:5"], "strongs": ["G2638"]},
-       {"text": "\"light\" in John 8:12 and Matthew 5:14 is the same Greek word, phos.", "refs": ["John 8:12", "Matthew 5:14"], "strongs": ["G5457"]}
-     ]}
-  ],
-  "remember": [
-    {"text": "\"all that do these things are an abomination unto the LORD\" ... \"should not a people seek unto their God?\"", "refs": ["Deuteronomy 18:12", "Isaiah 8:19"]},
-    {"text": "\"now are ye light in the Lord: walk as children of light\" ... \"have no fellowship with the unfruitful works of darkness, but rather reprove them\"", "refs": ["Ephesians 5:8", "Ephesians 5:11"]},
-    {"text": "\"Let every man be fully persuaded in his own mind\" ... \"do all to the glory of God\"", "refs": ["Romans 14:5", "1 Corinthians 10:31"]},
-    {"text": "\"greater is he that is in you, than he that is in the world\"", "refs": ["1 John 4:4"]},
-    {"text": "\"the light shineth in darkness\" ... \"Let your light so shine before men\"", "refs": ["John 1:5", "Matthew 5:16"]}
-  ],
-  "quiz": [
-    {"q": "Which verse says \"all that do these things are an abomination unto the LORD\"?", "type": "find_the_verse", "answer_refs": ["Deuteronomy 18:12"]},
-    {"q": "Which of these is on the list in Deuteronomy 18:11?", "type": "multiple_choice",
-     "options": ["A consulter with familiar spirits", "A shepherd", "A potter", "A scribe"], "answer": 0, "answer_refs": ["Deuteronomy 18:11"], "check": {"bible": "KJV", "word": "familiar"}},
-    {"q": "Which translation says \"inquires of the dead\" in Deuteronomy 18:11?", "type": "which_translation", "ref": "Deuteronomy 18:11", "bible": "BSB", "phrase": "inquires of the dead"},
-    {"q": "In Galatians 5:20, which of these is among the works of the flesh?", "type": "multiple_choice",
-     "options": ["Witchcraft", "Patience", "Prayer", "Fasting"], "answer": 0, "answer_refs": ["Galatians 5:20"], "check": {"bible": "KJV", "word": "witchcraft"}},
-    {"q": "Fill in the word: \"should not a people seek unto their ___?\"", "type": "fill_word", "ref": "Isaiah 8:19", "bible": "KJV", "word": "God"},
-    {"q": "According to 1 Chronicles 10:13, Saul died also for asking counsel of whom?", "type": "multiple_choice",
-     "options": ["One that had a familiar spirit", "The high priest", "His servants", "The men of Judah"], "answer": 0, "answer_refs": ["1 Chronicles 10:13"], "check": {"bible": "KJV", "word": "familiar"}},
-    {"q": "Which verse says \"have no fellowship with the unfruitful works of darkness\"?", "type": "find_the_verse", "answer_refs": ["Ephesians 5:11"]},
-    {"q": "Which translation says \"expose them\" in Ephesians 5:11?", "type": "which_translation", "ref": "Ephesians 5:11", "bible": "BSB", "phrase": "expose them"},
-    {"q": "In Acts 19:19, what did those who used curious arts do with their books?", "type": "multiple_choice",
-     "options": ["Burned them before all men", "Sold them", "Hid them", "Gave them to the poor"], "answer": 0, "answer_refs": ["Acts 19:19"], "check": {"bible": "KJV", "word": "burned"}},
-    {"q": "Fill in the word: \"Abstain from all appearance of ___\"", "type": "fill_word", "ref": "1 Thessalonians 5:22", "bible": "KJV", "word": "evil"},
-    {"q": "Fill in the word: \"Let every man be fully ___ in his own mind\"", "type": "fill_word", "ref": "Romans 14:5", "bible": "KJV", "word": "persuaded"},
-    {"q": "Which verse says \"whatsoever ye do, do all to the glory of God\"?", "type": "find_the_verse", "answer_refs": ["1 Corinthians 10:31"]},
-    {"q": "In Colossians 2:15, what did He make of the principalities and powers?", "type": "multiple_choice",
-     "options": ["A shew of them openly", "Servants of the church", "Judges of Israel", "Friends"], "answer": 0, "answer_refs": ["Colossians 2:15"], "check": {"bible": "KJV", "word": "shew"}},
-    {"q": "Which verse says \"greater is he that is in you, than he that is in the world\"?", "type": "find_the_verse", "answer_refs": ["1 John 4:4"]},
-    {"q": "According to 2 Timothy 1:7, God hath not given us the spirit of what?", "type": "multiple_choice",
-     "options": ["Fear", "Power", "Love", "A sound mind"], "answer": 0, "answer_refs": ["2 Timothy 1:7"], "check": {"bible": "KJV", "word": "fear"}},
-    {"q": "Fill in the word: \"And the light shineth in ___\"", "type": "fill_word", "ref": "John 1:5", "bible": "KJV", "word": "darkness"},
-    {"q": "Which verse says \"I am the light of the world: he that followeth me shall not walk in darkness\"?", "type": "find_the_verse", "answer_refs": ["John 8:12"]},
-    {"q": "In 1 Peter 2:9, He hath called you out of darkness into what?", "type": "multiple_choice",
-     "options": ["His marvellous light", "The wilderness", "The temple", "A far country"], "answer": 0, "answer_refs": ["1 Peter 2:9"], "check": {"bible": "KJV", "word": "marvellous"}}
-  ],
-  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]
+ "id": "halloween-light-in-darkness",
+ "title": "Halloween: what does the Bible say?",
+ "category": "Light & Darkness",
+ "anim": {
+  "kind": "light",
+  "x": 70,
+  "y": 14,
+  "s": 34
+ },
+ "opening_question": "The Bible never names Halloween. What does it say about the things the day touches: witchcraft and spirits of the dead, darkness and light, special days, and fear? Read what the text says, and be fully persuaded in your own mind.",
+ "required_refs": [
+  "Deuteronomy 18:9-14",
+  "Galatians 5:19-21",
+  "Leviticus 19:31",
+  "Isaiah 8:19-20",
+  "1 Chronicles 10:13-14",
+  "Ephesians 5:8-11",
+  "Acts 19:18-20",
+  "1 Thessalonians 5:21-22",
+  "Romans 14:5-6",
+  "Romans 14:22-23",
+  "Colossians 2:16-17",
+  "1 Corinthians 10:31",
+  "Colossians 2:15",
+  "Hebrews 2:14-15",
+  "1 John 4:4",
+  "2 Timothy 1:7",
+  "Psalms 139:12",
+  "John 1:5",
+  "John 8:12",
+  "Matthew 5:14-16",
+  "Philippians 2:15",
+  "1 Peter 2:9",
+  "1 Samuel 28:3-19",
+  "1 Corinthians 8:4-13",
+  "1 Corinthians 10:23-33",
+  "Romans 12:21",
+  "Colossians 4:5-6",
+  "1 Peter 3:15"
+ ],
+ "words": [
+  "H178",
+  "H3784",
+  "G4655",
+  "G5457"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Which practices does the LORD list in Deuteronomy 18, what does He call them, and does witchcraft come up again in the New Testament?",
+   "refs": [
+    "Deuteronomy 18:9-14",
+    "Galatians 5:19-21"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3784",
+     "H178",
+     "G5331"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The KJV \"necromancer\" is two Hebrew words: darash, \"to seek or ask\", and muth, \"to die\": one who asks of the dead. The BSB says \"inquires of the dead\".",
+     "refs": [
+      "Deuteronomy 18:11"
+     ],
+     "strongs": [
+      "H1875",
+      "H4191"
+     ]
+    },
+    {
+     "text": "\"witch\" in Deuteronomy 18:10 is kashaph: \"to whisper a spell\".",
+     "refs": [
+      "Deuteronomy 18:10"
+     ],
+     "strongs": [
+      "H3784"
+     ]
+    },
+    {
+     "text": "\"witchcraft\" in Galatians 5:20 is pharmakeia, the word behind \"pharmacy\": \"magic\". It stands in the list of the works of the flesh.",
+     "refs": [
+      "Galatians 5:20"
+     ],
+     "strongs": [
+      "G5331"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Where should a people seek: to the dead, or to their God? And why did Saul die?",
+   "refs": [
+    "Leviticus 19:31",
+    "Isaiah 8:19-20",
+    "1 Chronicles 10:13-14",
+    "1 Samuel 28:3-19"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H178",
+     "H3049",
+     "H1875"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"familiar spirits\" is the Hebrew 'ob; Strong's gives \"a necromancer\" among its meanings.",
+     "refs": [
+      "Leviticus 19:31",
+      "Isaiah 8:19"
+     ],
+     "strongs": [
+      "H178"
+     ]
+    },
+    {
+     "text": "The text says what comes after death: \"it is appointed unto men once to die, but after this the judgment\".",
+     "refs": [
+      "Hebrews 9:27"
+     ]
+    },
+    {
+     "text": "1 Chronicles 10:13 looks back on 1 Samuel 28: Saul \"had put away those that had familiar spirits\", yet he asked for \"a woman that hath a familiar spirit\" and went to her at Endor.",
+     "refs": [
+      "1 Samuel 28:3",
+      "1 Samuel 28:7"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What were we once, what are we now, and what does the text say to do with the unfruitful works of darkness? What did the believers at Ephesus do with their books?",
+   "refs": [
+    "Ephesians 5:8-11",
+    "Acts 19:18-20",
+    "1 Thessalonians 5:21-22"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4655",
+     "G1651",
+     "G4021"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"reprove\" in Ephesians 5:11 is elencho: \"to confute, admonish\". The BSB says \"expose them\".",
+     "refs": [
+      "Ephesians 5:11"
+     ],
+     "strongs": [
+      "G1651"
+     ]
+    },
+    {
+     "text": "\"curious arts\" in Acts 19:19 is periergos, \"magic\". The books they burned were counted at \"fifty thousand pieces of silver\".",
+     "refs": [
+      "Acts 19:19"
+     ],
+     "strongs": [
+      "G4021"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "One man esteems one day above another, another esteems every day alike: what does the text say about special days, and how is each person to decide?",
+   "refs": [
+    "Romans 14:5-6",
+    "Romans 14:22-23",
+    "Colossians 2:16-17",
+    "1 Corinthians 10:31"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4135",
+     "G2250"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"fully persuaded\" in Romans 14:5 is plerophoreo: \"completely assure (or convince)\".",
+     "refs": [
+      "Romans 14:5"
+     ],
+     "strongs": [
+      "G4135"
+     ]
+    },
+    {
+     "text": "Outside history, not Scripture: the name Halloween comes from All Hallows' Eve, the evening before All Saints' Day (1 November) in the church calendar.",
+     "refs": [
+      "Romans 14:5"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Paul on things tied to idols: what does he say about knowledge, about the weaker brother, and about doing all to the glory of God?",
+   "refs": [
+    "1 Corinthians 8:4-13",
+    "1 Corinthians 10:23-33"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1497"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Paul: \"we know that an idol is nothing in the world\", yet \"take heed lest by any means this liberty of yours become a stumblingblock to them that are weak\".",
+     "refs": [
+      "1 Corinthians 8:4",
+      "1 Corinthians 8:9"
+     ]
+    },
+    {
+     "text": "\"All things are lawful for me, but all things are not expedient\"; \"Let no man seek his own, but every man another's wealth\". This is the closest Bible passage to taking part in something tied to another religion.",
+     "refs": [
+      "1 Corinthians 10:23-24"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Why does a Christian not have to fear the darkness? What did Christ do to the principalities and powers, and to him that had the power of death?",
+   "refs": [
+    "Colossians 2:15",
+    "Hebrews 2:14-15",
+    "1 John 4:4",
+    "2 Timothy 1:7",
+    "Psalms 139:12"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G554",
+     "G1167",
+     "G5401"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"spoiled\" in Colossians 2:15 is apekduomai: \"despoil\". The BSB says \"disarmed\".",
+     "refs": [
+      "Colossians 2:15"
+     ],
+     "strongs": [
+      "G554"
+     ]
+    },
+    {
+     "text": "\"fear\" in 2 Timothy 1:7 is deilia: \"timidity\".",
+     "refs": [
+      "2 Timothy 1:7"
+     ],
+     "strongs": [
+      "G1167"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does the light do in the darkness, what does Jesus call Himself, and what does He call those who follow Him?",
+   "refs": [
+    "John 1:5",
+    "John 8:12",
+    "Matthew 5:14-16",
+    "Philippians 2:15",
+    "1 Peter 2:9"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5457",
+     "G2638"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"comprehended\" in John 1:5 is katalambano: \"to take eagerly, i.e. seize\". The BSB and the Ethiopian Canon say the darkness has not \"overcome it\".",
+     "refs": [
+      "John 1:5"
+     ],
+     "strongs": [
+      "G2638"
+     ]
+    },
+    {
+     "text": "\"light\" in John 8:12 and Matthew 5:14 is the same Greek word, phos.",
+     "refs": [
+      "John 8:12",
+      "Matthew 5:14"
+     ],
+     "strongs": [
+      "G5457"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: on a night of costumes and darkness, what do these verses ask of a believer toward neighbours, children and anyone who knocks at the door?",
+   "refs": [
+    "Romans 12:21",
+    "Colossians 4:5-6",
+    "1 Peter 3:15"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Be not overcome of evil, but overcome evil with good\"; \"Let your speech be alway with grace, seasoned with salt\".",
+     "refs": [
+      "Romans 12:21",
+      "Colossians 4:6"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"all that do these things are an abomination unto the LORD\" ... \"should not a people seek unto their God?\"",
+   "refs": [
+    "Deuteronomy 18:12",
+    "Isaiah 8:19"
+   ]
+  },
+  {
+   "text": "\"now are ye light in the Lord: walk as children of light\" ... \"have no fellowship with the unfruitful works of darkness, but rather reprove them\"",
+   "refs": [
+    "Ephesians 5:8",
+    "Ephesians 5:11"
+   ]
+  },
+  {
+   "text": "\"Let every man be fully persuaded in his own mind\" ... \"do all to the glory of God\"",
+   "refs": [
+    "Romans 14:5",
+    "1 Corinthians 10:31"
+   ]
+  },
+  {
+   "text": "\"greater is he that is in you, than he that is in the world\"",
+   "refs": [
+    "1 John 4:4"
+   ]
+  },
+  {
+   "text": "\"the light shineth in darkness\" ... \"Let your light so shine before men\"",
+   "refs": [
+    "John 1:5",
+    "Matthew 5:16"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"all that do these things are an abomination unto the LORD\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Deuteronomy 18:12"
+   ]
+  },
+  {
+   "q": "Which of these is on the list in Deuteronomy 18:11?",
+   "type": "multiple_choice",
+   "options": [
+    "A consulter with familiar spirits",
+    "A shepherd",
+    "A potter",
+    "A scribe"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Deuteronomy 18:11"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "familiar"
+   }
+  },
+  {
+   "q": "Which translation says \"inquires of the dead\" in Deuteronomy 18:11?",
+   "type": "which_translation",
+   "ref": "Deuteronomy 18:11",
+   "bible": "BSB",
+   "phrase": "inquires of the dead"
+  },
+  {
+   "q": "In Galatians 5:20, which of these is among the works of the flesh?",
+   "type": "multiple_choice",
+   "options": [
+    "Witchcraft",
+    "Patience",
+    "Prayer",
+    "Fasting"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Galatians 5:20"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "witchcraft"
+   }
+  },
+  {
+   "q": "Fill in the word: \"should not a people seek unto their ___?\"",
+   "type": "fill_word",
+   "ref": "Isaiah 8:19",
+   "bible": "KJV",
+   "word": "God"
+  },
+  {
+   "q": "According to 1 Chronicles 10:13, Saul died also for asking counsel of whom?",
+   "type": "multiple_choice",
+   "options": [
+    "One that had a familiar spirit",
+    "The high priest",
+    "His servants",
+    "The men of Judah"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 Chronicles 10:13"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "familiar"
+   }
+  },
+  {
+   "q": "Which verse says \"have no fellowship with the unfruitful works of darkness\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Ephesians 5:11"
+   ]
+  },
+  {
+   "q": "Which translation says \"expose them\" in Ephesians 5:11?",
+   "type": "which_translation",
+   "ref": "Ephesians 5:11",
+   "bible": "BSB",
+   "phrase": "expose them"
+  },
+  {
+   "q": "In Acts 19:19, what did those who used curious arts do with their books?",
+   "type": "multiple_choice",
+   "options": [
+    "Burned them before all men",
+    "Sold them",
+    "Hid them",
+    "Gave them to the poor"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Acts 19:19"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "burned"
+   }
+  },
+  {
+   "q": "Fill in the word: \"Abstain from all appearance of ___\"",
+   "type": "fill_word",
+   "ref": "1 Thessalonians 5:22",
+   "bible": "KJV",
+   "word": "evil"
+  },
+  {
+   "q": "Fill in the word: \"Let every man be fully ___ in his own mind\"",
+   "type": "fill_word",
+   "ref": "Romans 14:5",
+   "bible": "KJV",
+   "word": "persuaded"
+  },
+  {
+   "q": "Which verse says \"whatsoever ye do, do all to the glory of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Corinthians 10:31"
+   ]
+  },
+  {
+   "q": "In Colossians 2:15, what did He make of the principalities and powers?",
+   "type": "multiple_choice",
+   "options": [
+    "A shew of them openly",
+    "Servants of the church",
+    "Judges of Israel",
+    "Friends"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Colossians 2:15"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "shew"
+   }
+  },
+  {
+   "q": "Which verse says \"greater is he that is in you, than he that is in the world\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 John 4:4"
+   ]
+  },
+  {
+   "q": "According to 2 Timothy 1:7, God hath not given us the spirit of what?",
+   "type": "multiple_choice",
+   "options": [
+    "Fear",
+    "Power",
+    "Love",
+    "A sound mind"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "2 Timothy 1:7"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "fear"
+   }
+  },
+  {
+   "q": "Fill in the word: \"And the light shineth in ___\"",
+   "type": "fill_word",
+   "ref": "John 1:5",
+   "bible": "KJV",
+   "word": "darkness"
+  },
+  {
+   "q": "Which verse says \"I am the light of the world: he that followeth me shall not walk in darkness\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 8:12"
+   ]
+  },
+  {
+   "q": "In 1 Peter 2:9, He hath called you out of darkness into what?",
+   "type": "multiple_choice",
+   "options": [
+    "His marvellous light",
+    "The wilderness",
+    "The temple",
+    "A far country"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 Peter 2:9"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "marvellous"
+   }
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ]
 }

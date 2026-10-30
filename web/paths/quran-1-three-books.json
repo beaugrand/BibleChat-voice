@@ -22,7 +22,16 @@
  "required_refs": [
   "Deuteronomy 31:24-26",
   "Psalms 1:2",
-  "Luke 24:44"
+  "Luke 24:44",
+  "2 Samuel 23:1-2",
+  "Psalms 1:1-3",
+  "Psalms 119:105",
+  "Proverbs 6:23",
+  "Mark 1:1",
+  "Mark 1:14-15",
+  "Luke 24:44-45",
+  "Joshua 1:8",
+  "James 1:22"
  ],
  "words": [
   "H8451",
@@ -302,6 +311,35 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: Psalm 119 calls the word \"a lamp unto my feet\". What do these verses ask of us toward the Scriptures we have?",
+   "refs": [
+    "Psalms 119:105",
+    "Joshua 1:8",
+    "James 1:22"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"thou shalt meditate therein day and night\"; \"be ye doers of the word, and not hearers only\".",
+     "refs": [
+      "Joshua 1:8",
+      "James 1:22"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
@@ -341,15 +379,15 @@
     "xref": 6,
     "votes": 23,
     "word": "H8451",
-    "word_count": 5,
+    "word_count": 6,
     "differ": 0.369,
     "quoted": null
    },
    "why": [
     "6 cross-references point here",
-    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+    "The Hebrew word tôrâh (H8451) is in 6 verses of this path"
    ],
-   "score": 0.4767
+   "score": 0.5058
   },
   {
    "q": "In Deuteronomy 31:26, where was the book of the law to be put?",
@@ -372,15 +410,15 @@
     "xref": 11,
     "votes": 45,
     "word": "H8451",
-    "word_count": 5,
+    "word_count": 6,
     "differ": 0.367,
     "quoted": null
    },
    "why": [
     "11 cross-references point here",
-    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+    "The Hebrew word tôrâh (H8451) is in 6 verses of this path"
    ],
-   "score": 0.525
+   "score": 0.5542
   },
   {
    "q": "Fill in the word: \"Take this book of the ___\"",
@@ -395,15 +433,15 @@
     "xref": 11,
     "votes": 45,
     "word": "H8451",
-    "word_count": 5,
+    "word_count": 6,
     "differ": 0.367,
     "quoted": null
    },
    "why": [
     "11 cross-references point here",
-    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+    "The Hebrew word tôrâh (H8451) is in 6 verses of this path"
    ],
-   "score": 0.525
+   "score": 0.5542
   },
   {
    "q": "Which translation says \"Yahweh's law\" in Psalm 1:2?",
@@ -418,15 +456,15 @@
     "xref": 40,
     "votes": 508,
     "word": "H8451",
-    "word_count": 5,
+    "word_count": 6,
     "differ": 0.31,
     "quoted": null
    },
    "why": [
     "40 cross-references point here",
-    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+    "The Hebrew word tôrâh (H8451) is in 6 verses of this path"
    ],
-   "score": 0.6733
+   "score": 0.7025
   },
   {
    "q": "Which verse calls David \"the sweet psalmist of Israel\"?",
@@ -490,15 +528,15 @@
     "xref": 40,
     "votes": 508,
     "word": "H8451",
-    "word_count": 5,
+    "word_count": 6,
     "differ": 0.31,
     "quoted": null
    },
    "why": [
     "40 cross-references point here",
-    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+    "The Hebrew word tôrâh (H8451) is in 6 verses of this path"
    ],
-   "score": 0.6733
+   "score": 0.7025
   },
   {
    "q": "In Psalm 1:3, what is the man who delights in the law like?",
@@ -563,15 +601,15 @@
     "xref": 26,
     "votes": 422,
     "word": "H8451",
-    "word_count": 5,
+    "word_count": 6,
     "differ": 0.211,
     "quoted": null
    },
    "why": [
     "26 cross-references point here",
-    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+    "The Hebrew word tôrâh (H8451) is in 6 verses of this path"
    ],
-   "score": 0.6486
+   "score": 0.6777
   },
   {
    "q": "In Proverbs 6:23, what is the commandment?",
@@ -594,15 +632,15 @@
     "xref": 26,
     "votes": 422,
     "word": "H8451",
-    "word_count": 5,
+    "word_count": 6,
     "differ": 0.211,
     "quoted": null
    },
    "why": [
     "26 cross-references point here",
-    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+    "The Hebrew word tôrâh (H8451) is in 6 verses of this path"
    ],
-   "score": 0.6486
+   "score": 0.6777
   },
   {
    "q": "Which verse says \"The beginning of the gospel of Jesus Christ, the Son of God\"?",
@@ -759,15 +797,15 @@
     "xref": 26,
     "votes": 422,
     "word": "H8451",
-    "word_count": 5,
+    "word_count": 6,
     "differ": 0.211,
     "quoted": null
    },
    "why": [
     "26 cross-references point here",
-    "The Hebrew word tôrâh (H8451) is in 5 verses of this path"
+    "The Hebrew word tôrâh (H8451) is in 6 verses of this path"
    ],
-   "score": 0.6486
+   "score": 0.6777
   }
  ],
  "sources": [
@@ -781,7 +819,7 @@
   "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 15,
+ "verse_count": 17,
  "outside_sources": [
   {
    "name": "George Sale (1734)",
@@ -803,7 +841,7 @@
  },
  "built_from": {
   "file": "packaging/paths/quran-1-three-books.json",
-  "sha": "6140f7d2209fe3c8",
+  "sha": "3e52421889cba414",
   "checked_in": [
    "KJV",
    "ETH",

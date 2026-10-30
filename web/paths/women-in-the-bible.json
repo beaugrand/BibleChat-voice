@@ -52,7 +52,14 @@
   "1 Timothy 2:9-15",
   "Titus 2:3-5",
   "Galatians 3:26-28",
-  "1 Peter 3:7"
+  "1 Peter 3:7",
+  "Joshua 2:8-13",
+  "Hebrews 11:31",
+  "1 Samuel 25:32-33",
+  "Matthew 1:3-6",
+  "Galatians 3:28",
+  "Romans 12:6",
+  "1 Peter 4:10"
  ],
  "words": [
   "H802",
@@ -238,6 +245,52 @@
      "refs": [
       "Ruth 4:14",
       "Ruth 4:15"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Women of faith from outside Israel and in the family line of Jesus: what did Rahab say and do, how did Abigail stop David, and which women does Matthew name?",
+   "refs": [
+    "Joshua 2:8-13",
+    "Hebrews 11:31",
+    "1 Samuel 25:32-33",
+    "Matthew 1:3-6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7343"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Rahab: \"for the LORD your God, he is God in heaven above, and in earth beneath\"; Hebrews: \"By faith the harlot Rahab perished not\".",
+     "refs": [
+      "Joshua 2:11",
+      "Hebrews 11:31"
+     ]
+    },
+    {
+     "text": "David to Abigail: \"Blessed be the LORD God of Israel, which sent thee this day to meet me\".",
+     "refs": [
+      "1 Samuel 25:32"
+     ]
+    },
+    {
+     "text": "Matthew names four women in Jesus' family line: \"Thamar\", \"Rachab\", \"Ruth\" and \"her that had been the wife of Urias\".",
+     "refs": [
+      "Matthew 1:3",
+      "Matthew 1:5",
+      "Matthew 1:6"
      ]
     }
    ]
@@ -634,6 +687,35 @@
      ],
      "strongs": [
       "G4789"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Paul says \"ye are all one in Christ Jesus\". What do these verses ask of men and women together, each with the gift they have been given?",
+   "refs": [
+    "Galatians 3:28",
+    "Romans 12:6",
+    "1 Peter 4:10"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Having then gifts differing according to the grace that is given to us\"; \"As every man hath received the gift, even so minister the same one to another\".",
+     "refs": [
+      "Romans 12:6",
+      "1 Peter 4:10"
      ]
     }
    ]
@@ -1346,7 +1428,7 @@
   "Scofield (1917)",
   "Matthew Henry"
  ],
- "verse_count": 184,
+ "verse_count": 199,
  "image": "img/women-in-the-bible.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -1354,7 +1436,7 @@
  },
  "built_from": {
   "file": "packaging/paths/women-in-the-bible.json",
-  "sha": "044c93dc7862f10c",
+  "sha": "a0f08520f78b5d34",
   "checked_in": [
    "KJV",
    "ETH",

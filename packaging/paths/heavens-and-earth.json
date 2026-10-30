@@ -26,7 +26,11 @@
   "1 Enoch 72-82",
   "1 Samuel 2:8",
   "Psalms 104:5",
-  "Ecclesiastes 1:5"
+  "Ecclesiastes 1:5",
+  "Job 38:4",
+  "Job 42:1-6",
+  "Psalms 19:1",
+  "Psalms 8:3-4"
  ],
  "words": [
   "H7549",
@@ -294,6 +298,36 @@
      "text": "1 Enoch is in the Bible of the Ethiopian Orthodox Tewahedo Church and the Eritrean Orthodox Church only; other churches do not count it as Scripture. The Book of the Luminaries calls itself \"The book of the courses of the luminaries of the heaven\".",
      "refs": [
       "1 Enoch 72:1"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Job was asked \"Where wast thou when I laid the foundations of the earth?\" What did Job answer, and what does the psalmist ask when he considers the heavens?",
+   "refs": [
+    "Job 38:4",
+    "Job 42:1-6",
+    "Psalms 19:1",
+    "Psalms 8:3-4"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Job: \"I know that thou canst do every thing\". The psalm: \"What is man, that thou art mindful of him?\"",
+     "refs": [
+      "Job 42:2",
+      "Psalms 8:4"
      ]
     }
    ]

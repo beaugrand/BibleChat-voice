@@ -39,7 +39,13 @@
   "Genesis 4:9-16",
   "Genesis 4:26",
   "Genesis 5:3",
-  "Luke 3:38"
+  "Luke 3:38",
+  "Genesis 3:20",
+  "Genesis 5:1-2",
+  "Genesis 4:7",
+  "1 John 3:11",
+  "1 John 3:18",
+  "Matthew 5:23-24"
  ],
  "words": [
   "H5175",
@@ -229,7 +235,9 @@
    "refs": [
     "Genesis 4:1-2",
     "Genesis 4:25",
-    "Genesis 5:3"
+    "Genesis 5:3",
+    "Genesis 3:20",
+    "Genesis 5:1-2"
    ],
    "look_closer": {
     "strongs": [
@@ -280,6 +288,13 @@
      "text": "When Seth was born, Eve said God \"hath appointed me another seed instead of Abel, whom Cain slew\".",
      "refs": [
       "Genesis 4:25"
+     ]
+    },
+    {
+     "text": "Adam called his wife's name Eve \"because she was the mother of all living\", and Genesis 5:1 begins \"the book of the generations of Adam\".",
+     "refs": [
+      "Genesis 3:20",
+      "Genesis 5:1"
      ]
     }
    ]
@@ -495,6 +510,36 @@
      "text": "In the days of Enos, Seth's son, \"then began men to call upon the name of the LORD\".",
      "refs": [
       "Genesis 4:26"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: the LORD told Cain \"sin lieth at the door\" and \"thou shalt rule over him\". What does John say love looks like, and what does Jesus say to do before bringing a gift?",
+   "refs": [
+    "Genesis 4:7",
+    "1 John 3:11",
+    "1 John 3:18",
+    "Matthew 5:23-24"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "John: \"let us not love in word, neither in tongue; but in deed and in truth\". Jesus: \"first be reconciled to thy brother, and then come and offer thy gift\".",
+     "refs": [
+      "1 John 3:18",
+      "Matthew 5:24"
      ]
     }
    ]
@@ -968,7 +1013,7 @@
   "Matthew Henry",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 80,
+ "verse_count": 86,
  "image": "img/garden-serpent-and-cain.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -976,7 +1021,7 @@
  },
  "built_from": {
   "file": "packaging/paths/garden-serpent-and-cain.json",
-  "sha": "3f13d1934d0a6b2b",
+  "sha": "f46e6ffafb5e51da",
   "checked_in": [
    "KJV",
    "ETH",

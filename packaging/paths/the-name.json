@@ -31,7 +31,11 @@
   "Romans 10:13",
   "Nehemiah 8:17",
   "Acts 7:45",
-  "Hebrews 4:8"
+  "Hebrews 4:8",
+  "Proverbs 18:10",
+  "Matthew 6:9",
+  "Matthew 28:19",
+  "Colossians 3:17"
  ],
  "words": [
   "H3068",
@@ -300,6 +304,44 @@
    "notes": [
     "scofield",
     "henry"
+   ]
+  },
+  {
+   "question": "Living it out: \"whosoever shall call upon the name of the Lord shall be saved\". What do these verses ask of us with the name: running to it, hallowing it, being baptized in it, doing all in it?",
+   "refs": [
+    "Romans 10:13",
+    "Proverbs 18:10",
+    "Matthew 6:9",
+    "Matthew 28:19",
+    "Colossians 3:17"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"The name of the LORD is a strong tower: the righteous runneth into it, and is safe\"; \"Hallowed be thy name\".",
+     "refs": [
+      "Proverbs 18:10",
+      "Matthew 6:9"
+     ]
+    },
+    {
+     "text": "Jesus sends the disciples to baptize \"in the name\" (one name, singular) \"of the Father, and of the Son, and of the Holy Ghost\". Paul: \"do all in the name of the Lord Jesus\".",
+     "refs": [
+      "Matthew 28:19",
+      "Colossians 3:17"
+     ]
+    }
    ]
   }
  ],

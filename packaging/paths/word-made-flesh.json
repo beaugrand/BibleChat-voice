@@ -27,7 +27,10 @@
   "Ephesians 2:8-10",
   "Romans 3:31",
   "Romans 6:1-2",
-  "James 2:14-26"
+  "James 2:14-26",
+  "John 13:34-35",
+  "1 John 3:23",
+  "James 2:18"
  ],
  "words": [
   "G3056",
@@ -319,6 +322,36 @@
      "text": "Revelation 14:12 puts both in one verse: \"keep the commandments of God, and the faith of Jesus\".",
      "refs": [
       "Revelation 14:12"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Jesus said \"If ye love me, keep my commandments\". What new commandment does He give, and how will people know His disciples?",
+   "refs": [
+    "John 14:15",
+    "John 13:34-35",
+    "1 John 3:23",
+    "James 2:18"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"A new commandment I give unto you, That ye love one another\"; \"By this shall all men know that ye are my disciples\".",
+     "refs": [
+      "John 13:34",
+      "John 13:35"
      ]
     }
    ]

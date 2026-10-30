@@ -20,7 +20,14 @@
   "Deuteronomy 4:2",
   "Jeremiah 8:8",
   "2 Corinthians 2:17",
-  "Revelation 22:18-19"
+  "Revelation 22:18-19",
+  "Jeremiah 8:8-9",
+  "Proverbs 30:5-6",
+  "2 Peter 3:15-16",
+  "Romans 3:1-4",
+  "Romans 3:4",
+  "2 Timothy 2:15",
+  "2 Corinthians 4:2"
  ],
  "words": [
   "H8267",
@@ -270,6 +277,12 @@
      "refs": [
       "Revelation 22:19"
      ]
+    },
+    {
+     "text": "Outside history, not Scripture: the Dead Sea Scrolls (copied about 250 BC to AD 68) hold parts of every Old Testament book except Esther, and thousands of Greek New Testament manuscripts survive, many older than the Quran: Codex Sinaiticus and Codex Vaticanus were copied in the 300s, about 300 years before Muhammad. Readers can compare today's Bible with them.",
+     "refs": [
+      "Revelation 22:18"
+     ]
     }
    ]
   },
@@ -308,6 +321,35 @@
      "text": "Muslim scholars read these verses in two ways. Tahrif al-ma'na: the meaning was twisted in reading and explaining, and the text was kept. Tahrif al-lafz: the text itself was changed. Early commentators such as al-Tabari (died 923) often explain them the first way; Ibn Hazm (died 1064) argued for the second, and it became the more common view in later Islamic teaching.",
      "refs": [
       "Romans 3:2"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Paul says \"let God be true, but every man a liar\". How should we handle God's word ourselves, according to these verses?",
+   "refs": [
+    "Romans 3:4",
+    "2 Timothy 2:15",
+    "2 Corinthians 4:2"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"rightly dividing the word of truth\"; \"nor handling the word of God deceitfully\".",
+     "refs": [
+      "2 Timothy 2:15",
+      "2 Corinthians 4:2"
      ]
     }
    ]
@@ -771,7 +813,7 @@
   "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 14,
+ "verse_count": 16,
  "outside_sources": [
   {
    "name": "George Sale (1734)",
@@ -793,7 +835,7 @@
  },
  "built_from": {
   "file": "packaging/paths/quran-4-changed-words.json",
-  "sha": "846da842d6caf614",
+  "sha": "8b2a1cac9944a25d",
   "checked_in": [
    "KJV",
    "ETH",

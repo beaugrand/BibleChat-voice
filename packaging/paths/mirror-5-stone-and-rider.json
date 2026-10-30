@@ -24,7 +24,10 @@
   "Daniel 2:44-45",
   "Revelation 19:11-13",
   "Revelation 19:14-16",
-  "Revelation 11:15"
+  "Revelation 11:15",
+  "Isaiah 11:4",
+  "Matthew 6:10",
+  "Matthew 6:33"
  ],
  "words": [
   "H69",
@@ -53,6 +56,14 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "The stone is \"cut out without hands\": no human hand makes it. It strikes the image \"upon his feet that were of iron and clay\". The path Daniel 2: the statue and the stone reads the whole chapter.",
+     "refs": [
+      "Daniel 2:34"
+     ]
+    }
    ]
   },
   {
@@ -74,6 +85,14 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "The God of heaven sets up \"a kingdom, which shall never be destroyed\", and \"it shall stand for ever\".",
+     "refs": [
+      "Daniel 2:44"
+     ]
+    }
    ]
   },
   {
@@ -95,12 +114,22 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "The rider \"was called Faithful and True\", and \"his name is called The Word of God\".",
+     "refs": [
+      "Revelation 19:11",
+      "Revelation 19:13"
+     ]
+    }
    ]
   },
   {
    "question": "What goes out of his mouth, with what shall he rule, and what name is written on him?",
    "refs": [
-    "Revelation 19:14-16"
+    "Revelation 19:14-16",
+    "Isaiah 11:4"
    ],
    "look_closer": {
     "strongs": [
@@ -123,6 +152,13 @@
      "refs": [
       "Daniel 2:45",
       "Revelation 19:15"
+     ]
+    },
+    {
+     "text": "\"out of his mouth goeth a sharp sword\" stands beside Isaiah 11:4: \"with the breath of his lips shall he slay the wicked\".",
+     "refs": [
+      "Revelation 19:15",
+      "Isaiah 11:4"
      ]
     }
    ]
@@ -156,13 +192,63 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: the kingdom is not made by human effort, yet Jesus taught us to pray for it. What do these verses ask of us?",
+   "refs": [
+    "Matthew 6:10",
+    "Matthew 6:33",
+    "Revelation 11:15"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Thy kingdom come. Thy will be done in earth, as it is in heaven\"; \"seek ye first the kingdom of God, and his righteousness\".",
+     "refs": [
+      "Matthew 6:10",
+      "Matthew 6:33"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
-   {"text": "The stone cut out without hands \"became a great mountain, and filled the whole earth\".", "refs": ["Daniel 2:34-35"]},
-   {"text": "The kingdom of the God of heaven \"shall stand for ever\".", "refs": ["Daniel 2:44"]},
-   {"text": "The rider on the white horse is \"called Faithful and True\"; \"his name is called The Word of God\".", "refs": ["Revelation 19:11", "Revelation 19:13"]},
-   {"text": "\"he shall reign for ever and ever\"", "refs": ["Revelation 11:15"]}
+  {
+   "text": "The stone cut out without hands \"became a great mountain, and filled the whole earth\".",
+   "refs": [
+    "Daniel 2:34-35"
+   ]
+  },
+  {
+   "text": "The kingdom of the God of heaven \"shall stand for ever\".",
+   "refs": [
+    "Daniel 2:44"
+   ]
+  },
+  {
+   "text": "The rider on the white horse is \"called Faithful and True\"; \"his name is called The Word of God\".",
+   "refs": [
+    "Revelation 19:11",
+    "Revelation 19:13"
+   ]
+  },
+  {
+   "text": "\"he shall reign for ever and ever\"",
+   "refs": [
+    "Revelation 11:15"
+   ]
+  }
  ],
  "quiz": [
   {

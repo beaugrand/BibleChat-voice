@@ -22,7 +22,21 @@
  "required_refs": [
   "Isaiah 7:14",
   "Luke 1:26-35",
-  "Matthew 1:23"
+  "Matthew 1:23",
+  "Isaiah 7:13-14",
+  "Matthew 1:22-23",
+  "Luke 2:42-49",
+  "Luke 7:20-22",
+  "John 9:1-7",
+  "John 1:41",
+  "John 4:25-26",
+  "John 14:16-17",
+  "John 14:26",
+  "John 16:7",
+  "Acts 1:4-5",
+  "John 4:28-29",
+  "John 4:39",
+  "Matthew 16:15"
  ],
  "words": [
   "G3933",
@@ -286,6 +300,77 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Jesus promised \"another Comforter\". Who is the Comforter, according to these verses, and when would he come?",
+   "refs": [
+    "John 14:16-17",
+    "John 14:26",
+    "John 16:7",
+    "Acts 1:4-5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3875"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Comforter is \"the Spirit of truth\", whom \"the world cannot receive\": \"he dwelleth with you, and shall be in you\". John 14:26 names him \"the Holy Ghost\".",
+     "refs": [
+      "John 14:17",
+      "John 14:26"
+     ]
+    },
+    {
+     "text": "Many Muslims read Quran 61:6, where Jesus speaks of a messenger to come named Ahmad, as pointing to these verses. In John the Comforter is sent to the disciples themselves, and Acts 1:5 says it would be \"not many days hence\".",
+     "refs": [
+      "John 14:16",
+      "Acts 1:5"
+     ],
+     "strongs": [
+      "G3875"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: the woman of Samaria left her waterpot and said \"Come, see a man\". What did she do with what she heard, and what did Jesus ask His disciples?",
+   "refs": [
+    "John 4:28-29",
+    "John 4:39",
+    "Matthew 16:15"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"many of the Samaritans of that city believed on him for the saying of the woman\". Jesus asked: \"But whom say ye that I am?\"",
+     "refs": [
+      "John 4:39",
+      "Matthew 16:15"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
@@ -415,15 +500,15 @@
     "xref": 48,
     "votes": 351,
     "word": "G3962",
-    "word_count": 4,
+    "word_count": 7,
     "differ": 0.182,
     "quoted": null
    },
    "why": [
     "48 cross-references point here",
-    "The Greek word patḗr (G3962) is in 4 verses of this path"
+    "The Greek word patḗr (G3962) is in 7 verses of this path"
    ],
-   "score": 0.6024
+   "score": 0.6899
   },
   {
    "q": "Which verse says \"How shall this be, seeing I know not a man?\"",
@@ -621,16 +706,16 @@
     "xref": 6,
     "votes": 38,
     "word": "G3962",
-    "word_count": 4,
+    "word_count": 7,
     "differ": 0.589,
     "quoted": null
    },
    "why": [
     "6 cross-references point here",
-    "The Greek word patḗr (G3962) is in 4 verses of this path",
+    "The Greek word patḗr (G3962) is in 7 verses of this path",
     "Translations differ here"
    ],
-   "score": 0.539
+   "score": 0.6265
   },
   {
    "q": "Which verse tells of \"a man which was blind from his birth\"?",
@@ -714,16 +799,16 @@
    "signals": {
     "xref": 19,
     "votes": 113,
-    "word": "G3323",
-    "word_count": 2,
+    "word": "G5547",
+    "word_count": 3,
     "differ": 0.36,
     "quoted": null
    },
    "why": [
     "19 cross-references point here",
-    "The Greek word Messías (G3323) is in 2 verses of this path"
+    "The Greek word Christós (G5547) is in 3 verses of this path"
    ],
-   "score": 0.5039
+   "score": 0.5331
   },
   {
    "q": "Fill in the word: \"I that speak unto thee am ___\"",
@@ -760,7 +845,7 @@
   "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 35,
+ "verse_count": 45,
  "outside_sources": [
   {
    "name": "George Sale (1734)",
@@ -782,7 +867,7 @@
  },
  "built_from": {
   "file": "packaging/paths/quran-5-jesus-in-the-quran.json",
-  "sha": "522a493bfea78204",
+  "sha": "7a639b5c6451289e",
   "checked_in": [
    "KJV",
    "ETH",

@@ -22,7 +22,17 @@
   "Mark 14:61-62",
   "John 1:1",
   "John 1:14",
-  "Deuteronomy 6:4"
+  "Deuteronomy 6:4",
+  "Deuteronomy 6:4-5",
+  "Genesis 2:24",
+  "Psalms 2:6-7",
+  "Psalms 2:12",
+  "Matthew 16:13-17",
+  "Mark 14:60-64",
+  "John 1:1-3",
+  "Matthew 28:19",
+  "Romans 10:9",
+  "1 John 4:15"
  ],
  "words": [
   "H259",
@@ -72,6 +82,16 @@
      "text": "The Quran (112) and the Shema (Deuteronomy 6:4) agree that God is one. They differ on whether the one God has a Son.",
      "refs": [
       "Deuteronomy 6:4"
+     ]
+    },
+    {
+     "text": "Echad can describe a unity made of more than one, as in \"one flesh\". By itself the word does not prove the Trinity; it shows the Shema leaves room for it. Jewish readers also hold to the Shema and read it as one God without a Son.",
+     "refs": [
+      "Genesis 2:24",
+      "Deuteronomy 6:4"
+     ],
+     "strongs": [
+      "H259"
      ]
     }
    ]
@@ -241,13 +261,61 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: Peter answered \"Thou art the Christ, the Son of the living God\". What do these verses say follows from that confession?",
+   "refs": [
+    "Matthew 16:16",
+    "Romans 10:9",
+    "1 John 4:15"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved\".",
+     "refs": [
+      "Romans 10:9"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
-   {"text": "\"Hear, O Israel: The LORD our God is one LORD\"", "refs": ["Deuteronomy 6:4"]},
-   {"text": "\"Thou art my Son; this day have I begotten thee\"", "refs": ["Psalms 2:7"]},
-   {"text": "\"Thou art the Christ, the Son of the living God\"", "refs": ["Matthew 16:16"]},
-   {"text": "\"the Word was made flesh, and dwelt among us\"", "refs": ["John 1:14"]}
+  {
+   "text": "\"Hear, O Israel: The LORD our God is one LORD\"",
+   "refs": [
+    "Deuteronomy 6:4"
+   ]
+  },
+  {
+   "text": "\"Thou art my Son; this day have I begotten thee\"",
+   "refs": [
+    "Psalms 2:7"
+   ]
+  },
+  {
+   "text": "\"Thou art the Christ, the Son of the living God\"",
+   "refs": [
+    "Matthew 16:16"
+   ]
+  },
+  {
+   "text": "\"the Word was made flesh, and dwelt among us\"",
+   "refs": [
+    "John 1:14"
+   ]
+  }
  ],
  "quiz": [
   {

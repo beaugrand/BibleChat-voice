@@ -1,59 +1,477 @@
 {
-  "id": "my-body-a-temple",
-  "title": "My body is a temple",
-  "category": "Body & Life",
-  "anim": {"kind": "light", "x": 52, "y": 4, "s": 40},
-  "opening_question": "My body is a temple: what does the text say about honouring it, and about physicians and remedies? The Bible does not name vaccines; this path shows what it does say, and you decide.",
-  "required_refs": ["1 Corinthians 6:19-20", "1 Corinthians 3:16-17", "Romans 12:1", "Luke 10:33-34", "Matthew 9:12", "Colossians 4:14", "1 Timothy 5:23", "Proverbs 11:14"],
-  "words": ["G3485", "G4983", "G2395"],
-  "show": 8,
-  "steps": [
-    {"question": "Whose temple is your body, and why are you not your own?", "refs": ["1 Corinthians 6:19-20"],
-     "look_closer": {"strongs": ["G3485", "G4983"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "The word for \"temple\" is naos, from a word meaning \"to dwell\".", "refs": ["1 Corinthians 6:19"], "strongs": ["G3485"]},
-       {"text": "The word for \"price\" is time: \"a value, i.e. money paid\".", "refs": ["1 Corinthians 6:20"], "strongs": ["G5092"]}
-     ]},
-    {"question": "Who dwells in the temple of God, and what does the text say about anyone who defiles it?", "refs": ["1 Corinthians 3:16-17"],
-     "look_closer": {"strongs": ["G5351"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "In 1 Corinthians 3:17 \"defile\" and \"destroy\" are the same Greek word, phtheiro.", "refs": ["1 Corinthians 3:17"], "strongs": ["G5351"]}
-     ]},
-    {"question": "What are we asked to present our bodies as?", "refs": ["Romans 12:1"],
-     "look_closer": {"strongs": ["G4983"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
-    {"question": "What did the Samaritan do for the wounded man's body?", "refs": ["Luke 10:33-34"],
-     "look_closer": {"strongs": ["G2611"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "Who does Jesus say needs a physician, what is Luke called, and what did Paul tell Timothy to use?", "refs": ["Matthew 9:12", "Colossians 4:14", "1 Timothy 5:23"],
-     "look_closer": {"strongs": ["G2395"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "\"physician\" in Matthew 9:12 and Colossians 4:14 is the same Greek word, iatros: \"a physician\".", "refs": ["Matthew 9:12", "Colossians 4:14"], "strongs": ["G2395"]}
-     ]},
-    {"question": "Where is there safety, according to Proverbs?", "refs": ["Proverbs 11:14"],
-     "look_closer": {"strongs": ["H3289"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]}
-  ],
-  "remember": [
-    {"text": "\"your body is the temple of the Holy Ghost\" ... \"ye are bought with a price\"", "refs": ["1 Corinthians 6:19-20"]},
-    {"text": "\"present your bodies a living sacrifice\"", "refs": ["Romans 12:1"]},
-    {"text": "The Samaritan bound up the wounds, pouring in oil and wine; \"They that be whole need not a physician\".", "refs": ["Luke 10:34", "Matthew 9:12"]},
-    {"text": "\"in the multitude of counsellors there is safety\"", "refs": ["Proverbs 11:14"]}
-  ],
-  "quiz": [
-    {"q": "Which verse says \"your body is the temple of the Holy Ghost\"?", "type": "find_the_verse", "answer_refs": ["1 Corinthians 6:19"]},
-    {"q": "Fill in the word: \"For ye are bought with a ___\"", "type": "fill_word", "ref": "1 Corinthians 6:20", "bible": "KJV", "word": "price"},
-    {"q": "According to 1 Corinthians 6:20, what are we to do in our body?", "type": "multiple_choice",
-     "options": ["Glorify God", "Rest", "Fast", "Keep the law"], "answer": 0, "answer_refs": ["1 Corinthians 6:20"], "check": {"bible": "KJV", "word": "glorify"}},
-    {"q": "Which verse says \"the temple of God is holy, which temple ye are\"?", "type": "find_the_verse", "answer_refs": ["1 Corinthians 3:17"]},
-    {"q": "Which translation says \"reasonable service\" in Romans 12:1?", "type": "which_translation", "ref": "Romans 12:1", "bible": "KJV", "phrase": "reasonable service"},
-    {"q": "Fill in the word: \"present your bodies a living ___\"", "type": "fill_word", "ref": "Romans 12:1", "bible": "KJV", "word": "sacrifice"},
-    {"q": "In Luke 10:34, what did the Samaritan pour in when he bound up the wounds?", "type": "multiple_choice",
-     "options": ["Oil and wine", "Water", "Honey", "Salt"], "answer": 0, "answer_refs": ["Luke 10:34"], "check": {"bible": "KJV", "word": "oil"}},
-    {"q": "Which verse calls Luke \"the beloved physician\"?", "type": "find_the_verse", "answer_refs": ["Colossians 4:14"]},
-    {"q": "Which verse says \"They that be whole need not a physician\"?", "type": "find_the_verse", "answer_refs": ["Matthew 9:12"]},
-    {"q": "Which translation says \"need a doctor\" in Matthew 9:12?", "type": "which_translation", "ref": "Matthew 9:12", "bible": "BSB", "phrase": "need a doctor"},
-    {"q": "In 1 Timothy 5:23, what did Paul tell Timothy to use for his stomach's sake?", "type": "multiple_choice",
-     "options": ["A little wine", "Oil", "Honey", "Only water"], "answer": 0, "answer_refs": ["1 Timothy 5:23"], "check": {"bible": "KJV", "word": "wine"}},
-    {"q": "Fill in the word: \"in the multitude of counsellors there is ___\"", "type": "fill_word", "ref": "Proverbs 11:14", "bible": "KJV", "word": "safety"},
-    {"q": "Which translation says \"there is victory\" in Proverbs 11:14?", "type": "which_translation", "ref": "Proverbs 11:14", "bible": "ETH", "phrase": "there is victory"}
-  ],
-  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]
+ "id": "my-body-a-temple",
+ "title": "My body is a temple",
+ "category": "Body & Life",
+ "anim": {
+  "kind": "light",
+  "x": 52,
+  "y": 4,
+  "s": 40
+ },
+ "opening_question": "My body is a temple: what does the text say about honouring it, and about physicians and remedies? The Bible does not name vaccines; this path shows what it does say, and you decide.",
+ "required_refs": [
+  "1 Corinthians 6:19-20",
+  "1 Corinthians 3:16-17",
+  "Romans 12:1",
+  "Luke 10:33-34",
+  "Matthew 9:12",
+  "Colossians 4:14",
+  "1 Timothy 5:23",
+  "Proverbs 11:14",
+  "1 Corinthians 6:13-18",
+  "Isaiah 38:21",
+  "2 Kings 20:7",
+  "Ezekiel 47:12",
+  "James 5:14-15",
+  "2 Chronicles 16:12",
+  "Mark 5:25-26",
+  "Romans 14:5",
+  "Romans 14:13",
+  "Romans 14:23"
+ ],
+ "words": [
+  "G3485",
+  "G4983",
+  "G2395"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Whose temple is your body, and why are you not your own?",
+   "refs": [
+    "1 Corinthians 6:19-20",
+    "1 Corinthians 6:13-18"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3485",
+     "G4983"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The word for \"temple\" is naos, from a word meaning \"to dwell\".",
+     "refs": [
+      "1 Corinthians 6:19"
+     ],
+     "strongs": [
+      "G3485"
+     ]
+    },
+    {
+     "text": "The word for \"price\" is time: \"a value, i.e. money paid\".",
+     "refs": [
+      "1 Corinthians 6:20"
+     ],
+     "strongs": [
+      "G5092"
+     ]
+    },
+    {
+     "text": "The verses before 6:19 are about sexual sin: \"Flee fornication\" (6:18). That is the setting of \"your body is the temple\".",
+     "refs": [
+      "1 Corinthians 6:18",
+      "1 Corinthians 6:19"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who dwells in the temple of God, and what does the text say about anyone who defiles it?",
+   "refs": [
+    "1 Corinthians 3:16-17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5351"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "In 1 Corinthians 3:17 \"defile\" and \"destroy\" are the same Greek word, phtheiro.",
+     "refs": [
+      "1 Corinthians 3:17"
+     ],
+     "strongs": [
+      "G5351"
+     ]
+    },
+    {
+     "text": "In 3:16 \"ye\" is plural: Paul speaks to the church together, \"ye are the temple of God\". Both facts help to apply the verses fairly.",
+     "refs": [
+      "1 Corinthians 3:16"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What are we asked to present our bodies as?",
+   "refs": [
+    "Romans 12:1"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4983"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "What did the Samaritan do for the wounded man's body?",
+   "refs": [
+    "Luke 10:33-34"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2611"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "Who does Jesus say needs a physician, what is Luke called, and what did Paul tell Timothy to use?",
+   "refs": [
+    "Matthew 9:12",
+    "Colossians 4:14",
+    "1 Timothy 5:23"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2395"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"physician\" in Matthew 9:12 and Colossians 4:14 is the same Greek word, iatros: \"a physician\".",
+     "refs": [
+      "Matthew 9:12",
+      "Colossians 4:14"
+     ],
+     "strongs": [
+      "G2395"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Remedies in the Bible: what was laid on Hezekiah's boil, what are the leaves for in Ezekiel, and what does James say to do for the sick?",
+   "refs": [
+    "Isaiah 38:21",
+    "2 Kings 20:7",
+    "Ezekiel 47:12",
+    "James 5:14-15"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4832"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Let them take a lump of figs, and lay it for a plaister upon the boil\"; \"the leaf thereof for medicine\"; \"anointing him with oil in the name of the Lord\".",
+     "refs": [
+      "Isaiah 38:21",
+      "Ezekiel 47:12",
+      "James 5:14"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The other side: what does the text say of King Asa in his disease, and of the woman who had spent all she had on physicians?",
+   "refs": [
+    "2 Chronicles 16:12",
+    "Mark 5:25-26"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Asa \"in his disease he sought not to the LORD, but to the physicians\"; the woman \"had suffered many things of many physicians\". Both verses are part of the whole counsel.",
+     "refs": [
+      "2 Chronicles 16:12",
+      "Mark 5:26"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Where is there safety, according to Proverbs?",
+   "refs": [
+    "Proverbs 11:14"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3289"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "Living it out: the path leaves the decision to you. What does Paul say about deciding by conscience, and about not judging the one who decides otherwise?",
+   "refs": [
+    "Romans 14:5",
+    "Romans 14:13",
+    "Romans 14:23"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Let every man be fully persuaded in his own mind\"; \"Let us not therefore judge one another any more\"; \"whatsoever is not of faith is sin\".",
+     "refs": [
+      "Romans 14:5",
+      "Romans 14:13",
+      "Romans 14:23"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"your body is the temple of the Holy Ghost\" ... \"ye are bought with a price\"",
+   "refs": [
+    "1 Corinthians 6:19-20"
+   ]
+  },
+  {
+   "text": "\"present your bodies a living sacrifice\"",
+   "refs": [
+    "Romans 12:1"
+   ]
+  },
+  {
+   "text": "The Samaritan bound up the wounds, pouring in oil and wine; \"They that be whole need not a physician\".",
+   "refs": [
+    "Luke 10:34",
+    "Matthew 9:12"
+   ]
+  },
+  {
+   "text": "\"in the multitude of counsellors there is safety\"",
+   "refs": [
+    "Proverbs 11:14"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"your body is the temple of the Holy Ghost\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Corinthians 6:19"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"For ye are bought with a ___\"",
+   "type": "fill_word",
+   "ref": "1 Corinthians 6:20",
+   "bible": "KJV",
+   "word": "price"
+  },
+  {
+   "q": "According to 1 Corinthians 6:20, what are we to do in our body?",
+   "type": "multiple_choice",
+   "options": [
+    "Glorify God",
+    "Rest",
+    "Fast",
+    "Keep the law"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 Corinthians 6:20"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "glorify"
+   }
+  },
+  {
+   "q": "Which verse says \"the temple of God is holy, which temple ye are\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Corinthians 3:17"
+   ]
+  },
+  {
+   "q": "Which translation says \"reasonable service\" in Romans 12:1?",
+   "type": "which_translation",
+   "ref": "Romans 12:1",
+   "bible": "KJV",
+   "phrase": "reasonable service"
+  },
+  {
+   "q": "Fill in the word: \"present your bodies a living ___\"",
+   "type": "fill_word",
+   "ref": "Romans 12:1",
+   "bible": "KJV",
+   "word": "sacrifice"
+  },
+  {
+   "q": "In Luke 10:34, what did the Samaritan pour in when he bound up the wounds?",
+   "type": "multiple_choice",
+   "options": [
+    "Oil and wine",
+    "Water",
+    "Honey",
+    "Salt"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 10:34"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "oil"
+   }
+  },
+  {
+   "q": "Which verse calls Luke \"the beloved physician\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Colossians 4:14"
+   ]
+  },
+  {
+   "q": "Which verse says \"They that be whole need not a physician\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 9:12"
+   ]
+  },
+  {
+   "q": "Which translation says \"need a doctor\" in Matthew 9:12?",
+   "type": "which_translation",
+   "ref": "Matthew 9:12",
+   "bible": "BSB",
+   "phrase": "need a doctor"
+  },
+  {
+   "q": "In 1 Timothy 5:23, what did Paul tell Timothy to use for his stomach's sake?",
+   "type": "multiple_choice",
+   "options": [
+    "A little wine",
+    "Oil",
+    "Honey",
+    "Only water"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 Timothy 5:23"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "wine"
+   }
+  },
+  {
+   "q": "Fill in the word: \"in the multitude of counsellors there is ___\"",
+   "type": "fill_word",
+   "ref": "Proverbs 11:14",
+   "bible": "KJV",
+   "word": "safety"
+  },
+  {
+   "q": "Which translation says \"there is victory\" in Proverbs 11:14?",
+   "type": "which_translation",
+   "ref": "Proverbs 11:14",
+   "bible": "ETH",
+   "phrase": "there is victory"
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ]
 }

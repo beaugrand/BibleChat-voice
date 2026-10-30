@@ -22,7 +22,14 @@
   "Revelation 12:6",
   "Revelation 12:14",
   "Revelation 11:2-3",
-  "Revelation 13:5"
+  "Revelation 13:5",
+  "Daniel 12:11-12",
+  "Daniel 9:27",
+  "Numbers 14:34",
+  "Ezekiel 4:6",
+  "Matthew 24:36",
+  "Acts 1:7-8",
+  "Matthew 24:42"
  ],
  "words": [
   "H5732",
@@ -163,6 +170,75 @@
       "Revelation 13:5",
       "Revelation 11:3",
       "Revelation 12:6"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The verses readers ask about most: what do Daniel 12:11-12 and 9:27 say, and where does the Bible count a day for a year?",
+   "refs": [
+    "Daniel 12:11-12",
+    "Daniel 9:27",
+    "Numbers 14:34",
+    "Ezekiel 4:6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3117"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel 12 names two more numbers: \"a thousand two hundred and ninety days\" and \"the thousand three hundred and five and thirty days\". Daniel 9:27: \"in the midst of the week he shall cause the sacrifice and the oblation to cease\".",
+     "refs": [
+      "Daniel 12:11-12",
+      "Daniel 9:27"
+     ]
+    },
+    {
+     "text": "Numbers 14:34 and Ezekiel 4:6 count \"each day for a year\". Some read the 1,260 days of Daniel and Revelation as years for this reason; others read them as days. The text of Daniel and Revelation does not say which.",
+     "refs": [
+      "Numbers 14:34",
+      "Ezekiel 4:6"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Jesus said \"of that day and hour knoweth no man\". What do these verses ask of us instead of counting?",
+   "refs": [
+    "Matthew 24:36",
+    "Acts 1:7-8",
+    "Matthew 24:42"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"It is not for you to know the times or the seasons\", \"But ye shall receive power\"; \"Watch therefore\".",
+     "refs": [
+      "Acts 1:7-8",
+      "Matthew 24:42"
      ]
     }
    ]
@@ -349,15 +425,15 @@
     "xref": 17,
     "votes": 102,
     "word": "G2540",
-    "word_count": 3,
+    "word_count": 4,
     "differ": 0.254,
     "quoted": null
    },
    "why": [
     "17 cross-references point here",
-    "The Greek word kairós (G2540) is in 3 verses of this path"
+    "The Greek word kairós (G2540) is in 4 verses of this path"
    ],
-   "score": 0.499
+   "score": 0.5281
   },
   {
    "q": "In Revelation 12:14, what was given to the woman?",
@@ -380,15 +456,15 @@
     "xref": 17,
     "votes": 102,
     "word": "G2540",
-    "word_count": 3,
+    "word_count": 4,
     "differ": 0.254,
     "quoted": null
    },
    "why": [
     "17 cross-references point here",
-    "The Greek word kairós (G2540) is in 3 verses of this path"
+    "The Greek word kairós (G2540) is in 4 verses of this path"
    ],
-   "score": 0.499
+   "score": 0.5281
   },
   {
    "q": "Which verse says the holy city \"shall they tread under foot forty and two months\"?",
@@ -498,7 +574,7 @@
   "Matthew Henry",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 8,
+ "verse_count": 17,
  "image": "img/mirror-6-the-times.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -506,7 +582,7 @@
  },
  "built_from": {
   "file": "packaging/paths/mirror-6-the-times.json",
-  "sha": "4090cf978ed7fc00",
+  "sha": "41a1851793a87308",
   "checked_in": [
    "KJV",
    "ETH",

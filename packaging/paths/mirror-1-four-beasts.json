@@ -1,64 +1,431 @@
 {
-  "id": "mirror-1-four-beasts",
-  "title": "Session 1: The four beasts",
-  "category": "Prophecy",
-  "series": {"id": "mirror-prophecies", "title": "Revelation & Daniel: the mirror prophecies", "session": 1, "of": 7},
-  "read_along": {"label": "TS2009", "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"},
-  "anim": {"kind": "storm"},
-  "opening_question": "Daniel saw four beasts come up out of the great sea; John saw one beast rise up out of the sea. What do the two visions share, and what does the text itself say the beasts are?",
-  "required_refs": ["Daniel 7:1-8", "Daniel 7:15-17", "Daniel 7:23-24", "Revelation 13:1-2", "Revelation 17:12", "Revelation 17:15"],
-  "words": ["H2423", "G2342", "H7162", "G2768"],
-  "show": 8,
-  "steps": [
-    {"question": "What did Daniel see the four winds do, and where did the four great beasts come up from?", "refs": ["Daniel 7:1-3"],
-     "look_closer": {"strongs": ["H3221", "H2423"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "The Aramaic word for \"beasts\" is cheyva: \"an animal\". Daniel 7 is written in Aramaic, like Daniel 2.", "refs": ["Daniel 7:3"], "strongs": ["H2423"]}
-     ]},
-    {"question": "Describe each of the four beasts. What did the fourth beast have that the others did not?", "refs": ["Daniel 7:4-8"],
-     "look_closer": {"strongs": ["H744", "H1678", "H5245", "H7162"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "The first is \"like a lion\", the second \"like to a bear\", the third \"like a leopard\" with \"four heads\"; the fourth \"had ten horns\".", "refs": ["Daniel 7:4-7"]}
-     ]},
-    {"question": "What does the one who stood by tell Daniel the beasts are, and what are the ten horns?", "refs": ["Daniel 7:15-17", "Daniel 7:23-24"],
-     "look_closer": {"strongs": ["H4430"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
-    {"question": "Where does John's beast rise from, what animals is it like, and how many heads and horns does it have? Now count the heads of Daniel's four beasts.", "refs": ["Revelation 13:1-2"],
-     "look_closer": {"strongs": ["G2342", "G2281", "G3917"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "Daniel sees a lion, then a bear, then a leopard. John sees one beast \"like unto a leopard\", with the feet \"of a bear\" and the mouth \"of a lion\": the same three animals, named in the opposite order.", "refs": ["Daniel 7:4-6", "Revelation 13:2"]},
-       {"text": "The Greek word for \"beast\" is therion: \"a dangerous animal\". Both visions begin at \"the sea\".", "refs": ["Revelation 13:1", "Daniel 7:2"], "strongs": ["G2342", "G2281"]}
-     ]},
-    {"question": "What does Revelation say the ten horns are, and what are the waters?", "refs": ["Revelation 17:12", "Revelation 17:15"],
-     "look_closer": {"strongs": ["G2768"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "Daniel is told \"the ten horns out of this kingdom are ten kings\"; John is told \"the ten horns which thou sawest are ten kings\".", "refs": ["Daniel 7:24", "Revelation 17:12"]}
-     ]}
-  ],
-  "remember": [
-    {"text": "Four great beasts came up from the sea: like a lion, a bear, a leopard, and a fourth with ten horns.", "refs": ["Daniel 7:3-7"]},
-    {"text": "\"These great beasts, which are four, are four kings\"", "refs": ["Daniel 7:17"]},
-    {"text": "John's beast is like a leopard, with the feet of a bear and the mouth of a lion.", "refs": ["Revelation 13:2"]},
-    {"text": "\"the ten horns which thou sawest are ten kings\"", "refs": ["Revelation 17:12"]}
-  ],
-  "quiz": [
-    {"q": "Which verse says \"four great beasts came up from the sea\"?", "type": "find_the_verse", "answer_refs": ["Daniel 7:3"]},
-    {"q": "In Daniel 7:4, what did the first beast, like a lion, have?", "type": "multiple_choice",
-     "options": ["Eagle's wings", "Ten horns", "Iron teeth", "Four heads"], "answer": 0, "answer_refs": ["Daniel 7:4"], "check": {"bible": "KJV", "word": "eagle"}},
-    {"q": "Fill in the word: \"it had three ___ in the mouth of it\"", "type": "fill_word", "ref": "Daniel 7:5", "bible": "KJV", "word": "ribs"},
-    {"q": "In Daniel 7:6, how many heads did the beast like a leopard have?", "type": "multiple_choice",
-     "options": ["Four", "Seven", "Ten", "Two"], "answer": 0, "answer_refs": ["Daniel 7:6"], "check": {"bible": "KJV", "word": "four"}},
-    {"q": "Which verse says the fourth beast \"had great iron teeth\"?", "type": "find_the_verse", "answer_refs": ["Daniel 7:7"]},
-    {"q": "Which translation says \"four great animals\" in Daniel 7:3?", "type": "which_translation", "ref": "Daniel 7:3", "bible": "ETH", "phrase": "four great animals"},
-    {"q": "Which verse says \"These great beasts, which are four, are four kings\"?", "type": "find_the_verse", "answer_refs": ["Daniel 7:17"]},
-    {"q": "Which verse says \"the ten horns out of this kingdom are ten kings\"?", "type": "find_the_verse", "answer_refs": ["Daniel 7:24"]},
-    {"q": "Which verse says John saw \"a beast rise up out of the sea, having seven heads and ten horns\"?", "type": "find_the_verse", "answer_refs": ["Revelation 13:1"]},
-    {"q": "In Revelation 13:2 the beast was like a leopard. What were its feet like?", "type": "multiple_choice",
-     "options": ["The feet of a bear", "The feet of a lion", "The feet of an eagle", "Feet of iron"], "answer": 0, "answer_refs": ["Revelation 13:2"], "check": {"bible": "KJV", "word": "bear"}},
-    {"q": "Fill in the word: \"and the ___ gave him his power, and his seat, and great authority\"", "type": "fill_word", "ref": "Revelation 13:2", "bible": "KJV", "word": "dragon"},
-    {"q": "Which translation says \"royal crowns\" in Revelation 13:1?", "type": "which_translation", "ref": "Revelation 13:1", "bible": "BSB", "phrase": "royal crowns"},
-    {"q": "In Revelation 17:15, what are the waters?", "type": "multiple_choice",
-     "options": ["Peoples, and multitudes, and nations, and tongues", "The great sea", "The river of life", "The rain of heaven"], "answer": 0, "answer_refs": ["Revelation 17:15"], "check": {"bible": "KJV", "word": "peoples"}},
-    {"q": "Which verse says \"the ten horns which thou sawest are ten kings\"?", "type": "find_the_verse", "answer_refs": ["Revelation 17:12"]}
-  ],
-  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry", "TS2009 (read-along link only)"]
+ "id": "mirror-1-four-beasts",
+ "title": "Session 1: The four beasts",
+ "category": "Prophecy",
+ "series": {
+  "id": "mirror-prophecies",
+  "title": "Revelation & Daniel: the mirror prophecies",
+  "session": 1,
+  "of": 7
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "anim": {
+  "kind": "storm"
+ },
+ "opening_question": "Daniel saw four beasts come up out of the great sea; John saw one beast rise up out of the sea. What do the two visions share, and what does the text itself say the beasts are?",
+ "required_refs": [
+  "Daniel 7:1-8",
+  "Daniel 7:15-17",
+  "Daniel 7:23-24",
+  "Revelation 13:1-2",
+  "Revelation 17:12",
+  "Revelation 17:15",
+  "Daniel 7:1-3",
+  "Daniel 7:4-8",
+  "Daniel 7:15-18",
+  "Daniel 8:20-21",
+  "Daniel 7:18",
+  "Daniel 7:27",
+  "Revelation 13:10",
+  "1 Peter 5:8-9"
+ ],
+ "words": [
+  "H2423",
+  "G2342",
+  "H7162",
+  "G2768"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What did Daniel see the four winds do, and where did the four great beasts come up from?",
+   "refs": [
+    "Daniel 7:1-3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3221",
+     "H2423"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Aramaic word for \"beasts\" is cheyva: \"an animal\". Daniel 7 is written in Aramaic, like Daniel 2.",
+     "refs": [
+      "Daniel 7:3"
+     ],
+     "strongs": [
+      "H2423"
+     ]
+    },
+    {
+     "text": "Christians read Daniel and Revelation in four main ways: the events are past (fulfilled in the first centuries), unfolding through church history, still future, or a picture of the struggle in every age. The Scofield notes shown in this series read them as still future. Knowing there are four views helps you weigh any one of them.",
+     "refs": [
+      "Daniel 7:1"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Describe each of the four beasts. What did the fourth beast have that the others did not?",
+   "refs": [
+    "Daniel 7:4-8"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H744",
+     "H1678",
+     "H5245",
+     "H7162"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The first is \"like a lion\", the second \"like to a bear\", the third \"like a leopard\" with \"four heads\"; the fourth \"had ten horns\".",
+     "refs": [
+      "Daniel 7:4-7"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does the one who stood by tell Daniel the beasts are, and what are the ten horns? Who receives the kingdom, and which kingdoms does the angel name in Daniel 8?",
+   "refs": [
+    "Daniel 7:15-18",
+    "Daniel 7:23-24",
+    "Daniel 8:20-21"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4430"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"the saints of the most High shall take the kingdom\". In Daniel 8 the angel names \"the kings of Media and Persia\" and \"the king of Grecia\".",
+     "refs": [
+      "Daniel 7:18",
+      "Daniel 8:20-21"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Where does John's beast rise from, what animals is it like, and how many heads and horns does it have? Now count the heads of Daniel's four beasts.",
+   "refs": [
+    "Revelation 13:1-2"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2342",
+     "G2281",
+     "G3917"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel sees a lion, then a bear, then a leopard. John sees one beast \"like unto a leopard\", with the feet \"of a bear\" and the mouth \"of a lion\": the same three animals, named in the opposite order.",
+     "refs": [
+      "Daniel 7:4-6",
+      "Revelation 13:2"
+     ]
+    },
+    {
+     "text": "The Greek word for \"beast\" is therion: \"a dangerous animal\". Both visions begin at \"the sea\".",
+     "refs": [
+      "Revelation 13:1",
+      "Daniel 7:2"
+     ],
+     "strongs": [
+      "G2342",
+      "G2281"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does Revelation say the ten horns are, and what are the waters?",
+   "refs": [
+    "Revelation 17:12",
+    "Revelation 17:15"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2768"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel is told \"the ten horns out of this kingdom are ten kings\"; John is told \"the ten horns which thou sawest are ten kings\".",
+     "refs": [
+      "Daniel 7:24",
+      "Revelation 17:12"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: the beasts rise and fall, but \"the saints of the most High shall take the kingdom\". What do these verses ask of us while the kingdoms of this world stand?",
+   "refs": [
+    "Daniel 7:18",
+    "Daniel 7:27",
+    "Revelation 13:10",
+    "1 Peter 5:8-9"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Here is the patience and the faith of the saints\"; \"Be sober, be vigilant\", \"Whom resist stedfast in the faith\".",
+     "refs": [
+      "Revelation 13:10",
+      "1 Peter 5:8-9"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "Four great beasts came up from the sea: like a lion, a bear, a leopard, and a fourth with ten horns.",
+   "refs": [
+    "Daniel 7:3-7"
+   ]
+  },
+  {
+   "text": "\"These great beasts, which are four, are four kings\"",
+   "refs": [
+    "Daniel 7:17"
+   ]
+  },
+  {
+   "text": "John's beast is like a leopard, with the feet of a bear and the mouth of a lion.",
+   "refs": [
+    "Revelation 13:2"
+   ]
+  },
+  {
+   "text": "\"the ten horns which thou sawest are ten kings\"",
+   "refs": [
+    "Revelation 17:12"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"four great beasts came up from the sea\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 7:3"
+   ]
+  },
+  {
+   "q": "In Daniel 7:4, what did the first beast, like a lion, have?",
+   "type": "multiple_choice",
+   "options": [
+    "Eagle's wings",
+    "Ten horns",
+    "Iron teeth",
+    "Four heads"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 7:4"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "eagle"
+   }
+  },
+  {
+   "q": "Fill in the word: \"it had three ___ in the mouth of it\"",
+   "type": "fill_word",
+   "ref": "Daniel 7:5",
+   "bible": "KJV",
+   "word": "ribs"
+  },
+  {
+   "q": "In Daniel 7:6, how many heads did the beast like a leopard have?",
+   "type": "multiple_choice",
+   "options": [
+    "Four",
+    "Seven",
+    "Ten",
+    "Two"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 7:6"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "four"
+   }
+  },
+  {
+   "q": "Which verse says the fourth beast \"had great iron teeth\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 7:7"
+   ]
+  },
+  {
+   "q": "Which translation says \"four great animals\" in Daniel 7:3?",
+   "type": "which_translation",
+   "ref": "Daniel 7:3",
+   "bible": "ETH",
+   "phrase": "four great animals"
+  },
+  {
+   "q": "Which verse says \"These great beasts, which are four, are four kings\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 7:17"
+   ]
+  },
+  {
+   "q": "Which verse says \"the ten horns out of this kingdom are ten kings\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 7:24"
+   ]
+  },
+  {
+   "q": "Which verse says John saw \"a beast rise up out of the sea, having seven heads and ten horns\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 13:1"
+   ]
+  },
+  {
+   "q": "In Revelation 13:2 the beast was like a leopard. What were its feet like?",
+   "type": "multiple_choice",
+   "options": [
+    "The feet of a bear",
+    "The feet of a lion",
+    "The feet of an eagle",
+    "Feet of iron"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 13:2"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "bear"
+   }
+  },
+  {
+   "q": "Fill in the word: \"and the ___ gave him his power, and his seat, and great authority\"",
+   "type": "fill_word",
+   "ref": "Revelation 13:2",
+   "bible": "KJV",
+   "word": "dragon"
+  },
+  {
+   "q": "Which translation says \"royal crowns\" in Revelation 13:1?",
+   "type": "which_translation",
+   "ref": "Revelation 13:1",
+   "bible": "BSB",
+   "phrase": "royal crowns"
+  },
+  {
+   "q": "In Revelation 17:15, what are the waters?",
+   "type": "multiple_choice",
+   "options": [
+    "Peoples, and multitudes, and nations, and tongues",
+    "The great sea",
+    "The river of life",
+    "The rain of heaven"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 17:15"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "peoples"
+   }
+  },
+  {
+   "q": "Which verse says \"the ten horns which thou sawest are ten kings\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 17:12"
+   ]
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ]
 }

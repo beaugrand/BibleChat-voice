@@ -20,7 +20,15 @@
   "Isaiah 8:20",
   "Deuteronomy 13:1-5",
   "Galatians 1:8",
-  "1 John 4:1"
+  "1 John 4:1",
+  "Isaiah 8:19-20",
+  "Deuteronomy 18:18-22",
+  "Acts 3:22-26",
+  "Galatians 1:6-9",
+  "1 John 4:1-3",
+  "Matthew 5:17-18",
+  "Acts 17:11",
+  "1 Thessalonians 5:21"
  ],
  "words": [
   "H8584",
@@ -257,14 +265,68 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: John says \"try the spirits whether they are of God\". How do these verses say we test what we hear?",
+   "refs": [
+    "1 John 4:1",
+    "Acts 17:11",
+    "1 Thessalonians 5:21"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Bereans \"searched the scriptures daily, whether those things were so\"; Paul: \"Prove all things; hold fast that which is good\".",
+     "refs": [
+      "Acts 17:11",
+      "1 Thessalonians 5:21"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
-   {"text": "\"To the law and to the testimony\"", "refs": ["Isaiah 8:20"]},
-   {"text": "A prophet with a sign who leads after other gods is not to be followed.", "refs": ["Deuteronomy 13:1-3"]},
-   {"text": "\"though we, or an angel from heaven, preach any other gospel\"", "refs": ["Galatians 1:8"]},
-   {"text": "\"every spirit that confesseth that Jesus Christ is come in the flesh is of God\"", "refs": ["1 John 4:2"]},
-   {"text": "\"one jot or one tittle shall in no wise pass from the law\"", "refs": ["Matthew 5:18"]}
+  {
+   "text": "\"To the law and to the testimony\"",
+   "refs": [
+    "Isaiah 8:20"
+   ]
+  },
+  {
+   "text": "A prophet with a sign who leads after other gods is not to be followed.",
+   "refs": [
+    "Deuteronomy 13:1-3"
+   ]
+  },
+  {
+   "text": "\"though we, or an angel from heaven, preach any other gospel\"",
+   "refs": [
+    "Galatians 1:8"
+   ]
+  },
+  {
+   "text": "\"every spirit that confesseth that Jesus Christ is come in the flesh is of God\"",
+   "refs": [
+    "1 John 4:2"
+   ]
+  },
+  {
+   "text": "\"one jot or one tittle shall in no wise pass from the law\"",
+   "refs": [
+    "Matthew 5:18"
+   ]
+  }
  ],
  "quiz": [
   {

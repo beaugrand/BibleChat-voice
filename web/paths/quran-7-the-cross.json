@@ -21,7 +21,17 @@
   "Isaiah 53:5",
   "John 19:34-35",
   "Luke 24:39",
-  "1 Corinthians 15:3-8"
+  "1 Corinthians 15:3-8",
+  "Psalms 22:14-18",
+  "Isaiah 53:3-9",
+  "John 19:16-18",
+  "John 19:32-35",
+  "Luke 24:36-43",
+  "Acts 1:9-11",
+  "1 Corinthians 15:3",
+  "1 Corinthians 15:17-20",
+  "1 Corinthians 15:58",
+  "Galatians 2:20"
  ],
  "words": [
   "G4717",
@@ -171,6 +181,12 @@
      "refs": [
       "John 19:16"
      ]
+    },
+    {
+     "text": "Outside history, not Scripture: the Jewish historian Josephus (Antiquities 18.3, about AD 93) also writes that Pilate condemned Jesus to the cross. Scholars agree that Christian copyists added words to that passage later, but most hold that its core is his.",
+     "refs": [
+      "John 19:16"
+     ]
     }
    ]
   },
@@ -283,6 +299,36 @@
      "text": "1 Corinthians was written about AD 55, almost 600 years before the Quran. Many scholars date the creed Paul quotes to within a few years of the cross.",
      "refs": [
       "1 Corinthians 15:3"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Paul delivered the cross and the resurrection \"first of all\". What does he say it means for those who believe it?",
+   "refs": [
+    "1 Corinthians 15:3",
+    "1 Corinthians 15:17-20",
+    "1 Corinthians 15:58",
+    "Galatians 2:20"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"But now is Christ risen from the dead\"; \"I am crucified with Christ: nevertheless I live\".",
+     "refs": [
+      "1 Corinthians 15:20",
+      "Galatians 2:20"
      ]
     }
    ]
@@ -614,14 +660,15 @@
     "xref": 13,
     "votes": 75,
     "word": "G4561",
-    "word_count": 1,
+    "word_count": 2,
     "differ": 0.345,
     "quoted": null
    },
    "why": [
-    "13 cross-references point here"
+    "13 cross-references point here",
+    "The Greek word sárx (G4561) is in 2 verses of this path"
    ],
-   "score": 0.4405
+   "score": 0.4697
   },
   {
    "q": "In Luke 24:42, what did they give him to eat?",
@@ -737,15 +784,16 @@
    "signals": {
     "xref": 31,
     "votes": 189,
-    "word": "G2290",
-    "word_count": 1,
+    "word": "G1453",
+    "word_count": 4,
     "differ": 0.222,
     "quoted": null
    },
    "why": [
-    "31 cross-references point here"
+    "31 cross-references point here",
+    "The Greek word egeírō (G1453) is in 4 verses of this path"
    ],
-   "score": 0.4786
+   "score": 0.5661
   }
  ],
  "sources": [
@@ -759,7 +807,7 @@
   "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 36,
+ "verse_count": 42,
  "outside_sources": [
   {
    "name": "George Sale (1734)",
@@ -781,7 +829,7 @@
  },
  "built_from": {
   "file": "packaging/paths/quran-7-the-cross.json",
-  "sha": "9476a8ce8aef683e",
+  "sha": "5594925c2005860a",
   "checked_in": [
    "KJV",
    "ETH",

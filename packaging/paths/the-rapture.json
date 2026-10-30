@@ -1,109 +1,863 @@
 {
-  "id": "the-rapture",
-  "title": "The rapture: what does the Bible say?",
-  "category": "Prophecy",
-  "anim": {"kind": "light", "x": 83, "y": 12, "s": 32},
-  "opening_question": "The word rapture is not in English Bibles. It comes from the Latin Bible's word for \"caught up\" in 1 Thessalonians 4:17. What does the Bible say about believers being caught up to meet the Lord, about Jesus coming again in the clouds, and about when it happens? Read every verse, also the ones Christians read in different ways, and let the text speak.",
-  "required_refs": ["1 Thessalonians 4:13-18", "1 Corinthians 15:51-54", "Philippians 3:20-21", "John 14:1-3", "Acts 1:9-11", "Matthew 24:29-31", "Daniel 7:13-14", "Mark 13:24-27", "Luke 21:25-28", "Matthew 24:36-44", "2 Thessalonians 2:1-4", "1 Thessalonians 5:9", "Revelation 3:10", "John 17:15", "1 Thessalonians 5:1-8", "Titus 2:11-13", "1 John 3:2-3", "Revelation 22:20"],
-  "words": ["G726", "G3952", "G4536", "G2347"],
-  "show": 8,
-  "steps": [
-    {"question": "Why did Paul write about \"them which are asleep\"? When the Lord descends from heaven, who rises first, who is caught up, to meet whom, and what are we to do with these words?", "refs": ["1 Thessalonians 4:13-18"],
-     "look_closer": {"strongs": ["G726", "G529", "G3952", "G4536"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "The word rapture comes from rapiemur, the Latin Bible's word for \"caught up\" in 1 Thessalonians 4:17. The Greek word is harpazo, \"to seize\".", "refs": ["1 Thessalonians 4:17"], "strongs": ["G726"]},
-       {"text": "The same Greek word harpazo is used when \"the Spirit of the Lord caught away Philip\", when Paul knew a man \"caught up to the third heaven\", and when the woman's child \"was caught up unto God\".", "refs": ["Acts 8:39", "2 Corinthians 12:2", "Revelation 12:5"], "strongs": ["G726"]},
-       {"text": "\"to meet\" is apantesis, \"a (friendly) encounter\". The Bible uses it two more times: \"go ye out to meet him\" for the bridegroom, and the brethren who \"came to meet us\" when Paul came to Rome.", "refs": ["1 Thessalonians 4:17", "Matthew 25:6", "Acts 28:15"], "strongs": ["G529"]},
-       {"text": "\"coming\" in 1 Thessalonians 4:15 is parousia: \"a being near, i.e. advent\". Jesus uses the same word in Matthew 24 for \"the coming of the Son of man\".", "refs": ["1 Thessalonians 4:15", "Matthew 24:37"], "strongs": ["G3952"]}
-     ]},
-    {"question": "What mystery does Paul show? When are we changed, how fast, and what will our bodies be like?", "refs": ["1 Corinthians 15:51-54", "Philippians 3:20-21"],
-     "look_closer": {"strongs": ["G823", "G4493", "G236", "G4536"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "\"moment\" is atomos, \"uncut\", the word behind \"atom\": an \"atom\" of time. \"twinkling\" is rhipe, \"a jerk (of the eye, i.e. (by analogy) an instant)\".", "refs": ["1 Corinthians 15:52"], "strongs": ["G823", "G4493"]},
-       {"text": "\"the last trump\" in 1 Corinthians 15:52, \"the trump of God\" in 1 Thessalonians 4:16 and \"a great sound of a trumpet\" in Matthew 24:31 are all the same Greek word, salpinx.", "refs": ["1 Corinthians 15:52", "1 Thessalonians 4:16", "Matthew 24:31"], "strongs": ["G4536"]},
-       {"text": "The BSB says \"our citizenship is in heaven\" where the KJV says \"our conversation is in heaven\".", "refs": ["Philippians 3:20"]}
-     ]},
-    {"question": "What did Jesus promise His disciples before He went away? And when He was taken up, how did the two men in white apparel say He will come back?", "refs": ["John 14:1-3", "Acts 1:9-11"],
-     "look_closer": {"strongs": ["G3438", "G3880", "G5158", "G3507"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "\"mansions\" is mone, \"a staying, i.e. residence\". The BSB says \"many rooms\".", "refs": ["John 14:2"], "strongs": ["G3438"]},
-       {"text": "\"a cloud received him out of their sight\", and He \"shall so come in like manner\". Jesus said they shall see the Son of man \"coming in the clouds of heaven\".", "refs": ["Acts 1:9", "Acts 1:11", "Matthew 24:30"]}
-     ]},
-    {"question": "What happens \"Immediately after the tribulation of those days\"? What appears in heaven, who sees the Son of man coming, and whom do His angels gather, with what sound? Where did Daniel see the Son of man come with the clouds?", "refs": ["Matthew 24:29-31", "Daniel 7:13-14"],
-     "look_closer": {"strongs": ["G2347", "G1996", "G1588", "G4536"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "\"tribulation\" is thlipsis, \"pressure\". The KJV also gives it as \"anguish\" and \"persecution\".", "refs": ["Matthew 24:29"], "strongs": ["G2347"]},
-       {"text": "The darkened sun and moon echo the prophets: \"the sun shall be darkened in his going forth\" and \"The sun shall be turned into darkness, and the moon into blood\".", "refs": ["Matthew 24:29", "Isaiah 13:10", "Joel 2:31"]},
-       {"text": "\"gather together\" is episunago, \"to collect upon the same place\". Its noun stands in 2 Thessalonians 2:1: \"our gathering together unto him\".", "refs": ["Matthew 24:31", "2 Thessalonians 2:1"], "strongs": ["G1996", "G1997"]},
-       {"text": "This passage shares the clouds, the trumpet and the gathering with 1 Thessalonians 4:16-17. Some read the two as one event, at Christ's return after the tribulation. Others read Matthew 24 as His visible return at the end of the tribulation, after an earlier catching up, with \"his elect\" meaning those who come to faith during it, or Israel.", "refs": ["Matthew 24:31", "1 Thessalonians 4:16", "1 Thessalonians 4:17"]}
-     ]},
-    {"question": "How do Mark and Luke tell the same moment? From where are the elect gathered, and what are believers to do \"when these things begin to come to pass\"?", "refs": ["Mark 13:24-27", "Luke 21:25-28"],
-     "look_closer": {"strongs": ["G1588", "G629", "G3507"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "Mark says the elect are gathered \"from the uttermost part of the earth to the uttermost part of heaven\".", "refs": ["Mark 13:27"]},
-       {"text": "\"redemption\" in Luke 21:28 is apolutrosis, \"ransom in full\". The same verse says \"lift up your heads\".", "refs": ["Luke 21:28"], "strongs": ["G629"]},
-       {"text": "\"elect\" is eklektos, \"select\"; the KJV also gives it as \"chosen\". The Ethiopian Canon says \"his chosen ones\".", "refs": ["Mark 13:27", "Matthew 24:31"], "strongs": ["G1588"]}
-     ]},
-    {"question": "Who knows the day and hour? What happened in the days of Noe, who is taken and who is left, and what does Jesus tell us to do?", "refs": ["Matthew 24:36-44"],
-     "look_closer": {"strongs": ["G3880", "G863", "G142", "G1127"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "\"taken\" in Matthew 24:40-41 is paralambano, \"to receive near\". Jesus uses the same word in John 14:3: \"receive you unto myself\".", "refs": ["Matthew 24:40", "John 14:3"], "strongs": ["G3880"]},
-       {"text": "In verse 39 the flood \"took them all away\": another Greek word, airo, \"to take up or away\". Some read \"the one shall be taken\" as taken to the Lord, as in John 14:3; others read it as taken away in judgment, as in the flood.", "refs": ["Matthew 24:39", "Matthew 24:40", "John 14:3"], "strongs": ["G142"]},
-       {"text": "\"left\" is aphiemi, \"to send forth\"; the KJV also gives it as \"leave\" and \"forsake\".", "refs": ["Matthew 24:40"], "strongs": ["G863"]}
-     ]},
-    {"question": "What did Paul say must come first, before \"the day of Christ\"? What do the verses say about wrath, and about being kept \"from the hour of temptation\"? Compare what Jesus prayed for His disciples.", "refs": ["2 Thessalonians 2:1-4", "1 Thessalonians 5:9", "Revelation 3:10", "John 17:15"],
-     "look_closer": {"strongs": ["G646", "G5083", "G3709", "G1997"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "Christians read the timing in different ways. Pre-tribulation: believers are caught up before a time of trouble. Mid-tribulation: partway through it. Post-tribulation: at Christ's return after it. Amillennial (many Catholic, Orthodox, Lutheran and Reformed churches): 1 Thessalonians 4 describes the one Second Coming. This step shows the verses each reading leans on; the commentary below is labelled as the words of men.", "refs": ["1 Thessalonians 4:17", "Matthew 24:29", "2 Thessalonians 2:3"]},
-       {"text": "\"falling away\" is apostasia, \"defection from truth\".", "refs": ["2 Thessalonians 2:3"], "strongs": ["G646"]},
-       {"text": "\"keep thee from\" in Revelation 3:10 is tereo with ek, \"from\". The same words stand in John 17:15, \"keep them from the evil\", where Jesus prays \"not that thou shouldest take them out of the world\". Some read Revelation 3:10 as kept away from the hour; others as kept safe through it.", "refs": ["Revelation 3:10", "John 17:15"], "strongs": ["G5083", "G1537"]},
-       {"text": "\"wrath\" is orge. Paul also writes that Jesus \"delivered us from the wrath to come\". Readers differ on whether this wrath is the tribulation or the final judgment.", "refs": ["1 Thessalonians 5:9", "1 Thessalonians 1:10"], "strongs": ["G3709"]}
-     ]},
-    {"question": "How does the day of the Lord come, and why need it not overtake believers \"as a thief\"? What is \"that blessed hope\", what does that hope do in us, and how does the Bible end?", "refs": ["1 Thessalonians 5:1-8", "Titus 2:11-13", "1 John 3:2-3", "Revelation 22:20"],
-     "look_closer": {"strongs": ["G1127", "G2015", "G1680", "G3870"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "\"watch\" in 1 Thessalonians 5:6 is gregoreuo, \"to keep awake\": the same word as \"Watch therefore\" in Matthew 24:42.", "refs": ["1 Thessalonians 5:6", "Matthew 24:42"], "strongs": ["G1127"]},
-       {"text": "\"appearing\" in Titus 2:13 is epiphaneia, \"a manifestation, i.e. (specially) the advent of Christ\".", "refs": ["Titus 2:13"], "strongs": ["G2015"]},
-       {"text": "\"comfort\" in 1 Thessalonians 4:18 and 5:11 is parakaleo, \"to call near\". The BSB says \"encourage one another\".", "refs": ["1 Thessalonians 4:18", "1 Thessalonians 5:11"], "strongs": ["G3870"]}
-     ]}
-  ],
-  "remember": [
-    {"text": "\"the dead in Christ shall rise first\" ... \"and so shall we ever be with the Lord\"", "refs": ["1 Thessalonians 4:16", "1 Thessalonians 4:17"]},
-    {"text": "\"we shall all be changed\" ... \"In a moment, in the twinkling of an eye, at the last trump\"", "refs": ["1 Corinthians 15:51", "1 Corinthians 15:52"]},
-    {"text": "\"I will come again, and receive you unto myself\"", "refs": ["John 14:3"]},
-    {"text": "\"they shall see the Son of man coming in the clouds of heaven with power and great glory\"", "refs": ["Matthew 24:30"]},
-    {"text": "\"Watch therefore: for ye know not what hour your Lord doth come\"", "refs": ["Matthew 24:42"]},
-    {"text": "\"Wherefore comfort one another with these words\" ... \"Even so, come, Lord Jesus\"", "refs": ["1 Thessalonians 4:18", "Revelation 22:20"]}
-  ],
-  "quiz": [
-    {"q": "Which verse says \"we which are alive and remain shall be caught up together with them in the clouds\"?", "type": "find_the_verse", "answer_refs": ["1 Thessalonians 4:17"]},
-    {"q": "According to 1 Thessalonians 4:16, who shall rise first?", "type": "multiple_choice",
-     "options": ["The dead in Christ", "The angels", "The kings of the earth", "The apostles"], "answer": 0, "answer_refs": ["1 Thessalonians 4:16"], "check": {"bible": "KJV", "word": "dead"}},
-    {"q": "Fill in the word: \"Wherefore ___ one another with these words\"", "type": "fill_word", "ref": "1 Thessalonians 4:18", "bible": "KJV", "word": "comfort"},
-    {"q": "Which translation says \"encourage one another\" in 1 Thessalonians 4:18?", "type": "which_translation", "ref": "1 Thessalonians 4:18", "bible": "BSB", "phrase": "encourage one another"},
-    {"q": "Fill in the word: \"In a moment, in the twinkling of an ___, at the last trump\"", "type": "fill_word", "ref": "1 Corinthians 15:52", "bible": "KJV", "word": "eye"},
-    {"q": "According to Philippians 3:21, what will the Lord Jesus Christ change our vile body to be like?", "type": "multiple_choice",
-     "options": ["His glorious body", "The angels", "The body of Adam", "The stars of heaven"], "answer": 0, "answer_refs": ["Philippians 3:21"], "check": {"bible": "KJV", "word": "glorious"}},
-    {"q": "Which verse says \"I will come again, and receive you unto myself\"?", "type": "find_the_verse", "answer_refs": ["John 14:3"]},
-    {"q": "Which translation says \"many rooms\" in John 14:2?", "type": "which_translation", "ref": "John 14:2", "bible": "BSB", "phrase": "many rooms"},
-    {"q": "In Acts 1:11, how did the two men say this same Jesus shall come?", "type": "multiple_choice",
-     "options": ["In like manner as ye have seen him go into heaven", "Secretly in the desert", "In a dream", "Only to Jerusalem"], "answer": 0, "answer_refs": ["Acts 1:11"], "check": {"bible": "KJV", "word": "manner"}},
-    {"q": "Fill in the word: \"Immediately after the ___ of those days shall the sun be darkened\"", "type": "fill_word", "ref": "Matthew 24:29", "bible": "KJV", "word": "tribulation"},
-    {"q": "In Matthew 24:31, whom do the angels gather together from the four winds?", "type": "multiple_choice",
-     "options": ["His elect", "The tares", "The nations' kings", "The false prophets"], "answer": 0, "answer_refs": ["Matthew 24:31"], "check": {"bible": "KJV", "word": "elect"}},
-    {"q": "Which translation says \"his chosen ones\" in Matthew 24:31?", "type": "which_translation", "ref": "Matthew 24:31", "bible": "ETH", "phrase": "chosen ones"},
-    {"q": "Which verse says \"one like the Son of man came with the clouds of heaven\"?", "type": "find_the_verse", "answer_refs": ["Daniel 7:13"]},
-    {"q": "Which verse says \"lift up your heads; for your redemption draweth nigh\"?", "type": "find_the_verse", "answer_refs": ["Luke 21:28"]},
-    {"q": "According to Matthew 24:36, who knows that day and hour?", "type": "multiple_choice",
-     "options": ["My Father only", "The angels of heaven", "The disciples", "The prophets"], "answer": 0, "answer_refs": ["Matthew 24:36"], "check": {"bible": "KJV", "word": "Father"}},
-    {"q": "Fill in the word: \"Watch therefore: for ye know not what ___ your Lord doth come\"", "type": "fill_word", "ref": "Matthew 24:42", "bible": "KJV", "word": "hour"},
-    {"q": "According to 2 Thessalonians 2:3, what must come first before that day?", "type": "multiple_choice",
-     "options": ["A falling away", "A great harvest", "A new temple", "Peace on all the earth"], "answer": 0, "answer_refs": ["2 Thessalonians 2:3"], "check": {"bible": "KJV", "word": "falling"}},
-    {"q": "Which verse says \"God hath not appointed us to wrath\"?", "type": "find_the_verse", "answer_refs": ["1 Thessalonians 5:9"]},
-    {"q": "Fill in the word: \"the day of the Lord so cometh as a ___ in the night\"", "type": "fill_word", "ref": "1 Thessalonians 5:2", "bible": "KJV", "word": "thief"},
-    {"q": "Which verse says \"Looking for that blessed hope, and the glorious appearing\"?", "type": "find_the_verse", "answer_refs": ["Titus 2:13"]},
-    {"q": "According to 1 John 3:3, what does every man that hath this hope in him do?", "type": "multiple_choice",
-     "options": ["Purifieth himself", "Sells his house", "Stops working", "Sets a date"], "answer": 0, "answer_refs": ["1 John 3:3"], "check": {"bible": "KJV", "word": "purifieth"}}
-  ],
-  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]
+ "id": "the-rapture",
+ "title": "The rapture: what does the Bible say?",
+ "category": "Prophecy",
+ "anim": {
+  "kind": "light",
+  "x": 83,
+  "y": 12,
+  "s": 32
+ },
+ "opening_question": "The word rapture is not in English Bibles. It comes from the Latin Bible's word for \"caught up\" in 1 Thessalonians 4:17. What does the Bible say about believers being caught up to meet the Lord, about Jesus coming again in the clouds, and about when it happens? Read every verse, also the ones Christians read in different ways, and let the text speak.",
+ "required_refs": [
+  "1 Thessalonians 4:13-18",
+  "1 Corinthians 15:51-54",
+  "Philippians 3:20-21",
+  "John 14:1-3",
+  "Acts 1:9-11",
+  "Matthew 24:29-31",
+  "Daniel 7:13-14",
+  "Mark 13:24-27",
+  "Luke 21:25-28",
+  "Matthew 24:36-44",
+  "2 Thessalonians 2:1-4",
+  "1 Thessalonians 5:9",
+  "Revelation 3:10",
+  "John 17:15",
+  "1 Thessalonians 5:1-8",
+  "Titus 2:11-13",
+  "1 John 3:2-3",
+  "Revelation 22:20",
+  "Revelation 11:15",
+  "Matthew 25:1-13",
+  "Revelation 20:4-6",
+  "1 John 3:3",
+  "2 Peter 3:11-14",
+  "Luke 12:35-37"
+ ],
+ "words": [
+  "G726",
+  "G3952",
+  "G4536",
+  "G2347"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Why did Paul write about \"them which are asleep\"? When the Lord descends from heaven, who rises first, who is caught up, to meet whom, and what are we to do with these words?",
+   "refs": [
+    "1 Thessalonians 4:13-18"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G726",
+     "G529",
+     "G3952",
+     "G4536"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The word rapture comes from rapiemur, the Latin Bible's word for \"caught up\" in 1 Thessalonians 4:17. The Greek word is harpazo, \"to seize\".",
+     "refs": [
+      "1 Thessalonians 4:17"
+     ],
+     "strongs": [
+      "G726"
+     ]
+    },
+    {
+     "text": "The same Greek word harpazo is used when \"the Spirit of the Lord caught away Philip\", when Paul knew a man \"caught up to the third heaven\", and when the woman's child \"was caught up unto God\".",
+     "refs": [
+      "Acts 8:39",
+      "2 Corinthians 12:2",
+      "Revelation 12:5"
+     ],
+     "strongs": [
+      "G726"
+     ]
+    },
+    {
+     "text": "\"to meet\" is apantesis, \"a (friendly) encounter\". The Bible uses it two more times: \"go ye out to meet him\" for the bridegroom, and the brethren who \"came to meet us\" when Paul came to Rome.",
+     "refs": [
+      "1 Thessalonians 4:17",
+      "Matthew 25:6",
+      "Acts 28:15"
+     ],
+     "strongs": [
+      "G529"
+     ]
+    },
+    {
+     "text": "\"coming\" in 1 Thessalonians 4:15 is parousia: \"a being near, i.e. advent\". Jesus uses the same word in Matthew 24 for \"the coming of the Son of man\".",
+     "refs": [
+      "1 Thessalonians 4:15",
+      "Matthew 24:37"
+     ],
+     "strongs": [
+      "G3952"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What mystery does Paul show? When are we changed, how fast, and what will our bodies be like?",
+   "refs": [
+    "1 Corinthians 15:51-54",
+    "Philippians 3:20-21",
+    "Revelation 11:15"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G823",
+     "G4493",
+     "G236",
+     "G4536"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"moment\" is atomos, \"uncut\", the word behind \"atom\": an \"atom\" of time. \"twinkling\" is rhipe, \"a jerk (of the eye, i.e. (by analogy) an instant)\".",
+     "refs": [
+      "1 Corinthians 15:52"
+     ],
+     "strongs": [
+      "G823",
+      "G4493"
+     ]
+    },
+    {
+     "text": "\"the last trump\" in 1 Corinthians 15:52, \"the trump of God\" in 1 Thessalonians 4:16 and \"a great sound of a trumpet\" in Matthew 24:31 are all the same Greek word, salpinx.",
+     "refs": [
+      "1 Corinthians 15:52",
+      "1 Thessalonians 4:16",
+      "Matthew 24:31"
+     ],
+     "strongs": [
+      "G4536"
+     ]
+    },
+    {
+     "text": "The BSB says \"our citizenship is in heaven\" where the KJV says \"our conversation is in heaven\".",
+     "refs": [
+      "Philippians 3:20"
+     ]
+    },
+    {
+     "text": "Paul speaks of \"the last trump\"; Revelation 11:15 tells how \"the seventh angel sounded\". Some read them as the same trumpet, some do not.",
+     "refs": [
+      "1 Corinthians 15:52",
+      "Revelation 11:15"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jesus promise His disciples before He went away? And when He was taken up, how did the two men in white apparel say He will come back?",
+   "refs": [
+    "John 14:1-3",
+    "Acts 1:9-11"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3438",
+     "G3880",
+     "G5158",
+     "G3507"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"mansions\" is mone, \"a staying, i.e. residence\". The BSB says \"many rooms\".",
+     "refs": [
+      "John 14:2"
+     ],
+     "strongs": [
+      "G3438"
+     ]
+    },
+    {
+     "text": "\"a cloud received him out of their sight\", and He \"shall so come in like manner\". Jesus said they shall see the Son of man \"coming in the clouds of heaven\".",
+     "refs": [
+      "Acts 1:9",
+      "Acts 1:11",
+      "Matthew 24:30"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What happens \"Immediately after the tribulation of those days\"? What appears in heaven, who sees the Son of man coming, and whom do His angels gather, with what sound? Where did Daniel see the Son of man come with the clouds?",
+   "refs": [
+    "Matthew 24:29-31",
+    "Daniel 7:13-14"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2347",
+     "G1996",
+     "G1588",
+     "G4536"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"tribulation\" is thlipsis, \"pressure\". The KJV also gives it as \"anguish\" and \"persecution\".",
+     "refs": [
+      "Matthew 24:29"
+     ],
+     "strongs": [
+      "G2347"
+     ]
+    },
+    {
+     "text": "The darkened sun and moon echo the prophets: \"the sun shall be darkened in his going forth\" and \"The sun shall be turned into darkness, and the moon into blood\".",
+     "refs": [
+      "Matthew 24:29",
+      "Isaiah 13:10",
+      "Joel 2:31"
+     ]
+    },
+    {
+     "text": "\"gather together\" is episunago, \"to collect upon the same place\". Its noun stands in 2 Thessalonians 2:1: \"our gathering together unto him\".",
+     "refs": [
+      "Matthew 24:31",
+      "2 Thessalonians 2:1"
+     ],
+     "strongs": [
+      "G1996",
+      "G1997"
+     ]
+    },
+    {
+     "text": "This passage shares the clouds, the trumpet and the gathering with 1 Thessalonians 4:16-17. Some read the two as one event, at Christ's return after the tribulation. Others read Matthew 24 as His visible return at the end of the tribulation, after an earlier catching up, with \"his elect\" meaning those who come to faith during it, or Israel.",
+     "refs": [
+      "Matthew 24:31",
+      "1 Thessalonians 4:16",
+      "1 Thessalonians 4:17"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How do Mark and Luke tell the same moment? From where are the elect gathered, and what are believers to do \"when these things begin to come to pass\"?",
+   "refs": [
+    "Mark 13:24-27",
+    "Luke 21:25-28"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1588",
+     "G629",
+     "G3507"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Mark says the elect are gathered \"from the uttermost part of the earth to the uttermost part of heaven\".",
+     "refs": [
+      "Mark 13:27"
+     ]
+    },
+    {
+     "text": "\"redemption\" in Luke 21:28 is apolutrosis, \"ransom in full\". The same verse says \"lift up your heads\".",
+     "refs": [
+      "Luke 21:28"
+     ],
+     "strongs": [
+      "G629"
+     ]
+    },
+    {
+     "text": "\"elect\" is eklektos, \"select\"; the KJV also gives it as \"chosen\". The Ethiopian Canon says \"his chosen ones\".",
+     "refs": [
+      "Mark 13:27",
+      "Matthew 24:31"
+     ],
+     "strongs": [
+      "G1588"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who knows the day and hour? What happened in the days of Noe, who is taken and who is left, and what does Jesus tell us to do?",
+   "refs": [
+    "Matthew 24:36-44"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3880",
+     "G863",
+     "G142",
+     "G1127"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"taken\" in Matthew 24:40-41 is paralambano, \"to receive near\". Jesus uses the same word in John 14:3: \"receive you unto myself\".",
+     "refs": [
+      "Matthew 24:40",
+      "John 14:3"
+     ],
+     "strongs": [
+      "G3880"
+     ]
+    },
+    {
+     "text": "In verse 39 the flood \"took them all away\": another Greek word, airo, \"to take up or away\". Some read \"the one shall be taken\" as taken to the Lord, as in John 14:3; others read it as taken away in judgment, as in the flood.",
+     "refs": [
+      "Matthew 24:39",
+      "Matthew 24:40",
+      "John 14:3"
+     ],
+     "strongs": [
+      "G142"
+     ]
+    },
+    {
+     "text": "\"left\" is aphiemi, \"to send forth\"; the KJV also gives it as \"leave\" and \"forsake\".",
+     "refs": [
+      "Matthew 24:40"
+     ],
+     "strongs": [
+      "G863"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Paul say must come first, before \"the day of Christ\"? What do the verses say about wrath, and about being kept \"from the hour of temptation\"? Compare what Jesus prayed for His disciples.",
+   "refs": [
+    "2 Thessalonians 2:1-4",
+    "1 Thessalonians 5:9",
+    "Revelation 3:10",
+    "John 17:15"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G646",
+     "G5083",
+     "G3709",
+     "G1997"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Christians read the timing in different ways. Pre-tribulation: believers are caught up before a time of trouble. Mid-tribulation: partway through it. Post-tribulation: at Christ's return after it. Amillennial (many Catholic, Orthodox, Lutheran and Reformed churches): 1 Thessalonians 4 describes the one Second Coming. This step shows the verses each reading leans on; the commentary below is labelled as the words of men.",
+     "refs": [
+      "1 Thessalonians 4:17",
+      "Matthew 24:29",
+      "2 Thessalonians 2:3"
+     ]
+    },
+    {
+     "text": "\"falling away\" is apostasia, \"defection from truth\".",
+     "refs": [
+      "2 Thessalonians 2:3"
+     ],
+     "strongs": [
+      "G646"
+     ]
+    },
+    {
+     "text": "\"keep thee from\" in Revelation 3:10 is tereo with ek, \"from\". The same words stand in John 17:15, \"keep them from the evil\", where Jesus prays \"not that thou shouldest take them out of the world\". Some read Revelation 3:10 as kept away from the hour; others as kept safe through it.",
+     "refs": [
+      "Revelation 3:10",
+      "John 17:15"
+     ],
+     "strongs": [
+      "G5083",
+      "G1537"
+     ]
+    },
+    {
+     "text": "\"wrath\" is orge. Paul also writes that Jesus \"delivered us from the wrath to come\". Readers differ on whether this wrath is the tribulation or the final judgment.",
+     "refs": [
+      "1 Thessalonians 5:9",
+      "1 Thessalonians 1:10"
+     ],
+     "strongs": [
+      "G3709"
+     ]
+    },
+    {
+     "text": "Outside history, not Scripture: the debate over the timing (before, in the middle of, or after the tribulation) grew mainly in the 1800s and 1900s; John Nelson Darby and later the Scofield Reference Bible (1909) taught a rapture before it. This helps explain why churches differ.",
+     "refs": [
+      "2 Thessalonians 2:1"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Two more passages readers bring: the ten virgins, and the first resurrection. Who was ready, and who lives and reigns with Christ?",
+   "refs": [
+    "Matthew 25:1-13",
+    "Revelation 20:4-6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G386"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"they that were ready went in with him to the marriage: and the door was shut\"; \"Watch therefore, for ye know neither the day nor the hour\".",
+     "refs": [
+      "Matthew 25:10",
+      "Matthew 25:13"
+     ]
+    },
+    {
+     "text": "Revelation 20:5: \"This is the first resurrection\"; they \"lived and reigned with Christ a thousand years\".",
+     "refs": [
+      "Revelation 20:4-5"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How does the day of the Lord come, and why need it not overtake believers \"as a thief\"? What is \"that blessed hope\", what does that hope do in us, and how does the Bible end?",
+   "refs": [
+    "1 Thessalonians 5:1-8",
+    "Titus 2:11-13",
+    "1 John 3:2-3",
+    "Revelation 22:20"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1127",
+     "G2015",
+     "G1680",
+     "G3870"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"watch\" in 1 Thessalonians 5:6 is gregoreuo, \"to keep awake\": the same word as \"Watch therefore\" in Matthew 24:42.",
+     "refs": [
+      "1 Thessalonians 5:6",
+      "Matthew 24:42"
+     ],
+     "strongs": [
+      "G1127"
+     ]
+    },
+    {
+     "text": "\"appearing\" in Titus 2:13 is epiphaneia, \"a manifestation, i.e. (specially) the advent of Christ\".",
+     "refs": [
+      "Titus 2:13"
+     ],
+     "strongs": [
+      "G2015"
+     ]
+    },
+    {
+     "text": "\"comfort\" in 1 Thessalonians 4:18 and 5:11 is parakaleo, \"to call near\". The BSB says \"encourage one another\".",
+     "refs": [
+      "1 Thessalonians 4:18",
+      "1 Thessalonians 5:11"
+     ],
+     "strongs": [
+      "G3870"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: whatever the timing, what do these verses ask of us while we wait?",
+   "refs": [
+    "1 John 3:3",
+    "2 Peter 3:11-14",
+    "Luke 12:35-37"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"what manner of persons ought ye to be in all holy conversation and godliness\"; \"Let your loins be girded about, and your lights burning\".",
+     "refs": [
+      "2 Peter 3:11",
+      "Luke 12:35"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"the dead in Christ shall rise first\" ... \"and so shall we ever be with the Lord\"",
+   "refs": [
+    "1 Thessalonians 4:16",
+    "1 Thessalonians 4:17"
+   ]
+  },
+  {
+   "text": "\"we shall all be changed\" ... \"In a moment, in the twinkling of an eye, at the last trump\"",
+   "refs": [
+    "1 Corinthians 15:51",
+    "1 Corinthians 15:52"
+   ]
+  },
+  {
+   "text": "\"I will come again, and receive you unto myself\"",
+   "refs": [
+    "John 14:3"
+   ]
+  },
+  {
+   "text": "\"they shall see the Son of man coming in the clouds of heaven with power and great glory\"",
+   "refs": [
+    "Matthew 24:30"
+   ]
+  },
+  {
+   "text": "\"Watch therefore: for ye know not what hour your Lord doth come\"",
+   "refs": [
+    "Matthew 24:42"
+   ]
+  },
+  {
+   "text": "\"Wherefore comfort one another with these words\" ... \"Even so, come, Lord Jesus\"",
+   "refs": [
+    "1 Thessalonians 4:18",
+    "Revelation 22:20"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"we which are alive and remain shall be caught up together with them in the clouds\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Thessalonians 4:17"
+   ]
+  },
+  {
+   "q": "According to 1 Thessalonians 4:16, who shall rise first?",
+   "type": "multiple_choice",
+   "options": [
+    "The dead in Christ",
+    "The angels",
+    "The kings of the earth",
+    "The apostles"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 Thessalonians 4:16"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "dead"
+   }
+  },
+  {
+   "q": "Fill in the word: \"Wherefore ___ one another with these words\"",
+   "type": "fill_word",
+   "ref": "1 Thessalonians 4:18",
+   "bible": "KJV",
+   "word": "comfort"
+  },
+  {
+   "q": "Which translation says \"encourage one another\" in 1 Thessalonians 4:18?",
+   "type": "which_translation",
+   "ref": "1 Thessalonians 4:18",
+   "bible": "BSB",
+   "phrase": "encourage one another"
+  },
+  {
+   "q": "Fill in the word: \"In a moment, in the twinkling of an ___, at the last trump\"",
+   "type": "fill_word",
+   "ref": "1 Corinthians 15:52",
+   "bible": "KJV",
+   "word": "eye"
+  },
+  {
+   "q": "According to Philippians 3:21, what will the Lord Jesus Christ change our vile body to be like?",
+   "type": "multiple_choice",
+   "options": [
+    "His glorious body",
+    "The angels",
+    "The body of Adam",
+    "The stars of heaven"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Philippians 3:21"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "glorious"
+   }
+  },
+  {
+   "q": "Which verse says \"I will come again, and receive you unto myself\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 14:3"
+   ]
+  },
+  {
+   "q": "Which translation says \"many rooms\" in John 14:2?",
+   "type": "which_translation",
+   "ref": "John 14:2",
+   "bible": "BSB",
+   "phrase": "many rooms"
+  },
+  {
+   "q": "In Acts 1:11, how did the two men say this same Jesus shall come?",
+   "type": "multiple_choice",
+   "options": [
+    "In like manner as ye have seen him go into heaven",
+    "Secretly in the desert",
+    "In a dream",
+    "Only to Jerusalem"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Acts 1:11"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "manner"
+   }
+  },
+  {
+   "q": "Fill in the word: \"Immediately after the ___ of those days shall the sun be darkened\"",
+   "type": "fill_word",
+   "ref": "Matthew 24:29",
+   "bible": "KJV",
+   "word": "tribulation"
+  },
+  {
+   "q": "In Matthew 24:31, whom do the angels gather together from the four winds?",
+   "type": "multiple_choice",
+   "options": [
+    "His elect",
+    "The tares",
+    "The nations' kings",
+    "The false prophets"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Matthew 24:31"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "elect"
+   }
+  },
+  {
+   "q": "Which translation says \"his chosen ones\" in Matthew 24:31?",
+   "type": "which_translation",
+   "ref": "Matthew 24:31",
+   "bible": "ETH",
+   "phrase": "chosen ones"
+  },
+  {
+   "q": "Which verse says \"one like the Son of man came with the clouds of heaven\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 7:13"
+   ]
+  },
+  {
+   "q": "Which verse says \"lift up your heads; for your redemption draweth nigh\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 21:28"
+   ]
+  },
+  {
+   "q": "According to Matthew 24:36, who knows that day and hour?",
+   "type": "multiple_choice",
+   "options": [
+    "My Father only",
+    "The angels of heaven",
+    "The disciples",
+    "The prophets"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Matthew 24:36"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Father"
+   }
+  },
+  {
+   "q": "Fill in the word: \"Watch therefore: for ye know not what ___ your Lord doth come\"",
+   "type": "fill_word",
+   "ref": "Matthew 24:42",
+   "bible": "KJV",
+   "word": "hour"
+  },
+  {
+   "q": "According to 2 Thessalonians 2:3, what must come first before that day?",
+   "type": "multiple_choice",
+   "options": [
+    "A falling away",
+    "A great harvest",
+    "A new temple",
+    "Peace on all the earth"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "2 Thessalonians 2:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "falling"
+   }
+  },
+  {
+   "q": "Which verse says \"God hath not appointed us to wrath\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Thessalonians 5:9"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"the day of the Lord so cometh as a ___ in the night\"",
+   "type": "fill_word",
+   "ref": "1 Thessalonians 5:2",
+   "bible": "KJV",
+   "word": "thief"
+  },
+  {
+   "q": "Which verse says \"Looking for that blessed hope, and the glorious appearing\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Titus 2:13"
+   ]
+  },
+  {
+   "q": "According to 1 John 3:3, what does every man that hath this hope in him do?",
+   "type": "multiple_choice",
+   "options": [
+    "Purifieth himself",
+    "Sells his house",
+    "Stops working",
+    "Sets a date"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "1 John 3:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "purifieth"
+   }
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ]
 }

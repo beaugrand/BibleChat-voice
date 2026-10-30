@@ -12,7 +12,7 @@
   "y": 14,
   "s": 30
  },
- "opening_question": "At the harvest the householder says: \"Gather ye together first the tares … but gather the wheat into my barn.\" Some ask whether the wicked are taken away first, and whether a false \"rapture\" could be what brings the great falling away. Who is gathered first, when, by whom, and what does Scripture say comes before that day?",
+ "opening_question": "At the harvest the householder says: \"Gather ye together first the tares … but gather the wheat into my barn.\" Who is gathered first, when, by whom, and what does Scripture say comes before that day?",
  "required_refs": [
   "Matthew 13:24-30",
   "Matthew 13:36-43",
@@ -29,7 +29,13 @@
   "Matthew 24:10-13",
   "1 Timothy 4:1",
   "Matthew 24:23-27",
-  "Revelation 14:14-16"
+  "Revelation 14:14-16",
+  "Revelation 14:17-20",
+  "Matthew 25:31-46",
+  "Matthew 13:30",
+  "Matthew 7:1-5",
+  "Matthew 25:40",
+  "2 Corinthians 13:5"
  ],
  "words": [
   "G2215",
@@ -398,7 +404,8 @@
    "question": "What did Jesus say to do if anyone says Christ is in the desert or in the secret chambers? How will his coming be seen, and who reaps the harvest of the earth?",
    "refs": [
     "Matthew 24:23-27",
-    "Revelation 14:14-16"
+    "Revelation 14:14-16",
+    "Revelation 14:17-20"
    ],
    "look_closer": {
     "strongs": [
@@ -438,16 +445,106 @@
      "refs": [
       "Revelation 14:14-15"
      ]
+    },
+    {
+     "text": "The path The rapture: what does the Bible say? reads many of the same verses from the other side. Read the two as a pair.",
+     "refs": [
+      "Matthew 24:31"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The other separation parable: whom does the King set on His right hand and on His left, and what did each one do?",
+   "refs": [
+    "Matthew 25:31-46"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G873"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"he shall separate them one from another, as a shepherd divideth his sheep from the goats\".",
+     "refs": [
+      "Matthew 25:32"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: the servants were told \"Let both grow together until the harvest\". What do these verses ask of us toward judging others, and toward our own readiness?",
+   "refs": [
+    "Matthew 13:30",
+    "Matthew 7:1-5",
+    "Matthew 25:40",
+    "2 Corinthians 13:5"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me\"; \"Examine yourselves, whether ye be in the faith\".",
+     "refs": [
+      "Matthew 25:40",
+      "2 Corinthians 13:5"
+     ]
     }
    ]
   }
  ],
  "remember": [
-   {"text": "\"Let both grow together until the harvest\" ... \"Gather ye together first the tares\"", "refs": ["Matthew 13:30"]},
-   {"text": "\"the harvest is the end of the world; and the reapers are the angels\"", "refs": ["Matthew 13:39"]},
-   {"text": "In Noah's days the flood \"took them all away\".", "refs": ["Matthew 24:39"]},
-   {"text": "\"that day shall not come, except there come a falling away first\"", "refs": ["2 Thessalonians 2:3"]},
-   {"text": "If they say He is in the desert or the secret chambers: \"believe it not\".", "refs": ["Matthew 24:26"]}
+  {
+   "text": "\"Let both grow together until the harvest\" ... \"Gather ye together first the tares\"",
+   "refs": [
+    "Matthew 13:30"
+   ]
+  },
+  {
+   "text": "\"the harvest is the end of the world; and the reapers are the angels\"",
+   "refs": [
+    "Matthew 13:39"
+   ]
+  },
+  {
+   "text": "In Noah's days the flood \"took them all away\".",
+   "refs": [
+    "Matthew 24:39"
+   ]
+  },
+  {
+   "text": "\"that day shall not come, except there come a falling away first\"",
+   "refs": [
+    "2 Thessalonians 2:3"
+   ]
+  },
+  {
+   "text": "If they say He is in the desert or the secret chambers: \"believe it not\".",
+   "refs": [
+    "Matthew 24:26"
+   ]
+  }
  ],
  "quiz": [
   {

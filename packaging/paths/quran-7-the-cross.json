@@ -21,7 +21,17 @@
   "Isaiah 53:5",
   "John 19:34-35",
   "Luke 24:39",
-  "1 Corinthians 15:3-8"
+  "1 Corinthians 15:3-8",
+  "Psalms 22:14-18",
+  "Isaiah 53:3-9",
+  "John 19:16-18",
+  "John 19:32-35",
+  "Luke 24:36-43",
+  "Acts 1:9-11",
+  "1 Corinthians 15:3",
+  "1 Corinthians 15:17-20",
+  "1 Corinthians 15:58",
+  "Galatians 2:20"
  ],
  "words": [
   "G4717",
@@ -157,6 +167,12 @@
      "refs": [
       "John 19:16"
      ]
+    },
+    {
+     "text": "Outside history, not Scripture: the Jewish historian Josephus (Antiquities 18.3, about AD 93) also writes that Pilate condemned Jesus to the cross. Scholars agree that Christian copyists added words to that passage later, but most hold that its core is his.",
+     "refs": [
+      "John 19:16"
+     ]
     }
    ]
   },
@@ -244,14 +260,69 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: Paul delivered the cross and the resurrection \"first of all\". What does he say it means for those who believe it?",
+   "refs": [
+    "1 Corinthians 15:3",
+    "1 Corinthians 15:17-20",
+    "1 Corinthians 15:58",
+    "Galatians 2:20"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"But now is Christ risen from the dead\"; \"I am crucified with Christ: nevertheless I live\".",
+     "refs": [
+      "1 Corinthians 15:20",
+      "Galatians 2:20"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
-   {"text": "\"they pierced my hands and my feet\"", "refs": ["Psalms 22:16"]},
-   {"text": "\"he was wounded for our transgressions\"", "refs": ["Isaiah 53:5"]},
-   {"text": "\"he that saw it bare record\"", "refs": ["John 19:35"]},
-   {"text": "The risen Jesus said \"handle me, and see\".", "refs": ["Luke 24:39"]},
-   {"text": "\"he was seen of above five hundred brethren at once\"", "refs": ["1 Corinthians 15:6"]}
+  {
+   "text": "\"they pierced my hands and my feet\"",
+   "refs": [
+    "Psalms 22:16"
+   ]
+  },
+  {
+   "text": "\"he was wounded for our transgressions\"",
+   "refs": [
+    "Isaiah 53:5"
+   ]
+  },
+  {
+   "text": "\"he that saw it bare record\"",
+   "refs": [
+    "John 19:35"
+   ]
+  },
+  {
+   "text": "The risen Jesus said \"handle me, and see\".",
+   "refs": [
+    "Luke 24:39"
+   ]
+  },
+  {
+   "text": "\"he was seen of above five hundred brethren at once\"",
+   "refs": [
+    "1 Corinthians 15:6"
+   ]
+  }
  ],
  "quiz": [
   {

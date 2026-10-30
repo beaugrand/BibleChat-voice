@@ -14,7 +14,24 @@
  "opening_question": "Nebuchadnezzar dreamed of a great image of gold, silver, brass, iron and clay, and a stone cut out without hands. What did the dream show, and whose kingdom stands for ever?",
  "required_refs": [
   "Daniel 2:1-49",
-  "Daniel 3:1"
+  "Daniel 3:1",
+  "Daniel 1:1-7",
+  "Daniel 1:17-20",
+  "Daniel 2:1-13",
+  "Daniel 2:14-23",
+  "Daniel 2:24-35",
+  "Daniel 2:36-45",
+  "Daniel 8:20-21",
+  "Psalms 118:22",
+  "Isaiah 28:16",
+  "Matthew 21:42-44",
+  "1 Peter 2:6-8",
+  "Daniel 2:46-49",
+  "Daniel 2:21",
+  "Daniel 2:34",
+  "1 Timothy 2:1-2",
+  "Matthew 6:33",
+  "Hebrews 12:28"
  ],
  "words": [
   "H6755",
@@ -24,6 +41,43 @@
  ],
  "show": 8,
  "steps": [
+  {
+   "question": "Before the dream: who were Daniel and his three friends, how did they come to Babylon, and what did God give them?",
+   "refs": [
+    "Daniel 1:1-7",
+    "Daniel 1:17-20"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H1840"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel came to Babylon when Nebuchadnezzar besieged Jerusalem \"In the third year of the reign of Jehoiakim\". The prince of the eunuchs gave the four new names: \"Belteshazzar\", \"Shadrach\", \"Meshach\" and \"Abednego\".",
+     "refs": [
+      "Daniel 1:1",
+      "Daniel 1:7"
+     ]
+    },
+    {
+     "text": "\"God gave them knowledge and skill in all learning and wisdom\", and the king found them \"ten times better\" than all the magicians.",
+     "refs": [
+      "Daniel 1:17",
+      "Daniel 1:20"
+     ]
+    }
+   ]
+  },
   {
    "question": "What did the king demand of the wise men, and why could they not do it?",
    "refs": [
@@ -146,9 +200,10 @@
    ]
   },
   {
-   "question": "Which kingdoms do the metals stand for, and what kingdom shall never be destroyed?",
+   "question": "Which kingdoms do the metals stand for, and what kingdom shall never be destroyed? Read Daniel 8:20-21 beside it: which kingdoms does the angel name there?",
    "refs": [
-    "Daniel 2:36-45"
+    "Daniel 2:36-45",
+    "Daniel 8:20-21"
    ],
    "look_closer": {
     "strongs": [
@@ -198,6 +253,52 @@
       "Haggai 2:22",
       "Revelation 11:15"
      ]
+    },
+    {
+     "text": "Chapter 2 names only the head of gold: \"Thou art this head of gold\". In Daniel 8 the angel names two kingdoms: \"the kings of Media and Persia\" and \"the king of Grecia\". Letting one chapter explain another leads into the Mirror series.",
+     "refs": [
+      "Daniel 2:38",
+      "Daniel 8:20-21"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The stone: which stone do the Psalms and Isaiah speak of, and what do Jesus and Peter say about it?",
+   "refs": [
+    "Psalms 118:22",
+    "Isaiah 28:16",
+    "Matthew 21:42-44",
+    "1 Peter 2:6-8"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3037"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Jesus quotes Psalm 118:22, \"The stone which the builders rejected\", and says \"whosoever shall fall on this stone shall be broken: but on whomsoever it shall fall, it will grind him to powder\".",
+     "refs": [
+      "Matthew 21:42",
+      "Matthew 21:44"
+     ]
+    },
+    {
+     "text": "Peter joins Isaiah 28:16 and Psalm 118:22: \"a chief corner stone, elect, precious\" and \"a stone of stumbling, and a rock of offence\".",
+     "refs": [
+      "1 Peter 2:6",
+      "1 Peter 2:8"
+     ]
     }
    ]
   },
@@ -221,6 +322,46 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "In 2:47 the king says \"your God is a God of gods, and a Lord of kings\"; in the next verse of the story, 3:1, he \"made an image of gold\".",
+     "refs": [
+      "Daniel 2:47",
+      "Daniel 3:1"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Daniel blessed the God who \"removeth kings, and setteth up kings\", and the stone was \"cut out without hands\". Who rules history, and what do these verses ask of us under the rulers of today?",
+   "refs": [
+    "Daniel 2:21",
+    "Daniel 2:34",
+    "1 Timothy 2:1-2",
+    "Matthew 6:33",
+    "Hebrews 12:28"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Paul asks for prayer \"For kings, and for all that are in authority; that we may lead a quiet and peaceable life\". Hebrews speaks of \"a kingdom which cannot be moved\".",
+     "refs": [
+      "1 Timothy 2:2",
+      "Hebrews 12:28"
+     ]
+    }
    ]
   }
  ],
@@ -585,7 +726,7 @@
   "Matthew Henry",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 50,
+ "verse_count": 75,
  "image": "img/daniel-2-statue-and-stone.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -593,7 +734,7 @@
  },
  "built_from": {
   "file": "packaging/paths/daniel-2-statue-and-stone.json",
-  "sha": "7c90544f13a5d953",
+  "sha": "29c58ba890db9cf4",
   "checked_in": [
    "KJV",
    "ETH",

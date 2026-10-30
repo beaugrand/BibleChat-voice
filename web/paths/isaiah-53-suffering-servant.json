@@ -29,7 +29,26 @@
   "Luke 22:37",
   "Mark 15:27-28",
   "Luke 23:33-34",
-  "Hebrews 9:28"
+  "Hebrews 9:28",
+  "Isaiah 53:1-3",
+  "Romans 10:16",
+  "John 1:10-11",
+  "Isaiah 41:8",
+  "Isaiah 44:1",
+  "Isaiah 49:3",
+  "Isaiah 49:5-6",
+  "Isaiah 53:4-6",
+  "1 Peter 2:24-25",
+  "Isaiah 53:7-8",
+  "Isaiah 53:9",
+  "1 Peter 2:21-23",
+  "Isaiah 53:10-11",
+  "Isaiah 53:8",
+  "Isaiah 53:12",
+  "Mark 10:45",
+  "Romans 4:25",
+  "2 Corinthians 5:21",
+  "1 Peter 2:24"
  ],
  "words": [
   "H5650",
@@ -127,6 +146,45 @@
      "strongs": [
       "H4341",
       "H2483"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who is the Servant? Isaiah also calls Israel God's servant. Read these verses, and the one where the Servant brings Israel back.",
+   "refs": [
+    "Isaiah 41:8",
+    "Isaiah 44:1",
+    "Isaiah 49:3",
+    "Isaiah 49:5-6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5650"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "In Jewish reading the Servant of Isaiah 53 is Israel, and Isaiah does say \"thou, Israel, art my servant\".",
+     "refs": [
+      "Isaiah 41:8",
+      "Isaiah 49:3"
+     ]
+    },
+    {
+     "text": "Isaiah 49:5-6 speaks of a Servant formed \"to bring Jacob again to him\", and given \"for a light to the Gentiles\". Here the Servant has a work toward Israel. You weigh both readings.",
+     "refs": [
+      "Isaiah 49:5",
+      "Isaiah 49:6"
      ]
     }
    ]
@@ -278,6 +336,12 @@
      "refs": [
       "Acts 8:35"
      ]
+    },
+    {
+     "text": "Outside history, not Scripture: the Great Isaiah Scroll, found among the Dead Sea Scrolls in 1947, holds the whole book of Isaiah, chapter 53 included, and was copied before the time of Jesus.",
+     "refs": [
+      "Isaiah 53:1"
+     ]
     }
    ]
   },
@@ -428,6 +492,36 @@
      "refs": [
       "Isaiah 53:12",
       "Hebrews 9:28"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Jesus said He came \"to give his life a ransom for many\". What do these verses say He did for us, and what does Peter say follows from it?",
+   "refs": [
+    "Mark 10:45",
+    "Romans 4:25",
+    "2 Corinthians 5:21",
+    "1 Peter 2:24"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Paul sums up the chapter in one line: \"Who was delivered for our offences, and was raised again for our justification\". Peter: \"that we, being dead to sins, should live unto righteousness\".",
+     "refs": [
+      "Romans 4:25",
+      "1 Peter 2:24"
      ]
     }
    ]
@@ -676,15 +770,15 @@
     "xref": 83,
     "votes": 648,
     "word": "H5650",
-    "word_count": 2,
+    "word_count": 7,
     "differ": 0.249,
     "quoted": null
    },
    "why": [
     "83 cross-references point here",
-    "The Hebrew word ‛ebed (H5650) is in 2 verses of this path"
+    "The Hebrew word ‛ebed (H5650) is in 7 verses of this path"
    ],
-   "score": 0.5706
+   "score": 0.7164
   },
   {
    "q": "Which verse has Jesus saying of himself \"he was reckoned among the transgressors\"?",
@@ -911,7 +1005,7 @@
   "Matthew Henry",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 56,
+ "verse_count": 64,
  "image": "img/isaiah-53-suffering-servant.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -919,7 +1013,7 @@
  },
  "built_from": {
   "file": "packaging/paths/isaiah-53-suffering-servant.json",
-  "sha": "61604d52f148926c",
+  "sha": "9233a229e49d62b9",
   "checked_in": [
    "KJV",
    "ETH",

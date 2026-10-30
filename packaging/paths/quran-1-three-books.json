@@ -22,7 +22,16 @@
  "required_refs": [
   "Deuteronomy 31:24-26",
   "Psalms 1:2",
-  "Luke 24:44"
+  "Luke 24:44",
+  "2 Samuel 23:1-2",
+  "Psalms 1:1-3",
+  "Psalms 119:105",
+  "Proverbs 6:23",
+  "Mark 1:1",
+  "Mark 1:14-15",
+  "Luke 24:44-45",
+  "Joshua 1:8",
+  "James 1:22"
  ],
  "words": [
   "H8451",
@@ -246,13 +255,62 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Living it out: Psalm 119 calls the word \"a lamp unto my feet\". What do these verses ask of us toward the Scriptures we have?",
+   "refs": [
+    "Psalms 119:105",
+    "Joshua 1:8",
+    "James 1:22"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"thou shalt meditate therein day and night\"; \"be ye doers of the word, and not hearers only\".",
+     "refs": [
+      "Joshua 1:8",
+      "James 1:22"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
-   {"text": "Moses wrote the law, and it was put \"in the side of the ark\".", "refs": ["Deuteronomy 31:24-26"]},
-   {"text": "\"Thy word is a lamp unto my feet\"", "refs": ["Psalms 119:105"]},
-   {"text": "\"The beginning of the gospel of Jesus Christ, the Son of God\"", "refs": ["Mark 1:1"]},
-   {"text": "Jesus named \"the law of Moses, and in the prophets, and in the psalms\" as written of him.", "refs": ["Luke 24:44"]}
+  {
+   "text": "Moses wrote the law, and it was put \"in the side of the ark\".",
+   "refs": [
+    "Deuteronomy 31:24-26"
+   ]
+  },
+  {
+   "text": "\"Thy word is a lamp unto my feet\"",
+   "refs": [
+    "Psalms 119:105"
+   ]
+  },
+  {
+   "text": "\"The beginning of the gospel of Jesus Christ, the Son of God\"",
+   "refs": [
+    "Mark 1:1"
+   ]
+  },
+  {
+   "text": "Jesus named \"the law of Moses, and in the prophets, and in the psalms\" as written of him.",
+   "refs": [
+    "Luke 24:44"
+   ]
+  }
  ],
  "quiz": [
   {

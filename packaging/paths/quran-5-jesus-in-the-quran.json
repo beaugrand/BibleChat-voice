@@ -22,7 +22,21 @@
  "required_refs": [
   "Isaiah 7:14",
   "Luke 1:26-35",
-  "Matthew 1:23"
+  "Matthew 1:23",
+  "Isaiah 7:13-14",
+  "Matthew 1:22-23",
+  "Luke 2:42-49",
+  "Luke 7:20-22",
+  "John 9:1-7",
+  "John 1:41",
+  "John 4:25-26",
+  "John 14:16-17",
+  "John 14:26",
+  "John 16:7",
+  "Acts 1:4-5",
+  "John 4:28-29",
+  "John 4:39",
+  "Matthew 16:15"
  ],
  "words": [
   "G3933",
@@ -244,14 +258,110 @@
      ]
     }
    ]
+  },
+  {
+   "question": "Jesus promised \"another Comforter\". Who is the Comforter, according to these verses, and when would he come?",
+   "refs": [
+    "John 14:16-17",
+    "John 14:26",
+    "John 16:7",
+    "Acts 1:4-5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3875"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Comforter is \"the Spirit of truth\", whom \"the world cannot receive\": \"he dwelleth with you, and shall be in you\". John 14:26 names him \"the Holy Ghost\".",
+     "refs": [
+      "John 14:17",
+      "John 14:26"
+     ]
+    },
+    {
+     "text": "Many Muslims read Quran 61:6, where Jesus speaks of a messenger to come named Ahmad, as pointing to these verses. In John the Comforter is sent to the disciples themselves, and Acts 1:5 says it would be \"not many days hence\".",
+     "refs": [
+      "John 14:16",
+      "Acts 1:5"
+     ],
+     "strongs": [
+      "G3875"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: the woman of Samaria left her waterpot and said \"Come, see a man\". What did she do with what she heard, and what did Jesus ask His disciples?",
+   "refs": [
+    "John 4:28-29",
+    "John 4:39",
+    "Matthew 16:15"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"many of the Samaritans of that city believed on him for the saying of the woman\". Jesus asked: \"But whom say ye that I am?\"",
+     "refs": [
+      "John 4:39",
+      "Matthew 16:15"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
-   {"text": "The angel told Mary she \"shalt call his name JESUS\".", "refs": ["Luke 1:31"]},
-   {"text": "\"Emmanuel, which being interpreted is, God with us\"", "refs": ["Matthew 1:23"]},
-   {"text": "His first recorded words: \"I must be about my Father's business\".", "refs": ["Luke 2:49"]},
-   {"text": "\"the blind see, the lame walk, the lepers are cleansed\"", "refs": ["Luke 7:22"]},
-   {"text": "To the woman of Samaria: \"I that speak unto thee am he\".", "refs": ["John 4:26"]}
+  {
+   "text": "The angel told Mary she \"shalt call his name JESUS\".",
+   "refs": [
+    "Luke 1:31"
+   ]
+  },
+  {
+   "text": "\"Emmanuel, which being interpreted is, God with us\"",
+   "refs": [
+    "Matthew 1:23"
+   ]
+  },
+  {
+   "text": "His first recorded words: \"I must be about my Father's business\".",
+   "refs": [
+    "Luke 2:49"
+   ]
+  },
+  {
+   "text": "\"the blind see, the lame walk, the lepers are cleansed\"",
+   "refs": [
+    "Luke 7:22"
+   ]
+  },
+  {
+   "text": "To the woman of Samaria: \"I that speak unto thee am he\".",
+   "refs": [
+    "John 4:26"
+   ]
+  }
  ],
  "quiz": [
   {

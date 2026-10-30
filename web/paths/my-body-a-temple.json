@@ -17,7 +17,17 @@
   "Matthew 9:12",
   "Colossians 4:14",
   "1 Timothy 5:23",
-  "Proverbs 11:14"
+  "Proverbs 11:14",
+  "1 Corinthians 6:13-18",
+  "Isaiah 38:21",
+  "2 Kings 20:7",
+  "Ezekiel 47:12",
+  "James 5:14-15",
+  "2 Chronicles 16:12",
+  "Mark 5:25-26",
+  "Romans 14:5",
+  "Romans 14:13",
+  "Romans 14:23"
  ],
  "words": [
   "G3485",
@@ -29,7 +39,8 @@
   {
    "question": "Whose temple is your body, and why are you not your own?",
    "refs": [
-    "1 Corinthians 6:19-20"
+    "1 Corinthians 6:19-20",
+    "1 Corinthians 6:13-18"
    ],
    "look_closer": {
     "strongs": [
@@ -65,6 +76,13 @@
      "strongs": [
       "G5092"
      ]
+    },
+    {
+     "text": "The verses before 6:19 are about sexual sin: \"Flee fornication\" (6:18). That is the setting of \"your body is the temple\".",
+     "refs": [
+      "1 Corinthians 6:18",
+      "1 Corinthians 6:19"
+     ]
     }
    ]
   },
@@ -96,6 +114,12 @@
      ],
      "strongs": [
       "G5351"
+     ]
+    },
+    {
+     "text": "In 3:16 \"ye\" is plural: Paul speaks to the church together, \"ye are the temple of God\". Both facts help to apply the verses fairly.",
+     "refs": [
+      "1 Corinthians 3:16"
      ]
     }
    ]
@@ -177,6 +201,67 @@
    ]
   },
   {
+   "question": "Remedies in the Bible: what was laid on Hezekiah's boil, what are the leaves for in Ezekiel, and what does James say to do for the sick?",
+   "refs": [
+    "Isaiah 38:21",
+    "2 Kings 20:7",
+    "Ezekiel 47:12",
+    "James 5:14-15"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4832"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Let them take a lump of figs, and lay it for a plaister upon the boil\"; \"the leaf thereof for medicine\"; \"anointing him with oil in the name of the Lord\".",
+     "refs": [
+      "Isaiah 38:21",
+      "Ezekiel 47:12",
+      "James 5:14"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The other side: what does the text say of King Asa in his disease, and of the woman who had spent all she had on physicians?",
+   "refs": [
+    "2 Chronicles 16:12",
+    "Mark 5:25-26"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Asa \"in his disease he sought not to the LORD, but to the physicians\"; the woman \"had suffered many things of many physicians\". Both verses are part of the whole counsel.",
+     "refs": [
+      "2 Chronicles 16:12",
+      "Mark 5:26"
+     ]
+    }
+   ]
+  },
+  {
    "question": "Where is there safety, according to Proverbs?",
    "refs": [
     "Proverbs 11:14"
@@ -194,6 +279,36 @@
    ],
    "notes": [
     "henry"
+   ]
+  },
+  {
+   "question": "Living it out: the path leaves the decision to you. What does Paul say about deciding by conscience, and about not judging the one who decides otherwise?",
+   "refs": [
+    "Romans 14:5",
+    "Romans 14:13",
+    "Romans 14:23"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Let every man be fully persuaded in his own mind\"; \"Let us not therefore judge one another any more\"; \"whatsoever is not of faith is sin\".",
+     "refs": [
+      "Romans 14:5",
+      "Romans 14:13",
+      "Romans 14:23"
+     ]
+    }
    ]
   }
  ],
@@ -234,16 +349,16 @@
    "signals": {
     "xref": 37,
     "votes": 653,
-    "word": "G3485",
-    "word_count": 4,
+    "word": "G4983",
+    "word_count": 9,
     "differ": 0.339,
     "quoted": null
    },
    "why": [
     "37 cross-references point here",
-    "The Greek word naós (G3485) is in 4 verses of this path"
+    "The Greek word sōma (G4983) is in 9 verses of this path"
    ],
-   "score": 0.6514
+   "score": 0.7972
   },
   {
    "q": "Fill in the word: \"For ye are bought with a ___\"",
@@ -258,15 +373,15 @@
     "xref": 37,
     "votes": 413,
     "word": "G4983",
-    "word_count": 3,
+    "word_count": 9,
     "differ": 0.376,
     "quoted": null
    },
    "why": [
     "37 cross-references point here",
-    "The Greek word sōma (G4983) is in 3 verses of this path"
+    "The Greek word sōma (G4983) is in 9 verses of this path"
    ],
-   "score": 0.6315
+   "score": 0.8065
   },
   {
    "q": "According to 1 Corinthians 6:20, what are we to do in our body?",
@@ -289,15 +404,15 @@
     "xref": 37,
     "votes": 413,
     "word": "G4983",
-    "word_count": 3,
+    "word_count": 9,
     "differ": 0.376,
     "quoted": null
    },
    "why": [
     "37 cross-references point here",
-    "The Greek word sōma (G4983) is in 3 verses of this path"
+    "The Greek word sōma (G4983) is in 9 verses of this path"
    ],
-   "score": 0.6315
+   "score": 0.8065
   },
   {
    "q": "Which verse says \"the temple of God is holy, which temple ye are\"?",
@@ -332,16 +447,16 @@
     "xref": 50,
     "votes": 588,
     "word": "G4983",
-    "word_count": 3,
+    "word_count": 9,
     "differ": 0.517,
     "quoted": null
    },
    "why": [
     "50 cross-references point here",
-    "The Greek word sōma (G4983) is in 3 verses of this path",
+    "The Greek word sōma (G4983) is in 9 verses of this path",
     "Translations differ here"
    ],
-   "score": 0.6667
+   "score": 0.8417
   },
   {
    "q": "Fill in the word: \"present your bodies a living ___\"",
@@ -356,16 +471,16 @@
     "xref": 50,
     "votes": 588,
     "word": "G4983",
-    "word_count": 3,
+    "word_count": 9,
     "differ": 0.517,
     "quoted": null
    },
    "why": [
     "50 cross-references point here",
-    "The Greek word sōma (G4983) is in 3 verses of this path",
+    "The Greek word sōma (G4983) is in 9 verses of this path",
     "Translations differ here"
    ],
-   "score": 0.6667
+   "score": 0.8417
   },
   {
    "q": "In Luke 10:34, what did the Samaritan pour in when he bound up the wounds?",
@@ -407,15 +522,15 @@
     "xref": 5,
     "votes": 23,
     "word": "G2395",
-    "word_count": 2,
+    "word_count": 3,
     "differ": 0.2,
     "quoted": null
    },
    "why": [
     "5 cross-references point here",
-    "The Greek word iatrós (G2395) is in 2 verses of this path"
+    "The Greek word iatrós (G2395) is in 3 verses of this path"
    ],
-   "score": 0.3469
+   "score": 0.3761
   },
   {
    "q": "Which verse says \"They that be whole need not a physician\"?",
@@ -427,16 +542,16 @@
     "xref": 11,
     "votes": 143,
     "word": "G2395",
-    "word_count": 2,
+    "word_count": 3,
     "differ": 0.658,
     "quoted": null
    },
    "why": [
     "11 cross-references point here",
-    "The Greek word iatrós (G2395) is in 2 verses of this path",
+    "The Greek word iatrós (G2395) is in 3 verses of this path",
     "Translations differ here"
    ],
-   "score": 0.5959
+   "score": 0.6251
   },
   {
    "q": "Which translation says \"need a doctor\" in Matthew 9:12?",
@@ -451,16 +566,16 @@
     "xref": 11,
     "votes": 143,
     "word": "G2395",
-    "word_count": 2,
+    "word_count": 3,
     "differ": 0.658,
     "quoted": null
    },
    "why": [
     "11 cross-references point here",
-    "The Greek word iatrós (G2395) is in 2 verses of this path",
+    "The Greek word iatrós (G2395) is in 3 verses of this path",
     "Translations differ here"
    ],
-   "score": 0.5959
+   "score": 0.6251
   },
   {
    "q": "In 1 Timothy 5:23, what did Paul tell Timothy to use for his stomach's sake?",
@@ -549,7 +664,7 @@
   "Scofield (1917)",
   "Matthew Henry"
  ],
- "verse_count": 11,
+ "verse_count": 28,
  "image": "img/my-body-a-temple.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -557,7 +672,7 @@
  },
  "built_from": {
   "file": "packaging/paths/my-body-a-temple.json",
-  "sha": "c96ecaebf1700bba",
+  "sha": "cf725928edcfec9c",
   "checked_in": [
    "KJV",
    "ETH",

@@ -25,7 +25,11 @@
   "Revelation 1:13-14",
   "Daniel 7:9",
   "Revelation 14:14",
-  "Matthew 26:63-64"
+  "Matthew 26:63-64",
+  "Mark 14:62",
+  "Acts 7:56",
+  "Luke 21:36",
+  "1 John 2:28"
  ],
  "words": [
   "H1247",
@@ -148,12 +152,22 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "John sees on the white cloud one \"like unto the Son of man, having on his head a golden crown, and in his hand a sharp sickle\".",
+     "refs": [
+      "Revelation 14:14"
+     ]
+    }
    ]
   },
   {
    "question": "When the high priest questioned Jesus, which words of Daniel did Jesus use?",
    "refs": [
-    "Matthew 26:63-64"
+    "Matthew 26:63-64",
+    "Mark 14:62",
+    "Acts 7:56"
    ],
    "look_closer": {
     "strongs": [
@@ -177,15 +191,71 @@
       "Matthew 26:64",
       "Daniel 7:13"
      ]
+    },
+    {
+     "text": "Mark tells the same answer: \"I am: and ye shall see the Son of man sitting on the right hand of power\". Stephen, the first martyr: \"I see the heavens opened, and the Son of man standing on the right hand of God\".",
+     "refs": [
+      "Mark 14:62",
+      "Acts 7:56"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Jesus applied Daniel's words to Himself. Who do these verses say will see Him, and how are we to wait for Him?",
+   "refs": [
+    "Revelation 1:7",
+    "Luke 21:36",
+    "1 John 2:28"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Watch ye therefore, and pray always\"; \"abide in him; that, when he shall appear, we may have confidence\".",
+     "refs": [
+      "Luke 21:36",
+      "1 John 2:28"
+     ]
     }
    ]
   }
  ],
  "remember": [
-   {"text": "\"one like the Son of man came with the clouds of heaven\"", "refs": ["Daniel 7:13"]},
-   {"text": "\"his dominion is an everlasting dominion\"", "refs": ["Daniel 7:14"]},
-   {"text": "\"Behold, he cometh with clouds; and every eye shall see him\"", "refs": ["Revelation 1:7"]},
-   {"text": "Before the high priest Jesus used Daniel's words: \"coming in the clouds of heaven\".", "refs": ["Matthew 26:64"]}
+  {
+   "text": "\"one like the Son of man came with the clouds of heaven\"",
+   "refs": [
+    "Daniel 7:13"
+   ]
+  },
+  {
+   "text": "\"his dominion is an everlasting dominion\"",
+   "refs": [
+    "Daniel 7:14"
+   ]
+  },
+  {
+   "text": "\"Behold, he cometh with clouds; and every eye shall see him\"",
+   "refs": [
+    "Revelation 1:7"
+   ]
+  },
+  {
+   "text": "Before the high priest Jesus used Daniel's words: \"coming in the clouds of heaven\".",
+   "refs": [
+    "Matthew 26:64"
+   ]
+  }
  ],
  "quiz": [
   {

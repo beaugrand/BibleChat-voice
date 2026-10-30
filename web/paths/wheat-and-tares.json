@@ -12,7 +12,7 @@
   "y": 14,
   "s": 30
  },
- "opening_question": "At the harvest the householder says: \"Gather ye together first the tares … but gather the wheat into my barn.\" Some ask whether the wicked are taken away first, and whether a false \"rapture\" could be what brings the great falling away. Who is gathered first, when, by whom, and what does Scripture say comes before that day?",
+ "opening_question": "At the harvest the householder says: \"Gather ye together first the tares … but gather the wheat into my barn.\" Who is gathered first, when, by whom, and what does Scripture say comes before that day?",
  "required_refs": [
   "Matthew 13:24-30",
   "Matthew 13:36-43",
@@ -29,7 +29,13 @@
   "Matthew 24:10-13",
   "1 Timothy 4:1",
   "Matthew 24:23-27",
-  "Revelation 14:14-16"
+  "Revelation 14:14-16",
+  "Revelation 14:17-20",
+  "Matthew 25:31-46",
+  "Matthew 13:30",
+  "Matthew 7:1-5",
+  "Matthew 25:40",
+  "2 Corinthians 13:5"
  ],
  "words": [
   "G2215",
@@ -398,7 +404,8 @@
    "question": "What did Jesus say to do if anyone says Christ is in the desert or in the secret chambers? How will his coming be seen, and who reaps the harvest of the earth?",
    "refs": [
     "Matthew 24:23-27",
-    "Revelation 14:14-16"
+    "Revelation 14:14-16",
+    "Revelation 14:17-20"
    ],
    "look_closer": {
     "strongs": [
@@ -437,6 +444,71 @@
      "text": "Revelation 14: one \"like unto the Son of man\" with \"a sharp sickle\", \"for the harvest of the earth is ripe\".",
      "refs": [
       "Revelation 14:14-15"
+     ]
+    },
+    {
+     "text": "The path The rapture: what does the Bible say? reads many of the same verses from the other side. Read the two as a pair.",
+     "refs": [
+      "Matthew 24:31"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The other separation parable: whom does the King set on His right hand and on His left, and what did each one do?",
+   "refs": [
+    "Matthew 25:31-46"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G873"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"he shall separate them one from another, as a shepherd divideth his sheep from the goats\".",
+     "refs": [
+      "Matthew 25:32"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: the servants were told \"Let both grow together until the harvest\". What do these verses ask of us toward judging others, and toward our own readiness?",
+   "refs": [
+    "Matthew 13:30",
+    "Matthew 7:1-5",
+    "Matthew 25:40",
+    "2 Corinthians 13:5"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me\"; \"Examine yourselves, whether ye be in the faith\".",
+     "refs": [
+      "Matthew 25:40",
+      "2 Corinthians 13:5"
      ]
     }
    ]
@@ -487,14 +559,14 @@
    "signals": {
     "xref": 9,
     "votes": 57,
-    "word": "G2215",
+    "word": "G863",
     "word_count": 8,
     "differ": 0.369,
     "quoted": null
    },
    "why": [
     "9 cross-references point here",
-    "The Greek word zizánion (G2215) is in 8 verses of this path"
+    "The Greek word aphíēmi (G863) is in 8 verses of this path"
    ],
    "score": 0.6304
   },
@@ -507,14 +579,14 @@
    "signals": {
     "xref": 9,
     "votes": 57,
-    "word": "G2215",
+    "word": "G863",
     "word_count": 8,
     "differ": 0.369,
     "quoted": null
    },
    "why": [
     "9 cross-references point here",
-    "The Greek word zizánion (G2215) is in 8 verses of this path"
+    "The Greek word aphíēmi (G863) is in 8 verses of this path"
    ],
    "score": 0.6304
   },
@@ -562,15 +634,15 @@
     "xref": 15,
     "votes": 109,
     "word": "G32",
-    "word_count": 6,
+    "word_count": 12,
     "differ": 0.297,
     "quoted": null
    },
    "why": [
     "15 cross-references point here",
-    "The Greek word ángelos (G32) is in 6 verses of this path"
+    "The Greek word ángelos (G32) is in 12 verses of this path"
    ],
-   "score": 0.6021
+   "score": 0.7771
   },
   {
    "q": "Which translation says \"the end of the world\" in Matthew 13:39?",
@@ -585,15 +657,15 @@
     "xref": 15,
     "votes": 109,
     "word": "G32",
-    "word_count": 6,
+    "word_count": 12,
     "differ": 0.297,
     "quoted": null
    },
    "why": [
     "15 cross-references point here",
-    "The Greek word ángelos (G32) is in 6 verses of this path"
+    "The Greek word ángelos (G32) is in 12 verses of this path"
    ],
-   "score": 0.6021
+   "score": 0.7771
   },
   {
    "q": "Which verse says \"Then shall the righteous shine forth as the sun\"?",
@@ -624,15 +696,15 @@
     "xref": 14,
     "votes": 96,
     "word": "G32",
-    "word_count": 6,
+    "word_count": 12,
     "differ": 0.376,
     "quoted": null
    },
    "why": [
     "14 cross-references point here",
-    "The Greek word ángelos (G32) is in 6 verses of this path"
+    "The Greek word ángelos (G32) is in 12 verses of this path"
    ],
-   "score": 0.6124
+   "score": 0.7874
   },
   {
    "q": "In Matthew 24:39, what did the flood do to them that knew not?",
@@ -774,15 +846,15 @@
     "xref": 34,
     "votes": 312,
     "word": "G4412",
-    "word_count": 3,
+    "word_count": 4,
     "differ": 0.29,
     "quoted": null
    },
    "why": [
     "34 cross-references point here",
-    "The Greek word prōton (G4412) is in 3 verses of this path"
+    "The Greek word prōton (G4412) is in 4 verses of this path"
    ],
-   "score": 0.5914
+   "score": 0.6206
   },
   {
    "q": "Which translation says \"falling away\" in 2 Thessalonians 2:3?",
@@ -797,16 +869,16 @@
     "xref": 25,
     "votes": 177,
     "word": "G4412",
-    "word_count": 3,
+    "word_count": 4,
     "differ": 0.507,
     "quoted": null
    },
    "why": [
     "25 cross-references point here",
-    "The Greek word prōton (G4412) is in 3 verses of this path",
+    "The Greek word prōton (G4412) is in 4 verses of this path",
     "Translations differ here"
    ],
-   "score": 0.6033
+   "score": 0.6324
   },
   {
    "q": "Which verse says \"God shall send them strong delusion, that they should believe a lie\"?",
@@ -909,7 +981,7 @@
   "Matthew Henry",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 68,
+ "verse_count": 94,
  "image": "img/wheat-and-tares.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -917,7 +989,7 @@
  },
  "built_from": {
   "file": "packaging/paths/wheat-and-tares.json",
-  "sha": "9184b55d51eef125",
+  "sha": "c71f9fd1e20f502a",
   "checked_in": [
    "KJV",
    "ETH",

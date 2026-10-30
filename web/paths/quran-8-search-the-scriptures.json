@@ -23,7 +23,17 @@
   "John 5:39",
   "Acts 17:11",
   "2 Timothy 3:16",
-  "Hebrews 4:12"
+  "Hebrews 4:12",
+  "1 Peter 3:15-16",
+  "Colossians 4:6",
+  "John 5:39-40",
+  "John 5:45-47",
+  "Acts 17:10-12",
+  "2 Timothy 3:14-17",
+  "Isaiah 55:10-11",
+  "1 Peter 3:15",
+  "Romans 12:18",
+  "2 Timothy 2:24-25"
  ],
  "words": [
   "G2045",
@@ -252,6 +262,35 @@
      "text": "This path set the Quran's words beside the Bible's and answered every question with a Bible verse. The choice is the reader's: \"Prove all things; hold fast that which is good\".",
      "refs": [
       "1 Thessalonians 5:21"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: Peter says to be ready \"to give an answer\" with \"meekness and fear\". What do these verses ask of a Christian talking with a Muslim friend?",
+   "refs": [
+    "1 Peter 3:15",
+    "Romans 12:18",
+    "2 Timothy 2:24-25"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"If it be possible, as much as lieth in you, live peaceably with all men\"; \"the servant of the Lord must not strive; but be gentle unto all men\".",
+     "refs": [
+      "Romans 12:18",
+      "2 Timothy 2:24"
      ]
     }
    ]
@@ -730,7 +769,7 @@
   "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 18,
+ "verse_count": 21,
  "outside_sources": [
   {
    "name": "George Sale (1734)",
@@ -752,7 +791,7 @@
  },
  "built_from": {
   "file": "packaging/paths/quran-8-search-the-scriptures.json",
-  "sha": "22e1813b622a08fe",
+  "sha": "2626fa10ffe03a93",
   "checked_in": [
    "KJV",
    "ETH",

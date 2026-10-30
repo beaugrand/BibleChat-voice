@@ -1,70 +1,506 @@
 {
-  "id": "the-rainbow",
-  "title": "The rainbow: God's bow in the cloud",
-  "category": "Covenant",
-  "anim": {"kind": "rainbow"},
-  "opening_question": "Whose sign is the rainbow, what does God say it means, and where else does the Bible show it?",
-  "required_refs": ["Genesis 1:3-5", "Genesis 9:8-17", "Isaiah 54:9-10", "Ezekiel 1:26-28", "Revelation 4:2-3", "Revelation 10:1", "Psalms 97:1-6", "Habakkuk 3:3-4", "John 8:12"],
-  "words": ["H7198", "G2463", "H1285"],
-  "show": 8,
-  "steps": [
-    {"question": "Before any rainbow, what did God make first, and what did He divide it from?", "refs": ["Genesis 1:3-5"],
-     "look_closer": {"strongs": ["H216"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
-    {"question": "With whom does God make this covenant, what does He set in the cloud, and for how long?", "refs": ["Genesis 9:8-17"],
-     "look_closer": {"strongs": ["H7198", "H1285", "H226"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "The Hebrew word for \"bow\" here is qesheth. Strong's gives it as \"a bow for shooting\" or \"the iris\".", "refs": ["Genesis 9:13"], "strongs": ["H7198"]},
-       {"text": "God says \"I will remember my covenant\" and \"I will look upon it\".", "refs": ["Genesis 9:15-16"]},
-       {"text": "The King James calls it \"the everlasting covenant\", made with \"every living creature\".", "refs": ["Genesis 9:16"]}
-     ]},
-    {"question": "What does God compare to \"the waters of Noah\", and what does He say shall not depart?", "refs": ["Isaiah 54:9-10"],
-     "look_closer": {"strongs": ["H2617", "H1285"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "Ezekiel saw \"the bow that is in the cloud in the day of rain\". Whose glory was it, and what colours does he name?", "refs": ["Ezekiel 1:26-28"],
-     "look_closer": {"strongs": ["H7198", "H2830", "H5051"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "The word for \"bow\" in Ezekiel 1:28 is the same Hebrew word as in Genesis 9:13: qesheth.", "refs": ["Ezekiel 1:28", "Genesis 9:13"], "strongs": ["H7198"]},
-       {"text": "Around the throne Ezekiel names \"a sapphire stone\", \"the colour of amber\" and \"fire\".", "refs": ["Ezekiel 1:26-27"]}
-     ]},
-    {"question": "What is round about the throne in heaven, and what is it like to look upon?", "refs": ["Revelation 4:2-3"],
-     "look_closer": {"strongs": ["G2463", "G4664"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
-     "facts": [
-       {"text": "Here the Greek word is iris. Strong's gives it as \"a rainbow\".", "refs": ["Revelation 4:3"], "strongs": ["G2463"]},
-       {"text": "John names three stones in this verse: \"a jasper\", \"a sardine stone\" and \"an emerald\".", "refs": ["Revelation 4:3"], "strongs": ["G2393", "G4555", "G4664"]}
-     ]},
-    {"question": "What was upon the head of the mighty angel, and what was he clothed with?", "refs": ["Revelation 10:1"],
-     "look_closer": {"strongs": ["G2463"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
-    {"question": "What is round about the LORD, and what comes out of His hand?", "refs": ["Psalms 97:1-6", "Habakkuk 3:3-4"],
-     "look_closer": {"strongs": ["H5051", "H216"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "Who does Jesus say is \"the light of the world\", and what does the one who follows Him have?", "refs": ["John 8:12"],
-     "look_closer": {"strongs": ["G5457"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]}
-  ],
-  "remember": [
-    {"text": "God set His bow in the cloud \"for a token of a covenant\".", "refs": ["Genesis 9:13"]},
-    {"text": "\"my kindness shall not depart from thee\"", "refs": ["Isaiah 54:10"]},
-    {"text": "The bow in the cloud was \"the appearance of the likeness of the glory of the LORD\".", "refs": ["Ezekiel 1:28"]},
-    {"text": "\"a rainbow round about the throne\"", "refs": ["Revelation 4:3"]},
-    {"text": "\"I am the light of the world\"", "refs": ["John 8:12"]}
-  ],
-  "quiz": [
-    {"q": "Which verse says \"I do set my bow in the cloud\"?", "type": "find_the_verse", "answer_refs": ["Genesis 9:13"]},
-    {"q": "In Genesis 9:13, what does God say the bow in the cloud shall be?", "type": "multiple_choice",
-     "options": ["A token of a covenant", "A sign of judgment", "A gate of heaven", "A path of light"], "answer": 0, "answer_refs": ["Genesis 9:13"], "check": {"bible": "KJV", "word": "token"}},
-    {"q": "Fill in the word: \"I will remember my ___\"", "type": "fill_word", "ref": "Genesis 9:15", "bible": "KJV", "word": "covenant"},
-    {"q": "Which translation says \"set my bow\" in Genesis 9:13, where the others say \"rainbow\"?", "type": "which_translation", "ref": "Genesis 9:13", "bible": "KJV", "phrase": "set my bow"},
-    {"q": "Which verse says there was \"a rainbow round about the throne\"?", "type": "find_the_verse", "answer_refs": ["Revelation 4:3"]},
-    {"q": "In Revelation 4:3, what was the rainbow like to look upon?", "type": "multiple_choice",
-     "options": ["An emerald", "A sapphire", "A ruby", "A pearl"], "answer": 0, "answer_refs": ["Revelation 4:3"], "check": {"bible": "KJV", "word": "emerald"}},
-    {"q": "Which verse says of a mighty angel \"a rainbow was upon his head\"?", "type": "find_the_verse", "answer_refs": ["Revelation 10:1"]},
-    {"q": "Which translation says \"carnelian\" in Revelation 4:3?", "type": "which_translation", "ref": "Revelation 4:3", "bible": "BSB", "phrase": "carnelian"},
-    {"q": "Which verse compares the brightness round about the glory of the LORD to the bow in the cloud in the day of rain?", "type": "find_the_verse", "answer_refs": ["Ezekiel 1:28"]},
-    {"q": "Fill in the word: \"I am the ___ of the world\"", "type": "fill_word", "ref": "John 8:12", "bible": "KJV", "word": "light"},
-    {"q": "In Isaiah 54:10, what does the LORD say shall not depart, even if the mountains depart?", "type": "multiple_choice",
-     "options": ["My kindness", "My anger", "The waters", "The cloud"], "answer": 0, "answer_refs": ["Isaiah 54:10"], "check": {"bible": "KJV", "word": "kindness"}},
-    {"q": "Which translation says \"horns coming out of his hand\" in Habakkuk 3:4?", "type": "which_translation", "ref": "Habakkuk 3:4", "bible": "KJV", "phrase": "horns coming out of his hand"},
-    {"q": "Which verse says \"Clouds and darkness are round about him\"?", "type": "find_the_verse", "answer_refs": ["Psalms 97:2"]},
-    {"q": "In Genesis 1:5, what did God call the light?", "type": "multiple_choice",
-     "options": ["Day", "Night", "Glory", "Heaven"], "answer": 0, "answer_refs": ["Genesis 1:5"], "check": {"bible": "KJV", "word": "Day"}},
-    {"q": "Fill in the word: \"And God said, Let there be ___\"", "type": "fill_word", "ref": "Genesis 1:3", "bible": "KJV", "word": "light"}
-  ],
-  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]
+ "id": "the-rainbow",
+ "title": "The rainbow: God's bow in the cloud",
+ "category": "Covenant",
+ "anim": {
+  "kind": "rainbow"
+ },
+ "opening_question": "Whose sign is the rainbow, what does God say it means, and where else does the Bible show it?",
+ "required_refs": [
+  "Genesis 1:3-5",
+  "Genesis 9:8-17",
+  "Isaiah 54:9-10",
+  "Ezekiel 1:26-28",
+  "Revelation 4:2-3",
+  "Revelation 10:1",
+  "Psalms 97:1-6",
+  "Habakkuk 3:3-4",
+  "John 8:12",
+  "Isaiah 54:10",
+  "Lamentations 3:22-23",
+  "2 Corinthians 1:20",
+  "Hebrews 10:23"
+ ],
+ "words": [
+  "H7198",
+  "G2463",
+  "H1285"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Before any rainbow, what did God make first, and what did He divide it from?",
+   "refs": [
+    "Genesis 1:3-5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H216"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "With whom does God make this covenant, what does He set in the cloud, and for how long?",
+   "refs": [
+    "Genesis 9:8-17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7198",
+     "H1285",
+     "H226"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Hebrew word for \"bow\" here is qesheth. Strong's gives it as \"a bow for shooting\" or \"the iris\".",
+     "refs": [
+      "Genesis 9:13"
+     ],
+     "strongs": [
+      "H7198"
+     ]
+    },
+    {
+     "text": "God says \"I will remember my covenant\" and \"I will look upon it\".",
+     "refs": [
+      "Genesis 9:15-16"
+     ]
+    },
+    {
+     "text": "The King James calls it \"the everlasting covenant\", made with \"every living creature\".",
+     "refs": [
+      "Genesis 9:16"
+     ]
+    },
+    {
+     "text": "Genesis 9:16 says the sign is also for God: \"I will look upon it, that I may remember the everlasting covenant\". The bow reminds God, not only us.",
+     "refs": [
+      "Genesis 9:16"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does God compare to \"the waters of Noah\", and what does He say shall not depart?",
+   "refs": [
+    "Isaiah 54:9-10"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2617",
+     "H1285"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"For the mountains shall depart, and the hills be removed; but my kindness shall not depart from thee\". God compares this promise to His oath that the waters of Noah \"should no more go over the earth\".",
+     "refs": [
+      "Isaiah 54:9",
+      "Isaiah 54:10"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Ezekiel saw \"the bow that is in the cloud in the day of rain\". Whose glory was it, and what colours does he name?",
+   "refs": [
+    "Ezekiel 1:26-28"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7198",
+     "H2830",
+     "H5051"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The word for \"bow\" in Ezekiel 1:28 is the same Hebrew word as in Genesis 9:13: qesheth.",
+     "refs": [
+      "Ezekiel 1:28",
+      "Genesis 9:13"
+     ],
+     "strongs": [
+      "H7198"
+     ]
+    },
+    {
+     "text": "Around the throne Ezekiel names \"a sapphire stone\", \"the colour of amber\" and \"fire\".",
+     "refs": [
+      "Ezekiel 1:26-27"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What is round about the throne in heaven, and what is it like to look upon?",
+   "refs": [
+    "Revelation 4:2-3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2463",
+     "G4664"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Here the Greek word is iris. Strong's gives it as \"a rainbow\".",
+     "refs": [
+      "Revelation 4:3"
+     ],
+     "strongs": [
+      "G2463"
+     ]
+    },
+    {
+     "text": "John names three stones in this verse: \"a jasper\", \"a sardine stone\" and \"an emerald\".",
+     "refs": [
+      "Revelation 4:3"
+     ],
+     "strongs": [
+      "G2393",
+      "G4555",
+      "G4664"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What was upon the head of the mighty angel, and what was he clothed with?",
+   "refs": [
+    "Revelation 10:1"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2463"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "What is round about the LORD, and what comes out of His hand?",
+   "refs": [
+    "Psalms 97:1-6",
+    "Habakkuk 3:3-4"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5051",
+     "H216"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "Who does Jesus say is \"the light of the world\", and what does the one who follows Him have?",
+   "refs": [
+    "John 8:12"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5457"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ]
+  },
+  {
+   "question": "Living it out: God says \"my kindness shall not depart from thee\". What do these verses say His faithfulness means for us?",
+   "refs": [
+    "Isaiah 54:10",
+    "Lamentations 3:22-23",
+    "2 Corinthians 1:20",
+    "Hebrews 10:23"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"his compassions fail not\", \"They are new every morning\"; \"all the promises of God in him are yea, and in him Amen\".",
+     "refs": [
+      "Lamentations 3:22-23",
+      "2 Corinthians 1:20"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "God set His bow in the cloud \"for a token of a covenant\".",
+   "refs": [
+    "Genesis 9:13"
+   ]
+  },
+  {
+   "text": "\"my kindness shall not depart from thee\"",
+   "refs": [
+    "Isaiah 54:10"
+   ]
+  },
+  {
+   "text": "The bow in the cloud was \"the appearance of the likeness of the glory of the LORD\".",
+   "refs": [
+    "Ezekiel 1:28"
+   ]
+  },
+  {
+   "text": "\"a rainbow round about the throne\"",
+   "refs": [
+    "Revelation 4:3"
+   ]
+  },
+  {
+   "text": "\"I am the light of the world\"",
+   "refs": [
+    "John 8:12"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"I do set my bow in the cloud\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 9:13"
+   ]
+  },
+  {
+   "q": "In Genesis 9:13, what does God say the bow in the cloud shall be?",
+   "type": "multiple_choice",
+   "options": [
+    "A token of a covenant",
+    "A sign of judgment",
+    "A gate of heaven",
+    "A path of light"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Genesis 9:13"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "token"
+   }
+  },
+  {
+   "q": "Fill in the word: \"I will remember my ___\"",
+   "type": "fill_word",
+   "ref": "Genesis 9:15",
+   "bible": "KJV",
+   "word": "covenant"
+  },
+  {
+   "q": "Which translation says \"set my bow\" in Genesis 9:13, where the others say \"rainbow\"?",
+   "type": "which_translation",
+   "ref": "Genesis 9:13",
+   "bible": "KJV",
+   "phrase": "set my bow"
+  },
+  {
+   "q": "Which verse says there was \"a rainbow round about the throne\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 4:3"
+   ]
+  },
+  {
+   "q": "In Revelation 4:3, what was the rainbow like to look upon?",
+   "type": "multiple_choice",
+   "options": [
+    "An emerald",
+    "A sapphire",
+    "A ruby",
+    "A pearl"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Revelation 4:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "emerald"
+   }
+  },
+  {
+   "q": "Which verse says of a mighty angel \"a rainbow was upon his head\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 10:1"
+   ]
+  },
+  {
+   "q": "Which translation says \"carnelian\" in Revelation 4:3?",
+   "type": "which_translation",
+   "ref": "Revelation 4:3",
+   "bible": "BSB",
+   "phrase": "carnelian"
+  },
+  {
+   "q": "Which verse compares the brightness round about the glory of the LORD to the bow in the cloud in the day of rain?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Ezekiel 1:28"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"I am the ___ of the world\"",
+   "type": "fill_word",
+   "ref": "John 8:12",
+   "bible": "KJV",
+   "word": "light"
+  },
+  {
+   "q": "In Isaiah 54:10, what does the LORD say shall not depart, even if the mountains depart?",
+   "type": "multiple_choice",
+   "options": [
+    "My kindness",
+    "My anger",
+    "The waters",
+    "The cloud"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Isaiah 54:10"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "kindness"
+   }
+  },
+  {
+   "q": "Which translation says \"horns coming out of his hand\" in Habakkuk 3:4?",
+   "type": "which_translation",
+   "ref": "Habakkuk 3:4",
+   "bible": "KJV",
+   "phrase": "horns coming out of his hand"
+  },
+  {
+   "q": "Which verse says \"Clouds and darkness are round about him\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 97:2"
+   ]
+  },
+  {
+   "q": "In Genesis 1:5, what did God call the light?",
+   "type": "multiple_choice",
+   "options": [
+    "Day",
+    "Night",
+    "Glory",
+    "Heaven"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Genesis 1:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Day"
+   }
+  },
+  {
+   "q": "Fill in the word: \"And God said, Let there be ___\"",
+   "type": "fill_word",
+   "ref": "Genesis 1:3",
+   "bible": "KJV",
+   "word": "light"
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ]
 }

@@ -22,7 +22,16 @@
  "required_refs": [
   "Isaiah 40:8",
   "Matthew 24:35",
-  "1 Peter 1:23-25"
+  "1 Peter 1:23-25",
+  "John 20:30-31",
+  "Luke 1:1-4",
+  "Isaiah 40:6-8",
+  "Psalms 119:89",
+  "Jeremiah 36:27-28",
+  "Jeremiah 36:32",
+  "John 20:31",
+  "Romans 10:17",
+  "John 5:24"
  ],
  "words": [
   "G845",
@@ -231,6 +240,12 @@
      "strongs": [
       "H6965"
      ]
+    },
+    {
+     "text": "Outside history, not Scripture: the Dead Sea Scrolls (copied about 250 BC to AD 68) hold parts of every Old Testament book except Esther, and thousands of Greek New Testament manuscripts survive, many older than the Quran: Codex Sinaiticus and Codex Vaticanus were copied in the 300s, about 300 years before Muhammad. Readers can compare today's Bible with them.",
+     "refs": [
+      "Isaiah 40:8"
+     ]
     }
    ]
   },
@@ -309,6 +324,35 @@
      "text": "Codex Sinaiticus, copied in the fourth century AD, holds the whole New Testament. Muhammad died in 632.",
      "refs": [
       "Matthew 24:35"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: John wrote \"that ye might believe that Jesus is the Christ\". What do these verses ask of the one who reads the Gospel?",
+   "refs": [
+    "John 20:31",
+    "Romans 10:17",
+    "John 5:24"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"faith cometh by hearing, and hearing by the word of God\"; \"He that heareth my word, and believeth on him that sent me, hath everlasting life\".",
+     "refs": [
+      "Romans 10:17",
+      "John 5:24"
      ]
     }
    ]
@@ -719,16 +763,16 @@
     "xref": 20,
     "votes": 582,
     "word": "G4487",
-    "word_count": 2,
+    "word_count": 3,
     "differ": 0.586,
     "quoted": null
    },
    "why": [
     "20 cross-references point here",
-    "The Greek word rhēma (G4487) is in 2 verses of this path",
+    "The Greek word rhēma (G4487) is in 3 verses of this path",
     "Translations differ here"
    ],
-   "score": 0.6548
+   "score": 0.684
   },
   {
    "q": "In Jeremiah 36:28, what was Jeremiah to write in another roll?",
@@ -793,7 +837,7 @@
   "The Quran: George Sale (1734) and Marmaduke Pickthall (1930), public domain, shown only beside the Bible",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 17,
+ "verse_count": 19,
  "outside_sources": [
   {
    "name": "George Sale (1734)",
@@ -815,7 +859,7 @@
  },
  "built_from": {
   "file": "packaging/paths/quran-3-judge-by-the-gospel.json",
-  "sha": "639aad9f77322e20",
+  "sha": "2348db0223e6ef22",
   "checked_in": [
    "KJV",
    "ETH",
