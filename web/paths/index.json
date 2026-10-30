@@ -2658,6 +2658,40 @@
    "x": 83,
    "y": 12,
    "s": 32
+  },
+  "i18n": {
+   "es": {
+    "title": "El rapto: ¿qué dice la Biblia?",
+    "opening_question": "La palabra rapto no está en las Biblias. Viene de la palabra de la Biblia latina para \"arrebatados\" en 1 Tesalonicenses 4:17. ¿Qué dice la Biblia de que los creyentes sean arrebatados a recibir al Señor, de que Jesús vuelva en las nubes, y de cuándo sucede? Lee cada versículo, también los que los cristianos leen de maneras distintas, y deja que el texto hable.",
+    "step_questions": [
+     "¿Por qué escribió Pablo de \"los que durmieron\"? Cuando el Señor descienda del cielo, ¿quiénes resucitan primero, quiénes son arrebatados, a recibir a quién, y qué hemos de hacer con estas palabras?",
+     "¿Qué misterio muestra Pablo? ¿Cuándo seremos transformados, con qué rapidez, y cómo serán nuestros cuerpos?",
+     "¿Qué prometió Jesús a sus discípulos antes de irse? Y cuando fue alzado, ¿cómo dijeron los dos varones con vestiduras blancas que volverá?",
+     "¿Qué pasa \"luego después de la aflicción de aquellos días\"? ¿Qué aparece en el cielo, quiénes ven venir al Hijo del hombre, y a quiénes juntan sus ángeles, con qué sonido? ¿Dónde vio Daniel al Hijo del hombre venir con las nubes?",
+     "¿Cómo cuentan Marcos y Lucas el mismo momento? ¿De dónde son juntados los escogidos, y qué han de hacer los creyentes \"cuando estas cosas comenzaren á hacerse\"?",
+     "¿Quién sabe el día y la hora? ¿Qué pasó en los días de Noé, quién es tomado y quién dejado, y qué nos dice Jesús que hagamos?",
+     "¿Qué dijo Pablo que debe venir primero, antes del día del Señor? ¿Qué dicen los versículos de la ira, y de ser guardados \"de la hora de la tentación\"? Compara lo que Jesús oró por sus discípulos.",
+     "Dos pasajes más que traen los lectores: las diez vírgenes, y la primera resurrección. ¿Quiénes estaban preparadas, y quiénes viven y reinan con Cristo?",
+     "¿Cómo viene el día del Señor, y por qué no tiene que sorprender a los creyentes \"como ladrón\"? ¿Cuál es \"aquella esperanza bienaventurada\", qué hace esa esperanza en nosotros, y cómo termina la Biblia?",
+     "Para vivirlo: sea cual sea el momento, ¿qué nos piden estos versículos mientras esperamos?"
+    ]
+   },
+   "de": {
+    "title": "Die Entrückung: Was sagt die Bibel?",
+    "opening_question": "Das englische Wort »rapture« (Entrückung) kommt von dem Wort der lateinischen Bibel für \"hingerückt\" in 1. Thessalonicher 4,17. Was sagt die Bibel darüber, dass Gläubige dem Herrn entgegen hingerückt werden, dass Jesus in den Wolken wiederkommt, und wann es geschieht? Lies jeden Vers, auch die, die Christen verschieden lesen, und lass den Text sprechen.",
+    "step_questions": [
+     "Warum schrieb Paulus von denen, \"die da schlafen\"? Wenn der Herr vom Himmel herabkommt, wer steht zuerst auf, wer wird hingerückt, wem entgegen, und was sollen wir mit diesen Worten tun?",
+     "Welches Geheimnis zeigt Paulus? Wann werden wir verwandelt, wie schnell, und wie werden unsere Leiber sein?",
+     "Was verhieß Jesus seinen Jüngern, bevor Er wegging? Und als Er aufgehoben wurde, wie wird Er nach den zwei Männern in weißen Kleidern wiederkommen?",
+     "Was geschieht \"Bald aber nach der Trübsal derselben Zeit\"? Was erscheint am Himmel, wer sieht des Menschen Sohn kommen, und wen sammeln seine Engel, mit welchem Schall? Wo sah Daniel des Menschen Sohn mit den Wolken kommen?",
+     "Wie erzählen Markus und Lukas denselben Augenblick? Von wo werden die Auserwählten gesammelt, und was sollen die Gläubigen tun, \"Wenn aber dieses anfängt zu geschehen\"?",
+     "Wer kennt Tag und Stunde? Was geschah zur Zeit Noahs, wer wird angenommen und wer verlassen, und was sollen wir nach Jesu Wort tun?",
+     "Was muss nach Paulus zuerst kommen, vor dem Tag Christi? Was sagen die Verse über den Zorn und darüber, bewahrt zu werden \"vor der Stunde der Versuchung\"? Vergleiche, was Jesus für seine Jünger betete.",
+     "Zwei weitere Abschnitte, die Leser anführen: die zehn Jungfrauen und die erste Auferstehung. Wer war bereit, und wer lebt und regiert mit Christus?",
+     "Wie kommt der Tag des Herrn, und warum muss er die Gläubigen nicht wie ein Dieb überfallen? Was ist \"die selige Hoffnung\", was bewirkt diese Hoffnung in uns, und wie endet die Bibel?",
+     "Für das Leben: Wie auch immer der Zeitpunkt ist, was verlangen diese Verse von uns, während wir warten?"
+    ]
+   }
   }
  },
  {
