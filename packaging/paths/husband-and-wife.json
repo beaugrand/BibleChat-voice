@@ -4,7 +4,7 @@
   "category": "Marriage",
   "anim": {"kind": "light", "x": 72, "y": 4, "s": 30},
   "opening_question": "What does the Bible say about husband and wife: how it began, how they are to love each other, and what holds them together?",
-  "required_refs": ["Genesis 2:18-25", "Proverbs 31:10-31", "Song of Solomon 2:1-16", "Ephesians 5:21-33", "Colossians 3:18-19", "1 Corinthians 7:1-16", "1 Corinthians 13:4-8", "1 Peter 3:1-7", "Hebrews 13:4", "Ecclesiastes 4:9-12", "Mark 10:6-9"],
+  "required_refs": ["Genesis 2:18-25", "Proverbs 31:10-31", "Song of Solomon 2:1-16", "Ephesians 5:21-33", "Colossians 3:18-19", "1 Corinthians 7:1-16", "1 Corinthians 13:4-8", "1 Peter 3:1-7", "Hebrews 13:4", "Ecclesiastes 4:9-12", "Mark 10:6-9", "Matthew 19:3-12", "Matthew 22:29-30"],
   "words": ["H802", "G435", "G1135", "G25"],
   "show": 8,
   "steps": [
@@ -43,7 +43,14 @@
     {"question": "How do the beloved and his love speak of each other?", "refs": ["Song of Solomon 2:1-16"],
      "look_closer": {"strongs": ["H1730"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
     {"question": "How is marriage to be held, and who will God judge?", "refs": ["Hebrews 13:4"],
-     "look_closer": {"strongs": ["G1062"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]}
+     "look_closer": {"strongs": ["G1062"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
+    {"question": "What did Jesus answer when He was asked about putting away a wife, who can receive the saying about not marrying, and what is marriage in the resurrection?", "refs": ["Matthew 19:3-12", "Matthew 22:29-30"],
+     "look_closer": {"strongs": ["G630", "G1060"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"],
+     "facts": [
+       {"text": "Matthew has \"except it be for fornication\"; Mark gives the same teaching with no exception. Christians differ on when divorce and remarriage are allowed.", "refs": ["Matthew 19:9", "Mark 10:11-12"]},
+       {"text": "Not marrying is a gift too: \"All men cannot receive this saying, save they to whom it is given\".", "refs": ["Matthew 19:11"]},
+       {"text": "In the resurrection \"they neither marry, nor are given in marriage, but are as the angels of God in heaven\".", "refs": ["Matthew 22:30"]}
+     ]}
   ],
   "remember": [
     {"text": "\"they shall be one flesh\"", "refs": ["Genesis 2:24"]},
@@ -68,6 +75,8 @@
     {"q": "In 1 Peter 3:7, husbands are to dwell with their wives according to what?", "type": "multiple_choice",
      "options": ["Knowledge", "Custom", "Riches", "Strength"], "answer": 0, "answer_refs": ["1 Peter 3:7"], "check": {"bible": "KJV", "word": "knowledge"}},
     {"q": "Which verse says \"Marriage is honourable in all\"?", "type": "find_the_verse", "answer_refs": ["Hebrews 13:4"]},
+    {"q": "Which verse says \"they neither marry, nor are given in marriage\"?", "type": "find_the_verse", "answer_refs": ["Matthew 22:30"]},
+    {"q": "Fill in the word: \"All men cannot receive this ___, save they to whom it is given\"", "type": "fill_word", "ref": "Matthew 19:11", "bible": "KJV", "word": "saying"},
     {"q": "Fill in the word: \"Charity never ___\"", "type": "fill_word", "ref": "1 Corinthians 13:8", "bible": "KJV", "word": "faileth"},
     {"q": "Which translation says \"a wife of noble character\" in Proverbs 31:10?", "type": "which_translation", "ref": "Proverbs 31:10", "bible": "BSB", "phrase": "wife of noble character"},
     {"q": "In Proverbs 31:28, who arise up and call her blessed?", "type": "multiple_choice",

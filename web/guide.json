@@ -1,0 +1,350 @@
+{
+  "about": "Search guide for BibleChat (phone and computer). Hand-written and checked by tests/test_guide.py: every reference exists, every Hebrew/Greek note names a Strong's number that stands in that verse, and every topic linked to a Study Path has each of its themes inside the path. It holds references and short notes only, never verse text. Notes are BibleChat's, not Scripture, and the app labels them so.",
+  "stop": ["a", "about", "all", "an", "and", "any", "are", "as", "at", "be", "bible", "bibles", "biblical", "by", "can", "do", "does", "did", "for", "from", "god", "gods", "has", "have", "how", "i", "in", "is", "it", "its", "me", "my", "of", "on", "or", "s", "say", "says", "said", "scripture", "scriptures", "should", "show", "tell", "teach", "teaches", "that", "the", "their", "them", "there", "this", "to", "us", "verse", "verses", "was", "we", "what", "whats", "when", "where", "which", "who", "why", "will", "with", "you", "your"],
+  "sections": [
+    ["Law", ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy"]],
+    ["History", ["Joshua", "Judges", "Ruth", "1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah", "Esther"]],
+    ["Wisdom & Psalms", ["Job", "Psalms", "Proverbs", "Ecclesiastes", "Song of Solomon"]],
+    ["Prophets", ["Isaiah", "Jeremiah", "Lamentations", "Ezekiel", "Daniel", "Hosea", "Joel", "Amos", "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah", "Haggai", "Zechariah", "Malachi"]],
+    ["Gospels", ["Matthew", "Mark", "Luke", "John"]],
+    ["Acts", ["Acts"]],
+    ["Letters", ["Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude"]],
+    ["Revelation", ["Revelation"]]
+  ],
+  "other_section": "Other books",
+  "canon": {
+    "groups": {
+      "deutero": {"short": "In Catholic and Orthodox Bibles", "long": "This book is in Catholic and Orthodox Bibles, but not in Protestant ones (the King James printed it among the Apocrypha)."},
+      "orthodox": {"short": "In Orthodox Bibles", "long": "This book is in Orthodox Bibles, but not in Catholic or Protestant ones."},
+      "orthodox_appendix": {"short": "Appendix of Greek Orthodox Bibles", "long": "This book is printed in an appendix of Greek Orthodox Bibles. It is not in Catholic or Protestant Bibles."},
+      "esdras2": {"short": "In Ethiopian and Slavonic Bibles", "long": "This book (also called 4 Ezra) is in the Ethiopian and Slavonic Bibles and the King James Apocrypha, but not in the Catholic or Protestant canon."},
+      "ethiopian": {"short": "Ethiopian Bible only", "long": "This book is in the Bible of the Ethiopian Orthodox Church only. Other churches do not count it as Scripture."},
+      "noncanon": {"short": "Not in any church's Bible", "long": "This is an old writing that no church counts as Scripture today. BibleChat includes it with the Ethiopian Canon so it can be read and compared."},
+      "letter": {"short": "Early church letter", "long": "1 Clement is a letter from the church at Rome to Corinth (about AD 96). It is not in today's Bibles; one old Greek Bible, Codex Alexandrinus, copied it after Revelation."},
+      "jasher": {"short": "Not Scripture in any church", "long": "The 1840 English Book of Jasher. Scholars dispute whether it is the book named in Joshua 10:13 and 2 Samuel 1:18. No church counts it as Scripture."}
+    },
+    "books": {
+      "Tobit": "deutero", "Tobias": "deutero", "Judith": "deutero", "Wisdom": "deutero", "Wisdom of Solomon": "deutero",
+      "Sirach": "deutero", "Ecclesiasticus": "deutero", "Baruch": "deutero", "Letter of Jeremiah": "deutero",
+      "1 Maccabees": "deutero", "2 Maccabees": "deutero", "1 Machabees": "deutero", "2 Machabees": "deutero",
+      "Esther (Greek)": "deutero", "Additions to Esther": "deutero", "Daniel (Greek)": "deutero",
+      "Prayer of Azariah": "deutero", "Song of the Three Children": "deutero", "Susanna": "deutero", "Bel and the Dragon": "deutero",
+      "1 Esdras": "orthodox", "Prayer of Manasseh": "orthodox", "Prayer of Manasses": "orthodox", "Psalm 151": "orthodox", "3 Maccabees": "orthodox",
+      "4 Maccabees": "orthodox_appendix",
+      "2 Esdras": "esdras2",
+      "1 Enoch": "ethiopian", "Enoch": "ethiopian", "Jubilees": "ethiopian",
+      "2 Enoch": "noncanon",
+      "1 Clement": "letter",
+      "Jasher": "jasher"
+    }
+  },
+  "topics": [
+    {
+      "id": "women", "title": "Women in the Bible", "path": "women-in-the-bible",
+      "words": ["woman", "women", "womans", "womens", "female", "females", "womanhood", "prophetess", "prophetesses", "deaconess", "daughters of god"],
+      "themes": [
+        {"point": "Made in God's image, male and female, and both given dominion", "refs": ["Genesis 1:27-28"]},
+        {"point": "Woman and man depend on each other, and all things are of God", "refs": ["Genesis 2:18-23", "1 Corinthians 11:11-12"]},
+        {"point": "Women prophesied, judged and spoke for God in Israel", "refs": ["Exodus 15:20-21", "Judges 4:4-9", "2 Kings 22:14-15", "Psalms 68:11"]},
+        {"point": "Women of faith and courage", "refs": ["Ruth 1:16-17", "1 Samuel 1:10-11", "Esther 4:14-16", "Hebrews 11:11", "Hebrews 11:31"]},
+        {"point": "The virtuous woman: strength, work, wisdom and kindness", "refs": ["Proverbs 31:10-31", "Ruth 3:11"]},
+        {"point": "Jesus taught, healed and was followed by women", "refs": ["Luke 8:1-3", "Luke 10:38-42", "John 4:25-29", "Mark 5:25-34"]},
+        {"point": "Women were the first witnesses of the risen Jesus", "refs": ["Luke 24:1-11", "John 20:11-18", "Matthew 28:1-10"]},
+        {"point": "The Spirit on sons and daughters; women who served the early church", "refs": ["Acts 2:17-18", "Acts 18:24-26", "Acts 21:9", "Romans 16:1-7", "Philippians 4:2-3"]},
+        {"point": "Paul on women in worship: read every verse in full and in its setting", "refs": ["1 Corinthians 11:3-16", "1 Corinthians 14:33-35", "1 Timothy 2:9-15"]},
+        {"point": "Wives and husbands: submit, love and honour", "refs": ["Ephesians 5:21-33", "1 Peter 3:1-7", "Colossians 3:18-19"]},
+        {"point": "Godly women known by good works and inner beauty; older women teach younger", "refs": ["1 Timothy 2:10", "1 Peter 3:3-5", "Titus 2:3-5"]},
+        {"point": "In Christ there is neither male nor female", "refs": ["Galatians 3:26-28"]}
+      ]
+    },
+    {
+      "id": "marriage", "title": "Marriage", "path": "husband-and-wife",
+      "words": ["marriage", "marriages", "married", "marry", "marrying", "wedding", "husband", "husbands", "wife", "wives", "spouse", "divorce", "divorced", "remarriage", "remarry", "remarried", "adultery"],
+      "themes": [
+        {"point": "God made marriage at creation: the two become one flesh", "refs": ["Genesis 2:18-25", "Mark 10:6-9"]},
+        {"point": "Submit to one another; husbands love as Christ loved the church", "refs": ["Ephesians 5:21-33", "Colossians 3:18-19"]},
+        {"point": "Honour and understanding: heirs together of the grace of life", "refs": ["1 Peter 3:1-7"]},
+        {"point": "Faithfulness: marriage honourable and the bed undefiled", "refs": ["Exodus 20:14", "Hebrews 13:4", "Proverbs 5:15-19", "Matthew 5:27-28"]},
+        {"point": "Love and delight between husband and wife", "refs": ["Song of Solomon 2:16", "Song of Solomon 8:6-7", "Ecclesiastes 9:9", "Proverbs 18:22"]},
+        {"point": "Husband and wife owe each other care and closeness", "refs": ["1 Corinthians 7:2-5", "Ecclesiastes 4:9-12"]},
+        {"point": "What Jesus and Paul say about divorce", "refs": ["Malachi 2:14-16", "Matthew 19:3-9", "Mark 10:2-12", "1 Corinthians 7:10-15"]},
+        {"point": "Not marrying is also a gift", "refs": ["1 Corinthians 7:7-8", "1 Corinthians 7:32-35", "Matthew 19:10-12"]},
+        {"point": "Marriage pictures Christ and the church", "refs": ["Ephesians 5:31-32", "Revelation 19:7-9", "Hosea 2:19-20"]},
+        {"point": "In the resurrection they neither marry nor are given in marriage", "refs": ["Matthew 22:29-30"]}
+      ]
+    },
+    {
+      "id": "money", "title": "Money and possessions",
+      "words": ["money", "wealth", "wealthy", "rich", "riches", "poor", "poverty", "tithe", "tithes", "tithing", "generosity", "generous", "greed", "greedy", "debt", "debts", "finances", "financial", "possessions", "giving"],
+      "themes": [
+        {"point": "Everything belongs to God, who gives the power to get wealth", "refs": ["Psalms 24:1", "Haggai 2:8", "Deuteronomy 8:17-18", "1 Chronicles 29:11-14"]},
+        {"point": "Work honestly and diligently", "refs": ["Proverbs 10:4", "Proverbs 6:6-8", "2 Thessalonians 3:10-12", "Ephesians 4:28"]},
+        {"point": "The love of money is a root of evil; you cannot serve God and mammon", "refs": ["1 Timothy 6:9-10", "Matthew 6:24", "Luke 12:15-21", "Ecclesiastes 5:10"]},
+        {"point": "Riches make it hard to enter the kingdom, but with God all things are possible", "refs": ["Mark 10:23-27", "1 Timothy 6:17-19", "James 5:1-5"]},
+        {"point": "Be content with what you have", "refs": ["Philippians 4:11-13", "Hebrews 13:5", "Proverbs 30:8-9"]},
+        {"point": "Give generously and cheerfully", "refs": ["2 Corinthians 9:6-8", "Proverbs 3:9-10", "Malachi 3:10", "Acts 20:35", "Luke 21:1-4"]},
+        {"point": "Care for the poor", "refs": ["Deuteronomy 15:7-11", "Proverbs 19:17", "James 2:15-16", "Matthew 25:35-40", "Galatians 2:10"]},
+        {"point": "Honest weights, and owe no man anything but love", "refs": ["Leviticus 19:35-36", "Proverbs 22:7", "Romans 13:8", "Psalms 37:21"]},
+        {"point": "Lay up treasure in heaven", "refs": ["Matthew 6:19-21", "Matthew 6:33"]}
+      ]
+    },
+    {
+      "id": "prayer", "title": "Prayer",
+      "words": ["pray", "prays", "praying", "prayed", "prayer", "prayers", "intercession", "intercede"],
+      "themes": [
+        {"point": "Jesus taught how to pray", "refs": ["Matthew 6:5-13", "Luke 11:1-4"]},
+        {"point": "Pray always and do not give up", "refs": ["1 Thessalonians 5:17", "Luke 18:1-8", "Colossians 4:2"]},
+        {"point": "Ask, seek, knock: the Father gives good things", "refs": ["Matthew 7:7-11", "John 14:13-14"]},
+        {"point": "Ask in faith and according to His will", "refs": ["1 John 5:14-15", "James 1:5-7", "James 4:3", "John 15:7"]},
+        {"point": "Bring every worry to God", "refs": ["Philippians 4:6-7", "1 Peter 5:7", "Psalms 55:22"]},
+        {"point": "Confess sin, and forgive others when you pray", "refs": ["1 John 1:9", "Psalms 51:1-4", "Mark 11:25"]},
+        {"point": "Jesus Himself prayed: alone, all night and in anguish", "refs": ["Mark 1:35", "Luke 6:12", "Luke 22:41-44", "John 17:20-21"]},
+        {"point": "The Spirit helps when we do not know what to pray", "refs": ["Romans 8:26-27"]},
+        {"point": "Honest prayer: lament, waiting, and a no", "refs": ["Psalms 13:1-6", "Psalms 22:1-2", "Habakkuk 1:2", "2 Corinthians 12:7-9"]},
+        {"point": "Praying together and for others", "refs": ["Matthew 18:19-20", "Acts 2:42", "James 5:14-16", "1 Timothy 2:1-2"]}
+      ]
+    },
+    {
+      "id": "end-times", "title": "The end times and Christ's return",
+      "words": ["end times", "end time", "last days", "end of the world", "second coming", "return of christ", "return of jesus", "jesus return", "christ return", "rapture", "tribulation", "antichrist", "apocalypse", "armageddon", "millennium", "judgment day", "day of judgment", "day of the lord"],
+      "themes": [
+        {"point": "Jesus will come again, and every eye shall see Him", "refs": ["Acts 1:9-11", "Matthew 24:30-31", "Revelation 1:7"]},
+        {"point": "No one knows the day or the hour", "refs": ["Matthew 24:36", "Mark 13:32-33", "1 Thessalonians 5:1-3", "Acts 1:7"]},
+        {"point": "Signs, false christs and great tribulation", "refs": ["Matthew 24:4-14", "Matthew 24:21-22", "Luke 21:25-28", "2 Timothy 3:1-5", "Daniel 12:1"]},
+        {"point": "The dead raised, the living changed, caught up together", "refs": ["1 Thessalonians 4:13-18", "1 Corinthians 15:51-54"]},
+        {"point": "The man of sin and the antichrists", "refs": ["2 Thessalonians 2:1-4", "1 John 2:18", "Revelation 13:1-8"]},
+        {"point": "The thousand years, which Christians read in different ways", "refs": ["Revelation 20:1-6"]},
+        {"point": "The judgment of all people", "refs": ["Matthew 25:31-46", "Revelation 20:11-15", "Daniel 12:2", "2 Corinthians 5:10"]},
+        {"point": "New heavens and a new earth", "refs": ["Revelation 21:1-5", "Isaiah 65:17-19", "2 Peter 3:10-13", "Romans 8:19-23"]},
+        {"point": "How near? \"This generation\", and the Lord's patience", "refs": ["Matthew 24:32-35", "2 Peter 3:8-9", "Revelation 22:20"]},
+        {"point": "Watch and be ready", "refs": ["Matthew 24:42-44", "Luke 21:34-36", "1 Thessalonians 5:4-8", "Titus 2:13"]}
+      ]
+    },
+    {
+      "id": "forgiveness", "title": "Forgiveness",
+      "words": ["forgive", "forgives", "forgiven", "forgiveness", "forgiving", "forgave", "pardon", "unforgivable", "unpardonable", "vengeance", "revenge", "grudge"],
+      "themes": [
+        {"point": "God forgives and removes our sins far from us", "refs": ["Psalms 103:10-12", "Isaiah 1:18", "Micah 7:18-19", "1 John 1:9"]},
+        {"point": "Forgiveness through the blood of Christ", "refs": ["Ephesians 1:7", "Matthew 26:28", "Hebrews 9:22", "Colossians 1:13-14"]},
+        {"point": "Turn back to God: repentance", "refs": ["Acts 3:19", "Luke 15:17-24", "2 Chronicles 7:14", "Isaiah 55:7"]},
+        {"point": "Forgive others as God forgave you", "refs": ["Matthew 6:12-15", "Ephesians 4:31-32", "Colossians 3:13"]},
+        {"point": "How often? Seventy times seven", "refs": ["Matthew 18:21-35", "Luke 17:3-4"]},
+        {"point": "Go and be reconciled", "refs": ["Matthew 5:23-24", "2 Corinthians 5:18-20"]},
+        {"point": "Forgiveness lived out: Joseph, Jesus on the cross, Stephen", "refs": ["Genesis 50:17-21", "Luke 23:34", "Acts 7:59-60"]},
+        {"point": "Leave vengeance to God", "refs": ["Romans 12:17-21", "Proverbs 24:29"]},
+        {"point": "The sin Jesus says shall not be forgiven", "refs": ["Matthew 12:31-32", "Mark 3:28-30"]}
+      ]
+    },
+    {
+      "id": "salvation", "title": "Salvation",
+      "words": ["salvation", "saved", "saviour", "savior", "born again", "redemption", "redeemed", "redeemer", "how to be saved", "justification", "justified"],
+      "themes": [
+        {"point": "All have sinned, and the wages of sin is death", "refs": ["Romans 3:10-12", "Romans 3:23", "Romans 6:23", "Isaiah 53:6"]},
+        {"point": "God's gift: Christ died for us", "refs": ["John 3:16-17", "Romans 5:8", "Isaiah 53:5", "Ephesians 2:8-9"]},
+        {"point": "Through Jesus alone", "refs": ["John 14:6", "Acts 4:12", "1 Timothy 2:5"]},
+        {"point": "Believe and confess", "refs": ["Romans 10:9-13", "Acts 16:30-31", "John 1:12"]},
+        {"point": "Repent and be baptized", "refs": ["Acts 2:37-38", "Mark 1:15", "1 Peter 3:21", "Mark 16:16"]},
+        {"point": "Born again, a new creature", "refs": ["John 3:3-7", "Titus 3:5", "2 Corinthians 5:17"]},
+        {"point": "Assurance: no man shall pluck them out of my hand", "refs": ["1 John 5:11-13", "John 10:27-29", "Romans 8:1"]},
+        {"point": "Endure to the end: the warnings against falling away", "refs": ["Matthew 24:13", "Hebrews 6:4-6", "Hebrews 10:26-27", "Philippians 2:12-13", "2 Peter 1:10"]},
+        {"point": "Faith and works: Paul and James side by side", "refs": ["Romans 3:28", "James 2:24", "Ephesians 2:10"]},
+        {"point": "God wants all to be saved, from every nation", "refs": ["1 Timothy 2:3-4", "2 Peter 3:9", "Ezekiel 33:11", "Revelation 7:9-10"]}
+      ]
+    },
+    {
+      "id": "grace", "title": "Grace",
+      "words": ["grace", "gracious", "graciousness", "unmerited", "undeserved"],
+      "themes": [
+        {"point": "Saved by grace through faith, not of works", "refs": ["Ephesians 2:8-9", "Romans 3:23-24", "Titus 3:5-7", "Romans 11:6"]},
+        {"point": "Grace and truth came by Jesus Christ", "refs": ["John 1:14-17"]},
+        {"point": "God was gracious in the Old Testament too", "refs": ["Genesis 6:8", "Exodus 34:6-7", "Psalms 103:8-12", "Jonah 4:2"]},
+        {"point": "Grace is no licence to sin; it teaches us to live godly", "refs": ["Romans 6:1-2", "Romans 6:14-15", "Titus 2:11-14", "Jude 1:4"]},
+        {"point": "Created in Christ for good works", "refs": ["Ephesians 2:10", "1 Corinthians 15:10", "James 2:17-18"]},
+        {"point": "Grace enough in weakness", "refs": ["2 Corinthians 12:9-10", "Hebrews 4:16"]},
+        {"point": "Warnings: fallen from grace, receiving it in vain", "refs": ["Galatians 5:4", "Hebrews 12:15", "2 Corinthians 6:1"]},
+        {"point": "Grow in grace, and give it to others", "refs": ["2 Peter 3:18", "Colossians 4:6", "1 Peter 4:10"]}
+      ]
+    },
+    {
+      "id": "faith", "title": "Faith",
+      "words": ["faith", "belief", "unbelief", "doubt", "doubts", "doubting"],
+      "themes": [
+        {"point": "What faith is, and why it matters", "refs": ["Hebrews 11:1", "Hebrews 11:6"]},
+        {"point": "Faith comes by hearing the word", "refs": ["Romans 10:17", "John 20:30-31"]},
+        {"point": "Justified by faith, like Abraham", "refs": ["Genesis 15:6", "Romans 4:3-5", "Romans 5:1", "Galatians 2:16"]},
+        {"point": "Faith without works is dead", "refs": ["James 2:14-26"]},
+        {"point": "People of faith", "refs": ["Hebrews 11:7-11", "Hebrews 11:31", "Matthew 8:5-10", "Matthew 15:22-28"]},
+        {"point": "Faith as a grain of mustard seed", "refs": ["Matthew 17:20", "Luke 17:5-6"]},
+        {"point": "Help thou mine unbelief: faith and doubt", "refs": ["Mark 9:23-24", "James 1:5-8", "Matthew 14:29-31", "John 20:24-29", "Jude 1:22"]},
+        {"point": "Faith is a gift and it grows", "refs": ["Ephesians 2:8", "Romans 12:3", "2 Thessalonians 1:3", "Hebrews 12:2"]},
+        {"point": "Faith, hope and love", "refs": ["1 Corinthians 13:13", "Galatians 5:6"]}
+      ]
+    },
+    {
+      "id": "holy-spirit", "title": "The Holy Spirit",
+      "words": ["holy spirit", "holy ghost", "spirit of god", "comforter", "pentecost", "gifts of the spirit", "fruit of the spirit", "spiritual gifts", "tongues"],
+      "themes": [
+        {"point": "The Spirit in creation and in the prophets", "refs": ["Genesis 1:2", "Psalms 139:7", "Numbers 11:25", "2 Peter 1:21"]},
+        {"point": "Promised by Jesus: the Comforter who teaches and guides", "refs": ["John 14:16-17", "John 14:26", "John 16:7-14"]},
+        {"point": "Poured out at Pentecost, as Joel foretold", "refs": ["Acts 2:1-4", "Acts 2:16-18", "Joel 2:28-29"]},
+        {"point": "The Spirit lives in believers", "refs": ["1 Corinthians 6:19-20", "Romans 8:9-11", "Ephesians 1:13-14"]},
+        {"point": "The fruit of the Spirit", "refs": ["Galatians 5:22-25"]},
+        {"point": "Gifts of the Spirit, given for all", "refs": ["1 Corinthians 12:4-11", "Romans 12:6-8", "1 Peter 4:10-11", "1 Corinthians 14:1-5"]},
+        {"point": "The Spirit leads us and helps us pray", "refs": ["Romans 8:14-16", "Romans 8:26-27", "Galatians 5:16"]},
+        {"point": "Do not grieve or quench the Spirit", "refs": ["Ephesians 4:30", "1 Thessalonians 5:19", "Acts 5:3-4"]},
+        {"point": "Blasphemy against the Holy Ghost", "refs": ["Matthew 12:31-32"]}
+      ]
+    },
+    {
+      "id": "fear", "title": "Fear and worry",
+      "words": ["fear", "fears", "afraid", "anxiety", "anxious", "worry", "worried", "worries", "worrying", "panic", "scared", "stress", "stressed"],
+      "themes": [
+        {"point": "Be anxious for nothing: pray, and cast your care on Him", "refs": ["Philippians 4:6-7", "1 Peter 5:7", "Matthew 6:25-34"]},
+        {"point": "Fear not, for I am with thee", "refs": ["Isaiah 41:10", "Joshua 1:9", "Deuteronomy 31:6", "Psalms 23:4"]},
+        {"point": "What time I am afraid, I will trust", "refs": ["Psalms 56:3-4", "Psalms 27:1", "Psalms 46:1-3"]},
+        {"point": "Perfect love casts out fear", "refs": ["1 John 4:18", "2 Timothy 1:7", "Romans 8:15"]},
+        {"point": "The peace Jesus gives", "refs": ["John 14:27", "John 16:33", "Isaiah 26:3"]},
+        {"point": "The faithful were troubled too", "refs": ["Psalms 42:5", "Psalms 55:4-6", "1 Kings 19:3-8", "Matthew 26:37-39"]},
+        {"point": "The fear of the LORD is the beginning of wisdom", "refs": ["Proverbs 9:10", "Proverbs 1:7", "Psalms 111:10", "Ecclesiastes 12:13", "Matthew 10:28"]}
+      ]
+    },
+    {
+      "id": "children", "title": "Children and family",
+      "words": ["children", "kids", "parenting", "parents", "parent", "family", "families", "childless", "barren", "orphan", "orphans", "fatherless", "father and mother"],
+      "themes": [
+        {"point": "Children are a heritage of the LORD", "refs": ["Psalms 127:3-5", "Psalms 139:13-16", "Genesis 1:28"]},
+        {"point": "Honour thy father and thy mother", "refs": ["Exodus 20:12", "Ephesians 6:1-3", "Proverbs 1:8"]},
+        {"point": "Teach and train children in the way of the LORD", "refs": ["Deuteronomy 6:6-7", "Proverbs 22:6", "2 Timothy 3:14-15"]},
+        {"point": "Correct with love, and do not provoke them", "refs": ["Proverbs 13:24", "Hebrews 12:7-11", "Ephesians 6:4", "Colossians 3:21"]},
+        {"point": "Jesus welcomed little children", "refs": ["Mark 10:13-16", "Matthew 18:2-6"]},
+        {"point": "Provide for your own household", "refs": ["1 Timothy 5:4", "1 Timothy 5:8", "2 Corinthians 12:14"]},
+        {"point": "God's care for the childless and the fatherless", "refs": ["1 Samuel 1:10-11", "Isaiah 56:3-5", "Psalms 68:5-6", "Psalms 113:9", "James 1:27"]},
+        {"point": "God loves like a father and a mother", "refs": ["Psalms 103:13", "Isaiah 49:15", "Isaiah 66:13", "Matthew 23:37"]},
+        {"point": "Following Jesus comes first", "refs": ["Matthew 10:37", "Luke 14:26", "Matthew 12:48-50"]}
+      ]
+    },
+    {
+      "id": "suffering", "title": "Suffering",
+      "words": ["suffering", "suffer", "suffers", "sufferings", "pain", "affliction", "afflictions", "hardship", "hardships", "trials", "why does god allow", "evil in the world"],
+      "themes": [
+        {"point": "The LORD is nigh unto them that are of a broken heart", "refs": ["Psalms 34:18", "Psalms 23:4", "Isaiah 43:2", "Matthew 11:28"]},
+        {"point": "Tribulation works patience and hope", "refs": ["Romans 5:3-5", "James 1:2-4", "1 Peter 1:6-7"]},
+        {"point": "Honest lament is in Scripture", "refs": ["Job 3:1-3", "Psalms 22:1-2", "Psalms 88:1-3", "Lamentations 3:19-24"]},
+        {"point": "Job: faith without all the answers", "refs": ["Job 1:20-22", "Job 13:15", "Job 38:1-4", "Job 42:1-6"]},
+        {"point": "Suffering is not always punishment", "refs": ["John 9:1-3", "Luke 13:1-5", "Job 42:7"]},
+        {"point": "Sometimes it is correction, or reaping what was sown", "refs": ["Hebrews 12:5-11", "Galatians 6:7-8", "Psalms 119:67"]},
+        {"point": "Christ suffered for us and is touched by our weakness", "refs": ["Isaiah 53:3-5", "Hebrews 2:18", "Hebrews 4:15", "1 Peter 2:21-24"]},
+        {"point": "Comfort others with the comfort you receive", "refs": ["2 Corinthians 1:3-7", "Romans 12:15"]},
+        {"point": "All things work together for good, and suffering will end", "refs": ["Romans 8:18", "Romans 8:28", "2 Corinthians 4:16-18", "Revelation 21:4"]}
+      ]
+    },
+    {
+      "id": "death", "title": "Death, resurrection and the life to come",
+      "words": ["death", "die", "dying", "dead", "afterlife", "heaven", "hell", "resurrection", "grave", "sheol", "hades", "eternal life", "everlasting life", "life after death", "grief", "grieving", "mourning", "funeral", "soul sleep"],
+      "themes": [
+        {"point": "Death came through sin", "refs": ["Genesis 3:19", "Romans 5:12", "Romans 6:23"]},
+        {"point": "Christ has defeated death", "refs": ["1 Corinthians 15:20-26", "1 Corinthians 15:54-57", "Hebrews 2:14-15", "2 Timothy 1:10"]},
+        {"point": "Absent from the body, present with the Lord", "refs": ["2 Corinthians 5:6-8", "Philippians 1:21-23", "Luke 23:43"]},
+        {"point": "Death called sleep; Christians differ on what the dead know before the resurrection", "refs": ["1 Thessalonians 4:13-14", "John 11:11-14", "Ecclesiastes 9:5", "Daniel 12:2"]},
+        {"point": "The resurrection of the body", "refs": ["John 5:28-29", "John 11:25-26", "1 Corinthians 15:42-44", "Job 19:25-27"]},
+        {"point": "After this the judgment", "refs": ["Hebrews 9:27", "2 Corinthians 5:10", "Revelation 20:12-13"]},
+        {"point": "Hope in the Old Testament", "refs": ["Psalms 16:10-11", "Psalms 49:15", "Isaiah 26:19", "Psalms 23:6"]},
+        {"point": "Everlasting life with God", "refs": ["John 14:2-3", "Revelation 21:3-4", "Revelation 22:3-5"]},
+        {"point": "The warnings of everlasting punishment, which Christians read in different ways", "refs": ["Matthew 25:46", "Mark 9:43-48", "2 Thessalonians 1:9", "Revelation 20:14-15"]},
+        {"point": "Grieve, but not without hope", "refs": ["1 Thessalonians 4:13", "John 11:33-35", "Psalms 116:15"]}
+      ]
+    },
+    {
+      "id": "love", "title": "Love",
+      "words": ["love", "loving", "loves", "loved", "charity"],
+      "themes": [
+        {"point": "God is love, and He loved us first", "refs": ["1 John 4:7-10", "John 3:16", "Romans 5:8"]},
+        {"point": "The two great commandments", "refs": ["Matthew 22:36-40", "Deuteronomy 6:4-5", "Leviticus 19:18"]},
+        {"point": "What love is", "refs": ["1 Corinthians 13:1-8"]},
+        {"point": "Love your enemies", "refs": ["Matthew 5:43-48", "Luke 6:27-36", "Proverbs 25:21", "Romans 12:20-21"]},
+        {"point": "Love one another as Christ loved us, in deed and in truth", "refs": ["John 13:34-35", "John 15:12-13", "1 John 3:16-18"]},
+        {"point": "Nothing can separate us from the love of God", "refs": ["Romans 8:35-39", "Jeremiah 31:3", "Isaiah 54:10"]},
+        {"point": "Whom the Lord loves He corrects", "refs": ["Proverbs 3:11-12", "Hebrews 12:5-6", "Revelation 3:19"]},
+        {"point": "If ye love me, keep my commandments", "refs": ["John 14:15", "John 14:21", "1 John 5:3"]},
+        {"point": "Love not the world", "refs": ["1 John 2:15-17", "James 4:4"]}
+      ]
+    }
+  ],
+  "notes": {
+    "Psalms 68:11": {"original": {"strongs": ["H1319"], "kjv": "published", "text": "\"Those that published it\" is one Hebrew word, a feminine plural form of basar, \"to bring good news\". The Hebrew says the ones who proclaim are women, so many translations read \"the women who proclaim it are a great host\". The King James \"those\" does not show it."}},
+    "Isaiah 40:9": {"original": {"strongs": ["H1319"], "kjv": "tidings", "text": "\"That bringest good tidings\" is a feminine form of basar, \"to bring good news\": Zion and Jerusalem are pictured as a woman who carries the news. Some translations read \"O Zion, herald of good tidings\"; others \"you who bring good tidings to Zion\"."}},
+    "Genesis 1:27": {"original": {"strongs": ["H120", "H2145", "H5347"], "kjv": "male and female", "text": "\"Man\" here is the Hebrew 'adam, \"a human being\" or \"mankind\". The same verse explains it: \"male\" (zakar) \"and female\" (neqebah) created he them."}},
+    "Genesis 2:18": {"original": {"strongs": ["H5828"], "kjv": "help meet", "text": "\"Help meet\" is two Hebrew words: 'ezer, \"help\", and kenegdo, \"corresponding to him\" or \"his counterpart\". The Bible also calls God our 'ezer: \"My help cometh from the LORD\" (Psalms 121:2), \"he is our help and our shield\" (Psalms 33:20)."}},
+    "Genesis 3:16": {"original": {"strongs": ["H8669"], "kjv": "desire", "text": "\"Desire\" is teshuqah, a rare Hebrew word found only three times: here, in Genesis 4:7 (sin's desire for Cain, which he must rule over) and in Song of Solomon 7:10 (\"his desire is toward me\"). Readers differ on which sense fits this verse."}, "context": {"text": "God speaks to the woman after the fall, between His words to the serpent and to Adam (3:14-19), where the ground is cursed and Adam will labour and return to dust. Before the fall both were told together to \"have dominion\" (1:28). Christians differ on whether \"he shall rule over thee\" is a command or a description of what sin brings.", "refs": ["Genesis 1:28", "Genesis 3:17-19"]}},
+    "Judges 4:4": {"original": {"strongs": ["H5031", "H3941"], "kjv": "prophetess", "text": "Deborah is a nebiy'ah, \"prophetess\", the word also used for Miriam (Exodus 15:20) and Huldah (2 Kings 22:14), and she \"judged Israel\". \"Lapidoth\" means \"torches\"; most read it as her husband's name, a few as a description, \"a woman of fire\"."}},
+    "Proverbs 31:10": {"original": {"strongs": ["H2428"], "kjv": "virtuous", "text": "\"Virtuous\" is chayil, \"strength, valour, ability, wealth\". It is the same word as in \"thou mighty man of valour\" (Judges 6:12), and Boaz calls Ruth \"a virtuous woman\" with it (Ruth 3:11)."}},
+    "Proverbs 22:6": {"original": {"strongs": ["H2596"], "kjv": "Train up", "text": "\"Train up\" is chanak, also used for dedicating a new house (Deuteronomy 20:5). \"In the way he should go\" is literally \"according to his way\"; readers take it as the right way, or as each child's own bent."}},
+    "Psalms 23:6": {"original": {"strongs": ["H7291"], "kjv": "follow", "text": "\"Follow\" is radaph, which usually means \"pursue\" or \"chase\" (\"Let the enemy persecute my soul\", Psalms 7:5). Goodness and mercy do not just come after; they run after."}},
+    "Psalms 46:10": {"original": {"strongs": ["H7503"], "kjv": "still", "text": "\"Be still\" is raphah, \"let go, slacken, cease\". In this psalm about wars and nations (46:6-9) it is read as \"stop striving\" as much as \"be quiet\"."}},
+    "Isaiah 7:14": {"original": {"strongs": ["H5959"], "kjv": "virgin", "text": "\"Virgin\" is the Hebrew 'almah, \"a young woman\" of age to marry. Matthew 1:23 quotes the verse with the Greek parthenos, \"virgin\", as the old Greek translation (the Septuagint) had it. Translations of Isaiah differ: \"virgin\" or \"young woman\"."}},
+    "Malachi 2:16": {"original": {"strongs": ["H8130", "H7971"], "kjv": "hateth putting away", "text": "The Hebrew of this line is hard and translations differ: \"he hateth putting away\" (King James), \"I hate divorce\", or \"the man who hates and divorces his wife covers his garment with violence\". All of them read it in the setting of verses 14-15, a man dealing \"treacherously\" with \"the wife of thy youth\"."}},
+    "2 Kings 2:23": {"original": {"strongs": ["H5288", "H6996"], "kjv": "little children", "text": "\"Little children\" is na'arim qetannim. Na'ar is used for young men too: Abraham's \"young men\" (Genesis 22:3) and Joseph at seventeen (Genesis 37:2). Bethel was the centre of the golden calf worship (1 Kings 12:28-29), and the youths mocked the prophet on his way there."}},
+    "Matthew 16:18": {"original": {"strongs": ["G4074", "G4073"], "kjv": "rock", "text": "\"Peter\" is Petros and \"rock\" is petra, two related Greek words for stone and rock. Christians read \"this rock\" as Peter himself, as Peter's confession that Jesus is \"the Christ, the Son of the living God\" (16:16), or as Christ."}},
+    "John 21:15": {"original": {"strongs": ["G25", "G5368"], "kjv": "lovest thou", "text": "Jesus asks twice with agapao (\"lovest thou me?\", verses 15-16) and the third time with phileo (verse 17); Peter answers each time with phileo. English has \"love\" for both. Readers differ on whether the change of word matters."}},
+    "John 21:17": {"original": {"strongs": ["G5368"], "kjv": "lovest thou", "text": "This third time Jesus uses Peter's own word, phileo, for \"lovest thou me?\" (verses 15-16 have agapao). Readers differ on whether the change of word matters."}},
+    "Romans 16:1": {"original": {"strongs": ["G1249"], "kjv": "servant", "text": "\"Servant\" is diakonos, the word the King James translates \"deacon\" in 1 Timothy 3:8 and \"minister\" in Romans 13:4 and Ephesians 6:21. Phebe is a diakonos \"of the church which is at Cenchrea\". Translations differ: \"servant\", \"deacon\", \"deaconess\", \"minister\"."}},
+    "Romans 16:3": {"original": {"strongs": ["G4904"], "kjv": "helpers", "text": "\"Helpers\" is synergos, \"fellow worker\", the word Paul uses for Timothy (\"my workfellow\", Romans 16:21) and Titus (\"fellowhelper\", 2 Corinthians 8:23). Priscilla is named first here, as in Acts 18:18 and 2 Timothy 4:19."}},
+    "Romans 16:7": {"original": {"strongs": ["G2458", "G1978"], "kjv": "Junia", "text": "The Greek form can be the woman's name Junia, a common Roman name, or a man's name Junias, which is not found in any other ancient writing. The King James and early church writers such as John Chrysostom read a woman. \"Of note among the apostles\" is read as \"outstanding among the apostles\" or as \"well known to the apostles\"."}},
+    "Philippians 4:3": {"original": {"strongs": ["G4866"], "kjv": "laboured with me", "text": "\"Laboured with me\" is synathleo, \"to strive together\" like athletes, the word in \"striving together for the faith of the gospel\" (Philippians 1:27). \"Those women\" are Euodias and Syntyche of verse 2."}},
+    "Acts 2:18": {"original": {"strongs": ["G1401", "G1399"], "kjv": "handmaidens", "text": "\"Servants\" and \"handmaidens\" are the male and female forms of one Greek word, doulos and doule. The Spirit is poured on both, and both \"shall prophesy\", as Joel 2:29 says."}},
+    "Luke 8:3": {"original": {"strongs": ["G1247"], "kjv": "ministered", "text": "\"Ministered\" is diakoneo, the verb of diakonos (\"deacon\", \"minister\"). The women supported Jesus and the twelve \"of their substance\", from their own means."}},
+    "1 Corinthians 11:10": {"original": {"strongs": ["G1849"], "kjv": "power", "text": "\"Power\" is exousia, \"authority\": the Greek says \"to have authority on her head\". Some translations add words (\"a sign of authority\"); others read it as authority over her own head."}},
+    "1 Corinthians 14:34": {"original": {"strongs": ["G1135", "G4601"], "kjv": "silence", "text": "The Greek gyne means both \"woman\" and \"wife\"; verse 35 (\"let them ask their husbands at home\") is why some translations read \"wives\". \"Keep silence\" is sigao, the same verb Paul uses in this chapter for a tongue-speaker with no interpreter (14:28) and a prophet when another receives a revelation (14:30)."}, "context": {"text": "Paul is writing to the church at Corinth about order in its meetings (14:26-40): \"Let all things be done decently and in order.\" Earlier in the same letter women pray and prophesy in worship (11:5). Christians read these verses together in different ways: as a rule for all churches, as a word about disruptive questions in Corinth, or as a limit on judging prophecy.", "refs": ["1 Corinthians 11:5", "1 Corinthians 14:26-33", "1 Corinthians 14:40"]}},
+    "1 Corinthians 14:35": {"context": {"text": "Part of Paul's words on order in the meetings at Corinth (14:26-40). In the same letter women pray and prophesy in worship (11:5). Christians read these verses together in different ways.", "refs": ["1 Corinthians 11:5", "1 Corinthians 14:40"]}},
+    "1 Timothy 2:11-12": {"original": {"strongs": ["G831", "G2271"], "kjv": "usurp authority", "text": "\"Usurp authority over\" is authenteo, a Greek verb found only here in the Bible; its exact sense is debated (\"to have authority\", \"to domineer\"). \"Silence\" is hesuchia, \"quietness\", the word in \"with quietness they work\" (2 Thessalonians 3:12); a related word is in \"a quiet and peaceable life\" (1 Timothy 2:2)."}, "context": {"text": "Paul writes to Timothy, whom he left at Ephesus to stop false teachers (1:3-7; 4:1-7). He grounds these words in Genesis 2 and 3 (2:13-14). Christians differ on whether they are a rule for all churches and all teaching, or a word for the situation in Ephesus. In Acts, Priscilla and Aquila together taught Apollos \"the way of God more perfectly\" (Acts 18:26).", "refs": ["1 Timothy 1:3-4", "1 Timothy 2:13-14", "Acts 18:26"]}},
+    "1 Timothy 2:13-15": {"context": {"text": "Paul gives the reason for verses 11-12 from Genesis 2 and 3. \"She shall be saved in childbearing\" is one of the hardest lines in the New Testament to translate; readers take it as the birth of Christ, as safety in childbirth, or as a woman's faithful life.", "refs": ["Genesis 2:21-23", "Genesis 3:6", "Galatians 4:4"]}},
+    "1 Corinthians 11:3-10": {"context": {"text": "Paul writes to Corinth about how men and women pray and prophesy in worship, and asks the woman to cover her head. In the same passage he adds \"neither is the man without the woman, neither the woman without the man, in the Lord\" (11:11-12). He appeals to creation, to nature and to the custom of \"the churches of God\" (11:16). Christians differ on whether the covering is a lasting rule or a custom of that time.", "refs": ["1 Corinthians 11:11-12", "1 Corinthians 11:16"]}},
+    "Ephesians 5:22-24": {"original": {"strongs": ["G5293"], "kjv": "submit yourselves", "text": "\"Submit yourselves\" is hupotasso, the same verb as in verse 21, \"Submitting yourselves one to another\". Some of the oldest Greek manuscripts have no verb in verse 22 and carry it over from verse 21."}, "context": {"text": "Paul writes to the church at Ephesus. The verse before says \"Submitting yourselves one to another in the fear of God\" (5:21); the verses after tell husbands \"love your wives, even as Christ also loved the church, and gave himself for it\" (5:25-33). Christians differ on how verses 21 and 22 fit together.", "refs": ["Ephesians 5:21", "Ephesians 5:25", "Ephesians 5:33"]}},
+    "Colossians 3:18": {"context": {"text": "Paul's household instructions to the church at Colossae, given in pairs: wives and husbands (\"love your wives, and be not bitter against them\"), children and fathers (\"provoke not your children\"), servants and masters (3:18-4:1).", "refs": ["Colossians 3:19", "Colossians 3:21", "Colossians 4:1"]}},
+    "1 Peter 3:1": {"context": {"text": "Peter writes to Christians scattered in Asia Minor (1:1), many with unbelieving husbands or masters (2:18-3:2). He hopes husbands \"may without the word be won by the conversation of the wives\". Verse 7 turns to husbands: honour the wife, \"heirs together of the grace of life\".", "refs": ["1 Peter 2:18", "1 Peter 3:7"]}},
+    "1 Peter 3:7": {"original": {"strongs": ["G4789", "G772"], "kjv": "heirs together", "text": "\"Heirs together\" is one Greek word, synkleronomos, \"co-heir\". \"Weaker\" is asthenes, \"without strength\"; the verse joins it to honour, not to lesser worth."}},
+    "Galatians 3:28": {"original": {"strongs": ["G730", "G2338"], "kjv": "male nor female", "text": "\"Male\" and \"female\" are arsen and thelus, the words Jesus uses for creation: \"made them male and female\" (Matthew 19:4). The Greek here reads \"there is no male and female\", echoing Genesis 1:27."}},
+    "Titus 2:4-5": {"context": {"text": "Paul to Titus in Crete: the aged women are to be \"teachers of good things\" (2:3) to the young women. The reason given is \"that the word of God be not blasphemed\" (2:5); servants get a like reason, \"that they may adorn the doctrine of God our Saviour\" (2:10).", "refs": ["Titus 2:3", "Titus 2:10"]}},
+    "Sirach 42:13-14": {"context": {"text": "Written by Jesus son of Sirach, a Jewish teacher in Jerusalem (about 180 BC), in a section on what a father worries about and must guard (42:9-14). Sirach is in Catholic and Orthodox Bibles but not in Protestant ones. The same book also says \"Blessed is the man that hath a virtuous wife\" (26:1).", "refs": ["Sirach 42:9-10", "Sirach 26:1-3"]}},
+    "Proverbs 21:9": {"context": {"text": "A wisdom saying: a short observation about life, not a law. Proverbs also says \"Whoso findeth a wife findeth a good thing\" (18:22), warns about the contentious man (26:21) and ends with the virtuous woman (31:10-31).", "refs": ["Proverbs 18:22", "Proverbs 26:21", "Proverbs 31:10-12"]}},
+    "Proverbs 21:19": {"context": {"text": "A wisdom saying, not a law. Proverbs also says \"Whoso findeth a wife findeth a good thing\" (18:22) and warns about the contentious man (26:21).", "refs": ["Proverbs 18:22", "Proverbs 26:21"]}},
+    "Ecclesiastes 7:28": {"context": {"text": "The Preacher's search for \"the reason of things\" (7:25-29). He ends with words about all people: \"God hath made man upright; but they have sought out many inventions\" (7:29). The same book says \"Live joyfully with the wife whom thou lovest\" (9:9).", "refs": ["Ecclesiastes 7:29", "Ecclesiastes 9:9"]}},
+    "Mark 16:9-20": {"context": {"text": "The two oldest complete Greek manuscripts of Mark (Codex Sinaiticus and Codex Vaticanus, 4th century) end at 16:8. Most later manuscripts, and the King James, have verses 9-20. Many modern Bibles print them with a note.", "refs": ["Mark 16:8"]}},
+    "John 8:3-11": {"context": {"text": "The woman taken in adultery (John 7:53-8:11) is not in the oldest Greek manuscripts of John. Many modern Bibles print it with a note or in brackets.", "refs": ["John 7:52", "John 8:12"]}},
+    "1 John 5:7": {"context": {"text": "The words \"in heaven, the Father, the Word, and the Holy Ghost: and these three are one\" are in the King James, but in no Greek manuscript before the late Middle Ages. Erasmus added them in his third edition (1522). Most modern Bibles leave them out or put them in a note.", "refs": ["1 John 5:6", "1 John 5:8"]}},
+    "Acts 8:37": {"context": {"text": "This verse is not in the oldest Greek manuscripts of Acts; the King James follows later texts that have it. Many modern Bibles put it in a note.", "refs": ["Acts 8:36", "Acts 8:38"]}},
+    "Matthew 12:31-32": {"context": {"text": "Jesus says this to Pharisees who had just said He cast out devils by Beelzebub (12:22-24). Mark adds: \"Because they said, He hath an unclean spirit\" (Mark 3:30).", "refs": ["Matthew 12:24", "Mark 3:30"]}},
+    "Hebrews 6:4-6": {"context": {"text": "Written to Hebrew Christians tempted to turn back (10:32-39). Right after, the writer adds: \"But, beloved, we are persuaded better things of you\" (6:9). Christians read the warning differently: about believers who fall away, or about people who tasted the gospel but never truly believed.", "refs": ["Hebrews 6:9", "Hebrews 10:39"]}},
+    "Luke 14:26": {"context": {"text": "Jesus speaks to the great crowds about the cost of following Him (14:25-33). Matthew gives the same teaching as \"He that loveth father or mother more than me is not worthy of me\" (Matthew 10:37). Jesus also upheld \"Honour thy father and mother\" (Matthew 15:4).", "refs": ["Matthew 10:37", "Matthew 15:4"]}},
+    "Matthew 10:34": {"context": {"text": "Jesus sends out the twelve (10:5-42). The next verses explain the sword as division in families over Him (10:35-36), in words from Micah 7:6. Luke has \"division\" (Luke 12:51).", "refs": ["Matthew 10:35-36", "Luke 12:51"]}},
+    "Psalms 137:9": {"context": {"text": "A lament of the exiles in Babylon (137:1-4), crying to God about what was done to Jerusalem (137:7-8). It records their anguish in prayer; it is not a command. Jesus teaches \"Love your enemies\" (Matthew 5:44).", "refs": ["Psalms 137:1", "Psalms 137:7-8", "Matthew 5:44"]}},
+    "1 Samuel 15:3": {"context": {"text": "Samuel gives Saul the LORD's judgment on Amalek for attacking Israel on the way out of Egypt (15:2; Exodus 17:8-16; Deuteronomy 25:17-19). Readers have long wrestled with this command. The Bible also says God has \"no pleasure in the death of the wicked\" (Ezekiel 33:11).", "refs": ["1 Samuel 15:2", "Deuteronomy 25:17-19", "Ezekiel 33:11"]}},
+    "Joshua 6:21": {"context": {"text": "The Bible presents this as judgment on the sins of the Canaanites (Genesis 15:16; Deuteronomy 9:4-5). Rahab and her family, who believed, were spared (6:25). Readers have long wrestled with these passages.", "refs": ["Genesis 15:16", "Deuteronomy 9:5", "Joshua 6:25"]}},
+    "Ephesians 6:5": {"context": {"text": "Paul writes to a church where many believers were slaves. The same passage tells masters to stop threatening, \"knowing that your Master also is in heaven; neither is there respect of persons with him\" (6:9). Paul tells a slave \"if thou mayest be made free, use it rather\" (1 Corinthians 7:21), and sends Onesimus back \"not now as a servant, but above a servant, a brother beloved\" (Philemon 1:16).", "refs": ["Ephesians 6:9", "1 Corinthians 7:21", "Philemon 1:16"]}},
+    "Malachi 1:2-3": {"context": {"text": "Malachi speaks of two peoples, Israel (Jacob) and Edom (Esau) (1:4). Paul quotes it about God's choosing, \"not of works, but of him that calleth\" (Romans 9:11-13). \"Hated\" is often read as \"loved less\" or \"not chosen\", as when \"Leah was hated\" (Genesis 29:30-31).", "refs": ["Malachi 1:4", "Romans 9:11-13", "Genesis 29:30-31"]}},
+    "Romans 9:13": {"context": {"text": "Paul quotes Malachi 1:2-3, where Jacob and Esau stand for the peoples Israel and Edom. \"Hated\" is often read as \"loved less\" or \"not chosen\", as when \"Leah was hated\" (Genesis 29:30-31).", "refs": ["Malachi 1:2-4", "Genesis 29:30-31"]}},
+    "Proverbs 13:24": {"context": {"text": "A wisdom saying about loving correction: \"he that loveth him chasteneth him betimes\". Proverbs pictures discipline as love (3:11-12, quoted in Hebrews 12:5-6). Paul adds \"Fathers, provoke not your children to wrath\" (Ephesians 6:4). Readers differ on whether \"rod\" means physical punishment or correction in general.", "refs": ["Proverbs 3:11-12", "Hebrews 12:5-6", "Ephesians 6:4"]}},
+    "Matthew 19:9": {"context": {"text": "Jesus answers Pharisees who came \"tempting him\" (19:3). Matthew has \"except it be for fornication\" (also 5:32); Mark 10:11-12 and Luke 16:18 give no exception. Paul adds the case of an unbelieving spouse who departs (1 Corinthians 7:15). Christians differ on when divorce and remarriage are allowed.", "refs": ["Matthew 5:32", "Mark 10:11-12", "Luke 16:18", "1 Corinthians 7:15"]}},
+    "1 Corinthians 7:1": {"context": {"text": "Paul is answering a letter from Corinth (\"the things whereof ye wrote unto me\"). Many read \"It is good for a man not to touch a woman\" as a saying from that letter, which Paul then answers in verses 2-5; some translations put it in quotation marks. He also calls not marrying a gift (7:7).", "refs": ["1 Corinthians 7:2-5", "1 Corinthians 7:7"]}},
+    "James 2:24": {"context": {"text": "James writes against a faith that does nothing (2:14-17); Paul, in Romans 3:28, writes against earning God's favour by \"the deeds of the law\". Both quote Genesis 15:6 about Abraham (James 2:23, Romans 4:3).", "refs": ["James 2:17-18", "Romans 3:28", "Romans 4:3"]}},
+    "Romans 3:28": {"context": {"text": "Paul writes against earning God's favour by \"the deeds of the law\"; James 2:24 writes against a faith that does nothing. Both quote Genesis 15:6 about Abraham (Romans 4:3, James 2:23).", "refs": ["James 2:24", "Genesis 15:6"]}},
+    "Matthew 24:34": {"context": {"text": "Readers differ on \"this generation\": the people alive then (the temple fell in AD 70, as foretold in 24:1-2), the generation that sees these signs, or the Jewish people as a whole.", "refs": ["Matthew 24:1-2", "Matthew 24:36"]}},
+    "Revelation 20:4-6": {"context": {"text": "Christians read the thousand years in different ways: a future reign of Christ on earth after He returns (premillennial), the present age between His first and second coming (amillennial), or a time of the gospel's growth before He returns (postmillennial).", "refs": ["Revelation 20:1-3", "Revelation 20:7"]}},
+    "1 Timothy 6:10": {"original": {"strongs": ["G4491", "G2556"], "kjv": "root of all evil", "text": "The Greek has no \"the\": \"a root of all kinds of evil\" (rhiza panton ton kakon). The warning is about the love of money (philarguria), not money itself."}},
+    "Malachi 3:10": {"context": {"text": "God speaks to Judah after the exile, who were robbing Him \"in tithes and offerings\" (3:8-9); the tithe kept the Levites and the storehouse (Nehemiah 13:10-12). In the New Testament Paul teaches giving \"as he purposeth in his heart; not grudgingly, or of necessity\" (2 Corinthians 9:7). Christians differ on whether the tithe is required today.", "refs": ["Malachi 3:8-9", "Nehemiah 13:10-12", "2 Corinthians 9:7"]}},
+    "Mark 10:25": {"context": {"text": "The disciples were \"astonished out of measure\", and Jesus answered \"with God all things are possible\" (10:26-27). The story that a small \"Needle Gate\" in Jerusalem is meant has no early source.", "refs": ["Mark 10:26-27"]}},
+    "John 14:14": {"context": {"text": "Other verses say what asking \"in my name\" includes: \"according to his will\" (1 John 5:14), \"If ye abide in me\" (John 15:7), not asking \"amiss\" (James 4:3).", "refs": ["1 John 5:14", "John 15:7", "James 4:3"]}},
+    "Matthew 5:29-30": {"context": {"text": "Jesus is speaking about lust (5:27-28) with strong pictures. Through history Christians have read this as a call to cut off what leads to sin, not as a command to harm the body; Paul calls the body \"the temple of the Holy Ghost\" (1 Corinthians 6:19).", "refs": ["Matthew 5:27-28", "1 Corinthians 6:19"]}},
+    "Matthew 27:25": {"context": {"text": "Words shouted by a crowd in Jerusalem, reported by Matthew. This verse has been wrongly used to blame all Jews; Jesus prayed \"Father, forgive them\" (Luke 23:34), and Peter says the rulers acted \"through ignorance\" (Acts 3:17).", "refs": ["Luke 23:34", "Acts 3:17"]}},
+    "2 Thessalonians 3:10": {"context": {"text": "Paul writes to Thessalonians, some of whom had stopped working and were living \"disorderly\" (3:11). It is about those who will not work, not those who cannot; Paul also urges care for widows and the poor (1 Timothy 5:3, Galatians 2:10).", "refs": ["2 Thessalonians 3:11-12", "1 Timothy 5:3", "Galatians 2:10"]}},
+    "Romans 13:1-2": {"context": {"text": "Paul writes to Christians in Rome under the emperor. When the rulers told the apostles to stop preaching, they answered \"We ought to obey God rather than men\" (Acts 5:29).", "refs": ["Acts 5:29", "1 Peter 2:13-17"]}},
+    "Matthew 6:34": {"original": {"strongs": ["G3309"], "kjv": "Take therefore no thought", "text": "\"Take no thought\" is merimnao, \"be anxious, worry\", the same word as \"Be careful for nothing\" in Philippians 4:6. Jesus is not saying \"don't plan\" but \"don't worry\"."}},
+    "Philippians 4:6": {"original": {"strongs": ["G3309"], "kjv": "careful", "text": "\"Careful\" is merimnao, \"be anxious, worry\", the word Jesus uses in \"take no thought for the morrow\" (Matthew 6:34). Modern Bibles read \"Be anxious for nothing\" or \"Do not worry about anything\"."}},
+    "Genesis 1:1": {"original": {"strongs": ["H430", "H1254"], "kjv": "created", "text": "\"God\" is Elohim, a plural form, with the singular verb bara, \"created\". The Bible uses bara only with God as the one who creates."}},
+    "2 Timothy 3:16": {"original": {"strongs": ["G2315"], "kjv": "inspiration of God", "text": "\"Given by inspiration of God\" is one Greek word, theopneustos, \"God-breathed\"."}},
+    "Hebrews 11:1": {"original": {"strongs": ["G5287"], "kjv": "substance", "text": "\"Substance\" is hupostasis, literally \"a standing under\": a foundation, an assurance. The same word is \"confidence\" in Hebrews 3:14."}},
+    "Ephesians 2:10": {"original": {"strongs": ["G4161"], "kjv": "workmanship", "text": "\"Workmanship\" is poiema, \"a thing made\". It is used only twice in the New Testament: here and for God's creation in Romans 1:20 (\"the things that are made\")."}},
+    "1 Thessalonians 4:17": {"original": {"strongs": ["G726"], "kjv": "caught up", "text": "\"Caught up\" is harpazo, \"to seize, snatch\". The Latin Bible translates it rapiemur, from which the English word \"rapture\" comes."}},
+    "Romans 12:1": {"original": {"strongs": ["G3050", "G2999"], "kjv": "reasonable service", "text": "\"Reasonable\" is logikos, \"of the mind, rational\"; \"service\" is latreia, the word for worship in the temple (Romans 9:4). Modern Bibles read \"spiritual worship\" or \"reasonable service\"."}}
+  }
+}

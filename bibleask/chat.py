@@ -8,10 +8,10 @@ import re
 from dataclasses import dataclass
 from typing import Iterator, Optional
 
-from . import llm
+from . import guide, llm
 from .blend import blended
 from .library import Library
-from .search import _STOP, guess_language, short_ref, tokenize
+from .search import _STOP, guess_language, short_ref, short_title, tokenize
 from .topics import TOPICS
 
 MAX_VERSES = 12
@@ -31,6 +31,7 @@ class Retrieval:
     groups: list[dict]  # [{"bible": name, "verses": [{"ref":..., "text":...}]}]
     for_model: list[tuple[str, str]]  # (reference, text) pairs to hand to the AI
     note: str = ""  # shown under the verses, e.g. which Bibles weren't searched
+    parts: Optional[list] = None  # a broad question: how many answers come from each part of the Bible
 
 
 def _vd(v) -> dict:
@@ -82,9 +83,15 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
     # typing slips ("NAMEW" for "name"): a word no Bible here knows is replaced by the closest word they do know
     question, fixed = _fix_spelling(question, same)
 
+    wide = guide.broad(question)   # "women", "prayer", "end times": a broad topic (web/guide.json)
+
     def run(query: str):
-        # words, Hebrew/Greek words and meaning together, each verse with the reasons it was found (blend.py)
-        return [(bible, ix, blended(query, ix, k=MAX_VERSES)) for bible, ix in same]
+        # words, Hebrew/Greek words and meaning together, each verse with the reasons it was found (blend.py);
+        # for a broad question the first answers come from several parts of the Bible (guide.spread)
+        if not wide:
+            return [(bible, ix, blended(query, ix, k=MAX_VERSES)) for bible, ix in same]
+        return [(bible, ix, guide.spread(blended(query, ix, k=30), lambda h, ix=ix: short_title(ix.verses[h.index].book))[:MAX_VERSES])
+                for bible, ix in same]
 
     per_bible = run(question)
     words = question.lower().replace("?", " ").replace(".", " ").split()
@@ -98,7 +105,8 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
                 v = ix.verses[hits[rank].index]
                 chosen.append((bible.name, dict(_vd(v), why=hits[rank].why)))
     topic = _topic_group(question, same, id_of)
-    if not chosen and not topic:
+    keys = _key_group(question, same, id_of)
+    if not chosen and not topic and not keys:
         return None
     by_bible: dict[str, list[dict]] = {}
     for name, vd in chosen:
@@ -108,6 +116,15 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
     if topic:
         groups.insert(0, topic)
         for_model = [(vd["ref"], vd["text"][:600]) for vd in topic["verses"]] + for_model
+    if keys:   # 📌 the key passages of a broad topic come first: one verse per theme for the AI, so it hears every side
+        groups.insert(0, keys)
+        firsts, seen = [], set()
+        for vd in keys["verses"]:
+            if vd["theme"] not in seen:
+                seen.add(vd["theme"])
+                firsts.append((f"{vd['ref']} ({vd['theme']})", vd["text"][:400]))
+        for_model = for_model[:4] + firsts[:8] + for_model[4:]   # the best matches first, then every side by theme
+    for_model = [(_canon_ref(r), t) for r, t in for_model]
     note = ""
     if fixed:
         note = "Searched for " + ", ".join(f"“{b}” (you typed “{a}”)" for a, b in fixed) + ". "
@@ -116,7 +133,63 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
         note += (", ".join(skipped) + (" is" if one else " are") + " in another language, so " +
                 ("it wasn't" if one else "they weren't") + " searched with these words. Ask in " +
                 ("that language" if one else "their language") + " to search " + ("it." if one else "them."))
-    return Retrieval("search", groups, for_model[:MAX_VERSES + 6], note)
+    r = Retrieval("search", groups, for_model[:MAX_VERSES + 8], note)
+    if wide and chosen:
+        parts: dict[str, int] = {}
+        for _, vd in chosen:
+            s_ = guide.section_of(short_title(vd["book"]))
+            parts[s_] = parts.get(s_, 0) + 1
+        order = [n for n, _b in guide.load().get("sections", [])] + [guide.load().get("other_section", "Other books")]
+        r.parts = sorted(parts.items(), key=lambda kv: order.index(kv[0]) if kv[0] in order else len(order))
+    return r
+
+
+def _canon_ref(ref: str) -> str:
+    """'Sirach 42:13' -> 'Sirach 42:13 (In Catholic and Orthodox Bibles)', so the AI knows where the book stands."""
+    p = guide.parse_ref(ref.split(" (")[0])
+    label = guide.canon_short(p[0]) if p else ""
+    return f"{ref} ({label})" if label else ref
+
+
+def _key_group(question: str, bibles: list, id_of: dict) -> Optional[dict]:
+    """📌 The key passages of a broad topic (web/guide.json), by theme, from the first Bible that has them: every side
+    the Bible shows (Deborah, Proverbs 31, Phoebe and Junia next to 1 Corinthians 14), so the answer isn't one-sided."""
+    t = guide.topic_for(question)
+    if not t:
+        return None
+    for bible, ix in bibles:
+        verses = []
+        for th in t["themes"]:
+            for ref in th["refs"]:
+                p = guide.parse_ref(ref)
+                if not p:
+                    continue
+                book, ch, v1, v2 = p
+                title = book if (book, ch, v1) in ix.by_ref else ix.books.resolve(book)
+                got = [ix.verses[ix.by_ref[(title, ch, vn)][0]] for vn in range(v1, v2 + 1) if title and ix.by_ref.get((title, ch, vn))]
+                if not got:
+                    continue
+                text = " ".join(v.text for v in got[:3]) + (" …" if len(got) > 3 else "")
+                label = f"{short_title(got[0].book)} {ch}:{v1}" + (f"–{v2}" if v2 > v1 else "")
+                verses.append({"ref": label, "text": text, "book": got[0].book, "chapter": ch, "verse": v1, "theme": th["point"]})
+        if verses:
+            g = {"bible": f"Key passages: {t['title']} · {bible.name}", "id": id_of.get(bible.name), "topic": True, "keys": True,
+                 "themes": len({v["theme"] for v in verses}), "verses": verses}
+            if t.get("path"):
+                g["path"] = t["path"]
+                g["path_title"] = _path_title(t["path"])
+            return g
+    return None
+
+
+def _path_title(pid: str) -> str:
+    import json
+    import os
+    try:
+        with open(os.path.join(os.path.dirname(guide._PATH), "paths", pid + ".json"), encoding="utf-8") as f:
+            return json.load(f).get("title", pid)
+    except (OSError, ValueError):
+        return pid
 
 
 # everyday words a question uses that older Bible English doesn't (never "corrected" to a Bible word)
@@ -329,7 +402,7 @@ def respond(question: str, previous_question: Optional[str], lib: Library, bible
         yield ("token", NOTHING_FOUND)
         yield ("done", None)
         return
-    yield ("sources", {"kind": r.kind, "groups": r.groups, "note": r.note})
+    yield ("sources", {"kind": r.kind, "groups": r.groups, "note": r.note, "parts": r.parts or []})
     if use_ai:
         if model.loaded:
             for piece in model.stream(question, r.for_model[:llm.passages_wanted(model.style)]):

@@ -271,7 +271,7 @@
   "category": "Marriage",
   "image": "img/husband-and-wife.jpg",
   "opening_question": "What does the Bible say about husband and wife: how it began, how they are to love each other, and what holds them together?",
-  "steps": 11,
+  "steps": 12,
   "step_questions": [
    "Why did God make the woman, and what does the man say when he sees her?",
    "Where does Jesus go back to when He speaks of marriage, and who joins husband and wife together?",
@@ -283,7 +283,8 @@
    "Why are two better than one, and what is not quickly broken?",
    "What does her husband do, and what is she praised for at the end?",
    "How do the beloved and his love speak of each other?",
-   "How is marriage to be held, and who will God judge?"
+   "How is marriage to be held, and who will God judge?",
+   "What did Jesus answer when He was asked about putting away a wife, who can receive the saying about not marrying, and what is marriage in the resurrection?"
   ],
   "books": [
    "1 Corinthians",
@@ -294,12 +295,13 @@
    "Genesis",
    "Hebrews",
    "Mark",
+   "Matthew",
    "Proverbs",
    "Song of Solomon"
   ],
   "show": 8,
-  "verses": 98,
-  "minutes": 65,
+  "verses": 110,
+  "minutes": 70,
   "anim": {
    "kind": "light",
    "x": 72,

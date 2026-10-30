@@ -587,6 +587,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 </script>
 <script src="i18n.js"></script>
 <script src="smart.js"></script>
+<script src="guide.js"></script>
 <script src="paths.js"></script>
 <script src="prayers.js"></script>
 <script>
@@ -714,6 +715,7 @@ function render(hitVerse){
   if(!saying && $("#player")) sayBar(sayResumeIdx() != null && !$("#player").hidden ? "paused" : "off");   // Listen says where it goes on
   const t = $("#rtext"); t.className = rLines ? "lines" : ""; t.style.setProperty("--rs", rScale);
   t.innerHTML = vs.map(([n, x]) => `<span class="v" id="v${n}"><sup>${n}</sup>${esc(x)} </span>`).join("");
+  canonNote();
   enhanceChapter(place.bible, place.book, place.ch, vs);
   bmMark();
   hlMark();
@@ -726,6 +728,15 @@ function render(hitVerse){
   const h = hitVerse && document.getElementById("v" + hitVerse);
   if(h){ h.classList.add("hit"); setTimeout(() => h.scrollIntoView({block: "center"}), 30); setTimeout(() => h.classList.remove("hit"), 2600); }
   else scrollTo(0, 0);
+}
+/* 📚 a book that isn't in every Bible (Sirach, 1 Enoch, 1 Clement) says which Bibles have it, above the text (web/guide.js) */
+async function canonNote(){
+  let el = $("#canonTag");
+  if(!el){ el = document.createElement("p"); el.id = "canonTag"; el.className = "small"; el.style.margin = "0 0 8px"; $("#rtext").before(el); }
+  const book = place.book; el.innerHTML = "";
+  await BCGuide.load("guide.json");
+  const c = BCGuide.canon(book);
+  if(c && place.book === book) el.innerHTML = BCGuide.tagHtml(book) + esc(c.long);
 }
 /* notes in the text: Scofield keywords highlighted with a small letter, Easton names dotted (tap either) */
 let eNames = null, chNotes = {};
@@ -1068,14 +1079,34 @@ async function runSearch(q){
   const draw = async () => {
     let found;
     try{ found = await Smart.blend(q, ctx, 30); }catch(e){ found = search(q, 30).map(i => ({i, why: []})); }   // quietly the plain word search
+    await BCGuide.load("guide.json");   // web/guide.js: key passages, which Bibles a book is in, notes on hard verses
     if(seq !== searchSeq) return;   // a newer search is on screen
+    // 📌 a broad topic ("women", "prayer", "money"): the key passages by theme on top, and the first answers spread over
+    // the parts of the Bible, so the best word matches can't tell only half the story
+    const topic = BCGuide.topicFor(q);
+    if(BCGuide.broad(q)) found = BCGuide.spread(found, f => flat[f.i].b);
     const pf = BCPaths.findPaths(q, 4);   // 📜 Study Paths about this question ("Adam Eve" finds The Garden, the serpent and Cain)
+    const tp = topic && topic.path && BCPaths.title(topic.path) ? {id: topic.path, title: BCPaths.title(topic.path)} : null;
     const pathsHtml = pf.length ? `<div class="pathhits"><div class="hint">📜 ${esc(tr("Study Paths about this"))}</div>${pf.map(p => `<button class="btn" data-pid="${esc(p.id)}">📜 ${esc(p.title)}</button>`).join("")}</div>` : "";
-    out.innerHTML = pathsHtml + (found.length
-      ? `<div class="hint">${found.length} verses, best match first. Tap one to read it in its chapter.</div><div id="mprep"></div>` + found.map(f => { const x = flat[f.i];
-          return `<div class="res"><a href="#" data-b="${esc(x.b)}" data-c="${x.c}" data-v="${x.v}">${esc(bName(x.b))} ${x.c}:${x.v}</a>${highlight(x.t, raw.length ? raw : words)}${whyHtml(f.why)}</div>`; }).join("")
+    const has = b => bible.byName[b] ? b : resolveBooks(b)[0];
+    const link = (b, c, v1, v2, label) => { const t = has(b); return t ? `<a href="#" data-b="${esc(t)}" data-c="${c}" data-v="${v1}">${esc(label)}</a>` : esc(label); };
+    const verseText = (b, c, v1, v2) => { const t = has(b), vs = t && bible.byName[t].map.get(c); if(!vs) return "";
+      const pick = vs.filter(([n]) => n >= v1 && n <= v2); return pick.slice(0, 3).map(x => x[1]).join(" ") + (pick.length > 3 ? " …" : ""); };
+    const keys = topic ? BCGuide.keysHtml(topic, verseText, {name: bName, link, open: BCGuide.contentWords(q).length <= 3, path: tp,
+      title: tr("Key passages"), lead: tr("Every side the Bible shows on this topic, grouped by theme. Hard verses are listed too; tap one to read it in its chapter."), pathLabel: tr("Study Path")}) : "";
+    const notesOK = !vmKey();   // a Septuagint verse may have another King James number: no note rather than a wrong one
+    const noteOpts = {name: bName, link, originalLabel: tr("In the original"), contextLabel: tr("In context"), readWith: tr("Read with"), byLabel: tr("A BibleChat note, not Scripture.")};
+    const secs = new Map(); for(const f of found){ const s = BCGuide.sectionOf(flat[f.i].b); secs.set(s, (secs.get(s) || 0) + 1); }
+    const parts = found.length > 3 && secs.size > 1 ? `<div class="bc-parts" id="bcParts"><span>${esc(tr("Found in"))}:</span><button data-sec="" aria-pressed="true">${esc(tr("All"))} ${found.length}</button>${
+      BCGuide.sections().filter(s => secs.has(s)).map(s => `<button data-sec="${esc(s)}" aria-pressed="false">${esc(tr(s))} ${secs.get(s)}</button>`).join("")}</div>` : "";
+    out.innerHTML = pathsHtml + keys + (found.length
+      ? `<div class="hint">${found.length} verses, best match first. Tap one to read it in its chapter.</div>${parts}<div id="mprep"></div>` + found.map(f => { const x = flat[f.i];
+          return `<div class="res" data-sec="${esc(BCGuide.sectionOf(x.b))}"><a href="#" data-b="${esc(x.b)}" data-c="${x.c}" data-v="${x.v}">${esc(bName(x.b))} ${x.c}:${x.v}</a>${BCGuide.tagHtml(x.b)}${highlight(x.t, raw.length ? raw : words)}${whyHtml(f.why)}${notesOK ? BCGuide.notesHtml(x.b, x.c, x.v, noteOpts) : ""}</div>`; }).join("")
       : `<div class="notice">Nothing found in this Bible. Try other words, or a reference like John 3:16.</div><div id="mprep"></div>`);
-    out.querySelectorAll("[data-pid]").forEach(b => b.onclick = () => BCPaths.open(b.dataset.pid));
+    out.querySelectorAll("[data-pid], [data-guidepath]").forEach(b => b.onclick = () => BCPaths.open(b.dataset.pid || b.dataset.guidepath));
+    out.querySelectorAll("#bcParts button").forEach(b => b.onclick = () => {   // show the verses from one part of the Bible
+      out.querySelectorAll("#bcParts button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+      out.querySelectorAll(".res[data-sec]").forEach(r => { r.hidden = !!b.dataset.sec && r.dataset.sec !== b.dataset.sec; }); });
     if(found.length){
       const b = document.createElement("p"); b.innerHTML = `<button class="btn">✨ Ask AI about this, with these verses</button>`; const ph = out.querySelector(".pathhits"); if(ph) ph.after(b); else out.prepend(b);
       const mk = document.createElement("button"); mk.className = "btn"; mk.textContent = "📜 Make a study path"; mk.style.marginLeft = "6px";
@@ -1083,7 +1114,8 @@ async function runSearch(q){
       const pr = document.createElement("button"); pr.className = "btn"; pr.textContent = "🙏 Pray about this"; pr.style.marginLeft = "6px";   // web/prayers.js
       pr.onclick = () => { sayStop(); BCPrayers.prayAbout(q, found.slice(0, 8).map(f => ({ref: `${flat[f.i].b} ${flat[f.i].c}:${flat[f.i].v}`, text: flat[f.i].t}))); }; b.appendChild(pr);
       b.querySelector("button").onclick = () => askAI(q + "\n\nVerses BibleChat found (" + bibleAbbr() + "):\n" +
-        found.slice(0, 8).map(f => `${flat[f.i].b} ${flat[f.i].c}:${flat[f.i].v} ${flat[f.i].t}`).join("\n") + "\n\nAnswer from these verses and say which verse supports each point.");
+        found.slice(0, 8).map(f => `${flat[f.i].b} ${flat[f.i].c}:${flat[f.i].v} ${flat[f.i].t}`).join("\n") + "\n\nAnswer from these verses. " +
+        BCGuide.aiText(q, notesOK ? found.slice(0, 8).map(f => `${flat[f.i].b} ${flat[f.i].c}:${flat[f.i].v}`) : []));   // web/guide.js: key passages by theme, notes, balance
     }
   };
   await draw();
@@ -1334,7 +1366,9 @@ async function studyVerseKJV(book, ch, v, readerTitle){
     const topics = (sByVerse.get(bi + ":" + ch + ":" + v) || []).map(id => [id, sTopics[id][0], sTopics[id][1].reduce((n, r) => n + r[3] - r[2] + 1, 0)]).sort((a, b) => a[2] - b[2]);
     const ot = bi >= 0 && bi < 39;
     const q = await quotedFor(book, ch, v), nivRef = encodeURIComponent(book + " " + ch + ":" + v);
-    sShow({title: readerTitle || `${bName(book)} ${ch}:${v}`, xr, html:
+    await BCGuide.load("guide.json");
+    const gNotes = BCGuide.notesHtml(book, ch, v, {name: bName, link: (b, c, v1, v2, label) => `<a href="#" class="nref" data-b="${esc(b)}" data-c="${c}" data-v="${v1}">${esc(label)}</a>`});
+    sShow({title: readerTitle || `${bName(book)} ${ch}:${v}`, xr, html: gNotes +
       (readerTitle ? `<p class="small">The Septuagint numbers this verse differently: its study notes are those of <b>${esc(bName(book))} ${ch}:${v}</b> in the King James.</p>` : "") +
       (bi >= 0 ? `<p class="small"><a href="https://www.biblegateway.com/passage/?search=${nivRef}&version=NIV" target="_blank" rel="noopener">Open in NIV ↗</a> <span>(the NIV is copyrighted, so it opens on BibleGateway)</span></p>` : "") +
       (q.length ? `<h3>📚 Quoted or named in Scripture</h3>` + q.map(it => `<div class="res"><a href="#" data-b="${esc(it.go[0])}" data-c="${it.go[1]}" data-v="${it.go[2]}">${esc(it.label)}</a><span class="vt">${esc(it.writing)}: ${esc(it.note)}</span></div>`).join("") : "") +

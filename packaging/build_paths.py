@@ -12,6 +12,8 @@ The rules it enforces (the build stops on the first broken rule):
   * Every quiz answer is a verse of that path; every verse Hans listed for the path is shown in a step.
   * Commentary is only Scofield or Matthew Henry, and the app shows it under its label (tests check that).
   * Every path has a category (the filter chips above the cards) and its own picture, web/paths/img/<id>.jpg.
+  * Balance: when a broad topic of the search guide (web/guide.json) points to a path, the path has a step that reads
+    each theme of that topic, so a path on a topic shows every side the Bible shows (bibleask/guide.py).
   * Words of another faith (the Quran in "What does the Quran say about the Bible?") come only from the checked files
     in packaging/outside/ (packaging/build_outside.py); a step names them ("outside": ["Quran 5:47"]) next to its Bible
     verses, the app shows them in their own box labelled "not Scripture", and no quiz answer is ever one of them.
@@ -537,7 +539,23 @@ def build(B: Bibles) -> dict[str, dict]:
         p["built_from"] = {"file": "packaging/paths/" + os.path.basename(f), "sha": sha(f),
                            "checked_in": [k for k in ("KJV", "ETH", "BSB") if k not in B.missing]}
         out[p["id"]] = p
+    balance(out)
     return out
+
+
+def balance(paths: dict[str, dict]) -> None:
+    """The balance rule: a topic of the search guide (web/guide.json) that points to a Study Path lists every side the
+    Bible shows as a theme, and the path must have a step that reads each of them (bibleask/guide.py)."""
+    from bibleask import guide
+    for t in guide.load().get("topics", []):
+        pid = t.get("path")
+        if not pid:
+            continue
+        if pid not in paths:
+            raise PathError(f"web/guide.json: topic {t['id']!r} points to a Study Path that doesn't exist: {pid!r}")
+        miss = guide.missing_themes(t, paths[pid])
+        if miss:
+            raise PathError(f"path {pid!r}: no step reads the theme(s) of the search topic {t['id']!r}: " + "; ".join(miss))
 
 
 def minutes(p: dict) -> int:

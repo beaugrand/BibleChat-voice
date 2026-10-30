@@ -20,7 +20,9 @@
   "1 Peter 3:1-7",
   "Hebrews 13:4",
   "Ecclesiastes 4:9-12",
-  "Mark 10:6-9"
+  "Mark 10:6-9",
+  "Matthew 19:3-12",
+  "Matthew 22:29-30"
  ],
  "words": [
   "H802",
@@ -316,6 +318,49 @@
    "notes": [
     "henry"
    ]
+  },
+  {
+   "question": "What did Jesus answer when He was asked about putting away a wife, who can receive the saying about not marrying, and what is marriage in the resurrection?",
+   "refs": [
+    "Matthew 19:3-12",
+    "Matthew 22:29-30"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G630",
+     "G1060"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Matthew has \"except it be for fornication\"; Mark gives the same teaching with no exception. Christians differ on when divorce and remarriage are allowed.",
+     "refs": [
+      "Matthew 19:9",
+      "Mark 10:11-12"
+     ]
+    },
+    {
+     "text": "Not marrying is a gift too: \"All men cannot receive this saying, save they to whom it is given\".",
+     "refs": [
+      "Matthew 19:11"
+     ]
+    },
+    {
+     "text": "In the resurrection \"they neither marry, nor are given in marriage, but are as the angels of God in heaven\".",
+     "refs": [
+      "Matthew 22:30"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
@@ -404,14 +449,15 @@
     "xref": 10,
     "votes": 117,
     "word": "G4801",
-    "word_count": 1,
+    "word_count": 2,
     "differ": 0.355,
     "quoted": null
    },
    "why": [
-    "10 cross-references point here"
+    "10 cross-references point here",
+    "The Greek word syzeúgnymi (G4801) is in 2 verses of this path"
    ],
-   "score": 0.4761
+   "score": 0.5052
   },
   {
    "q": "In Ephesians 5:25, husbands are to love their wives even as whom loved the church?",
@@ -434,13 +480,13 @@
     "xref": 38,
     "votes": 314,
     "word": "G1135",
-    "word_count": 29,
+    "word_count": 35,
     "differ": 0.277,
     "quoted": null
    },
    "why": [
     "38 cross-references point here",
-    "The Greek word gynḗ (G1135) is in 29 verses of this path"
+    "The Greek word gynḗ (G1135) is in 35 verses of this path"
    ],
    "score": 0.8511
   },
@@ -480,13 +526,13 @@
     "xref": 6,
     "votes": 156,
     "word": "G1135",
-    "word_count": 29,
+    "word_count": 35,
     "differ": 0.355,
     "quoted": null
    },
    "why": [
     "6 cross-references point here",
-    "The Greek word gynḗ (G1135) is in 29 verses of this path"
+    "The Greek word gynḗ (G1135) is in 35 verses of this path"
    ],
    "score": 0.8184
   },
@@ -637,6 +683,49 @@
    "score": 0.5693
   },
   {
+   "q": "Which verse says \"they neither marry, nor are given in marriage\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 22:30"
+   ],
+   "signals": {
+    "xref": 13,
+    "votes": 69,
+    "word": "G1060",
+    "word_count": 8,
+    "differ": 0.388,
+    "quoted": null
+   },
+   "why": [
+    "13 cross-references point here",
+    "The Greek word gaméō (G1060) is in 8 verses of this path"
+   ],
+   "score": 0.6493
+  },
+  {
+   "q": "Fill in the word: \"All men cannot receive this ___, save they to whom it is given\"",
+   "type": "fill_word",
+   "ref": "Matthew 19:11",
+   "bible": "KJV",
+   "word": "saying",
+   "answer_refs": [
+    "Matthew 19:11"
+   ],
+   "signals": {
+    "xref": 3,
+    "votes": 29,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.556,
+    "quoted": null
+   },
+   "why": [
+    "3 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.3943
+  },
+  {
    "q": "Fill in the word: \"Charity never ___\"",
    "type": "fill_word",
    "ref": "1 Corinthians 13:8",
@@ -742,7 +831,7 @@
   "Scofield (1917)",
   "Matthew Henry"
  ],
- "verse_count": 98,
+ "verse_count": 110,
  "image": "img/husband-and-wife.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -750,7 +839,7 @@
  },
  "built_from": {
   "file": "packaging/paths/husband-and-wife.json",
-  "sha": "290468cbc572be9b",
+  "sha": "615e435973f39ca4",
   "checked_in": [
    "KJV",
    "ETH",

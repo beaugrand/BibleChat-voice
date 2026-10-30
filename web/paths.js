@@ -553,13 +553,26 @@ const BCPaths = (() => {
       + `${i ? "" : `<p class="pv-owhy">${esc(b.why)}</p>`}<div class="pv-ocols">${b.texts.map(t => `<div class="pv-ocol"><b>${esc(t.name)}</b><p class="pvx">${esc(t.text)}</p></div>`).join("")}</div></div>`).join("")
       + `<h4 class="pv-thebible">📖 The Bible</h4>`;
   }
+  /* 📚 / 🔤 / 🧭 from the search guide (web/guide.js), when the page has it: which Bibles a book is in, and BibleChat's
+     notes on the original words and on hard verses in their setting, labelled "not Scripture" */
+  const G = () => typeof BCGuide !== "undefined" && BCGuide.ready() ? BCGuide : null;
+  function guideNotes(p){
+    const g = G(); if(!g) return "";
+    const o = {name: A.bookName, link: (b, c, v1, v2, lab) => refLink(b, c, v1, lab), originalLabel: T("In the original"), contextLabel: T("In context"),
+               readWith: T("Read with"), byLabel: T("A BibleChat note, not Scripture.")};
+    let h = "";
+    for(let c = p.c1; c <= p.c2; c++) h += g.passageNotesHtml(p.book, c, p.v1 !== null && c === p.c1 ? p.v1 : 1, p.v2 !== null && c === p.c2 ? p.v2 : 200, o);
+    return h;
+  }
   async function drawVerses(s){
     const box = root.querySelector("#pvVerses"), my = S.step, html = [];
+    if(typeof BCGuide !== "undefined") await BCGuide.load("guide.json");
     for(const r of s.refs){
       const {key, vs} = await readVerses(r); if(S.step !== my || !root.contains(box)) return;
-      const p = parseRef(r);
-      html.push(`<div class="pv-ref" data-ref="${esc(r)}" data-key="${esc(key || "")}"><div class="pv-refh">${refLink(p.book, p.c1, p.v1, label(r))}${key && key !== "reader" ? ` <small class="pv-from">${esc(key === "ETH" ? "Ethiopian Canon" : key)}: not in your Bible</small>` : ""} ${readAlong(S.path, p)}${p.book in BOOKS66 ? nivLink(r) : ""}</div>`
-        + (vs.length ? `<div class="pvx pv-text">${vs.map(([b, c, v, t]) => `<span class="pv-v${hlClass(b, c, v)}"><sup>${p.c1 !== p.c2 || p.v1 === null ? c + ":" : ""}${v}</sup>${esc(t)} </span>`).join("")}</div>` : `<p class="pv-err">This passage isn't in the Bibles available here.</p>`) + `</div>`);
+      const p = parseRef(r), g = G();
+      html.push(`<div class="pv-ref" data-ref="${esc(r)}" data-key="${esc(key || "")}"><div class="pv-refh">${refLink(p.book, p.c1, p.v1, label(r))}${g ? " " + g.tagHtml(p.book) : ""}${key && key !== "reader" ? ` <small class="pv-from">${esc(key === "ETH" ? "Ethiopian Canon" : key)}: not in your Bible</small>` : ""} ${readAlong(S.path, p)}${p.book in BOOKS66 ? nivLink(r) : ""}</div>`
+        + (vs.length ? `<div class="pvx pv-text">${vs.map(([b, c, v, t]) => `<span class="pv-v${hlClass(b, c, v)}"><sup>${p.c1 !== p.c2 || p.v1 === null ? c + ":" : ""}${v}</sup>${esc(t)} </span>`).join("")}</div>` : `<p class="pv-err">This passage isn't in the Bibles available here.</p>`)
+        + (vs.length ? guideNotes(p) : "") + `</div>`);
     }
     box.innerHTML = html.join("");
   }
