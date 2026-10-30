@@ -24,7 +24,14 @@
   "John 17:11-12",
   "John 17:26",
   "Acts 4:12",
-  "Philippians 2:9-11"
+  "Philippians 2:9-11",
+  "John 8:58",
+  "Genesis 4:26",
+  "Genesis 22:14",
+  "Romans 10:13",
+  "Nehemiah 8:17",
+  "Acts 7:45",
+  "Hebrews 4:8"
  ],
  "words": [
   "H3068",
@@ -34,9 +41,10 @@
  "show": 8,
  "steps": [
   {
-   "question": "What did God tell Moses to say when the people ask for His name?",
+   "question": "What did God tell Moses to say when the people ask for His name? What did Jesus say before Abraham?",
    "refs": [
-    "Exodus 3:13-15"
+    "Exodus 3:13-15",
+    "John 8:58"
    ],
    "look_closer": {
     "strongs": [
@@ -54,6 +62,16 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "God: \"I AM THAT I AM\". Jesus: \"Before Abraham was, I am\". In John 8:59 the people then took up stones to cast at Him.",
+     "refs": [
+      "Exodus 3:14",
+      "John 8:58",
+      "John 8:59"
+     ]
+    }
    ]
   },
   {
@@ -495,15 +513,15 @@
     "xref": 12,
     "votes": 67,
     "word": "G2424",
-    "word_count": 5,
+    "word_count": 6,
     "differ": 0.304,
     "quoted": null
    },
    "why": [
     "12 cross-references point here",
-    "The Greek word Iēsoûs (G2424) is in 5 verses of this path"
+    "The Greek word Iēsoûs (G2424) is in 6 verses of this path"
    ],
-   "score": 0.5386
+   "score": 0.5678
   },
   {
    "q": "Matthew 1:21 gives the reason for the name. What does it say?",
@@ -649,7 +667,7 @@
   "Scofield (1917)",
   "Matthew Henry"
  ],
- "verse_count": 28,
+ "verse_count": 29,
  "image": "img/the-name.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -657,7 +675,7 @@
  },
  "built_from": {
   "file": "packaging/paths/the-name.json",
-  "sha": "b933482bada747a8",
+  "sha": "ce2cd3b6837416c8",
   "checked_in": [
    "KJV",
    "ETH",

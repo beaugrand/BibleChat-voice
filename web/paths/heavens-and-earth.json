@@ -23,7 +23,10 @@
   "Isaiah 40:22",
   "1 Chronicles 16:30",
   "Revelation 7:1",
-  "1 Enoch 72-82"
+  "1 Enoch 72-82",
+  "1 Samuel 2:8",
+  "Psalms 104:5",
+  "Ecclesiastes 1:5"
  ],
  "words": [
   "H7549",
@@ -52,6 +55,27 @@
    ],
    "notes": [
     "scofield"
+   ],
+   "facts": [
+    {
+     "text": "\"Firmament\" is raqia: \"properly an expanse that is the firmament or (apparently) visible arch of the sky\". The BSB translates it \"expanse\". God \"called the firmament Heaven\".",
+     "refs": [
+      "Genesis 1:8",
+      "Genesis 1:14"
+     ],
+     "strongs": [
+      "H7549"
+     ]
+    },
+    {
+     "text": "Raqia comes from the verb raqa: \"to pound the earth (as a sign of passion); by analogy to expand (by hammering)\". The KJV translates the verb \"spread\", \"stretch\" and \"beat\".",
+     "refs": [
+      "Genesis 1:6"
+     ],
+     "strongs": [
+      "H7554"
+     ]
+    }
    ]
   },
   {
@@ -75,6 +99,23 @@
    ],
    "notes": [
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "Most verses in this path are poetry: Job, Psalms and Proverbs. Hebrew poetry says a thing twice in parallel lines and speaks in pictures, as in Psalm 104:2: \"Who coverest thyself with light as with a garment: who stretchest out the heavens like a curtain\". Knowing the kind of writing is a fact about the text, not a verdict.",
+     "refs": [
+      "Psalms 104:2"
+     ]
+    },
+    {
+     "text": "\"Sky\" in Job 37:18 is shachaq: \"a powder (as beaten small); by analogy a thin vapor; by extension the firmament\". The KJV's \"molten looking glass\" is a mirror of cast metal; the BSB says \"a mirror of bronze\".",
+     "refs": [
+      "Job 37:18"
+     ],
+     "strongs": [
+      "H7834"
+     ]
+    }
    ]
   },
   {
@@ -102,6 +143,47 @@
    ],
    "notes": [
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Circle\" in Isaiah 40:22 is chug: \"a circle\"; the KJV translates it \"circle\", \"circuit\" and \"compass\". It stands three times: Isaiah 40:22, Proverbs 8:27 (\"he set a compass upon the face of the depth\") and Job 22:14 (\"the circuit of heaven\").",
+     "refs": [
+      "Isaiah 40:22",
+      "Proverbs 8:27",
+      "Job 22:14"
+     ],
+     "strongs": [
+      "H2329"
+     ]
+    },
+    {
+     "text": "\"Ball\" in Isaiah 22:18 is dur: \"a circle ball or pile\". The verse is about a man, Shebna the treasurer, tossed \"like a ball into a large country\"; it does not speak of the shape of the earth.",
+     "refs": [
+      "Isaiah 22:15",
+      "Isaiah 22:18"
+     ],
+     "strongs": [
+      "H1754"
+     ]
+    },
+    {
+     "text": "\"Corners\" in Isaiah 11:12 is kanaph: \"an edge or extremity\", most often \"a wing\". Job 38:13 uses it for \"the ends of the earth\". Revelation 7:1 uses the Greek gonia: \"an angle\".",
+     "refs": [
+      "Isaiah 11:12",
+      "Job 38:13",
+      "Revelation 7:1"
+     ],
+     "strongs": [
+      "H3671",
+      "G1137"
+     ]
+    },
+    {
+     "text": "In Job 26:10 the KJV says \"He hath compassed the waters with bounds\"; the BSB says \"He has inscribed a horizon on the face of the waters\".",
+     "refs": [
+      "Job 26:10"
+     ]
+    }
    ]
   },
   {
@@ -126,6 +208,31 @@
    ],
    "notes": [
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "Job 26:7 says God \"hangeth the earth upon nothing\". Job 9:6 says \"the pillars thereof tremble\", and Hannah's song in 1 Samuel 2:8 says \"the pillars of the earth are the LORD's\".",
+     "refs": [
+      "Job 26:7",
+      "Job 9:6",
+      "1 Samuel 2:8"
+     ]
+    },
+    {
+     "text": "\"Pillars\" in Job 9:6 is ammud: \"a column (as standing)\", the same word used for the pillars of the tabernacle and the temple. 1 Samuel 2:8 uses another word (H4690).",
+     "refs": [
+      "Job 9:6"
+     ],
+     "strongs": [
+      "H5982"
+     ]
+    },
+    {
+     "text": "Job 38 is God answering Job with questions: \"Where wast thou when I laid the foundations of the earth\". The questions show Job what he cannot answer.",
+     "refs": [
+      "Job 38:4"
+     ]
+    }
    ]
   },
   {
@@ -149,6 +256,24 @@
    ],
    "notes": [
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Moved\" is mot: \"to waver; by implication to slip shake fall\". The same word is used of a person: \"I shall not be moved\".",
+     "refs": [
+      "Psalms 93:1",
+      "Psalms 16:8"
+     ],
+     "strongs": [
+      "H4131"
+     ]
+    },
+    {
+     "text": "Ecclesiastes 1:5 stands in a short poem about things that go round and come back: the generations, the sun, the wind and the rivers. \"The sun also ariseth, and the sun goeth down\".",
+     "refs": [
+      "Ecclesiastes 1:4-7"
+     ]
+    }
    ]
   },
   {
@@ -163,7 +288,15 @@
    "compare": [
     "ETH"
    ],
-   "notes": []
+   "notes": [],
+   "facts": [
+    {
+     "text": "1 Enoch is in the Bible of the Ethiopian Orthodox Tewahedo Church and the Eritrean Orthodox Church only; other churches do not count it as Scripture. The Book of the Luminaries calls itself \"The book of the courses of the luminaries of the heaven\".",
+     "refs": [
+      "1 Enoch 72:1"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
@@ -502,7 +635,7 @@
  },
  "built_from": {
   "file": "packaging/paths/heavens-and-earth.json",
-  "sha": "96a8238ea7818619",
+  "sha": "df88522a432bf3a3",
   "checked_in": [
    "KJV",
    "ETH",

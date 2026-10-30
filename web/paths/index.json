@@ -35,24 +35,29 @@
   "category": "Bible Study Groups",
   "image": "img/daniel-3-fiery-furnace.jpg",
   "opening_question": "Nebuchadnezzar set up an image of gold and commanded all to bow; three young men would not. What did they answer the king, who walked with them in the fire, and what does that ask of us?",
-  "steps": 6,
+  "steps": 7,
   "step_questions": [
    "What did Nebuchadnezzar set up, and what were all the people commanded to do at the sound of the music?",
    "Who accused the Jews, what did they say about the three men, and what did the king ask them?",
    "What did the three men answer, and what did they say if God did not deliver them?",
    "How hot was the furnace, what happened to the men who threw them in, and what did the king see in the fire?",
    "What could the fire not do to them, and whom did the king bless?",
-   "Where else does Scripture speak of walking through fire, of faith that quenched the violence of fire, and of an image all must worship?"
+   "Where else does Scripture speak of walking through fire, of faith that quenched the violence of fire, and of an image all must worship?",
+   "The opening asked: what does that ask of us? Which commandment were the three men keeping, and what do these verses say about whom to obey and about faith tried by fire?"
   ],
   "books": [
+   "1 John",
+   "1 Peter",
+   "Acts",
    "Daniel",
+   "Exodus",
    "Hebrews",
    "Isaiah",
    "Revelation"
   ],
   "show": 8,
-  "verses": 34,
-  "minutes": 35,
+  "verses": 41,
+  "minutes": 40,
   "group": "Friday night Bible study",
   "study_date": "2026-10-30",
   "read_along": {
@@ -72,10 +77,11 @@
   "category": "Enoch",
   "image": "img/enoch-and-the-watchers.jpg",
   "opening_question": "Who was Enoch, who were \"the sons of God\" in Genesis 6, and what does the New Testament say about them?",
-  "steps": 7,
+  "steps": 8,
   "step_questions": [
    "What does Genesis say about Enoch, and what does Hebrews add?",
-   "Who took wives in Genesis 6, and who were born? Where else does the Old Testament say \"sons of God\"?",
+   "Who took wives in Genesis 6, and who were born? Where else does the Old Testament say \"sons of God\", and what does Genesis say about the line of Seth?",
+   "Were there giants after the flood too? What did the spies see, and what does Deuteronomy say about the peoples of old?",
    "Jude quotes a prophecy of Enoch. Read it next to 1 Enoch 1:9: what is the same, and what is different?",
    "What do Peter's letters say about spirits in prison and angels that sinned?",
    "What does Jesus say about angels and marriage? Read it as part of the whole counsel.",
@@ -86,16 +92,18 @@
    "1 Enoch",
    "1 Peter",
    "2 Peter",
+   "Deuteronomy",
    "Genesis",
    "Hebrews",
    "Job",
    "Jubilees",
    "Jude",
-   "Matthew"
+   "Matthew",
+   "Numbers"
   ],
   "show": 8,
-  "verses": 184,
-  "minutes": 75,
+  "verses": 191,
+  "minutes": 80,
   "anim": {
    "kind": "light",
    "x": 62,
@@ -681,7 +689,7 @@
  },
  {
   "id": "mist-not-rain",
-  "title": "Mist, not rain",
+  "title": "Mist or rain?",
   "category": "Creation",
   "image": "img/mist-not-rain.jpg",
   "opening_question": "What watered the ground before the flood, and what does the text say about rain?",
@@ -695,13 +703,14 @@
    "Where are waters still spoken of, and what was Noah warned about?"
   ],
   "books": [
+   "2 Peter",
    "Genesis",
    "Hebrews",
    "Job",
    "Psalms"
   ],
   "show": 8,
-  "verses": 20,
+  "verses": 22,
   "minutes": 30,
   "anim": {
    "kind": "mist"
@@ -1083,7 +1092,7 @@
   "opening_question": "What is God's name, and what is the name by which we must be saved?",
   "steps": 7,
   "step_questions": [
-   "What did God tell Moses to say when the people ask for His name?",
+   "What did God tell Moses to say when the people ask for His name? What did Jesus say before Abraham?",
    "By which name does God say He was not known to Abraham, Isaac and Jacob? Read it next to the earlier verses that use the name.",
    "What do these verses say about God's name: how it is to be treated, and how far it reaches?",
    "What do the prophets say about forgetting the name and calling on it? Compare Joel with the verse that quotes him.",
@@ -1109,7 +1118,7 @@
    "Romans"
   ],
   "show": 8,
-  "verses": 28,
+  "verses": 29,
   "minutes": 35,
   "anim": {
    "kind": "fire",
@@ -1293,27 +1302,31 @@
   "category": "Name & Word",
   "image": "img/word-made-flesh.jpg",
   "opening_question": "Who is the Word, and what does the text say about keeping His commandments?",
-  "steps": 6,
+  "steps": 7,
   "step_questions": [
    "Who is the Word, and what became of Him?",
+   "Who else does the New Testament say made all things, and whose image is He?",
    "What does Jesus say He is?",
    "What did Jesus say about the law and the commandments?",
    "How does John say we know that we know Him?",
-   "What do these verses say about faith, works and the law? Read them next to the verses above.",
+   "What do these verses say about faith, works and the law? Read Paul and James side by side, next to the verses above.",
    "How does Revelation describe the saints, and who has right to the tree of life? Compare the translations of 22:14."
   ],
   "books": [
    "1 John",
+   "Colossians",
    "Ephesians",
    "Galatians",
+   "Hebrews",
+   "James",
    "John",
    "Matthew",
    "Revelation",
    "Romans"
   ],
   "show": 8,
-  "verses": 33,
-  "minutes": 35,
+  "verses": 55,
+  "minutes": 45,
   "anim": {
    "kind": "fire",
    "x": 32,
