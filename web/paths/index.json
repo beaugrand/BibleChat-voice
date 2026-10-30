@@ -483,6 +483,38 @@
    "x": 89,
    "y": 17,
    "s": 30
+  },
+  "i18n": {
+   "es": {
+    "title": "El huerto, la serpiente y Caín: ¿de quién es la simiente?",
+    "opening_question": "Algunos enseñan que la serpiente fue padre de Caín: Génesis 4 dice que Adán conoció a Eva una vez, y sin embargo ella parió a Caín y \"después parió á su hermano Abel\", así que (dicen) los dos eran gemelos de dos padres. ¿Qué dice el texto de la serpiente, Eva, Caín y Abel, y qué le dijo Dios a Caín antes de que matara a su hermano?",
+    "step_questions": [
+     "¿Qué mandó Dios al hombre, qué dijo la serpiente, y qué hizo la mujer con el fruto?",
+     "Cuando Dios preguntó a la mujer \"¿Qué es lo que has hecho?\", ¿qué respondió ella, y qué dice Pablo que le pasó a Eva?",
+     "¿Entre quiénes puso Dios enemistad, y la simiente de quién herirá a la serpiente en la cabeza?",
+     "¿Quién conoció a Eva antes de que concibiera y pariera a Caín, y qué dijo Eva que había adquirido?",
+     "Judá \"entró á ella\": ¿cuántos hijos siguieron, y dónde nació el tercero? Cuando la Biblia habla de gemelos, ¿qué palabra usa, y de cuántos padres concibió Rebeca a sus gemelos?",
+     "¿Por qué se ensañó Caín, y qué le dijo Jehová antes de que se levantara contra Abel?",
+     "Juan dice que Caín \"era del maligno\". ¿Qué hace a alguien hijo del diablo en 1 Juan 3, y a quiénes dijo Jesús \"Vosotros de vuestro padre el diablo sois\"?",
+     "¿Qué hizo Jehová por Caín después de que la sangre de Abel clamó desde la tierra, y por qué hijo va la línea hasta Enós y hasta la genealogía de Lucas?",
+     "Para vivirlo: Jehová dijo a Caín \"el pecado está á la puerta\" y \"tú te enseñorearás de él\". ¿Qué dice Juan que es el amor, y qué dice Jesús que hagamos antes de presentar una ofrenda?"
+    ]
+   },
+   "de": {
+    "title": "Der Garten, die Schlange und Kain: wessen Same?",
+    "opening_question": "Manche lehren, die Schlange sei Kains Vater: 1. Mose 4 sagt, Adam erkannte Eva einmal, und doch gebar sie Kain, und \"sie fuhr fort und gebar Abel, seinen Bruder\", also seien die beiden (sagen sie) Zwillinge von zwei Vätern gewesen. Was sagt der Text über die Schlange, Eva, Kain und Abel, und was sagte Gott zu Kain, bevor er seinen Bruder erschlug?",
+    "step_questions": [
+     "Was gebot Gott dem Menschen, was sagte die Schlange, und was tat die Frau mit der Frucht?",
+     "Als Gott die Frau fragte: \"Warum hast du das getan?\", was antwortete sie, und was geschah nach Paulus mit Eva?",
+     "Zwischen wem setzte Gott Feindschaft, und wessen Same soll der Schlange den Kopf zertreten?",
+     "Wer erkannte Eva, bevor sie schwanger wurde und Kain gebar, und was hatte Eva nach ihren Worten gewonnen?",
+     "Juda \"zu ihr einging\": Wie viele Söhne folgten, und wo wurde der dritte geboren? Wenn die Bibel von Zwillingen erzählt, welches Wort gebraucht sie, und von wie vielen Vätern empfing Rebekka ihre Zwillinge?",
+     "Warum ergrimmte Kain, und was sagte der HERR zu ihm, bevor er sich gegen Abel erhob?",
+     "Johannes sagt, Kain war \"von dem Argen\". Was macht nach 1. Johannes 3 jemanden zu einem Kind des Teufels, und zu wem sagte Jesus: \"Ihr seid von dem Vater, dem Teufel\"?",
+     "Was tat der HERR für Kain, nachdem Abels Blut von der Erde schrie, und durch welchen Sohn läuft die Linie bis Enos und bis zum Stammbaum bei Lukas?",
+     "Für das Leben: Der HERR sagte zu Kain: \"so ruht die Sünde vor der Tür\" und \"du aber herrsche über sie\". Wie sieht Liebe nach Johannes aus, und was sollen wir nach Jesu Wort tun, bevor wir eine Gabe bringen?"
+    ]
+   }
   }
  },
  {
