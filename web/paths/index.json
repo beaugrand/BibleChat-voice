@@ -329,6 +329,38 @@
    "x": 62,
    "y": 18,
    "s": 30
+  },
+  "i18n": {
+   "es": {
+    "title": "Enoc y los Vigilantes",
+    "opening_question": "¿Quién fue Enoc, quiénes eran \"los hijos de Dios\" de Génesis 6, y qué dice de ellos el Nuevo Testamento?",
+    "step_questions": [
+     "¿Qué dice Génesis de Enoc, y qué añade Hebreos?",
+     "¿Quiénes tomaron mujeres en Génesis 6, y quiénes nacieron? ¿Dónde más dice el Antiguo Testamento \"hijos de Dios\", y qué dice Génesis de la línea de Set?",
+     "¿Hubo gigantes también después del diluvio? ¿Qué vieron los espías, y qué dice Deuteronomio de los pueblos antiguos?",
+     "Judas cita una profecía de Enoc. Léela junto a 1 Enoc 1:9: ¿qué es igual, y qué es distinto?",
+     "¿Qué dicen las cartas de Pedro de los espíritus encarcelados y de los ángeles que pecaron?",
+     "¿Qué dice Jesús de los ángeles y el matrimonio? Léelo como parte de todo el consejo.",
+     "El Libro de los Vigilantes (1 Enoc 6-16, Canon etíope): ¿quiénes bajaron, qué enseñaron, y cuál fue su juicio?",
+     "Jubileos 4-5 (Canon etíope): ¿qué dice de los días de Jared, de Enoc y de los ángeles de Dios?",
+     "Para vivirlo: \"Caminó, pues, Henoch con Dios\", y agradó a Dios. ¿Qué dice Hebreos que agrada a Dios, y qué dice Miqueas que significa andar con Dios?"
+    ]
+   },
+   "de": {
+    "title": "Henoch und die Wächter",
+    "opening_question": "Wer war Henoch, wer waren \"die Kinder Gottes\" in 1. Mose 6, und was sagt das Neue Testament über sie?",
+    "step_questions": [
+     "Was sagt die Genesis über Henoch, und was fügt der Hebräerbrief hinzu?",
+     "Wer nahm in 1. Mose 6 Frauen, und wer wurde geboren? Wo sagt das Alte Testament noch \"Kinder Gottes\", und was sagt die Genesis über die Linie Seths?",
+     "Gab es auch nach der Flut Riesen? Was sahen die Kundschafter, und was sagt das 5. Buch Mose über die Völker der Vorzeit?",
+     "Judas zitiert eine Weissagung Henochs. Lies sie neben 1. Henoch 1,9: Was ist gleich, und was ist anders?",
+     "Was sagen die Briefe des Petrus über die Geister im Gefängnis und die Engel, die gesündigt haben?",
+     "Was sagt Jesus über Engel und Ehe? Lies es als Teil des ganzen Ratschlusses.",
+     "Das Buch der Wächter (1. Henoch 6-16, äthiopischer Kanon): Wer kam herab, was lehrten sie, und wie lautete ihr Gericht?",
+     "Jubiläen 4-5 (äthiopischer Kanon): Was sagt es über die Tage Jareds, über Henoch und über die Engel Gottes?",
+     "Für das Leben: Henoch führte \"ein göttliches Leben\" und hat Zeugnis gehabt, \"daß er Gott gefallen habe\". Was gefällt Gott nach dem Hebräerbrief, und was bedeutet es nach Micha, mit Gott zu wandeln?"
+    ]
+   }
   }
  },
  {
