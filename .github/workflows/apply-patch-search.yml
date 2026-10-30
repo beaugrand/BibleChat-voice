@@ -1,0 +1,43 @@
+name: Apply a checked patch, search fixes (temporary)
+
+# Used once by the BibleChat assistant to commit a change whose files are too big to send one by one.
+# It applies a patch only if its SHA-256 matches, runs the tests, commits and pushes. Removed after use.
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: Patch URL
+        required: true
+      sha256:
+        description: SHA-256 of the patch
+        required: true
+      message:
+        description: Commit message
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply, test, commit
+        env:
+          URL: ${{ inputs.url }}
+          SUM: ${{ inputs.sha256 }}
+          MSG: ${{ inputs.message }}
+        run: |
+          curl -fsSL "$URL" -o /tmp/p.diff
+          echo "$SUM  /tmp/p.diff" | sha256sum -c -
+          git apply --3way --index /tmp/p.diff
+          pip install -q numpy pypdfium2 certifi reportlab
+          python -m unittest discover -s tests
+          git -c user.name="BibleChat assistant" -c user.email="wbeaugrand@gmail.com" commit -q -m "$MSG"
+          git push
