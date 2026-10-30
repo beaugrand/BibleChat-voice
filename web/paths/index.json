@@ -2701,6 +2701,40 @@
    "x": 83,
    "y": 14,
    "s": 30
+  },
+  "i18n": {
+   "es": {
+    "title": "El trigo y la cizaña: ¿quién es recogido primero?",
+    "opening_question": "En la siega el padre de familia dice: \"Coged primero la cizaña\" … \"mas recoged el trigo en mi alfolí\". ¿Quién es recogido primero, cuándo, por quién, y qué dice la Escritura que viene antes de ese día?",
+    "step_questions": [
+     "¿Quién sembró la cizaña, por qué dijo el padre de familia que no la arrancaran aún, y qué se recoge primero en la siega?",
+     "En la explicación del mismo Jesús, ¿quién es el que siembra, qué es el campo, quiénes son los segadores, y cuándo es la siega?",
+     "En la parábola de la red y en las palabras de Juan el Bautista, ¿quiénes son apartados de quiénes, y adónde va cada uno?",
+     "En los días de Noé, ¿a quiénes se llevó el diluvio? Después, ¿quién \"será tomado\" y quién \"dejado\", y dónde más se usa la misma palabra griega para \"tomado\"?",
+     "La mujer de Lot, uno tomado y otro dejado: cuando los discípulos preguntaron \"¿Dónde, Señor?\", ¿qué respondió Jesús? ¿A quiénes juntan los ángeles en Mateo 24:31?",
+     "¿Quiénes resucitan primero, quiénes son arrebatados, y para recibir a quién? ¿Por qué dijo Pablo a los tesalonicenses que no se conturbaran?",
+     "¿Qué debe venir antes de ese día, cómo viene el hombre de pecado, y por qué creen la mentira los que se pierden?",
+     "¿Qué dijo Jesús que hiciéramos si alguien dice que Cristo está en el desierto o en las cámaras? ¿Cómo se verá su venida, y quién siega la mies de la tierra?",
+     "La otra parábola de separación: ¿a quiénes pone el Rey a su derecha y a su izquierda, y qué hizo cada uno?",
+     "Para vivirlo: a los siervos se les dijo \"Dejad crecer juntamente lo uno y lo otro hasta la siega\". ¿Qué nos piden estos versículos en cuanto a juzgar a otros, y en cuanto a estar preparados nosotros?"
+    ]
+   },
+   "de": {
+    "title": "Weizen und Unkraut: Wer wird zuerst gesammelt?",
+    "opening_question": "In der Ernte sagt der Hausvater: \"Sammelt zuvor das Unkraut\" … \"aber den Weizen sammelt mir in meine Scheuer\". Wer wird zuerst gesammelt, wann, von wem, und was kommt nach der Schrift vor diesem Tag?",
+    "step_questions": [
+     "Wer säte das Unkraut, warum sagte der Hausvater, man solle es noch nicht ausjäten, und was wird in der Ernte zuerst gesammelt?",
+     "Wer ist nach Jesu eigener Auslegung der Sämann, was ist der Acker, wer sind die Schnitter, und wann ist die Ernte?",
+     "Im Gleichnis vom Netz und in den Worten Johannes des Täufers: Wer wird von wem geschieden, und wohin kommt jeder?",
+     "Wen nahm die Sintflut in den Tagen Noahs dahin? Wer wird dann \"angenommen\" und wer \"verlassen\", und wo wird dasselbe griechische Wort für \"angenommen\" noch gebraucht?",
+     "Lots Frau, einer angenommen und einer verlassen: Als die Jünger fragten: \"HERR wo?\", was antwortete Jesus? Wen sammeln die Engel in Matthäus 24,31?",
+     "Wer steht zuerst auf, wer wird hingerückt, und wem entgegen? Wovon sollten sich die Thessalonicher nach Paulus nicht bewegen lassen?",
+     "Was muss vor diesem Tag kommen, wie kommt der Mensch der Sünde, und warum glauben die, die verloren gehen, der Lüge?",
+     "Was sollen wir nach Jesu Wort tun, wenn jemand sagt, Christus sei in der Wüste oder in der Kammer? Wie wird sein Kommen gesehen, und wer erntet die Ernte der Erde?",
+     "Das andere Gleichnis von der Scheidung: Wen stellt der König zu seiner Rechten und zu seiner Linken, und was hat jeder getan?",
+     "Für das Leben: Den Knechten wurde gesagt: \"Lasset beides miteinander wachsen bis zur Ernte\". Was verlangen diese Verse von uns im Urteil über andere und für unsere eigene Bereitschaft?"
+    ]
+   }
   }
  },
  {
