@@ -1,6 +1,6 @@
 // BibleChat web: keeps the app and every Bible you opened on this phone, so it also works offline.
 // index.html (offline()) also fetches the KJV, the Ethiopian Canon and the study data in the background; they are kept here.
-const SHELL = "bc-shell-v15", DATA = "bc-data-v1", MEANING = "bc-meaning-v1", STUDY = "bc-study-v1";   // a new model: change MEANING
+const SHELL = "bc-shell-v16", DATA = "bc-data-v1", MEANING = "bc-meaning-v1", STUDY = "bc-study-v1";   // a new model: change MEANING
 const FILES = ["./", "index.html", "manifest.webmanifest", "icon.svg", "icon-192.png", "icon-512.png", "cashapp-qr.jpg", "i18n.js", "smart.js", "guide.js", "guide.json", "paths.js", "quoted.json", "paths/index.json", "prayers.js", "prayers.json", "data/catalog.json"];
 // the study paths and their pictures are kept too, so a path works offline after the first visit;
 // one file at a time, so one failed download can't stop the others (index.html fetches any missing one again later)

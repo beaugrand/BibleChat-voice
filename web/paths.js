@@ -82,7 +82,7 @@ const BCPaths = (() => {
   /* the steps the reader has ticked off (Next ticks the step it leaves; the ✓ boxes on a card tick or untick by hand) */
   function doneSteps(id){ return new Set((progress()[id] || {}).done || []); }
   function markDone(id, step, on){ const d = doneSteps(id); if(on === false) d.delete(step); else d.add(step); saveProgress(id, {done: [...d].sort((a, b) => a - b)}); }
-  function mine(){ return get("mine", []); }
+  function mine(){ return A ? get("mine", []) : []; }   // no page yet (a test): none
 
   /* ---------- loading ---------- */
   async function loadList(){
@@ -388,15 +388,24 @@ const BCPaths = (() => {
     }catch(e){ await showList(); A.toast(T("Saved, but it couldn't be sent. Check the internet connection and choose 👥 Community again.")); }
   }
   /* 📜 Study Paths about a search or chat question ("Adam Eve" finds The Garden, the serpent and Cain) */
-  const FIND_STOP = new Set("the and for with that this what does about from into have was were his her him she they them who whom which when where why how are you your our not but all any can will shall bible say says said".split(" "));
-  function findPaths(q, n){
+  const FIND_STOP = new Set("the and for with that this what does about from into have was were his her him she they them who whom which when where why how are you your our not but all any can will shall bible say says said out upon unto god lord jesus christ feel deal someone thing things".split(" "));
+  function findPaths(q, n, opt){   // opt.titleOnly: only paths with a word of the question (of opt.words, if given) in their title
     const toks = [...new Set((norm(q).match(/[a-z0-9']+/g) || []).map(w => w.replace(/'s$/, "")).filter(w => w.length > 2 && !FIND_STOP.has(w)))];
     if(!toks.length) return [];
-    const hay = p => norm([p.title, p.opening_question, p.category, p.group, p.series && p.series.title, (p.step_questions || (p.steps || []).map(s => s.question) || []).join(" "), (p.books || []).join(" "), (p.steps && p.steps.map ? p.steps.map(s => (s.refs || []).join(" ")).join(" ") : "")].filter(Boolean).join(" "));
-    const scored = (list || []).concat(mine()).map(p => { const h = hay(p); let sc = 0;
-      for(const t of toks){ const st = t.replace(/s$/, ""); if(new RegExp("(^|[^a-z])" + st.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "").test(h)) sc += norm(p.title).includes(st) ? 2 : 1; }
-      return {p, sc}; }).filter(x => x.sc >= Math.min(2, toks.length));
-    return scored.sort((a, b) => b.sc - a.sc).slice(0, n || 4).map(x => x.p);
+    // a path is about the question when a word of it stands in the path's title, question or topic; its steps,
+    // books and verses only add weight ("marriage" finds Husband and wife, not Enoch for "took them wives")
+    const main = p => norm([p.title, p.opening_question, p.category, p.group, p.series && p.series.title].filter(Boolean).join(" "));
+    const rest = p => norm([(p.step_questions || (p.steps || []).map(s => s.question) || []).join(" "), (p.books || []).join(" "), (p.steps && p.steps.map ? p.steps.map(s => (s.refs || []).join(" ")).join(" ") : "")].filter(Boolean).join(" "));
+    const has = (h, st) => new RegExp("(^|[^a-z])" + st.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(s|es|'s|ed|d|ing)?([^a-z]|$)", "").test(h);   // "heaven" finds "heavens", "eve" not "every"
+    // when a word stands in some titles ("heaven": The heavens and the earth), only those paths are shown
+    const topicW = opt && opt.words ? new Set(opt.words.filter(w => !w.includes(" "))) : null;   // a topic's own single words ("angels", not "heaven")
+    const scored = (list || []).concat(mine()).map(p => { const m = main(p), r = rest(p), title = norm([p.title, p.series && p.series.title].filter(Boolean).join(" ")); let sc = 0, inMain = 0, inTitle = 0;
+      for(const t of toks){ const st = t.replace(/s$/, "");
+        if(has(m, st)){ const tt = has(title, st) && (!topicW || topicW.has(t)); sc += tt ? 3 : 2; inMain++; if(tt) inTitle++; } else if(has(r, st)) sc += 1; }
+      return {p, sc, inMain, inTitle}; }).filter(x => x.inMain >= 1);
+    const titled = scored.some(x => x.inTitle) || (opt && opt.titleOnly) ? scored.filter(x => x.inTitle) : scored;
+    const best = titled.reduce((m, x) => Math.max(m, x.sc), 0);
+    return titled.filter(x => x.sc >= best / 2).sort((a, b) => b.sc - a.sc).slice(0, n || 4).map(x => x.p);
   }
   /* paths of a series (e.g. the 7 sessions of the mirror prophecies) stand together under the series' title, with its own ↗ / QR code */
   /* 📂 a series (e.g. the 7 sessions of Revelation & Daniel) is ONE folder card in the list; tapping it opens the folder
@@ -1393,7 +1402,7 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
   /* remember where the reader is before another screen covers the path (🙏 sharing the closing prayer), so reopen() returns there */
   function remember(){ if(root && !root.hidden) lastView = {view: S.view === "quiz" || S.view === "reflect" ? S.view : S.view === "word" || S.view === "share" ? "step" : S.view, id: S.path && S.path.id, step: S.step, top: root.scrollTop}; }
   return {mount, open, close, reopen, remember, openHash, cleanHash, shortPath, linkOf, xPhone, isPhone, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden,
-    findPaths, openCommunity, preload: () => loadList(), normRef,
+    findPaths, openCommunity, preload: () => loadList(), normRef, _setList: l => { list = l; },   // _setList: tests hand in paths/index.json
     adapter: () => A, readVerses, title: id => { const x = (list || []).find(q => q.id === id); return x ? x.title : ""; }};   // 🙏 Prayers (web/prayers.js) borrow these
 })();
 if(typeof module !== "undefined") module.exports = BCPaths;

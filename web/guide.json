@@ -13,6 +13,7 @@
   ],
   "other_section": "Other books",
   "canon": {
+    "demote": ["deutero", "orthodox", "orthodox_appendix", "esdras2", "noncanon", "letter", "jasher"],
     "groups": {
       "deutero": {"short": "In Catholic and Orthodox Bibles", "long": "This book is in Catholic and Orthodox Bibles, but not in Protestant ones (the King James printed it among the Apocrypha)."},
       "orthodox": {"short": "In Orthodox Bibles", "long": "This book is in Orthodox Bibles, but not in Catholic or Protestant ones."},
@@ -40,19 +41,64 @@
   },
   "topics": [
     {
+      "id": "angels", "title": "Angels, and the angels that sinned",
+      "words": ["angel", "angels", "angelic", "archangel", "cherub", "cherubim", "cherubims", "seraphim", "seraphims", "michael", "gabriel", "fallen angel", "fallen angels", "angels that sinned", "war in heaven", "cast out of heaven", "guardian angel", "guardian angels", "watchers", "nephilim"],
+      "themes": [
+        {"point": "Created by God: ministering spirits sent to serve the heirs of salvation", "refs": ["Hebrews 1:14", "Colossians 1:16", "Psalms 148:2-5"]},
+        {"point": "Messengers of God: Gabriel and the angel of the LORD", "refs": ["Luke 1:26-28", "Daniel 9:21-22", "Genesis 22:11-12"], "words": ["gabriel", "messenger", "messengers", "angel of the lord"]},
+        {"point": "They worship God, and are not to be worshipped", "refs": ["Revelation 5:11-12", "Isaiah 6:1-3", "Revelation 22:8-9", "Colossians 2:18"]},
+        {"point": "They keep and deliver God's people", "refs": ["Psalms 91:11-12", "Psalms 34:7", "Daniel 6:22", "Acts 12:7-11"], "words": ["guardian", "guardian angel", "guardian angels", "protect", "protection"]},
+        {"point": "War in heaven: the dragon and his angels cast out", "refs": ["Revelation 12:7-9", "Luke 10:18"], "words": ["fallen", "fall", "cast out", "war in heaven", "dragon", "rebellion", "rebelled", "rebel", "michael"]},
+        {"point": "The angels that sinned, kept in chains unto the judgment", "refs": ["2 Peter 2:4", "Jude 1:6", "Matthew 25:41"], "words": ["fallen", "sinned", "rebellion", "rebelled", "chains", "demons"]},
+        {"point": "Isaiah 14 and Ezekiel 28: spoken to the kings of Babylon and Tyre; many also read them of Satan's fall, others do not", "refs": ["Isaiah 14:4", "Isaiah 14:12-15", "Ezekiel 28:12-17"], "words": ["fallen", "lucifer", "morning star", "rebellion", "pride"]},
+        {"point": "The sons of God and the daughters of men: read in different ways (angels, or the line of Seth)", "refs": ["Genesis 6:1-4", "1 Peter 3:19-20", "Job 1:6"], "words": ["nephilim", "giants", "sons of god", "watchers", "daughters of men"]},
+        {"point": "The angels come with Christ at His return", "refs": ["Matthew 24:31", "Matthew 25:31", "2 Thessalonians 1:7"]}
+      ]
+    },
+    {
+      "id": "satan", "title": "Satan, the devil",
+      "words": ["satan", "satans", "devil", "lucifer", "the adversary", "the tempter", "tempter", "the evil one", "wicked one", "prince of this world", "god of this world", "father of lies", "spiritual warfare"],
+      "themes": [
+        {"point": "The adversary before God in Job and Zechariah (ha-satan, \"the adversary\")", "refs": ["Job 1:6-12", "Job 2:1-7", "Zechariah 3:1-2"]},
+        {"point": "The serpent in the garden; a liar and a murderer from the beginning", "refs": ["Genesis 3:1-5", "John 8:44", "Revelation 12:9"]},
+        {"point": "Pride and the condemnation of the devil", "refs": ["1 Timothy 3:6", "Ezekiel 28:17"], "words": ["rebellion", "rebelled", "pride", "fall", "fallen"]},
+        {"point": "Isaiah 14 and Ezekiel 28: spoken to the kings of Babylon and Tyre; many also read them of Satan's fall, others do not", "refs": ["Isaiah 14:4", "Isaiah 14:12-15", "Ezekiel 28:12-17"], "words": ["rebellion", "rebelled", "fall", "fallen", "lucifer", "origin"]},
+        {"point": "He tempted Jesus, and desires to sift us", "refs": ["Matthew 4:1-11", "Luke 22:31-32"], "words": ["temptation", "tempt", "tempted", "tempter"]},
+        {"point": "The god of this world, the prince of the power of the air", "refs": ["2 Corinthians 4:4", "Ephesians 2:2", "John 12:31"]},
+        {"point": "Resist him: submit to God and put on the whole armour", "refs": ["James 4:7", "Ephesians 6:11-13", "1 Peter 5:8-9"], "words": ["resist", "spiritual warfare", "armour", "armor", "fight"]},
+        {"point": "Christ came to destroy his works; Satan bruised and cast out", "refs": ["1 John 3:8", "Hebrews 2:14", "Romans 16:20", "Luke 10:18"], "words": ["fall", "fallen", "cast out", "defeat", "defeated", "victory"]},
+        {"point": "His end: the lake of fire", "refs": ["Revelation 20:10", "Matthew 25:41"], "words": ["lake of fire", "hell"]}
+      ]
+    },
+    {
+      "id": "demons", "title": "Demons and unclean spirits",
+      "words": ["demon", "demons", "demonic", "devils", "unclean spirit", "unclean spirits", "evil spirit", "evil spirits", "foul spirit", "possessed", "possession", "exorcism", "exorcist", "exorcists", "casting out"],
+      "themes": [
+        {"point": "Jesus cast out the spirits with His word", "refs": ["Mark 1:23-27", "Matthew 8:16", "Mark 9:25"]},
+        {"point": "The man among the tombs: a legion cast out", "refs": ["Mark 5:2-13"]},
+        {"point": "The devils know who Jesus is, and tremble", "refs": ["Luke 4:41", "James 2:19"]},
+        {"point": "By the finger of God: the kingdom of God is come", "refs": ["Matthew 12:22-29", "Luke 11:20"]},
+        {"point": "In His name: the disciples and Paul; the sons of Sceva", "refs": ["Luke 10:17-20", "Acts 16:16-18", "Acts 19:13-16"]},
+        {"point": "What is sacrificed to idols is sacrificed to devils", "refs": ["Deuteronomy 32:17", "Psalms 106:37", "1 Corinthians 10:20-21"]},
+        {"point": "We wrestle against spiritual wickedness: try the spirits", "refs": ["Ephesians 6:12", "1 Timothy 4:1", "1 John 4:1"]},
+        {"point": "An unclean spirit returns to an empty house", "refs": ["Matthew 12:43-45"]},
+        {"point": "Christ's victory: nothing can separate us from the love of God", "refs": ["Colossians 2:15", "Romans 8:38-39", "1 John 4:4"]}
+      ]
+    },
+    {
       "id": "women", "title": "Women in the Bible", "path": "women-in-the-bible",
       "words": ["woman", "women", "womans", "womens", "female", "females", "womanhood", "prophetess", "prophetesses", "deaconess", "daughters of god"],
       "themes": [
         {"point": "Made in God's image, male and female, and both given dominion", "refs": ["Genesis 1:27-28"]},
         {"point": "Woman and man depend on each other, and all things are of God", "refs": ["Genesis 2:18-23", "1 Corinthians 11:11-12"]},
-        {"point": "Women prophesied, judged and spoke for God in Israel", "refs": ["Exodus 15:20-21", "Judges 4:4-9", "2 Kings 22:14-15", "Psalms 68:11"]},
+        {"point": "Women prophesied, judged and spoke for God in Israel", "refs": ["Exodus 15:20-21", "Judges 4:4-9", "2 Kings 22:14-15", "Psalms 68:11"], "words": ["leader", "leaders", "leadership", "prophetess", "prophetesses", "judge", "deborah", "miriam", "huldah", "authority"]},
         {"point": "Women of faith and courage", "refs": ["Ruth 1:16-17", "1 Samuel 1:10-11", "Esther 4:14-16", "Hebrews 11:11", "Hebrews 11:31"]},
         {"point": "The virtuous woman: strength, work, wisdom and kindness", "refs": ["Proverbs 31:10-31", "Ruth 3:11"]},
         {"point": "Jesus taught, healed and was followed by women", "refs": ["Luke 8:1-3", "Luke 10:38-42", "John 4:25-29", "Mark 5:25-34"]},
         {"point": "Women were the first witnesses of the risen Jesus", "refs": ["Luke 24:1-11", "John 20:11-18", "Matthew 28:1-10"]},
-        {"point": "The Spirit on sons and daughters; women who served the early church", "refs": ["Acts 2:17-18", "Acts 18:24-26", "Acts 21:9", "Romans 16:1-7", "Philippians 4:2-3"]},
-        {"point": "Paul on women in worship: read every verse in full and in its setting", "refs": ["1 Corinthians 11:3-16", "1 Corinthians 14:33-35", "1 Timothy 2:9-15"]},
-        {"point": "Wives and husbands: submit, love and honour", "refs": ["Ephesians 5:21-33", "1 Peter 3:1-7", "Colossians 3:18-19"]},
+        {"point": "The Spirit on sons and daughters; women who served the early church", "refs": ["Acts 2:17-18", "Acts 18:24-26", "Acts 21:9", "Romans 16:1-7", "Philippians 4:2-3"], "words": ["leader", "leaders", "leadership", "deacon", "deaconess", "phoebe", "junia", "priscilla", "ministry", "minister", "church"]},
+        {"point": "Paul on women in worship: read every verse in full and in its setting", "refs": ["1 Corinthians 11:3-16", "1 Corinthians 14:33-35", "1 Timothy 2:9-15"], "words": ["church", "churches", "teach", "teaching", "silence", "silent", "pastor", "pastors", "preach", "preaching", "role", "roles", "authority"]},
+        {"point": "Wives and husbands: submit, love and honour", "refs": ["Ephesians 5:21-33", "1 Peter 3:1-7", "Colossians 3:18-19"], "words": ["wife", "wives", "submit", "submission", "husband", "husbands"]},
         {"point": "Godly women known by good works and inner beauty; older women teach younger", "refs": ["1 Timothy 2:10", "1 Peter 3:3-5", "Titus 2:3-5"]},
         {"point": "In Christ there is neither male nor female", "refs": ["Galatians 3:26-28"]}
       ]
@@ -64,11 +110,11 @@
         {"point": "God made marriage at creation: the two become one flesh", "refs": ["Genesis 2:18-25", "Mark 10:6-9"]},
         {"point": "Submit to one another; husbands love as Christ loved the church", "refs": ["Ephesians 5:21-33", "Colossians 3:18-19"]},
         {"point": "Honour and understanding: heirs together of the grace of life", "refs": ["1 Peter 3:1-7"]},
-        {"point": "Faithfulness: marriage honourable and the bed undefiled", "refs": ["Exodus 20:14", "Hebrews 13:4", "Proverbs 5:15-19", "Matthew 5:27-28"]},
+        {"point": "Faithfulness: marriage honourable and the bed undefiled", "refs": ["Exodus 20:14", "Hebrews 13:4", "Proverbs 5:15-19", "Matthew 5:27-28"], "words": ["adultery", "faithful", "faithfulness"]},
         {"point": "Love and delight between husband and wife", "refs": ["Song of Solomon 2:16", "Song of Solomon 8:6-7", "Ecclesiastes 9:9", "Proverbs 18:22"]},
         {"point": "Husband and wife owe each other care and closeness", "refs": ["1 Corinthians 7:2-5", "Ecclesiastes 4:9-12"]},
-        {"point": "What Jesus and Paul say about divorce", "refs": ["Malachi 2:14-16", "Matthew 19:3-9", "Mark 10:2-12", "1 Corinthians 7:10-15"]},
-        {"point": "Not marrying is also a gift", "refs": ["1 Corinthians 7:7-8", "1 Corinthians 7:32-35", "Matthew 19:10-12"]},
+        {"point": "What Jesus and Paul say about divorce", "refs": ["Malachi 2:14-16", "Matthew 19:3-9", "Mark 10:2-12", "1 Corinthians 7:10-15"], "words": ["divorce", "divorced", "remarriage", "remarry", "remarried"]},
+        {"point": "Not marrying is also a gift", "refs": ["1 Corinthians 7:7-8", "1 Corinthians 7:32-35", "Matthew 19:10-12"], "words": ["single", "singleness", "unmarried", "celibacy"]},
         {"point": "Marriage pictures Christ and the church", "refs": ["Ephesians 5:31-32", "Revelation 19:7-9", "Hosea 2:19-20"]},
         {"point": "In the resurrection they neither marry nor are given in marriage", "refs": ["Matthew 22:29-30"]}
       ]
@@ -79,12 +125,12 @@
       "themes": [
         {"point": "Everything belongs to God, who gives the power to get wealth", "refs": ["Psalms 24:1", "Haggai 2:8", "Deuteronomy 8:17-18", "1 Chronicles 29:11-14"]},
         {"point": "Work honestly and diligently", "refs": ["Proverbs 10:4", "Proverbs 6:6-8", "2 Thessalonians 3:10-12", "Ephesians 4:28"]},
-        {"point": "The love of money is a root of evil; you cannot serve God and mammon", "refs": ["1 Timothy 6:9-10", "Matthew 6:24", "Luke 12:15-21", "Ecclesiastes 5:10"]},
+        {"point": "The love of money is a root of evil; you cannot serve God and mammon", "refs": ["1 Timothy 6:9-10", "Matthew 6:24", "Luke 12:15-21", "Ecclesiastes 5:10"], "words": ["love of money", "greed", "greedy", "mammon"]},
         {"point": "Riches make it hard to enter the kingdom, but with God all things are possible", "refs": ["Mark 10:23-27", "1 Timothy 6:17-19", "James 5:1-5"]},
         {"point": "Be content with what you have", "refs": ["Philippians 4:11-13", "Hebrews 13:5", "Proverbs 30:8-9"]},
-        {"point": "Give generously and cheerfully", "refs": ["2 Corinthians 9:6-8", "Proverbs 3:9-10", "Malachi 3:10", "Acts 20:35", "Luke 21:1-4"]},
-        {"point": "Care for the poor", "refs": ["Deuteronomy 15:7-11", "Proverbs 19:17", "James 2:15-16", "Matthew 25:35-40", "Galatians 2:10"]},
-        {"point": "Honest weights, and owe no man anything but love", "refs": ["Leviticus 19:35-36", "Proverbs 22:7", "Romans 13:8", "Psalms 37:21"]},
+        {"point": "Give generously and cheerfully", "refs": ["2 Corinthians 9:6-8", "Proverbs 3:9-10", "Malachi 3:10", "Acts 20:35", "Luke 21:1-4"], "words": ["tithe", "tithes", "tithing", "giving", "give", "generous", "generosity"]},
+        {"point": "Care for the poor", "refs": ["Deuteronomy 15:7-11", "Proverbs 19:17", "James 2:15-16", "Matthew 25:35-40", "Galatians 2:10"], "words": ["poor", "poverty"]},
+        {"point": "Honest weights, and owe no man anything but love", "refs": ["Leviticus 19:35-36", "Proverbs 22:7", "Romans 13:8", "Psalms 37:21"], "words": ["debt", "debts", "borrow", "lender"]},
         {"point": "Lay up treasure in heaven", "refs": ["Matthew 6:19-21", "Matthew 6:33"]}
       ]
     },
@@ -92,11 +138,11 @@
       "id": "prayer", "title": "Prayer",
       "words": ["pray", "prays", "praying", "prayed", "prayer", "prayers", "intercession", "intercede"],
       "themes": [
-        {"point": "Jesus taught how to pray", "refs": ["Matthew 6:5-13", "Luke 11:1-4"]},
+        {"point": "Jesus taught how to pray", "refs": ["Matthew 6:5-13", "Luke 11:1-4"], "words": ["how to pray", "lord s prayer"]},
         {"point": "Pray always and do not give up", "refs": ["1 Thessalonians 5:17", "Luke 18:1-8", "Colossians 4:2"]},
         {"point": "Ask, seek, knock: the Father gives good things", "refs": ["Matthew 7:7-11", "John 14:13-14"]},
         {"point": "Ask in faith and according to His will", "refs": ["1 John 5:14-15", "James 1:5-7", "James 4:3", "John 15:7"]},
-        {"point": "Bring every worry to God", "refs": ["Philippians 4:6-7", "1 Peter 5:7", "Psalms 55:22"]},
+        {"point": "Bring every worry to God", "refs": ["Philippians 4:6-7", "1 Peter 5:7", "Psalms 55:22"], "words": ["worry", "anxious", "anxiety"]},
         {"point": "Confess sin, and forgive others when you pray", "refs": ["1 John 1:9", "Psalms 51:1-4", "Mark 11:25"]},
         {"point": "Jesus Himself prayed: alone, all night and in anguish", "refs": ["Mark 1:35", "Luke 6:12", "Luke 22:41-44", "John 17:20-21"]},
         {"point": "The Spirit helps when we do not know what to pray", "refs": ["Romans 8:26-27"]},
@@ -110,10 +156,10 @@
       "themes": [
         {"point": "Jesus will come again, and every eye shall see Him", "refs": ["Acts 1:9-11", "Matthew 24:30-31", "Revelation 1:7"]},
         {"point": "No one knows the day or the hour", "refs": ["Matthew 24:36", "Mark 13:32-33", "1 Thessalonians 5:1-3", "Acts 1:7"]},
-        {"point": "Signs, false christs and great tribulation", "refs": ["Matthew 24:4-14", "Matthew 24:21-22", "Luke 21:25-28", "2 Timothy 3:1-5", "Daniel 12:1"]},
-        {"point": "The dead raised, the living changed, caught up together", "refs": ["1 Thessalonians 4:13-18", "1 Corinthians 15:51-54"]},
-        {"point": "The man of sin and the antichrists", "refs": ["2 Thessalonians 2:1-4", "1 John 2:18", "Revelation 13:1-8"]},
-        {"point": "The thousand years, which Christians read in different ways", "refs": ["Revelation 20:1-6"]},
+        {"point": "Signs, false christs and great tribulation", "refs": ["Matthew 24:4-14", "Matthew 24:21-22", "Luke 21:25-28", "2 Timothy 3:1-5", "Daniel 12:1"], "words": ["signs", "tribulation"]},
+        {"point": "The dead raised, the living changed, caught up together", "refs": ["1 Thessalonians 4:13-18", "1 Corinthians 15:51-54"], "words": ["rapture", "caught up"]},
+        {"point": "The man of sin and the antichrists", "refs": ["2 Thessalonians 2:1-4", "1 John 2:18", "Revelation 13:1-8"], "words": ["antichrist", "man of sin", "beast", "mark of the beast"]},
+        {"point": "The thousand years, which Christians read in different ways", "refs": ["Revelation 20:1-6"], "words": ["millennium", "thousand years"]},
         {"point": "The judgment of all people", "refs": ["Matthew 25:31-46", "Revelation 20:11-15", "Daniel 12:2", "2 Corinthians 5:10"]},
         {"point": "New heavens and a new earth", "refs": ["Revelation 21:1-5", "Isaiah 65:17-19", "2 Peter 3:10-13", "Romans 8:19-23"]},
         {"point": "How near? \"This generation\", and the Lord's patience", "refs": ["Matthew 24:32-35", "2 Peter 3:8-9", "Revelation 22:20"]},
@@ -127,11 +173,11 @@
         {"point": "God forgives and removes our sins far from us", "refs": ["Psalms 103:10-12", "Isaiah 1:18", "Micah 7:18-19", "1 John 1:9"]},
         {"point": "Forgiveness through the blood of Christ", "refs": ["Ephesians 1:7", "Matthew 26:28", "Hebrews 9:22", "Colossians 1:13-14"]},
         {"point": "Turn back to God: repentance", "refs": ["Acts 3:19", "Luke 15:17-24", "2 Chronicles 7:14", "Isaiah 55:7"]},
-        {"point": "Forgive others as God forgave you", "refs": ["Matthew 6:12-15", "Ephesians 4:31-32", "Colossians 3:13"]},
-        {"point": "How often? Seventy times seven", "refs": ["Matthew 18:21-35", "Luke 17:3-4"]},
+        {"point": "Forgive others as God forgave you", "refs": ["Matthew 6:12-15", "Ephesians 4:31-32", "Colossians 3:13"], "words": ["others", "someone", "hurt", "wronged", "forgiving"]},
+        {"point": "How often? Seventy times seven", "refs": ["Matthew 18:21-35", "Luke 17:3-4"], "words": ["how often", "seventy", "hurt"]},
         {"point": "Go and be reconciled", "refs": ["Matthew 5:23-24", "2 Corinthians 5:18-20"]},
-        {"point": "Forgiveness lived out: Joseph, Jesus on the cross, Stephen", "refs": ["Genesis 50:17-21", "Luke 23:34", "Acts 7:59-60"]},
-        {"point": "Leave vengeance to God", "refs": ["Romans 12:17-21", "Proverbs 24:29"]},
+        {"point": "Forgiveness lived out: Joseph, Jesus on the cross, Stephen", "refs": ["Genesis 50:17-21", "Luke 23:34", "Acts 7:59-60"], "words": ["hurt", "wronged"]},
+        {"point": "Leave vengeance to God", "refs": ["Romans 12:17-21", "Proverbs 24:29"], "words": ["revenge", "vengeance", "hurt", "wronged", "enemy", "enemies"]},
         {"point": "The sin Jesus says shall not be forgiven", "refs": ["Matthew 12:31-32", "Mark 3:28-30"]}
       ]
     },
@@ -188,24 +234,24 @@
         {"point": "Promised by Jesus: the Comforter who teaches and guides", "refs": ["John 14:16-17", "John 14:26", "John 16:7-14"]},
         {"point": "Poured out at Pentecost, as Joel foretold", "refs": ["Acts 2:1-4", "Acts 2:16-18", "Joel 2:28-29"]},
         {"point": "The Spirit lives in believers", "refs": ["1 Corinthians 6:19-20", "Romans 8:9-11", "Ephesians 1:13-14"]},
-        {"point": "The fruit of the Spirit", "refs": ["Galatians 5:22-25"]},
-        {"point": "Gifts of the Spirit, given for all", "refs": ["1 Corinthians 12:4-11", "Romans 12:6-8", "1 Peter 4:10-11", "1 Corinthians 14:1-5"]},
+        {"point": "The fruit of the Spirit", "refs": ["Galatians 5:22-25"], "words": ["fruit"]},
+        {"point": "Gifts of the Spirit, given for all", "refs": ["1 Corinthians 12:4-11", "Romans 12:6-8", "1 Peter 4:10-11", "1 Corinthians 14:1-5"], "words": ["gifts", "gift", "tongues", "spiritual gifts"]},
         {"point": "The Spirit leads us and helps us pray", "refs": ["Romans 8:14-16", "Romans 8:26-27", "Galatians 5:16"]},
         {"point": "Do not grieve or quench the Spirit", "refs": ["Ephesians 4:30", "1 Thessalonians 5:19", "Acts 5:3-4"]},
-        {"point": "Blasphemy against the Holy Ghost", "refs": ["Matthew 12:31-32"]}
+        {"point": "Blasphemy against the Holy Ghost", "refs": ["Matthew 12:31-32"], "words": ["blasphemy", "unforgivable", "unpardonable"]}
       ]
     },
     {
       "id": "fear", "title": "Fear and worry",
       "words": ["fear", "fears", "afraid", "anxiety", "anxious", "worry", "worried", "worries", "worrying", "panic", "scared", "stress", "stressed"],
       "themes": [
-        {"point": "Be anxious for nothing: pray, and cast your care on Him", "refs": ["Philippians 4:6-7", "1 Peter 5:7", "Matthew 6:25-34"]},
+        {"point": "Be anxious for nothing: pray, and cast your care on Him", "refs": ["Philippians 4:6-7", "1 Peter 5:7", "Matthew 6:25-34"], "words": ["anxious", "anxiety", "worry", "worried", "worries", "worrying", "stress", "stressed"]},
         {"point": "Fear not, for I am with thee", "refs": ["Isaiah 41:10", "Joshua 1:9", "Deuteronomy 31:6", "Psalms 23:4"]},
         {"point": "What time I am afraid, I will trust", "refs": ["Psalms 56:3-4", "Psalms 27:1", "Psalms 46:1-3"]},
         {"point": "Perfect love casts out fear", "refs": ["1 John 4:18", "2 Timothy 1:7", "Romans 8:15"]},
-        {"point": "The peace Jesus gives", "refs": ["John 14:27", "John 16:33", "Isaiah 26:3"]},
+        {"point": "The peace Jesus gives", "refs": ["John 14:27", "John 16:33", "Isaiah 26:3"], "words": ["peace", "panic", "anxious", "anxiety"]},
         {"point": "The faithful were troubled too", "refs": ["Psalms 42:5", "Psalms 55:4-6", "1 Kings 19:3-8", "Matthew 26:37-39"]},
-        {"point": "The fear of the LORD is the beginning of wisdom", "refs": ["Proverbs 9:10", "Proverbs 1:7", "Psalms 111:10", "Ecclesiastes 12:13", "Matthew 10:28"]}
+        {"point": "The fear of the LORD is the beginning of wisdom", "refs": ["Proverbs 9:10", "Proverbs 1:7", "Psalms 111:10", "Ecclesiastes 12:13", "Matthew 10:28"], "words": ["fear of the lord", "fear god"]}
       ]
     },
     {
@@ -244,26 +290,26 @@
       "themes": [
         {"point": "Death came through sin", "refs": ["Genesis 3:19", "Romans 5:12", "Romans 6:23"]},
         {"point": "Christ has defeated death", "refs": ["1 Corinthians 15:20-26", "1 Corinthians 15:54-57", "Hebrews 2:14-15", "2 Timothy 1:10"]},
-        {"point": "Absent from the body, present with the Lord", "refs": ["2 Corinthians 5:6-8", "Philippians 1:21-23", "Luke 23:43"]},
+        {"point": "Absent from the body, present with the Lord", "refs": ["2 Corinthians 5:6-8", "Philippians 1:21-23", "Luke 23:43"], "words": ["heaven", "afterlife", "paradise"]},
         {"point": "Death called sleep; Christians differ on what the dead know before the resurrection", "refs": ["1 Thessalonians 4:13-14", "John 11:11-14", "Ecclesiastes 9:5", "Daniel 12:2"]},
         {"point": "The resurrection of the body", "refs": ["John 5:28-29", "John 11:25-26", "1 Corinthians 15:42-44", "Job 19:25-27"]},
-        {"point": "After this the judgment", "refs": ["Hebrews 9:27", "2 Corinthians 5:10", "Revelation 20:12-13"]},
+        {"point": "After this the judgment", "refs": ["Hebrews 9:27", "2 Corinthians 5:10", "Revelation 20:12-13"], "words": ["hell", "judgment"]},
         {"point": "Hope in the Old Testament", "refs": ["Psalms 16:10-11", "Psalms 49:15", "Isaiah 26:19", "Psalms 23:6"]},
-        {"point": "Everlasting life with God", "refs": ["John 14:2-3", "Revelation 21:3-4", "Revelation 22:3-5"]},
-        {"point": "The warnings of everlasting punishment, which Christians read in different ways", "refs": ["Matthew 25:46", "Mark 9:43-48", "2 Thessalonians 1:9", "Revelation 20:14-15"]},
-        {"point": "Grieve, but not without hope", "refs": ["1 Thessalonians 4:13", "John 11:33-35", "Psalms 116:15"]}
+        {"point": "Everlasting life with God", "refs": ["John 14:2-3", "Revelation 21:3-4", "Revelation 22:3-5", "2 Corinthians 5:1", "Philippians 3:20-21"], "words": ["heaven", "eternal life", "everlasting life", "paradise", "afterlife"]},
+        {"point": "The warnings of everlasting punishment, which Christians read in different ways", "refs": ["Matthew 25:46", "Mark 9:43-48", "2 Thessalonians 1:9", "Revelation 20:14-15", "Luke 16:22-26", "Matthew 10:28"], "words": ["hell", "gehenna", "lake of fire", "punishment", "damnation"]},
+        {"point": "Grieve, but not without hope", "refs": ["1 Thessalonians 4:13", "John 11:33-35", "Psalms 116:15", "Matthew 5:4", "Psalms 34:18", "Revelation 21:4"], "words": ["grief", "grieve", "grieving", "mourn", "mourning", "funeral", "loss", "sorrow", "comfort"]}
       ]
     },
     {
       "id": "love", "title": "Love",
       "words": ["love", "loving", "loves", "loved", "charity"],
       "themes": [
-        {"point": "God is love, and He loved us first", "refs": ["1 John 4:7-10", "John 3:16", "Romans 5:8"]},
+        {"point": "God is love, and He loved us first", "refs": ["1 John 4:7-10", "John 3:16", "Romans 5:8"], "words": ["god s love", "love for me", "loves me", "love of god", "god loves", "loved me", "loveth me"]},
         {"point": "The two great commandments", "refs": ["Matthew 22:36-40", "Deuteronomy 6:4-5", "Leviticus 19:18"]},
         {"point": "What love is", "refs": ["1 Corinthians 13:1-8"]},
         {"point": "Love your enemies", "refs": ["Matthew 5:43-48", "Luke 6:27-36", "Proverbs 25:21", "Romans 12:20-21"]},
         {"point": "Love one another as Christ loved us, in deed and in truth", "refs": ["John 13:34-35", "John 15:12-13", "1 John 3:16-18"]},
-        {"point": "Nothing can separate us from the love of God", "refs": ["Romans 8:35-39", "Jeremiah 31:3", "Isaiah 54:10"]},
+        {"point": "Nothing can separate us from the love of God", "refs": ["Romans 8:35-39", "Jeremiah 31:3", "Isaiah 54:10"], "words": ["god s love", "love for me", "loves me", "separate"]},
         {"point": "Whom the Lord loves He corrects", "refs": ["Proverbs 3:11-12", "Hebrews 12:5-6", "Revelation 3:19"]},
         {"point": "If ye love me, keep my commandments", "refs": ["John 14:15", "John 14:21", "1 John 5:3"]},
         {"point": "Love not the world", "refs": ["1 John 2:15-17", "James 4:4"]}

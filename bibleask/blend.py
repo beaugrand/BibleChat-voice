@@ -26,6 +26,19 @@ W_PHRASE = 2.0        # ... that is a clear two-word phrase ("sea monster" = tan
 W_MEANING = 1.0
 PHRASE = 0.9          # the quality a phrase match needs to count as clear
 WHY_WORD, WHY_NEAR, WHY_MEANING = "matched word", "matched words in the verses around it", "matched by meaning"
+# words of an everyday question that say nothing about the topic ("how to deal with grief", "what to do when I feel
+# anxious"): left out of the word and Hebrew/Greek search, so "deal" doesn't bring Sirach 29 and "feel" Psalm 58:9.
+# The meaning search still reads the whole question.
+FILLER = {"feel", "feels", "feeling", "felt", "deal", "deals", "dealing", "handle", "handles", "handling",
+          "cope", "copes", "coping"}
+
+
+def plain(question: str) -> str:
+    """The question without FILLER words; the question itself if nothing would be left. Same as plain() in web/smart.js."""
+    import re
+    kept = [w for w in question.split() if re.sub(r"[^a-z]", "", w.lower()) not in FILLER]
+    q = " ".join(kept)
+    return q if tokenize(q) else question
 
 
 @dataclass
@@ -118,6 +131,7 @@ def real_words(question: str, ix: Index, known) -> bool:
 
 def blended(question: str, ix: Index, k: int = 12) -> list[Found]:
     """The best verses by all three methods together, each with the reasons it was found."""
+    full, question = question, plain(question)   # the meaning search reads the whole question (full)
     words = ix.search(question, k=DEPTH)
     found: dict[int, Found] = {}
 
@@ -136,8 +150,8 @@ def blended(question: str, ix: Index, k: int = 12) -> list[Found]:
         sims = None
         try:
             from .meaning import MEANING
-            if MEANING.available() and real_words(question, ix, MEANING.knows):
-                sims = MEANING.similarities(question)
+            if MEANING.available() and real_words(full, ix, MEANING.knows):
+                sims = MEANING.similarities(full)
             for r, (i, _sim) in enumerate(meaning_ranked(sims, ix)):
                 add(i, r, WHY_MEANING, W_MEANING)
         except Exception:

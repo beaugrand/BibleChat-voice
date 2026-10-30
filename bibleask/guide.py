@@ -138,6 +138,100 @@ def spread(items: list, book_of: Callable[[object], str], k: int = 8, cap: int =
     return [items[i] for i in picked] + [it for i, it in enumerate(items) if i not in chosen]
 
 
+# ---- books that aren't in every Bible rank lower; key passages join the first answers
+def demote(items: list, book_of: Callable[[object], str], question: str, k: int = 8) -> list:
+    """Verses from books that are not in every Bible (Sirach, Tobit, 2 Esdras, Jasher; the groups in canon.demote)
+    move below the first k answers, unless the question names the book ("Sirach on friendship"). They stay in the
+    list, with their label. The Ethiopian books (1 Enoch, Jubilees) stay where they are: only Bibles that have
+    them are searched for them. Same as BCGuide.demote in web/guide.js."""
+    d = load()["canon"]
+    low_groups = set(d.get("demote", []))
+    named = set(words(question))
+
+    def low(it) -> bool:
+        b = book_of(it)
+        g = d["books"].get(b)
+        return g in low_groups and not (set(words(b)) - {"of", "the"}) & named
+
+    keep = [it for it in items if not low(it)]
+    lows = [it for it in items if low(it)]
+    return keep[:k] + lows + keep[k:]
+
+
+def key_verses(topic: Optional[dict], score: Optional[Callable[[str, int, int], float]] = None,
+               question: str = "") -> list[tuple[str, int, int]]:
+    """One verse of each key passage of a topic, one theme after another (the first passage of every theme, then the
+    second...), so the first few cover different themes. With score(book, ch, v) (how close a verse is to the
+    question in meaning), each passage gives its closest verse and each theme its closest passage first. Themes whose
+    own words stand in the question come first ("how to deal with grief": "Grieve, but not without hope"; "fallen
+    angels": the angels that sinned), the most such words first, each with all its passages; then the other themes
+    one passage at a time, in the guide's order (the foundational passages first).
+    Same as BCGuide.keyVerses in web/guide.js."""
+    if not topic:
+        return []
+    themes = []
+    for th in topic.get("themes", []):
+        cands = []
+        for r in th["refs"]:
+            p = parse_ref(r)
+            if not p:
+                continue
+            book, ch, v1, v2 = p
+            best = v1
+            if score:
+                for v in range(v1, v2 + 1):
+                    if score(book, ch, v) > score(book, ch, best):
+                        best = v
+            cands.append((score(book, ch, best) if score else 0.0, (book, ch, best)))
+        if score:
+            cands.sort(key=lambda x: -x[0])
+        themes.append(cands)
+    hay = " " + " ".join(words(question)) + " "
+    hits = [sum(1 for w in th.get("words", []) if " " + w + " " in hay) for th in topic.get("themes", [])]
+    order = sorted(range(len(themes)), key=lambda i: (-hits[i], i))
+    out, seen = [], set()
+    for i in order:                              # a theme the question names gives all its passages first
+        if hits[i]:
+            for _s, ref in themes[i]:
+                if ref not in seen:
+                    seen.add(ref)
+                    out.append(ref)
+    for r in range(max((len(t) for t in themes), default=0)):
+        for i in order:
+            t = themes[i]
+            if r < len(t) and t[r][1] not in seen:
+                seen.add(t[r][1])
+                out.append(t[r][1])
+    return out
+
+
+def mix(items: list, keys: list, id_of: Callable[[object], object], make_key: Callable[[object], object],
+        k: int = 8, n: int = 4) -> list:
+    """The first k answers alternate: a key passage, the best match, the next key passage, the next best match...,
+    up to n key passages; then the other matches in their order. A key passage that is already among the first k
+    matches keeps its place and takes no key slot; one found further down moves up with its own reasons. keys: verse ids (as id_of gives them), best first. Same as BCGuide.mix in web/guide.js."""
+    by_id = {id_of(it): it for it in items}
+    shown = {id_of(it) for it in items[:k]}   # a key passage already among the first k needs no slot of its own
+    out, seen, ki, ii, nk = [], set(), 0, 0, 0
+    while len(out) < k:
+        want_key = len(out) % 2 == 0 and nk < n
+        while ki < len(keys) and (keys[ki] in seen or keys[ki] in shown):
+            ki += 1
+        while ii < len(items) and id_of(items[ii]) in seen:
+            ii += 1
+        if (want_key or ii >= len(items)) and ki < len(keys) and nk < n:
+            key = keys[ki]
+            out.append(by_id.get(key) or make_key(key))
+            seen.add(key)
+            nk += 1
+        elif ii < len(items):
+            out.append(items[ii])
+            seen.add(id_of(items[ii]))
+        else:
+            break
+    return out + [it for it in items if id_of(it) not in seen]
+
+
 # ---- Study Paths: every theme of a linked topic has a step in the path
 def verses_of(refs: Iterable[str]) -> set:
     out = set()

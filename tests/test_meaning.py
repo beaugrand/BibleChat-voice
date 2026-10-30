@@ -113,6 +113,13 @@ class ChatAnswers(unittest.TestCase):
         self.assertTrue(r.groups[0].get("topic"))   # Nave's topic answer first, as before
 
 
+class FillerWords(unittest.TestCase):
+    def test_everyday_words_leave_the_word_search(self):
+        self.assertEqual(blend.plain("how to deal with grief"), "how to with grief")
+        self.assertEqual(blend.plain("what to do when I feel anxious"), "what to do when I anxious")
+        self.assertEqual(blend.plain("feel"), "feel")   # nothing else to search for: the question stays
+
+
 @unittest.skipUnless(shutil.which("node") and HAVE_NUMPY, "Node.js or numpy is not installed")
 class PhoneGivesTheSameAnswers(unittest.TestCase):
     """Runs web/smart.js under Node.js on the phone's own data files and compares with the Python answers."""
@@ -123,7 +130,8 @@ class PhoneGivesTheSameAnswers(unittest.TestCase):
         _b, ix = kjv()
         with open(os.path.join(tmp, "kjv.json"), "w") as f:
             json.dump([{"b": v.book, "c": v.chapter, "v": v.verse, "t": v.text} for v in ix.verses], f)
-        questions = [q for q, _ in TARGETS] + ["fallen angels", "do not worry about tomorrow", "asdf"]
+        questions = [q for q, _ in TARGETS] + ["fallen angels", "do not worry about tomorrow", "asdf", "how to deal with grief",
+                                               "what to do when I feel anxious", "feel"]
         want = [[[f"{v.book} {v.chapter}:{v.verse}", x.why] for x in blend.blended(q, ix, 10) for v in [ix.verses[x.index]]]
                 for q in questions]
         texts = [MEANING.prefix + q for q in questions + ["Naïve “quotes” — 1 Cor 13:4 ἀγάπη 爱"]]

@@ -1084,11 +1084,19 @@ async function runSearch(q){
     // 📌 a broad topic ("women", "prayer", "money"): the key passages by theme on top, and the first answers spread over
     // the parts of the Bible, so the best word matches can't tell only half the story
     const topic = BCGuide.topicFor(q);
+    found = BCGuide.demote(found, f => flat[f.i].b, q);   // Sirach, Tobit, 2 Esdras... below the first 8, unless asked for
     if(BCGuide.broad(q)) found = BCGuide.spread(found, f => flat[f.i].b);
-    const pf = BCPaths.findPaths(q, 4);   // 📜 Study Paths about this question ("Adam Eve" finds The Garden, the serpent and Cain)
+    // 📜 Study Paths about this question ("Adam Eve" finds The Garden, the serpent and Cain); for a topic of the guide
+    // only paths with the word in their title (its own path is in the key passages box)
+    const pf = BCPaths.findPaths(q, 4, topic ? {titleOnly: true, words: topic.words} : null);
     const tp = topic && topic.path && BCPaths.title(topic.path) ? {id: topic.path, title: BCPaths.title(topic.path)} : null;
     const pathsHtml = pf.length ? `<div class="pathhits"><div class="hint">📜 ${esc(tr("Study Paths about this"))}</div>${pf.map(p => `<button class="btn" data-pid="${esc(p.id)}">📜 ${esc(p.title)}</button>`).join("")}</div>` : "";
     const has = b => bible.byName[b] ? b : resolveBooks(b)[0];
+    if(topic){   // 📌 the first 8 answers alternate key passage and best match (4 of each), so "Ask AI" hears every side
+      const sims = Smart.simsFor(q), score = sims ? (b, c, v) => sims.get(b + "|" + c + "|" + v) || 0 : null;   // closest to the question first
+      const keyIds = BCGuide.keyVerses(topic, score, q).map(([b, c, v]) => { const t = has(b), i = t ? idx.byRef.get(t + "|" + c + "|" + v) : undefined; return i === undefined ? null : i; }).filter(i => i !== null);
+      found = BCGuide.mix(found, keyIds, f => f.i, i => ({i, why: [tr("key passage (BibleChat guide)")]}), 8, 4);
+    }
     const link = (b, c, v1, v2, label) => { const t = has(b); return t ? `<a href="#" data-b="${esc(t)}" data-c="${c}" data-v="${v1}">${esc(label)}</a>` : esc(label); };
     const verseText = (b, c, v1, v2) => { const t = has(b), vs = t && bible.byName[t].map.get(c); if(!vs) return "";
       const pick = vs.filter(([n]) => n >= v1 && n <= v2); return pick.slice(0, 3).map(x => x[1]).join(" ") + (pick.length > 3 ? " …" : ""); };

@@ -88,10 +88,13 @@ def retrieve(question: str, previous_question: Optional[str], lib: Library, bibl
     def run(query: str):
         # words, Hebrew/Greek words and meaning together, each verse with the reasons it was found (blend.py);
         # for a broad question the first answers come from several parts of the Bible (guide.spread)
-        if not wide:
-            return [(bible, ix, blended(query, ix, k=MAX_VERSES)) for bible, ix in same]
-        return [(bible, ix, guide.spread(blended(query, ix, k=30), lambda h, ix=ix: short_title(ix.verses[h.index].book))[:MAX_VERSES])
-                for bible, ix in same]
+        # books that aren't in every Bible (Sirach, Tobit...) move below the first 8 unless asked for (guide.demote)
+        out = []
+        for bible, ix in same:
+            book = lambda h, ix=ix: short_title(ix.verses[h.index].book)
+            hits = guide.demote(blended(query, ix, k=30), book, query)
+            out.append((bible, ix, (guide.spread(hits, book) if wide else hits)[:MAX_VERSES]))
+        return out
 
     per_bible = run(question)
     words = question.lower().replace("?", " ").replace(".", " ").split()

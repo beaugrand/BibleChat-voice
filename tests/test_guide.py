@@ -247,3 +247,103 @@ class Wiring(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SearchFixes(unittest.TestCase):
+    """Hans's test of 18 searches (29 October 2026): word matches won, the key passages were missing, the Apocrypha
+    ranked high through common words, and some Study Path links did not fit. These keep the fixes in place."""
+
+    def test_new_topics_for_angels_satan_and_demons(self):
+        self.assertEqual(guide.topic_for("fallen angels")["id"], "angels")
+        self.assertEqual(guide.topic_for("angels cast out of heaven")["id"], "angels")
+        self.assertEqual(guide.topic_for("Satan's rebellion")["id"], "satan")
+        self.assertEqual(guide.topic_for("demons")["id"], "demons")
+        have = lambda tid: guide.verses_of(r for th in next(t for t in G["topics"] if t["id"] == tid)["themes"] for r in th["refs"])
+        for ref in ("Revelation 12:7", "Jude 1:6", "2 Peter 2:4", "Luke 10:18", "Isaiah 14:12", "Ezekiel 28:17"):
+            self.assertIn(guide.parse_ref(ref)[:3], have("angels"), ref)
+        for ref in ("John 8:44", "1 Timothy 3:6", "Isaiah 14:12", "Revelation 20:10", "James 4:7"):
+            self.assertIn(guide.parse_ref(ref)[:3], have("satan"), ref)
+        for ref in ("Mark 5:2", "Matthew 12:43", "Ephesians 6:12", "Deuteronomy 32:17"):
+            self.assertIn(guide.parse_ref(ref)[:3], have("demons"), ref)
+
+    def test_theme_words_are_plain_lower_case(self):
+        for t in G["topics"]:
+            for th in t["themes"]:
+                for w in th.get("words", []):
+                    self.assertRegex(w, r"^[a-z]+( [a-z]+)*$", (t["id"], th["point"]))
+
+    def test_a_theme_the_question_names_comes_first(self):
+        first = lambda q, n=3: [f"{b} {c}:{v}" for b, c, v in guide.key_verses(guide.topic_for(q), None, q)[:n]]
+        self.assertEqual(first("fallen angels"), ["Revelation 12:7", "Luke 10:18", "2 Peter 2:4"])
+        self.assertEqual(first("how to deal with grief", 1), ["1 Thessalonians 4:13"])
+        self.assertIn("Judges 4:4", first("women leaders in the Bible", 4))
+        self.assertIn("John 14:2", first("heaven", 6))
+        self.assertIn("Matthew 25:46", first("hell", 6))
+        self.assertIn("Philippians 4:6", first("what to do when I feel anxious", 2))
+        # no theme named: the guide's own order, one passage per theme (marriage: Genesis 2 first)
+        self.assertEqual(first("marriage", 1), ["Genesis 2:18"])
+        # a closeness score picks the verse inside a passage
+        score = lambda b, c, v: 1.0 if (b, c, v) == ("Genesis", 2, 24) else 0.0
+        self.assertEqual(guide.key_verses(guide.topic_for("marriage"), score, "marriage")[0], ("Genesis", 2, 24))
+
+    def test_mix_alternates_key_passages_and_matches(self):
+        items = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"]
+        got = guide.mix(items, ["K1", "c", "K2", "k", "K3"], lambda x: x, lambda x: "*" + x, 8, 4)
+        # c is already among the first 8 (no key slot); k comes up from further down; then the rest in order
+        self.assertEqual(got, ["*K1", "a", "*K2", "b", "k", "c", "*K3", "d", "e", "f", "g", "h", "i"])
+
+    def test_books_not_in_every_bible_rank_below_the_first_answers(self):
+        items = ["Sirach", "Psalms", "Tobit", "John", "1 Enoch", "Romans", "Wisdom", "Luke", "Acts", "Mark", "Job"]
+        got = guide.demote(items, lambda b: b, "how to deal with grief", k=5)
+        self.assertEqual(got[:5], ["Psalms", "John", "1 Enoch", "Romans", "Luke"])   # 1 Enoch: only Bibles that have it
+        self.assertEqual(got[5:8], ["Sirach", "Tobit", "Wisdom"])
+        self.assertEqual(guide.demote(items, lambda b: b, "Sirach on friendship", k=5)[0], "Sirach")   # asked for by name
+
+
+@unittest.skipUnless(shutil.which("node"), "Node.js not installed")
+class SearchFixesSameOnPhone(unittest.TestCase):
+    QUESTIONS = ["fallen angels", "how to deal with grief", "women leaders in the Bible", "heaven", "hell", "marriage",
+                 "what to do when I feel anxious", "God's love for me", "Satan's rebellion", "prayer"]
+
+    def test_guide_js_matches_guide_py(self):
+        items = ["Sirach", "Psalms", "Tobit", "John", "1 Enoch", "Romans", "Wisdom", "Luke", "Acts", "Mark", "Job"]
+        js = f"""
+const G = require({json.dumps(os.path.join(WEB, "guide.js"))}); G.use(require({json.dumps(os.path.join(WEB, "guide.json"))}));
+const qs = {json.dumps(self.QUESTIONS)}, items = {json.dumps(items)};
+const score = (b, c, v) => ((b.length * 7 + c * 13 + v * 31) % 17) / 17;
+console.log(JSON.stringify({{
+  keys: qs.map(q => G.keyVerses(G.topicFor(q), null, q)),
+  scored: qs.map(q => G.keyVerses(G.topicFor(q), score, q)),
+  mix: G.mix(["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"], ["K1", "c", "K2", "k", "K3"], x => x, x => "*" + x, 8, 4),
+  mix2: G.mix(["a", "b"], ["K1", "K2", "K3"], x => x, x => "*" + x, 8, 2),
+  demote: G.demote(items, b => b, "how to deal with grief", 5),
+  demote2: G.demote(items, b => b, "Sirach on friendship", 5)
+}}));"""
+        out = json.loads(subprocess.run(["node", "-e", js], capture_output=True, text=True, check=True).stdout)
+        score = lambda b, c, v: ((len(b) * 7 + c * 13 + v * 31) % 17) / 17
+        self.assertEqual(out["keys"], [[list(x) for x in guide.key_verses(guide.topic_for(q), None, q)] for q in self.QUESTIONS])
+        self.assertEqual(out["scored"], [[list(x) for x in guide.key_verses(guide.topic_for(q), score, q)] for q in self.QUESTIONS])
+        self.assertEqual(out["mix"], guide.mix(["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"], ["K1", "c", "K2", "k", "K3"], lambda x: x, lambda x: "*" + x, 8, 4))
+        self.assertEqual(out["mix2"], guide.mix(["a", "b"], ["K1", "K2", "K3"], lambda x: x, lambda x: "*" + x, 8, 2))
+        self.assertEqual(out["demote"], guide.demote(items, lambda b: b, "how to deal with grief", 5))
+        self.assertEqual(out["demote2"], guide.demote(items, lambda b: b, "Sirach on friendship", 5))
+
+    def test_study_path_links_fit_the_question(self):
+        js = f"""
+const fs = require("fs");
+const P = require({json.dumps(os.path.join(WEB, "paths.js"))});
+P._setList(JSON.parse(fs.readFileSync({json.dumps(os.path.join(WEB, "paths", "index.json"))}, "utf8")));
+const G = require({json.dumps(os.path.join(WEB, "guide.js"))}); G.use(require({json.dumps(os.path.join(WEB, "guide.json"))}));
+const find = q => {{ const t = G.topicFor(q); return P.findPaths(q, 4, t ? {{titleOnly: true, words: t.words}} : null).map(p => p.id); }};
+console.log(JSON.stringify({{marriage: find("marriage"), angels: find("angels cast out of heaven"), adam: find("Adam Eve"),
+  women: find("women leaders in the Bible"), isaiah: find("Isaiah 53"), name: find("the name of Jesus"), spirit: find("the Holy Spirit")}}));"""
+        r = subprocess.run(["node", "-e", js], capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        o = json.loads(r.stdout)
+        self.assertNotIn("enoch-and-the-watchers", o["marriage"])       # "took them wives" in a step is not marriage
+        self.assertEqual(o["angels"], [])                               # not The rainbow or The heavens and the earth
+        self.assertEqual(o["adam"], ["garden-serpent-and-cain"])
+        self.assertEqual(o["women"], ["women-in-the-bible"])
+        self.assertEqual(o["isaiah"], ["isaiah-53-suffering-servant"])   # not every path that reads a verse of Isaiah
+        self.assertEqual(o["name"], ["the-name"])
+        self.assertEqual(o["spirit"], [])                                # not Halloween ("spirits of the dead")

@@ -59,6 +59,49 @@ const BCGuide = (() => {
     return picked.map(i => items[i]).concat(items.filter((_, i) => !chosen.has(i)));
   }
 
+  /* books that aren't in every Bible (canon.demote: Sirach, Tobit, 2 Esdras, Jasher) move below the first k answers,
+     unless the question names the book; the Ethiopian books stay (bibleask/guide.py demote) */
+  function demote(items, bookOf, q, k = 8){
+    const low = new Set((D && D.canon && D.canon.demote) || []), named = new Set(words(q));
+    const isLow = it => { const b = bookOf(it), g = D && D.canon.books[b]; return low.has(g) && !words(b).some(w => w !== "of" && w !== "the" && named.has(w)); };
+    const keep = items.filter(it => !isLow(it)), lows = items.filter(isLow);
+    return keep.slice(0, k).concat(lows, keep.slice(k));
+  }
+  /* one verse of each key passage, one theme after another; with score(book, c, v) (closeness in meaning to the
+     question) each passage gives its closest verse, each theme its closest passage, closest themes first (key_verses) */
+  function keyVerses(t, score, q){   // q: themes whose own words stand in the question come first
+    if(!t) return [];
+    const themes = (t.themes || []).map(th => { const cands = [];
+      for(const r of th.refs){ const p = parseRef(r); if(!p) continue; let best = p.v1;
+        if(score) for(let v = p.v1; v <= p.v2; v++) if(score(p.book, p.c, v) > score(p.book, p.c, best)) best = v;
+        cands.push([score ? score(p.book, p.c, best) : 0, [p.book, p.c, best]]); }
+      if(score) cands.sort((a, b) => b[0] - a[0]);
+      return cands; });
+    const hay = " " + words(q || "").join(" ") + " ";
+    const hits = (t.themes || []).map(th => (th.words || []).filter(w => hay.includes(" " + w + " ")).length);
+    const order = themes.map((_, i) => i).sort((a, b) => (hits[b] - hits[a]) || (a - b));
+    const out = [], seen = new Set(), most = themes.reduce((m, x) => Math.max(m, x.length), 0);
+    for(const i of order) if(hits[i]) for(const [, ref] of themes[i]){ const k = ref.join("|"); if(!seen.has(k)){ seen.add(k); out.push(ref); } }   // a theme the question names: all its passages first
+    for(let r = 0; r < most; r++) for(const i of order){ const x = themes[i];
+      if(r < x.length){ const k = x[r][1].join("|"); if(!seen.has(k)){ seen.add(k); out.push(x[r][1]); } } }
+    return out;
+  }
+  /* the first k answers alternate key passage, best match, key passage... (up to n key passages), then the other
+     matches; a key passage that was found anyway moves up with its own reasons (bibleask/guide.py mix) */
+  function mix(items, keys, idOf, makeKey, k = 8, n = 4){
+    const byId = new Map(items.map(it => [idOf(it), it])), out = [], seen = new Set(), shown = new Set(items.slice(0, k).map(idOf));
+    let ki = 0, ii = 0, nk = 0;
+    while(out.length < k){
+      const wantKey = out.length % 2 === 0 && nk < n;
+      while(ki < keys.length && (seen.has(keys[ki]) || shown.has(keys[ki]))) ki++;   // already among the first k: no slot
+      while(ii < items.length && seen.has(idOf(items[ii]))) ii++;
+      if((wantKey || ii >= items.length) && ki < keys.length && nk < n){ const key = keys[ki]; out.push(byId.has(key) ? byId.get(key) : makeKey(key)); seen.add(key); nk++; }
+      else if(ii < items.length){ out.push(items[ii]); seen.add(idOf(items[ii])); }
+      else break;
+    }
+    return out.concat(items.filter(it => !seen.has(idOf(it))));
+  }
+
   /* ---------- what the pages show (one look on phone and computer; styles below) ---------- */
   const CSS = `.bc-canon{display:inline-block;font:600 11.5px system-ui,sans-serif;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 8px;margin:0 6px 2px 0;vertical-align:middle;white-space:nowrap;cursor:help}
 .bc-note{font:13.5px/1.45 system-ui,sans-serif;color:var(--text);background:var(--panel2);border-left:3px solid var(--accent);border-radius:6px;padding:7px 10px;margin:6px 0 2px}
@@ -131,7 +174,7 @@ const BCGuide = (() => {
     return parts.join("\n\n");
   }
 
-  return {load, use, ready: () => !!D, parseRef, words, contentWords, topicFor, broad, canon, notesFor, sectionOf, spread,
+  return {load, use, ready: () => !!D, parseRef, words, contentWords, topicFor, broad, canon, notesFor, sectionOf, spread, demote, keyVerses, mix,
           sections: () => ((D && D.sections) || []).map(s => s[0]).concat([(D && D.other_section) || "Other books"]),
           tagHtml, notesHtml, passageNotesHtml, keysHtml, aiText, esc};
 })();

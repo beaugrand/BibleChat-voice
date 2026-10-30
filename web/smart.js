@@ -303,6 +303,15 @@ const Smart = (() => {
     }
     return out.sort((a, b) => b[1] - a[1]);
   }
+  /* words of an everyday question that say nothing about the topic (bibleask/blend.py FILLER): left out of the word
+     and Hebrew/Greek search; the meaning search still reads the whole question */
+  const FILLER = new Set(["feel", "feels", "feeling", "felt", "deal", "deals", "dealing", "handle", "handles", "handling", "cope", "copes", "coping"]);
+  function plain(q){
+    const kept = q.split(/\s+/).filter(w => w && !FILLER.has(w.toLowerCase().replace(/[^a-z]/g, "")));
+    const p = kept.join(" ");
+    return tokenize(p).length ? p : q;
+  }
+  let lastSims = null;   // the meaning closeness of every verse to the last question (the key passages pick by it)
   function realWords(q, ix){   // a real content word, one the Bible or the model knows ("asdf": no guessing)
     for(const w of (q.toLowerCase().match(/[a-z]+/g) || [])) if(w.length >= 3 && !STOP.has(w) && (ix.vocab.has(w) || (M && M.ids.has(w)))) return true;
     return false;
@@ -310,13 +319,14 @@ const Smart = (() => {
   /* ctx: {flat, ix: makeIndex(flat), english: true/false, resolve: book name -> this Bible's name, meaning: use the model if loaded}
      -> [{i, score, why: [...]}], best first */
   async function blend(q, ctx, k){
+    const full = q; q = plain(q);   // the meaning search reads the whole question (full)
     const found = new Map();
     const add = (i, rank, why, weight = 1) => { let f = found.get(i); if(!f) found.set(i, f = {i, score: 0, why: []}); if(rank !== null) f.score += weight / (K + rank + 1); if(!f.why.includes(why)) f.why.push(why); };
     const qwords = new Set(tokenize(q).length ? tokenize(q) : tokenize(q, true));
     wordSearch(ctx.ix, ctx.flat, q, DEPTH).forEach((i, r) => add(i, r, ctx.ix.toks[i].some(w => qwords.has(w)) ? WHY_WORD : WHY_NEAR));
     if(ctx.english){
       let sims = null;
-      try{ if(M && ctx.meaning !== false && realWords(q, ctx.ix)){ sims = similarities(q); meaningRanked(sims, ctx).forEach(([i], r) => add(i, r, WHY_MEANING, W_MEANING)); } }catch(e){ sims = null; }
+      try{ if(M && ctx.meaning !== false && realWords(full, ctx.ix)){ sims = similarities(full); lastSims = {q: full, sims}; meaningRanked(sims, ctx).forEach(([i], r) => add(i, r, WHY_MEANING, W_MEANING)); } }catch(e){ sims = null; }
       try{
         let r = 0;
         for(const [i, sc, lab, phrase] of await strongsRanked(q, ctx, sims)){
@@ -331,6 +341,7 @@ const Smart = (() => {
   }
 
   return {makeIndex, wordSearch, blend, loadMeaning, meaningSize, meaningReady: () => !!M, embed: t => embed(t), encode: t => encode(t, 512),
-          meaningMatches, setLoader: f => { load = f; }};
+          meaningMatches, setLoader: f => { load = f; },
+          simsFor: q => lastSims && lastSims.q === q ? lastSims.sims : null};   // {"Book|ch|v": closeness} of the last blend(q)
 })();
 if(typeof module !== "undefined") module.exports = {Smart, tokenize, stem, STOP};
