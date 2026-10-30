@@ -1684,6 +1684,34 @@
    "title": "What does the Quran say about the Bible?",
    "of": 8,
    "session": 5
+  },
+  "i18n": {
+   "es": {
+    "title": "Sesión 5: Jesús en el Corán",
+    "opening_question": "El Corán honra a Jesús: nacido de la virgen María, llamado el Mesías y una palabra de Dios, hacedor de milagros. Lee sus palabras junto a las de la Biblia. ¿Dónde coinciden, y dónde dice más la Biblia?",
+    "step_questions": [
+     "El Corán dice que los ángeles dieron a María la buena nueva «de una palabra de él, cuyo nombre es el Mesías». ¿Qué le dijo el ángel Gabriel a María en Lucas, y qué preguntó ella?",
+     "Isaías dio una señal a la casa de David. ¿Cuál es la señal, y qué dice Mateo que significa el nombre Emmanuel?",
+     "En el Corán Jesús habla desde la cuna: «La paz sobre mí el día en que nací y el día en que muera». ¿Cuáles son las primeras palabras de Jesús que registra la Biblia, y qué edad tenía?",
+     "El Corán enumera los milagros de Jesús: sanar al ciego y al leproso y resucitar a los muertos. ¿Qué dice Jesús a los discípulos de Juan, y cómo sanó al ciego de nacimiento?",
+     "El Corán llama a Jesús el Mesías. ¿Qué significa Mesías, y qué dijo Jesús cuando la mujer samaritana habló del Mesías?",
+     "Jesús prometió \"otro Consolador\". ¿Quién es el Consolador, según estos versículos, y cuándo vendría?",
+     "Para vivirlo: la mujer samaritana dejó su cántaro y dijo: «Venid, ved un hombre». ¿Qué hizo con lo que oyó, y qué preguntó Jesús a sus discípulos?"
+    ]
+   },
+   "de": {
+    "title": "Teil 5: Jesus im Koran",
+    "opening_question": "Der Koran ehrt Jesus: geboren von der Jungfrau Maria, der Messias genannt und ein Wort von Gott, ein Wundertäter. Lies seine Worte neben denen der Bibel. Wo stimmen sie überein, und wo sagt die Bibel mehr?",
+    "step_questions": [
+     "Der Koran sagt, die Engel brachten Maria die frohe Botschaft »von einem Wort von ihm, dessen Name der Messias ist«. Was sagte der Engel Gabriel bei Lukas zu Maria, und was fragte sie?",
+     "Jesaja gab dem Haus David ein Zeichen. Was ist das Zeichen, und was bedeutet der Name Immanuel nach Matthäus?",
+     "Im Koran spricht Jesus aus der Wiege: »Friede sei auf mir am Tag, da ich geboren wurde, und am Tag, da ich sterbe«. Was sind die ersten Worte Jesu, die die Bibel überliefert, und wie alt war Er?",
+     "Der Koran zählt die Wunder Jesu auf: Blinde und Aussätzige heilen und Tote auferwecken. Was sagt Jesus den Jüngern des Johannes, und wie heilte Er den Blindgeborenen?",
+     "Der Koran nennt Jesus den Messias. Was bedeutet Messias, und was sagte Jesus, als die Samariterin vom Messias sprach?",
+     "Jesus verhieß \"einen andern Tröster\". Wer ist der Tröster nach diesen Versen, und wann sollte Er kommen?",
+     "Für das Leben: Die Samariterin ließ ihren Krug stehen und sagte: »Kommt, seht einen Menschen«. Was tat sie mit dem, was sie hörte, und was fragte Jesus seine Jünger?"
+    ]
+   }
   }
  },
  {
@@ -1727,6 +1755,32 @@
    "title": "What does the Quran say about the Bible?",
    "of": 8,
    "session": 6
+  },
+  "i18n": {
+   "es": {
+    "title": "Sesión 6: Hijo de Dios",
+    "opening_question": "El Corán dice que Dios «no engendra ni fue engendrado» y niega que Jesús sea el Hijo de Dios. La Biblia dice que Jehová es uno, y llama a Jesús el Hijo de Dios. ¿Qué dice realmente cada texto, y qué significa «uno» en hebreo?",
+    "step_questions": [
+     "El Corán dice que Dios es Uno, que «no engendra ni fue engendrado». ¿Qué dice Moisés de Jehová, y qué palabra usa para uno?",
+     "El Corán dice: «No conviene a (la majestad de) Alá tomar para sí un hijo». ¿Qué le dice Jehová a su rey en el Salmo 2?",
+     "Jesús preguntó a sus discípulos quién decían ellos que era. ¿Qué respondió Pedro, y de dónde dijo Jesús que venía esa respuesta?",
+     "En su juicio el sumo sacerdote preguntó a Jesús: «¿Eres tú el Cristo, el Hijo del Bendito?» ¿Qué respondió Jesús, y qué hizo el sumo sacerdote?",
+     "El Corán pregunta a Jesús: «¿Dijiste a los hombres: Tomadme a mí y a mi madre por dos dioses fuera de Alá?» ¿Qué dice Juan del Verbo, y a quiénes nombra Jesús en Mateo 28:19?",
+     "Para vivirlo: Pedro respondió \"Tú eres el Cristo, el Hijo del Dios viviente\". ¿Qué dicen estos versículos que sigue de esa confesión?"
+    ]
+   },
+   "de": {
+    "title": "Teil 6: Sohn Gottes",
+    "opening_question": "Der Koran sagt, Gott »zeugt nicht und ist nicht gezeugt«, und bestreitet, dass Jesus der Sohn Gottes ist. Die Bibel sagt, der HERR ist einer, und nennt Jesus den Sohn Gottes. Was sagt jeder Text wirklich, und was bedeutet »einer« im Hebräischen?",
+    "step_questions": [
+     "Der Koran sagt, Gott ist Einer, der »nicht zeugt und nicht gezeugt ist«. Was sagt Mose über den HERRN, und welches Wort gebraucht er für einer?",
+     "Der Koran sagt: »Es ziemt (der Majestät) Allahs nicht, sich einen Sohn zu nehmen«. Was sagt der HERR in Psalm 2 zu seinem König?",
+     "Jesus fragte seine Jünger, wer Er nach ihrer Meinung sei. Was antwortete Petrus, und woher kam diese Antwort nach Jesu Wort?",
+     "Bei seinem Verhör fragte der Hohepriester Jesus: »Bist du Christus, der Sohn des Hochgelobten?« Was antwortete Jesus, und was tat der Hohepriester?",
+     "Der Koran fragt Jesus: »Hast du zu den Menschen gesagt: Nehmt mich und meine Mutter als zwei Götter neben Allah?« Was sagt Johannes über das Wort, und wen nennt Jesus in Matthäus 28,19?",
+     "Für das Leben: Petrus antwortete: \"Du bist Christus, des lebendigen Gottes Sohn!\" Was folgt nach diesen Versen aus diesem Bekenntnis?"
+    ]
+   }
   }
  },
  {
@@ -1769,6 +1823,32 @@
    "title": "What does the Quran say about the Bible?",
    "of": 8,
    "session": 7
+  },
+  "i18n": {
+   "es": {
+    "title": "Sesión 7: La cruz",
+    "opening_question": "El Corán dice de Jesús: «no lo mataron ni lo crucificaron». Los profetas de la Biblia, su testigo ocular y su credo más antiguo dicen que fue crucificado, murió y resucitó. Lee los dos, y pesa lo que cada uno dice de sus propios testigos.",
+    "step_questions": [
+     "El Corán dice: «no lo mataron ni lo crucificaron, sino que así les pareció». ¿Qué describe el Salmo 22, mucho antes?",
+     "¿Qué dice Isaías 53 que le pasó al siervo de Jehová, y por qué?",
+     "¿Qué dice el testigo ocular de Juan 19 que vio cuando el soldado abrió el costado de Jesús, y por qué lo cuenta?",
+     "El Corán dice que Dios alzó a Jesús hacia sí. ¿Qué mostró Jesús resucitado a sus discípulos, y cómo fue alzado?",
+     "¿Qué dice Pablo que \"recibí\" y enseñó primeramente, y quiénes vieron a Jesús resucitado?",
+     "Para vivirlo: Pablo enseñó la cruz y la resurrección \"primeramente\". ¿Qué dice que significa para los que lo creen?"
+    ]
+   },
+   "de": {
+    "title": "Teil 7: Das Kreuz",
+    "opening_question": "Der Koran sagt von Jesus: »sie haben ihn nicht getötet und nicht gekreuzigt«. Die Propheten der Bibel, ihr Augenzeuge und ihr ältestes Bekenntnis sagen, dass Er gekreuzigt wurde, starb und auferstand. Lies beides, und wäge, was jeder über seine eigenen Zeugen sagt.",
+    "step_questions": [
+     "Der Koran sagt: »sie haben ihn nicht getötet und nicht gekreuzigt, sondern es erschien ihnen nur so«. Was beschreibt Psalm 22, lange zuvor?",
+     "Was geschah nach Jesaja 53 mit dem Knecht des HERRN, und warum?",
+     "Was sah der Augenzeuge in Johannes 19 nach seinen Worten, als der Soldat Jesu Seite öffnete, und warum erzählt er es?",
+     "Der Koran sagt, Gott habe Jesus zu sich erhoben. Was zeigte der auferstandene Jesus seinen Jüngern, und wie wurde Er aufgehoben?",
+     "Was hat Paulus nach seinen Worten \"empfangen\" und zuvörderst weitergegeben, und wer sah den auferstandenen Jesus?",
+     "Für das Leben: Paulus gab Kreuz und Auferstehung \"zuvörderst\" weiter. Was bedeutet es nach seinen Worten für die, die es glauben?"
+    ]
+   }
   }
  },
  {
@@ -1815,6 +1895,32 @@
    "title": "What does the Quran say about the Bible?",
    "of": 8,
    "session": 8
+  },
+  "i18n": {
+   "es": {
+    "title": "Sesión 8: Escudriñad las Escrituras",
+    "opening_question": "El Corán dice a los musulmanes que discutan con la Gente de la Escritura solo de la mejor manera, y que digan «nuestro Dios y vuestro Dios es Uno». La Biblia dice a sus lectores que escudriñen las Escrituras y lo examinen todo. ¿Cómo debemos estudiar, hablar y decidir?",
+    "step_questions": [
+     "El Corán dice: «no discutáis con la Gente de la Escritura sino de la manera que sea mejor». ¿Cómo dice Pedro a los cristianos que respondan por su esperanza?",
+     "Jesús dijo a sus oyentes: \"Escudriñad las Escrituras\". ¿De quién dijo que dan testimonio las Escrituras, y qué escribió Moisés?",
+     "¿Cómo recibieron los judíos de Berea la predicación de Pablo, y qué hacían cada día?",
+     "El Corán dice que los musulmanes creen en «lo que recibieron Moisés y Jesús». ¿Qué dice Pablo que es toda la Escritura, y para qué sirve?",
+     "¿A qué dice Hebreos que se parece la palabra de Dios, y qué dice Isaías que hará la palabra de Dios?",
+     "Para vivirlo: Pedro dice que estemos aparejados para responder \"con mansedumbre y reverencia\". ¿Qué piden estos versículos a un cristiano que habla con un amigo musulmán?"
+    ]
+   },
+   "de": {
+    "title": "Teil 8: Suchet in der Schrift",
+    "opening_question": "Der Koran sagt den Muslimen, sie sollen mit den Leuten der Schrift nur auf die beste Weise streiten und sagen: »unser Gott und euer Gott ist Einer«. Die Bibel sagt ihren Lesern, sie sollen in der Schrift suchen und alles prüfen. Wie sollen wir lernen, reden und entscheiden?",
+    "step_questions": [
+     "Der Koran sagt: »streitet mit den Leuten der Schrift nur auf eine Weise, die besser ist«. Wie sollen Christen nach Petrus Rechenschaft von ihrer Hoffnung geben?",
+     "Jesus sagte seinen Zuhörern: \"Suchet in der Schrift\". Wovon zeugt die Schrift nach seinem Wort, und was schrieb Mose?",
+     "Wie nahmen die Juden in Beröa die Predigt des Paulus auf, und was taten sie täglich?",
+     "Der Koran sagt, die Muslime glauben an »das, was Mose und Jesus empfangen haben«. Was ist nach Paulus alle Schrift, und wozu dient sie?",
+     "Womit vergleicht der Hebräerbrief das Wort Gottes, und was wird Gottes Wort nach Jesaja tun?",
+     "Für das Leben: Petrus sagt, wir sollen bereit sein zur Verantwortung \"mit Sanftmütigkeit und Furcht\". Was verlangen diese Verse von einem Christen im Gespräch mit einem muslimischen Freund?"
+    ]
+   }
   }
  },
  {

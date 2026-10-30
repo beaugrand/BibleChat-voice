@@ -861,5 +861,113 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "Sesión 6: Hijo de Dios",
+   "opening_question": "El Corán dice que Dios «no engendra ni fue engendrado» y niega que Jesús sea el Hijo de Dios. La Biblia dice que Jehová es uno, y llama a Jesús el Hijo de Dios. ¿Qué dice realmente cada texto, y qué significa «uno» en hebreo?",
+   "steps": [
+    {
+     "question": "El Corán dice que Dios es Uno, que «no engendra ni fue engendrado». ¿Qué dice Moisés de Jehová, y qué palabra usa para uno?",
+     "facts": [
+      "Uno es echad: «propiamente unido, es decir, uno». La misma palabra hace del marido y la mujer \"una sola carne\".",
+      "El Corán (112) y el Shemá (Deuteronomio 6:4) coinciden en que Dios es uno: \"Jehová uno es\". Difieren en si el único Dios tiene un Hijo.",
+      "Echad puede describir una unidad hecha de más de uno, como en \"una sola carne\". La palabra por sí sola no prueba la Trinidad; muestra que el Shemá le deja lugar. Los lectores judíos también se aferran al Shemá y lo leen como un solo Dios sin Hijo."
+     ]
+    },
+    {
+     "question": "El Corán dice: «No conviene a (la majestad de) Alá tomar para sí un hijo». ¿Qué le dice Jehová a su rey en el Salmo 2?",
+     "facts": [
+      "Hijo en el Salmo 2:7 es ben; en el Salmo 2:12, \"Besad al Hijo\", es bar, una palabra que Strong explica como «el heredero (presunto al trono)».",
+      "El Corán (4:171) llama a Jesús «su palabra que comunicó a María, y un espíritu de él». La redacción de Sale sigue: «no digáis: Hay tres dioses». El Salmo dice: \"Mi hijo eres tú; yo te engendré hoy\"."
+     ]
+    },
+    {
+     "question": "Jesús preguntó a sus discípulos quién decían ellos que era. ¿Qué respondió Pedro, y de dónde dijo Jesús que venía esa respuesta?",
+     "facts": [
+      "Hijo es huios: «un hijo». Jesús dice que la respuesta de Pedro no vino de \"carne ni sangre\", sino de \"mi Padre que está en los cielos\"."
+     ]
+    },
+    {
+     "question": "En su juicio el sumo sacerdote preguntó a Jesús: «¿Eres tú el Cristo, el Hijo del Bendito?» ¿Qué respondió Jesús, y qué hizo el sumo sacerdote?",
+     "facts": [
+      "Bendito es eulogetos: «digno de adoración». Jesús responde \"Yo soy\", y añade Daniel 7:13: \"veréis al Hijo del hombre sentado á la diestra de la potencia de Dios, y viniendo en las nubes del cielo\".",
+      "El sumo sacerdote rasgó sus vestidos y lo llamó \"blasfemia\", blasphemia: «difamación (especialmente contra Dios)»."
+     ]
+    },
+    {
+     "question": "El Corán pregunta a Jesús: «¿Dijiste a los hombres: Tomadme a mí y a mi madre por dos dioses fuera de Alá?» ¿Qué dice Juan del Verbo, y a quiénes nombra Jesús en Mateo 28:19?",
+     "facts": [
+      "Verbo es logos: «algo dicho». Juan dice que el Verbo \"era con Dios, y el Verbo era Dios\" y que \"fué hecho carne\". El Corán también llama a Jesús palabra de Dios (3:45, 4:171), pero no Dios.",
+      "Corán 5:116 habla de Jesús y su madre como «dos dioses», y 5:73 de Dios como «el tercero de tres». Los tres que nombra Jesús son \"del Padre, y del Hijo, y del Espíritu Santo\". María no está entre ellos, y la Biblia nunca la llama diosa."
+     ]
+    },
+    {
+     "question": "Para vivirlo: Pedro respondió \"Tú eres el Cristo, el Hijo del Dios viviente\". ¿Qué dicen estos versículos que sigue de esa confesión?",
+     "facts": [
+      "\"si confesares con tu boca al Señor Jesús, y creyeres en tu corazón que Dios le levantó de los muertos, serás salvo\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"Oye, Israel: Jehová nuestro Dios, Jehová uno es\"",
+    "\"Mi hijo eres tú; yo te engendré hoy\"",
+    "\"Tú eres el Cristo, el Hijo del Dios viviente\"",
+    "\"aquel Verbo fué hecho carne, y habitó entre nosotros\""
+   ]
+  },
+  "de": {
+   "title": "Teil 6: Sohn Gottes",
+   "opening_question": "Der Koran sagt, Gott »zeugt nicht und ist nicht gezeugt«, und bestreitet, dass Jesus der Sohn Gottes ist. Die Bibel sagt, der HERR ist einer, und nennt Jesus den Sohn Gottes. Was sagt jeder Text wirklich, und was bedeutet »einer« im Hebräischen?",
+   "steps": [
+    {
+     "question": "Der Koran sagt, Gott ist Einer, der »nicht zeugt und nicht gezeugt ist«. Was sagt Mose über den HERRN, und welches Wort gebraucht er für einer?",
+     "facts": [
+      "Einer ist echad: »eigentlich vereint, das heißt eins«. Dasselbe Wort macht Mann und Frau zu \"ein Fleisch\".",
+      "Der Koran (112) und das Schma (5. Mose 6,4) stimmen darin überein, dass Gott einer ist: \"der HERR, unser Gott, ist ein einiger HERR\". Sie unterscheiden sich darin, ob der eine Gott einen Sohn hat.",
+      "Echad kann eine Einheit aus mehr als einem beschreiben, wie in \"ein Fleisch\". Das Wort allein beweist die Dreieinigkeit nicht; es zeigt, dass das Schma Raum für sie lässt. Auch jüdische Leser halten am Schma fest und lesen es als einen Gott ohne Sohn."
+     ]
+    },
+    {
+     "question": "Der Koran sagt: »Es ziemt (der Majestät) Allahs nicht, sich einen Sohn zu nehmen«. Was sagt der HERR in Psalm 2 zu seinem König?",
+     "facts": [
+      "Sohn in Psalm 2,7 ist ben; in Psalm 2,12, \"Küßt den Sohn\", ist es bar, ein Wort, das Strong erklärt als »der (designierte) Erbe des Throns«.",
+      "Der Koran (4,171) nennt Jesus »sein Wort, das er Maria übermittelte, und einen Geist von ihm«. Sales Wortlaut fährt fort: »sagt nicht: Es gibt drei Götter«. Der Psalm sagt: \"Du bist mein Sohn, heute habe ich dich gezeuget\"."
+     ]
+    },
+    {
+     "question": "Jesus fragte seine Jünger, wer Er nach ihrer Meinung sei. Was antwortete Petrus, und woher kam diese Antwort nach Jesu Wort?",
+     "facts": [
+      "Sohn ist huios: »ein Sohn«. Jesus sagt, die Antwort des Petrus kam nicht von \"Fleisch und Blut\", sondern von \"mein Vater im Himmel\"."
+     ]
+    },
+    {
+     "question": "Bei seinem Verhör fragte der Hohepriester Jesus: »Bist du Christus, der Sohn des Hochgelobten?« Was antwortete Jesus, und was tat der Hohepriester?",
+     "facts": [
+      "Hochgelobt ist eulogetos: »anbetungswürdig«. Jesus antwortet \"Ich bin's\" und fügt Daniel 7,13 hinzu: \"ihr werdet sehen des Menschen Sohn sitzen zur rechten Hand der Kraft und kommen mit des Himmels Wolken\".",
+      "Der Hohepriester \"zerriß\" \"seinen Rock\" und nannte es \"Gotteslästerung\", blasphemia: »Schmähung (besonders gegen Gott)«."
+     ]
+    },
+    {
+     "question": "Der Koran fragt Jesus: »Hast du zu den Menschen gesagt: Nehmt mich und meine Mutter als zwei Götter neben Allah?« Was sagt Johannes über das Wort, und wen nennt Jesus in Matthäus 28,19?",
+     "facts": [
+      "Wort ist logos: »etwas Gesagtes«. Johannes sagt, \"das Wort war bei Gott, und Gott war das Wort\", und \"das Wort ward Fleisch\". Auch der Koran nennt Jesus Gottes Wort (3,45; 4,171), aber nicht Gott.",
+      "Koran 5,116 spricht von Jesus und seiner Mutter als »zwei Götter«, und 5,73 von Gott als »dem Dritten von dreien«. Die drei, die Jesus nennt, sind \"des Vaters und des Sohnes und des heiligen Geistes\". Maria ist nicht darunter, und die Bibel nennt sie nie eine Göttin."
+     ]
+    },
+    {
+     "question": "Für das Leben: Petrus antwortete: \"Du bist Christus, des lebendigen Gottes Sohn!\" Was folgt nach diesen Versen aus diesem Bekenntnis?",
+     "facts": [
+      "\"so du mit deinem Munde bekennst Jesum, daß er der HERR sei, und glaubst in deinem Herzen, daß ihn Gott von den Toten auferweckt hat, so wirst du selig\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"Höre, Israel, der HERR, unser Gott, ist ein einiger HERR.\"",
+    "\"Du bist mein Sohn, heute habe ich dich gezeuget\"",
+    "\"Du bist Christus, des lebendigen Gottes Sohn!\"",
+    "\"das Wort ward Fleisch und wohnte unter uns\""
+   ]
+  }
  }
 }

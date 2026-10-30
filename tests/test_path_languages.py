@@ -34,6 +34,11 @@ class PathLanguagesTest(unittest.TestCase):
             for n in range(1, 8):
                 self.assertEqual(len(glob.glob(os.path.join(I18N, lang, f"mirror-{n}-*.json"))), 1, f"{lang} mirror {n}")
 
+    def test_the_quran_series_is_in_spanish_and_german(self):
+        for lang in ("es", "de"):
+            for n in range(1, 9):
+                self.assertEqual(len(glob.glob(os.path.join(I18N, lang, f"quran-{n}-*.json"))), 1, f"{lang} quran {n}")
+
     def test_each_translation_matches_its_english_path(self):
         files = glob.glob(os.path.join(I18N, "*", "*.json"))
         self.assertTrue(files)

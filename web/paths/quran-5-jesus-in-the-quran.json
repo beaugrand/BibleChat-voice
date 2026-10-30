@@ -873,5 +873,131 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "Sesión 5: Jesús en el Corán",
+   "opening_question": "El Corán honra a Jesús: nacido de la virgen María, llamado el Mesías y una palabra de Dios, hacedor de milagros. Lee sus palabras junto a las de la Biblia. ¿Dónde coinciden, y dónde dice más la Biblia?",
+   "steps": [
+    {
+     "question": "El Corán dice que los ángeles dieron a María la buena nueva «de una palabra de él, cuyo nombre es el Mesías». ¿Qué le dijo el ángel Gabriel a María en Lucas, y qué preguntó ella?",
+     "facts": [
+      "Virgen es parthenos: «una doncella». El Corán y Lucas coinciden en la pregunta de María. Sale: «¿cómo tendré un hijo, si ningún hombre me ha tocado?» Lucas: \"¿Cómo será esto? porque no conozco varón\".",
+      "El ángel de Lucas llama al niño \"Hijo del Altísimo\" e \"Hijo de Dios\". Los ángeles del Corán lo llaman «el Mesías, Jesús, hijo de María»."
+     ]
+    },
+    {
+     "question": "Isaías dio una señal a la casa de David. ¿Cuál es la señal, y qué dice Mateo que significa el nombre Emmanuel?",
+     "facts": [
+      "La palabra de Isaías es almah: «una muchacha», una joven; la King James la traduce de varias maneras. La Septuaginta griega, hecha antes de Cristo, tiene parthenos, virgen, y Mateo la cita. La Reina-Valera dice: \"la virgen concebirá\".",
+      "Mateo explica el nombre: Emmanuel es \"Con nosotros Dios\"."
+     ]
+    },
+    {
+     "question": "En el Corán Jesús habla desde la cuna: «La paz sobre mí el día en que nací y el día en que muera». ¿Cuáles son las primeras palabras de Jesús que registra la Biblia, y qué edad tenía?",
+     "facts": [
+      "La Biblia no registra palabras de Jesús de bebé. Sus primeras palabras registradas, a los doce años, hablan de \"los negocios de mi Padre\".",
+      "El bebé que habla no está en la Biblia. Una historia parecida está en el Evangelio árabe de la infancia, un escrito fuera de la Biblia."
+     ]
+    },
+    {
+     "question": "El Corán enumera los milagros de Jesús: sanar al ciego y al leproso y resucitar a los muertos. ¿Qué dice Jesús a los discípulos de Juan, y cómo sanó al ciego de nacimiento?",
+     "facts": [
+      "El Corán de Sale dice que Jesús «sana a uno ciego de nacimiento»; Juan 9 habla de \"un hombre ciego desde su nacimiento\".",
+      "El pájaro de barro no está en la Biblia. Un niño Jesús que hace gorriones de barro que echan a volar está en el Evangelio de la infancia de Tomás, un escrito del siglo II fuera de la Biblia.",
+      "En el Corán cada milagro es «con mi permiso». En Juan, Jesús dice: \"Conviéneme obrar las obras del que me envió\"."
+     ]
+    },
+    {
+     "question": "El Corán llama a Jesús el Mesías. ¿Qué significa Mesías, y qué dijo Jesús cuando la mujer samaritana habló del Mesías?",
+     "facts": [
+      "Mesías viene del hebreo mashiach: «ungido». Cristo es christos, la palabra griega para lo mismo: \"Hemos hallado al Mesías (que declarado es, el Cristo)\".",
+      "El Corán llama a Jesús el Mesías (3:45, 4:171) pero no explica el título. En la Biblia el Mesías es el Rey ungido prometido a la casa de David, que \"reinará en la casa de Jacob por siempre\"."
+     ]
+    },
+    {
+     "question": "Jesús prometió \"otro Consolador\". ¿Quién es el Consolador, según estos versículos, y cuándo vendría?",
+     "facts": [
+      "El Consolador es el \"Espíritu de verdad, al cual el mundo no puede recibir\": \"está con vosotros, y será en vosotros\". Juan 14:26 lo nombra: \"el Espíritu Santo\".",
+      "Muchos musulmanes leen Corán 61:6, donde Jesús habla de un mensajero que vendrá llamado Ahmad, como referido a estos versículos. En Juan el Consolador es enviado a los mismos discípulos, y Hechos 1:5 dice que sería \"no muchos días después de estos\"."
+     ]
+    },
+    {
+     "question": "Para vivirlo: la mujer samaritana dejó su cántaro y dijo: «Venid, ved un hombre». ¿Qué hizo con lo que oyó, y qué preguntó Jesús a sus discípulos?",
+     "facts": [
+      "\"muchos de los Samaritanos de aquella ciudad creyeron en él por la palabra de la mujer\". Jesús preguntó: \"Y vosotros, ¿quién decís que soy?\""
+     ]
+    }
+   ],
+   "remember": [
+    "El ángel le dijo a María: \"llamarás su nombre JESUS\".",
+    "\"Emmanuel, que declarado, es: Con nosotros Dios\"",
+    "Sus primeras palabras registradas: \"en los negocios de mi Padre me conviene estar\".",
+    "\"los ciegos ven, los cojos andan, los leprosos son limpiados\"",
+    "A la mujer samaritana: \"Yo soy, que hablo contigo\"."
+   ]
+  },
+  "de": {
+   "title": "Teil 5: Jesus im Koran",
+   "opening_question": "Der Koran ehrt Jesus: geboren von der Jungfrau Maria, der Messias genannt und ein Wort von Gott, ein Wundertäter. Lies seine Worte neben denen der Bibel. Wo stimmen sie überein, und wo sagt die Bibel mehr?",
+   "steps": [
+    {
+     "question": "Der Koran sagt, die Engel brachten Maria die frohe Botschaft »von einem Wort von ihm, dessen Name der Messias ist«. Was sagte der Engel Gabriel bei Lukas zu Maria, und was fragte sie?",
+     "facts": [
+      "Jungfrau ist parthenos: »ein Mädchen«. Koran und Lukas stimmen in Marias Frage überein. Sale: »wie soll ich einen Sohn haben, da mich kein Mann berührt hat?« Lukas: \"Wie soll das zugehen, da ich von keinem Manne weiß?\"",
+      "Der Engel bei Lukas nennt das Kind \"ein Sohn des Höchsten\" und \"Gottes Sohn\". Die Engel im Koran nennen ihn »den Messias, Jesus, Sohn der Maria«."
+     ]
+    },
+    {
+     "question": "Jesaja gab dem Haus David ein Zeichen. Was ist das Zeichen, und was bedeutet der Name Immanuel nach Matthäus?",
+     "facts": [
+      "Jesajas Wort ist almah: »ein Mädchen«, eine junge Frau. Die griechische Septuaginta, vor Christus entstanden, hat parthenos, Jungfrau, und Matthäus zitiert sie. Luther übersetzt: \"Siehe, eine Jungfrau ist schwanger\".",
+      "Matthäus erklärt den Namen: Immanuel ist \"Gott mit uns\"."
+     ]
+    },
+    {
+     "question": "Im Koran spricht Jesus aus der Wiege: »Friede sei auf mir am Tag, da ich geboren wurde, und am Tag, da ich sterbe«. Was sind die ersten Worte Jesu, die die Bibel überliefert, und wie alt war Er?",
+     "facts": [
+      "Die Bibel überliefert keine Worte Jesu als Säugling. Seine ersten überlieferten Worte, mit zwölf Jahren, sprechen von dem, \"das meines Vaters ist\".",
+      "Das sprechende Kind steht nicht in der Bibel. Eine ähnliche Geschichte steht im arabischen Kindheitsevangelium, einer Schrift außerhalb der Bibel."
+     ]
+    },
+    {
+     "question": "Der Koran zählt die Wunder Jesu auf: Blinde und Aussätzige heilen und Tote auferwecken. Was sagt Jesus den Jüngern des Johannes, und wie heilte Er den Blindgeborenen?",
+     "facts": [
+      "Sales Koran sagt, Jesus »heilt einen, der von Geburt an blind ist«; Johannes 9 erzählt von einem, \"der blind geboren war\".",
+      "Der Vogel aus Ton steht nicht in der Bibel. Ein Jesusknabe, der Spatzen aus Ton macht, die davonfliegen, steht im Kindheitsevangelium nach Thomas, einer Schrift aus dem 2. Jahrhundert außerhalb der Bibel.",
+      "Im Koran geschieht jedes Wunder »mit meiner Erlaubnis«. Bei Johannes sagt Jesus: \"Ich muß wirken die Werke des, der mich gesandt hat\"."
+     ]
+    },
+    {
+     "question": "Der Koran nennt Jesus den Messias. Was bedeutet Messias, und was sagte Jesus, als die Samariterin vom Messias sprach?",
+     "facts": [
+      "Messias kommt vom hebräischen mashiach: »gesalbt«. Christus ist christos, das griechische Wort für dasselbe: \"Wir haben den Messias gefunden (welches ist verdolmetscht: der Gesalbte)\".",
+      "Der Koran nennt Jesus den Messias (3,45; 4,171), erklärt den Titel aber nicht. In der Bibel ist der Messias der gesalbte König, der dem Haus David verheißen ist, der \"ein König sein über das Haus Jakob ewiglich\"."
+     ]
+    },
+    {
+     "question": "Jesus verhieß \"einen andern Tröster\". Wer ist der Tröster nach diesen Versen, und wann sollte Er kommen?",
+     "facts": [
+      "Der Tröster ist \"den Geist der Wahrheit, welchen die Welt nicht kann empfangen\": \"er bleibt bei euch und wird in euch sein\". Johannes 14,26 nennt Ihn: \"der Heilige Geist\".",
+      "Viele Muslime lesen Koran 61,6, wo Jesus von einem kommenden Gesandten namens Ahmad spricht, als Hinweis auf diese Verse. Bei Johannes wird der Tröster den Jüngern selbst gesandt, und Apostelgeschichte 1,5 sagt: \"nicht lange nach diesen Tagen\"."
+     ]
+    },
+    {
+     "question": "Für das Leben: Die Samariterin ließ ihren Krug stehen und sagte: »Kommt, seht einen Menschen«. Was tat sie mit dem, was sie hörte, und was fragte Jesus seine Jünger?",
+     "facts": [
+      "\"Es glaubten aber an ihn viele der Samariter aus der Stadt um des Weibes Rede willen\". Jesus fragte: \"Wer sagt denn ihr, daß ich sei?\""
+     ]
+    }
+   ],
+   "remember": [
+    "Der Engel sagte Maria: \"des Namen sollst du Jesus heißen\".",
+    "\"Immanuel\" heißt \"verdolmetscht: Gott mit uns\".",
+    "Seine ersten überlieferten Worte: \"Wisset ihr nicht, daß ich sein muß in dem, das meines Vaters ist?\"",
+    "\"die Blinden sehen, die Lahmen gehen, die Aussätzigen werden rein\"",
+    "Zur Samariterin: \"Ich bin's, der mit dir redet.\""
+   ]
+  }
  }
 }
