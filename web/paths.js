@@ -903,7 +903,16 @@ const BCPaths = (() => {
     const g = /^#\/paths\/group\/([a-z0-9-]+)\/?$/.exec(hash);   // a Bible study group: a short page only for the groups on the site
     if(g) return (list || []).some(p => p.group && slug(p.group) === g[1]) ? "group/" + g[1] + "/" : null;
     for(const [re, to] of SHORT) if(re.test(hash)) return hash.replace(re, to); return null; }
-  function linkOf(hash){ const sp = shortPath(hash); return sp ? A.shareUrl("") + sp : A.shareUrl(hash); }
+  function linkOf(hash){
+    const sp = shortPath(hash); if(!sp) return A.shareUrl(hash);
+    const L = typeof UI_LANG !== "undefined" ? UI_LANG : "en";   // 🌍 the page in the sharer's language, when the site has one (web/build_share.py)
+    if(["es", "de"].includes(L)){
+      if(/^pray\/[a-z0-9-]+\/$/.test(sp)) return A.shareUrl("") + sp + L + "/";
+      const m = /^p\/([a-z0-9-]+)\/$/.exec(sp);
+      if(m && (list || []).some(p => p.id === m[1] && p.i18n && p.i18n[L])) return A.shareUrl("") + sp + L + "/";
+    }
+    return A.shareUrl("") + sp;
+  }
   function shareHash(p, step){
     if(p.mine){   // version 2: the whole path travels in the link (title, question, steps, options, words, notes); nothing is stored on a server
       const o = st => (st.compare && st.compare.length > 1 ? 1 : 0) | ((st.notes || []).includes("scofield") ? 2 : 0) | ((st.notes || []).includes("henry") ? 4 : 0) | (st.look_closer && st.look_closer.xref_top ? 8 : 0);

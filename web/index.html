@@ -2158,7 +2158,7 @@ $("#navBack").onclick = () => navGo(-1);
 $("#navFwd").onclick = () => navGo(1);
 
 /* ---------- app language (the flag at the top) ---------- */
-let uiLang = store.get("ui", null) || (navigator.language || "en").slice(0, 2).toLowerCase();
+let uiLang = store.get("ui", null) || new URLSearchParams(location.search).get("lang") || (navigator.language || "en").slice(0, 2).toLowerCase();   // 🌍 a shared Spanish or German link opens in that language
 if(!I18N_LANGS[uiLang]) uiLang = "en";
 /* the line of versions at the bottom of the cover, built from what BibleChat really offers: the NIV is printed only
    once a licensed NIV is in the list of Bibles; until then the Berean Standard Bible stands for the modern text */

@@ -47,6 +47,12 @@ const BCPrayers = (() => {
   }
   const parse = r => BCPaths.parseRef(r);
   const label = r => String(r).replace(/-/g, "–");
+  /* a reference with the book named in the app's language (Spanish, German) or the reader's Bible: "Jakobus 5:14–16" */
+  const refName = r => {
+    const q = parse(r); if(!q) return label(r);
+    const L = typeof UI_LANG !== "undefined" ? UI_LANG : "en", books = trans[L] && trans[L].books;
+    return (books && books[q.book] ? books[q.book] : (A && A.bookName ? A.bookName(q.book) : q.book)) + " " + label(r.slice(q.book.length + 1));
+  };
   const cat = id => (data.categories.find(c => c.id === id) || {id, icon: "🙏", name: id});
   const written = p => !!p.text;
   const kindRank = p => p.category === "bible" ? 1 : p.category === "paths" ? 2 : 0;   // written library prayers first
@@ -155,7 +161,7 @@ const BCPrayers = (() => {
   }
   function cardHtml(p){
     const c = cat(p.category), first = written(p) ? p.text[0] : (p.by ? T("Prayed by:") + " " + p.by : "");
-    return `<button class="pr-card" data-id="${esc(p.id)}"><span class="pr-ci" aria-hidden="true">${c.icon}</span><span class="pr-cb"><b class="pvx">${esc(p.title)}</b><small class="pvx">${esc(p.refs.map(label).join(" · "))}</small><span class="pr-snip pvx">${esc(first)}</span></span></button>`;
+    return `<button class="pr-card" data-id="${esc(p.id)}"><span class="pr-ci" aria-hidden="true">${c.icon}</span><span class="pr-cb"><b class="pvx">${esc(p.title)}</b><small class="pvx">${esc(p.refs.map(refName).join(" · "))}</small><span class="pr-snip pvx">${esc(first)}</span></span></button>`;
   }
   async function showList(){
     S.view = "list"; S.id = null;
@@ -238,7 +244,7 @@ const BCPrayers = (() => {
   }
   /* the prayer as plain text: a written prayer, or for a prayer of the Bible its verses from the reader's Bible */
   function shareText(p, vs){
-    const refs = `(${p.refs.map(label).join("; ")})`;
+    const refs = `(${p.refs.map(refName).join("; ")})`;
     if(written(p)) return `${p.title}\n\n${p.text.join("\n\n")}\n\n${refs}`;
     const got = (vs || versesCached(p) || []).filter(x => x.vs && x.vs.length);
     if(!got.length) return `${p.title}\n\n${refs}`;
@@ -254,7 +260,7 @@ const BCPrayers = (() => {
      text message, WhatsApp, email or social media, show the QR code, or copy the whole prayer as text. */
   const linkFor = id => BCPaths.linkOf ? BCPaths.linkOf(id ? "#/prayers/" + id : "#/prayers") : A.shareUrl(id ? "#/prayers/" + id : "#/prayers");
   function inviteText(p){
-    return p ? `${T("A prayer for you")}: "${p.title}" (${p.refs.map(label).join("; ")}). ${T("Pray it in BibleChat (free, no sign-up):")}`
+    return p ? `${T("A prayer for you")}: "${p.title}" (${p.refs.map(refName).join("; ")}). ${T("Pray it in BibleChat (free, no sign-up):")}`
       : T("Prayers drawn from the Bible, and the prayers the Bible itself records. In BibleChat, free, no sign-up:");
   }
   function share(p, back){
@@ -264,7 +270,7 @@ const BCPrayers = (() => {
     if(p && !written(p) && !versesCached(p)) versesFor(p).then(vs => { S.verses = vs; S.versesId = p.id; });   // ready for 📋 Copy the whole prayer
     S.back = back || (p ? () => showPrayer(p.id) : () => showList());
     const qr = `<div class="pv-qrbox"><p class="pv-small">${esc(T(wide ? "Point a phone camera at the screen:" : "Or let them scan this code with their phone camera:"))}</p><div class="pv-qr"></div></div>`;
-    frame(p ? "↗ " + T("Share this prayer") : "↗ " + T("Share the Prayers"), `<div class="pv-shead"><img class="pv-shimg" src="${esc(A.base + "img/thumb-prayers.jpg")}" alt="" onerror="this.outerHTML='<span class=&quot;pv-shico&quot;>🙏</span>'"><div><b class="pvx">${esc(p ? p.title : T("BibleChat Prayers"))}</b><span class="pvx">${esc(p ? p.refs.map(label).join(" · ") : T("Prayers drawn from the Bible, and the prayers the Bible itself records."))}</span></div></div>
+    frame(p ? "↗ " + T("Share this prayer") : "↗ " + T("Share the Prayers"), `<div class="pv-shead"><img class="pv-shimg" src="${esc(A.base + "img/thumb-prayers.jpg")}" alt="" onerror="this.outerHTML='<span class=&quot;pv-shico&quot;>🙏</span>'"><div><b class="pvx">${esc(p ? p.title : T("BibleChat Prayers"))}</b><span class="pvx">${esc(p ? p.refs.map(refName).join(" · ") : T("Prayers drawn from the Bible, and the prayers the Bible itself records."))}</span></div></div>
       <p class="pv-small">${esc(T(p ? "Send this link to someone. It opens this prayer in BibleChat on their phone or computer, with the verses it comes from. No sign-up, nothing to install." : "Send this link to someone. It opens all the prayers in BibleChat on their phone or computer. No sign-up, nothing to install."))}</p>
       ${wide ? qr : ""}
       <div class="pr-picbox"><img class="pr-picprev" alt="${esc(T("The prayer as a picture"))}" hidden>
@@ -315,7 +321,7 @@ const BCPrayers = (() => {
     else if(written(p)) paras = p.text;
     else { const vs = versesCached(p) || await versesFor(p).then(v => { S.verses = v; S.versesId = p.id; return v; }).catch(() => []);
       paras = vs.filter(x => x.vs && x.vs.length).map(x => x.vs.map(v => v[3]).join(" ")); if(!paras.length) paras = [p.by || ""]; }
-    const refs = p ? p.refs.map(label).join(" · ") : "";
+    const refs = p ? p.refs.map(refName).join(" · ") : "";
     // the biggest type that fits the whole prayer (a half line between paragraphs), set in the middle of the space; if even
     // the smallest type doesn't fit, it ends with … and the link has the rest
     const refH = refs ? 70 : 0, layout = sz => { g.font = `${sz}px Georgia, serif`; const out = []; paras.forEach((pa, i) => wrapLines(pa, MW).forEach((l, j) => out.push({l, gap: i && !j}))); return out; };
@@ -416,7 +422,7 @@ const BCPrayers = (() => {
     if(!P){ pendingCard = el; return; }   // the page asked before mount(): drawn as soon as it mounts
     try{ await load(); }catch(e){ el.hidden = true; return; }
     const p = today(P.votd ? P.votd() : null); if(!p){ el.hidden = true; return; }
-    el.innerHTML = `<div class="lab">🙏 ${esc(T("Today's prayer"))}</div><div class="pr-tap" data-prt="open" role="button" tabindex="0" aria-label="${esc(T("Read the whole prayer") + ": " + p.title)}"><b class="pr-tt pvx">${esc(p.title)}</b><div class="vt pvx">${esc(written(p) ? p.text.join(" ") : p.by || "")}</div><div class="rf">${esc(p.refs.map(label).join(" · "))}</div><span class="pr-more">${esc(T("Read the whole prayer"))} ›</span></div>
+    el.innerHTML = `<div class="lab">🙏 ${esc(T("Today's prayer"))}</div><div class="pr-tap" data-prt="open" role="button" tabindex="0" aria-label="${esc(T("Read the whole prayer") + ": " + p.title)}"><b class="pr-tt pvx">${esc(p.title)}</b><div class="vt pvx">${esc(written(p) ? p.text.join(" ") : p.by || "")}</div><div class="rf">${esc(p.refs.map(refName).join(" · "))}</div><span class="pr-more">${esc(T("Read the whole prayer"))} ›</span></div>
       <div class="alt row"><button class="btn" data-prt="open">🙏 ${esc(T("Pray it"))}</button><button class="btn" data-prt="listen">🔊 ${esc(T("Listen"))}</button><button class="btn" data-prt="share">↗ ${esc(T("Share"))}</button><button class="btn" data-prt="all">${esc(T("All prayers"))}</button></div>`;
     el.hidden = false;
     el.onkeydown = e => { if((e.key === "Enter" || e.key === " ") && e.target.closest(".pr-tap")){ e.preventDefault(); open(p.id); } };

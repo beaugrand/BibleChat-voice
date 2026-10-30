@@ -31,7 +31,7 @@ OG_PATHS = "paths/img/og-studypaths.jpg"
 OG_PRAYERS = "paths/img/og-prayers.jpg"
 
 PAGE = """<!doctype html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -70,7 +70,7 @@ small{{display:block;color:#9aa3ad;margin-top:12px}}
 <h1>{title}</h1>
 <p>{desc}</p>
 <a href="{app}">{button}</a>
-<small>{kind} in BibleChat. Free, no sign-up, nothing to install.</small>
+<small>{small}</small>
 </div>
 </main>
 <script>location.replace({app_js} );</script>
@@ -100,7 +100,8 @@ def jpeg_size(path: str) -> tuple[int, int]:
     raise ValueError(f"not a JPEG: {path}")
 
 
-def page(out: str, rel: str, title: str, desc: str, image: str, app: str, kind: str, button: str) -> str:
+def page(out: str, rel: str, title: str, desc: str, image: str, app: str, kind: str, button: str, lang: str = "en",
+         small: str | None = None) -> str:
     """Write OUT/<rel>index.html. `app` is the address of BibleChat at the path or prayer, relative to the page."""
     e = lambda s: html.escape(str(s), quote=True)  # noqa: E731
     url = SITE + rel
@@ -108,7 +109,8 @@ def page(out: str, rel: str, title: str, desc: str, image: str, app: str, kind: 
     # picture is; "?v=" makes them fetch it afresh instead of using a copy they kept from before the size was given
     width, height = jpeg_size(os.path.join(WEB, *image.split("/")))
     body = PAGE.format(title=e(title), desc=e(short(desc)), url=e(url), image=e(SITE + image + "?v=2"), width=width, height=height, app=e(app),
-                       app_js=json.dumps(app), kind=e(kind), button=e(button))
+                       app_js=json.dumps(app), kind=e(kind), button=e(button), lang=e(lang),
+                       small=e(small or f"{kind} in BibleChat. Free, no sign-up, nothing to install."))
     path = os.path.join(out, *rel.strip("/").split("/"), "index.html") if rel else os.path.join(out, "index.html")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
@@ -154,6 +156,58 @@ def write_share_pages(out: str, web: str = WEB) -> list[str]:
         img = next((images[x] for x in p.get("paths", []) if x in images), OG_PRAYERS)
         written.append(page(out, f"pray/{p['id']}/", p["title"] if "prayer" in p["title"].lower() else f"{p['title']}: a prayer", desc, img,
                             f"../../#/prayers/{p['id']}", "A prayer", "🙏 Pray it in BibleChat"))
+    written += language_pages(out, web, paths, prayers, images)
+    return written
+
+
+# 🌍 the same pages in Spanish and German: pray/<id>/es/, p/<id>/de/ ... A share made with the app in that language links
+# here (paths.js linkOf), so the preview in Messages, WhatsApp or Facebook is in that language, and the app opens in it.
+LANG = {
+    "es": {"books": "spa", "prayer": "Una oración", "pray": "🙏 Órala en BibleChat", "word": "oración", "a_prayer": "una oración",
+           "bible_prayer": "Una oración que la Biblia misma registra", "and_more": "y más",
+           "small": "{kind} en BibleChat. Gratis, sin registrarse, nada que instalar.",
+           "study": "Un estudio bíblico guiado", "start": "📜 Empezar este estudio"},
+    "de": {"books": "deu", "prayer": "Ein Gebet", "pray": "🙏 Bete es in BibleChat", "word": "gebet", "a_prayer": "ein Gebet",
+           "bible_prayer": "Ein Gebet, das die Bibel selbst überliefert", "and_more": "und mehr",
+           "small": "{kind} in BibleChat. Kostenlos, ohne Anmeldung, nichts zu installieren.",
+           "study": "Eine geführte Bibelstudie", "start": "📜 Diese Studie beginnen"},
+}
+
+
+def ref_in(lang: str, ref: str, books: dict) -> str:
+    m = re.match(r"^(.+?) (\d.*)$", ref)
+    return (books.get(m.group(1), m.group(1)) + " " + m.group(2) if m else ref).replace("-", "–")
+
+
+def language_pages(out: str, web: str, paths: list, prayers: dict, images: dict) -> list[str]:
+    with open(os.path.join(ROOT, "bibleask", "data", "booknames.json"), encoding="utf-8") as f:
+        names = json.load(f)
+    written = []
+    for lang, L in LANG.items():
+        books = names.get(L["books"], {})
+        tr_file = os.path.join(web, f"prayers.{lang}.json")
+        tr = {}
+        if os.path.exists(tr_file):
+            with open(tr_file, encoding="utf-8") as f:
+                tr = json.load(f).get("prayers", {})
+        small = L["small"].format(kind=L["prayer"])
+        for p in prayers["prayers"]:
+            t = tr.get(p["id"])
+            if not t:
+                continue
+            rs = [ref_in(lang, r, books) for r in p.get("refs", [])]
+            refs = "; ".join(rs[:2]) + (f" {L['and_more']}" if len(rs) > 2 else "")
+            desc = f"{short(t['text'][0], 170)} ({refs})" if t.get("text") else f"{L['bible_prayer']}: {refs}."
+            img = next((images[x] for x in p.get("paths", []) if x in images), OG_PRAYERS)
+            title = t["title"] if L["word"] in t["title"].lower() else f"{t['title']}: {L['a_prayer']}"
+            written.append(page(out, f"pray/{p['id']}/{lang}/", title, desc, img, f"../../../?lang={lang}#/prayers/{p['id']}",
+                                L["prayer"], L["pray"], lang, small))
+        for p in paths:
+            t = (p.get("i18n") or {}).get(lang)
+            if not t:
+                continue
+            written.append(page(out, f"p/{p['id']}/{lang}/", t["title"], t.get("opening_question", ""), images.get(p["id"], OG_PATHS),
+                                f"../../../?lang={lang}#/path/{p['id']}/1", L["study"], L["start"], lang, L["small"].format(kind=L["study"])))
     return written
 
 

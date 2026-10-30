@@ -146,7 +146,8 @@ class SharePagesTest(unittest.TestCase):
         prayers = json.loads(read("web", "prayers.json"))["prayers"]
         series = {p["series"]["id"] for p in index if isinstance(p.get("series"), dict)}
         groups = {p["group"] for p in index if p.get("group")}                   # a Bible study group's folder has a page too
-        self.assertEqual(len(self.files), 2 + len(index) + len(series) + len(groups) + len(prayers))
+        english = [f for f in self.files if not re.search(r"/(es|de)/index\.html$", f)]
+        self.assertEqual(len(english), 2 + len(index) + len(series) + len(groups) + len(prayers))
         for p in index:
             h = self.page("p", p["id"])
             self.assertEqual(self.meta(h, "og:image"), build_share.SITE + "paths/" + p["image"] + "?v=2")   # its own picture
@@ -167,6 +168,27 @@ class SharePagesTest(unittest.TestCase):
         self.assertIn("og-prayers.jpg", self.meta(self.page("pray"), "og:image"))
         self.assertEqual((self.meta(self.page("pray"), "og:image:width"), self.meta(self.page("pray"), "og:image:height")), ("1200", "630"))
         self.assertTrue(os.path.exists(os.path.join(ROOT, "web", "paths", "img", "og-prayers.jpg")))
+
+    def test_a_prayer_shared_in_german_or_spanish_previews_in_that_language(self):
+        # Hans: "When I share through sms it sends it in German but the description is in English"
+        de = json.loads(read("web", "prayers.de.json"))["prayers"]
+        es = json.loads(read("web", "prayers.es.json"))["prayers"]
+        pid = sorted(set(de) & set(es))[0]
+        h = self.page("pray", pid, "de")
+        self.assertIn('lang="de"', h)
+        self.assertIn(de[pid]["title"], self.meta(h, "og:title"))
+        self.assertIn('location.replace("../../../?lang=de#/prayers/%s"' % pid, h)
+        self.assertEqual(self.meta(h, "og:url"), build_share.SITE + "pray/" + pid + "/de/")
+        self.assertIn("Gebet", h)
+        h = self.page("pray", pid, "es")
+        self.assertIn(es[pid]["title"], self.meta(h, "og:title"))
+        self.assertIn("oración", h)
+        # the app's share text and picture label follow the language too
+        i18n = read("web", "i18n.js")
+        for phrase in ("A prayer", "A prayer for you", "Pray it in BibleChat (free, no sign-up):"):
+            self.assertIn('\n"%s": [' % phrase, i18n)
+        self.assertIn('L + "/"', read("web", "paths.js"))
+        self.assertIn('get("lang")', read("web", "index.html"))
 
     def test_the_phone_build_writes_them(self):
         self.assertIn("write_share_pages(out, web)", read("web", "build_study.py"))
