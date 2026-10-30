@@ -1,0 +1,42 @@
+{
+ "title": "Mi cuerpo es un templo",
+ "opening_question": "Mi cuerpo es un templo: ¿qué dice el texto sobre honrarlo, y sobre los médicos y los remedios? La Biblia no nombra las vacunas; esta ruta muestra lo que sí dice, y tú decides.",
+ "steps": [
+  {"question": "¿De quién es templo tu cuerpo, y por qué no eres tuyo?",
+   "facts": [
+    "La palabra para \"templo\" es naos, de una palabra que significa «habitar».",
+    "La palabra para \"precio\" es time: «un valor, es decir, dinero pagado».",
+    "Los versículos antes de 6:19 tratan del pecado sexual: \"Huid la fornicación\" (6:18). Ese es el contexto de \"vuestro cuerpo es templo\"."
+   ]},
+  {"question": "¿Quién mora en el templo de Dios, y qué dice el texto de cualquiera que lo viole?",
+   "facts": [
+    "En 1 Corintios 3:17 \"violare\" y \"destruirá\" son la misma palabra griega, phtheiro.",
+    "En 3:16 \"sois\" es plural: Pablo habla a la iglesia junta: \"sois templo de Dios\". Los dos datos ayudan a aplicar los versículos con justicia."
+   ]},
+  {"question": "¿Como qué se nos pide que presentemos nuestros cuerpos?", "facts": []},
+  {"question": "¿Qué hizo el samaritano por el cuerpo del hombre herido?", "facts": []},
+  {"question": "¿Quiénes dice Jesús que necesitan médico, cómo se llama a Lucas, y qué le dijo Pablo a Timoteo que usara?",
+   "facts": [
+    "\"médico\" en Mateo 9:12 y en Colosenses 4:14 es la misma palabra griega, iatros: «un médico»."
+   ]},
+  {"question": "Remedios en la Biblia: ¿qué se puso sobre la llaga de Ezequías, para qué son las hojas en Ezequiel, y qué dice Santiago que se haga por el enfermo?",
+   "facts": [
+    "\"Tomen masa de higos, y pónganla en la llaga\"; \"su hoja para medicina\"; \"ungiéndole con aceite en el nombre del Señor\"."
+   ]},
+  {"question": "El otro lado: ¿qué dice el texto del rey Asa en su enfermedad, y de la mujer que había gastado todo lo que tenía en médicos?",
+   "facts": [
+    "Asa \"en su enfermedad no buscó á Jehová, sino á los médicos\"; la mujer \"había sufrido mucho de muchos médicos\". Los dos versículos son parte de todo el consejo."
+   ]},
+  {"question": "¿Dónde hay seguridad, según Proverbios?", "facts": []},
+  {"question": "Para vivirlo: la ruta te deja la decisión a ti. ¿Qué dice Pablo de decidir según la conciencia, y de no juzgar al que decide de otro modo?",
+   "facts": [
+    "\"Cada uno esté asegurado en su ánimo\"; \"no juzguemos más los unos de los otros\"; \"todo lo que no es de fe, es pecado\"."
+   ]}
+ ],
+ "remember": [
+  "\"vuestro cuerpo es templo del Espíritu Santo\" ... \"comprados sois por precio\"",
+  "\"que presentéis vuestros cuerpos en sacrificio vivo\"",
+  "El samaritano vendó sus heridas, \"echándoles aceite y vino\"; \"Los que están sanos no tienen necesidad de médico\".",
+  "\"en la multitud de consejeros hay salud\""
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "title": "¿Vapor o lluvia?",
+ "opening_question": "¿Qué regaba la tierra antes del diluvio, y qué dice el texto de la lluvia?",
+ "steps": [
+  {"question": "¿Qué hizo Dios el día segundo, y qué apartó?",
+   "facts": [
+    "\"expansión\" es el hebreo raqia: «propiamente una extensión». Dios la hizo entre aguas: \"apartó las aguas que estaban debajo de la expansión, de las aguas que estaban sobre la expansión\"."
+   ]},
+  {"question": "¿Por qué no había crecido aún ninguna planta, y qué regaba la tierra?",
+   "facts": [
+    "\"vapor\" es el hebreo 'ed: «una niebla». Solo aparece dos veces en la Biblia: aquí y en Job 36:27, y la Reina-Valera lo traduce \"vapor\" en los dos.",
+    "Las traducciones difieren aquí. La Reina-Valera dice \"subía de la tierra un vapor\", la King James y el Canon etíope «una niebla»; la BSB dice «manantiales brotaban de la tierra».",
+    "Génesis 2:5 da dos razones por las que no había crecido ninguna planta: \"aun no había Jehová Dios hecho llover sobre la tierra, ni había hombre para que labrase la tierra\". Habla del tiempo antes de las plantas y antes de Adán. El texto no dice si llovió entre entonces y el diluvio."
+   ]},
+  {"question": "La palabra para \"vapor\" se usa solo dos veces. ¿Qué dice de ella el otro versículo?",
+   "facts": [
+    "En Job 36:27 la misma palabra 'ed se traduce \"vapor\": la lluvia cae \"según el vapor\". La BSB: «destila la lluvia de la niebla». Aquí vapor y lluvia están en una sola frase."
+   ]},
+  {"question": "¿De dónde vinieron las aguas del diluvio, y cuánto tiempo llovió?",
+   "facts": [
+    "Las aguas vinieron de abajo y de arriba a la vez: \"fueron rotas todas las fuentes del grande abismo, y las cataratas de los cielos fueron abiertas\". \"abismo\" es tehom: «un abismo (como una masa de agua que se agita)».",
+    "Génesis 7:4 usa el mismo verbo hebreo que Génesis 2:5 (matar, «llover»): \"yo haré llover sobre la tierra cuarenta días y cuarenta noches\".",
+    "\"diluvio\" es mabbul: «una inundación». Todas las veces menos una se refiere al diluvio de Noé; la otra es el Salmo 29:10: \"Jehová preside en el diluvio\".",
+    "Pedro mira atrás al mismo hecho: \"el mundo de entonces pereció anegado en agua\"."
+   ]},
+  {"question": "¿Qué puso Dios en las nubes, y de qué es señal?",
+   "facts": [
+    "\"arco\" es qesheth: «un arco para disparar». El arco iris y el arco del arquero son una sola palabra en hebreo.",
+    "Dios dice que el arco es también para que Él lo vea: \"verlo he para acordarme del pacto perpetuo\".",
+    "El texto llama al arco \"señal de convenio\". No dice si alguna vez se había visto antes un arco iris."
+   ]},
+  {"question": "¿Dónde se habla todavía de aguas, y de qué fue advertido Noé?",
+   "facts": [
+    "El Salmo 148, escrito mucho después del diluvio, todavía habla de \"las aguas que están sobre los cielos\"."
+   ]},
+  {"question": "Para vivirlo: Noé recibió \"respuesta de cosas que aun no se veían\" y \"aparejó el arca\". ¿Qué dicen estos versículos de confiar en la palabra de Dios antes de verla?",
+   "facts": [
+    "\"E hízolo así Noé; hizo conforme á todo lo que Dios le mandó\". \"Porque por fe andamos, no por vista\"."
+   ]}
+ ],
+ "remember": [
+  "\"aun no había Jehová Dios hecho llover sobre la tierra\" ... \"subía de la tierra un vapor\"",
+  "Fueron rotas las fuentes del grande abismo y las cataratas de los cielos fueron abiertas.",
+  "\"Mi arco pondré en las nubes\"",
+  "Noé recibió \"respuesta de cosas que aun no se veían\"."
+ ]
+}

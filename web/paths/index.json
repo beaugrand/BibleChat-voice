@@ -535,6 +535,34 @@
   "minutes": 80,
   "anim": {
    "kind": "stars"
+  },
+  "i18n": {
+   "es": {
+    "title": "Los cielos y la tierra con las palabras del texto",
+    "opening_question": "¿Qué dice el texto mismo de la forma de la tierra, de la expansión y de lo que sostiene la tierra?",
+    "step_questions": [
+     "¿Qué es la expansión, dónde están puestas las lumbreras, y qué hay encima y debajo de ella?",
+     "¿Cómo describen el cielo estos versículos?",
+     "¿Qué palabras describen la forma: círculo, compás, bola, cantones? Lee cada una en su propia frase.",
+     "¿De qué cuelga o sobre qué descansa la tierra? Lee lado a lado los versículos sobre la nada, los cimientos y las columnas.",
+     "¿Qué dicen estos versículos de que la tierra sea movida, y del sol?",
+     "El Libro de las Luminarias (Canon etíope): ¿cómo describe el sol, la luna y las estrellas y sus puertas?",
+     "Para vivirlo: a Job se le preguntó \"¿Dónde estabas cuando yo fundaba la tierra?\" ¿Qué respondió Job, y qué pregunta el salmista cuando considera los cielos?"
+    ]
+   },
+   "de": {
+    "title": "Himmel und Erde in den Worten des Textes",
+    "opening_question": "Was sagt der Text selbst über die Gestalt der Erde, die Feste und das, was die Erde hält?",
+    "step_questions": [
+     "Was ist die Feste, wo sind die Lichter gesetzt, und was ist über und unter ihr?",
+     "Wie beschreiben diese Verse den Himmel?",
+     "Welche Wörter beschreiben die Gestalt: Kreis, Ziel, Kugel, Ecken? Lies jedes in seinem eigenen Satz.",
+     "Woran hängt oder worauf ruht die Erde? Lies die Verse über das Nichts, die Grundfesten und die Pfeiler nebeneinander.",
+     "Was sagen diese Verse darüber, dass die Erde bewegt wird, und über die Sonne?",
+     "Das Buch der Himmelslichter (äthiopischer Kanon): Wie beschreibt es Sonne, Mond und Sterne und ihre Tore?",
+     "Für das Leben: Hiob wurde gefragt: \"Wo warst du, da ich die Erde gründete?\" Was antwortete Hiob, und was fragt der Psalmist, wenn er den Himmel betrachtet?"
+    ]
+   }
   }
  },
  {
@@ -806,6 +834,36 @@
    "x": 60,
    "y": 22,
    "s": 40
+  },
+  "i18n": {
+   "es": {
+    "title": "La luz antes del sol",
+    "opening_question": "Si el sol fue hecho el día cuarto, ¿qué era la luz del día primero?",
+    "step_questions": [
+     "¿Qué dice el texto que pasó el día primero?",
+     "¿Qué se hizo el día cuarto, y para qué dice el texto que es?",
+     "¿Qué dice Juan que había en el principio, y cómo llama a la luz?",
+     "¿A quién se llama \"la luz del mundo\" en estos versículos?",
+     "¿Qué dice este versículo que es Dios?",
+     "¿Qué da luz donde no hay sol ni luna?",
+     "Más versículos sobre la luz y de dónde viene. Unos dicen que Dios forma la luz, otros que Dios es luz, otros que habita en ella. ¿Qué dice cada uno?",
+     "Para vivirlo: el Dios que dijo \"Sea la luz\" \"resplandeció en nuestros corazones\". ¿Qué dice Jesús de seguirle, y qué hemos de hacer con la luz?"
+    ]
+   },
+   "de": {
+    "title": "Licht vor der Sonne",
+    "opening_question": "Wenn die Sonne am vierten Tag gemacht wurde, was war dann das Licht am ersten Tag?",
+    "step_questions": [
+     "Was geschah nach dem Text am ersten Tag?",
+     "Was wurde am vierten Tag gemacht, und wozu ist es nach dem Text da?",
+     "Was war nach Johannes im Anfang, und wie nennt er das Licht?",
+     "Wer wird in diesen Versen \"das Licht der Welt\" genannt?",
+     "Was ist Gott nach diesem Vers?",
+     "Was gibt Licht, wo weder Sonne noch Mond ist?",
+     "Weitere Verse über das Licht und woher es kommt. Manche sagen, Gott macht das Licht, manche, Gott ist Licht, manche, Er wohnt darin. Was sagt jeder?",
+     "Für das Leben: Der Gott, der sprach: \"Es werde Licht!\", hat \"einen hellen Schein in unsere Herzen gegeben\". Was sagt Jesus über die Nachfolge, und was sollen wir mit dem Licht tun?"
+    ]
+   }
   }
  },
  {
@@ -1300,6 +1358,34 @@
   "minutes": 35,
   "anim": {
    "kind": "mist"
+  },
+  "i18n": {
+   "es": {
+    "title": "¿Vapor o lluvia?",
+    "opening_question": "¿Qué regaba la tierra antes del diluvio, y qué dice el texto de la lluvia?",
+    "step_questions": [
+     "¿Qué hizo Dios el día segundo, y qué apartó?",
+     "¿Por qué no había crecido aún ninguna planta, y qué regaba la tierra?",
+     "La palabra para \"vapor\" se usa solo dos veces. ¿Qué dice de ella el otro versículo?",
+     "¿De dónde vinieron las aguas del diluvio, y cuánto tiempo llovió?",
+     "¿Qué puso Dios en las nubes, y de qué es señal?",
+     "¿Dónde se habla todavía de aguas, y de qué fue advertido Noé?",
+     "Para vivirlo: Noé recibió \"respuesta de cosas que aun no se veían\" y \"aparejó el arca\". ¿Qué dicen estos versículos de confiar en la palabra de Dios antes de verla?"
+    ]
+   },
+   "de": {
+    "title": "Nebel oder Regen?",
+    "opening_question": "Was bewässerte die Erde vor der Sintflut, und was sagt der Text über den Regen?",
+    "step_questions": [
+     "Was machte Gott am zweiten Tag, und was schied es?",
+     "Warum war noch keine Pflanze gewachsen, und was bewässerte die Erde?",
+     "Das Wort für Nebel kommt nur zweimal vor. Was sagt der andere Vers darüber?",
+     "Woher kamen die Wasser der Sintflut, und wie lange regnete es?",
+     "Was setzte Gott in die Wolken, und wovon ist es ein Zeichen?",
+     "Wo ist noch von Wassern die Rede, und wovor wurde Noah gewarnt?",
+     "Für das Leben: Noah empfing \"ein göttliches Wort\" \"über das, was man noch nicht sah\", und hat \"die Arche zubereitet\". Was sagen diese Verse darüber, Gottes Wort zu vertrauen, bevor wir es sehen?"
+    ]
+   }
   }
  },
  {
@@ -1343,6 +1429,38 @@
    "x": 52,
    "y": 4,
    "s": 40
+  },
+  "i18n": {
+   "es": {
+    "title": "Mi cuerpo es un templo",
+    "opening_question": "Mi cuerpo es un templo: ¿qué dice el texto sobre honrarlo, y sobre los médicos y los remedios? La Biblia no nombra las vacunas; esta ruta muestra lo que sí dice, y tú decides.",
+    "step_questions": [
+     "¿De quién es templo tu cuerpo, y por qué no eres tuyo?",
+     "¿Quién mora en el templo de Dios, y qué dice el texto de cualquiera que lo viole?",
+     "¿Como qué se nos pide que presentemos nuestros cuerpos?",
+     "¿Qué hizo el samaritano por el cuerpo del hombre herido?",
+     "¿Quiénes dice Jesús que necesitan médico, cómo se llama a Lucas, y qué le dijo Pablo a Timoteo que usara?",
+     "Remedios en la Biblia: ¿qué se puso sobre la llaga de Ezequías, para qué son las hojas en Ezequiel, y qué dice Santiago que se haga por el enfermo?",
+     "El otro lado: ¿qué dice el texto del rey Asa en su enfermedad, y de la mujer que había gastado todo lo que tenía en médicos?",
+     "¿Dónde hay seguridad, según Proverbios?",
+     "Para vivirlo: la ruta te deja la decisión a ti. ¿Qué dice Pablo de decidir según la conciencia, y de no juzgar al que decide de otro modo?"
+    ]
+   },
+   "de": {
+    "title": "Mein Leib ist ein Tempel",
+    "opening_question": "Mein Leib ist ein Tempel: Was sagt der Text darüber, ihn zu ehren, und über Ärzte und Heilmittel? Die Bibel nennt keine Impfungen; dieser Pfad zeigt, was sie sagt, und du entscheidest.",
+    "step_questions": [
+     "Wessen Tempel ist dein Leib, und warum gehörst du nicht dir selbst?",
+     "Wer wohnt im Tempel Gottes, und was sagt der Text über jeden, der ihn verdirbt?",
+     "Wozu sollen wir unsere Leiber hingeben?",
+     "Was tat der Samariter für den Leib des verwundeten Mannes?",
+     "Wer braucht nach Jesu Wort einen Arzt, wie wird Lukas genannt, und was sollte Timotheus nach Paulus gebrauchen?",
+     "Heilmittel in der Bibel: Was wurde auf Hiskias Geschwür gelegt, wozu sind die Blätter bei Hesekiel, und was soll man nach Jakobus für den Kranken tun?",
+     "Die andere Seite: Was sagt der Text über König Asa in seiner Krankheit und über die Frau, die all ihr Gut für Ärzte ausgegeben hatte?",
+     "Wo ist nach den Sprüchen Sicherheit?",
+     "Für das Leben: Der Pfad überlässt dir die Entscheidung. Was sagt Paulus darüber, nach dem Gewissen zu entscheiden und den nicht zu richten, der anders entscheidet?"
+    ]
+   }
   }
  },
  {

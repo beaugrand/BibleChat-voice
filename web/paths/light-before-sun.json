@@ -709,5 +709,131 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "La luz antes del sol",
+   "opening_question": "Si el sol fue hecho el día cuarto, ¿qué era la luz del día primero?",
+   "steps": [
+    {
+     "question": "¿Qué dice el texto que pasó el día primero?",
+     "facts": [
+      "\"luz\" el día primero es el hebreo 'or: «iluminación o (en concreto) luminaria». Dios \"llamó Dios á la luz Día\", y el primer día tiene \"la tarde y la mañana\" antes de que se haga ningún sol.",
+      "El texto no dice de dónde vino la luz del día primero. Dice solo que Dios habló: \"Sea la luz: y fué la luz\"."
+     ]
+    },
+    {
+     "question": "¿Qué se hizo el día cuarto, y para qué dice el texto que es?",
+     "facts": [
+      "\"lumbreras\" el día cuarto es otra palabra, ma'or: «un cuerpo luminoso o luminaria». Las dos palabras vienen de la misma raíz (H215). El día primero tiene la luz misma; el día cuarto, los cuerpos que la dan.",
+      "Ma'or está también en \"la lumbrera mayor\" y \"la lumbrera menor\". El texto dice para qué son: \"sean por señales, y para las estaciones, y para días y años\" y \"para alumbrar sobre la tierra\".",
+      "El día cuarto no usa las palabras sol y luna; dice \"las dos grandes lumbreras\". El Salmo 136 las nombra: \"El sol para que dominase en el día\" y \"La luna y las estrellas para que dominasen en la noche\"."
+     ]
+    },
+    {
+     "question": "¿Qué dice Juan que había en el principio, y cómo llama a la luz?",
+     "facts": [
+      "Juan empieza con las primeras palabras de Génesis: \"EN el principio\". \"luz\" aquí es el griego phos: «luminosidad (en el sentido más amplio, natural o artificial, abstracta o concreta, literal o figurada)».",
+      "Juan dice del Verbo: \"En él estaba la vida, y la vida era la luz de los hombres\", y \"la luz en las tinieblas resplandece\"."
+     ]
+    },
+    {
+     "question": "¿A quién se llama \"la luz del mundo\" en estos versículos?",
+     "facts": []
+    },
+    {
+     "question": "¿Qué dice este versículo que es Dios?",
+     "facts": []
+    },
+    {
+     "question": "¿Qué da luz donde no hay sol ni luna?",
+     "facts": [
+      "Isaías y Apocalipsis hablan los dos de luz sin sol ni luna: \"Jehová te será por luz perpetua\", y \"la claridad de Dios la iluminó, y el Cordero era su lumbrera\". Como el día primero, esta luz no depende del sol."
+     ]
+    },
+    {
+     "question": "Más versículos sobre la luz y de dónde viene. Unos dicen que Dios forma la luz, otros que Dios es luz, otros que habita en ella. ¿Qué dice cada uno?",
+     "facts": [
+      "Pablo usa Génesis 1:3 para lo que Dios hace en una persona: \"Dios, que mandó que de las tinieblas resplandeciese la luz, es el que resplandeció en nuestros corazones\".",
+      "Santiago llama a Dios \"Padre de las luces\"; Pablo dice que \"habita en luz inaccesible\"."
+     ]
+    },
+    {
+     "question": "Para vivirlo: el Dios que dijo \"Sea la luz\" \"resplandeció en nuestros corazones\". ¿Qué dice Jesús de seguirle, y qué hemos de hacer con la luz?",
+     "facts": [
+      "\"si andamos en luz, como él está en luz, tenemos comunión entre nosotros\"; \"Así alumbre vuestra luz delante de los hombres, para que vean vuestras obras buenas\"."
+     ]
+    }
+   ],
+   "remember": [
+    "Dios dijo \"Sea la luz\" el día primero; las dos grandes lumbreras vinieron el cuarto.",
+    "\"Dios es luz, y en él no hay ningunas tinieblas\"",
+    "Jesús dijo: \"Yo soy la luz del mundo\".",
+    "En la ciudad, \"el Cordero era su lumbrera\".",
+    "Unos versículos dicen que Dios forma la luz, otros que Él es luz, otros que habita en ella. Tú los pesas."
+   ]
+  },
+  "de": {
+   "title": "Licht vor der Sonne",
+   "opening_question": "Wenn die Sonne am vierten Tag gemacht wurde, was war dann das Licht am ersten Tag?",
+   "steps": [
+    {
+     "question": "Was geschah nach dem Text am ersten Tag?",
+     "facts": [
+      "\"Licht\" am ersten Tag ist das hebräische 'or: »Erleuchtung oder (konkret) Leuchte«. Gott \"nannte das Licht Tag\", und der erste Tag hat \"Abend und Morgen\", bevor eine Sonne gemacht ist.",
+      "Der Text sagt nicht, woher das Licht des ersten Tages kam. Er sagt nur, dass Gott sprach: \"Es werde Licht! und es ward Licht.\""
+     ]
+    },
+    {
+     "question": "Was wurde am vierten Tag gemacht, und wozu ist es nach dem Text da?",
+     "facts": [
+      "\"Lichter\" am vierten Tag ist ein anderes Wort, ma'or: »ein leuchtender Körper, eine Leuchte«. Beide Wörter kommen von derselben Wurzel (H215). Der erste Tag hat das Licht selbst; der vierte Tag die Körper, die es geben.",
+      "Ma'or steht auch für \"ein großes Licht\" und \"ein kleines Licht\". Der Text sagt, wozu sie da sind: sie \"geben Zeichen, Zeiten, Tage und Jahre\" und \"daß sie scheinen auf Erden\".",
+      "Der vierte Tag gebraucht die Wörter Sonne und Mond nicht; er sagt \"zwei große Lichter\". Psalm 136 nennt sie: \"Die Sonne, dem Tag vorzustehen\" und \"den Mond und Sterne, der Nacht vorzustehen\"."
+     ]
+    },
+    {
+     "question": "Was war nach Johannes im Anfang, und wie nennt er das Licht?",
+     "facts": [
+      "Johannes beginnt mit den ersten Worten der Genesis: \"Im Anfang\" (Luther in 1. Mose 1,1: \"Am Anfang\"). \"Licht\" ist hier das griechische phos: »Helligkeit (im weitesten Sinn, natürlich oder künstlich, abstrakt oder konkret, wörtlich oder bildlich)«.",
+      "Johannes sagt vom Wort: \"In ihm war das Leben, und das Leben war das Licht der Menschen\", und \"das Licht scheint in der Finsternis\"."
+     ]
+    },
+    {
+     "question": "Wer wird in diesen Versen \"das Licht der Welt\" genannt?",
+     "facts": []
+    },
+    {
+     "question": "Was ist Gott nach diesem Vers?",
+     "facts": []
+    },
+    {
+     "question": "Was gibt Licht, wo weder Sonne noch Mond ist?",
+     "facts": [
+      "Jesaja und die Offenbarung reden beide von Licht ohne Sonne und Mond: \"der HERR wird dein ewiges Licht\", und \"die Herrlichkeit Gottes erleuchtet sie, und ihre Leuchte ist das Lamm\". Wie am ersten Tag hängt dieses Licht nicht von der Sonne ab."
+     ]
+    },
+    {
+     "question": "Weitere Verse über das Licht und woher es kommt. Manche sagen, Gott macht das Licht, manche, Gott ist Licht, manche, Er wohnt darin. Was sagt jeder?",
+     "facts": [
+      "Paulus gebraucht 1. Mose 1,3 für das, was Gott in einem Menschen tut: \"Gott, der da hieß das Licht aus der Finsternis hervorleuchten, der hat einen hellen Schein in unsere Herzen gegeben\".",
+      "Jakobus nennt Gott \"dem Vater des Lichts\"; Paulus sagt, Er \"wohnt in einem Licht, da niemand zukommen kann\"."
+     ]
+    },
+    {
+     "question": "Für das Leben: Der Gott, der sprach: \"Es werde Licht!\", hat \"einen hellen Schein in unsere Herzen gegeben\". Was sagt Jesus über die Nachfolge, und was sollen wir mit dem Licht tun?",
+     "facts": [
+      "\"So wir aber im Licht wandeln, wie er im Licht ist, so haben wir Gemeinschaft untereinander\"; \"Also laßt euer Licht leuchten vor den Leuten, daß sie eure guten Werke sehen\"."
+     ]
+    }
+   ],
+   "remember": [
+    "Gott sprach am ersten Tag: \"Es werde Licht!\"; die zwei großen Lichter kamen am vierten.",
+    "\"daß Gott Licht ist und in ihm ist keine Finsternis\"",
+    "Jesus sagte: \"Ich bin das Licht der Welt\".",
+    "In der Stadt: \"ihre Leuchte ist das Lamm\".",
+    "Manche Verse sagen, Gott macht das Licht, manche, Er ist Licht, manche, Er wohnt darin. Du wägst sie ab."
+   ]
+  }
  }
 }

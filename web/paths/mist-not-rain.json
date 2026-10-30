@@ -636,5 +636,129 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "¿Vapor o lluvia?",
+   "opening_question": "¿Qué regaba la tierra antes del diluvio, y qué dice el texto de la lluvia?",
+   "steps": [
+    {
+     "question": "¿Qué hizo Dios el día segundo, y qué apartó?",
+     "facts": [
+      "\"expansión\" es el hebreo raqia: «propiamente una extensión». Dios la hizo entre aguas: \"apartó las aguas que estaban debajo de la expansión, de las aguas que estaban sobre la expansión\"."
+     ]
+    },
+    {
+     "question": "¿Por qué no había crecido aún ninguna planta, y qué regaba la tierra?",
+     "facts": [
+      "\"vapor\" es el hebreo 'ed: «una niebla». Solo aparece dos veces en la Biblia: aquí y en Job 36:27, y la Reina-Valera lo traduce \"vapor\" en los dos.",
+      "Las traducciones difieren aquí. La Reina-Valera dice \"subía de la tierra un vapor\", la King James y el Canon etíope «una niebla»; la BSB dice «manantiales brotaban de la tierra».",
+      "Génesis 2:5 da dos razones por las que no había crecido ninguna planta: \"aun no había Jehová Dios hecho llover sobre la tierra, ni había hombre para que labrase la tierra\". Habla del tiempo antes de las plantas y antes de Adán. El texto no dice si llovió entre entonces y el diluvio."
+     ]
+    },
+    {
+     "question": "La palabra para \"vapor\" se usa solo dos veces. ¿Qué dice de ella el otro versículo?",
+     "facts": [
+      "En Job 36:27 la misma palabra 'ed se traduce \"vapor\": la lluvia cae \"según el vapor\". La BSB: «destila la lluvia de la niebla». Aquí vapor y lluvia están en una sola frase."
+     ]
+    },
+    {
+     "question": "¿De dónde vinieron las aguas del diluvio, y cuánto tiempo llovió?",
+     "facts": [
+      "Las aguas vinieron de abajo y de arriba a la vez: \"fueron rotas todas las fuentes del grande abismo, y las cataratas de los cielos fueron abiertas\". \"abismo\" es tehom: «un abismo (como una masa de agua que se agita)».",
+      "Génesis 7:4 usa el mismo verbo hebreo que Génesis 2:5 (matar, «llover»): \"yo haré llover sobre la tierra cuarenta días y cuarenta noches\".",
+      "\"diluvio\" es mabbul: «una inundación». Todas las veces menos una se refiere al diluvio de Noé; la otra es el Salmo 29:10: \"Jehová preside en el diluvio\".",
+      "Pedro mira atrás al mismo hecho: \"el mundo de entonces pereció anegado en agua\"."
+     ]
+    },
+    {
+     "question": "¿Qué puso Dios en las nubes, y de qué es señal?",
+     "facts": [
+      "\"arco\" es qesheth: «un arco para disparar». El arco iris y el arco del arquero son una sola palabra en hebreo.",
+      "Dios dice que el arco es también para que Él lo vea: \"verlo he para acordarme del pacto perpetuo\".",
+      "El texto llama al arco \"señal de convenio\". No dice si alguna vez se había visto antes un arco iris."
+     ]
+    },
+    {
+     "question": "¿Dónde se habla todavía de aguas, y de qué fue advertido Noé?",
+     "facts": [
+      "El Salmo 148, escrito mucho después del diluvio, todavía habla de \"las aguas que están sobre los cielos\"."
+     ]
+    },
+    {
+     "question": "Para vivirlo: Noé recibió \"respuesta de cosas que aun no se veían\" y \"aparejó el arca\". ¿Qué dicen estos versículos de confiar en la palabra de Dios antes de verla?",
+     "facts": [
+      "\"E hízolo así Noé; hizo conforme á todo lo que Dios le mandó\". \"Porque por fe andamos, no por vista\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"aun no había Jehová Dios hecho llover sobre la tierra\" ... \"subía de la tierra un vapor\"",
+    "Fueron rotas las fuentes del grande abismo y las cataratas de los cielos fueron abiertas.",
+    "\"Mi arco pondré en las nubes\"",
+    "Noé recibió \"respuesta de cosas que aun no se veían\"."
+   ]
+  },
+  "de": {
+   "title": "Nebel oder Regen?",
+   "opening_question": "Was bewässerte die Erde vor der Sintflut, und was sagt der Text über den Regen?",
+   "steps": [
+    {
+     "question": "Was machte Gott am zweiten Tag, und was schied es?",
+     "facts": [
+      "\"Feste\" ist das hebräische raqia: »eigentlich eine Ausdehnung«. Gott machte sie zwischen Wassern: \"schied das Wasser unter der Feste von dem Wasser über der Feste\"."
+     ]
+    },
+    {
+     "question": "Warum war noch keine Pflanze gewachsen, und was bewässerte die Erde?",
+     "facts": [
+      "\"Nebel\" ist das hebräische 'ed: »ein Nebel«. Es steht nur zweimal in der Bibel: hier und in Hiob 36,27.",
+      "Die Übersetzungen unterscheiden sich hier. Luther sagt \"ein Nebel ging auf von der Erde\", die King James und der äthiopische Kanon ebenso; die BSB sagt »Quellen sprudelten aus der Erde«.",
+      "1. Mose 2,5 nennt zwei Gründe, warum noch keine Pflanze gewachsen war: \"Gott der HERR hatte noch nicht regnen lassen auf Erden, und es war kein Mensch, der das Land baute\". Es spricht von der Zeit vor den Pflanzen und vor Adam. Der Text sagt nicht, ob es zwischen damals und der Sintflut regnete."
+     ]
+    },
+    {
+     "question": "Das Wort für Nebel kommt nur zweimal vor. Was sagt der andere Vers darüber?",
+     "facts": [
+      "In Hiob 36,27 übersetzt die King James dasselbe Wort 'ed mit »Dunst«: der Regen fällt »nach seinem Dunst«; die BSB: »destilliert den Regen aus dem Nebel«. Luther übersetzt den Vers freier: \"treibt seine Wolken zusammen zum Regen\". Hier stehen Nebel und Regen in einem Satz."
+     ]
+    },
+    {
+     "question": "Woher kamen die Wasser der Sintflut, und wie lange regnete es?",
+     "facts": [
+      "Die Wasser kamen zugleich von unten und von oben: \"da aufbrachen alle Brunnen der großen Tiefe, und taten sich auf die Fenster des Himmels\". \"Tiefe\" ist tehom: »ein Abgrund (als wogende Wassermasse)«.",
+      "1. Mose 7,4 gebraucht dasselbe hebräische Verb wie 1. Mose 2,5 (matar, »regnen«): \"will ich regnen lassen auf Erden vierzig Tage und vierzig Nächte\".",
+      "\"Sintflut\" ist mabbul: »eine Überschwemmung«. Jedes Mal außer einmal meint es die Flut Noahs; die andere Stelle ist Psalm 29,10: \"Der HERR sitzt, eine Sintflut anzurichten\".",
+      "Petrus blickt auf dasselbe Ereignis zurück: \"dennoch ward zu der Zeit die Welt durch die dieselben mit der Sintflut verderbt\"."
+     ]
+    },
+    {
+     "question": "Was setzte Gott in die Wolken, und wovon ist es ein Zeichen?",
+     "facts": [
+      "\"Bogen\" ist qesheth: »ein Bogen zum Schießen«. Regenbogen und Schützenbogen sind im Hebräischen ein Wort.",
+      "Gott sagt, der Bogen ist auch dazu da, dass Er ihn sieht: \"daß ich ihn ansehe und gedenke an den ewigen Bund\".",
+      "Der Text nennt den Bogen \"das Zeichen\" \"des Bundes\". Er sagt nicht, ob je zuvor ein Regenbogen gesehen worden war."
+     ]
+    },
+    {
+     "question": "Wo ist noch von Wassern die Rede, und wovor wurde Noah gewarnt?",
+     "facts": [
+      "Psalm 148, lange nach der Sintflut geschrieben, spricht noch von \"die Wasser, die oben am Himmel sind\"."
+     ]
+    },
+    {
+     "question": "Für das Leben: Noah empfing \"ein göttliches Wort\" \"über das, was man noch nicht sah\", und hat \"die Arche zubereitet\". Was sagen diese Verse darüber, Gottes Wort zu vertrauen, bevor wir es sehen?",
+     "facts": [
+      "\"Und Noah tat alles, was ihm Gott gebot.\" \"denn wir wandeln im Glauben, und nicht im Schauen\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"Gott der HERR hatte noch nicht regnen lassen auf Erden\" ... \"Aber ein Nebel ging auf von der Erde\"",
+    "Es brachen auf alle Brunnen der großen Tiefe, und die Fenster des Himmels taten sich auf.",
+    "\"Meinen Bogen habe ich gesetzt in die Wolken\"",
+    "Noah empfing \"ein göttliches Wort\" \"über das, was man noch nicht sah\"."
+   ]
+  }
  }
 }

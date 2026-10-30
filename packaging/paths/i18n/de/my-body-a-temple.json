@@ -1,0 +1,42 @@
+{
+ "title": "Mein Leib ist ein Tempel",
+ "opening_question": "Mein Leib ist ein Tempel: Was sagt der Text darüber, ihn zu ehren, und über Ärzte und Heilmittel? Die Bibel nennt keine Impfungen; dieser Pfad zeigt, was sie sagt, und du entscheidest.",
+ "steps": [
+  {"question": "Wessen Tempel ist dein Leib, und warum gehörst du nicht dir selbst?",
+   "facts": [
+    "Das Wort für \"Tempel\" ist naos, von einem Wort, das »wohnen« bedeutet.",
+    "Wo Luther \"teuer erkauft\" sagt, steht time: »ein Wert, das heißt bezahltes Geld«.",
+    "Die Verse vor 6,19 handeln von sexueller Sünde: \"Fliehet der Hurerei!\" (6,18). Das ist der Zusammenhang von \"daß euer Leib ein Tempel des heiligen Geistes ist\"."
+   ]},
+  {"question": "Wer wohnt im Tempel Gottes, und was sagt der Text über jeden, der ihn verdirbt?",
+   "facts": [
+    "In 1. Korinther 3,17 ist \"verderbt\" und \"verderben\" dasselbe griechische Wort, phtheiro.",
+    "In 3,16 ist \"ihr\" Mehrzahl: Paulus spricht zur Gemeinde zusammen: \"daß ihr Gottes Tempel seid\". Beide Tatsachen helfen, die Verse gerecht anzuwenden."
+   ]},
+  {"question": "Wozu sollen wir unsere Leiber hingeben?", "facts": []},
+  {"question": "Was tat der Samariter für den Leib des verwundeten Mannes?", "facts": []},
+  {"question": "Wer braucht nach Jesu Wort einen Arzt, wie wird Lukas genannt, und was sollte Timotheus nach Paulus gebrauchen?",
+   "facts": [
+    "\"Arzt\" in Matthäus 9,12 und Kolosser 4,14 ist dasselbe griechische Wort, iatros: »ein Arzt«."
+   ]},
+  {"question": "Heilmittel in der Bibel: Was wurde auf Hiskias Geschwür gelegt, wozu sind die Blätter bei Hesekiel, und was soll man nach Jakobus für den Kranken tun?",
+   "facts": [
+    "\"man sollte ein Pflaster von Feigen nehmen und auf seine Drüse legen\"; die Blätter \"zur Arznei\"; \"salben ihn mit Öl in dem Namen des HERRN\"."
+   ]},
+  {"question": "Die andere Seite: Was sagt der Text über König Asa in seiner Krankheit und über die Frau, die all ihr Gut für Ärzte ausgegeben hatte?",
+   "facts": [
+    "Asa \"suchte auch in seiner Krankheit den HERRN nicht, sondern die Ärzte\"; die Frau hatte \"viel erlitten von vielen Ärzten\". Beide Verse gehören zum ganzen Ratschluss."
+   ]},
+  {"question": "Wo ist nach den Sprüchen Sicherheit?", "facts": []},
+  {"question": "Für das Leben: Der Pfad überlässt dir die Entscheidung. Was sagt Paulus darüber, nach dem Gewissen zu entscheiden und den nicht zu richten, der anders entscheidet?",
+   "facts": [
+    "\"Ein jeglicher sei in seiner Meinung gewiß\"; \"lasset uns nicht mehr einer den andern richten\"; \"Was aber nicht aus dem Glauben geht, das ist Sünde\"."
+   ]}
+ ],
+ "remember": [
+  "\"daß euer Leib ein Tempel des heiligen Geistes ist\" ... \"ihr seid teuer erkauft\"",
+  "\"daß ihr eure Leiber begebet zum Opfer, das da lebendig, heilig und Gott wohlgefällig sei\"",
+  "Der Samariter \"verband ihm seine Wunden und goß darein Öl und Wein\"; \"Die Starken bedürfen des Arztes nicht\".",
+  "\"wo aber viel Ratgeber sind, da geht es wohl zu\""
+ ]
+}
