@@ -613,6 +613,46 @@
    "x": 72,
    "y": 4,
    "s": 30
+  },
+  "i18n": {
+   "es": {
+    "title": "Marido y mujer",
+    "opening_question": "¿Qué dice la Biblia del marido y la mujer: cómo empezó, cómo han de amarse, y qué los mantiene unidos?",
+    "step_questions": [
+     "¿Por qué hizo Dios a la mujer, y qué dice el hombre cuando la ve?",
+     "¿A dónde vuelve Jesús cuando habla del matrimonio, y quién junta al marido y a la mujer?",
+     "¿Qué se le dice a la mujer, qué se le dice al marido, y cómo amó Cristo a la iglesia?",
+     "¿Qué se les dice a las mujeres, y qué se les dice a los maridos que no sean? Y cuando hay conflicto: ¿qué dicen estos versículos del enojo, las palabras y el perdón?",
+     "¿Qué adorno es de grande estima delante de Dios, y cómo han de habitar los maridos con sus mujeres?",
+     "¿Qué se deben el marido y la mujer el uno al otro, y qué manda el Señor sobre separarse?",
+     "¿Cómo es el amor, y qué nunca deja de ser?",
+     "¿Por qué son mejores dos que uno, y qué no se rompe pronto?",
+     "¿Qué hace su marido, y por qué se la alaba al final?",
+     "¿Cómo hablan el amado y su amada el uno del otro? ¿Qué dice Proverbios de la mujer de tu mocedad, y qué le dijo Jehová a Oseas del amor fiel?",
+     "¿Cómo ha de tenerse el matrimonio, y a quiénes juzgará Dios? ¿Cómo llama Malaquías a la mujer, y qué dice Jehová de repudiar?",
+     "¿Qué respondió Jesús cuando le preguntaron sobre repudiar a la mujer, quiénes pueden recibir la palabra sobre no casarse, y qué es el matrimonio en la resurrección?",
+     "Para vivirlo: ¿qué cosa de estos versículos podrías hacer por tu marido o tu mujer esta semana?"
+    ]
+   },
+   "de": {
+    "title": "Mann und Frau",
+    "opening_question": "Was sagt die Bibel über Mann und Frau: wie es begann, wie sie einander lieben sollen, und was sie zusammenhält?",
+    "step_questions": [
+     "Warum machte Gott die Frau, und was sagt der Mann, als er sie sieht?",
+     "Worauf geht Jesus zurück, wenn Er von der Ehe spricht, und wer fügt Mann und Frau zusammen?",
+     "Was wird der Frau gesagt, was dem Mann, und wie hat Christus die Gemeinde geliebt?",
+     "Was wird den Frauen gesagt, und was sollen die Männer nicht sein? Und bei Streit: Was sagen diese Verse über Zorn, Worte und Vergeben?",
+     "Welcher Schmuck ist vor Gott köstlich, und wie sollen die Männer mit ihren Frauen wohnen?",
+     "Was schulden Mann und Frau einander, und was gebietet der Herr über das Scheiden?",
+     "Wie ist die Liebe, und was hört nimmer auf?",
+     "Warum sind zwei besser als einer, und was reißt nicht leicht entzwei?",
+     "Was tut ihr Mann, und wofür wird sie am Ende gelobt?",
+     "Wie sprechen der Freund und seine Freundin voneinander? Was sagen die Sprüche über das Weib deiner Jugend, und was sagte der HERR zu Hosea über treue Liebe?",
+     "Wie soll die Ehe gehalten werden, und wen wird Gott richten? Wie nennt Maleachi die Frau, und was sagt der HERR über das Verstoßen?",
+     "Was antwortete Jesus, als Er nach dem Verstoßen einer Frau gefragt wurde, wer kann das Wort über das Nicht-Heiraten fassen, und was ist die Ehe in der Auferstehung?",
+     "Für das Leben: Welche eine Sache aus diesen Versen könntest du diese Woche für deinen Mann oder deine Frau tun?"
+    ]
+   }
   }
  },
  {
@@ -2661,6 +2701,36 @@
    "x": 32,
    "y": 50,
    "s": 9
+  },
+  "i18n": {
+   "es": {
+    "title": "El Verbo hecho carne, el camino, la verdad, la luz",
+    "opening_question": "¿Quién es el Verbo, y qué dice el texto de guardar sus mandamientos?",
+    "step_questions": [
+     "¿Quién es el Verbo, y qué fue de Él?",
+     "¿Quién más dice el Nuevo Testamento que hizo todas las cosas, y de quién es imagen?",
+     "¿Qué dice Jesús que es Él?",
+     "¿Qué dijo Jesús de la ley y de los mandamientos?",
+     "¿Cómo dice Juan que sabemos que le conocemos?",
+     "¿Qué dicen estos versículos de la fe, las obras y la ley? Lee a Pablo y a Santiago lado a lado, junto a los versículos de arriba.",
+     "¿Cómo describe Apocalipsis a los santos, y quiénes tienen derecho al árbol de la vida? Compara las traducciones de 22:14.",
+     "Para vivirlo: Jesús dijo \"Si me amáis, guardad mis mandamientos\". ¿Qué mandamiento nuevo da, y cómo conocerán a sus discípulos?"
+    ]
+   },
+   "de": {
+    "title": "Das Wort ward Fleisch, der Weg, die Wahrheit, das Licht",
+    "opening_question": "Wer ist das Wort, und was sagt der Text darüber, seine Gebote zu halten?",
+    "step_questions": [
+     "Wer ist das Wort, und was wurde aus Ihm?",
+     "Wer hat nach dem Neuen Testament noch alle Dinge gemacht, und wessen Ebenbild ist Er?",
+     "Was ist Jesus nach seinen eigenen Worten?",
+     "Was sagte Jesus über das Gesetz und die Gebote?",
+     "Woran erkennen wir nach Johannes, dass wir Ihn kennen?",
+     "Was sagen diese Verse über Glauben, Werke und Gesetz? Lies Paulus und Jakobus nebeneinander, neben den Versen oben.",
+     "Wie beschreibt die Offenbarung die Heiligen, und wer hat das Recht am Holz des Lebens? Vergleiche die Übersetzungen von 22,14.",
+     "Für das Leben: Jesus sagte: \"Liebet ihr mich, so haltet ihr meine Gebote.\" Welches neue Gebot gibt Er, und woran wird man seine Jünger erkennen?"
+    ]
+   }
   }
  }
 ]

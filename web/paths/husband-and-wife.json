@@ -922,5 +922,183 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "Marido y mujer",
+   "opening_question": "¿Qué dice la Biblia del marido y la mujer: cómo empezó, cómo han de amarse, y qué los mantiene unidos?",
+   "steps": [
+    {
+     "question": "¿Por qué hizo Dios a la mujer, y qué dice el hombre cuando la ve?",
+     "facts": [
+      "Strong da dos palabras hebreas detrás de \"ayuda idónea\": 'ezer, «ayuda», y neged, «una contraparte o compañera».",
+      "La palabra para \"allegarse\" en Génesis 2:24 es dabaq: «aferrarse o adherirse»."
+     ]
+    },
+    {
+     "question": "¿A dónde vuelve Jesús cuando habla del matrimonio, y quién junta al marido y a la mujer?",
+     "facts": [
+      "\"juntó\" es una palabra griega, syzeugnymi: «uncir juntos»."
+     ]
+    },
+    {
+     "question": "¿Qué se le dice a la mujer, qué se le dice al marido, y cómo amó Cristo a la iglesia?",
+     "facts": [
+      "El pasaje empieza con \"Sujetados los unos á los otros\" antes de hablar a las mujeres y a los maridos.",
+      "Pablo cita aquí Génesis 2:24: \"serán dos en una carne\".",
+      "El pasaje empieza con un versículo para los dos: \"Sujetados los unos á los otros en el temor de Dios\" (5:21), antes de hablar a las mujeres y a los maridos."
+     ]
+    },
+    {
+     "question": "¿Qué se les dice a las mujeres, y qué se les dice a los maridos que no sean? Y cuando hay conflicto: ¿qué dicen estos versículos del enojo, las palabras y el perdón?",
+     "facts": [
+      "\"no se ponga el sol sobre vuestro enojo\"; \"perdonándoos los unos á los otros, como también Dios os perdonó en Cristo\"; \"sobre todas estas cosas vestíos de caridad, la cual es el vínculo de la perfección\"."
+     ]
+    },
+    {
+     "question": "¿Qué adorno es de grande estima delante de Dios, y cómo han de habitar los maridos con sus mujeres?",
+     "facts": []
+    },
+    {
+     "question": "¿Qué se deben el marido y la mujer el uno al otro, y qué manda el Señor sobre separarse?",
+     "facts": []
+    },
+    {
+     "question": "¿Cómo es el amor, y qué nunca deja de ser?",
+     "facts": [
+      "La palabra \"caridad\" aquí es el griego agape. Strong la da como «amor, es decir, afecto o benevolencia»."
+     ]
+    },
+    {
+     "question": "¿Por qué son mejores dos que uno, y qué no se rompe pronto?",
+     "facts": []
+    },
+    {
+     "question": "¿Qué hace su marido, y por qué se la alaba al final?",
+     "facts": []
+    },
+    {
+     "question": "¿Cómo hablan el amado y su amada el uno del otro? ¿Qué dice Proverbios de la mujer de tu mocedad, y qué le dijo Jehová a Oseas del amor fiel?",
+     "facts": [
+      "\"alégrate con la mujer de tu mocedad\"; a Oseas se le dice que ame otra vez \"como el amor de Jehová para con los hijos de Israel\"."
+     ]
+    },
+    {
+     "question": "¿Cómo ha de tenerse el matrimonio, y a quiénes juzgará Dios? ¿Cómo llama Malaquías a la mujer, y qué dice Jehová de repudiar?",
+     "facts": [
+      "Malaquías llama al matrimonio un pacto del que Jehová fue testigo: \"la mujer de tu pacto\". \"Porque Jehová Dios de Israel ha dicho que él aborrece que sea repudiada\"."
+     ]
+    },
+    {
+     "question": "¿Qué respondió Jesús cuando le preguntaron sobre repudiar a la mujer, quiénes pueden recibir la palabra sobre no casarse, y qué es el matrimonio en la resurrección?",
+     "facts": [
+      "Mateo dice \"si no fuere por causa de fornicación\"; Marcos da la misma enseñanza sin excepción. Los cristianos difieren sobre cuándo se permiten el divorcio y el nuevo matrimonio.",
+      "No casarse es también un don: \"No todos reciben esta palabra, sino aquellos á quienes es dado\".",
+      "En la resurrección \"ni los hombres tomarán mujeres, ni las mujeres maridos; mas son como los ángeles de Dios en el cielo\"."
+     ]
+    },
+    {
+     "question": "Para vivirlo: ¿qué cosa de estos versículos podrías hacer por tu marido o tu mujer esta semana?",
+     "facts": [
+      "\"previniéndoos con honra los unos á los otros\"; \"No mirando cada uno á lo suyo propio, sino cada cual también á lo de los otros\"; \"Nosotros le amamos á él, porque él nos amó primero\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"serán una sola carne\"",
+    "\"lo que Dios juntó, no lo aparte el hombre\"",
+    "\"Maridos, amad á vuestras mujeres, así como Cristo amó á la iglesia\"",
+    "\"La caridad nunca deja de ser\"",
+    "\"cordón de tres dobleces no presto se rompe\""
+   ]
+  },
+  "de": {
+   "title": "Mann und Frau",
+   "opening_question": "Was sagt die Bibel über Mann und Frau: wie es begann, wie sie einander lieben sollen, und was sie zusammenhält?",
+   "steps": [
+    {
+     "question": "Warum machte Gott die Frau, und was sagt der Mann, als er sie sieht?",
+     "facts": [
+      "Strong nennt zwei hebräische Wörter hinter \"eine Gehilfin\" \"die um ihn sei\": 'ezer, »Hilfe«, und neged, »ein Gegenüber oder Gefährte«.",
+      "Das Wort für \"hangen\" in 1. Mose 2,24 ist dabaq: »sich anklammern, anhaften«."
+     ]
+    },
+    {
+     "question": "Worauf geht Jesus zurück, wenn Er von der Ehe spricht, und wer fügt Mann und Frau zusammen?",
+     "facts": [
+      "\"zusammengefügt\" ist ein griechisches Wort, syzeugnymi: »zusammenjochen«."
+     ]
+    },
+    {
+     "question": "Was wird der Frau gesagt, was dem Mann, und wie hat Christus die Gemeinde geliebt?",
+     "facts": [
+      "Der Abschnitt beginnt mit \"seid untereinander untertan\", bevor er zu den Frauen und den Männern spricht.",
+      "Paulus zitiert hier 1. Mose 2,24: \"werden die zwei ein Fleisch sein\".",
+      "Der Abschnitt beginnt mit einem Vers an beide: \"seid untereinander untertan in der Furcht Gottes\" (5,21), bevor er zu den Frauen und den Männern spricht."
+     ]
+    },
+    {
+     "question": "Was wird den Frauen gesagt, und was sollen die Männer nicht sein? Und bei Streit: Was sagen diese Verse über Zorn, Worte und Vergeben?",
+     "facts": [
+      "\"lasset die Sonne nicht über eurem Zorn untergehen\"; \"vergebet einer dem andern, gleichwie Gott euch auch vergeben hat in Christo\"; \"Über alles aber ziehet an die Liebe, die da ist das Band der Vollkommenheit\"."
+     ]
+    },
+    {
+     "question": "Welcher Schmuck ist vor Gott köstlich, und wie sollen die Männer mit ihren Frauen wohnen?",
+     "facts": []
+    },
+    {
+     "question": "Was schulden Mann und Frau einander, und was gebietet der Herr über das Scheiden?",
+     "facts": []
+    },
+    {
+     "question": "Wie ist die Liebe, und was hört nimmer auf?",
+     "facts": [
+      "Das Wort \"Liebe\" ist hier das griechische agape (die King James sagt »Charity«). Strong gibt es als »Liebe, das heißt Zuneigung oder Wohlwollen«."
+     ]
+    },
+    {
+     "question": "Warum sind zwei besser als einer, und was reißt nicht leicht entzwei?",
+     "facts": []
+    },
+    {
+     "question": "Was tut ihr Mann, und wofür wird sie am Ende gelobt?",
+     "facts": []
+    },
+    {
+     "question": "Wie sprechen der Freund und seine Freundin voneinander? Was sagen die Sprüche über das Weib deiner Jugend, und was sagte der HERR zu Hosea über treue Liebe?",
+     "facts": [
+      "\"freue dich des Weibes deiner Jugend\"; Hosea soll noch einmal werben, \"wie denn der HERR um die Kinder Israel buhlt\"."
+     ]
+    },
+    {
+     "question": "Wie soll die Ehe gehalten werden, und wen wird Gott richten? Wie nennt Maleachi die Frau, und was sagt der HERR über das Verstoßen?",
+     "facts": [
+      "Maleachi nennt die Ehe einen Bund, für den der HERR Zeuge war: \"ein Weib deines Bundes\". Wo die King James sagt »der HERR hasst das Verstoßen«, übersetzt Luther: \"Wer ihr aber gram ist und verstößt sie\", \"der bedeckt mit Frevel sein Kleid\"."
+     ]
+    },
+    {
+     "question": "Was antwortete Jesus, als Er nach dem Verstoßen einer Frau gefragt wurde, wer kann das Wort über das Nicht-Heiraten fassen, und was ist die Ehe in der Auferstehung?",
+     "facts": [
+      "Matthäus hat \"es sei denn um der Hurerei willen\"; Markus gibt dieselbe Lehre ohne Ausnahme. Christen sind uneins, wann Scheidung und Wiederheirat erlaubt sind.",
+      "Auch nicht zu heiraten ist eine Gabe: \"Das Wort faßt nicht jedermann, sondern denen es gegeben ist.\"",
+      "In der Auferstehung \"werden sie weder freien noch sich freien lassen, sondern sie sind gleichwie die Engel Gottes im Himmel\"."
+     ]
+    },
+    {
+     "question": "Für das Leben: Welche eine Sache aus diesen Versen könntest du diese Woche für deinen Mann oder deine Frau tun?",
+     "facts": [
+      "\"Einer komme dem andern mit Ehrerbietung zuvor\"; \"ein jeglicher sehe nicht auf das Seine, sondern auch auf das, was des andern ist\"; \"er hat uns zuerst geliebt\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"sie werden sein ein Fleisch\"",
+    "\"Was denn Gott zusammengefügt hat, soll der Mensch nicht scheiden.\"",
+    "\"Ihr Männer, liebet eure Weiber, gleichwie Christus auch geliebt hat die Gemeinde\"",
+    "\"Die Liebe höret nimmer auf\"",
+    "\"eine dreifältige Schnur reißt nicht leicht entzwei\""
+   ]
+  }
  }
 }
