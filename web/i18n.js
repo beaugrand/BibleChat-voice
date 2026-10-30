@@ -501,6 +501,8 @@ const I18N = {
 "Historicist": ["Historistisch", "Historicista", "Historiciste", "Historicista", "历史派", "Историцисты", "역사주의"],
 "Preterist": ["Präteristisch", "Preterista", "Prétériste", "Preterista", "过去派", "Претеристы", "과거주의"],
 "Idealist": ["Idealistisch", "Idealista", "Idéaliste", "Idealista", "象征派", "Идеалисты", "이상주의"],
+"BibleChat is free. If this study blessed you, you can help keep it free:": ["BibleChat ist kostenlos. Wenn dich diese Studie gesegnet hat, kannst du helfen, dass es kostenlos bleibt:", "BibleChat es gratis. Si este estudio te bendijo, puedes ayudar a que siga siendo gratis:", "BibleChat est gratuit. Si cette étude vous a béni, vous pouvez aider à le garder gratuit :", "O BibleChat é gratuito. Se este estudo abençoou você, você pode ajudar a mantê-lo gratuito:", "BibleChat 是免费的。如果这次查经祝福了您，您可以帮助它继续免费：", "BibleChat бесплатен. Если это изучение благословило вас, вы можете помочь ему оставаться бесплатным:", "BibleChat는 무료입니다. 이 공부가 축복이 되었다면 계속 무료로 유지되도록 도와주세요:"],
+"Open Venmo": ["Venmo öffnen", "Abrir Venmo", "Ouvrir Venmo", "Abrir o Venmo", "打开 Venmo", "Открыть Venmo", "Venmo 열기"],
 "Daily life": ["Alltag", "Vida diaria", "Vie quotidienne", "Vida diária", "日常生活", "Повседневная жизнь", "일상생활"],
 "For others": ["Für andere", "Por los demás", "Pour les autres", "Pelos outros", "为他人", "За других", "다른 사람을 위해"],
 "Prayers of the Bible": ["Gebete der Bibel", "Oraciones de la Biblia", "Prières de la Bible", "Orações da Bíblia", "圣经中的祷告", "Молитвы Библии", "성경의 기도"],

@@ -415,6 +415,7 @@ const BCPrayers = (() => {
       ${written(p) ? `<div class="pr-text pvx">${p.text.map(t => `<p>${esc(t)}</p>`).join("")}</div>` : `<p class="pv-small pvx">${esc(p.by || "")}</p>`}
       <p class="pv-small">${p.refs.map(r => { const q = parse(r); return `<a href="#" class="pv-go" data-b="${esc(q.book)}" data-c="${q.c1}" data-v="${q.v1 || ""}">${esc(A.bookName(q.book) + " " + label(r.slice(q.book.length + 1)))}</a>`; }).join(" · ")}</p>
       <p class="pr-note">${esc(T(written(p) ? WRITTEN_NOTE : BIBLE_NOTE))}</p>
+      <p class="pr-note pr-love">♥ ${esc(T("BibleChat is free. If this study blessed you, you can help keep it free:"))} <a href="https://cash.app/$HansBeaugrand" target="_blank" rel="noopener">Cash App</a> · <a href="https://venmo.com/u/Hans-Beaugrand" target="_blank" rel="noopener">Venmo</a></p>
       <div class="pr-acts"><button class="pv-btn pr-cl-listen">🔊 ${esc(T("Listen to the prayer"))}</button><button class="pv-btn pr-cl-open">🙏 ${esc(T("Open in Prayers"))}</button><button class="pv-btn pr-cl-share">↗ ${esc(T("Share the prayer"))}</button></div></div>`;
     el.querySelector(".pr-cl-listen").onclick = ev => { ev.stopPropagation(); partsOf(p).then(parts => listen(parts, ev.target.closest("button"))); };
     el.querySelector(".pr-cl-open").onclick = ev => { ev.stopPropagation(); stopListen(); open(p.id, {back: null}); };
