@@ -500,6 +500,36 @@
    "x": 70,
    "y": 14,
    "s": 34
+  },
+  "i18n": {
+   "es": {
+    "title": "Halloween: ¿qué dice la Biblia?",
+    "opening_question": "La Biblia nunca nombra Halloween. ¿Qué dice de las cosas que toca ese día: la hechicería y los espíritus de los muertos, las tinieblas y la luz, los días especiales y el miedo? Lee lo que dice el texto, y que cada uno esté asegurado en su ánimo.",
+    "step_questions": [
+     "¿Qué prácticas enumera Jehová en Deuteronomio 18, cómo las llama, y vuelve a aparecer la hechicería en el Nuevo Testamento?",
+     "¿Dónde debe consultar un pueblo: a los muertos, o a su Dios? ¿Y por qué murió Saúl?",
+     "¿Qué éramos antes, qué somos ahora, y qué dice el texto que hagamos con las obras infructuosas de las tinieblas? ¿Qué hicieron con sus libros los creyentes de Éfeso?",
+     "Uno hace diferencia entre día y día, otro juzga iguales todos los días: ¿qué dice el texto de los días especiales, y cómo ha de decidir cada uno?",
+     "Pablo sobre las cosas ligadas a los ídolos: ¿qué dice del conocimiento, del hermano flaco, y de hacerlo todo a gloria de Dios?",
+     "¿Por qué un cristiano no tiene que temer a las tinieblas? ¿Qué hizo Cristo con los principados y las potestades, y con el que tenía el imperio de la muerte?",
+     "¿Qué hace la luz en las tinieblas, cómo se llama Jesús a sí mismo, y cómo llama a los que le siguen?",
+     "Para vivirlo: en una noche de disfraces y oscuridad, ¿qué piden estos versículos a un creyente con sus vecinos, los niños y cualquiera que llame a la puerta?"
+    ]
+   },
+   "de": {
+    "title": "Halloween: Was sagt die Bibel?",
+    "opening_question": "Die Bibel nennt Halloween nie. Was sagt sie über die Dinge, die dieser Tag berührt: Zauberei und Totengeister, Finsternis und Licht, besondere Tage und Angst? Lies, was der Text sagt, und sei in deiner Meinung gewiss.",
+    "step_questions": [
+     "Welche Praktiken zählt der HERR in 5. Mose 18 auf, wie nennt Er sie, und kommt Zauberei im Neuen Testament wieder vor?",
+     "Wen soll ein Volk fragen: die Toten oder seinen Gott? Und warum starb Saul?",
+     "Was waren wir einst, was sind wir jetzt, und was sollen wir nach dem Text mit den unfruchtbaren Werken der Finsternis tun? Was taten die Gläubigen in Ephesus mit ihren Büchern?",
+     "Einer hält einen Tag vor dem andern, der andere hält alle Tage gleich: Was sagt der Text über besondere Tage, und wie soll jeder entscheiden?",
+     "Paulus über Dinge, die mit Götzen verbunden sind: Was sagt er über das Wissen, über den schwachen Bruder und darüber, alles zur Ehre Gottes zu tun?",
+     "Warum muss ein Christ die Finsternis nicht fürchten? Was tat Christus mit den Fürstentümern und Gewaltigen und mit dem, der des Todes Gewalt hatte?",
+     "Was tut das Licht in der Finsternis, wie nennt sich Jesus selbst, und wie nennt Er die, die Ihm nachfolgen?",
+     "Für das Leben: In einer Nacht der Verkleidungen und der Dunkelheit, was verlangen diese Verse von einem Gläubigen gegenüber Nachbarn, Kindern und jedem, der an die Tür klopft?"
+    ]
+   }
   }
  },
  {
