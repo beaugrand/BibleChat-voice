@@ -11,12 +11,14 @@
     {"id": "guidance", "icon": "🧭", "name": "Guidance and wisdom"},
     {"id": "forgiveness", "icon": "🤍", "name": "Forgiveness"},
     {"id": "worship", "icon": "👑", "name": "Worship"},
+    {"id": "daily", "icon": "🍞", "name": "Daily life"},
+    {"id": "others", "icon": "🤲", "name": "For others"},
     {"id": "bible", "icon": "📖", "name": "Prayers of the Bible"},
     {"id": "paths", "icon": "📜", "name": "After a Study Path"}
   ],
   "prayers": [
     {"id": "ring-of-fire", "category": "protection", "title": "The ring of fire",
-     "refs": ["Psalms 91:1-4", "Psalms 91:11-12", "Zechariah 2:5", "2 Kings 6:16-17", "Psalms 91:7"],
+     "refs": ["Psalms 91:1-4", "Psalms 91:11-12", "Zechariah 2:5", "2 Kings 6:16-17", "Psalms 91:7", "Psalms 91:5"],
      "tags": ["protection", "fire", "wall", "angels", "danger", "fear", "night", "enemy", "home", "children", "safety", "evil", "attack", "covering"],
      "text": [
        "Heavenly Father, I come before You and I dwell in the secret place of the Most High. I rest under the shadow of the Almighty. You are my refuge and my fortress, my God, in whom I trust.",
@@ -114,6 +116,15 @@
        "Help me seek first Your kingdom and Your righteousness, and trust You to add the rest. Help me take no thought for tomorrow; tomorrow will take care of itself. Give me today what today needs.",
        "In Jesus' name, Amen."
      ]},
+    {"id": "when-i-feel-alone", "category": "peace", "title": "When I feel alone",
+     "refs": ["Hebrews 13:5", "Psalms 27:10", "Deuteronomy 31:8", "Matthew 28:20", "Psalms 68:6"],
+     "tags": ["lonely", "loneliness", "alone", "forsaken", "isolated", "abandoned", "nobody", "friend", "rejected", "elderly", "single"],
+     "text": [
+       "Lord, I feel alone today. The house is quiet and no one calls. But You have said, I will never leave thee, nor forsake thee.",
+       "When my father and my mother forsake me, then the LORD will take me up. You go before me, and You will be with me; You will not fail me.",
+       "Jesus, You promised, lo, I am with you alway, even unto the end of the world. Let me feel Your nearness now.",
+       "You set the solitary in families. Lead me to people who will be family to me, and let me be that for someone else. In Jesus' name, Amen."
+     ]},
 
     {"id": "wings-as-eagles", "category": "strength", "title": "Wings as eagles",
      "refs": ["Isaiah 40:28-31"],
@@ -150,6 +161,15 @@
        "It is of Your mercies that I am not consumed, because Your compassions fail not. They are new every morning; great is Your faithfulness. You are my portion, so I will hope in You.",
        "Cause me to hear Your lovingkindness this morning, for in You I trust. Cause me to know the way I should walk today, for I lift up my soul to You.",
        "Help me wait quietly for You through whatever this day brings. In Jesus' name, Amen."
+     ]},
+    {"id": "in-temptation", "category": "strength", "title": "In temptation",
+     "refs": ["1 Corinthians 10:13", "Hebrews 4:15-16", "James 4:7-8", "Romans 6:14"],
+     "tags": ["temptation", "tempted", "addiction", "lust", "struggle", "habit", "sin", "escape", "weak", "relapse", "pornography", "drinking"],
+     "text": [
+       "Lord, I am tempted, and I know my own weakness. Your word says there hath no temptation taken me but such as is common to man, and that You are faithful.",
+       "You will not suffer me to be tempted above that I am able, and with the temptation You will make a way to escape. Show me that way now, and give me the will to take it.",
+       "Jesus, You were in all points tempted like as we are, yet without sin. I come boldly to the throne of grace to find help in this time of need.",
+       "I submit myself to You. I resist the devil, and he will flee. I draw nigh to You, and You draw nigh to me. Sin shall not have dominion over me, for I am not under the law, but under grace. In Jesus' name, Amen."
      ]},
 
     {"id": "enter-his-gates", "category": "gratitude", "title": "Enter His gates with thanksgiving",
@@ -215,6 +235,15 @@
        "Your word says the prayer of faith shall save the sick, and the Lord shall raise him up, and the effectual fervent prayer of a righteous man avails much. So I pray now, in faith: raise them up, Lord. If there is sin, forgive it. Heal them.",
        "As Jesus said to the woman who touched His garment, Daughter, thy faith hath made thee whole; go in peace, speak peace and wholeness over them now. Comfort their family, and give strength to those who care for them.",
        "In Jesus' name, Amen."
+     ]},
+    {"id": "when-someone-has-died", "category": "healing", "title": "When someone has died",
+     "refs": ["1 Thessalonians 4:13-14", "John 11:25-26", "Psalms 23:4", "John 14:1-3", "Revelation 21:4"],
+     "tags": ["grief", "death", "died", "funeral", "loss", "mourning", "widow", "widower", "loved one", "heaven", "hope", "resurrection"],
+     "text": [
+       "Lord, someone I love has died, and my heart is heavy. You do not ask me to stop grieving; You tell me not to sorrow as others which have no hope.",
+       "Jesus, You stood at the grave of Lazarus and said, I am the resurrection, and the life: he that believeth in me, though he were dead, yet shall he live. I hold on to that word today.",
+       "Even though I walk through the valley of the shadow of death, You are with me. Let not my heart be troubled. You have gone to prepare a place, and You will come again.",
+       "Comfort all of us who mourn, until the day when You wipe away all tears, and there shall be no more death. In Jesus' name, Amen."
      ]},
 
     {"id": "my-house", "category": "family", "title": "As for me and my house",
@@ -375,6 +404,72 @@
        "O Lord our Lord, how excellent is Your name in all the earth! In Jesus' name, Amen."
      ]},
 
+    {"id": "for-my-work", "category": "daily", "title": "For my work",
+     "refs": ["Colossians 3:23-24", "Psalms 90:17", "Proverbs 16:3"],
+     "tags": ["work", "job", "business", "boss", "career", "employment", "workplace", "labour", "customers", "office"],
+     "text": [
+       "Lord, I give You my work today. Whatsoever I do, let me do it heartily, as to the Lord, and not unto men.",
+       "Let the beauty of the LORD our God be upon us, and establish the work of our hands. I commit my works unto You; establish my thoughts.",
+       "Make me honest with every customer and every coworker, patient with the hard ones, and faithful when no one is watching. I serve the Lord Christ. In Jesus' name, Amen."
+     ]},
+    {"id": "daily-bread", "category": "daily", "title": "Give us this day our daily bread",
+     "refs": ["Matthew 6:11", "Matthew 6:31-33", "Philippians 4:19", "Psalms 37:25"],
+     "tags": ["money", "provision", "bills", "rent", "food", "need", "finances", "job loss", "poor", "debt", "daily bread", "provide"],
+     "text": [
+       "Father, give us this day our daily bread. You know what I need before I ask. The bills are in front of me, and I bring them to You.",
+       "You said, Take no thought, saying, What shall we eat? for Your heavenly Father knoweth that we have need of all these things. Help me to seek first the kingdom of God.",
+       "My God shall supply all my need according to His riches in glory by Christ Jesus. David was young and is now old, yet he had not seen the righteous forsaken.",
+       "Provide for us, and make me generous with what You give. In Jesus' name, Amen."
+     ]},
+    {"id": "grace-before-a-meal", "category": "daily", "title": "Grace before a meal",
+     "refs": ["1 Timothy 4:4-5", "Psalms 145:15-16", "Acts 2:46"],
+     "tags": ["grace", "meal", "food", "dinner", "lunch", "breakfast", "table", "thanks", "eat", "family meal"],
+     "text": [
+       "Lord, the eyes of all wait upon You, and You give them their meat in due season. You open Your hand and satisfy the desire of every living thing.",
+       "Every creature of God is good, and nothing to be refused, if it be received with thanksgiving. We receive this food with thanks; sanctify it by Your word and prayer.",
+       "Let us eat it with gladness and singleness of heart, and bless the hands that prepared it. In Jesus' name, Amen."
+     ]},
+    {"id": "before-i-read", "category": "daily", "title": "Before I read the Bible",
+     "refs": ["Psalms 119:18", "John 14:26", "2 Timothy 3:16-17", "James 1:22"],
+     "tags": ["bible", "reading", "study", "word", "understand", "scripture", "devotion", "quiet time", "bible study"],
+     "text": [
+       "Lord, open thou mine eyes, that I may behold wondrous things out of Thy law.",
+       "All scripture is given by inspiration of God. Let Your Holy Spirit, the Comforter, teach me all things and bring Your words to my remembrance.",
+       "Let me be a doer of the word, and not a hearer only. In Jesus' name, Amen."
+     ]},
+    {"id": "for-our-nation", "category": "others", "title": "For our nation and its leaders",
+     "refs": ["1 Timothy 2:1-2", "2 Chronicles 7:14", "Proverbs 21:1", "Proverbs 14:34"],
+     "tags": ["nation", "country", "america", "president", "government", "leaders", "election", "authority", "congress", "governor", "politics"],
+     "text": [
+       "Father, You told us to pray for kings, and for all that are in authority, that we may lead a quiet and peaceable life in all godliness and honesty. I pray for our leaders by name before You, whoever they are.",
+       "The king's heart is in the hand of the LORD, as the rivers of water: You turn it whithersoever You will. Give them wisdom, honesty and humility.",
+       "If my people, which are called by my name, shall humble themselves, and pray: Lord, let it begin with me. Righteousness exalteth a nation, but sin is a reproach to any people.",
+       "Heal our land. In Jesus' name, Amen."
+     ]},
+    {"id": "for-those-who-hurt-me", "category": "others", "title": "For those who hurt me",
+     "refs": ["Matthew 5:44", "Romans 12:17-21", "Luke 23:34"],
+     "tags": ["enemy", "enemies", "hurt", "wronged", "betrayed", "abuse", "revenge", "bitter", "anger", "neighbor", "persecute"],
+     "text": [
+       "Lord, You told me to love my enemies, bless them that curse me, do good to them that hate me, and pray for them which despitefully use me. This is hard. I am praying for them now.",
+       "I will not recompense evil for evil. Vengeance is Yours; You will repay. Take the weight of it off me.",
+       "Jesus, on the cross You said, Father, forgive them; for they know not what they do. Give me Your heart toward them. Let me not be overcome of evil, but overcome evil with good. In Jesus' name, Amen."
+     ]},
+    {"id": "for-our-church", "category": "others", "title": "For our church and pastor",
+     "refs": ["Ephesians 6:18-19", "Hebrews 13:17", "1 Thessalonians 5:12-13", "Acts 2:42"],
+     "tags": ["church", "pastor", "minister", "preacher", "congregation", "bible study", "small group", "elders", "leaders", "sermon"],
+     "text": [
+       "Lord, I pray for our church and for our pastor. Give him utterance, that he may open his mouth boldly to make known the mystery of the gospel.",
+       "Our pastor watches for our souls. Strengthen him and his family; let us esteem them very highly in love for their work's sake, and be at peace among ourselves.",
+       "Let us continue stedfastly in the apostles' doctrine and fellowship, in breaking of bread, and in prayers. In Jesus' name, Amen."
+     ]},
+    {"id": "for-the-persecuted", "category": "others", "title": "For believers who suffer for their faith",
+     "refs": ["Hebrews 13:3", "2 Corinthians 4:8-9", "Matthew 5:10-12"],
+     "tags": ["persecuted", "persecution", "martyrs", "prison", "suffering church", "missionaries", "christians", "faith", "courage"],
+     "text": [
+       "Lord, I remember them that are in bonds, as bound with them, and them which suffer adversity, as being myself also in the body.",
+       "For brothers and sisters in prison, in hiding, or in danger for Your name: let them be troubled on every side, yet not distressed; persecuted, but not forsaken; cast down, but not destroyed.",
+       "You said, Blessed are they which are persecuted for righteousness' sake: for theirs is the kingdom of heaven. Give them courage, provide for their families, and let their faith reach those who persecute them. In Jesus' name, Amen."
+     ]},
     {"id": "lords-prayer", "category": "bible", "title": "The Lord's Prayer", "by": "Jesus, teaching His disciples to pray",
      "refs": ["Matthew 6:9-13"], "tags": ["our father", "lord's prayer", "pray", "how to pray", "kingdom", "daily bread"]},
     {"id": "priestly-blessing", "category": "bible", "title": "The Lord bless thee and keep thee", "by": "Aaron and his sons, blessing Israel",
@@ -411,6 +506,18 @@
      "refs": ["Philippians 1:9-11"], "tags": ["love", "knowledge", "judgment", "fruits", "paul", "friends"]},
     {"id": "paul-colossians", "category": "bible", "title": "Filled with the knowledge of His will", "by": "Paul, for the Colossians",
      "refs": ["Colossians 1:9-12"], "tags": ["will of god", "wisdom", "fruitful", "patience", "thanks", "paul"]},
+    {"id": "jehoshaphat-we-know-not", "category": "bible", "title": "We know not what to do", "by": "King Jehoshaphat, when the armies came against Judah",
+     "refs": ["2 Chronicles 20:6-12"], "tags": ["we know not what to do", "eyes upon thee", "battle", "enemies", "fear", "nation", "help"]},
+    {"id": "nehemiah-attentive", "category": "bible", "title": "Let thine ear now be attentive", "by": "Nehemiah, when he heard Jerusalem lay in ruins",
+     "refs": ["Nehemiah 1:5-11"], "tags": ["confession", "nation", "jerusalem", "rebuild", "favour", "work", "leader"]},
+    {"id": "elijah-hear-me", "category": "bible", "title": "Hear me, O LORD", "by": "Elijah on Mount Carmel",
+     "refs": ["1 Kings 18:36-37"], "tags": ["elijah", "fire", "carmel", "answer", "turn hearts", "revival"]},
+    {"id": "jesus-gethsemane", "category": "bible", "title": "Not as I will, but as thou wilt", "by": "Jesus in the garden of Gethsemane",
+     "refs": ["Matthew 26:39", "Matthew 26:42"], "tags": ["gethsemane", "thy will", "suffering", "surrender", "cup", "anguish"]},
+    {"id": "stephen-lay-not", "category": "bible", "title": "Lord, lay not this sin to their charge", "by": "Stephen, as he was stoned",
+     "refs": ["Acts 7:59-60"], "tags": ["stephen", "forgive", "enemies", "martyr", "death", "receive my spirit"]},
+    {"id": "peace-of-jerusalem", "category": "bible", "title": "Pray for the peace of Jerusalem", "by": "David, a song of degrees",
+     "refs": ["Psalms 122:6-9"], "tags": ["jerusalem", "israel", "peace", "prosper", "house of the lord"]},
 
     {"id": "path-daniel-2-statue-and-stone", "category": "paths", "title": "After Daniel 2: the statue and the stone", "paths": ["daniel-2-statue-and-stone"],
      "refs": ["Daniel 2:20-22", "Daniel 2:44"],
@@ -420,14 +527,14 @@
        "As we keep reading, give us understanding of what You have written, and humble hearts to receive it. In Jesus' name, Amen."
      ]},
     {"id": "path-daniel-3-fiery-furnace", "category": "paths", "title": "After Daniel 3: the fiery furnace", "paths": ["daniel-3-fiery-furnace"],
-     "refs": ["Daniel 3:17-18", "Isaiah 43:2"],
+     "refs": ["Daniel 3:17-18", "Isaiah 43:2", "Daniel 3:29"],
      "text": [
        "Our God whom we serve, Shadrach, Meshach and Abed-nego would not bow to the image of gold, whatever it cost them. Give me the same courage when everyone around me bows.",
        "You are able to deliver us; and even if You do not, let me still serve no other god. Thank You that when we walk through the fire, we do not walk it alone.",
        "Keep our group faithful as we read on, and let all who see us know that there is no other God who can deliver like You. In Jesus' name, Amen."
      ]},
     {"id": "path-daniel-4-the-tree-and-the-king", "category": "paths", "title": "After Daniel 4: the tree and the humbled king", "paths": ["daniel-4-the-tree-and-the-king"],
-     "refs": ["Daniel 4:34-37", "James 4:10"],
+     "refs": ["Daniel 4:34-37", "James 4:10", "Daniel 4:17"],
      "text": [
        "King of heaven, all Your works are truth and Your ways are judgment. You rule in the kingdom of men, and You give it to whomsoever You will.",
        "Forgive me where I have said, like the king, \"that I have built\", and taken the glory that is Yours. Lift my eyes to heaven, and give me back a right mind and a humble heart.",
@@ -476,7 +583,7 @@
        "Bless our Muslim neighbours who love the name of Jesus, and let us speak of Him with kindness. In Jesus' name, Amen."
      ]},
     {"id": "path-quran-6-son-of-god", "category": "paths", "title": "After the Quran and the Bible, session 6: Son of God", "paths": ["quran-6-son-of-god"],
-     "refs": ["Deuteronomy 6:4", "Matthew 16:16"],
+     "refs": ["Deuteronomy 6:4", "Matthew 16:16", "John 1:14", "John 20:31"],
      "text": [
        "Hear, O Israel: the LORD our God is one LORD. I worship You, the one God, and I love You with all my heart, soul and might.",
        "With Peter I confess that Jesus is the Christ, the Son of the living God. Thank You that this was revealed not by flesh and blood but by the Father in heaven.",
@@ -504,14 +611,14 @@
        "Where the text raises hard questions, keep me close to what You have written and humble about what I do not know. Build me up in the most holy faith, praying in the Holy Ghost, keeping myself in Your love. Let me walk with You as Enoch did. In Jesus' name, Amen."
      ]},
     {"id": "path-freedom-from-bondage", "category": "paths", "title": "After Freedom from bondage", "paths": ["freedom-from-bondage"],
-     "refs": ["John 8:36", "Romans 8:1-2", "1 Corinthians 10:13", "Psalms 40:1-3"],
+     "refs": ["John 8:36", "Romans 8:1-2", "1 Corinthians 10:13", "Psalms 40:1-3", "John 8:34"],
      "text": [
        "Lord Jesus, You said that whoever commits sin is the servant of sin, and that if the Son makes us free, we shall be free indeed. Make me free indeed.",
        "You know what holds me. I cannot break it alone; what I would, that I do not, and what I hate, that I do. There is now no condemnation to them which are in Christ Jesus. Let the law of the Spirit of life in You set me free from the law of sin and death.",
        "When temptation comes, show me the way of escape You have promised, and give me people who will stand with me. Lift me out of the horrible pit and the miry clay, set my feet on a rock, and put a new song in my mouth. In Your name, Amen."
      ]},
     {"id": "path-garden-serpent-and-cain", "category": "paths", "title": "After The Garden, the serpent and Cain", "paths": ["garden-serpent-and-cain"],
-     "refs": ["Genesis 3:15", "Romans 16:20", "1 John 3:11"],
+     "refs": ["Genesis 3:15", "Romans 16:20", "1 John 3:11", "1 John 3:12"],
      "text": [
        "Lord God, from the first pages You promised that the seed of the woman would bruise the serpent's head. Thank You for keeping that promise.",
        "This study holds questions on which Your people have disagreed. Give me an honest heart that reads what is written, weighs every verse, and does not add to Your word or take away from it. Where I am wrong, correct me gently.",
@@ -532,14 +639,14 @@
        "Whatever the shape of things, they are Yours, and so am I. Let me marvel at what You made and worship You, the Maker. In Jesus' name, Amen."
      ]},
     {"id": "path-husband-and-wife", "category": "paths", "title": "After Husband and wife", "paths": ["husband-and-wife"],
-     "refs": ["Genesis 2:24", "Ephesians 5:25", "Ecclesiastes 4:12", "Hebrews 13:4"],
+     "refs": ["Genesis 2:24", "Ephesians 5:25", "Ecclesiastes 4:12", "Hebrews 13:4", "Mark 10:6-8", "Ephesians 5:28"],
      "text": [
        "Lord, from the beginning You made them male and female, and the two shall be one flesh. What You have joined together, let no man put asunder.",
        "Teach husbands to love their wives as Christ loved the church and gave Himself for it, and teach husband and wife to submit to one another in Your fear. Let our marriage be held in honour, and keep our bed undefiled.",
        "Be the third strand in every marriage that reads these words, for a threefold cord is not quickly broken. For those who are single, waiting or hurting, be their husband and their comfort. In Jesus' name, Amen."
      ]},
     {"id": "path-isaiah-53-suffering-servant", "category": "paths", "title": "After Isaiah 53: the suffering Servant", "paths": ["isaiah-53-suffering-servant"],
-     "refs": ["Isaiah 53:5-6", "Acts 8:35", "1 Peter 2:24-25"],
+     "refs": ["Isaiah 53:5-6", "Acts 8:35", "1 Peter 2:24-25", "Acts 8:34"],
      "text": [
        "Lord, the man of Ethiopia asked, Of whom speaketh the prophet this? and Philip began at the same scripture and preached unto him Jesus. Thank You for opening this scripture to me.",
        "All we like sheep have gone astray; we have turned every one to his own way, and You laid on Him the iniquity of us all. He was wounded for my transgressions and bruised for my iniquities.",
@@ -553,7 +660,7 @@
        "Comfort the parents who have lost a child, and those who carry regret. Let them find in You mercy, healing and hope. In Jesus' name, Amen."
      ]},
     {"id": "path-light-before-sun", "category": "paths", "title": "After Light before the sun", "paths": ["light-before-sun"],
-     "refs": ["Genesis 1:3", "John 8:12", "1 John 1:5", "2 Corinthians 4:6"],
+     "refs": ["Genesis 1:3", "John 8:12", "1 John 1:5", "2 Corinthians 4:6", "Matthew 5:14-16"],
      "text": [
        "God, You said, Let there be light: and there was light. You are light, and in You is no darkness at all.",
        "Jesus, You are the light of the world. Whoever follows You shall not walk in darkness, but shall have the light of life. I want to follow You.",
@@ -588,7 +695,7 @@
        "Whatever I face on earth this week, let me remember that throne. In Jesus' name, Amen."
      ]},
     {"id": "path-mirror-5-stone-and-rider", "category": "paths", "title": "After Session 5: The stone and the rider", "paths": ["mirror-5-stone-and-rider"],
-     "refs": ["Daniel 2:44", "Revelation 19:11", "Revelation 11:15"],
+     "refs": ["Daniel 2:44", "Revelation 19:11", "Revelation 11:15", "Daniel 2:35"],
      "text": [
        "Lord, the stone cut out without hands became a great mountain and filled the whole earth. In the days of these kings You set up a kingdom which shall never be destroyed.",
        "Jesus, You are called Faithful and True, and in righteousness You judge. The kingdoms of this world are become the kingdoms of our Lord and of His Christ, and He shall reign for ever and ever.",
@@ -644,7 +751,7 @@
        "Keep me watching, for I do not know what hour my Lord comes. He that shall endure unto the end, the same shall be saved; help me endure. Then shall the righteous shine forth as the sun in the kingdom of their Father. In Jesus' name, Amen."
      ]},
     {"id": "path-women-in-the-bible", "category": "paths", "title": "After Women in the Bible: what does the Bible say?", "paths": ["women-in-the-bible"],
-     "refs": ["Genesis 1:27", "Luke 1:38", "Luke 10:42", "Galatians 3:28", "1 Peter 3:7"],
+     "refs": ["Genesis 1:27", "Luke 1:38", "Luke 10:42", "Galatians 3:28", "1 Peter 3:7", "Esther 4:16"],
      "text": [
        "Father, in Your image You created us; male and female created You them. Thank You for the women of Your Word: for Miriam's song, Deborah's courage, Ruth's faithfulness, Hannah's prayer, and Esther, who said, if I perish, I perish.",
        "Thank You for Mary, who said, Behold the handmaid of the Lord; be it unto me according to thy word. Thank You for the women who ministered unto Jesus of their substance, who stood by His cross, and who told the apostles that He is risen.",
@@ -652,7 +759,7 @@
        "Thank You that we are all one in Christ Jesus, heirs together of the grace of life. In Jesus' name, Amen."
      ]},
     {"id": "path-the-rapture", "category": "paths", "title": "After The rapture: what does the Bible say?", "paths": ["the-rapture"],
-     "refs": ["John 14:1-3", "1 Thessalonians 4:16-18", "1 Corinthians 15:51-52", "Matthew 24:42", "Titus 2:12-13", "1 John 3:3", "Revelation 22:20"],
+     "refs": ["John 14:1-3", "1 Thessalonians 4:16-18", "1 Corinthians 15:51-52", "Matthew 24:42", "Titus 2:12-13", "1 John 3:3", "Revelation 22:20", "1 Thessalonians 4:15-17"],
      "text": [
        "Lord Jesus, You said, I will come again, and receive you unto myself; that where I am, there ye may be also. Thank You for that promise. Let not my heart be troubled.",
        "Thank You that the dead in Christ shall rise first, and that we which are alive and remain shall be caught up together with them, to meet the Lord in the air. Thank You that we shall all be changed, in a moment, in the twinkling of an eye, and so shall we ever be with the Lord.",
@@ -660,7 +767,7 @@
        "Keep me watching, for I know not what hour my Lord doth come. Teach me to live soberly, righteously, and godly, looking for that blessed hope, and let that hope purify me. Even so, come, Lord Jesus. Amen."
      ]},
     {"id": "path-word-made-flesh", "category": "paths", "title": "After The Word made flesh", "paths": ["word-made-flesh"],
-     "refs": ["John 1:14", "John 14:6", "John 14:15", "Ephesians 2:8-10"],
+     "refs": ["John 1:14", "John 14:6", "John 14:15", "Ephesians 2:8-10", "John 1:1"],
      "text": [
        "Lord Jesus, You are the Word, and the Word was made flesh and dwelt among us, full of grace and truth. You are the way, the truth and the life.",
        "By grace I am saved through faith, and that not of myself: it is Your gift. And I am Your workmanship, created in Christ Jesus unto good works.",
@@ -674,28 +781,28 @@
        "Make me a disciple who loves as You loved, so that others may know whose I am. Be with me alway, as You promised. Amen."
      ]},
     {"id": "path-salvation-how-are-we-saved", "category": "paths", "title": "After Salvation: how are we saved?", "paths": ["salvation-how-are-we-saved"],
-     "refs": ["Romans 5:8", "Ephesians 2:8-9"],
+     "refs": ["Romans 5:8", "Ephesians 2:8-9", "Romans 3:23", "Acts 16:31", "2 Peter 3:9"],
      "text": [
        "Father, I have sinned and come short of Your glory. While I was yet a sinner, Christ died for me. Thank You for a gift I could never earn.",
        "I believe on the Lord Jesus Christ. Make me a new creature, keep me in Your hand, and let my life be the good works You prepared for me to walk in.",
        "You are not willing that any should perish. Give me words for those who have not heard, and let today be the day of salvation for someone I love. In Jesus' name, Amen."
      ]},
     {"id": "path-prayer-teach-us-to-pray", "category": "paths", "title": "After Prayer: Lord, teach us to pray", "paths": ["prayer-teach-us-to-pray"],
-     "refs": ["Luke 11:1", "Philippians 4:6-7"],
+     "refs": ["Luke 11:1-2", "Philippians 4:6-7"],
      "text": [
        "Lord, teach me to pray. Our Father which art in heaven, hallowed be Thy name; Thy kingdom come, Thy will be done.",
        "I bring You every care, because You care for me. When I ask and wait, when I ask how long, and when Your answer is no, let Your grace be sufficient for me, and Your peace keep my heart.",
        "When I do not know what to pray, let Your Spirit pray for me. Teach us to pray for one another, and for all who are in authority. In Jesus' name, Amen."
      ]},
     {"id": "path-the-holy-spirit", "category": "paths", "title": "After The Holy Spirit", "paths": ["the-holy-spirit"],
-     "refs": ["John 14:16", "Galatians 5:22-25"],
+     "refs": ["John 14:16", "Galatians 5:22-25", "1 Corinthians 6:19", "Luke 11:13"],
      "text": [
        "Father, thank You for the Comforter Jesus promised, who teaches us and brings His words to our remembrance. Thank You that my body is the temple of the Holy Ghost.",
        "Grow in me the fruit of the Spirit: love, joy, peace, longsuffering, gentleness, goodness, faith, meekness, temperance. Use the gifts You give me to build up others.",
        "Keep me from grieving Your Spirit. You give the Holy Spirit to them that ask: I ask You now, fill me. In Jesus' name, Amen."
      ]},
     {"id": "path-the-psalms", "category": "paths", "title": "After The Psalms", "paths": ["the-psalms"],
-     "refs": ["Psalms 23:1", "Psalms 150:6"],
+     "refs": ["Psalms 23:1", "Psalms 150:6", "Psalms 23:4", "Psalms 51:10", "Psalms 46:10", "Psalms 103:1", "Psalms 119:105"],
      "text": [
        "LORD, You are my shepherd; I shall not want. When I walk through the valley, You are with me. When I ask how long, teach me to trust in Your mercy.",
        "Create in me a clean heart, O God. Search me and know me. Let me be still and know that You are God, and let Your word be a lamp unto my feet.",

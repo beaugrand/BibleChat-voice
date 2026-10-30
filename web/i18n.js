@@ -481,6 +481,8 @@ const I18N = {
 "Guidance and wisdom": ["Führung und Weisheit", "Guía y sabiduría", "Direction et sagesse", "Direção e sabedoria", "引导与智慧", "Водительство и мудрость", "인도와 지혜"],
 "Forgiveness": ["Vergebung", "Perdón", "Pardon", "Perdão", "饶恕", "Прощение", "용서"],
 "Worship": ["Anbetung", "Adoración", "Adoration", "Adoração", "敬拜", "Поклонение", "예배"],
+"Daily life": ["Alltag", "Vida diaria", "Vie quotidienne", "Vida diária", "日常生活", "Повседневная жизнь", "일상생활"],
+"For others": ["Für andere", "Por los demás", "Pour les autres", "Pelos outros", "为他人", "За других", "다른 사람을 위해"],
 "Prayers of the Bible": ["Gebete der Bibel", "Oraciones de la Biblia", "Prières de la Bible", "Orações da Bíblia", "圣经中的祷告", "Молитвы Библии", "성경의 기도"],
 "After a Study Path": ["Nach einem Bibelpfad", "Después de una ruta de estudio", "Après un parcours d'étude", "Depois de uma trilha de estudo", "查经路径之后", "После пути изучения", "공부 길을 마친 후"],
 "The prayers couldn't load. Check the internet connection and try again.": ["Die Gebete konnten nicht geladen werden. Prüfe die Internetverbindung und versuche es noch einmal.", "No se pudieron cargar las oraciones. Revisa la conexión a internet e inténtalo de nuevo.", "Les prières n'ont pas pu se charger. Vérifiez la connexion internet et réessayez.", "Não foi possível carregar as orações. Verifique a internet e tente de novo.", "祷告无法加载。请检查网络后重试。", "Не удалось загрузить молитвы. Проверьте интернет и попробуйте снова.", "기도문을 불러오지 못했습니다. 인터넷 연결을 확인하고 다시 시도하세요."],
