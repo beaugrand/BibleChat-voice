@@ -51,7 +51,7 @@ class PathLanguagesTest(unittest.TestCase):
                 self.assertEqual(len(t["steps"]), len(en["steps"]))
                 for ts, es in zip(t["steps"], en["steps"]):
                     self.assertTrue(ts["question"].strip())
-                    self.assertEqual(len(ts["facts"]), len(es["facts"]))
+                    self.assertEqual(len(ts.get("facts", [])), len(es.get("facts", [])))
                 self.assertEqual(len(t["remember"]), len(en.get("remember", [])))
                 self.assertNotIn("“", json.dumps(t, ensure_ascii=False))   # quotes are straight, so the checker finds them
 
