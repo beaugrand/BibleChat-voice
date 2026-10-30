@@ -1,0 +1,993 @@
+{
+ "id": "daniel-4-the-tree-and-the-king",
+ "title": "Daniel 4: the tree and the humbled king",
+ "category": "Bible Study Groups",
+ "group": "Friday night Bible study",
+ "study_date": "2026-11-06",
+ "anim": {
+  "kind": "stars"
+ },
+ "read_along": {
+  "label": "TS2009",
+  "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
+ },
+ "opening_question": "Nebuchadnezzar dreamed of a great tree cut down to the stump. Twelve months later he boasted over Babylon and lost his mind and his throne, until he looked up to heaven. Who rules the kingdom of men, and what does God do with the proud?",
+ "required_refs": [
+  "Daniel 4:1-9",
+  "Daniel 4:10-18",
+  "Daniel 4:19-27",
+  "Daniel 4:28-33",
+  "Daniel 4:34-37",
+  "Proverbs 16:18",
+  "Daniel 5:18-22",
+  "Acts 12:21-23",
+  "Luke 12:19-20",
+  "Daniel 2:21",
+  "Psalms 75:6-7",
+  "Luke 1:51-52",
+  "Romans 13:1",
+  "James 4:6-10",
+  "1 Peter 5:5-7",
+  "Micah 6:8",
+  "Philippians 2:5-9"
+ ],
+ "words": [
+  "H5943",
+  "H5894",
+  "H363",
+  "H5732",
+  "H1467",
+  "H8214"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Who writes this chapter, and to whom? What does he say first about God's kingdom, and whom did he send for when the wise men could not tell his dream?",
+   "refs": [
+    "Daniel 4:1-9"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5943",
+     "H1095"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "This chapter is a letter from the king himself, \"unto all people, nations, and languages\". It begins and ends with his praise of God, and tells his own story in between.",
+     "refs": [
+      "Daniel 4:1",
+      "Daniel 4:37"
+     ]
+    },
+    {
+     "text": "He opens with what he learned last: \"his kingdom is an everlasting kingdom\". Daniel 2:44 had already said the God of heaven would set up a kingdom that \"shall never be destroyed\".",
+     "refs": [
+      "Daniel 4:3",
+      "Daniel 2:44"
+     ]
+    },
+    {
+     "text": "The king still speaks as a man of many gods: Daniel was named Belteshazzar \"according to the name of my god\", and in him is \"the spirit of the holy gods\".",
+     "refs": [
+      "Daniel 4:8"
+     ]
+    },
+    {
+     "text": "In Hebrew Bibles, the first three verses of this chapter are the last three verses of Daniel 3. The words are the same; only the numbering differs.",
+     "refs": [
+      "Daniel 4:1-3"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did the king see in his dream? What happened to the tree, what was left in the ground, and why was it decreed?",
+   "refs": [
+    "Daniel 4:10-18"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H363",
+     "H5894",
+     "H5732"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"watcher\" is iyr. Strong's: \"a watcher that is an angel (as guardian)\". It is found only in this chapter of the Bible.",
+     "refs": [
+      "Daniel 4:13",
+      "Daniel 4:17",
+      "Daniel 4:23"
+     ],
+     "strongs": [
+      "H5894"
+     ]
+    },
+    {
+     "text": "The Book of Enoch (Ethiopian Canon) uses the same pair of names: of Enoch it says \"his activities had to do with the Watchers, and his days were with the holy ones\". See the path Enoch and the Watchers.",
+     "refs": [
+      "1 Enoch 12:2"
+     ]
+    },
+    {
+     "text": "\"times\" is iddan. Strong's: \"a set time; technically a year\". It is the same word as \"a time and times\" in Daniel 7:25.",
+     "refs": [
+      "Daniel 4:16",
+      "Daniel 7:25"
+     ],
+     "strongs": [
+      "H5732"
+     ]
+    },
+    {
+     "text": "The reason is given three times in the chapter: \"that the most High ruleth in the kingdom of men, and giveth it to whomsoever he will\".",
+     "refs": [
+      "Daniel 4:17",
+      "Daniel 4:25",
+      "Daniel 4:32"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How did Daniel feel when he heard the dream? Who is the tree, what does the stump mean, and what counsel did Daniel give the king?",
+   "refs": [
+    "Daniel 4:19-27"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H6136",
+     "H2408"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel was \"astonied for one hour\" and wished the dream on the king's enemies. He took no joy in the fall of the king who had taken him captive.",
+     "refs": [
+      "Daniel 4:19"
+     ]
+    },
+    {
+     "text": "\"It is thou, O king\". The tree that reached to heaven is the king's own greatness.",
+     "refs": [
+      "Daniel 4:22"
+     ]
+    },
+    {
+     "text": "The stump left in the ground is a promise: \"thy kingdom shall be sure unto thee, after that thou shalt have known that the heavens do rule\". Here heaven stands for God himself, as when the prodigal son says \"I have sinned against heaven\".",
+     "refs": [
+      "Daniel 4:26",
+      "Luke 15:18"
+     ]
+    },
+    {
+     "text": "Daniel's counsel names two things: righteousness, and \"shewing mercy to the poor\". The Berean Standard Bible says \"showing mercy to the oppressed\".",
+     "refs": [
+      "Daniel 4:27"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How long did God wait? What did the king say as he walked in his palace, and what happened while the word was still in his mouth?",
+   "refs": [
+    "Daniel 4:28-33"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H1467",
+     "H5943"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Twelve months passed between the warning and the fall. Peter writes that the Lord \"is longsuffering to us-ward, not willing that any should perish\".",
+     "refs": [
+      "Daniel 4:29",
+      "2 Peter 3:9"
+     ]
+    },
+    {
+     "text": "Count the words \"I\" and \"my\" in the boast: \"that I have built\", \"by the might of my power\", \"for the honour of my majesty\".",
+     "refs": [
+      "Daniel 4:30"
+     ]
+    },
+    {
+     "text": "The rest of the letter is told by the king as \"I\", but these verses of his fall are told about him, as \"he\".",
+     "refs": [
+      "Daniel 4:28-33"
+     ]
+    },
+    {
+     "text": "The judgment came \"While the word was in the king's mouth\", and \"The same hour was the thing fulfilled\".",
+     "refs": [
+      "Daniel 4:31",
+      "Daniel 4:33"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did the king do at the end of the days, what returned to him, and what does he now say about God and about pride?",
+   "refs": [
+    "Daniel 4:34-37"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H8214",
+     "H1467"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "His healing begins with one act: \"I Nebuchadnezzar lifted up mine eyes unto heaven, and mine understanding returned unto me\".",
+     "refs": [
+      "Daniel 4:34"
+     ]
+    },
+    {
+     "text": "\"abase\" is shephal: \"abase humble put down subdue\". It is the root of \"basest\" in Daniel 4:17: God sets up the lowly and brings down the proud.",
+     "refs": [
+      "Daniel 4:37",
+      "Daniel 4:17"
+     ],
+     "strongs": [
+      "H8214",
+      "H8215"
+     ]
+    },
+    {
+     "text": "In Daniel 3 the king asked \"who is that God that shall deliver you out of my hands?\" Now he says of God: \"none can stay his hand\".",
+     "refs": [
+      "Daniel 3:15",
+      "Daniel 4:35"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does Scripture say goes before a fall? What did Daniel later tell Nebuchadnezzar's son about his father, and what happened to Herod, and to the rich fool, when they took the glory for themselves?",
+   "refs": [
+    "Proverbs 16:18",
+    "Daniel 5:18-22",
+    "Acts 12:21-23",
+    "Luke 12:19-20"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H1347",
+     "G1391"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Daniel tells Belshazzar what happened \"when his heart was lifted up, and his mind hardened in pride\". Belshazzar knew it, and still did not humble himself.",
+     "refs": [
+      "Daniel 5:20",
+      "Daniel 5:22"
+     ]
+    },
+    {
+     "text": "Herod was struck \"because he gave not God the glory\". Nebuchadnezzar was restored when he gave it.",
+     "refs": [
+      "Acts 12:23",
+      "Daniel 4:34"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who sets up kings and puts them down? Read what Daniel, the psalmist, Mary and Paul say about where power comes from.",
+   "refs": [
+    "Daniel 2:21",
+    "Psalms 75:6-7",
+    "Luke 1:51-52",
+    "Romans 13:1"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1849"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Mary's song says what Daniel 4 shows: \"He hath put down the mighty from their seats, and exalted them of low degree\".",
+     "refs": [
+      "Luke 1:52"
+     ]
+    },
+    {
+     "text": "Daniel praised the God who \"removeth kings, and setteth up kings\" before this dream came. The king had to learn it for himself.",
+     "refs": [
+      "Daniel 2:21"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Living it out: What does this ask of us? Whom does God resist and to whom does He give grace, what does He require of us, and how did Christ humble himself?",
+   "refs": [
+    "James 4:6-10",
+    "1 Peter 5:5-7",
+    "Micah 6:8",
+    "Philippians 2:5-9"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5013",
+     "G5244"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "James and Peter both quote Proverbs: God \"resisteth the proud, but giveth grace unto the humble\".",
+     "refs": [
+      "James 4:6",
+      "1 Peter 5:5"
+     ]
+    },
+    {
+     "text": "The king was humbled by God; we are told \"Humble yourselves\", and God will \"lift you up\".",
+     "refs": [
+      "James 4:10"
+     ],
+     "strongs": [
+      "G5013"
+     ]
+    },
+    {
+     "text": "The king tried to reach heaven and was brought down. Christ was \"in the form of God\", \"humbled himself\", and God \"highly exalted him\".",
+     "refs": [
+      "Philippians 2:6-9"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "The king wrote this to all nations: \"his kingdom is an everlasting kingdom\".",
+   "refs": [
+    "Daniel 4:3"
+   ]
+  },
+  {
+   "text": "The tree was cut down, but the stump was left, \"till thou know that the most High ruleth in the kingdom of men\".",
+   "refs": [
+    "Daniel 4:25"
+   ]
+  },
+  {
+   "text": "Daniel counselled him to break off his sins \"by shewing mercy to the poor\".",
+   "refs": [
+    "Daniel 4:27"
+   ]
+  },
+  {
+   "text": "\"Is not this great Babylon, that I have built\": the word was still in his mouth when the kingdom departed from him.",
+   "refs": [
+    "Daniel 4:30-31"
+   ]
+  },
+  {
+   "text": "He \"lifted up mine eyes unto heaven, and mine understanding returned\".",
+   "refs": [
+    "Daniel 4:34"
+   ]
+  },
+  {
+   "text": "\"those that walk in pride he is able to abase\"",
+   "refs": [
+    "Daniel 4:37"
+   ]
+  },
+  {
+   "text": "\"Humble yourselves in the sight of the Lord\", and He will lift you up.",
+   "refs": [
+    "James 4:10"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"his kingdom is an everlasting kingdom, and his dominion is from generation to generation\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 4:3"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 145,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.154,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here"
+   ],
+   "score": 0.4126
+  },
+  {
+   "q": "In Daniel 4:8, whose name did the king say Belteshazzar was named after?",
+   "type": "multiple_choice",
+   "options": [
+    "The king's god",
+    "The king's father",
+    "The king's city",
+    "The king's chief wise man"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 4:8"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "god"
+   },
+   "signals": {
+    "xref": 9,
+    "votes": 42,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.188,
+    "quoted": null
+   },
+   "why": [
+    "9 cross-references point here"
+   ],
+   "score": 0.3294
+  },
+  {
+   "q": "Fill in the word: \"behold, a ___ and an holy one came down from heaven\"",
+   "type": "fill_word",
+   "ref": "Daniel 4:13",
+   "bible": "KJV",
+   "word": "watcher",
+   "answer_refs": [
+    "Daniel 4:13"
+   ],
+   "signals": {
+    "xref": 6,
+    "votes": 29,
+    "word": "H5894",
+    "word_count": 3,
+    "differ": 0.362,
+    "quoted": null
+   },
+   "why": [
+    "6 cross-references point here",
+    "The Hebrew word ‛îyr (H5894) is in 3 verses of this path"
+   ],
+   "score": 0.4333
+  },
+  {
+   "q": "In Daniel 4:16, how many times were to pass over him?",
+   "type": "multiple_choice",
+   "options": [
+    "Seven",
+    "Three",
+    "Ten",
+    "Twelve"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 4:16"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "seven"
+   },
+   "signals": {
+    "xref": 6,
+    "votes": 26,
+    "word": "H5732",
+    "word_count": 5,
+    "differ": 0.482,
+    "quoted": null
+   },
+   "why": [
+    "6 cross-references point here",
+    "The Hebrew word ‛iddân (H5732) is in 5 verses of this path"
+   ],
+   "score": 0.5138
+  },
+  {
+   "q": "Which verse says the most High \"setteth up over it the basest of men\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 4:17"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 121,
+    "word": "H5943",
+    "word_count": 8,
+    "differ": 0.449,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here",
+    "The Hebrew word ‛illay (H5943) is in 8 verses of this path"
+   ],
+   "score": 0.7062
+  },
+  {
+   "q": "Which translation says \"the lowliest of men\" in Daniel 4:17?",
+   "type": "which_translation",
+   "ref": "Daniel 4:17",
+   "bible": "BSB",
+   "phrase": "the lowliest of men",
+   "answer_refs": [
+    "Daniel 4:17"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 121,
+    "word": "H5943",
+    "word_count": 8,
+    "differ": 0.449,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here",
+    "The Hebrew word ‛illay (H5943) is in 8 verses of this path"
+   ],
+   "score": 0.7062
+  },
+  {
+   "q": "Which verse says \"It is thou, O king, that art grown and become strong\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 4:22"
+   ],
+   "signals": {
+    "xref": 9,
+    "votes": 47,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.449,
+    "quoted": null
+   },
+   "why": [
+    "9 cross-references point here"
+   ],
+   "score": 0.4029
+  },
+  {
+   "q": "Fill in the word: \"break off thy sins by righteousness, and thine iniquities by shewing ___ to the poor\"",
+   "type": "fill_word",
+   "ref": "Daniel 4:27",
+   "bible": "KJV",
+   "word": "mercy",
+   "answer_refs": [
+    "Daniel 4:27"
+   ],
+   "signals": {
+    "xref": 24,
+    "votes": 138,
+    "word": "H2408",
+    "word_count": 1,
+    "differ": 0.537,
+    "quoted": null
+   },
+   "why": [
+    "24 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5339
+  },
+  {
+   "q": "In Daniel 4:29, how long after the dream did the king walk in his palace and boast?",
+   "type": "multiple_choice",
+   "options": [
+    "Twelve months",
+    "Seven days",
+    "Three years",
+    "Forty days"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 4:29"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "twelve"
+   },
+   "signals": {
+    "xref": 4,
+    "votes": 21,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.459,
+    "quoted": null
+   },
+   "why": [
+    "4 cross-references point here"
+   ],
+   "score": 0.3468
+  },
+  {
+   "q": "Which translation says \"Babylon the Great\" in Daniel 4:30?",
+   "type": "which_translation",
+   "ref": "Daniel 4:30",
+   "bible": "BSB",
+   "phrase": "Babylon the Great",
+   "answer_refs": [
+    "Daniel 4:30"
+   ],
+   "signals": {
+    "xref": 28,
+    "votes": 165,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.368,
+    "quoted": null
+   },
+   "why": [
+    "28 cross-references point here"
+   ],
+   "score": 0.4758
+  },
+  {
+   "q": "Which verse says \"While the word was in the king's mouth, there fell a voice from heaven\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 4:31"
+   ],
+   "signals": {
+    "xref": 14,
+    "votes": 119,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.41,
+    "quoted": null
+   },
+   "why": [
+    "14 cross-references point here"
+   ],
+   "score": 0.4619
+  },
+  {
+   "q": "In Daniel 4:33, what were his hairs grown like?",
+   "type": "multiple_choice",
+   "options": [
+    "Eagles feathers",
+    "A lion's mane",
+    "Wool",
+    "Grass of the field"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 4:33"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "eagles"
+   },
+   "signals": {
+    "xref": 13,
+    "votes": 107,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.534,
+    "quoted": null
+   },
+   "why": [
+    "13 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.485
+  },
+  {
+   "q": "Which translation says \"my sanity was restored\" in Daniel 4:34?",
+   "type": "which_translation",
+   "ref": "Daniel 4:34",
+   "bible": "BSB",
+   "phrase": "my sanity was restored",
+   "answer_refs": [
+    "Daniel 4:34"
+   ],
+   "signals": {
+    "xref": 48,
+    "votes": 332,
+    "word": "H5943",
+    "word_count": 8,
+    "differ": 0.371,
+    "quoted": null
+   },
+   "why": [
+    "48 cross-references point here",
+    "The Hebrew word ‛illay (H5943) is in 8 verses of this path"
+   ],
+   "score": 0.7621
+  },
+  {
+   "q": "Which verse says \"none can stay his hand, or say unto him, What doest thou?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 4:35"
+   ],
+   "signals": {
+    "xref": 66,
+    "votes": 490,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.503,
+    "quoted": null
+   },
+   "why": [
+    "66 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5757
+  },
+  {
+   "q": "Fill in the word: \"those that walk in ___ he is able to abase\"",
+   "type": "fill_word",
+   "ref": "Daniel 4:37",
+   "bible": "KJV",
+   "word": "pride",
+   "answer_refs": [
+    "Daniel 4:37"
+   ],
+   "signals": {
+    "xref": 48,
+    "votes": 343,
+    "word": "H8214",
+    "word_count": 2,
+    "differ": 0.308,
+    "quoted": null
+   },
+   "why": [
+    "48 cross-references point here",
+    "The Hebrew word shephal (H8214) is in 2 verses of this path"
+   ],
+   "score": 0.5738
+  },
+  {
+   "q": "Which verse says \"Pride goeth before destruction, and an haughty spirit before a fall\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Proverbs 16:18"
+   ],
+   "signals": {
+    "xref": 25,
+    "votes": 265,
+    "word": "H1347",
+    "word_count": 1,
+    "differ": 0.182,
+    "quoted": null
+   },
+   "why": [
+    "25 cross-references point here"
+   ],
+   "score": 0.4939
+  },
+  {
+   "q": "In Acts 12:23, why did the angel of the Lord smite Herod?",
+   "type": "multiple_choice",
+   "options": [
+    "He gave not God the glory",
+    "He killed James",
+    "He put Peter in prison",
+    "He would not pay tribute"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Acts 12:23"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "glory"
+   },
+   "signals": {
+    "xref": 36,
+    "votes": 203,
+    "word": "G1391",
+    "word_count": 1,
+    "differ": 0.381,
+    "quoted": null
+   },
+   "why": [
+    "36 cross-references point here"
+   ],
+   "score": 0.5237
+  },
+  {
+   "q": "Which verse says \"he removeth kings, and setteth up kings\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 2:21"
+   ],
+   "signals": {
+    "xref": 28,
+    "votes": 239,
+    "word": "H5732",
+    "word_count": 5,
+    "differ": 0.508,
+    "quoted": null
+   },
+   "why": [
+    "28 cross-references point here",
+    "The Hebrew word ‛iddân (H5732) is in 5 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6843
+  },
+  {
+   "q": "Which verse says \"God resisteth the proud, but giveth grace unto the humble\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "James 4:6"
+   ],
+   "signals": {
+    "xref": 44,
+    "votes": 576,
+    "word": "G5244",
+    "word_count": 3,
+    "differ": 0.528,
+    "quoted": null
+   },
+   "why": [
+    "44 cross-references point here",
+    "The Greek word hyperḗphanos (G5244) is in 3 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6695
+  },
+  {
+   "q": "Fill in the word: \"to do justly, and to love mercy, and to walk ___ with thy God\"",
+   "type": "fill_word",
+   "ref": "Micah 6:8",
+   "bible": "KJV",
+   "word": "humbly",
+   "answer_refs": [
+    "Micah 6:8"
+   ],
+   "signals": {
+    "xref": 44,
+    "votes": 838,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.314,
+    "quoted": null
+   },
+   "why": [
+    "44 cross-references point here"
+   ],
+   "score": 0.5285
+  },
+  {
+   "q": "Fill in the word: \"he ___ himself, and became obedient unto death, even the death of the cross\"",
+   "type": "fill_word",
+   "ref": "Philippians 2:8",
+   "bible": "KJV",
+   "word": "humbled",
+   "answer_refs": [
+    "Philippians 2:8"
+   ],
+   "signals": {
+    "xref": 56,
+    "votes": 628,
+    "word": "G5013",
+    "word_count": 3,
+    "differ": 0.453,
+    "quoted": null
+   },
+   "why": [
+    "56 cross-references point here",
+    "The Greek word tapeinóō (G5013) is in 3 verses of this path"
+   ],
+   "score": 0.6507
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "TS2009 (read-along link only)"
+ ],
+ "verse_count": 68,
+ "image": "img/daniel-4-the-tree-and-the-king.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/daniel-4-the-tree-and-the-king.json",
+  "sha": "9a0cb3cd563cbd54",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}

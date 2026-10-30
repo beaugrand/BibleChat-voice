@@ -14,28 +14,81 @@
   "label": "TS2009",
   "url": "https://www.bible.com/bible/316/{book}.{c}.TS2009"
  },
- "opening_question": "Nebuchadnezzar set up an image of gold and commanded all to bow; three young men would not. What did they answer the king, who walked with them in the fire, and what does that ask of us?",
+ "opening_question": "Nebuchadnezzar set up an image of gold and commanded all to bow; three young men would not. Who were they, why would they not bow, who walked with them in the fire, and what does that ask of us?",
  "required_refs": [
+  "Daniel 1:1-7",
+  "Daniel 2:48-49",
   "Daniel 3:1-7",
   "Daniel 3:8-15",
   "Daniel 3:16-18",
+  "Exodus 20:3-5",
+  "Deuteronomy 6:13-14",
+  "Matthew 4:10",
   "Daniel 3:19-25",
   "Daniel 3:26-30",
-  "Isaiah 43:2",
+  "Daniel 6:10",
+  "Daniel 6:21-22",
+  "Acts 5:27-29",
   "Hebrews 11:33-34",
   "Revelation 13:15",
-  "Exodus 20:3-5",
-  "Acts 5:29",
+  "Isaiah 43:2",
   "1 Peter 1:6-7",
+  "1 Peter 4:12-13",
+  "Matthew 10:28",
   "1 John 5:21"
  ],
  "words": [
   "H6755",
-  "H5135",
-  "H7804"
+  "H5457",
+  "H6399",
+  "H7804",
+  "H5135"
  ],
  "show": 8,
  "steps": [
+  {
+   "question": "Who were Shadrach, Meshach and Abed-nego, how did they come to Babylon, and what had the king set them over?",
+   "refs": [
+    "Daniel 1:1-7",
+    "Daniel 2:48-49"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H1095"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Their own names were Hananiah, Mishael and Azariah. The prince of the eunuchs gave them Babylonian names, and gave Daniel the name Belteshazzar.",
+     "refs": [
+      "Daniel 1:6-7"
+     ]
+    },
+    {
+     "text": "They were taken from Jerusalem as young men \"of the king's seed, and of the princes\", to be taught \"the learning and the tongue of the Chaldeans\".",
+     "refs": [
+      "Daniel 1:3-4"
+     ]
+    },
+    {
+     "text": "After Daniel told the king his dream, Daniel asked for his three friends, and the king set them \"over the affairs of the province of Babylon\". In Daniel 3:12 their accusers use the same words against them.",
+     "refs": [
+      "Daniel 2:49",
+      "Daniel 3:12"
+     ]
+    }
+   ]
+  },
   {
    "question": "What did Nebuchadnezzar set up, and what were all the people commanded to do at the sound of the music?",
    "refs": [
@@ -59,7 +112,7 @@
    ],
    "facts": [
     {
-     "text": "In Daniel 2:38 the king is told \"Thou art this head of gold\"; in Daniel 3:1 he \"made an image of gold\".",
+     "text": "In Daniel 2:38 the king is told \"Thou art this head of gold\"; in Daniel 3:1 he \"made an image of gold\". In the dream only the head was gold; this image is gold from head to foot.",
      "refs": [
       "Daniel 2:38",
       "Daniel 3:1"
@@ -74,6 +127,18 @@
      "strongs": [
       "H6755"
      ]
+    },
+    {
+     "text": "\"worship\" is segid, to fall down in worship. It comes again and again in this chapter: the king's command, the accusation, the king's threat and the king's blessing all turn on it.",
+     "refs": [
+      "Daniel 3:5",
+      "Daniel 3:12",
+      "Daniel 3:15",
+      "Daniel 3:28"
+     ],
+     "strongs": [
+      "H5457"
+     ]
     }
    ]
   },
@@ -84,6 +149,7 @@
    ],
    "look_closer": {
     "strongs": [
+     "H7170",
      "H6399"
     ],
     "xref_top": 5
@@ -99,13 +165,20 @@
    ],
    "facts": [
     {
-     "text": "\"Accused\" in 3:8 is an Aramaic picture: \"to eat the morsels of any one that is chew him up (figuratively) by slander\". The BSB: \"maliciously accused the Jews\".",
+     "text": "\"accused\" is two Aramaic words, akal qerats: word for word, they ate the pieces of the Jews. Strong's: \"to eat the morsels of any one that is chew him up\".",
      "refs": [
       "Daniel 3:8"
      ],
      "strongs": [
       "H7170",
       "H399"
+     ]
+    },
+    {
+     "text": "The king gave them a second chance, then asked: \"who is that God that shall deliver you out of my hands?\" By the end of the chapter he answers his own question: \"there is no other God that can deliver after this sort\".",
+     "refs": [
+      "Daniel 3:15",
+      "Daniel 3:29"
      ]
     }
    ]
@@ -139,6 +212,51 @@
      ],
      "strongs": [
       "H7804"
+     ]
+    },
+    {
+     "text": "They say two things together: God \"is able to deliver us\", and \"But if not\", they still will not serve the king's gods. Their faith did not depend on being rescued.",
+     "refs": [
+      "Daniel 3:17-18"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Why would they not bow? What had God commanded about other gods and graven images, and whom did Jesus say we must worship and serve?",
+   "refs": [
+    "Exodus 20:3-5",
+    "Deuteronomy 6:13-14",
+    "Matthew 4:10"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7812",
+     "G4352"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The second commandment forbids both parts of the king's order: \"Thou shalt not make unto thee any graven image\" and \"Thou shalt not bow down thyself to them, nor serve them\".",
+     "refs": [
+      "Exodus 20:4-5"
+     ]
+    },
+    {
+     "text": "When Satan offered Jesus all the kingdoms of the world for one act of worship, Jesus answered from Deuteronomy: \"Thou shalt worship the Lord thy God, and him only shalt thou serve\". The three men gave up their bodies so \"that they might not serve nor worship any god, except their own God\".",
+     "refs": [
+      "Matthew 4:10",
+      "Daniel 3:28"
      ]
     }
    ]
@@ -175,11 +293,27 @@
       "H1247",
       "H426"
      ]
+    },
+    {
+     "text": "Three verses later the king himself names the fourth: God \"hath sent his angel\". Many Christians read the fourth as the Son of God before He was born of Mary; others read him as an angel. The text gives the king's own words.",
+     "refs": [
+      "Daniel 3:28"
+     ],
+     "strongs": [
+      "H4398"
+     ]
+    },
+    {
+     "text": "The fire killed the men who carried them in, yet the three came out \"loose\": only their bonds were burned.",
+     "refs": [
+      "Daniel 3:22",
+      "Daniel 3:25"
+     ]
     }
    ]
   },
   {
-   "question": "What could the fire not do to them, and whom did the king bless?",
+   "question": "What could the fire not do to them, whom did the king bless, and what did he decree?",
    "refs": [
     "Daniel 3:26-30"
    ],
@@ -205,18 +339,27 @@
      "refs": [
       "Daniel 3:27"
      ]
+    },
+    {
+     "text": "The king blesses their God, but he still rules by threat: anyone who speaks against Him \"shall be cut in pieces\". He has seen God's power, but he is not yet humbled. Daniel 4 tells how that happened.",
+     "refs": [
+      "Daniel 3:29"
+     ]
     }
    ]
   },
   {
-   "question": "Where else does Scripture speak of walking through fire, of faith that quenched the violence of fire, and of an image all must worship?",
+   "question": "Who else would not obey a command against God? What did Daniel do when the king's writing was signed, and what did Peter and the apostles answer the council?",
    "refs": [
-    "Isaiah 43:2",
+    "Daniel 6:10",
+    "Daniel 6:21-22",
+    "Acts 5:27-29",
     "Hebrews 11:33-34",
     "Revelation 13:15"
    ],
    "look_closer": {
     "strongs": [
+     "G3980",
      "G1504"
     ],
     "xref_top": 5
@@ -232,6 +375,19 @@
    ],
    "facts": [
     {
+     "text": "Hebrews 11 remembers both stories side by side: they \"stopped the mouths of lions\" and \"Quenched the violence of fire\".",
+     "refs": [
+      "Hebrews 11:33-34"
+     ]
+    },
+    {
+     "text": "Both kings send God's servants to death, and in both God \"hath sent his angel\".",
+     "refs": [
+      "Daniel 3:28",
+      "Daniel 6:22"
+     ]
+    },
+    {
      "text": "Daniel 3:6: whoso falleth not down \"shall the same hour be cast into the midst of a burning fiery furnace\". Revelation 13:15: as many as would not worship the image of the beast \"should be killed\".",
      "refs": [
       "Daniel 3:6",
@@ -241,16 +397,18 @@
    ]
   },
   {
-   "question": "Living it out: The opening asked: what does that ask of us? Which commandment were the three men keeping, and what do these verses say about whom to obey and about faith tried by fire?",
+   "question": "Living it out: What does this ask of us? What does God promise when we walk through the fire, what is the fiery trial for, and whom are we told to fear?",
    "refs": [
-    "Exodus 20:3-5",
-    "Acts 5:29",
+    "Isaiah 43:2",
     "1 Peter 1:6-7",
+    "1 Peter 4:12-13",
+    "Matthew 10:28",
     "1 John 5:21"
    ],
    "look_closer": {
     "strongs": [
-     "G3982"
+     "G1381",
+     "G4451"
     ],
     "xref_top": 5
    },
@@ -260,27 +418,26 @@
     "BSB"
    ],
    "notes": [
+    "scofield",
     "henry"
    ],
    "facts": [
     {
-     "text": "The commandment they kept: \"Thou shalt have no other gods before me\" and \"Thou shalt not bow down thyself to them, nor serve them\".",
+     "text": "Isaiah does not promise there will be no fire. He promises: \"when thou walkest through the fire, thou shalt not be burned\".",
      "refs": [
-      "Exodus 20:3",
-      "Exodus 20:5"
+      "Isaiah 43:2"
      ]
     },
     {
-     "text": "Peter and the apostles before the council: \"We ought to obey God rather than men\". Daniel did the same in Daniel 6:10, praying \"three times a day\" after the king's writing was signed.",
-     "refs": [
-      "Acts 5:29",
-      "Daniel 6:10"
-     ]
-    },
-    {
-     "text": "Peter speaks of faith \"tried with fire\", \"much more precious than of gold that perisheth\". John ends his letter: \"keep yourselves from idols\".",
+     "text": "Peter compares faith to gold \"tried with fire\". The king made an image of gold; God tests a faith that is \"much more precious than of gold\".",
      "refs": [
       "1 Peter 1:7",
+      "Daniel 3:1"
+     ]
+    },
+    {
+     "text": "An idol today need not be a statue. John ends his letter: \"Little children, keep yourselves from idols\".",
+     "refs": [
       "1 John 5:21"
      ]
     }
@@ -288,6 +445,12 @@
   }
  ],
  "remember": [
+  {
+   "text": "Hananiah, Mishael and Azariah were young men of Judah, taken to Babylon and given new names.",
+   "refs": [
+    "Daniel 1:6-7"
+   ]
+  },
   {
    "text": "At the sound of the music all the people bowed to the image of gold. Three did not.",
    "refs": [
@@ -299,6 +462,12 @@
    "text": "\"our God whom we serve is able to deliver us\" ... \"But if not\", they would still not bow.",
    "refs": [
     "Daniel 3:17-18"
+   ]
+  },
+  {
+   "text": "God had said: \"Thou shalt not bow down thyself to them, nor serve them\".",
+   "refs": [
+    "Exodus 20:5"
    ]
   },
   {
@@ -314,6 +483,12 @@
    ]
   },
   {
+   "text": "\"We ought to obey God rather than men.\"",
+   "refs": [
+    "Acts 5:29"
+   ]
+  },
+  {
    "text": "\"when thou walkest through the fire, thou shalt not be burned\"",
    "refs": [
     "Isaiah 43:2"
@@ -321,6 +496,56 @@
   }
  ],
  "quiz": [
+  {
+   "q": "In Daniel 1:7, what name was Hananiah given?",
+   "type": "multiple_choice",
+   "options": [
+    "Shadrach",
+    "Meshach",
+    "Abed-nego",
+    "Belteshazzar"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 1:7"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Shadrach"
+   },
+   "signals": {
+    "xref": 10,
+    "votes": 47,
+    "word": "H1095",
+    "word_count": 1,
+    "differ": 0.349,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here"
+   ],
+   "score": 0.407
+  },
+  {
+   "q": "Which verse says the king set Shadrach, Meshach and Abed-nego \"over the affairs of the province of Babylon\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Daniel 2:49"
+   ],
+   "signals": {
+    "xref": 5,
+    "votes": 24,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.528,
+    "quoted": null
+   },
+   "why": [
+    "5 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.3737
+  },
   {
    "q": "Which verse says the king \"made an image of gold, whose height was threescore cubits\"?",
    "type": "find_the_verse",
@@ -395,6 +620,29 @@
     "The Hebrew word tselem (H6755) is in 12 verses of this path"
    ],
    "score": 0.6989
+  },
+  {
+   "q": "Which translation says \"maliciously accused the Jews\" in Daniel 3:8?",
+   "type": "which_translation",
+   "ref": "Daniel 3:8",
+   "bible": "BSB",
+   "phrase": "maliciously accused the Jews",
+   "answer_refs": [
+    "Daniel 3:8"
+   ],
+   "signals": {
+    "xref": 2,
+    "votes": 8,
+    "word": "H7170",
+    "word_count": 1,
+    "differ": 0.554,
+    "quoted": null
+   },
+   "why": [
+    "2 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.3326
   },
   {
    "q": "Which verse asks \"who is that God that shall deliver you\"?",
@@ -481,6 +729,49 @@
     "The Hebrew word tselem (H6755) is in 12 verses of this path"
    ],
    "score": 0.8497
+  },
+  {
+   "q": "Fill in the word: \"Thou shalt not bow down thyself to them, nor ___ them\"",
+   "type": "fill_word",
+   "ref": "Exodus 20:5",
+   "bible": "KJV",
+   "word": "serve",
+   "answer_refs": [
+    "Exodus 20:5"
+   ],
+   "signals": {
+    "xref": 53,
+    "votes": 352,
+    "word": "H7812",
+    "word_count": 1,
+    "differ": 0.373,
+    "quoted": null
+   },
+   "why": [
+    "53 cross-references point here"
+   ],
+   "score": 0.5628
+  },
+  {
+   "q": "Which verse says \"Thou shalt worship the Lord thy God, and him only shalt thou serve\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 4:10"
+   ],
+   "signals": {
+    "xref": 40,
+    "votes": 484,
+    "word": "G4352",
+    "word_count": 3,
+    "differ": 0.505,
+    "quoted": null
+   },
+   "why": [
+    "40 cross-references point here",
+    "The Greek word proskynéō (G4352) is in 3 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6637
   },
   {
    "q": "In Daniel 3:19, how much hotter did the king command the furnace to be heated?",
@@ -613,23 +904,54 @@
    "score": 0.7777
   },
   {
-   "q": "Which verse says \"when thou walkest through the fire, thou shalt not be burned\"?",
-   "type": "find_the_verse",
-   "answer_refs": [
-    "Isaiah 43:2"
+   "q": "In Daniel 6:10, how many times a day did Daniel kneel and pray?",
+   "type": "multiple_choice",
+   "options": [
+    "Three times",
+    "Once",
+    "Seven times",
+    "Twice"
    ],
+   "answer": 0,
+   "answer_refs": [
+    "Daniel 6:10"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "three"
+   },
    "signals": {
-    "xref": 63,
-    "votes": 1337,
+    "xref": 24,
+    "votes": 164,
     "word": null,
     "word_count": 0,
-    "differ": 0.484,
+    "differ": 0.368,
     "quoted": null
    },
    "why": [
-    "63 cross-references point here"
+    "24 cross-references point here"
    ],
-   "score": 0.571
+   "score": 0.4753
+  },
+  {
+   "q": "Which verse says \"We ought to obey God rather than men\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Acts 5:29"
+   ],
+   "signals": {
+    "xref": 24,
+    "votes": 217,
+    "word": "G3980",
+    "word_count": 2,
+    "differ": 0.337,
+    "quoted": null
+   },
+   "why": [
+    "24 cross-references point here",
+    "The Greek word peitharchéō (G3980) is in 2 verses of this path"
+   ],
+   "score": 0.5468
   },
   {
    "q": "Which verse says they \"Quenched the violence of fire\"?",
@@ -650,6 +972,47 @@
     "Translations differ here"
    ],
    "score": 0.547
+  },
+  {
+   "q": "Which verse says \"when thou walkest through the fire, thou shalt not be burned\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 43:2"
+   ],
+   "signals": {
+    "xref": 63,
+    "votes": 1337,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.484,
+    "quoted": null
+   },
+   "why": [
+    "63 cross-references point here"
+   ],
+   "score": 0.571
+  },
+  {
+   "q": "Fill in the word: \"Little children, keep yourselves from ___\"",
+   "type": "fill_word",
+   "ref": "1 John 5:21",
+   "bible": "KJV",
+   "word": "idols",
+   "answer_refs": [
+    "1 John 5:21"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 156,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.095,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here"
+   ],
+   "score": 0.4034
   }
  ],
  "sources": [
@@ -662,7 +1025,7 @@
   "Matthew Henry",
   "TS2009 (read-along link only)"
  ],
- "verse_count": 41,
+ "verse_count": 61,
  "image": "img/daniel-3-fiery-furnace.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -670,7 +1033,7 @@
  },
  "built_from": {
   "file": "packaging/paths/daniel-3-fiery-furnace.json",
-  "sha": "c6bd8196fc4426eb",
+  "sha": "c15c909ec346d348",
   "checked_in": [
    "KJV",
    "ETH",
