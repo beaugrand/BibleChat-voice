@@ -878,5 +878,181 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "Los Salmos: cantos y oraciones para cada tiempo",
+   "opening_question": "Los Salmos eran el libro de cantos y de oración de Israel, y Jesús los oró en la cruz. Alaban, lloran, confiesan, preguntan \"¿Hasta cuándo?\" Lee diez de ellos: ¿qué nos enseñan a decirle a Dios, en la alegría y en la angustia?",
+   "steps": [
+    {
+     "question": "¿Cuáles son los dos caminos del Salmo 1? ¿Dónde halla su delicia el varón bienaventurado, y a qué se parece?",
+     "facts": [
+      "El libro de los Salmos empieza con \"BIENAVENTURADO\" ('esher), una palabra de felicidad, y con la delicia en \"la ley de Jehová\".",
+      "\"ley\" traduce torah: Strong da «un precepto o estatuto»; también significa instrucción y enseñanza."
+     ]
+    },
+    {
+     "question": "¿Quién es el pastor de David, y qué hace el pastor por él? ¿A quién llama Jesús el buen pastor?",
+     "facts": [
+      "El salmo pasa de «él» a «tú»: en el \"valle de sombra de muerte\" David deja de hablar de Dios y le habla a Él: \"porque tú estarás conmigo\".",
+      "Jesús tomó para sí el nombre de pastor: \"Yo soy el buen pastor: el buen pastor su vida da por las ovejas\"."
+     ]
+    },
+    {
+     "question": "¿Hasta cuándo, Jehová? ¿Qué pide David en el Salmo 13, y cómo termina el salmo?",
+     "facts": [
+      "El Salmo 13 es un lamento: queja, luego petición, luego confianza. Gira sobre una palabra: \"Mas yo en tu misericordia he confiado\".",
+      "\"misericordia\" traduce chesed, el amor y la lealtad de la alianza de Dios. Aparece en los Salmos más que en ningún otro libro."
+     ]
+    },
+    {
+     "question": "¿Qué clama David en el Salmo 22, y qué describe? ¿Quién oró sus primeras palabras desde la cruz?",
+     "facts": [
+      "En la cruz Jesús oró la primera línea de este salmo: \"Dios mío, Dios mío, ¿por qué me has desamparado?\"",
+      "El salmo que empieza en el desamparo termina con \"todos los términos de la tierra\" volviéndose a Jehová."
+     ]
+    },
+    {
+     "question": "¿Qué dijo David cuando Natán vino a él? ¿Qué le pide a Dios en el Salmo 51?",
+     "facts": [
+      "David le dijo a Natán: \"Pequé contra Jehová\". El Salmo 51 es esa confesión hecha oración.",
+      "\"Crea en mí, oh Dios, un corazón limpio\": el verbo es bara, la palabra de Génesis 1:1, que se usa solo de Dios cuando crea."
+     ]
+    },
+    {
+     "question": "¿Qué sabe Dios de David? ¿Adónde puede ir David lejos de la presencia de Dios, y qué le esconden las tinieblas?",
+     "facts": [
+      "David cuenta los lugares adonde podría huir: los cielos, el abismo, \"el extremo de la mar\", las tinieblas. Dios está en cada uno.",
+      "\"lo mismo te son las tinieblas que la luz\"."
+     ]
+    },
+    {
+     "question": "¿Qué es Dios para nosotros en la angustia? ¿Qué dice el Salmo 46 cuando la tierra es removida, y qué se nos dice que hagamos?",
+     "facts": [
+      "\"Estad quietos\" traduce raphah: soltar, dejar de forcejear.",
+      "El himno de Martín Lutero Castillo fuerte es nuestro Dios (1529) fue escrito a partir de este salmo."
+     ]
+    },
+    {
+     "question": "¿Qué le dice David a su alma en el Salmo 103? ¿Qué beneficios nombra, y cuán lejos aparta Dios nuestros pecados?",
+     "facts": [
+      "David se predica a sí mismo: \"Bendice, alma mía á Jehová, y no olvides ninguno de sus beneficios\".",
+      "\"Cuanto está lejos el oriente del occidente\": una distancia que no tiene fin."
+     ]
+    },
+    {
+     "question": "¿Con qué limpiará el joven su camino? ¿Cómo llama el Salmo 119 a la palabra de Dios?",
+     "facts": [
+      "El Salmo 119 es el capítulo más largo de la Biblia, 176 versículos: 22 secciones de 8 versículos, una por cada letra del alfabeto hebreo.",
+      "\"Lámpara es á mis pies tu palabra, y lumbrera á mi camino\": una lámpara para el siguiente paso, no un reflector para todo el camino."
+     ]
+    },
+    {
+     "question": "Para vivirlo: ¿qué dijo Jesús que dicen de Él los salmos? ¿Cómo hemos de cantarlos, y cómo termina el libro?",
+     "facts": [
+      "Jesús nombró tres partes de la Escritura que hablan de Él: \"en la ley de Moisés, y en los profetas, y en los salmos\".",
+      "Pablo dice a la iglesia que se enseñen y exhorten unos a otros \"con salmos é himnos y canciones espirituales\".",
+      "El libro termina con todas las voces juntas: \"Todo lo que respira alabe á JAH\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"en la ley de Jehová está su delicia\"",
+    "\"es mi pastor; nada me faltará\"",
+    "\"¿HASTA cuándo, Jehová?\" ... \"Mas yo en tu misericordia he confiado\"",
+    "\"Dios mío, ¿por qué me has dejado?\"",
+    "\"Crea en mí, oh Dios, un corazón limpio\"",
+    "\"Estad quietos, y conoced que yo soy Dios\"",
+    "\"Lámpara es á mis pies tu palabra, y lumbrera á mi camino\"",
+    "\"Todo lo que respira alabe á JAH\""
+   ]
+  },
+  "de": {
+   "title": "Die Psalmen: Lieder und Gebete für jede Zeit",
+   "opening_question": "Die Psalmen waren Israels Liederbuch und Gebetbuch, und Jesus betete sie am Kreuz. Sie loben, sie weinen, sie bekennen, sie fragen \"Wie lange?\" Lies zehn von ihnen: Was lehren sie uns, Gott zu sagen, in der Freude und in der Not?",
+   "steps": [
+    {
+     "question": "Welches sind die zwei Wege in Psalm 1? Woran hat der Gesegnete seine Lust, und wem gleicht er?",
+     "facts": [
+      "Das Buch der Psalmen beginnt mit \"Wohl dem\" ('esher), einem Wort für Glück, und mit der Lust \"zum Gesetz des HERRN\".",
+      "\"Gesetz\" steht für torah: Strong gibt »eine Vorschrift oder Satzung«; es bedeutet auch Weisung und Lehre."
+     ]
+    },
+    {
+     "question": "Wer ist Davids Hirte, und was tut der Hirte für ihn? Wen nennt Jesus den guten Hirten?",
+     "facts": [
+      "Der Psalm wechselt von »er« zu »du«: \"im finstern Tal\" hört David auf, über Gott zu reden, und redet mit Ihm: \"denn du bist bei mir\".",
+      "Jesus nahm den Namen des Hirten für sich: \"Ich bin der gute Hirte. Der gute Hirte läßt sein Leben für seine Schafe.\""
+     ]
+    },
+    {
+     "question": "HERR, wie lange? Worum bittet David in Psalm 13, und wie endet der Psalm?",
+     "facts": [
+      "Psalm 13 ist ein Klagelied: Klage, dann Bitte, dann Vertrauen. Er wendet sich an einem Wort: \"Ich hoffe aber darauf, daß du so gnädig bist\".",
+      "\"gnädig\" steht für chesed, Gottes Bundesliebe und Treue. Das Wort kommt in den Psalmen öfter vor als in jedem anderen Buch."
+     ]
+    },
+    {
+     "question": "Was ruft David in Psalm 22, und was beschreibt er? Wer betete seine ersten Worte am Kreuz?",
+     "facts": [
+      "Am Kreuz betete Jesus die erste Zeile dieses Psalms: \"Mein Gott, mein Gott, warum hast du mich verlassen?\"",
+      "Der Psalm, der verlassen beginnt, endet damit, dass sich \"aller Welt Enden\" zum HERRN bekehren."
+     ]
+    },
+    {
+     "question": "Was sagte David, als Nathan zu ihm kam? Worum bittet er Gott in Psalm 51?",
+     "facts": [
+      "David sprach zu Nathan: \"Ich habe gesündigt wider den HERRN.\" Psalm 51 ist dieses Bekenntnis als Gebet.",
+      "\"Schaffe in mir, Gott, ein reines Herz\": das Verb ist bara, das Wort aus 1. Mose 1,1, das nur für Gottes Schaffen gebraucht wird."
+     ]
+    },
+    {
+     "question": "Was weiß Gott von David? Wohin kann David vor Gottes Angesicht gehen, und was verbirgt die Finsternis vor Ihm?",
+     "facts": [
+      "David zählt die Orte auf, wohin er fliehen könnte: Himmel, Hölle, \"am äußersten Meer\", die Finsternis. Gott ist an jedem davon.",
+      "\"Finsternis ist wie das Licht\"."
+     ]
+    },
+    {
+     "question": "Was ist Gott für uns in der Not? Was sagt Psalm 46, wenn die Welt unterginge, und was sollen wir tun?",
+     "facts": [
+      "\"Seid stille\" steht für raphah: loslassen, aufhören zu kämpfen.",
+      "Martin Luthers Lied Ein feste Burg ist unser Gott (1529) ist aus diesem Psalm entstanden. Luther zählt die Überschrift als Vers 1, darum stehen seine Verse eins höher."
+     ]
+    },
+    {
+     "question": "Was sagt David seiner Seele in Psalm 103? Welche Wohltaten nennt er, und wie weit entfernt Gott unsere Sünden?",
+     "facts": [
+      "David predigt sich selbst: \"Lobe den HERRN, meine Seele, und vergiß nicht, was er dir Gutes getan hat\".",
+      "\"So ferne der Morgen ist vom Abend\": eine Entfernung ohne Ende."
+     ]
+    },
+    {
+     "question": "Wie wird ein Jüngling seinen Weg unsträflich gehen? Wie nennt Psalm 119 Gottes Wort?",
+     "facts": [
+      "Psalm 119 ist das längste Kapitel der Bibel, 176 Verse: 22 Abschnitte zu je 8 Versen, einer für jeden Buchstaben des hebräischen Alphabets.",
+      "\"Dein Wort ist meine Fußes Leuchte und ein Licht auf meinem Wege\": eine Leuchte für den nächsten Schritt, kein Scheinwerfer für den ganzen Weg."
+     ]
+    },
+    {
+     "question": "Für das Leben: Wovon reden die Psalmen nach Jesu Wort? Wie sollen wir sie singen, und wie endet das Buch?",
+     "facts": [
+      "Jesus nannte drei Teile der Schrift, die von Ihm reden: \"im Gesetz Mose's, in den Propheten und in den Psalmen\".",
+      "Paulus sagt der Gemeinde, einander zu lehren und zu ermahnen \"mit Psalmen und Lobgesängen und geistlichen lieblichen Liedern\".",
+      "Das Buch endet damit, dass jede Stimme einstimmt: \"Alles, was Odem hat, lobe den HERRN!\""
+     ]
+    }
+   ],
+   "remember": [
+    "\"hat Lust zum Gesetz des HERRN\"",
+    "\"Der HERR ist mein Hirte; mir wird nichts mangeln.\"",
+    "\"HERR, wie lange\" ... \"Ich hoffe aber darauf, daß du so gnädig bist\"",
+    "\"Mein Gott, mein Gott, warum hast du mich verlassen?\"",
+    "\"Schaffe in mir, Gott, ein reines Herz\"",
+    "\"Seid stille und erkennet, daß ich GOTT bin.\"",
+    "\"Dein Wort ist meine Fußes Leuchte und ein Licht auf meinem Wege.\"",
+    "\"Alles, was Odem hat, lobe den HERRN!\""
+   ]
+  }
  }
 }

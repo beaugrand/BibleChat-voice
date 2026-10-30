@@ -23,6 +23,12 @@ class PathLanguagesTest(unittest.TestCase):
                            (4, "daniel-4-the-tree-and-the-king"), (5, "daniel-5-writing-on-the-wall")):
                 self.assertTrue(os.path.exists(os.path.join(I18N, lang, pid + ".json")), f"{lang} Daniel {n}")
 
+    def test_the_five_foundations_are_in_spanish_and_german(self):
+        for lang in ("es", "de"):
+            for pid in ("jesus-in-the-gospels", "salvation-how-are-we-saved", "prayer-teach-us-to-pray",
+                        "the-holy-spirit", "the-psalms"):
+                self.assertTrue(os.path.exists(os.path.join(I18N, lang, pid + ".json")), f"{lang} {pid}")
+
     def test_each_translation_matches_its_english_path(self):
         files = glob.glob(os.path.join(I18N, "*", "*.json"))
         self.assertTrue(files)

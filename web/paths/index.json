@@ -631,6 +631,40 @@
   "minutes": 60,
   "anim": {
    "kind": "light"
+  },
+  "i18n": {
+   "es": {
+    "title": "Jesús en los Evangelios: ¿quién es Él?",
+    "opening_question": "Los cuatro Evangelios cuentan la vida de Jesús: su nacimiento, su predicación, sus milagros, su muerte y su resurrección. Léelo desde el pesebre hasta la tumba vacía. ¿Quién es Él, qué enseñó, y qué pide a los que le siguen?",
+    "step_questions": [
+     "¿Quién trajo la noticia de su nacimiento, y a quién? ¿Qué nombre había de recibir, y por qué?",
+     "¿Qué pasó cuando Jesús fue bautizado, y cuáles fueron las primeras palabras de su predicación? ¿A quiénes llamó primero?",
+     "¿Qué enseñó Jesús en el monte? ¿A quiénes llama bienaventurados, y qué clase de hombre edifica sobre la peña?",
+     "¿Quiénes se acercaban para oírle, qué murmuraban los fariseos, y qué dicen de Dios las parábolas de la oveja perdida y de la moneda perdida?",
+     "¿Qué hizo Jesús en la tempestad y en la tumba de Lázaro? ¿Qué preguntaron sus discípulos, y qué dijo Él que es?",
+     "¿Quién decía la gente que era Jesús, quién dijo Pedro que era, y qué dijo Jesús acerca de conocerle a Él y conocer al Padre?",
+     "¿Qué hizo Jesús por sus discípulos la noche en que fue entregado? ¿Qué dijo del pan y de la copa?",
+     "¿Qué oró Jesús por los que le crucificaron? ¿Qué pasó a la hora novena, y qué dijo el centurión?",
+     "¿Qué hallaron las mujeres el primer día de la semana? ¿Qué dijeron los ángeles, y a qué envió Jesús resucitado a sus discípulos?",
+     "Para vivirlo: ¿a quién invita Jesús, qué mandamiento nuevo dio, y por qué fue escrito el Evangelio de Juan?"
+    ]
+   },
+   "de": {
+    "title": "Jesus in den Evangelien: Wer ist Er?",
+    "opening_question": "Die vier Evangelien erzählen das Leben Jesu: seine Geburt, seine Predigt, seine Wunder, seinen Tod und seine Auferstehung. Lies es von der Krippe bis zum leeren Grab. Wer ist Er, was hat Er gelehrt, und was verlangt Er von denen, die Ihm nachfolgen?",
+    "step_questions": [
+     "Wer brachte die Nachricht von seiner Geburt, und wem? Welchen Namen sollte Er bekommen, und warum?",
+     "Was geschah, als Jesus getauft wurde, und was waren die ersten Worte seiner Predigt? Wen berief Er zuerst?",
+     "Was lehrte Jesus auf dem Berg? Wen nennt Er selig, und was für ein Mann baut auf den Felsen?",
+     "Wer kam zu Ihm, um Ihn zu hören, worüber murrten die Pharisäer, und was sagen die Gleichnisse vom verlorenen Schaf und vom verlorenen Groschen über Gott?",
+     "Was tat Jesus im Sturm und am Grab des Lazarus? Was fragten seine Jünger, und was sagte Er, wer Er ist?",
+     "Für wen hielten die Leute Jesus, wer war Er nach Petrus, und was sagte Jesus darüber, Ihn zu kennen und den Vater zu kennen?",
+     "Was tat Jesus für seine Jünger in der Nacht, da Er verraten wurde? Was sagte Er über das Brot und den Kelch?",
+     "Was betete Jesus für die, die Ihn kreuzigten? Was geschah zur neunten Stunde, und was sagte der Hauptmann?",
+     "Was fanden die Frauen am ersten Tag der Woche? Was sagten die Engel, und wozu sandte der auferstandene Jesus seine Jünger?",
+     "Für das Leben: Wen lädt Jesus ein, welches neue Gebot gab Er, und warum wurde das Johannesevangelium geschrieben?"
+    ]
+   }
   }
  },
  {
@@ -1110,6 +1144,38 @@
   "minutes": 55,
   "anim": {
    "kind": "light"
+  },
+  "i18n": {
+   "es": {
+    "title": "La oración: Señor, enséñanos a orar",
+    "opening_question": "Uno de sus discípulos le dijo: \"Señor, enséñanos á orar\". ¿Qué enseñó Jesús sobre la oración, cómo oraba Él mismo, y qué dice la Biblia sobre pedir, esperar, quejarse con sinceridad y orar unos por otros?",
+    "step_questions": [
+     "¿Qué pidió el discípulo cuando Jesús acabó de orar? ¿Qué enseñó Jesús sobre orar en secreto y sobre las muchas palabras, y qué oración les dio?",
+     "¿Cuándo y dónde oraba Jesús? ¿Qué oró en el huerto, y por quiénes oró la noche antes de morir?",
+     "¿Qué dice Jesús de pedir, buscar y llamar? ¿Qué dará el Padre a los que le piden?",
+     "¿Cómo hemos de pedir: con fe, conforme a su voluntad, y permaneciendo en Él? ¿Por qué dice Santiago que algunos piden y no reciben?",
+     "¿Qué parábola contó Jesús sobre que es necesario orar siempre? ¿Qué dicen las cartas de Pablo sobre orar sin cesar?",
+     "¿Qué hemos de hacer con la ansiedad? ¿Qué promete Pablo que guardará nuestros corazones, y qué dice Pedro que echemos sobre Dios?",
+     "¿Qué oró David después de su pecado? ¿Qué promete Juan cuando confesamos, y qué debemos hacer cuando estamos orando?",
+     "¿Podemos decirle a Dios nuestra queja? ¿Cómo oran David y Habacuc cuando Dios parece callar, qué oyó Pablo cuando pidió tres veces, y quién nos ayuda cuando no sabemos qué pedir?",
+     "Para vivirlo: ¿qué promete Jesús donde dos o tres se ponen de acuerdo? ¿Cómo oraba la primera iglesia, y por quiénes nos pide Pablo que oremos?"
+    ]
+   },
+   "de": {
+    "title": "Das Gebet: HERR, lehre uns beten",
+    "opening_question": "Einer seiner Jünger sprach zu ihm: \"HERR, lehre uns beten\". Was lehrte Jesus über das Gebet, wie betete Er selbst, und was sagt die Bibel über das Bitten, das Warten, die ehrliche Klage und das Gebet füreinander?",
+    "step_questions": [
+     "Worum bat der Jünger, als Jesus aufgehört hatte zu beten? Was lehrte Jesus über das Beten im Verborgenen und über viele Worte, und welches Gebet gab Er ihnen?",
+     "Wann und wo betete Jesus? Was betete Er im Garten, und für wen betete Er in der Nacht vor seinem Tod?",
+     "Was sagt Jesus über das Bitten, Suchen und Anklopfen? Was wird der Vater denen geben, die Ihn bitten?",
+     "Wie sollen wir bitten: im Glauben, nach seinem Willen und in Ihm bleibend? Warum bitten manche nach Jakobus und empfangen nichts?",
+     "Welches Gleichnis erzählte Jesus davon, dass man allezeit beten soll? Was sagen die Briefe des Paulus über das Beten ohne Unterlass?",
+     "Was sollen wir mit unseren Sorgen tun? Was verheißt Paulus, wird unsere Herzen bewahren, und was sollen wir nach Petrus auf Gott werfen?",
+     "Was betete David nach seiner Sünde? Was verheißt Johannes, wenn wir bekennen, und was sollen wir tun, wenn wir stehen und beten?",
+     "Dürfen wir Gott unsere Klage sagen? Wie beten David und Habakuk, wenn Gott zu schweigen scheint, was hörte Paulus, als er dreimal bat, und wer hilft, wenn wir nicht wissen, was wir beten sollen?",
+     "Für das Leben: Was verheißt Jesus, wo zwei oder drei eins werden? Wie betete die erste Gemeinde, und für wen sollen wir nach Paulus beten?"
+    ]
+   }
   }
  },
  {
@@ -1511,6 +1577,42 @@
   "minutes": 60,
   "anim": {
    "kind": "light"
+  },
+  "i18n": {
+   "es": {
+    "title": "La salvación: ¿cómo somos salvos?",
+    "opening_question": "¿Qué dice la Biblia sobre ser salvo: de qué somos salvados, qué ha hecho Dios, qué hemos de hacer nosotros, y si podemos estar seguros? Lee todo lo que el texto muestra, también los versículos que los cristianos leen de maneras distintas, y deja que el texto hable.",
+    "step_questions": [
+     "¿Qué dice Pablo de todos los hombres, y cuál es la paga del pecado? ¿Qué dice Isaías que hemos hecho como ovejas?",
+     "¿Qué dio Dios, y por qué? ¿Cuándo murió Cristo por nosotros, y por quién solamente podemos ser salvos?",
+     "¿Qué es la gracia? ¿Cómo dice Pablo que somos salvos, y de qué dice que no viene?",
+     "¿Qué preguntó el carcelero a Pablo y a Silas, y qué le respondieron? ¿Qué dice Pablo de la boca y del corazón?",
+     "¿Qué dijo Pedro que hiciera la multitud en Pentecostés? ¿Qué dicen estos versículos del arrepentimiento y del bautismo, y qué le prometió Jesús al ladrón en la cruz?",
+     "¿Qué le dijo Jesús a Nicodemo? ¿Qué dice Pablo que le pasa a cualquiera que está en Cristo?",
+     "¿Podemos saber que tenemos vida eterna? ¿Qué dice Juan, qué dice Jesús de sus ovejas, y qué dice Pablo de la condenación?",
+     "¿Qué dicen estos versículos de perseverar hasta el fin y de apartarse? Léelos junto a los versículos sobre la seguridad.",
+     "Pablo dice que somos justificados por la fe sin las obras de la ley; Santiago dice que por las obras, y no solamente por la fe. Léelos lado a lado. ¿Qué añade Efesios 2:10?",
+     "¿Quiénes quiere Dios que sean salvos? ¿Qué dice de la muerte del impío, y quiénes están delante del trono al final?",
+     "Para vivirlo: ¿cuándo es el día de salvación? ¿Cómo oirán, y cómo hemos de responder por la esperanza que hay en nosotros?"
+    ]
+   },
+   "de": {
+    "title": "Die Errettung: Wie werden wir selig?",
+    "opening_question": "Was sagt die Bibel darüber, gerettet zu werden: wovon wir gerettet werden, was Gott getan hat, was wir tun sollen, und ob wir gewiss sein können? Lies alles, was der Text zeigt, auch die Verse, die Christen verschieden lesen, und lass den Text sprechen.",
+    "step_questions": [
+     "Was sagt Paulus über alle Menschen, und was ist der Sünde Sold? Was haben wir nach Jesaja getan wie Schafe?",
+     "Was gab Gott, und warum? Wann ist Christus für uns gestorben, und durch wen allein können wir gerettet werden?",
+     "Was ist Gnade? Wie werden wir nach Paulus gerettet, und woraus kommt es nicht?",
+     "Was fragte der Kerkermeister Paulus und Silas, und was antworteten sie? Was sagt Paulus über den Mund und das Herz?",
+     "Was sollte die Menge an Pfingsten nach Petrus tun? Was sagen diese Verse über Buße und Taufe, und was verhieß Jesus dem Schächer am Kreuz?",
+     "Was sagte Jesus zu Nikodemus? Was geschieht nach Paulus mit jedem, der in Christus ist?",
+     "Können wir wissen, dass wir das ewige Leben haben? Was sagt Johannes, was sagt Jesus von seinen Schafen, und was sagt Paulus über die Verdammnis?",
+     "Was sagen diese Verse über das Beharren bis ans Ende und über das Abfallen? Lies sie neben den Versen über die Gewissheit.",
+     "Paulus sagt, wir werden gerecht durch den Glauben ohne des Gesetzes Werke; Jakobus sagt, durch die Werke und nicht durch den Glauben allein. Lies sie nebeneinander. Was fügt Epheser 2,10 hinzu?",
+     "Wen will Gott retten? Was sagt Er über den Tod des Gottlosen, und wer steht am Ende vor dem Thron?",
+     "Für das Leben: Wann ist der Tag des Heils? Wie sollen sie hören, und wie sollen wir Rechenschaft geben von der Hoffnung in uns?"
+    ]
+   }
   }
  },
  {
@@ -1555,6 +1657,40 @@
   "minutes": 55,
   "anim": {
    "kind": "light"
+  },
+  "i18n": {
+   "es": {
+    "title": "El Espíritu Santo: ¿quién es Él, y qué hace?",
+    "opening_question": "Jesús prometió \"otro Consolador\". ¿Quién es el Espíritu Santo? Lee lo que dice la Biblia del Espíritu en la creación y en los profetas, en Pentecostés, en cada creyente, su fruto y sus dones, y las advertencias sobre contristarle. Lee cada versículo, también los que los cristianos leen de maneras distintas.",
+    "step_questions": [
+     "¿Dónde está el Espíritu en el principio mismo? ¿Adónde puede ir David lejos del Espíritu de Dios, y cómo hablaron los profetas?",
+     "¿Qué prometió Jesús antes de irse? ¿Cómo llama al Espíritu, y qué enseñará y hará el Espíritu?",
+     "¿Qué pasó el día de Pentecostés? ¿A qué profeta citó Pedro, y sobre quiénes sería derramado el Espíritu?",
+     "¿Dónde habita el Espíritu ahora? ¿Qué dice Pablo de nuestros cuerpos, y cómo se llama al Espíritu en Efesios 1?",
+     "¿De qué da testimonio el Espíritu a nuestro espíritu? ¿Cómo nos ayuda a orar, y de qué nos guarda andar en el Espíritu?",
+     "¿Cuál es el fruto del Espíritu? ¿Cuántas cosas nombra Pablo, y qué dice de los que son de Cristo?",
+     "¿Qué dones da el Espíritu, a quiénes, y para qué? ¿Qué dice Pablo de las lenguas y de la profecía?",
+     "¿Qué se nos dice que no hagamos al Espíritu? Cuando Ananías mintió al Espíritu Santo, ¿a quién dice Pedro que mintió?",
+     "¿Qué dijo Jesús de la blasfemia contra el Espíritu Santo? Léelo con los versículos de alrededor en Marcos: ¿por qué lo dijo?",
+     "Para vivirlo: ¿qué dice Jesús que el Padre dará a los que le piden? ¿De qué nos dice Pablo que seamos llenos?"
+    ]
+   },
+   "de": {
+    "title": "Der Heilige Geist: Wer ist Er, und was tut Er?",
+    "opening_question": "Jesus verhieß \"einen andern Tröster\". Wer ist der Heilige Geist? Lies, was die Bibel über den Geist sagt: in der Schöpfung und bei den Propheten, an Pfingsten, in jedem Gläubigen, seine Frucht und seine Gaben, und die Warnungen, Ihn nicht zu betrüben. Lies jeden Vers, auch die, die Christen verschieden lesen.",
+    "step_questions": [
+     "Wo ist der Geist ganz am Anfang? Wohin kann David vor Gottes Geist gehen, und wie redeten die Propheten?",
+     "Was verhieß Jesus, bevor Er wegging? Wie nennt Er den Geist, und was wird der Geist lehren und tun?",
+     "Was geschah am Pfingsttag? Welchen Propheten zitierte Petrus, und über wen sollte der Geist ausgegossen werden?",
+     "Wo wohnt der Geist jetzt? Was sagt Paulus über unseren Leib, und wie wird der Geist in Epheser 1 genannt?",
+     "Was bezeugt der Geist unserem Geist? Wie hilft Er uns beten, und wovor bewahrt uns das Wandeln im Geist?",
+     "Was ist die Frucht des Geistes? Wie viele Dinge nennt Paulus, und was sagt er über die, die Christus angehören?",
+     "Welche Gaben gibt der Geist, wem, und wozu? Was sagt Paulus über Zungenrede und Weissagung?",
+     "Was sollen wir dem Geist nicht antun? Als Ananias den Heiligen Geist belog, wen hat er nach Petrus belogen?",
+     "Was sagte Jesus über die Lästerung wider den Heiligen Geist? Lies es mit den Versen drumherum bei Markus: warum sagte Er es?",
+     "Für das Leben: Was wird der Vater nach Jesu Wort denen geben, die Ihn bitten? Womit sollen wir nach Paulus erfüllt werden?"
+    ]
+   }
   }
  },
  {
@@ -1636,6 +1772,40 @@
   "minutes": 60,
   "anim": {
    "kind": "light"
+  },
+  "i18n": {
+   "es": {
+    "title": "Los Salmos: cantos y oraciones para cada tiempo",
+    "opening_question": "Los Salmos eran el libro de cantos y de oración de Israel, y Jesús los oró en la cruz. Alaban, lloran, confiesan, preguntan \"¿Hasta cuándo?\" Lee diez de ellos: ¿qué nos enseñan a decirle a Dios, en la alegría y en la angustia?",
+    "step_questions": [
+     "¿Cuáles son los dos caminos del Salmo 1? ¿Dónde halla su delicia el varón bienaventurado, y a qué se parece?",
+     "¿Quién es el pastor de David, y qué hace el pastor por él? ¿A quién llama Jesús el buen pastor?",
+     "¿Hasta cuándo, Jehová? ¿Qué pide David en el Salmo 13, y cómo termina el salmo?",
+     "¿Qué clama David en el Salmo 22, y qué describe? ¿Quién oró sus primeras palabras desde la cruz?",
+     "¿Qué dijo David cuando Natán vino a él? ¿Qué le pide a Dios en el Salmo 51?",
+     "¿Qué sabe Dios de David? ¿Adónde puede ir David lejos de la presencia de Dios, y qué le esconden las tinieblas?",
+     "¿Qué es Dios para nosotros en la angustia? ¿Qué dice el Salmo 46 cuando la tierra es removida, y qué se nos dice que hagamos?",
+     "¿Qué le dice David a su alma en el Salmo 103? ¿Qué beneficios nombra, y cuán lejos aparta Dios nuestros pecados?",
+     "¿Con qué limpiará el joven su camino? ¿Cómo llama el Salmo 119 a la palabra de Dios?",
+     "Para vivirlo: ¿qué dijo Jesús que dicen de Él los salmos? ¿Cómo hemos de cantarlos, y cómo termina el libro?"
+    ]
+   },
+   "de": {
+    "title": "Die Psalmen: Lieder und Gebete für jede Zeit",
+    "opening_question": "Die Psalmen waren Israels Liederbuch und Gebetbuch, und Jesus betete sie am Kreuz. Sie loben, sie weinen, sie bekennen, sie fragen \"Wie lange?\" Lies zehn von ihnen: Was lehren sie uns, Gott zu sagen, in der Freude und in der Not?",
+    "step_questions": [
+     "Welches sind die zwei Wege in Psalm 1? Woran hat der Gesegnete seine Lust, und wem gleicht er?",
+     "Wer ist Davids Hirte, und was tut der Hirte für ihn? Wen nennt Jesus den guten Hirten?",
+     "HERR, wie lange? Worum bittet David in Psalm 13, und wie endet der Psalm?",
+     "Was ruft David in Psalm 22, und was beschreibt er? Wer betete seine ersten Worte am Kreuz?",
+     "Was sagte David, als Nathan zu ihm kam? Worum bittet er Gott in Psalm 51?",
+     "Was weiß Gott von David? Wohin kann David vor Gottes Angesicht gehen, und was verbirgt die Finsternis vor Ihm?",
+     "Was ist Gott für uns in der Not? Was sagt Psalm 46, wenn die Welt unterginge, und was sollen wir tun?",
+     "Was sagt David seiner Seele in Psalm 103? Welche Wohltaten nennt er, und wie weit entfernt Gott unsere Sünden?",
+     "Wie wird ein Jüngling seinen Weg unsträflich gehen? Wie nennt Psalm 119 Gottes Wort?",
+     "Für das Leben: Wovon reden die Psalmen nach Jesu Wort? Wie sollen wir sie singen, und wie endet das Buch?"
+    ]
+   }
   }
  },
  {

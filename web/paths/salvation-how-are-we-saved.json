@@ -1005,5 +1005,197 @@
    "ETH",
    "BSB"
   ]
+ },
+ "i18n": {
+  "es": {
+   "title": "La salvación: ¿cómo somos salvos?",
+   "opening_question": "¿Qué dice la Biblia sobre ser salvo: de qué somos salvados, qué ha hecho Dios, qué hemos de hacer nosotros, y si podemos estar seguros? Lee todo lo que el texto muestra, también los versículos que los cristianos leen de maneras distintas, y deja que el texto hable.",
+   "steps": [
+    {
+     "question": "¿Qué dice Pablo de todos los hombres, y cuál es la paga del pecado? ¿Qué dice Isaías que hemos hecho como ovejas?",
+     "facts": [
+      "\"pecaron\" viene de hamartia. Strong: «un pecado (propiamente abstracto)». El verbo detrás significa errar el blanco.",
+      "Romanos 6:23 pone dos cosas lado a lado: una paga, que se gana, y una dádiva, que no: \"la dádiva de Dios es vida eterna\"."
+     ]
+    },
+    {
+     "question": "¿Qué dio Dios, y por qué? ¿Cuándo murió Cristo por nosotros, y por quién solamente podemos ser salvos?",
+     "facts": [
+      "Dios no esperó a que mejoráramos: \"siendo aún pecadores, Cristo murió por nosotros\".",
+      "Pedro ante el concilio: \"no hay otro nombre debajo del cielo, dado á los hombres, en que podamos ser salvos\".",
+      "\"mediador\" traduce mesites, el que está en medio. Pablo dice que hay \"un mediador entre Dios y los hombres\"."
+     ]
+    },
+    {
+     "question": "¿Qué es la gracia? ¿Cómo dice Pablo que somos salvos, y de qué dice que no viene?",
+     "facts": [
+      "\"gracia\" traduce charis: favor que se da, no que se gana. \"es don de Dios\", \"No por obras, para que nadie se gloríe\".",
+      "Tito 3:5 dice lo mismo desde otro lado: \"No por obras de justicia que nosotros habíamos hecho, mas por su misericordia nos salvó\"."
+     ]
+    },
+    {
+     "question": "¿Qué preguntó el carcelero a Pablo y a Silas, y qué le respondieron? ¿Qué dice Pablo de la boca y del corazón?",
+     "facts": [
+      "El carcelero hizo la pregunta más clara de la Biblia: \"Señores, ¿qué es menester que yo haga para ser salvo?\"",
+      "Pablo cita a Joel: \"todo aquel que invocare el nombre del Señor, será salvo\"."
+     ]
+    },
+    {
+     "question": "¿Qué dijo Pedro que hiciera la multitud en Pentecostés? ¿Qué dicen estos versículos del arrepentimiento y del bautismo, y qué le prometió Jesús al ladrón en la cruz?",
+     "facts": [
+      "Los cristianos leen el lugar del bautismo de maneras distintas: unos lo ven como la señal exterior de una salvación ya recibida, otros como parte de cómo Dios salva. Lee estos versículos lado a lado.",
+      "El ladrón en la cruz no fue bautizado, y aun así Jesús le dijo: \"hoy estarás conmigo en el paraíso\".",
+      "Marcos 16:9-20 falta en algunas de las copias griegas más antiguas de Marcos. Muchas Biblias lo imprimen con una nota."
+     ]
+    },
+    {
+     "question": "¿Qué le dijo Jesús a Nicodemo? ¿Qué dice Pablo que le pasa a cualquiera que está en Cristo?",
+     "facts": [
+      "\"otra vez\" traduce anothen. Strong da tanto «de arriba» como «de nuevo». Nicodemo entendió «otra vez» y preguntó cómo puede el hombre nacer \"siendo viejo\".",
+      "\"si alguno está en Cristo, nueva criatura es: las cosas viejas pasaron; he aquí todas son hechas nuevas\"."
+     ]
+    },
+    {
+     "question": "¿Podemos saber que tenemos vida eterna? ¿Qué dice Juan, qué dice Jesús de sus ovejas, y qué dice Pablo de la condenación?",
+     "facts": [
+      "Juan escribió \"para que sepáis que tenéis vida eterna\". La palabra es saber, no esperar.",
+      "De sus ovejas Jesús dice: \"ni nadie las arrebatará de mi mano\"."
+     ]
+    },
+    {
+     "question": "¿Qué dicen estos versículos de perseverar hasta el fin y de apartarse? Léelos junto a los versículos sobre la seguridad.",
+     "facts": [
+      "Los cristianos leen juntas la seguridad y estas advertencias de maneras distintas. Unos enseñan que un verdadero creyente no puede perderse y que las advertencias lo guardan; otros, entre ellos las iglesias wesleyanas, enseñan que un creyente puede apartarse. El texto da las dos cosas, y muchos las leen como hechas para sostenerse juntas.",
+      "Pablo pone las dos en una sola frase: \"ocupaos en vuestra salvación con temor y temblor\", y \"Dios es el que en vosotros obra\"."
+     ]
+    },
+    {
+     "question": "Pablo dice que somos justificados por la fe sin las obras de la ley; Santiago dice que por las obras, y no solamente por la fe. Léelos lado a lado. ¿Qué añade Efesios 2:10?",
+     "facts": [
+      "Los dos usan «justificar» (dikaioo). Pablo habla contra las obras de la ley como camino para ser aceptado; Santiago contra una fe que no hace nada. Los dos señalan a Abraham.",
+      "Efesios 2:10 viene justo después de \"No por obras\": \"somos hechura suya, criados en Cristo Jesús para buenas obras\"."
+     ]
+    },
+    {
+     "question": "¿Quiénes quiere Dios que sean salvos? ¿Qué dice de la muerte del impío, y quiénes están delante del trono al final?",
+     "facts": [
+      "Dios \"quiere que todos los hombres sean salvos, y que vengan al conocimiento de la verdad\".",
+      "\"no quiero la muerte del impío, sino que se torne el impío de su camino, y que viva\".",
+      "Juan ve \"una gran compañía, la cual ninguno podía contar, de todas gentes y linajes y pueblos y lenguas\"."
+     ]
+    },
+    {
+     "question": "Para vivirlo: ¿cuándo es el día de salvación? ¿Cómo oirán, y cómo hemos de responder por la esperanza que hay en nosotros?",
+     "facts": [
+      "\"he aquí ahora el tiempo aceptable; he aquí ahora el día de salud\".",
+      "Pedro pide una respuesta dada \"con mansedumbre y reverencia\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"todos pecaron, y están destituídos de la gloria de Dios\"",
+    "\"siendo aún pecadores, Cristo murió por nosotros\"",
+    "\"por gracia sois salvos por la fe; y esto no de vosotros, pues es don de Dios\"",
+    "\"Cree en el Señor Jesucristo, y serás salvo\"",
+    "\"si alguno está en Cristo, nueva criatura es\"",
+    "\"para que sepáis que tenéis vida eterna\"",
+    "\"he aquí ahora el día de salud\""
+   ]
+  },
+  "de": {
+   "title": "Die Errettung: Wie werden wir selig?",
+   "opening_question": "Was sagt die Bibel darüber, gerettet zu werden: wovon wir gerettet werden, was Gott getan hat, was wir tun sollen, und ob wir gewiss sein können? Lies alles, was der Text zeigt, auch die Verse, die Christen verschieden lesen, und lass den Text sprechen.",
+   "steps": [
+    {
+     "question": "Was sagt Paulus über alle Menschen, und was ist der Sünde Sold? Was haben wir nach Jesaja getan wie Schafe?",
+     "facts": [
+      "\"Sünder\" kommt von hamartia. Strong: »eine Sünde (eigentlich abstrakt)«. Das Verb dahinter bedeutet, das Ziel verfehlen.",
+      "Römer 6,23 stellt zweierlei nebeneinander: einen Sold, den man verdient, und eine Gabe, die man nicht verdient: \"die Gabe Gottes ist das ewige Leben\"."
+     ]
+    },
+    {
+     "question": "Was gab Gott, und warum? Wann ist Christus für uns gestorben, und durch wen allein können wir gerettet werden?",
+     "facts": [
+      "Gott wartete nicht, bis wir besser wurden: \"daß Christus für uns gestorben ist, da wir noch Sünder waren\".",
+      "Petrus vor dem Hohen Rat: \"ist auch kein andrer Name unter dem Himmel den Menschen gegeben, darin wir sollen selig werden\".",
+      "\"Mittler\" steht für mesites, einer, der in der Mitte steht. Paulus sagt, es ist \"ein Mittler zwischen Gott und den Menschen\"."
+     ]
+    },
+    {
+     "question": "Was ist Gnade? Wie werden wir nach Paulus gerettet, und woraus kommt es nicht?",
+     "facts": [
+      "\"Gnade\" steht für charis: Gunst, die geschenkt und nicht verdient wird. \"Gottes Gabe ist es\", \"nicht aus den Werken, auf daß sich nicht jemand rühme\".",
+      "Titus 3,5 sagt dasselbe von der anderen Seite: \"nicht um der Werke willen der Gerechtigkeit, die wir getan hatten, sondern nach seiner Barmherzigkeit machte er uns selig\"."
+     ]
+    },
+    {
+     "question": "Was fragte der Kerkermeister Paulus und Silas, und was antworteten sie? Was sagt Paulus über den Mund und das Herz?",
+     "facts": [
+      "Der Kerkermeister stellte die einfachste Frage der Bibel: \"Liebe Herren, was soll ich tun, daß ich selig werde?\"",
+      "Paulus zitiert Joel: \"wer den Namen des HERRN wird anrufen, soll selig werden.\""
+     ]
+    },
+    {
+     "question": "Was sollte die Menge an Pfingsten nach Petrus tun? Was sagen diese Verse über Buße und Taufe, und was verhieß Jesus dem Schächer am Kreuz?",
+     "facts": [
+      "Christen verstehen den Platz der Taufe verschieden: die einen sehen sie als äußeres Zeichen einer schon empfangenen Errettung, die anderen als Teil dessen, wie Gott rettet. Lies diese Verse nebeneinander.",
+      "Der Schächer am Kreuz war nicht getauft, und doch sagte Jesus zu ihm: \"Heute wirst du mit mir im Paradiese sein.\"",
+      "Markus 16,9-20 fehlt in einigen der ältesten griechischen Abschriften des Markus. Viele Bibeln drucken es mit einer Anmerkung."
+     ]
+    },
+    {
+     "question": "Was sagte Jesus zu Nikodemus? Was geschieht nach Paulus mit jedem, der in Christus ist?",
+     "facts": [
+      "\"von neuem\" steht für anothen. Strong gibt beides an: »von oben« und »von neuem«. Nikodemus hörte »noch einmal« und fragte, wie ein Mensch geboren werden kann, \"wenn er alt ist\".",
+      "\"ist jemand in Christo, so ist er eine neue Kreatur; das Alte ist vergangen, siehe, es ist alles neu geworden!\""
+     ]
+    },
+    {
+     "question": "Können wir wissen, dass wir das ewige Leben haben? Was sagt Johannes, was sagt Jesus von seinen Schafen, und was sagt Paulus über die Verdammnis?",
+     "facts": [
+      "Johannes schrieb, \"auf daß ihr wisset, daß ihr das ewige Leben habt\". Das Wort heißt wissen, nicht hoffen.",
+      "Von seinen Schafen sagt Jesus: \"niemand wird sie mir aus meiner Hand reißen\"."
+     ]
+    },
+    {
+     "question": "Was sagen diese Verse über das Beharren bis ans Ende und über das Abfallen? Lies sie neben den Versen über die Gewissheit.",
+     "facts": [
+      "Christen lesen die Gewissheit und diese Warnungen verschieden zusammen. Die einen lehren, dass ein wahrer Gläubiger nicht verloren gehen kann und die Warnungen ihn bewahren; andere, darunter die wesleyanischen Kirchen, lehren, dass ein Gläubiger abfallen kann. Der Text gibt beides, und viele lesen es so, dass beides zusammengehört.",
+      "Paulus sagt beides in einem Satz: \"schaffet, daß ihr selig werdet, mit Furcht und Zittern\", und \"Gott ist's, der in euch wirkt\"."
+     ]
+    },
+    {
+     "question": "Paulus sagt, wir werden gerecht durch den Glauben ohne des Gesetzes Werke; Jakobus sagt, durch die Werke und nicht durch den Glauben allein. Lies sie nebeneinander. Was fügt Epheser 2,10 hinzu?",
+     "facts": [
+      "Beide gebrauchen »gerecht werden« (dikaioo). Paulus spricht gegen Werke des Gesetzes als Weg, angenommen zu werden; Jakobus gegen einen Glauben, der nichts tut. Beide zeigen auf Abraham.",
+      "Epheser 2,10 folgt direkt auf \"nicht aus den Werken\": \"wir sind sein Werk, geschaffen in Christo Jesu zu guten Werken\"."
+     ]
+    },
+    {
+     "question": "Wen will Gott retten? Was sagt Er über den Tod des Gottlosen, und wer steht am Ende vor dem Thron?",
+     "facts": [
+      "Gott \"will, daß allen Menschen geholfen werde und sie zur Erkenntnis der Wahrheit kommen\".",
+      "\"ich habe keinen Gefallen am Tode des Gottlosen, sondern daß sich der Gottlose bekehre von seinem Wesen und lebe\".",
+      "Johannes sieht \"eine große Schar, welche niemand zählen konnte, aus allen Heiden und Völkern und Sprachen\"."
+     ]
+    },
+    {
+     "question": "Für das Leben: Wann ist der Tag des Heils? Wie sollen sie hören, und wie sollen wir Rechenschaft geben von der Hoffnung in uns?",
+     "facts": [
+      "\"Sehet, jetzt ist die angenehme Zeit, jetzt ist der Tag des Heils!\"",
+      "Petrus verlangt eine Antwort \"mit Sanftmütigkeit und Furcht\"."
+     ]
+    }
+   ],
+   "remember": [
+    "\"sie sind allzumal Sünder und mangeln des Ruhmes, den sie bei Gott haben sollten\"",
+    "\"daß Christus für uns gestorben ist, da wir noch Sünder waren\"",
+    "\"aus Gnade seid ihr selig geworden durch den Glauben, und das nicht aus euch: Gottes Gabe ist es\"",
+    "\"Glaube an den HERRN Jesus Christus, so wirst du und dein Haus selig!\"",
+    "\"ist jemand in Christo, so ist er eine neue Kreatur\"",
+    "\"auf daß ihr wisset, daß ihr das ewige Leben habt\"",
+    "\"jetzt ist der Tag des Heils!\""
+   ]
+  }
  }
 }
