@@ -17,7 +17,14 @@
   "1 Peter 3:19-20",
   "2 Peter 2:4-5",
   "1 Enoch 6-16",
-  "Jubilees 4-5"
+  "Jubilees 4-5",
+  "Hebrews 11:5",
+  "Job 1:6",
+  "Matthew 22:30",
+  "Job 38:7",
+  "Genesis 4:25-26",
+  "Numbers 13:32-33",
+  "Deuteronomy 2:10-11"
  ],
  "words": [
   "H2585",
@@ -47,13 +54,41 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "Genesis says twice that \"Enoch walked with God\". It does not say he died: \"he was not; for God took him\". Hebrews: he \"was translated that he should not see death\".",
+     "refs": [
+      "Genesis 5:22",
+      "Genesis 5:24",
+      "Hebrews 11:5"
+     ]
+    },
+    {
+     "text": "\"Translated\" is the Greek metatithemi: \"to transfer, i.e. (literally) transport\".",
+     "refs": [
+      "Hebrews 11:5"
+     ],
+     "strongs": [
+      "G3346"
+     ]
+    },
+    {
+     "text": "Jude calls him \"the seventh from Adam\", and Luke lists him in the family line of Jesus: \"the son of Enoch, which was the son of Jared\".",
+     "refs": [
+      "Jude 1:14",
+      "Luke 3:37"
+     ]
+    }
    ]
   },
   {
-   "question": "Who took wives in Genesis 6, and who were born? Where else does the Old Testament say \"sons of God\"?",
+   "question": "Who took wives in Genesis 6, and who were born? Where else does the Old Testament say \"sons of God\", and what does Genesis say about the line of Seth?",
    "refs": [
     "Genesis 6:1-4",
-    "Job 1:6"
+    "Job 1:6",
+    "Job 38:7",
+    "Genesis 4:25-26"
    ],
    "look_closer": {
     "strongs": [
@@ -71,6 +106,83 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Sons of God\" stands in Genesis 6:2 and 6:4, in Job 1:6 and 2:1, where they \"came to present themselves before the LORD\", and in Job 38:7, where \"all the sons of God shouted for joy\" at creation.",
+     "refs": [
+      "Genesis 6:2",
+      "Job 1:6",
+      "Job 2:1",
+      "Job 38:7"
+     ]
+    },
+    {
+     "text": "There are three old readings of Genesis 6:2. (1) Angels: Job uses the words for heavenly beings, and 1 Enoch tells the story this way. (2) The godly line of Seth marrying the line of Cain: after Seth's son was born \"began men to call upon the name of the LORD\"; Matthew Henry and Scofield take this view. (3) Rulers or great men, the reading of old Jewish translations. The text itself does not say which.",
+     "refs": [
+      "Genesis 4:26",
+      "Job 1:6"
+     ]
+    },
+    {
+     "text": "\"Giants\" is nephilim: \"properly a feller that is a bully or tyrant\". The BSB keeps the Hebrew word: \"The Nephilim\". The text says they were there \"in those days; and also after that\".",
+     "refs": [
+      "Genesis 6:4"
+     ],
+     "strongs": [
+      "H5303"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Were there giants after the flood too? What did the spies see, and what does Deuteronomy say about the peoples of old?",
+   "refs": [
+    "Numbers 13:32-33",
+    "Deuteronomy 2:10-11"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5303",
+     "H7497"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Nephilim stands in only two verses: Genesis 6:4 and Numbers 13:33, where the spies say \"there we saw the giants, the sons of Anak, which come of the giants\". The BSB: \"We even saw the Nephilim there\".",
+     "refs": [
+      "Numbers 13:33",
+      "Genesis 6:4"
+     ],
+     "strongs": [
+      "H5303"
+     ]
+    },
+    {
+     "text": "The spies' report is called \"an evil report\" in Numbers 13:32; Joshua and Caleb answered it in Numbers 14:6-9.",
+     "refs": [
+      "Numbers 13:32",
+      "Numbers 14:6-9"
+     ]
+    },
+    {
+     "text": "In Deuteronomy 2:11 \"giants\" is a different word: the BSB writes \"Rephaim\". The Emims were \"a people great, and many, and tall, as the Anakims\".",
+     "refs": [
+      "Deuteronomy 2:10-11"
+     ],
+     "strongs": [
+      "H7497"
+     ]
+    }
    ]
   },
   {
@@ -93,7 +205,22 @@
    "notes": [
     "henry"
    ],
-   "side_by_side": true
+   "side_by_side": true,
+   "facts": [
+    {
+     "text": "Jude's words are close to 1 Enoch 1:9. Jude: \"the Lord cometh with ten thousands of his saints\"; 1 Enoch: \"He cometh with ten thousands of His holy ones\". Jude says Enoch \"prophesied\"; he does not call the whole book Scripture.",
+     "refs": [
+      "Jude 1:14",
+      "1 Enoch 1:9"
+     ]
+    },
+    {
+     "text": "1 Enoch and Jubilees are in the Bible of the Ethiopian Orthodox Tewahedo Church and the Eritrean Orthodox Church; other churches do not count them as Scripture. Pieces of both books were found among the Dead Sea Scrolls.",
+     "refs": [
+      "1 Enoch 1:9"
+     ]
+    }
+   ]
   },
   {
    "question": "What do Peter's letters say about spirits in prison and angels that sinned?",
@@ -116,6 +243,29 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Cast them down to hell\" is one Greek word, tartaroo: \"to incarcerate in eternal torment\", from Tartarus, \"the deepest abyss of Hades\". It stands only here in the Bible.",
+     "refs": [
+      "2 Peter 2:4"
+     ],
+     "strongs": [
+      "G5020"
+     ]
+    },
+    {
+     "text": "Jude says the same of \"the angels which kept not their first estate, but left their own habitation\".",
+     "refs": [
+      "Jude 1:6"
+     ]
+    },
+    {
+     "text": "Peter places the \"spirits in prison\" in \"the days of Noah\". Readers differ on who they are and when Christ preached to them.",
+     "refs": [
+      "1 Peter 3:19-20"
+     ]
+    }
    ]
   },
   {
@@ -136,6 +286,15 @@
    ],
    "notes": [
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "Jesus says the risen \"neither marry, nor are given in marriage, but are as the angels of God in heaven\". Readers who hold the angel view of Genesis 6 answer that He speaks of angels \"in heaven\", while Jude says the angels that sinned \"left their own habitation\". You weigh the verses.",
+     "refs": [
+      "Matthew 22:30",
+      "Jude 1:6"
+     ]
+    }
    ]
   },
   {
@@ -150,7 +309,16 @@
    "compare": [
     "ETH"
    ],
-   "notes": []
+   "notes": [],
+   "facts": [
+    {
+     "text": "1 Enoch calls these angels \"Watchers\": Enoch is sent to \"declare to the Watchers of the heaven who have left the high heaven\". Daniel 4:13 also speaks of \"a watcher and an holy one\" coming down from heaven.",
+     "refs": [
+      "1 Enoch 12:4",
+      "Daniel 4:13"
+     ]
+    }
+   ]
   },
   {
    "question": "Jubilees 4–5 (Ethiopian Canon): what does it say about Jared's days, Enoch, and the angels of God?",
@@ -164,7 +332,15 @@
    "compare": [
     "ETH"
    ],
-   "notes": []
+   "notes": [],
+   "facts": [
+    {
+     "text": "Jubilees retells Genesis and the start of Exodus by dates counted in weeks of years and jubilees of 49 years: \"in the third week in the second jubilee\".",
+     "refs": [
+      "Jubilees 4:1"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
@@ -213,15 +389,15 @@
     "xref": 15,
     "votes": 105,
     "word": "H430",
-    "word_count": 6,
+    "word_count": 8,
     "differ": 0.406,
     "quoted": null
    },
    "why": [
     "15 cross-references point here",
-    "The Hebrew word 'ĕlôhîym (H430) is in 6 verses of this path"
+    "The Hebrew word 'ĕlôhîym (H430) is in 8 verses of this path"
    ],
-   "score": 0.6266
+   "score": 0.6849
   },
   {
    "q": "Jude 1:14 calls Enoch what?",
@@ -266,16 +442,16 @@
    "signals": {
     "xref": 11,
     "votes": 53,
-    "word": "H430",
-    "word_count": 6,
+    "word": "H1121",
+    "word_count": 9,
     "differ": 0.45,
     "quoted": null
    },
    "why": [
     "11 cross-references point here",
-    "The Hebrew word 'ĕlôhîym (H430) is in 6 verses of this path"
+    "The Hebrew word bên (H1121) is in 9 verses of this path"
    ],
-   "score": 0.587
+   "score": 0.6745
   },
   {
    "q": "Which translation says \"giants\" in Genesis 6:4, where others keep the Hebrew word Nephilim?",
@@ -289,16 +465,16 @@
    "signals": {
     "xref": 11,
     "votes": 53,
-    "word": "H430",
-    "word_count": 6,
+    "word": "H1121",
+    "word_count": 9,
     "differ": 0.45,
     "quoted": null
    },
    "why": [
     "11 cross-references point here",
-    "The Hebrew word 'ĕlôhîym (H430) is in 6 verses of this path"
+    "The Hebrew word bên (H1121) is in 9 verses of this path"
    ],
-   "score": 0.587
+   "score": 0.6745
   },
   {
    "q": "Which verse in 1 Enoch says \"He cometh with ten thousands of His holy ones\"?",
@@ -466,16 +642,16 @@
    "signals": {
     "xref": 15,
     "votes": 115,
-    "word": "H430",
-    "word_count": 6,
+    "word": "H1121",
+    "word_count": 9,
     "differ": 0.429,
     "quoted": null
    },
    "why": [
     "15 cross-references point here",
-    "The Hebrew word 'ĕlôhîym (H430) is in 6 verses of this path"
+    "The Hebrew word bên (H1121) is in 9 verses of this path"
    ],
-   "score": 0.6391
+   "score": 0.7266
   }
  ],
  "sources": [
@@ -488,7 +664,7 @@
   "Matthew Henry",
   "1 Enoch and Jubilees (R. H. Charles, 1917)"
  ],
- "verse_count": 184,
+ "verse_count": 191,
  "image": "img/enoch-and-the-watchers.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -496,7 +672,7 @@
  },
  "built_from": {
   "file": "packaging/paths/enoch-and-the-watchers.json",
-  "sha": "84c4d92fb3342d34",
+  "sha": "305734b384f1d775",
   "checked_in": [
    "KJV",
    "ETH",

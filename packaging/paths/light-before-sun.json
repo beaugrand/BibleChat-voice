@@ -1,58 +1,466 @@
 {
-  "id": "light-before-sun",
-  "title": "Light before the sun",
-  "category": "Creation",
-  "anim": {"kind": "light", "x": 60, "y": 22, "s": 40},
-  "opening_question": "If the sun was made on Day 4, what was the light on Day 1?",
-  "required_refs": ["Genesis 1:1-5", "Genesis 1:14-19", "John 1:1-9", "John 8:12", "Matthew 5:14-16", "1 John 1:5",
-                    "Isaiah 60:19-20", "Revelation 21:23", "Revelation 22:5"],
-  "words": ["H216", "H3974"],
-  "show": 8,
-  "steps": [
-    {"question": "What does the text say happened on Day 1?", "refs": ["Genesis 1:1-5"],
-     "look_closer": {"strongs": ["H216"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield"]},
-    {"question": "What was made on Day 4, and what does the text say it is for?", "refs": ["Genesis 1:14-19"],
-     "look_closer": {"strongs": ["H3974", "H216"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield"]},
-    {"question": "What does John say was there in the beginning, and what does he call the light?", "refs": ["John 1:1-9"],
-     "look_closer": {"strongs": ["G5457"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "Who is called \"the light of the world\" in these verses?", "refs": ["John 8:12", "Matthew 5:14-16"],
-     "look_closer": {"strongs": ["G5457"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "What does this verse say God is?", "refs": ["1 John 1:5"],
-     "look_closer": {"strongs": ["G5457"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "What gives light where there is no sun or moon?", "refs": ["Isaiah 60:19-20", "Revelation 21:23", "Revelation 22:5"],
-     "look_closer": {"strongs": ["H216"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
-    {"question": "More verses on light and where it comes from. Some say God forms light, some say God is light, some say He dwells in it. What does each one say?",
-     "refs": ["Job 38:19-20", "Psalms 74:16", "Psalms 104:2", "Psalms 136:7-9", "Isaiah 45:7", "2 Corinthians 4:6", "1 Timothy 6:16", "James 1:17"],
-     "look_closer": {"strongs": ["H3974", "H216"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]}
-  ],
-  "remember": [
-    {"text": "God said \"Let there be light\" on the first day; the sun and moon came on the fourth.", "refs": ["Genesis 1:3", "Genesis 1:16"]},
-    {"text": "\"God is light, and in him is no darkness at all\"", "refs": ["1 John 1:5"]},
-    {"text": "Jesus said \"I am the light of the world\".", "refs": ["John 8:12"]},
-    {"text": "In the city, \"the Lamb is the light thereof\".", "refs": ["Revelation 21:23"]},
-    {"text": "Some verses say God forms light, some that He is light, some that He dwells in it. You weigh them.", "refs": ["Isaiah 45:7", "1 Timothy 6:16"]}
-  ],
-  "quiz": [
-    {"q": "On which day were the greater and lesser lights made?", "type": "find_the_verse", "answer_refs": ["Genesis 1:16-19"]},
-    {"q": "What did God call the light on Day 1?", "type": "multiple_choice", "options": ["Day", "Sun", "Glory", "Morning"], "answer": 0,
-     "answer_refs": ["Genesis 1:5"], "check": {"bible": "KJV", "word": "Day"}},
-    {"q": "Fill in the word God used for the light that rules the night.", "type": "fill_word", "ref": "Genesis 1:16", "bible": "KJV", "word": "lesser"},
-    {"q": "In Psalm 74:16 the King James and the Ethiopian Canon say God prepared \"the light and the sun\". Which translation says \"the moon and the sun\" instead?", "type": "which_translation", "ref": "Psalms 74:16",
-     "bible": "BSB", "phrase": "the moon and the sun"},
-    {"q": "Which verse says the city had no need of the sun?", "type": "find_the_verse", "answer_refs": ["Revelation 21:23"]},
-    {"q": "In Matthew 5:14, who is called \"the light of the world\"?", "type": "multiple_choice",
-     "options": ["Ye (the disciples)", "Moses", "The sun", "The prophets"], "answer": 0, "answer_refs": ["Matthew 5:14"], "check": {"bible": "KJV", "word": "Ye"}},
-    {"q": "In John 8:12, who says \"I am the light of the world\"?", "type": "multiple_choice",
-     "options": ["Jesus", "John the Baptist", "Peter", "Isaiah"], "answer": 0, "answer_refs": ["John 8:12"], "check": {"bible": "KJV", "word": "Jesus"}},
-    {"q": "Which verse says the LORD will be an everlasting light, so the sun will no more be your light by day?", "type": "find_the_verse", "answer_refs": ["Isaiah 60:19"]},
-    {"q": "Fill in the word: \"That was the ___ Light, which lighteth every man that cometh into the world.\"", "type": "fill_word", "ref": "John 1:9", "bible": "KJV", "word": "true"},
-    {"q": "Which verse calls God \"the Father of lights\"?", "type": "find_the_verse", "answer_refs": ["James 1:17"]},
-    {"q": "Which translation says \"firmament of the heaven\" in Genesis 1:14?", "type": "which_translation", "ref": "Genesis 1:14", "bible": "KJV", "phrase": "firmament of the heaven"},
-    {"q": "In Isaiah 45:7, what does the LORD say He does with the light?", "type": "multiple_choice",
-     "options": ["I form the light", "I am the light", "I hide the light", "I give the light to the sun"], "answer": 0,
-     "answer_refs": ["Isaiah 45:7"], "check": {"bible": "KJV", "word": "I form the light"}},
-    {"q": "Which verse says God commanded the light to shine out of darkness?", "type": "find_the_verse", "answer_refs": ["2 Corinthians 4:6"]},
-    {"q": "Fill in the word: \"And there shall be no night there; and they need no ___, neither light of the sun\"", "type": "fill_word", "ref": "Revelation 22:5", "bible": "KJV", "word": "candle"}
-  ],
-  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]
+ "id": "light-before-sun",
+ "title": "Light before the sun",
+ "category": "Creation",
+ "anim": {
+  "kind": "light",
+  "x": 60,
+  "y": 22,
+  "s": 40
+ },
+ "opening_question": "If the sun was made on Day 4, what was the light on Day 1?",
+ "required_refs": [
+  "Genesis 1:1-5",
+  "Genesis 1:14-19",
+  "John 1:1-9",
+  "John 8:12",
+  "Matthew 5:14-16",
+  "1 John 1:5",
+  "Isaiah 60:19-20",
+  "Revelation 21:23",
+  "Revelation 22:5",
+  "Job 38:19-20",
+  "Psalms 74:16",
+  "Psalms 104:2",
+  "Psalms 136:7-9",
+  "Isaiah 45:7",
+  "2 Corinthians 4:6",
+  "1 Timothy 6:16",
+  "James 1:17"
+ ],
+ "words": [
+  "H216",
+  "H3974"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What does the text say happened on Day 1?",
+   "refs": [
+    "Genesis 1:1-5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H216"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield"
+   ],
+   "facts": [
+    {
+     "text": "\"Light\" on Day 1 is the Hebrew 'or: \"illumination or (concretely) luminary\". God \"called the light Day\", and the first day has \"the evening and the morning\" before any sun is made.",
+     "refs": [
+      "Genesis 1:5"
+     ],
+     "strongs": [
+      "H216"
+     ]
+    },
+    {
+     "text": "The text does not say where the light of Day 1 came from. It says only that God spoke: \"Let there be light: and there was light\".",
+     "refs": [
+      "Genesis 1:3"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What was made on Day 4, and what does the text say it is for?",
+   "refs": [
+    "Genesis 1:14-19"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3974",
+     "H216"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield"
+   ],
+   "facts": [
+    {
+     "text": "\"Lights\" on Day 4 is a different word, ma'or: \"a luminous body or luminary\". Both words come from the same root (H215). Day 1 has light itself; Day 4 has the bodies that give it.",
+     "refs": [
+      "Genesis 1:14",
+      "Genesis 1:16"
+     ],
+     "strongs": [
+      "H3974",
+      "H216"
+     ]
+    },
+    {
+     "text": "Ma'or also stands for \"the greater light\" and \"the lesser light\". The text says what they are for: \"for signs, and for seasons, and for days, and years\" and \"to give light upon the earth\".",
+     "refs": [
+      "Genesis 1:14-17"
+     ],
+     "strongs": [
+      "H3974"
+     ]
+    },
+    {
+     "text": "Day 4 does not use the words sun and moon; it says \"two great lights\". Psalm 136 names them: \"The sun to rule by day\" and \"The moon and stars to rule by night\".",
+     "refs": [
+      "Genesis 1:16",
+      "Psalms 136:8-9"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does John say was there in the beginning, and what does he call the light?",
+   "refs": [
+    "John 1:1-9"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5457"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "John opens with the first words of Genesis: \"In the beginning\". \"Light\" here is the Greek phos: \"luminousness (in the widest application, natural or artificial, abstract or concrete, literal or figurative)\".",
+     "refs": [
+      "John 1:1",
+      "Genesis 1:1"
+     ],
+     "strongs": [
+      "G5457"
+     ]
+    },
+    {
+     "text": "John says of the Word: \"In him was life; and the life was the light of men\", and \"the light shineth in darkness\".",
+     "refs": [
+      "John 1:4-5"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who is called \"the light of the world\" in these verses?",
+   "refs": [
+    "John 8:12",
+    "Matthew 5:14-16"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5457"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "What does this verse say God is?",
+   "refs": [
+    "1 John 1:5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5457"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ]
+  },
+  {
+   "question": "What gives light where there is no sun or moon?",
+   "refs": [
+    "Isaiah 60:19-20",
+    "Revelation 21:23",
+    "Revelation 22:5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H216"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Isaiah and Revelation both speak of light without sun or moon: \"the LORD shall be unto thee an everlasting light\", and \"the glory of God did lighten it, and the Lamb is the light thereof\". Like Day 1, this light does not depend on the sun.",
+     "refs": [
+      "Isaiah 60:19",
+      "Revelation 21:23"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "More verses on light and where it comes from. Some say God forms light, some say God is light, some say He dwells in it. What does each one say?",
+   "refs": [
+    "Job 38:19-20",
+    "Psalms 74:16",
+    "Psalms 104:2",
+    "Psalms 136:7-9",
+    "Isaiah 45:7",
+    "2 Corinthians 4:6",
+    "1 Timothy 6:16",
+    "James 1:17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3974",
+     "H216"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Paul uses Genesis 1:3 for what God does in a person: \"God, who commanded the light to shine out of darkness, hath shined in our hearts\". The BSB: \"Let light shine out of darkness\".",
+     "refs": [
+      "2 Corinthians 4:6"
+     ]
+    },
+    {
+     "text": "James calls God \"the Father of lights\"; Paul says He is \"dwelling in the light which no man can approach unto\".",
+     "refs": [
+      "James 1:17",
+      "1 Timothy 6:16"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "God said \"Let there be light\" on the first day; the sun and moon came on the fourth.",
+   "refs": [
+    "Genesis 1:3",
+    "Genesis 1:16"
+   ]
+  },
+  {
+   "text": "\"God is light, and in him is no darkness at all\"",
+   "refs": [
+    "1 John 1:5"
+   ]
+  },
+  {
+   "text": "Jesus said \"I am the light of the world\".",
+   "refs": [
+    "John 8:12"
+   ]
+  },
+  {
+   "text": "In the city, \"the Lamb is the light thereof\".",
+   "refs": [
+    "Revelation 21:23"
+   ]
+  },
+  {
+   "text": "Some verses say God forms light, some that He is light, some that He dwells in it. You weigh them.",
+   "refs": [
+    "Isaiah 45:7",
+    "1 Timothy 6:16"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "On which day were the greater and lesser lights made?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 1:16-19"
+   ]
+  },
+  {
+   "q": "What did God call the light on Day 1?",
+   "type": "multiple_choice",
+   "options": [
+    "Day",
+    "Sun",
+    "Glory",
+    "Morning"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Genesis 1:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Day"
+   }
+  },
+  {
+   "q": "Fill in the word God used for the light that rules the night.",
+   "type": "fill_word",
+   "ref": "Genesis 1:16",
+   "bible": "KJV",
+   "word": "lesser"
+  },
+  {
+   "q": "In Psalm 74:16 the King James and the Ethiopian Canon say God prepared \"the light and the sun\". Which translation says \"the moon and the sun\" instead?",
+   "type": "which_translation",
+   "ref": "Psalms 74:16",
+   "bible": "BSB",
+   "phrase": "the moon and the sun"
+  },
+  {
+   "q": "Which verse says the city had no need of the sun?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Revelation 21:23"
+   ]
+  },
+  {
+   "q": "In Matthew 5:14, who is called \"the light of the world\"?",
+   "type": "multiple_choice",
+   "options": [
+    "Ye (the disciples)",
+    "Moses",
+    "The sun",
+    "The prophets"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Matthew 5:14"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Ye"
+   }
+  },
+  {
+   "q": "In John 8:12, who says \"I am the light of the world\"?",
+   "type": "multiple_choice",
+   "options": [
+    "Jesus",
+    "John the Baptist",
+    "Peter",
+    "Isaiah"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "John 8:12"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Jesus"
+   }
+  },
+  {
+   "q": "Which verse says the LORD will be an everlasting light, so the sun will no more be your light by day?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 60:19"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"That was the ___ Light, which lighteth every man that cometh into the world.\"",
+   "type": "fill_word",
+   "ref": "John 1:9",
+   "bible": "KJV",
+   "word": "true"
+  },
+  {
+   "q": "Which verse calls God \"the Father of lights\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "James 1:17"
+   ]
+  },
+  {
+   "q": "Which translation says \"firmament of the heaven\" in Genesis 1:14?",
+   "type": "which_translation",
+   "ref": "Genesis 1:14",
+   "bible": "KJV",
+   "phrase": "firmament of the heaven"
+  },
+  {
+   "q": "In Isaiah 45:7, what does the LORD say He does with the light?",
+   "type": "multiple_choice",
+   "options": [
+    "I form the light",
+    "I am the light",
+    "I hide the light",
+    "I give the light to the sun"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Isaiah 45:7"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "I form the light"
+   }
+  },
+  {
+   "q": "Which verse says God commanded the light to shine out of darkness?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "2 Corinthians 4:6"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"And there shall be no night there; and they need no ___, neither light of the sun\"",
+   "type": "fill_word",
+   "ref": "Revelation 22:5",
+   "bible": "KJV",
+   "word": "candle"
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ]
 }

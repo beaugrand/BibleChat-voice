@@ -18,7 +18,16 @@
   "1 John 2:3-6",
   "1 John 5:3",
   "Revelation 14:12",
-  "Revelation 22:14"
+  "Revelation 22:14",
+  "Colossians 1:15-17",
+  "Hebrews 1:1-3",
+  "Romans 3:28",
+  "Galatians 2:16",
+  "Romans 10:4",
+  "Ephesians 2:8-10",
+  "Romans 3:31",
+  "Romans 6:1-2",
+  "James 2:14-26"
  ],
  "words": [
   "G3056",
@@ -47,6 +56,73 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Word\" is the Greek logos: \"something said (including the thought)\"; in John, \"the Divine Expression (i.e. Christ)\".",
+     "refs": [
+      "John 1:1"
+     ],
+     "strongs": [
+      "G3056"
+     ]
+    },
+    {
+     "text": "John begins as Genesis begins, \"In the beginning\", and says of the Word: \"All things were made by him\".",
+     "refs": [
+      "John 1:1",
+      "John 1:3",
+      "Genesis 1:1"
+     ]
+    },
+    {
+     "text": "\"Dwelt\" in 1:14 is skenoo: \"to tent or encamp\", \"as God did in the Tabernacle of old\". The BSB: \"made His dwelling among us\".",
+     "refs": [
+      "John 1:14"
+     ],
+     "strongs": [
+      "G4637"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who else does the New Testament say made all things, and whose image is He?",
+   "refs": [
+    "Colossians 1:15-17",
+    "Hebrews 1:1-3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1504",
+     "G5481"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Paul: \"by him were all things created\"; Hebrews: \"by whom also he made the worlds\". Both say what John 1:3 says: \"All things were made by him\".",
+     "refs": [
+      "Colossians 1:16",
+      "Hebrews 1:2",
+      "John 1:3"
+     ]
+    },
+    {
+     "text": "Colossians calls Him \"the image of the invisible God\"; Hebrews, \"the express image of his person\".",
+     "refs": [
+      "Colossians 1:15",
+      "Hebrews 1:3"
+     ]
+    }
    ]
   },
   {
@@ -94,6 +170,26 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Fulfil\" is pleroo: \"to make replete\". Jesus says \"I am not come to destroy, but to fulfil\".",
+     "refs": [
+      "Matthew 5:17"
+     ],
+     "strongs": [
+      "G4137"
+     ]
+    },
+    {
+     "text": "\"Keep\" in John 14:15 is tereo: \"to guard (from loss or injury, properly, by keeping the eye upon\".",
+     "refs": [
+      "John 14:15"
+     ],
+     "strongs": [
+      "G5083"
+     ]
+    }
    ]
   },
   {
@@ -116,15 +212,27 @@
    ],
    "notes": [
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "John writes that \"his commandments are not grievous\", and he says what the commandment is: \"That we should believe on the name of his Son Jesus Christ, and love one another\".",
+     "refs": [
+      "1 John 5:3",
+      "1 John 3:23"
+     ]
+    }
    ]
   },
   {
-   "question": "What do these verses say about faith, works and the law? Read them next to the verses above.",
+   "question": "What do these verses say about faith, works and the law? Read Paul and James side by side, next to the verses above.",
    "refs": [
     "Romans 3:28",
     "Galatians 2:16",
     "Romans 10:4",
-    "Ephesians 2:8-10"
+    "Ephesians 2:8-10",
+    "Romans 3:31",
+    "Romans 6:1-2",
+    "James 2:14-26"
    ],
    "look_closer": {
     "strongs": [
@@ -142,6 +250,40 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "Paul: \"a man is justified by faith without the deeds of the law\". James: \"by works a man is justified, and not by faith only\". Both use the same Greek word for \"justified\" (G1344).",
+     "refs": [
+      "Romans 3:28",
+      "James 2:24"
+     ],
+     "strongs": [
+      "G1344"
+     ]
+    },
+    {
+     "text": "Paul asks the question himself: \"Do we then make void the law through faith? God forbid: yea, we establish the law\". And: \"Shall we continue in sin, that grace may abound\"? \"God forbid\".",
+     "refs": [
+      "Romans 3:31",
+      "Romans 6:1-2"
+     ]
+    },
+    {
+     "text": "Ephesians 2 holds both together: \"For by grace are ye saved through faith\", \"Not of works\", and \"created in Christ Jesus unto good works\".",
+     "refs": [
+      "Ephesians 2:8-10"
+     ]
+    },
+    {
+     "text": "\"End\" in Romans 10:4 is telos: \"the point aimed at as a limit\". Some read it as the goal of the law, some as its end.",
+     "refs": [
+      "Romans 10:4"
+     ],
+     "strongs": [
+      "G5056"
+     ]
+    }
    ]
   },
   {
@@ -165,6 +307,20 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "Revelation 22:14 differs because the Greek copies differ. The KJV and the Ethiopian Canon follow copies that read \"do his commandments\"; the BSB follows older copies that read \"wash their robes\".",
+     "refs": [
+      "Revelation 22:14"
+     ]
+    },
+    {
+     "text": "Revelation 14:12 puts both in one verse: \"keep the commandments of God, and the faith of Jesus\".",
+     "refs": [
+      "Revelation 14:12"
+     ]
+    }
    ]
   }
  ],
@@ -308,15 +464,15 @@
     "xref": 12,
     "votes": 73,
     "word": "G3551",
-    "word_count": 7,
+    "word_count": 9,
     "differ": 0.42,
     "quoted": null
    },
    "why": [
     "12 cross-references point here",
-    "The Greek word nómos (G3551) is in 7 verses of this path"
+    "The Greek word nómos (G3551) is in 9 verses of this path"
    ],
-   "score": 0.6323
+   "score": 0.6906
   },
   {
    "q": "Which verse says he that saith \"I know him\" and keepeth not his commandments is a liar?",
@@ -381,16 +537,16 @@
    "signals": {
     "xref": 20,
     "votes": 213,
-    "word": "G1785",
-    "word_count": 8,
+    "word": "G4102",
+    "word_count": 17,
     "differ": 0.358,
     "quoted": null
    },
    "why": [
     "20 cross-references point here",
-    "The Greek word entolḗ (G1785) is in 8 verses of this path"
+    "The Greek word pístis (G4102) is in 17 verses of this path"
    ],
-   "score": 0.7257
+   "score": 0.8424
   },
   {
    "q": "Which verse says a man is justified by faith without the deeds of the law?",
@@ -401,16 +557,16 @@
    "signals": {
     "xref": 15,
     "votes": 101,
-    "word": "G3551",
-    "word_count": 7,
+    "word": "G2041",
+    "word_count": 18,
     "differ": 0.312,
     "quoted": null
    },
    "why": [
     "15 cross-references point here",
-    "The Greek word nómos (G3551) is in 7 verses of this path"
+    "The Greek word érgon (G2041) is in 18 verses of this path"
    ],
-   "score": 0.6294
+   "score": 0.7752
   },
   {
    "q": "Which verse says \"For by grace are ye saved through faith\"?",
@@ -422,15 +578,15 @@
     "xref": 64,
     "votes": 833,
     "word": "G4102",
-    "word_count": 5,
+    "word_count": 17,
     "differ": 0.243,
     "quoted": null
    },
    "why": [
     "64 cross-references point here",
-    "The Greek word pístis (G4102) is in 5 verses of this path"
+    "The Greek word pístis (G4102) is in 17 verses of this path"
    ],
-   "score": 0.6566
+   "score": 0.8608
   },
   {
    "q": "Which verse says \"Christ is the end of the law for righteousness to every one that believeth\"?",
@@ -442,15 +598,15 @@
     "xref": 25,
     "votes": 266,
     "word": "G3551",
-    "word_count": 7,
+    "word_count": 9,
     "differ": 0.405,
     "quoted": null
    },
    "why": [
     "25 cross-references point here",
-    "The Greek word nómos (G3551) is in 7 verses of this path"
+    "The Greek word nómos (G3551) is in 9 verses of this path"
    ],
-   "score": 0.7249
+   "score": 0.7832
   },
   {
    "q": "Which translation says \"the darkness comprehended it not\" in John 1:5?",
@@ -485,7 +641,7 @@
   "Scofield (1917)",
   "Matthew Henry"
  ],
- "verse_count": 33,
+ "verse_count": 55,
  "image": "img/word-made-flesh.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -493,7 +649,7 @@
  },
  "built_from": {
   "file": "packaging/paths/word-made-flesh.json",
-  "sha": "a845fc78de95d413",
+  "sha": "19bf5f2ae8dafe8f",
   "checked_in": [
    "KJV",
    "ETH",

@@ -23,7 +23,11 @@
   "Daniel 3:26-30",
   "Isaiah 43:2",
   "Hebrews 11:33-34",
-  "Revelation 13:15"
+  "Revelation 13:15",
+  "Exodus 20:3-5",
+  "Acts 5:29",
+  "1 Peter 1:6-7",
+  "1 John 5:21"
  ],
  "words": [
   "H6755",
@@ -92,6 +96,18 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Accused\" in 3:8 is an Aramaic picture: \"to eat the morsels of any one that is chew him up (figuratively) by slander\". The BSB: \"maliciously accused the Jews\".",
+     "refs": [
+      "Daniel 3:8"
+     ],
+     "strongs": [
+      "H7170",
+      "H399"
+     ]
+    }
    ]
   },
   {
@@ -223,14 +239,86 @@
      ]
     }
    ]
+  },
+  {
+   "question": "The opening asked: what does that ask of us? Which commandment were the three men keeping, and what do these verses say about whom to obey and about faith tried by fire?",
+   "refs": [
+    "Exodus 20:3-5",
+    "Acts 5:29",
+    "1 Peter 1:6-7",
+    "1 John 5:21"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3982"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The commandment they kept: \"Thou shalt have no other gods before me\" and \"Thou shalt not bow down thyself to them, nor serve them\".",
+     "refs": [
+      "Exodus 20:3",
+      "Exodus 20:5"
+     ]
+    },
+    {
+     "text": "Peter and the apostles before the council: \"We ought to obey God rather than men\". Daniel did the same in Daniel 6:10, praying \"three times a day\" after the king's writing was signed.",
+     "refs": [
+      "Acts 5:29",
+      "Daniel 6:10"
+     ]
+    },
+    {
+     "text": "Peter speaks of faith \"tried with fire\", \"much more precious than of gold that perisheth\". John ends his letter: \"keep yourselves from idols\".",
+     "refs": [
+      "1 Peter 1:7",
+      "1 John 5:21"
+     ]
+    }
+   ]
   }
  ],
  "remember": [
-   {"text": "At the sound of the music all the people bowed to the image of gold. Three did not.", "refs": ["Daniel 3:7", "Daniel 3:12"]},
-   {"text": "\"our God whom we serve is able to deliver us\" ... \"But if not\", they would still not bow.", "refs": ["Daniel 3:17-18"]},
-   {"text": "In the fire the king saw \"four men loose, walking in the midst of the fire\".", "refs": ["Daniel 3:25"]},
-   {"text": "The fire had no power on them, \"nor was an hair of their head singed\".", "refs": ["Daniel 3:27"]},
-   {"text": "\"when thou walkest through the fire, thou shalt not be burned\"", "refs": ["Isaiah 43:2"]}
+  {
+   "text": "At the sound of the music all the people bowed to the image of gold. Three did not.",
+   "refs": [
+    "Daniel 3:7",
+    "Daniel 3:12"
+   ]
+  },
+  {
+   "text": "\"our God whom we serve is able to deliver us\" ... \"But if not\", they would still not bow.",
+   "refs": [
+    "Daniel 3:17-18"
+   ]
+  },
+  {
+   "text": "In the fire the king saw \"four men loose, walking in the midst of the fire\".",
+   "refs": [
+    "Daniel 3:25"
+   ]
+  },
+  {
+   "text": "The fire had no power on them, \"nor was an hair of their head singed\".",
+   "refs": [
+    "Daniel 3:27"
+   ]
+  },
+  {
+   "text": "\"when thou walkest through the fire, thou shalt not be burned\"",
+   "refs": [
+    "Isaiah 43:2"
+   ]
+  }
  ],
  "quiz": [
   {

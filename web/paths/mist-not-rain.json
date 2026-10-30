@@ -1,6 +1,6 @@
 {
  "id": "mist-not-rain",
- "title": "Mist, not rain",
+ "title": "Mist or rain?",
  "category": "Creation",
  "anim": {
   "kind": "mist"
@@ -13,7 +13,10 @@
   "Genesis 8:2",
   "Genesis 9:12-17",
   "Psalms 148:4",
-  "Hebrews 11:7"
+  "Hebrews 11:7",
+  "Genesis 6:17",
+  "Job 36:27-28",
+  "2 Peter 3:5-6"
  ],
  "words": [
   "H108",
@@ -39,6 +42,17 @@
    ],
    "notes": [
     "scofield"
+   ],
+   "facts": [
+    {
+     "text": "\"Firmament\" is the Hebrew raqia: \"properly an expanse\". God made it between waters: \"the waters which were under the firmament from the waters which were above the firmament\".",
+     "refs": [
+      "Genesis 1:7"
+     ],
+     "strongs": [
+      "H7549"
+     ]
+    }
    ]
   },
   {
@@ -61,6 +75,30 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Mist\" is the Hebrew 'ed: \"a fog\"; the KJV translates it \"mist\" and \"vapor\". It stands only twice in the Bible: here and in Job 36:27.",
+     "refs": [
+      "Genesis 2:6",
+      "Job 36:27"
+     ],
+     "strongs": [
+      "H108"
+     ]
+    },
+    {
+     "text": "The translations differ here. The KJV says \"there went up a mist from the earth\", the Ethiopian Canon \"a mist went up from the earth\"; the BSB says \"springs welled up from the earth\".",
+     "refs": [
+      "Genesis 2:6"
+     ]
+    },
+    {
+     "text": "Genesis 2:5 gives two reasons no plant had grown yet: \"the LORD God had not caused it to rain upon the earth, and there was not a man to till the ground\". It speaks of the time before the plants and before Adam. The text does not say whether it rained between then and the flood.",
+     "refs": [
+      "Genesis 2:5"
+     ]
+    }
    ]
   },
   {
@@ -81,6 +119,17 @@
    ],
    "notes": [
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "In Job 36:27 the KJV translates the same word 'ed as \"vapour\": rain falls \"according to the vapour thereof\". The BSB: \"distill the rain from the mist\". Here mist and rain stand in one sentence.",
+     "refs": [
+      "Job 36:27"
+     ],
+     "strongs": [
+      "H108"
+     ]
+    }
    ]
   },
   {
@@ -88,7 +137,8 @@
    "refs": [
     "Genesis 6:17",
     "Genesis 7:11-12",
-    "Genesis 8:2"
+    "Genesis 8:2",
+    "2 Peter 3:5-6"
    ],
    "look_closer": {
     "strongs": [
@@ -105,6 +155,43 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "The waters came from below and above at once: \"all the fountains of the great deep broken up, and the windows of heaven were opened\". \"Deep\" is tehom: \"an abyss (as a surging mass of water)\".",
+     "refs": [
+      "Genesis 7:11"
+     ],
+     "strongs": [
+      "H8415"
+     ]
+    },
+    {
+     "text": "Genesis 7:4 uses the same Hebrew verb as Genesis 2:5 (matar, \"to rain\"): \"I will cause it to rain upon the earth forty days and forty nights\".",
+     "refs": [
+      "Genesis 7:4",
+      "Genesis 2:5"
+     ],
+     "strongs": [
+      "H4305"
+     ]
+    },
+    {
+     "text": "\"Flood\" is mabbul: \"a deluge\". Every time but one it means Noah's flood; the other is Psalm 29:10: \"The LORD sitteth upon the flood\".",
+     "refs": [
+      "Genesis 6:17",
+      "Psalms 29:10"
+     ],
+     "strongs": [
+      "H3999"
+     ]
+    },
+    {
+     "text": "Peter looks back on the same event: \"the world that then was, being overflowed with water, perished\".",
+     "refs": [
+      "2 Peter 3:6"
+     ]
+    }
    ]
   },
   {
@@ -127,6 +214,29 @@
    "notes": [
     "scofield",
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Bow\" is qesheth: \"a bow for shooting\". The rainbow and the archer's bow are one word in Hebrew.",
+     "refs": [
+      "Genesis 9:13"
+     ],
+     "strongs": [
+      "H7198"
+     ]
+    },
+    {
+     "text": "God says the bow is also for Him to see: \"I will look upon it, that I may remember the everlasting covenant\".",
+     "refs": [
+      "Genesis 9:16"
+     ]
+    },
+    {
+     "text": "The text calls the bow \"a token of a covenant\". It does not say whether a rainbow had ever been seen before.",
+     "refs": [
+      "Genesis 9:13"
+     ]
+    }
    ]
   },
   {
@@ -148,6 +258,14 @@
    ],
    "notes": [
     "henry"
+   ],
+   "facts": [
+    {
+     "text": "Psalm 148, written long after the flood, still speaks of \"waters that be above the heavens\".",
+     "refs": [
+      "Psalms 148:4"
+     ]
+    }
    ]
   }
  ],
@@ -471,7 +589,7 @@
   "Scofield (1917)",
   "Matthew Henry"
  ],
- "verse_count": 20,
+ "verse_count": 22,
  "image": "img/mist-not-rain.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -479,7 +597,7 @@
  },
  "built_from": {
   "file": "packaging/paths/mist-not-rain.json",
-  "sha": "c869fd449d09d3b1",
+  "sha": "05ddc95a99ed26ab",
   "checked_in": [
    "KJV",
    "ETH",

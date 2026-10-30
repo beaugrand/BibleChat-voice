@@ -1,49 +1,426 @@
 {
-  "id": "mist-not-rain",
-  "title": "Mist, not rain",
-  "category": "Creation",
-  "anim": {"kind": "mist"},
-  "opening_question": "What watered the ground before the flood, and what does the text say about rain?",
-  "required_refs": ["Genesis 1:6-8", "Genesis 2:4-6", "Genesis 7:11-12", "Genesis 8:2", "Genesis 9:12-17", "Psalms 148:4", "Hebrews 11:7"],
-  "words": ["H108", "H7549"],
-  "show": 8,
-  "steps": [
-    {"question": "What did God make on Day 2, and what did it divide?", "refs": ["Genesis 1:6-8"],
-     "look_closer": {"strongs": ["H7549"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield"]},
-    {"question": "Why had no plant grown yet, and what watered the ground?", "refs": ["Genesis 2:4-6"],
-     "look_closer": {"strongs": ["H108", "H4305"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
-    {"question": "The word for \"mist\" is used only twice. What does the other verse say about it?", "refs": ["Job 36:27-28"],
-     "look_closer": {"strongs": ["H108"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "Where did the flood waters come from, and how long did it rain?", "refs": ["Genesis 6:17", "Genesis 7:11-12", "Genesis 8:2"],
-     "look_closer": {"strongs": ["H3999", "H8064"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
-    {"question": "What did God set in the cloud, and what is it a token of?", "refs": ["Genesis 9:12-17"],
-     "look_closer": {"strongs": ["H7198", "H6051"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"]},
-    {"question": "Where are waters still spoken of, and what was Noah warned about?", "refs": ["Psalms 148:4", "Hebrews 11:7"],
-     "look_closer": {"strongs": ["H4325"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]}
-  ],
-  "remember": [
-    {"text": "\"the LORD God had not caused it to rain upon the earth\" ... \"there went up a mist from the earth\"", "refs": ["Genesis 2:5-6"]},
-    {"text": "The fountains of the great deep were broken up and the windows of heaven were opened.", "refs": ["Genesis 7:11"]},
-    {"text": "\"I do set my bow in the cloud\"", "refs": ["Genesis 9:13"]},
-    {"text": "Noah was \"warned of God of things not seen as yet\".", "refs": ["Hebrews 11:7"]}
-  ],
-  "quiz": [
-    {"q": "Which verse says \"there went up a mist from the earth\"?", "type": "find_the_verse", "answer_refs": ["Genesis 2:6"]},
-    {"q": "According to Genesis 2:5, what had the LORD God not yet caused to happen on the earth?", "type": "multiple_choice",
-     "options": ["To rain", "To snow", "To be dark", "To shake"], "answer": 0, "answer_refs": ["Genesis 2:5"], "check": {"bible": "KJV", "word": "rain"}},
-    {"q": "Fill in the word God called the firmament.", "type": "fill_word", "ref": "Genesis 1:8", "bible": "KJV", "word": "Heaven"},
-    {"q": "Which translation says \"expanse\" in Genesis 1:7, where the King James says \"firmament\"?", "type": "which_translation", "ref": "Genesis 1:7",
-     "bible": "BSB", "phrase": "the expanse and separated"},
-    {"q": "Which verse says the fountains of the great deep were broken up and the windows of heaven were opened?", "type": "find_the_verse", "answer_refs": ["Genesis 7:11"]},
-    {"q": "How many days and nights was the rain upon the earth?", "type": "multiple_choice", "options": ["Forty", "Seven", "One hundred and fifty", "Twelve"], "answer": 0,
-     "answer_refs": ["Genesis 7:12"], "check": {"bible": "KJV", "word": "forty"}},
-    {"q": "Fill in the word: \"I do set my ___ in the cloud\"", "type": "fill_word", "ref": "Genesis 9:13", "bible": "KJV", "word": "bow"},
-    {"q": "Which verse speaks of \"waters that be above the heavens\"?", "type": "find_the_verse", "answer_refs": ["Psalms 148:4"]},
-    {"q": "Which verse says Noah was warned of God of things not seen as yet?", "type": "find_the_verse", "answer_refs": ["Hebrews 11:7"]},
-    {"q": "Job 36:27 uses the same Hebrew word as the mist of Genesis 2:6. How does the King James render it there?", "type": "multiple_choice",
-     "options": ["vapour", "mist", "dew", "cloud"], "answer": 0, "answer_refs": ["Job 36:27"], "check": {"bible": "KJV", "word": "vapour"}},
-    {"q": "Which verse says the fountains of the deep and the windows of heaven were stopped?", "type": "find_the_verse", "answer_refs": ["Genesis 8:2"]},
-    {"q": "Which translation says \"Yahweh God\" in Genesis 2:4?", "type": "which_translation", "ref": "Genesis 2:4", "bible": "ETH", "phrase": "Yahweh God"}
-  ],
-  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]
+ "id": "mist-not-rain",
+ "title": "Mist or rain?",
+ "category": "Creation",
+ "anim": {
+  "kind": "mist"
+ },
+ "opening_question": "What watered the ground before the flood, and what does the text say about rain?",
+ "required_refs": [
+  "Genesis 1:6-8",
+  "Genesis 2:4-6",
+  "Genesis 7:11-12",
+  "Genesis 8:2",
+  "Genesis 9:12-17",
+  "Psalms 148:4",
+  "Hebrews 11:7",
+  "Genesis 6:17",
+  "Job 36:27-28",
+  "2 Peter 3:5-6"
+ ],
+ "words": [
+  "H108",
+  "H7549"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "What did God make on Day 2, and what did it divide?",
+   "refs": [
+    "Genesis 1:6-8"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7549"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield"
+   ],
+   "facts": [
+    {
+     "text": "\"Firmament\" is the Hebrew raqia: \"properly an expanse\". God made it between waters: \"the waters which were under the firmament from the waters which were above the firmament\".",
+     "refs": [
+      "Genesis 1:7"
+     ],
+     "strongs": [
+      "H7549"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Why had no plant grown yet, and what watered the ground?",
+   "refs": [
+    "Genesis 2:4-6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H108",
+     "H4305"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Mist\" is the Hebrew 'ed: \"a fog\"; the KJV translates it \"mist\" and \"vapor\". It stands only twice in the Bible: here and in Job 36:27.",
+     "refs": [
+      "Genesis 2:6",
+      "Job 36:27"
+     ],
+     "strongs": [
+      "H108"
+     ]
+    },
+    {
+     "text": "The translations differ here. The KJV says \"there went up a mist from the earth\", the Ethiopian Canon \"a mist went up from the earth\"; the BSB says \"springs welled up from the earth\".",
+     "refs": [
+      "Genesis 2:6"
+     ]
+    },
+    {
+     "text": "Genesis 2:5 gives two reasons no plant had grown yet: \"the LORD God had not caused it to rain upon the earth, and there was not a man to till the ground\". It speaks of the time before the plants and before Adam. The text does not say whether it rained between then and the flood.",
+     "refs": [
+      "Genesis 2:5"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The word for \"mist\" is used only twice. What does the other verse say about it?",
+   "refs": [
+    "Job 36:27-28"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H108"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "In Job 36:27 the KJV translates the same word 'ed as \"vapour\": rain falls \"according to the vapour thereof\". The BSB: \"distill the rain from the mist\". Here mist and rain stand in one sentence.",
+     "refs": [
+      "Job 36:27"
+     ],
+     "strongs": [
+      "H108"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Where did the flood waters come from, and how long did it rain?",
+   "refs": [
+    "Genesis 6:17",
+    "Genesis 7:11-12",
+    "Genesis 8:2",
+    "2 Peter 3:5-6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3999",
+     "H8064"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The waters came from below and above at once: \"all the fountains of the great deep broken up, and the windows of heaven were opened\". \"Deep\" is tehom: \"an abyss (as a surging mass of water)\".",
+     "refs": [
+      "Genesis 7:11"
+     ],
+     "strongs": [
+      "H8415"
+     ]
+    },
+    {
+     "text": "Genesis 7:4 uses the same Hebrew verb as Genesis 2:5 (matar, \"to rain\"): \"I will cause it to rain upon the earth forty days and forty nights\".",
+     "refs": [
+      "Genesis 7:4",
+      "Genesis 2:5"
+     ],
+     "strongs": [
+      "H4305"
+     ]
+    },
+    {
+     "text": "\"Flood\" is mabbul: \"a deluge\". Every time but one it means Noah's flood; the other is Psalm 29:10: \"The LORD sitteth upon the flood\".",
+     "refs": [
+      "Genesis 6:17",
+      "Psalms 29:10"
+     ],
+     "strongs": [
+      "H3999"
+     ]
+    },
+    {
+     "text": "Peter looks back on the same event: \"the world that then was, being overflowed with water, perished\".",
+     "refs": [
+      "2 Peter 3:6"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did God set in the cloud, and what is it a token of?",
+   "refs": [
+    "Genesis 9:12-17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7198",
+     "H6051"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Bow\" is qesheth: \"a bow for shooting\". The rainbow and the archer's bow are one word in Hebrew.",
+     "refs": [
+      "Genesis 9:13"
+     ],
+     "strongs": [
+      "H7198"
+     ]
+    },
+    {
+     "text": "God says the bow is also for Him to see: \"I will look upon it, that I may remember the everlasting covenant\".",
+     "refs": [
+      "Genesis 9:16"
+     ]
+    },
+    {
+     "text": "The text calls the bow \"a token of a covenant\". It does not say whether a rainbow had ever been seen before.",
+     "refs": [
+      "Genesis 9:13"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Where are waters still spoken of, and what was Noah warned about?",
+   "refs": [
+    "Psalms 148:4",
+    "Hebrews 11:7"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4325"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Psalm 148, written long after the flood, still speaks of \"waters that be above the heavens\".",
+     "refs": [
+      "Psalms 148:4"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"the LORD God had not caused it to rain upon the earth\" ... \"there went up a mist from the earth\"",
+   "refs": [
+    "Genesis 2:5-6"
+   ]
+  },
+  {
+   "text": "The fountains of the great deep were broken up and the windows of heaven were opened.",
+   "refs": [
+    "Genesis 7:11"
+   ]
+  },
+  {
+   "text": "\"I do set my bow in the cloud\"",
+   "refs": [
+    "Genesis 9:13"
+   ]
+  },
+  {
+   "text": "Noah was \"warned of God of things not seen as yet\".",
+   "refs": [
+    "Hebrews 11:7"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"there went up a mist from the earth\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 2:6"
+   ]
+  },
+  {
+   "q": "According to Genesis 2:5, what had the LORD God not yet caused to happen on the earth?",
+   "type": "multiple_choice",
+   "options": [
+    "To rain",
+    "To snow",
+    "To be dark",
+    "To shake"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Genesis 2:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "rain"
+   }
+  },
+  {
+   "q": "Fill in the word God called the firmament.",
+   "type": "fill_word",
+   "ref": "Genesis 1:8",
+   "bible": "KJV",
+   "word": "Heaven"
+  },
+  {
+   "q": "Which translation says \"expanse\" in Genesis 1:7, where the King James says \"firmament\"?",
+   "type": "which_translation",
+   "ref": "Genesis 1:7",
+   "bible": "BSB",
+   "phrase": "the expanse and separated"
+  },
+  {
+   "q": "Which verse says the fountains of the great deep were broken up and the windows of heaven were opened?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 7:11"
+   ]
+  },
+  {
+   "q": "How many days and nights was the rain upon the earth?",
+   "type": "multiple_choice",
+   "options": [
+    "Forty",
+    "Seven",
+    "One hundred and fifty",
+    "Twelve"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Genesis 7:12"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "forty"
+   }
+  },
+  {
+   "q": "Fill in the word: \"I do set my ___ in the cloud\"",
+   "type": "fill_word",
+   "ref": "Genesis 9:13",
+   "bible": "KJV",
+   "word": "bow"
+  },
+  {
+   "q": "Which verse speaks of \"waters that be above the heavens\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 148:4"
+   ]
+  },
+  {
+   "q": "Which verse says Noah was warned of God of things not seen as yet?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Hebrews 11:7"
+   ]
+  },
+  {
+   "q": "Job 36:27 uses the same Hebrew word as the mist of Genesis 2:6. How does the King James render it there?",
+   "type": "multiple_choice",
+   "options": [
+    "vapour",
+    "mist",
+    "dew",
+    "cloud"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Job 36:27"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "vapour"
+   }
+  },
+  {
+   "q": "Which verse says the fountains of the deep and the windows of heaven were stopped?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 8:2"
+   ]
+  },
+  {
+   "q": "Which translation says \"Yahweh God\" in Genesis 2:4?",
+   "type": "which_translation",
+   "ref": "Genesis 2:4",
+   "bible": "ETH",
+   "phrase": "Yahweh God"
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ]
 }

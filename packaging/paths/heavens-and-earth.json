@@ -1,52 +1,456 @@
 {
-  "id": "heavens-and-earth",
-  "title": "The heavens and the earth in the text's own words",
-  "category": "Creation",
-  "anim": {"kind": "stars"},
-  "opening_question": "What does the text itself say about the shape of the earth, the firmament and what holds the earth?",
-  "required_refs": ["Genesis 1:6-8", "Genesis 1:14-17", "Job 9:6", "Job 26:7", "Job 26:10", "Job 37:18", "Job 38:4-14", "Psalms 19:1-6", "Psalms 93:1",
-                    "Psalms 104:2-5", "Proverbs 8:27", "Isaiah 11:12", "Isaiah 22:18", "Isaiah 40:22", "1 Chronicles 16:30", "Revelation 7:1", "1 Enoch 72-82"],
-  "words": ["H7549", "H2329", "H1754"],
-  "show": 8,
-  "note": "Only the text, the word meanings and questions. BibleChat gives no verdict.",
-  "steps": [
-    {"question": "What is the firmament, where are the lights set, and what is above and below it?", "refs": ["Genesis 1:6-8", "Genesis 1:14-17"],
-     "look_closer": {"strongs": ["H7549"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield"]},
-    {"question": "How do these verses describe the sky?", "refs": ["Job 37:18", "Psalms 19:1-6", "Psalms 104:2-5"],
-     "look_closer": {"strongs": ["H7549", "H7834"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "Which words describe the shape: circle, compass, ball, corners? Read each one in its own sentence.",
-     "refs": ["Isaiah 40:22", "Job 26:10", "Proverbs 8:27", "Isaiah 22:18", "Isaiah 11:12", "Revelation 7:1"],
-     "look_closer": {"strongs": ["H2329", "H1754", "H3671"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "What does the earth hang on or rest on? Read the verses about nothing, foundations and pillars side by side.",
-     "refs": ["Job 26:7", "Job 38:4-14", "1 Samuel 2:8", "Job 9:6"],
-     "look_closer": {"strongs": ["H5982", "H3245"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "What do these verses say about the earth being moved, and about the sun?", "refs": ["Psalms 93:1", "1 Chronicles 16:30", "Psalms 104:5", "Ecclesiastes 1:5"],
-     "look_closer": {"strongs": ["H4131"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["henry"]},
-    {"question": "The Book of the Luminaries (Ethiopian Canon): how does it describe the sun, moon and stars and their gates?", "refs": ["1 Enoch 72-82"],
-     "look_closer": {"strongs": [], "xref_top": 0}, "compare": ["ETH"], "notes": []}
-  ],
-  "remember": [
-    {"text": "God made the firmament and set the lights in it.", "refs": ["Genesis 1:7", "Genesis 1:17"]},
-    {"text": "\"The heavens declare the glory of God\"", "refs": ["Psalms 19:1"]},
-    {"text": "Isaiah speaks of \"the circle of the earth\"; Job says He \"hangeth the earth upon nothing\".", "refs": ["Isaiah 40:22", "Job 26:7"]},
-    {"text": "Other verses speak of the foundations and \"the pillars of the earth\". Read each in its own sentence.", "refs": ["Job 38:4", "1 Samuel 2:8"]}
-  ],
-  "quiz": [
-    {"q": "Which verse speaks of \"the circle of the earth\"?", "type": "find_the_verse", "answer_refs": ["Isaiah 40:22"]},
-    {"q": "In Job 26:7, what does God hang the earth upon?", "type": "multiple_choice", "options": ["Nothing", "Pillars", "Waters", "A foundation"], "answer": 0,
-     "answer_refs": ["Job 26:7"], "check": {"bible": "KJV", "word": "nothing"}},
-    {"q": "Fill in the word: \"I saw four angels standing on the four ___ of the earth\"", "type": "fill_word", "ref": "Revelation 7:1", "bible": "KJV", "word": "corners"},
-    {"q": "Which verse says God shaketh the earth out of her place, and the pillars thereof tremble?", "type": "find_the_verse", "answer_refs": ["Job 9:6"]},
-    {"q": "Which verse says the world also shall be stable, that it be not moved?", "type": "find_the_verse", "answer_refs": ["1 Chronicles 16:30"]},
-    {"q": "Job 37:18 compares the sky to what?", "type": "multiple_choice", "options": ["A molten looking glass", "A tent", "A scroll", "A garment"], "answer": 0,
-     "answer_refs": ["Job 37:18"], "check": {"bible": "KJV", "word": "molten looking glass"}},
-    {"q": "Fill in the word: \"He will surely violently turn and toss thee like a ___ into a large country\"", "type": "fill_word", "ref": "Isaiah 22:18", "bible": "KJV", "word": "ball"},
-    {"q": "Psalm 19:1 reads \"firmament\", \"expanse\" or \"skies\" depending on the translation. Which one says \"the skies proclaim\"?", "type": "which_translation", "ref": "Psalms 19:1", "bible": "BSB", "phrase": "the skies proclaim"},
-    {"q": "Which verse says the pillars of the earth are the LORD's, and He has set the world upon them?", "type": "find_the_verse", "answer_refs": ["1 Samuel 2:8"]},
-    {"q": "Which verse says God set a compass upon the face of the depth?", "type": "find_the_verse", "answer_refs": ["Proverbs 8:27"]},
-    {"q": "Which verse asks, \"Where wast thou when I laid the foundations of the earth?\"", "type": "find_the_verse", "answer_refs": ["Job 38:4"]},
-    {"q": "Fill in the word: \"In them hath he set a ___ for the sun\"", "type": "fill_word", "ref": "Psalms 19:4", "bible": "KJV", "word": "tabernacle"},
-    {"q": "Which verse begins \"The book of the courses of the luminaries of the heaven\"?", "type": "find_the_verse", "answer_refs": ["1 Enoch 72:1"]}
-  ],
-  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry", "1 Enoch (R. H. Charles, 1917)"]
+ "id": "heavens-and-earth",
+ "title": "The heavens and the earth in the text's own words",
+ "category": "Creation",
+ "anim": {
+  "kind": "stars"
+ },
+ "opening_question": "What does the text itself say about the shape of the earth, the firmament and what holds the earth?",
+ "required_refs": [
+  "Genesis 1:6-8",
+  "Genesis 1:14-17",
+  "Job 9:6",
+  "Job 26:7",
+  "Job 26:10",
+  "Job 37:18",
+  "Job 38:4-14",
+  "Psalms 19:1-6",
+  "Psalms 93:1",
+  "Psalms 104:2-5",
+  "Proverbs 8:27",
+  "Isaiah 11:12",
+  "Isaiah 22:18",
+  "Isaiah 40:22",
+  "1 Chronicles 16:30",
+  "Revelation 7:1",
+  "1 Enoch 72-82",
+  "1 Samuel 2:8",
+  "Psalms 104:5",
+  "Ecclesiastes 1:5"
+ ],
+ "words": [
+  "H7549",
+  "H2329",
+  "H1754"
+ ],
+ "show": 8,
+ "note": "Only the text, the word meanings and questions. BibleChat gives no verdict.",
+ "steps": [
+  {
+   "question": "What is the firmament, where are the lights set, and what is above and below it?",
+   "refs": [
+    "Genesis 1:6-8",
+    "Genesis 1:14-17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7549"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield"
+   ],
+   "facts": [
+    {
+     "text": "\"Firmament\" is raqia: \"properly an expanse that is the firmament or (apparently) visible arch of the sky\". The BSB translates it \"expanse\". God \"called the firmament Heaven\".",
+     "refs": [
+      "Genesis 1:8",
+      "Genesis 1:14"
+     ],
+     "strongs": [
+      "H7549"
+     ]
+    },
+    {
+     "text": "Raqia comes from the verb raqa: \"to pound the earth (as a sign of passion); by analogy to expand (by hammering)\". The KJV translates the verb \"spread\", \"stretch\" and \"beat\".",
+     "refs": [
+      "Genesis 1:6"
+     ],
+     "strongs": [
+      "H7554"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How do these verses describe the sky?",
+   "refs": [
+    "Job 37:18",
+    "Psalms 19:1-6",
+    "Psalms 104:2-5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7549",
+     "H7834"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Most verses in this path are poetry: Job, Psalms and Proverbs. Hebrew poetry says a thing twice in parallel lines and speaks in pictures, as in Psalm 104:2: \"Who coverest thyself with light as with a garment: who stretchest out the heavens like a curtain\". Knowing the kind of writing is a fact about the text, not a verdict.",
+     "refs": [
+      "Psalms 104:2"
+     ]
+    },
+    {
+     "text": "\"Sky\" in Job 37:18 is shachaq: \"a powder (as beaten small); by analogy a thin vapor; by extension the firmament\". The KJV's \"molten looking glass\" is a mirror of cast metal; the BSB says \"a mirror of bronze\".",
+     "refs": [
+      "Job 37:18"
+     ],
+     "strongs": [
+      "H7834"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Which words describe the shape: circle, compass, ball, corners? Read each one in its own sentence.",
+   "refs": [
+    "Isaiah 40:22",
+    "Job 26:10",
+    "Proverbs 8:27",
+    "Isaiah 22:18",
+    "Isaiah 11:12",
+    "Revelation 7:1"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2329",
+     "H1754",
+     "H3671"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Circle\" in Isaiah 40:22 is chug: \"a circle\"; the KJV translates it \"circle\", \"circuit\" and \"compass\". It stands three times: Isaiah 40:22, Proverbs 8:27 (\"he set a compass upon the face of the depth\") and Job 22:14 (\"the circuit of heaven\").",
+     "refs": [
+      "Isaiah 40:22",
+      "Proverbs 8:27",
+      "Job 22:14"
+     ],
+     "strongs": [
+      "H2329"
+     ]
+    },
+    {
+     "text": "\"Ball\" in Isaiah 22:18 is dur: \"a circle ball or pile\". The verse is about a man, Shebna the treasurer, tossed \"like a ball into a large country\"; it does not speak of the shape of the earth.",
+     "refs": [
+      "Isaiah 22:15",
+      "Isaiah 22:18"
+     ],
+     "strongs": [
+      "H1754"
+     ]
+    },
+    {
+     "text": "\"Corners\" in Isaiah 11:12 is kanaph: \"an edge or extremity\", most often \"a wing\". Job 38:13 uses it for \"the ends of the earth\". Revelation 7:1 uses the Greek gonia: \"an angle\".",
+     "refs": [
+      "Isaiah 11:12",
+      "Job 38:13",
+      "Revelation 7:1"
+     ],
+     "strongs": [
+      "H3671",
+      "G1137"
+     ]
+    },
+    {
+     "text": "In Job 26:10 the KJV says \"He hath compassed the waters with bounds\"; the BSB says \"He has inscribed a horizon on the face of the waters\".",
+     "refs": [
+      "Job 26:10"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does the earth hang on or rest on? Read the verses about nothing, foundations and pillars side by side.",
+   "refs": [
+    "Job 26:7",
+    "Job 38:4-14",
+    "1 Samuel 2:8",
+    "Job 9:6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5982",
+     "H3245"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Job 26:7 says God \"hangeth the earth upon nothing\". Job 9:6 says \"the pillars thereof tremble\", and Hannah's song in 1 Samuel 2:8 says \"the pillars of the earth are the LORD's\".",
+     "refs": [
+      "Job 26:7",
+      "Job 9:6",
+      "1 Samuel 2:8"
+     ]
+    },
+    {
+     "text": "\"Pillars\" in Job 9:6 is ammud: \"a column (as standing)\", the same word used for the pillars of the tabernacle and the temple. 1 Samuel 2:8 uses another word (H4690).",
+     "refs": [
+      "Job 9:6"
+     ],
+     "strongs": [
+      "H5982"
+     ]
+    },
+    {
+     "text": "Job 38 is God answering Job with questions: \"Where wast thou when I laid the foundations of the earth\". The questions show Job what he cannot answer.",
+     "refs": [
+      "Job 38:4"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What do these verses say about the earth being moved, and about the sun?",
+   "refs": [
+    "Psalms 93:1",
+    "1 Chronicles 16:30",
+    "Psalms 104:5",
+    "Ecclesiastes 1:5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4131"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Moved\" is mot: \"to waver; by implication to slip shake fall\". The same word is used of a person: \"I shall not be moved\".",
+     "refs": [
+      "Psalms 93:1",
+      "Psalms 16:8"
+     ],
+     "strongs": [
+      "H4131"
+     ]
+    },
+    {
+     "text": "Ecclesiastes 1:5 stands in a short poem about things that go round and come back: the generations, the sun, the wind and the rivers. \"The sun also ariseth, and the sun goeth down\".",
+     "refs": [
+      "Ecclesiastes 1:4-7"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The Book of the Luminaries (Ethiopian Canon): how does it describe the sun, moon and stars and their gates?",
+   "refs": [
+    "1 Enoch 72-82"
+   ],
+   "look_closer": {
+    "strongs": [],
+    "xref_top": 0
+   },
+   "compare": [
+    "ETH"
+   ],
+   "notes": [],
+   "facts": [
+    {
+     "text": "1 Enoch is in the Bible of the Ethiopian Orthodox Tewahedo Church and the Eritrean Orthodox Church only; other churches do not count it as Scripture. The Book of the Luminaries calls itself \"The book of the courses of the luminaries of the heaven\".",
+     "refs": [
+      "1 Enoch 72:1"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "God made the firmament and set the lights in it.",
+   "refs": [
+    "Genesis 1:7",
+    "Genesis 1:17"
+   ]
+  },
+  {
+   "text": "\"The heavens declare the glory of God\"",
+   "refs": [
+    "Psalms 19:1"
+   ]
+  },
+  {
+   "text": "Isaiah speaks of \"the circle of the earth\"; Job says He \"hangeth the earth upon nothing\".",
+   "refs": [
+    "Isaiah 40:22",
+    "Job 26:7"
+   ]
+  },
+  {
+   "text": "Other verses speak of the foundations and \"the pillars of the earth\". Read each in its own sentence.",
+   "refs": [
+    "Job 38:4",
+    "1 Samuel 2:8"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse speaks of \"the circle of the earth\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 40:22"
+   ]
+  },
+  {
+   "q": "In Job 26:7, what does God hang the earth upon?",
+   "type": "multiple_choice",
+   "options": [
+    "Nothing",
+    "Pillars",
+    "Waters",
+    "A foundation"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Job 26:7"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "nothing"
+   }
+  },
+  {
+   "q": "Fill in the word: \"I saw four angels standing on the four ___ of the earth\"",
+   "type": "fill_word",
+   "ref": "Revelation 7:1",
+   "bible": "KJV",
+   "word": "corners"
+  },
+  {
+   "q": "Which verse says God shaketh the earth out of her place, and the pillars thereof tremble?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Job 9:6"
+   ]
+  },
+  {
+   "q": "Which verse says the world also shall be stable, that it be not moved?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Chronicles 16:30"
+   ]
+  },
+  {
+   "q": "Job 37:18 compares the sky to what?",
+   "type": "multiple_choice",
+   "options": [
+    "A molten looking glass",
+    "A tent",
+    "A scroll",
+    "A garment"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Job 37:18"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "molten looking glass"
+   }
+  },
+  {
+   "q": "Fill in the word: \"He will surely violently turn and toss thee like a ___ into a large country\"",
+   "type": "fill_word",
+   "ref": "Isaiah 22:18",
+   "bible": "KJV",
+   "word": "ball"
+  },
+  {
+   "q": "Psalm 19:1 reads \"firmament\", \"expanse\" or \"skies\" depending on the translation. Which one says \"the skies proclaim\"?",
+   "type": "which_translation",
+   "ref": "Psalms 19:1",
+   "bible": "BSB",
+   "phrase": "the skies proclaim"
+  },
+  {
+   "q": "Which verse says the pillars of the earth are the LORD's, and He has set the world upon them?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Samuel 2:8"
+   ]
+  },
+  {
+   "q": "Which verse says God set a compass upon the face of the depth?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Proverbs 8:27"
+   ]
+  },
+  {
+   "q": "Which verse asks, \"Where wast thou when I laid the foundations of the earth?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Job 38:4"
+   ]
+  },
+  {
+   "q": "Fill in the word: \"In them hath he set a ___ for the sun\"",
+   "type": "fill_word",
+   "ref": "Psalms 19:4",
+   "bible": "KJV",
+   "word": "tabernacle"
+  },
+  {
+   "q": "Which verse begins \"The book of the courses of the luminaries of the heaven\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Enoch 72:1"
+   ]
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry",
+  "1 Enoch (R. H. Charles, 1917)"
+ ]
 }
