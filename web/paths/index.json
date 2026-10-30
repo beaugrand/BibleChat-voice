@@ -2858,6 +2858,44 @@
    "x": 79,
    "y": 8,
    "s": 30
+  },
+  "i18n": {
+   "es": {
+    "title": "Las mujeres en la Biblia: ¿qué dice la Biblia?",
+    "opening_question": "¿Qué dice la Biblia de las mujeres? Léela desde el principio: cómo hizo Dios a la mujer, las profetisas y mujeres de fe en Israel, la mujer virtuosa, María, las mujeres que siguieron a Jesús y lo vieron resucitado, las mujeres de la iglesia primitiva, lo que Pablo escribe de las mujeres en las iglesias con los versículos de alrededor, y lo que todos son en Cristo. Lee cada versículo, también los que parecen apuntar a otro lado, y deja que el texto hable.",
+    "step_questions": [
+     "¿A imagen de quién hizo Dios al hombre, varón y hembra? ¿Por qué hizo Dios a la mujer, y cómo la llamó Adán?",
+     "¿Quién guió en el canto a las mujeres de Israel, a quién envió Jehová delante de Israel con Moisés y Aarón, quién gobernaba a Israel, a quién fue el sacerdote a consultar a Jehová, y quiénes anunciaban la palabra en el Salmo 68?",
+     "¿Qué le prometió Rut a Noemí, y qué dijeron las mujeres de Belén cuando nació el hijo de Rut? ¿Qué oró Ana, cómo concibió Sara, y qué arriesgó Ester?",
+     "Mujeres de fe de fuera de Israel y en la genealogía de Jesús: ¿qué dijo e hizo Rahab, cómo detuvo Abigail a David, y qué mujeres nombra Mateo?",
+     "Mujer fuerte, ¿quién la hallará? ¿Qué hace con sus manos, su boca y su casa? ¿Qué adorno es de grande estima delante de Dios, y qué mujeres pone Pedro como ejemplo?",
+     "¿Qué le dijo el ángel a María, qué respondió ella, qué dijo Elisabet de su fe, y a quién dio Jesús a su madre en la cruz?",
+     "¿Qué mujeres viajaban con Jesús y le servían, qué hermana escogió la buena parte, la palabra de quién hizo creer a una ciudad samaritana, y cómo llamó Jesús a la mujer que sanó?",
+     "¿Quiénes estaban junto a la cruz, quiénes vinieron al sepulcro el primer día de la semana, y a quién dijo Jesús resucitado \"ve á mis hermanos\"?",
+     "¿Quiénes oraban con los apóstoles antes de Pentecostés, sobre quiénes dijo Dios que derramaría su Espíritu, y qué mujeres sirvieron a la iglesia en Hechos y en las cartas de Pablo?",
+     "¿Qué escribe Pablo de la mujer que ora o profetiza, del silencio en las congregaciones, de enseñar, y de lo que enseñan las ancianas? Lee cada versículo entero, con los versículos de alrededor, lado a lado.",
+     "¿Qué son todos los que han sido bautizados en Cristo, y qué son juntos el marido y la mujer?",
+     "Para vivirlo: Pablo dice \"todos vosotros sois uno en Cristo Jesús\". ¿Qué piden estos versículos a hombres y mujeres juntos, cada uno con el don que ha recibido?"
+    ]
+   },
+   "de": {
+    "title": "Frauen in der Bibel: Was sagt die Bibel?",
+    "opening_question": "Was sagt die Bibel über Frauen? Lies sie von Anfang an: wie Gott die Frau schuf, die Prophetinnen und Frauen des Glaubens in Israel, die tugendsame Frau, Maria, die Frauen, die Jesus folgten und Ihn auferstanden sahen, die Frauen der ersten Gemeinde, was Paulus über Frauen in den Gemeinden schreibt, mit den Versen drumherum, und was alle in Christus sind. Lies jeden Vers, auch die, die in eine andere Richtung zu weisen scheinen, und lass den Text sprechen.",
+    "step_questions": [
+     "Nach wessen Bild schuf Gott den Menschen, als Mann und Weib? Warum schuf Gott die Frau, und wie nannte Adam sie?",
+     "Wer führte die Frauen Israels im Lied an, wen sandte der HERR mit Mose und Aaron vor Israel her, wer richtete Israel, zu wem ging der Priester, um den HERRN zu fragen, und wer verkündete das Wort in Psalm 68?",
+     "Was versprach Ruth der Noomi, und was sagten die Frauen von Bethlehem, als Ruths Sohn geboren wurde? Was betete Hanna, wie empfing Sara, und was wagte Ester?",
+     "Frauen des Glaubens von außerhalb Israels und im Stammbaum Jesu: Was sagte und tat Rahab, wie hielt Abigail David auf, und welche Frauen nennt Matthäus?",
+     "Wem ein tugendsam Weib beschert ist: Was tut sie mit ihren Händen, ihrem Mund und ihrem Haus? Welcher Schmuck ist köstlich vor Gott, und welche Frauen stellt Petrus als Vorbild hin?",
+     "Was sagte der Engel zu Maria, was antwortete sie, was sagte Elisabeth über ihren Glauben, und wem gab Jesus am Kreuz seine Mutter?",
+     "Welche Frauen zogen mit Jesus und dienten Ihm, welche Schwester erwählte das gute Teil, wessen Wort brachte eine samaritanische Stadt zum Glauben, und wie nannte Jesus die Frau, die Er heilte?",
+     "Wer stand beim Kreuz, wer kam am ersten Tag der Woche zum Grab, und zu wem sagte der Auferstandene: »geh hin zu meinen Brüdern«?",
+     "Wer betete vor Pfingsten mit den Aposteln, über wen wollte Gott nach seinem Wort seinen Geist ausgießen, und welche Frauen dienten der Gemeinde in der Apostelgeschichte und in den Briefen des Paulus?",
+     "Was schreibt Paulus über eine Frau, die betet oder weissagt, über das Schweigen in der Gemeinde, über das Lehren und darüber, was die alten Frauen lehren? Lies jeden Vers ganz, mit den Versen drumherum, nebeneinander.",
+     "Was sind alle, die auf Christus getauft sind, und was sind Mann und Frau zusammen?",
+     "Für das Leben: Paulus sagt: \"ihr seid allzumal einer in Christo Jesu\". Was verlangen diese Verse von Männern und Frauen zusammen, jedem mit der Gabe, die ihm gegeben ist?"
+    ]
+   }
   }
  },
  {
