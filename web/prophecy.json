@@ -16,7 +16,8 @@
     {"name": "The Jerusalem Post", "label": "Israeli press", "feed": "https://news.google.com/rss/search?q=site:jpost.com+when:2d&hl=en-US&gl=US&ceid=US:en"},
     {"name": "CBN News", "label": "Christian", "feed": "https://news.google.com/rss/search?q=site:cbn.com+when:3d&hl=en-US&gl=US&ceid=US:en"},
     {"name": "The Christian Post", "label": "Christian", "feed": "https://news.google.com/rss/search?q=site:christianpost.com+when:3d&hl=en-US&gl=US&ceid=US:en"},
-    {"name": "The Epoch Times", "label": "Alternative / independent", "feed": "https://news.google.com/rss/search?q=site:theepochtimes.com+when:2d&hl=en-US&gl=US&ceid=US:en"}
+    {"name": "The Epoch Times", "label": "Alternative / independent", "feed": "https://news.google.com/rss/search?q=site:theepochtimes.com+when:2d&hl=en-US&gl=US&ceid=US:en"},
+    {"name": "ZeroHedge", "label": "Alternative / independent", "feed": "https://news.google.com/rss/search?q=site:zerohedge.com+when:2d&hl=en-US&gl=US&ceid=US:en"}
   ],
   "themes": [
     {"id": "israel", "title": "Israel and Jerusalem",
@@ -62,6 +63,26 @@
     {"id": "babylon", "title": "Babylon: merchants and markets",
      "words": ["stock market", "market crash", "stocks", "recession", "banking crisis", "bank collapse", "bank failure", "inflation", "debt crisis", "economic crisis", "gold price", "dollar collapse"],
      "refs": ["Revelation 18:2-3", "Revelation 18:11-17", "James 5:1-3"],
-     "note": "Interpreters identify Babylon as Rome (ancient or later), a future world system, or every proud power that trusts in riches. In Revelation 18 the merchants weep because \"no man buyeth their merchandise any more\" (Revelation 18:11)."}
+     "note": "Interpreters identify Babylon as Rome (ancient or later), a future world system, or every proud power that trusts in riches. In Revelation 18 the merchants weep because \"no man buyeth their merchandise any more\" (Revelation 18:11)."},
+    {"id": "dragon", "title": "The woman and the dragon: Revelation 12",
+     "words": ["china", "chinese", "beijing", "xi jinping", "taiwan", "taiwanese", "south china sea", "dragon"],
+     "refs": ["Revelation 12:1-6", "Revelation 12:9", "Revelation 12:13-17"],
+     "note": "Many read the woman \"clothed with the sun\" with \"a crown of twelve stars\" as Israel and the twelve tribes. The text names the dragon itself: \"that old serpent, called the Devil, and Satan, which deceiveth the whole world\". The dragon is also China's national emblem, so some futurists watch China here; others say the dragon stands for Satan alone, not for any nation."},
+    {"id": "persia", "title": "The prince of Persia: Daniel 10",
+     "words": ["strait of hormuz", "hormuz", "irgc", "revolutionary guard", "revolutionary guards", "ayatollah", "houthi", "houthis", "araghchi", "iran talks", "iran war", "iran deal"],
+     "refs": ["Daniel 10:12-13", "Daniel 10:20-21"],
+     "note": "Daniel's answer was held up: \"the prince of the kingdom of Persia withstood me one and twenty days\", until Michael came to help. Many read the prince of Persia as a spiritual power over the land that is Iran today and watch Iran with this chapter in mind. Others read it only as Daniel's own time, before \"the prince of Grecia\" came."},
+    {"id": "east", "title": "The kings of the east: Revelation 16",
+     "words": ["euphrates", "iraq", "iraqi", "syria", "syrian", "north korea", "north korean", "pyongyang", "kim jong un", "armageddon", "kings of the east"],
+     "refs": ["Revelation 16:12-16"],
+     "note": "The sixth vial dries up \"the great river Euphrates\" so \"that the way of the kings of the east might be prepared\", before the gathering at \"Armageddon\". Futurists often read the kings of the east as the powers of Asia, some as China; others read the passage as a picture of all nations gathered against God."},
+    {"id": "burial", "title": "Burying the dead: Ezekiel 39",
+     "words": ["mass grave", "mass graves", "mass burial", "mass burials", "mass casualty", "mass casualties", "mass fatality", "mass fatalities", "body bags", "war dead", "mortuary", "interment", "burial", "burials", "killed in action"],
+     "refs": ["Ezekiel 39:11-16", "Revelation 19:17-18"],
+     "note": "After Gog's war the dead are so many that \"seven months shall the house of Israel be burying of them\", and \"men of continual employment\" go through the land to bury them. Revelation 19 calls the birds to \"the supper of the great God\". Some read these as one last war still to come; others as pictures of God's final victory over evil."},
+    {"id": "seals", "title": "The red, black and pale horses: Revelation 6",
+     "words": ["shortage", "shortages", "food prices", "food price", "rationing", "stockpile", "stockpiles", "stockpiling", "supply chain", "supply chains", "blackout", "blackouts", "power grid", "grain prices", "wheat prices"],
+     "refs": ["Revelation 6:3-8"],
+     "note": "The red horse is given power \"to take peace from the earth\"; under the black horse \"A measure of wheat for a penny\", a day's wage for a day's bread; the pale horse kills \"with sword, and with hunger\". Futurists read the seals as still to come, historicists as fulfilled in the Roman empire, and others as the troubles of every age."}
   ]
 }

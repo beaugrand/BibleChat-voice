@@ -2356,6 +2356,69 @@
   }
  },
  {
+  "id": "signs-of-the-times-october-2026",
+  "title": "Signs of the times: October 2026",
+  "category": "Prophecy",
+  "image": "img/signs-of-the-times-october-2026.jpg",
+  "opening_question": "In October 2026 the news spoke of the war with Iran, of the US Army practising mass burials, and of military bases told to last 90 days on their own. What does the Bible say about the woman and the dragon, the prince of Persia, the burying of the dead, the horses of Revelation 6 and the kings of the east? Read every verse, weigh the different readings, and remember that \"of that day and hour knoweth no man\".",
+  "steps": 7,
+  "step_questions": [
+   "What did the disciples ask Jesus on the mount of Olives, which signs did He name, what did He call them, and what does He say about the day and the hour?",
+   "Who is the woman clothed with the sun, who is the great red dragon, where is the child caught up to, and how do the believers overcome?",
+   "Why was the answer to Daniel's prayer held up for 21 days, who helped, and who comes after the prince of Persia?",
+   "After the war with Gog, how long does it take to bury the dead, who does it, and why? What does Revelation 19 show after the last battle?",
+   "What is each of the three horses given power to do? What does a measure of wheat cost, and what is not to be hurt?",
+   "What happens to the river Euphrates, for whom is the way prepared, and where are the kings gathered? Who stands afar off when the great city falls?",
+   "Living it out: with headlines like these, what does Jesus tell us to do, to look up to, and to guard against? And what spirit has God given us?"
+  ],
+  "books": [
+   "2 Timothy",
+   "Acts",
+   "Daniel",
+   "Ezekiel",
+   "Luke",
+   "Matthew",
+   "Revelation"
+  ],
+  "show": 6,
+  "verses": 60,
+  "minutes": 40,
+  "anim": {
+   "kind": "stars",
+   "x": 76,
+   "y": 16,
+   "s": 30
+  },
+  "i18n": {
+   "es": {
+    "title": "Señales de los tiempos: octubre de 2026",
+    "opening_question": "En octubre de 2026 las noticias hablaban de la guerra con Irán, del Ejército de EE. UU. practicando entierros masivos y de bases militares que debían aguantar 90 días por su cuenta. ¿Qué dice la Biblia de la mujer y el dragón, del príncipe de Persia, del entierro de los muertos, de los caballos de Apocalipsis 6 y de los reyes del Oriente? Lee cada versículo, sopesa las distintas lecturas y recuerda que \"del día y hora nadie sabe\".",
+    "step_questions": [
+     "¿Qué preguntaron los discípulos a Jesús en el monte de los Olivos, qué señales nombró, cómo las llamó y qué dice del día y la hora?",
+     "¿Quién es la mujer vestida del sol, quién es el gran dragón bermejo, adónde es arrebatado el hijo y cómo vencen los creyentes?",
+     "¿Por qué la respuesta a la oración de Daniel se retrasó 21 días, quién vino a ayudar y quién viene después del príncipe de Persia?",
+     "Después de la guerra de Gog, ¿cuánto tardan en enterrar a los muertos, quién lo hace y por qué? ¿Qué muestra Apocalipsis 19 después de la última batalla?",
+     "¿Qué poder recibe cada uno de los tres caballos? ¿Cuánto cuesta el trigo y qué no se debe dañar?",
+     "¿Qué le pasa al río Éufrates, para quién se prepara el camino y dónde se reúnen los reyes? ¿Quién se queda lejos cuando cae la gran ciudad?",
+     "Para la vida: con titulares como estos, ¿qué nos dice Jesús que hagamos, hacia dónde mirar y de qué guardarnos? ¿Y qué espíritu nos ha dado Dios?"
+    ]
+   },
+   "de": {
+    "title": "Zeichen der Zeit: Oktober 2026",
+    "opening_question": "Im Oktober 2026 berichteten die Nachrichten vom Krieg mit dem Iran, von der US-Armee, die Massenbestattungen übte, und von Militärstützpunkten, die 90 Tage allein durchhalten sollen. Was sagt die Bibel über die Frau und den Drachen, den Fürsten von Persien, das Begraben der Toten, die Pferde aus Offenbarung 6 und die Könige vom Aufgang der Sonne? Lies jeden Vers, wäge die verschiedenen Lesarten ab und denke daran: \"Von dem Tage aber und von der Stunde weiß niemand\".",
+    "step_questions": [
+     "Was fragten die Jünger Jesus auf dem Ölberg, welche Zeichen nannte Er, wie nannte Er sie, und was sagt Er über den Tag und die Stunde?",
+     "Wer ist die Frau, mit der Sonne bekleidet, wer ist der große rote Drache, wohin wird das Kind entrückt, und wie überwinden die Gläubigen?",
+     "Warum wurde die Antwort auf Daniels Gebet 21 Tage aufgehalten, wer kam zu Hilfe, und wer kommt nach dem Fürsten von Persien?",
+     "Wie lange dauert es nach dem Krieg mit Gog, die Toten zu begraben, wer tut es und warum? Was zeigt Offenbarung 19 nach der letzten Schlacht?",
+     "Welche Macht bekommt jedes der drei Pferde? Was kostet der Weizen, und was soll kein Leid erfahren?",
+     "Was geschieht mit dem Euphrat, wem wird der Weg bereitet, und wo werden die Könige versammelt? Wer steht von ferne, als die große Stadt fällt?",
+     "Für das Leben: Was sagt Jesus uns bei solchen Schlagzeilen, was sollen wir tun, wohin aufsehen und wovor uns hüten? Und welchen Geist hat Gott uns gegeben?"
+    ]
+   }
+  }
+ },
+ {
   "id": "the-holy-spirit",
   "title": "The Holy Spirit: who is He, and what does He do?",
   "category": "Foundations",
