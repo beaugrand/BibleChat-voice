@@ -230,7 +230,7 @@ const BCPrayers = (() => {
     const a = S.about;
     return `Write a short prayer (about 150 words) about: "${a.question}".\n\nBuild it only on these Bible verses${P.bibleName ? " (" + P.bibleName() + ")" : ""}, and name the reference in brackets after each line that uses one:\n`
       + a.passages.map(x => `${x.ref} ${x.text || ""}`.trim()).join("\n")
-      + "\n\nDo not quote any verse that is not in this list, and do not change the words of the ones you quote. Speak to God reverently, in plain words, and end in Jesus' name.";
+      + "\n\nDo not quote any verse that is not in this list, and do not change the words of the ones you quote. Speak to God reverently, in plain words, and end in Yeshua's name.";
   }
   async function aiWrite(btn){
     const box = root.querySelector("#prAi"); if(!box || !P.aiWrite) return;

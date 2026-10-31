@@ -177,7 +177,7 @@ PRAYER_PROMPT = (
     "reverent words, about the topic the person gives. Build it only on the Bible passages given. When a line uses a "
     "passage, put its reference in parentheses after the line, for example (Psalms 91:11). Never quote or name a verse "
     "that is not in the list, and never change the words of a verse you quote. No title, no explanation: only the "
-    "prayer. End with: In Jesus' name, Amen."
+    "prayer. End with: In Yeshua's name, Amen."
 )
 
 
@@ -193,7 +193,7 @@ def build_prayer_messages(topic: str, passages: list[tuple[str, str]]) -> list[d
 def prayer_question(topic: str) -> str:
     """The same request for the Bible Assistant model, which takes a question with its verses as context."""
     return ("Write a short prayer (about 150 words) about: " + (topic or "what these verses say") + ". Use only the verses "
-            "in the context, put each reference in parentheses after the line that uses it, and end with: In Jesus' name, Amen.")
+            "in the context, put each reference in parentheses after the line that uses it, and end with: In Yeshua's name, Amen.")
 
 
 # Set by rebuild_for_old_cpu(): lives inside the Python environment, next to the rebuilt engine.

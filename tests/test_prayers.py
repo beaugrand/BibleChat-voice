@@ -199,7 +199,7 @@ class FakePrayerModel:
 
     def stream_prayer(self, topic, passages):
         FakePrayerModel.seen = (topic, passages)
-        for w in ["Lord, ", "keep me ", "(Psalms 91:11). ", "In Jesus' name, Amen."]:
+        for w in ["Lord, ", "keep me ", "(Psalms 91:11). ", "In Yeshua's name, Amen."]:
             yield w
 
 
@@ -224,7 +224,7 @@ class AIPrayerTest(unittest.TestCase):
                     return r.read().decode()
             raw = post({"topic": "protection", "passages": [["Psalms 91:11", "For he shall give his angels charge over thee"]]})
             toks = [json.loads(b.split("\n")[1][6:]) for b in raw.strip().split("\n\n") if b.startswith("event: token")]
-            self.assertEqual("".join(toks), "Lord, keep me (Psalms 91:11). In Jesus' name, Amen.")
+            self.assertEqual("".join(toks), "Lord, keep me (Psalms 91:11). In Yeshua's name, Amen.")
             self.assertIn("event: done", raw)
             self.assertEqual(FakePrayerModel.seen[1], [("Psalms 91:11", "For he shall give his angels charge over thee")])
             with self.assertRaises(urllib.error.HTTPError):
