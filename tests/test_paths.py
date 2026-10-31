@@ -290,6 +290,17 @@ class PathPagesTest(unittest.TestCase):
         for part in ("speak: async (text, kind, me) =>", "fetchAudio(text)", "speakLocal(text, pick.lang, me)", "onListen: () => sayStop()"):
             self.assertIn(part, computer)
 
+    def test_step_intro_line(self):
+        """A step can start with a short line above its question (Daniel 3, step 1: the background in Daniel 1-2)."""
+        js = read("web", "paths.js")
+        for part in ('class="pv-intro pvx"', "intro: s.intro", "s.intro = pick(ts && ts.intro, es.intro)", "st.intro && !p.mine ? st.intro"):
+            self.assertIn(part, js)
+        p = json.loads(read("web", "paths", "daniel-3-fiery-furnace.json"))
+        self.assertIn("Daniel 1–2", p["steps"][0]["intro"])
+        for lang in ("es", "de"):
+            self.assertIn("Daniel 1–2", p["i18n"][lang]["steps"][0]["intro"])
+        self.assertIn('if "intro" in s:', read("packaging", "build_paths.py"))
+
     def test_make_your_own_and_community(self):
         js = read("web", "paths.js")
         for part in ("Study Paths / Community", "pv-segb", "communityView", "＋ Make your own study path", "editPath", "normRef", "edAddRef",

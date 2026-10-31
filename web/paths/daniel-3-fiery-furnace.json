@@ -47,6 +47,7 @@
  "show": 8,
  "steps": [
   {
+   "intro": "Background first: how the three came to Babylon (Daniel 1–2). The furnace story begins in step 2.",
    "question": "Who were Shadrach, Meshach and Abed-nego, how did they come to Babylon, and what had the king set them over?",
    "refs": [
     "Daniel 1:1-7",
@@ -1033,7 +1034,7 @@
  },
  "built_from": {
   "file": "packaging/paths/daniel-3-fiery-furnace.json",
-  "sha": "c15c909ec346d348",
+  "sha": "e6d491b02e6258e9",
   "checked_in": [
    "KJV",
    "ETH",
@@ -1046,6 +1047,7 @@
    "opening_question": "Nabucodonosor levantó una estatua de oro y mandó que todos se postraran; tres jóvenes no lo hicieron. ¿Quiénes eran, por qué no se inclinaron, quién anduvo con ellos en el fuego, y qué nos pide eso a nosotros?",
    "steps": [
     {
+     "intro": "Primero el trasfondo: cómo llegaron los tres a Babilonia (Daniel 1–2). La historia del horno empieza en el paso 2.",
      "question": "¿Quiénes eran Sadrach, Mesach y Abed-nego, cómo llegaron a Babilonia, y sobre qué los había puesto el rey?",
      "facts": [
       "Sus propios nombres eran Ananías, Misael y Azarías. El príncipe de los eunucos les puso nombres babilonios, y a Daniel le puso el nombre de Beltsasar.",
@@ -1130,6 +1132,7 @@
    "opening_question": "Nebukadnezar ließ ein goldenes Bild aufstellen und befahl allen, niederzufallen; drei junge Männer taten es nicht. Wer waren sie, warum beugten sie sich nicht, wer ging mit ihnen im Feuer, und was verlangt das von uns?",
    "steps": [
     {
+     "intro": "Zuerst die Vorgeschichte: wie die drei nach Babel kamen (Daniel 1–2). Die Geschichte vom Feuerofen beginnt bei Schritt 2.",
      "question": "Wer waren Sadrach, Mesach und Abed-Nego, wie kamen sie nach Babel, und worüber hatte der König sie gesetzt?",
      "facts": [
       "Ihre eigenen Namen waren Hananja, Misael und Asarja. Der oberste Kämmerer gab ihnen babylonische Namen und nannte Daniel Beltsazar.",

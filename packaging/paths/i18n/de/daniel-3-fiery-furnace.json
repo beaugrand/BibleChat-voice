@@ -2,7 +2,7 @@
  "title": "Daniel 3: der feurige Ofen",
  "opening_question": "Nebukadnezar ließ ein goldenes Bild aufstellen und befahl allen, niederzufallen; drei junge Männer taten es nicht. Wer waren sie, warum beugten sie sich nicht, wer ging mit ihnen im Feuer, und was verlangt das von uns?",
  "steps": [
-  {"question": "Wer waren Sadrach, Mesach und Abed-Nego, wie kamen sie nach Babel, und worüber hatte der König sie gesetzt?",
+  {"intro": "Zuerst die Vorgeschichte: wie die drei nach Babel kamen (Daniel 1–2). Die Geschichte vom Feuerofen beginnt bei Schritt 2.", "question": "Wer waren Sadrach, Mesach und Abed-Nego, wie kamen sie nach Babel, und worüber hatte der König sie gesetzt?",
    "facts": [
     "Ihre eigenen Namen waren Hananja, Misael und Asarja. Der oberste Kämmerer gab ihnen babylonische Namen und nannte Daniel Beltsazar.",
     "Sie wurden als junge Männer aus Jerusalem geholt, \"vom königlichen Stamm und Herrenkinder\", um \"chaldäische Schrift und Sprache\" zu lernen.",

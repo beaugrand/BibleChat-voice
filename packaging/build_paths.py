@@ -282,6 +282,12 @@ def check_path(p: dict, B: Bibles, file_id: str | None = None, lib: dict | None 
         bad = quotes_ok(s["question"], skeys, B, outside=sout)
         if bad:
             raise PathError(f"{where}: {ctx}: \"{bad}\" is not in the step's verses")
+        if "intro" in s:   # a short line above the question, e.g. "Background first: … (Daniel 1–2)"
+            if not str(s["intro"]).strip() or len(s["intro"]) > 160:
+                raise PathError(f"{where}: {ctx}: intro must be a short line (1-160 characters)")
+            bad = quotes_ok(s["intro"], skeys, B, outside=sout)
+            if bad:
+                raise PathError(f"{where}: {ctx}: intro: \"{bad}\" is not in the step's verses")
         bad = set(s.get("compare", [])) - set(COMPARE)
         if bad:
             raise PathError(f"{where}: {ctx}: compare only {', '.join(COMPARE)}, not {', '.join(sorted(bad))}")
@@ -551,7 +557,8 @@ def build(B: Bibles) -> dict[str, dict]:
 
 def translations(p: dict, B: Bibles) -> dict:
     """🌍 The path in Spanish and German, from packaging/paths/i18n/<lang>/<id>.json:
-    {"title", "opening_question", "steps": [{"question", "facts": [text, ...]}, ...], "remember": [text, ...]}.
+    {"title", "opening_question", "steps": [{"question", "intro" (if the English step has one), "facts": [text, ...]}, ...],
+    "remember": [text, ...]}.
     It must have every step, fact and point of the English path, in the same order. Words in "straight quotes"
     are Scripture and must stand in that language's Bible (Reina-Valera 1909, Luther 1912) in the chapters the
     verses are in or next to them (Luther, for one, numbers Daniel 4:1-3 as 3:31-33). Word meanings from Strong's
@@ -597,6 +604,8 @@ def translations(p: dict, B: Bibles) -> dict:
             if len(ts.get("facts", [])) != len(facts):
                 raise PathError(f"{where}: step {i} has {len(ts.get('facts', []))} facts, the English has {len(facts)}")
             quotes(ts.get("question"), s["refs"], f"step {i}")
+            if s.get("intro"):   # the line above the question is translated too
+                quotes(ts.get("intro"), s["refs"], f"step {i} intro")
             for j, (fe, ft) in enumerate(zip(facts, ts["facts"]), 1):
                 quotes(ft, (fe.get("refs") or []) + s["refs"], f"step {i} fact {j}")
         for j, (re_, rt) in enumerate(zip(p.get("remember", []), t.get("remember", [])), 1):

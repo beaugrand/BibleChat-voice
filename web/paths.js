@@ -94,7 +94,7 @@ const BCPaths = (() => {
     if(p._lang === L || (!p.i18n && !p._en)) return p;
     const steps = Array.isArray(p.steps) ? p.steps : [], rem = Array.isArray(p.remember) ? p.remember : [];
     if(!p._en) p._en = {title: p.title, opening_question: p.opening_question,
-      steps: steps.map(s => ({question: s.question, facts: (s.facts || []).map(x => x && typeof x === "object" ? x.text : x)})),
+      steps: steps.map(s => ({question: s.question, intro: s.intro, facts: (s.facts || []).map(x => x && typeof x === "object" ? x.text : x)})),
       remember: rem.map(x => x && typeof x === "object" ? x.text : x),
       step_questions: Array.isArray(p.step_questions) ? p.step_questions.slice() : null};
     const t = (p.i18n && p.i18n[L]) || null, en = p._en, pick = (a, b) => (a != null && a !== "" ? a : b);
@@ -103,6 +103,7 @@ const BCPaths = (() => {
     steps.forEach((s, i) => {
       const ts = t && ((t.steps && t.steps[i]) || (t.step_questions && {question: t.step_questions[i]})), es = en.steps[i] || {};
       s.question = pick(ts && ts.question, es.question);
+      if(es.intro) s.intro = pick(ts && ts.intro, es.intro);   // a short line above the question ("Background first: …")
       (s.facts || []).forEach((x, j) => {
         const v = pick(ts && ts.facts && ts.facts[j], (es.facts || [])[j]);
         if(x && typeof x === "object") x.text = v; else s.facts[j] = v;
@@ -223,7 +224,7 @@ const BCPaths = (() => {
       return segs;
     }
     const p = S.path, st = p.steps[S.step];
-    add(`${T("Step")} ${S.step + 1} ${T("of")} ${p.steps.length}. ${p.mine ? T(st.question) : st.question}`, root.querySelector(".pv-q"));
+    add(`${T("Step")} ${S.step + 1} ${T("of")} ${p.steps.length}. ${st.intro && !p.mine ? st.intro + " " : ""}${p.mine ? T(st.question) : st.question}`, root.querySelector(".pv-q"));
     root.querySelectorAll(".pv-outside").forEach(b => { const r = (b.dataset.oref || "").match(/^(.*) (\d+):(\d+)(?:-(\d+))?$/);
       add((r ? `From the ${r[1]}, chapter ${r[2]}, verse${r[4] ? "s " + r[3] + " to " + r[4] : " " + r[3]}` : plain(b.querySelector("h4"))) + ". " + T("Not Scripture."), b.querySelector("h4"));
       b.querySelectorAll(".pv-ocol").forEach(c => add(plain(c.querySelector("b")) + ": " + plain(c.querySelector("p")), c)); });
@@ -563,7 +564,7 @@ const BCPaths = (() => {
       <div class="pv-stepno">Step ${S.step + 1} of ${n}</div>
       <div class="pv-track" role="navigation" aria-label="Steps">${p.steps.map((x, i) => `<button class="pv-dot${i === S.step ? " pv-dot-now" : ""}${done.has(i) ? " pv-dot-ok" : ""}" data-step="${i}" title="${esc("Step " + (i + 1) + ": " + x.question)}">${done.has(i) ? "✓" : i + 1}</button>`).join(`<i class="pv-track-line"></i>`)}</div>
       <div class="pv-bar"><i style="width:${Math.round(100 * done.size / n)}%"></i></div>
-      <h3 class="pv-q pvx">${esc(p.mine ? T(s.question) : s.question)}</h3>
+      ${s.intro && !p.mine ? `<p class="pv-intro pvx">ℹ️ ${esc(s.intro)}</p>` : ""}<h3 class="pv-q pvx">${esc(p.mine ? T(s.question) : s.question)}</h3>
       ${outsideBoxes(s)}
       <div class="pv-verses${s.side_by_side ? " pv-sbs" : ""}" id="pvVerses"><p class="pv-small">Loading the verses…</p></div>
       ${p.mine && s.my_note ? `<div class="pv-cnote"><h4>✍ Note from <span class="pvx">${esc(p.author || T("the maker of this path"))}</span></h4><p class="pv-cnote-why">Written by the person who made this path: not Scripture, and not checked by BibleChat.</p><div class="pvx">${esc(s.my_note)}</div></div>` : ""}
@@ -1233,6 +1234,7 @@ const BCPaths = (() => {
 .pv-stepno{font-weight:650;color:var(--accent);font-size:14px}
 .pv-bar{height:5px;background:var(--line);border-radius:9px;overflow:hidden;margin:4px 0 8px}.pv-bar i{display:block;height:100%;background:var(--accent)}
 .pv-q{font-size:18px;margin:8px 0 10px}
+.pv-intro{font-size:14px;line-height:1.45;margin:10px 0 0;padding:7px 10px;border-left:3px solid var(--accent);background:rgba(127,127,127,.12);border-radius:6px}
 .pv-ref{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:0 0 10px}
 .pv-refh{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;font-weight:650;margin-bottom:4px}
 .pv-text{font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.6}

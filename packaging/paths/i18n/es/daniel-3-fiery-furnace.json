@@ -2,7 +2,7 @@
  "title": "Daniel 3: el horno de fuego",
  "opening_question": "Nabucodonosor levantó una estatua de oro y mandó que todos se postraran; tres jóvenes no lo hicieron. ¿Quiénes eran, por qué no se inclinaron, quién anduvo con ellos en el fuego, y qué nos pide eso a nosotros?",
  "steps": [
-  {"question": "¿Quiénes eran Sadrach, Mesach y Abed-nego, cómo llegaron a Babilonia, y sobre qué los había puesto el rey?",
+  {"intro": "Primero el trasfondo: cómo llegaron los tres a Babilonia (Daniel 1–2). La historia del horno empieza en el paso 2.", "question": "¿Quiénes eran Sadrach, Mesach y Abed-nego, cómo llegaron a Babilonia, y sobre qué los había puesto el rey?",
    "facts": [
     "Sus propios nombres eran Ananías, Misael y Azarías. El príncipe de los eunucos les puso nombres babilonios, y a Daniel le puso el nombre de Beltsasar.",
     "Fueron llevados de Jerusalén siendo jóvenes \"del linaje real de los príncipes\", para que les enseñasen \"las letras y la lengua de los Caldeos\".",
