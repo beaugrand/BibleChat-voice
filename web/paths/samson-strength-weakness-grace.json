@@ -8,6 +8,7 @@
   "y": 20,
   "s": 32
  },
+ "share": "Set apart from the womb, Samson played with his calling until he lost it. A study of strength, weakness and God’s grace.",
  "opening_question": "Samson was set apart to God before he was born, and the Spirit of the LORD came mightily upon him. Yet he played with his calling until he lost it. What happened, why did it happen, how did God answer his last prayer, and why does Hebrews still name him among the people of faith? Each step asks what happened and what it means for me.",
  "required_refs": [
   "Judges 13:1-25",
@@ -961,7 +962,7 @@
  },
  "built_from": {
   "file": "packaging/paths/samson-strength-weakness-grace.json",
-  "sha": "17dd1711ed9418a2",
+  "sha": "e2fc41df9f093e57",
   "checked_in": [
    "KJV",
    "ETH",
@@ -971,6 +972,7 @@
  "i18n": {
   "es": {
    "title": "Sansón: fuerza, debilidad y gracia",
+   "share": "Apartado desde el vientre, Sansón jugó con su llamado hasta perderlo. Un estudio de fuerza, debilidad y la gracia de Dios.",
    "opening_question": "Sansón fue apartado para Dios antes de nacer, y el espíritu de Jehová cayó sobre él. Aun así jugó con su llamado hasta perderlo. ¿Qué pasó, por qué pasó, cómo respondió Dios a su última oración, y por qué Hebreos todavía lo nombra entre los que vivieron por la fe? Cada paso pregunta qué pasó y qué significa para mí.",
    "steps": [
     {
@@ -1079,6 +1081,7 @@
   },
   "de": {
    "title": "Simson: Kraft, Schwachheit und Gnade",
+   "share": "Von Mutterleib an Gott geweiht, spielte Simson mit seiner Berufung, bis er sie verlor. Eine Studie über Kraft, Schwäche und Gnade.",
    "opening_question": "Simson wurde Gott geweiht, bevor er geboren war, und der Geist des HERRN geriet über ihn. Trotzdem spielte er mit seiner Berufung, bis er sie verlor. Was geschah, warum geschah es, wie antwortete Gott auf sein letztes Gebet, und warum nennt der Hebräerbrief ihn trotzdem unter den Menschen des Glaubens? Jeder Schritt fragt, was geschah und was es für mich bedeutet.",
    "steps": [
     {

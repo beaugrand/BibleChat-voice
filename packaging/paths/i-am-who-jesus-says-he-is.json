@@ -3,8 +3,9 @@
   "title": "I AM: who Jesus says He is",
   "category": "Name & Word",
   "anim": {"kind": "light", "x": 50, "y": 30, "s": 34},
-  "opening_question": "At the burning bush God gave Moses His name: I AM THAT I AM. In the Gospel of John, Jesus says I am again and again: the bread of life, the light of the world, the door, the good shepherd, the resurrection and the life, the way, the truth and the life, the true vine. What does He claim each time, and why did some take up stones? Each step asks what He said and what it means for me.",
-  "required_refs": ["Exodus 3:13-15", "John 6:32-35", "John 6:47-51", "John 8:12", "John 9:1-7", "John 8:24", "John 8:56-59", "John 10:7-10", "John 10:11-15", "Psalms 23:1", "John 11:21-27", "John 14:5-6", "John 15:1-8", "John 18:3-8", "Revelation 22:12-13"],
+  "share": "Again and again Jesus said ‘I am’. Discover who He says He is, from the burning bush to Alpha and Omega.",
+  "opening_question": "At the burning bush God gave Moses His name: I AM THAT I AM. In the Gospel of John, Jesus says I am again and again: the bread of life, the light of the world, the door, the good shepherd, the resurrection and the life, the way, the truth and the life, the true vine. What does He claim each time, why did some take up stones, and why did the high priest tear his clothes? Each step asks what He said and what it means for me.",
+  "required_refs": ["Exodus 3:13-15", "John 6:32-35", "John 6:47-51", "John 8:12", "John 9:1-7", "John 8:24", "John 8:56-59", "Mark 14:61-64", "John 10:7-10", "John 10:11-15", "Psalms 23:1", "John 11:21-27", "John 14:5-6", "John 15:1-8", "John 18:3-8", "Revelation 22:12-13"],
   "words": ["H1961", "H3068", "G1473", "G1510", "G2222"],
   "show": 8,
   "steps": [
@@ -39,14 +40,16 @@
        {"text": "The disciples asked \"who did sin\". Jesus answered: \"that the works of God should be made manifest in him\".", "refs": ["John 9:2-3"]},
        {"text": "Right after \"I am the light of the world\", He gave a blind man his sight: \"He went his way therefore, and washed, and came seeing\".", "refs": ["John 9:5-7"]}
      ]},
-    {"question": "What did Jesus say about Abraham, and why did the people take up stones to cast at Him?",
+    {"question": "What did Jesus say about Abraham, what did He answer the high priest, and how did each of them respond?",
      "apply": "Is Jesus to me only a good teacher, or the One who always is?",
-     "refs": ["John 8:24", "John 8:56-59"],
+     "refs": ["John 8:24", "John 8:56-59", "Mark 14:61-64"],
      "look_closer": {"strongs": ["G1096", "G1510"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
      "facts": [
        {"text": "He did not say I was. He said \"Before Abraham was, I am\". \"was\" is ginomai, Strong's: \"to become\"; \"am\" is eimi, \"I exist\". Abraham came to be; He is.", "refs": ["John 8:58"], "strongs": ["G1096", "G1510"]},
        {"text": "\"Then took they up stones to cast at him\". The law said: \"he that blasphemeth the name of the LORD, he shall surely be put to death\". They understood what He claimed.", "refs": ["John 8:59", "Leviticus 24:16"]},
-       {"text": "In \"I am he\" the KJV prints \"he\" in italics: the translators added it. The Greek has only ego eimi, I am.", "refs": ["John 8:24"], "strongs": ["G1473", "G1510"]}
+       {"text": "In \"I am he\" the KJV prints \"he\" in italics: the translators added it. The Greek has only ego eimi, I am.", "refs": ["John 8:24"], "strongs": ["G1473", "G1510"]},
+       {"text": "At His trial the high priest asked: \"Art thou the Christ, the Son of the Blessed?\" Jesus answered openly: \"I am\", and added \"ye shall see the Son of man sitting on the right hand of power, and coming in the clouds of heaven\".", "refs": ["Mark 14:61-62"]},
+       {"text": "\"Then the high priest rent his clothes\": \"Ye have heard the blasphemy\". \"they all condemned him to be guilty of death\". He was condemned for what He said of Himself.", "refs": ["Mark 14:63-64"]}
      ]},
     {"question": "What did Jesus call Himself in John 10:7-9, and what does the thief come to do?",
      "apply": "Am I trying to come to God some other way than through Him?",
@@ -126,6 +129,9 @@
     {"q": "In John 9:7, in which pool did the blind man wash?", "type": "multiple_choice",
      "options": ["Siloam", "Bethesda", "Jordan", "Gihon"], "answer": 0, "answer_refs": ["John 9:7"], "check": {"bible": "KJV", "word": "Siloam"}},
     {"q": "Which verse says \"Before Abraham was, I am\"?", "type": "find_the_verse", "answer_refs": ["John 8:58"]},
+    {"q": "Which verse says \"I am: and ye shall see the Son of man sitting on the right hand of power\"?", "type": "find_the_verse", "answer_refs": ["Mark 14:62"]},
+    {"q": "In Mark 14:63, what did the high priest tear?", "type": "multiple_choice",
+     "options": ["His clothes", "The veil", "The scroll", "His beard"], "answer": 0, "answer_refs": ["Mark 14:63"], "check": {"bible": "KJV", "word": "clothes"}},
     {"q": "In John 8:59, what did they take up to cast at Him?", "type": "multiple_choice",
      "options": ["Stones", "Swords", "Staves", "Cords"], "answer": 0, "answer_refs": ["John 8:59"], "check": {"bible": "KJV", "word": "stones"}},
     {"q": "Fill in the word: \"I am the ___: by me if any man enter in, he shall be saved\"", "type": "fill_word", "ref": "John 10:9", "bible": "KJV", "word": "door"},

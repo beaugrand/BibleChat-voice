@@ -313,6 +313,25 @@ class PathPagesTest(unittest.TestCase):
             self.assertTrue(all(s.get("apply") for s in p["i18n"][lang]["steps"]))
         self.assertIn('"For me:":', read("web", "i18n.js"))
 
+    def test_share_text_and_picture(self):
+        """📣 A shared link's preview: a short whole sentence ("share", no "…") and a 1200×630 picture (og-<id>.jpg)."""
+        sys.path.insert(0, os.path.join(ROOT, "web"))
+        import build_share
+        index = {x["id"]: x for x in json.loads(read("web", "paths", "index.json"))}
+        for pid in ("i-am-who-jesus-says-he-is", "words-in-red-jesus-in-his-own-words", "samson-strength-weakness-grace"):
+            x = index[pid]
+            self.assertTrue(bp.share_ok(x["share"]), pid)
+            for lang in ("es", "de"):
+                self.assertTrue(bp.share_ok(x["i18n"][lang]["share"]), (pid, lang))
+            self.assertEqual(build_share.share_image(x), f"paths/img/og-{pid}.jpg")
+            self.assertEqual(build_share.jpeg_size(os.path.join(ROOT, "web", "paths", "img", f"og-{pid}.jpg")), (1200, 630))
+        self.assertEqual(build_share.share_image(index["the-name"]), "paths/img/the-name.jpg")   # no wide picture yet: its card picture
+        self.assertFalse(bp.share_ok("Cut off in the middle of a"))
+        self.assertFalse(bp.share_ok("x" * 151 + "."))
+        src = read("web", "build_share.py")
+        self.assertIn('p.get("share") or p.get("opening_question", "")', src)
+        self.assertIn('t.get("share") or t.get("opening_question", "")', src)
+
     def test_words_in_red(self):
         """🔴 "The words in red": the words of Jesus in red, in the King James, the Reina-Valera 1909 and Luther 1912.
         The path keeps only where the red starts and ends and a fingerprint of the verse; the page and the build
@@ -343,6 +362,16 @@ class PathPagesTest(unittest.TestCase):
         mk = "And when he had called the people unto him with his disciples also, he said unto them, Whosoever will come after me, let him deny himself, and take up his cross, and follow me."
         m = [x for x in p["red"]["Mark 8:34"] if x["n"] == len(mk) and x["h"] == bp.fnv(mk)][0]
         self.assertTrue(mk[m["s"][0][0]:].startswith("Whosoever will come after me"))
+        # John 3:16-17: Bibles differ on whether Jesus is still speaking, so the path keeps them black (verses 3-8 are red)
+        self.assertNotIn("John 3:16", p["red"]); self.assertNotIn("John 3:17", p["red"]); self.assertIn("John 3:8", p["red"])
+        # the Great Commission (step 11) is red, without the closing "Amen"
+        mt = "Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world. Amen."
+        m = [x for x in p["red"]["Matthew 28:20"] if x["n"] == len(mt) and x["h"] == bp.fnv(mt)][0]
+        self.assertTrue(mt[m["s"][0][0]:m["s"][0][1]].endswith("end of the world."))
+        self.assertEqual(len(p["steps"]), 11)
+        self.assertIn("Matthew 28:16-20", p["steps"][10]["refs"])
+        iam = json.loads(read("web", "paths", "i-am-who-jesus-says-he-is.json"))
+        self.assertIn("Mark 14:61-64", iam["steps"][3]["refs"])   # "I am" before the high priest, next to John 8:58
         self.assertEqual(json.loads(read("web", "paths", "i-am-who-jesus-says-he-is.json"))["category"], "Name & Word")
         ids = {x["id"] for x in json.loads(read("web", "prayers.json"))["prayers"]}
         for pid in ("i-am-who-jesus-says-he-is", "words-in-red-jesus-in-his-own-words"):

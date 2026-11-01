@@ -163,8 +163,11 @@ class SharePagesTest(unittest.TestCase):
         self.assertEqual(len(english), 2 + len(index) + len(series) + len(groups) + len(prayers))
         for p in index:
             h = self.page("p", p["id"])
-            self.assertEqual(self.meta(h, "og:image"), build_share.SITE + "paths/" + p["image"] + "?v=2")   # its own picture
-            self.assertEqual((self.meta(h, "og:image:width"), self.meta(h, "og:image:height")), ("624", "416"))   # size given: no broken picture on Facebook
+            img = build_share.share_image(p)   # its own picture: the wide one (og-<id>.jpg, 1200×630) when there is one
+            self.assertIn(img, ("paths/" + p["image"], "paths/img/og-%s.jpg" % p["id"]))
+            self.assertEqual(self.meta(h, "og:image"), build_share.SITE + img + "?v=2")
+            size = ("1200", "630") if "/og-" in img else ("624", "416")
+            self.assertEqual((self.meta(h, "og:image:width"), self.meta(h, "og:image:height")), size)   # size given: no broken picture on Facebook
             self.assertEqual(self.meta(h, "og:image:type"), "image/jpeg")
             self.assertEqual(self.meta(h, "og:url"), build_share.SITE + "p/" + p["id"] + "/")
             self.assertIn('location.replace("../../#/path/%s/1"' % p["id"], h)

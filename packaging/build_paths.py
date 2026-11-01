@@ -217,6 +217,13 @@ def outside_texts(refs: list, lib: dict, where: str) -> list[str]:
     return out
 
 
+def share_ok(text) -> bool:
+    """📣 "share": the short text a shared link shows in WhatsApp, Facebook or Messages (web/build_share.py). Without it the
+    preview shows the opening question cut off with "…"; with it, a whole sentence that fits."""
+    t = str(text or "").strip()
+    return 20 <= len(t) <= 150 and re.search(r"[.!?][\"'’»«]?$", t) is not None
+
+
 def check_path(p: dict, B: Bibles, file_id: str | None = None, lib: dict | None = None) -> dict:
     """Raise PathError for the first broken rule; return facts the build needs (verses of the path, checks done)."""
     from bibleask.strongs import STRONGS
@@ -253,6 +260,8 @@ def check_path(p: dict, B: Bibles, file_id: str | None = None, lib: dict | None 
         raise PathError(f"{where}: show 5 to 10 questions, not {show}")
     if len(p["quiz"]) <= show:
         raise PathError(f"{where}: the question bank needs more questions ({len(p['quiz'])}) than it shows ({show})")
+    if "share" in p and not share_ok(p["share"]):
+        raise PathError(f"{where}: share (the text of a shared link's preview) must be 20-150 characters and end a sentence")
 
     def refs_ok(refs, ctx):
         if not refs:
@@ -785,6 +794,10 @@ def translations(p: dict, B: Bibles) -> dict:
                     raise PathError(f"{where}: {ctx}: \"{q}\" is not in the {key} near {', '.join(refs)}")
 
         every = [r for s in p["steps"] for r in s["refs"]]
+        if p.get("share"):   # 📣 the shared link's preview in this language
+            if not share_ok(t.get("share")):
+                raise PathError(f"{where}: share must be 20-150 characters and end a sentence, like the English")
+            quotes(t["share"], every, "share")
         quotes(t["title"], every, "title")
         quotes(t["opening_question"], every, "opening question")
         for i, (s, ts) in enumerate(zip(p["steps"], t["steps"]), 1):
@@ -828,13 +841,13 @@ def minutes(p: dict) -> int:
 def index(paths: dict[str, dict]) -> list[dict]:
     """What the cards need without loading every path: picture, category, size, time and the step questions."""
     return [{"id": p["id"], "title": p["title"], "category": p["category"], "image": p["image"],
-             "opening_question": p["opening_question"], "steps": len(p["steps"]),
+             "opening_question": p["opening_question"], **({"share": p["share"]} if p.get("share") else {}), "steps": len(p["steps"]),
              "step_questions": [s["question"] for s in p["steps"]],
              "books": sorted({parse_ref(r)[0] for s in p["steps"] for r in s["refs"]}   # a search for "Genesis" or "Daniel" finds the path
                             | {b["ref"].rpartition(" ")[0] for s in p["steps"] for b in s.get("outside", [])}),   # ...and "Quran"
              "show": p.get("show", 8), "verses": p["verse_count"], "minutes": minutes(p),
              **{k: p[k] for k in ("group", "study_date", "read_along", "anim", "series") if p.get(k)},
-             **({"i18n": {l: {"title": t["title"], "opening_question": t["opening_question"],
+             **({"i18n": {l: {"title": t["title"], "opening_question": t["opening_question"], **({"share": t["share"]} if t.get("share") else {}),
                               "step_questions": [s["question"] for s in t["steps"]]} for l, t in p["i18n"].items()}}
                 if p.get("i18n") else {})}
             for p in paths.values()]

@@ -8,7 +8,8 @@
   "y": 30,
   "s": 34
  },
- "opening_question": "At the burning bush God gave Moses His name: I AM THAT I AM. In the Gospel of John, Jesus says I am again and again: the bread of life, the light of the world, the door, the good shepherd, the resurrection and the life, the way, the truth and the life, the true vine. What does He claim each time, and why did some take up stones? Each step asks what He said and what it means for me.",
+ "share": "Again and again Jesus said ‘I am’. Discover who He says He is, from the burning bush to Alpha and Omega.",
+ "opening_question": "At the burning bush God gave Moses His name: I AM THAT I AM. In the Gospel of John, Jesus says I am again and again: the bread of life, the light of the world, the door, the good shepherd, the resurrection and the life, the way, the truth and the life, the true vine. What does He claim each time, why did some take up stones, and why did the high priest tear his clothes? Each step asks what He said and what it means for me.",
  "required_refs": [
   "Exodus 3:13-15",
   "John 6:32-35",
@@ -17,6 +18,7 @@
   "John 9:1-7",
   "John 8:24",
   "John 8:56-59",
+  "Mark 14:61-64",
   "John 10:7-10",
   "John 10:11-15",
   "Psalms 23:1",
@@ -200,11 +202,12 @@
    ]
   },
   {
-   "question": "What did Jesus say about Abraham, and why did the people take up stones to cast at Him?",
+   "question": "What did Jesus say about Abraham, what did He answer the high priest, and how did each of them respond?",
    "apply": "Is Jesus to me only a good teacher, or the One who always is?",
    "refs": [
     "John 8:24",
-    "John 8:56-59"
+    "John 8:56-59",
+    "Mark 14:61-64"
    ],
    "look_closer": {
     "strongs": [
@@ -248,6 +251,18 @@
      "strongs": [
       "G1473",
       "G1510"
+     ]
+    },
+    {
+     "text": "At His trial the high priest asked: \"Art thou the Christ, the Son of the Blessed?\" Jesus answered openly: \"I am\", and added \"ye shall see the Son of man sitting on the right hand of power, and coming in the clouds of heaven\".",
+     "refs": [
+      "Mark 14:61-62"
+     ]
+    },
+    {
+     "text": "\"Then the high priest rent his clothes\": \"Ye have heard the blasphemy\". \"they all condemned him to be guilty of death\". He was condemned for what He said of Himself.",
+     "refs": [
+      "Mark 14:63-64"
      ]
     }
    ]
@@ -638,13 +653,13 @@
     "xref": 18,
     "votes": 372,
     "word": "G1473",
-    "word_count": 22,
+    "word_count": 23,
     "differ": 0.51,
     "quoted": null
    },
    "why": [
     "18 cross-references point here",
-    "The Greek word egṓ (G1473) is in 22 verses of this path",
+    "The Greek word egṓ (G1473) is in 23 verses of this path",
     "Translations differ here"
    ],
    "score": 0.9221
@@ -689,13 +704,13 @@
     "xref": 49,
     "votes": 1055,
     "word": "G1473",
-    "word_count": 22,
+    "word_count": 23,
     "differ": 0.449,
     "quoted": null
    },
    "why": [
     "49 cross-references point here",
-    "The Greek word egṓ (G1473) is in 22 verses of this path"
+    "The Greek word egṓ (G1473) is in 23 verses of this path"
    ],
    "score": 0.9123
   },
@@ -739,16 +754,67 @@
     "xref": 20,
     "votes": 198,
     "word": "G1473",
-    "word_count": 22,
+    "word_count": 23,
     "differ": 0.591,
     "quoted": null
    },
    "why": [
     "20 cross-references point here",
-    "The Greek word egṓ (G1473) is in 22 verses of this path",
+    "The Greek word egṓ (G1473) is in 23 verses of this path",
     "Translations differ here"
    ],
    "score": 0.8951
+  },
+  {
+   "q": "Which verse says \"I am: and ye shall see the Son of man sitting on the right hand of power\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Mark 14:62"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 175,
+    "word": "G1473",
+    "word_count": 23,
+    "differ": 0.265,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here",
+    "The Greek word egṓ (G1473) is in 23 verses of this path"
+   ],
+   "score": 0.8044
+  },
+  {
+   "q": "In Mark 14:63, what did the high priest tear?",
+   "type": "multiple_choice",
+   "options": [
+    "His clothes",
+    "The veil",
+    "The scroll",
+    "His beard"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Mark 14:63"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "clothes"
+   },
+   "signals": {
+    "xref": 5,
+    "votes": 19,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.504,
+    "quoted": null
+   },
+   "why": [
+    "5 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.3509
   },
   {
    "q": "In John 8:59, what did they take up to cast at Him?",
@@ -793,13 +859,13 @@
     "xref": 20,
     "votes": 519,
     "word": "G1473",
-    "word_count": 22,
+    "word_count": 23,
     "differ": 0.331,
     "quoted": null
    },
    "why": [
     "20 cross-references point here",
-    "The Greek word egṓ (G1473) is in 22 verses of this path"
+    "The Greek word egṓ (G1473) is in 23 verses of this path"
    ],
    "score": 0.8828
   },
@@ -813,13 +879,13 @@
     "xref": 19,
     "votes": 213,
     "word": "G1473",
-    "word_count": 22,
+    "word_count": 23,
     "differ": 0.428,
     "quoted": null
    },
    "why": [
     "19 cross-references point here",
-    "The Greek word egṓ (G1473) is in 22 verses of this path"
+    "The Greek word egṓ (G1473) is in 23 verses of this path"
    ],
    "score": 0.8599
   },
@@ -836,13 +902,13 @@
     "xref": 30,
     "votes": 688,
     "word": "G1473",
-    "word_count": 22,
+    "word_count": 23,
     "differ": 0.167,
     "quoted": null
    },
    "why": [
     "30 cross-references point here",
-    "The Greek word egṓ (G1473) is in 22 verses of this path"
+    "The Greek word egṓ (G1473) is in 23 verses of this path"
    ],
    "score": 0.8417
   },
@@ -888,13 +954,13 @@
     "xref": 56,
     "votes": 1254,
     "word": "G1473",
-    "word_count": 22,
+    "word_count": 23,
     "differ": 0.417,
     "quoted": null
    },
    "why": [
     "56 cross-references point here",
-    "The Greek word egṓ (G1473) is in 22 verses of this path"
+    "The Greek word egṓ (G1473) is in 23 verses of this path"
    ],
    "score": 0.9042
   },
@@ -931,13 +997,13 @@
     "xref": 72,
     "votes": 1099,
     "word": "G1473",
-    "word_count": 22,
+    "word_count": 23,
     "differ": 0.4,
     "quoted": null
    },
    "why": [
     "72 cross-references point here",
-    "The Greek word egṓ (G1473) is in 22 verses of this path"
+    "The Greek word egṓ (G1473) is in 23 verses of this path"
    ],
    "score": 0.9
   },
@@ -954,13 +1020,13 @@
     "xref": 53,
     "votes": 1064,
     "word": "G1473",
-    "word_count": 22,
+    "word_count": 23,
     "differ": 0.374,
     "quoted": null
    },
    "why": [
     "53 cross-references point here",
-    "The Greek word egṓ (G1473) is in 22 verses of this path"
+    "The Greek word egṓ (G1473) is in 23 verses of this path"
    ],
    "score": 0.8935
   },
@@ -985,13 +1051,13 @@
     "xref": 15,
     "votes": 67,
     "word": "G1473",
-    "word_count": 22,
+    "word_count": 23,
     "differ": 0.428,
     "quoted": null
    },
    "why": [
     "15 cross-references point here",
-    "The Greek word egṓ (G1473) is in 22 verses of this path"
+    "The Greek word egṓ (G1473) is in 23 verses of this path"
    ],
    "score": 0.7738
   },
@@ -1005,13 +1071,13 @@
     "xref": 18,
     "votes": 468,
     "word": "G1473",
-    "word_count": 22,
+    "word_count": 23,
     "differ": 0.0,
     "quoted": null
    },
    "why": [
     "18 cross-references point here",
-    "The Greek word egṓ (G1473) is in 22 verses of this path"
+    "The Greek word egṓ (G1473) is in 23 verses of this path"
    ],
    "score": 0.8
   }
@@ -1025,7 +1091,7 @@
   "Scofield (1917)",
   "Matthew Henry"
  ],
- "verse_count": 60,
+ "verse_count": 64,
  "image": "img/i-am-who-jesus-says-he-is.jpg",
  "labels": {
   "scofield": "Commentary (Scofield, 1917)",
@@ -1033,7 +1099,7 @@
  },
  "built_from": {
   "file": "packaging/paths/i-am-who-jesus-says-he-is.json",
-  "sha": "352b3ed6276cb813",
+  "sha": "1b0f7e0650767df7",
   "checked_in": [
    "KJV",
    "ETH",
@@ -1043,7 +1109,8 @@
  "i18n": {
   "es": {
    "title": "YO SOY: quién dice Jesús que es",
-   "opening_question": "En la zarza ardiente Dios le dio a Moisés su nombre: YO SOY EL QUE SOY. En el Evangelio de Juan, Jesús dice yo soy una y otra vez: el pan de vida, la luz del mundo, la puerta, el buen pastor, la resurrección y la vida, el camino, la verdad y la vida, la vid verdadera. ¿Qué afirma de sí mismo cada vez, y por qué algunos tomaron piedras? Cada paso pregunta qué dijo y qué significa para mí.",
+   "share": "Una y otra vez Jesús dijo «Yo soy». Descubre quién dice Él que es, desde la zarza ardiente hasta el Alfa y la Omega.",
+   "opening_question": "En la zarza ardiente Dios le dio a Moisés su nombre: YO SOY EL QUE SOY. En el Evangelio de Juan, Jesús dice yo soy una y otra vez: el pan de vida, la luz del mundo, la puerta, el buen pastor, la resurrección y la vida, el camino, la verdad y la vida, la vid verdadera. ¿Qué afirma de sí mismo cada vez, por qué algunos tomaron piedras, y por qué el sumo sacerdote rasgó sus vestidos? Cada paso pregunta qué dijo y qué significa para mí.",
    "steps": [
     {
      "intro": "Primero el trasfondo: antes de que Jesús dijera yo soy en Juan, Dios le dio a Moisés su nombre en la zarza ardiente (Éxodo 3).",
@@ -1077,12 +1144,14 @@
      ]
     },
     {
-     "question": "¿Qué dijo Jesús de Abraham, y por qué tomaron piedras para tirarle?",
+     "question": "¿Qué dijo Jesús de Abraham, qué le respondió al sumo sacerdote, y cómo reaccionaron unos y otros?",
      "apply": "¿Es Jesús para mí solo un buen maestro, o Aquel que siempre es?",
      "facts": [
       "No dijo yo era. Dijo \"Antes que Abraham fuese, yo soy\". \"fuese\" traduce ginomai, Strong: «llegar a ser»; \"soy\" traduce eimi, «yo existo». Abraham llegó a ser; Él es.",
       "\"Tomaron entonces piedras para tirarle\". La ley decía: \"el que blasfemare el nombre de Jehová, ha de ser muerto\". Entendieron lo que Él afirmaba.",
-      "En Juan 8:24 la Reina-Valera dice \"que yo soy\", sin añadir nada, como el griego, que solo tiene ego eimi. La King James añade la palabra he (él) en cursiva."
+      "En Juan 8:24 la Reina-Valera dice \"que yo soy\", sin añadir nada, como el griego, que solo tiene ego eimi. La King James añade la palabra he (él) en cursiva.",
+      "En su juicio el sumo sacerdote le preguntó: \"¿Eres tú el Cristo, el Hijo del Bendito?\" Jesús respondió abiertamente: \"Yo soy\", y añadió: \"veréis al Hijo del hombre sentado á la diestra de la potencia de Dios, y viniendo en las nubes del cielo\".",
+      "\"el sumo sacerdote, rasgando sus vestidos\", dijo: \"Oído habéis la blasfemia\". \"ellos todos le condenaron ser culpado de muerte\". Fue condenado por lo que dijo de sí mismo."
      ]
     },
     {
@@ -1157,7 +1226,8 @@
   },
   "de": {
    "title": "ICH BIN: wer Jesus nach seinen eigenen Worten ist",
-   "opening_question": "Im brennenden Busch gab Gott dem Mose seinen Namen; in der Lutherbibel heißt er: ICH WERDE SEIN, DER ICH SEIN WERDE. Im Johannesevangelium sagt Jesus immer wieder: Ich bin. Das Brot des Lebens, das Licht der Welt, die Tür, der gute Hirte, die Auferstehung und das Leben, der Weg und die Wahrheit und das Leben, der rechte Weinstock. Was sagt er jedes Mal von sich, und warum hoben einige Steine auf? Jeder Schritt fragt, was er gesagt hat und was es für mich bedeutet.",
+   "share": "Immer wieder sagte Jesus »Ich bin«. Entdecke, wer er nach seinen eigenen Worten ist: vom brennenden Busch bis zum A und O.",
+   "opening_question": "Im brennenden Busch gab Gott dem Mose seinen Namen; in der Lutherbibel heißt er: ICH WERDE SEIN, DER ICH SEIN WERDE. Im Johannesevangelium sagt Jesus immer wieder: Ich bin. Das Brot des Lebens, das Licht der Welt, die Tür, der gute Hirte, die Auferstehung und das Leben, der Weg und die Wahrheit und das Leben, der rechte Weinstock. Was sagt er jedes Mal von sich, warum hoben einige Steine auf, und warum zerriss der Hohepriester seinen Rock? Jeder Schritt fragt, was er gesagt hat und was es für mich bedeutet.",
    "steps": [
     {
      "intro": "Zuerst der Hintergrund: Bevor Jesus bei Johannes ich bin sagt, gab Gott dem Mose im brennenden Busch seinen Namen (2. Mose 3).",
@@ -1191,12 +1261,14 @@
      ]
     },
     {
-     "question": "Was sagte Jesus über Abraham, und warum hoben sie Steine auf, um auf ihn zu werfen?",
+     "question": "Was sagte Jesus über Abraham, was antwortete er dem Hohenpriester, und wie reagierten sie jeweils darauf?",
      "apply": "Ist Jesus für mich nur ein guter Lehrer oder der, der immer ist?",
      "facts": [
       "Er sagte nicht ich war. Er sagte \"Ehe denn Abraham ward, bin ich\". \"ward\" ist ginomai, Strong: »werden, entstehen«; \"bin\" ist eimi, »ich existiere«. Abraham wurde; er ist.",
       "\"Da hoben sie Steine auf, daß sie auf ihn würfen\". Das Gesetz sagte: \"Welcher des HERRN Namen lästert, der soll des Todes sterben\". Sie verstanden, was er von sich sagte.",
-      "In Johannes 8,24 sagt Luther \"daß ich es sei\", die King James schreibt I am he, mit he in Kursivschrift. Das es und das he haben die Übersetzer ergänzt: Im Griechischen steht nur ego eimi, ich bin."
+      "In Johannes 8,24 sagt Luther \"daß ich es sei\", die King James schreibt I am he, mit he in Kursivschrift. Das es und das he haben die Übersetzer ergänzt: Im Griechischen steht nur ego eimi, ich bin.",
+      "Vor Gericht fragte ihn der Hohepriester: \"Bist du Christus, der Sohn des Hochgelobten?\" Jesus antwortete offen: \"Ich bin's\", und fügte hinzu: \"ihr werdet sehen des Menschen Sohn sitzen zur rechten Hand der Kraft und kommen mit des Himmels Wolken\".",
+      "\"Da zerriß der Hohepriester seinen Rock\": \"Ihr habt gehört die Gotteslästerung\". \"Sie aber verdammten ihn alle, daß er des Todes schuldig wäre\". Er wurde verurteilt für das, was er von sich selbst sagte."
      ]
     },
     {

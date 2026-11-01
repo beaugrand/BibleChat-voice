@@ -79,6 +79,13 @@ small{{display:block;color:#9aa3ad;margin-top:12px}}
 """
 
 
+def share_image(p: dict, web: str = WEB) -> str:
+    """The picture of a shared link: paths/img/og-<id>.jpg (1200×630, the size Facebook, WhatsApp and Messages use for a
+    large preview) when the path has one, else its card picture (624×416, shown smaller)."""
+    og = f"paths/img/og-{p['id']}.jpg"
+    return og if os.path.exists(os.path.join(web, *og.split("/"))) else "paths/" + p["image"]
+
+
 def short(text: str, n: int = 220) -> str:
     text = " ".join(str(text or "").split())
     return text if len(text) <= n else text[: n - 1].rsplit(" ", 1)[0] + "…"
@@ -124,13 +131,13 @@ def write_share_pages(out: str, web: str = WEB) -> list[str]:
     with open(os.path.join(web, "prayers.json"), encoding="utf-8") as f:
         prayers = json.load(f)
     written: list[str] = []
-    images = {p["id"]: "paths/" + p["image"] for p in paths if p.get("image")}
+    images = {p["id"]: share_image(p, web) for p in paths if p.get("image")}
     written.append(page(out, "p/", "BibleChat Study Paths: free guided Bible studies",
                         "The verses side by side, the Hebrew and Greek words, and questions. Free, no sign-up, on any phone or computer.",
                         OG_PATHS, "../#/paths", "Study Paths", "📜 Open the Study Paths"))
     series = {}
     for p in paths:
-        written.append(page(out, f"p/{p['id']}/", p["title"], p.get("opening_question", ""), images.get(p["id"], OG_PATHS),
+        written.append(page(out, f"p/{p['id']}/", p["title"], p.get("share") or p.get("opening_question", ""), images.get(p["id"], OG_PATHS),
                             f"../../#/path/{p['id']}/1", "A guided Bible study", "📜 Start this study"))
         se = p.get("series")
         if isinstance(se, dict) and se.get("id") and (se["id"] not in series or se.get("session", 99) < series[se["id"]][0].get("session", 99)):
@@ -206,7 +213,7 @@ def language_pages(out: str, web: str, paths: list, prayers: dict, images: dict)
             t = (p.get("i18n") or {}).get(lang)
             if not t:
                 continue
-            written.append(page(out, f"p/{p['id']}/{lang}/", t["title"], t.get("opening_question", ""), images.get(p["id"], OG_PATHS),
+            written.append(page(out, f"p/{p['id']}/{lang}/", t["title"], t.get("share") or t.get("opening_question", ""), images.get(p["id"], OG_PATHS),
                                 f"../../../?lang={lang}#/path/{p['id']}/1", L["study"], L["start"], lang, L["small"].format(kind=L["study"])))
     return written
 

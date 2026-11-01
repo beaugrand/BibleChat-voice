@@ -1,6 +1,7 @@
 {
   "title": "Las palabras en rojo: Jesús en sus propias palabras",
-  "opening_question": "En muchas Biblias las palabras que Jesús dijo están impresas en rojo. Esta ruta lo lee en sus propias palabras: desde las primeras que la Biblia registra de Él, a los doce años, pasando por su enseñanza, su oración en el huerto y sus palabras en la cruz, hasta sus últimas palabras en la Biblia: \"Ciertamente, vengo en breve\". Sus palabras aparecen en rojo. Cada paso pregunta qué dijo y qué significa para mí.",
+  "share": "Jesús en sus propias palabras, desde sus primeras palabras a los doce años hasta «Ciertamente, vengo en breve».",
+  "opening_question": "En muchas Biblias las palabras que Jesús dijo están impresas en rojo. Esta ruta lo lee en sus propias palabras: desde las primeras que la Biblia registra de Él, a los doce años, pasando por su enseñanza, su oración en el huerto, sus palabras en la cruz y su mandato de ir y hacer discípulos, hasta sus últimas palabras en la Biblia: \"Ciertamente, vengo en breve\". Sus palabras aparecen en rojo. Cada paso pregunta qué dijo y qué significa para mí.",
   "steps": [
     {"question": "¿Dónde encontraron José y María a Jesús, y qué le respondió Él a su madre?",
      "apply": "¿Estar en los negocios de mi Padre es lo primero en mi vida, o algo que acomodo cuando puedo?",
@@ -24,6 +25,7 @@
        "\"nacer otra vez\": \"otra vez\" traduce anothen, Strong: «de arriba», y también «de nuevo».",
        "Nicodemo preguntó \"¿Cómo puede el hombre nacer siendo viejo?\" Jesús respondió: \"de agua y del Espíritu\".",
        "\"Porque de tal manera amó Dios al mundo, que ha dado á su Hijo unigénito\". \"unigénito\" traduce monogenes, Strong: «único nacido».",
+       "Las Biblias difieren en dónde terminan las palabras de Jesús. Algunas imprimen Juan 3:16-21 en rojo; otras leen estos versículos como palabras del propio Juan sobre Él. Esta ruta imprime en rojo solo los versículos 3-8.",
        "No fue enviado \"para que condene al mundo, mas para que el mundo sea salvo por él\"."
      ]},
     {"question": "¿Qué habían oído que fue dicho, y qué dijo Jesús en cambio?",
@@ -76,13 +78,20 @@
        "\"Sed tengo\", y luego \"Consumado es\". \"Consumado\" traduce teleo, Strong: «terminar, es decir, completar».",
        "\"Padre, en tus manos encomiendo mi espíritu\". El Salmo 31 dice: \"En tu mano encomiendo mi espíritu\"."
      ]},
-    {"intro": "Para cerrar: sus últimas palabras en la Biblia son una promesa.",
-     "question": "¿Qué les dijo Jesús resucitado a sus discípulos y a Tomás, y cuál es su última promesa en la Biblia?",
-     "apply": "¿Soy uno de los que no vieron y creyeron? ¿Estoy listo para su venida?",
+    {"question": "¿Qué les dijo Jesús resucitado a sus discípulos, y qué le dijo a Tomás?",
+     "apply": "¿Soy uno de los que no vieron y creyeron?",
      "facts": [
        "Tres veces dijo: \"Paz á vosotros\".",
        "\"como me envió el Padre, así también yo os envío\".",
-       "Tomás dijo \"¡Señor mío, y Dios mío!\" Jesús respondió: \"bienaventurados los que no vieron y creyeron\".",
+       "Tomás dijo \"¡Señor mío, y Dios mío!\" Jesús respondió: \"bienaventurados los que no vieron y creyeron\"."
+     ]},
+    {"intro": "Para cerrar: sus últimas palabras en Mateo son un mandato y una promesa. Sus últimas palabras en la Biblia también son una promesa.",
+     "question": "¿A qué envió Jesús resucitado a sus discípulos, qué les prometió, y cuáles son sus últimas palabras en la Biblia?",
+     "apply": "¿A quién podría ayudar a conocerle y seguirle? ¿Estoy listo para su venida?",
+     "facts": [
+       "\"Toda potestad me es dada en el cielo y en la tierra.\" \"potestad\" traduce exousia, Strong: «influencia delegada»; la King James también la traduce authority, «autoridad».",
+       "\"Por tanto, id, y doctrinad á todos los Gentiles\": \"doctrinad\" traduce matheteuo, Strong: «hacer discípulos». Los envió a hacer discípulos, \"bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo\".",
+       "\"Enseñándoles que guarden todas las cosas que os he mandado\". Su promesa: \"yo estoy con vosotros todos los días, hasta el fin del mundo\".",
        "Sus últimas palabras en la Biblia: \"Ciertamente, vengo en breve\". \"en breve\" traduce tachu, Strong: «sin demora»."
      ]}
   ],
@@ -93,6 +102,7 @@
     "\"Amad á vuestros enemigos\"",
     "\"no se haga mi voluntad, sino la tuya\"",
     "\"Consumado es\"",
+    "\"Por tanto, id, y doctrinad á todos los Gentiles\"",
     "\"Ciertamente, vengo en breve\""
   ],
   "red": {
@@ -119,6 +129,8 @@
     "John 20:26": ["Paz á vosotros."],
     "John 20:27": ["Mete tu dedo aquí, y ve mis manos: y alarga acá tu mano, y métela en mi costado: y no seas incrédulo, sino fiel."],
     "John 20:29": ["Porque me has visto, Tomás, creiste: bienaventurados los que no vieron y creyeron."],
+    "Matthew 28:18": ["Toda potestad me es dada en el cielo y en la tierra."],
+    "Matthew 28:20": ["Enseñándoles que guarden todas las cosas que os he mandado: y he aquí, yo estoy con vosotros todos los días, hasta el fin del mundo."],
     "Revelation 22:20": ["Ciertamente, vengo en breve."]
   }
 }

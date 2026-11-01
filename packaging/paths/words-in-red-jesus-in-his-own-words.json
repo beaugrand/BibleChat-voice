@@ -4,9 +4,12 @@
   "category": "Foundations",
   "anim": {"kind": "light", "x": 50, "y": 28, "s": 32},
   "red_letters": true,
-  "red_fix": {"Mark 8:34": ["Whosoever will come after me, let him deny himself, and take up his cross, and follow me."]},
-  "opening_question": "In many Bibles the words Jesus spoke are printed in red. This path reads Him in His own words: from the first words the Bible records Him saying, at twelve, through His teaching, His prayer in the garden and His sayings from the cross, to His last words in the Bible: Surely I come quickly. His words are shown in red. Each step asks what He said and what it means for me.",
-  "required_refs": ["Luke 2:41-52", "Matthew 4:17-22", "John 3:1-8", "John 3:16-17", "Matthew 5:43-48", "Matthew 22:35-40", "Mark 8:34-38", "John 14:1-3", "John 14:27", "Luke 22:39-46", "Luke 23:33-34", "Luke 23:39-43", "John 19:25-30", "Matthew 27:45-46", "Luke 23:46", "John 20:19-21", "John 20:26-29", "Revelation 22:20"],
+  "red_fix": {"Mark 8:34": ["Whosoever will come after me, let him deny himself, and take up his cross, and follow me."],
+              "John 3:16": [], "John 3:17": [],
+              "Matthew 28:20": ["Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world."]},
+  "share": "Jesus in His own words, from His first recorded words at twelve to ‘Surely I come quickly.’",
+  "opening_question": "In many Bibles the words Jesus spoke are printed in red. This path reads Him in His own words: from the first words the Bible records Him saying, at twelve, through His teaching, His prayer in the garden, His sayings from the cross and His command to go and make disciples, to His last words in the Bible: Surely I come quickly. His words are shown in red. Each step asks what He said and what it means for me.",
+  "required_refs": ["Luke 2:41-52", "Matthew 4:17-22", "John 3:1-8", "John 3:16-17", "Matthew 5:43-48", "Matthew 22:35-40", "Mark 8:34-38", "John 14:1-3", "John 14:27", "Luke 22:39-46", "Luke 23:33-34", "Luke 23:39-43", "John 19:25-30", "Matthew 27:45-46", "Luke 23:46", "John 20:19-21", "John 20:26-29", "Matthew 28:16-20", "Revelation 22:20"],
   "words": ["G3340", "G190", "G509", "G25", "G5055"],
   "show": 8,
   "steps": [
@@ -38,6 +41,7 @@
        {"text": "\"born again\": \"again\" is anothen, Strong's: \"from above\", and also \"anew\".", "refs": ["John 3:3"], "strongs": ["G509"]},
        {"text": "Nicodemus asked \"How can a man be born when he is old?\" Jesus answered: \"born of water and of the Spirit\".", "refs": ["John 3:4-5"]},
        {"text": "\"For God so loved the world, that he gave his only begotten Son\". \"only begotten\" is monogenes, Strong's: \"only-born\".", "refs": ["John 3:16"], "strongs": ["G3439"]},
+       {"text": "Bibles differ on where Jesus' words end. Some print John 3:16-21 in red; others read these verses as John's own words about Him. This path prints only verses 3-8 in red.", "refs": ["John 3:16-21"]},
        {"text": "He was not sent \"to condemn the world; but that the world through him might be saved\".", "refs": ["John 3:17"]}
      ]},
     {"question": "What had the people heard said, and what did Jesus say instead?",
@@ -102,15 +106,24 @@
        {"text": "\"I thirst\", then \"It is finished\". \"finished\" is teleo, Strong's: \"to end, i.e. complete\".", "refs": ["John 19:28-30"], "strongs": ["G5055"]},
        {"text": "\"Father, into thy hands I commend my spirit\". Psalm 31 says: \"Into thine hand I commit my spirit\".", "refs": ["Luke 23:46", "Psalms 31:5"]}
      ]},
-    {"intro": "Closing: His last words in the Bible are a promise.",
-     "question": "What did the risen Jesus say to His disciples and to Thomas, and what is His last promise in the Bible?",
-     "apply": "Am I one of those who have not seen, and yet have believed? Am I ready for His coming?",
-     "refs": ["John 20:19-21", "John 20:26-29", "Revelation 22:20"],
-     "look_closer": {"strongs": ["G1515", "G4100", "G5035"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+    {"question": "What did the risen Jesus say to His disciples, and what did He say to Thomas?",
+     "apply": "Am I one of those who have not seen, and yet have believed?",
+     "refs": ["John 20:19-21", "John 20:26-29"],
+     "look_closer": {"strongs": ["G1515", "G4100"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
      "facts": [
        {"text": "Three times He said: \"Peace be unto you\".", "refs": ["John 20:19", "John 20:21", "John 20:26"]},
        {"text": "\"as my Father hath sent me, even so send I you\".", "refs": ["John 20:21"]},
-       {"text": "Thomas said \"My Lord and my God\". Jesus answered: \"blessed are they that have not seen, and yet have believed\".", "refs": ["John 20:28-29"]},
+       {"text": "Thomas said \"My Lord and my God\". Jesus answered: \"blessed are they that have not seen, and yet have believed\".", "refs": ["John 20:28-29"]}
+     ]},
+    {"intro": "Closing: His last words in Matthew are a command and a promise. His last words in the Bible are a promise too.",
+     "question": "What did the risen Jesus send His disciples to do, what did He promise them, and what are His last words in the Bible?",
+     "apply": "Who could I help to know and follow Him? Am I ready for His coming?",
+     "refs": ["Matthew 28:16-20", "Revelation 22:20"],
+     "look_closer": {"strongs": ["G1849", "G3100", "G5035"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"All power is given unto me in heaven and in earth.\" \"power\" is exousia, Strong's: \"delegated influence\"; the KJV also translates it \"authority\".", "refs": ["Matthew 28:18"], "strongs": ["G1849"]},
+       {"text": "\"Go ye therefore, and teach all nations\": \"teach\" is matheteuo, Strong's: \"to disciple\". He sent them to make disciples, \"baptizing them in the name of the Father, and of the Son, and of the Holy Ghost\".", "refs": ["Matthew 28:19"], "strongs": ["G3100"]},
+       {"text": "\"Teaching them to observe all things whatsoever I have commanded you\". His promise: \"lo, I am with you alway, even unto the end of the world\".", "refs": ["Matthew 28:20"]},
        {"text": "His last words in the Bible: \"Surely I come quickly\". \"quickly\" is tachu, Strong's: \"without delay\".", "refs": ["Revelation 22:20"], "strongs": ["G5035"]}
      ]}
   ],
@@ -121,6 +134,7 @@
     {"text": "\"Love your enemies\"", "refs": ["Matthew 5:44"]},
     {"text": "\"not my will, but thine, be done\"", "refs": ["Luke 22:42"]},
     {"text": "\"It is finished\"", "refs": ["John 19:30"]},
+    {"text": "\"Go ye therefore, and teach all nations\"", "refs": ["Matthew 28:19"]},
     {"text": "\"Surely I come quickly\"", "refs": ["Revelation 22:20"]}
   ],
   "quiz": [
@@ -145,6 +159,8 @@
     {"q": "In John 19:30, what did Jesus say when He had received the vinegar?", "type": "multiple_choice",
      "options": ["It is finished", "I thirst", "Father, forgive them", "Behold thy mother"], "answer": 0, "answer_refs": ["John 19:30"], "check": {"bible": "KJV", "word": "finished"}},
     {"q": "Which verse says \"blessed are they that have not seen, and yet have believed\"?", "type": "find_the_verse", "answer_refs": ["John 20:29"]},
+    {"q": "Fill in the word: \"Go ye therefore, and ___ all nations\"", "type": "fill_word", "ref": "Matthew 28:19", "bible": "KJV", "word": "teach"},
+    {"q": "Which verse says \"lo, I am with you alway, even unto the end of the world\"?", "type": "find_the_verse", "answer_refs": ["Matthew 28:20"]},
     {"q": "Fill in the word: \"Surely I come ___\"", "type": "fill_word", "ref": "Revelation 22:20", "bible": "KJV", "word": "quickly"}
   ],
   "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]

@@ -1,6 +1,7 @@
 {
   "title": "Die Worte in Rot: Jesus in seinen eigenen Worten",
-  "opening_question": "In vielen Bibeln sind die Worte, die Jesus gesprochen hat, rot gedruckt. Dieser Pfad liest ihn in seinen eigenen Worten: von den ersten Worten, die die Bibel von ihm berichtet, mit zwölf Jahren, über seine Lehre, sein Gebet im Garten und seine Worte am Kreuz bis zu seinen letzten Worten in der Bibel: \"Ja, ich komme bald\". Seine Worte sind rot. Jeder Schritt fragt, was er gesagt hat und was es für mich bedeutet.",
+  "share": "Jesus in seinen eigenen Worten, von seinen ersten Worten mit zwölf Jahren bis »Ja, ich komme bald«.",
+  "opening_question": "In vielen Bibeln sind die Worte, die Jesus gesprochen hat, rot gedruckt. Dieser Pfad liest ihn in seinen eigenen Worten: von den ersten Worten, die die Bibel von ihm berichtet, mit zwölf Jahren, über seine Lehre, sein Gebet im Garten, seine Worte am Kreuz und seinen Auftrag, hinzugehen und Jünger zu machen, bis zu seinen letzten Worten in der Bibel: \"Ja, ich komme bald\". Seine Worte sind rot. Jeder Schritt fragt, was er gesagt hat und was es für mich bedeutet.",
   "steps": [
     {"question": "Wo fanden Maria und Joseph Jesus, und was antwortete er seiner Mutter?",
      "apply": "Steht das, was meines Vaters ist, in meinem Leben an erster Stelle, oder passe ich es irgendwo ein?",
@@ -24,6 +25,7 @@
        "\"von neuem geboren\": \"von neuem\" ist anothen, Strong: »von oben«, und auch »aufs Neue«.",
        "Nikodemus fragte: \"Wie kann ein Mensch geboren werden wenn er alt ist?\" Jesus antwortete: \"aus Wasser und Geist\".",
        "\"Also hat Gott die Welt geliebt, daß er seinen eingeborenen Sohn gab\". \"eingeboren\" ist monogenes, Strong: »einzig geboren«.",
+       "Die Bibeln sind sich nicht einig, wo die Worte Jesu enden. Manche drucken Johannes 3,16-21 rot; andere lesen diese Verse als Worte des Johannes über ihn. Dieser Pfad druckt nur die Verse 3-8 rot.",
        "Er wurde nicht gesandt, \"daß er die Welt richte, sondern daß die Welt durch ihn selig werde\"."
      ]},
     {"question": "Was hatten die Leute gehört, das gesagt ist, und was sagte Jesus stattdessen?",
@@ -76,13 +78,20 @@
        "\"Mich dürstet\", dann \"Es ist vollbracht\". \"vollbracht\" ist teleo, Strong: »beenden, das heißt vollenden«.",
        "\"Vater, ich befehle meinen Geist in deine Hände\". Psalm 31 sagt: \"In deine Hände befehle ich meinen Geist\"."
      ]},
-    {"intro": "Zum Schluss: Seine letzten Worte in der Bibel sind eine Verheißung.",
-     "question": "Was sagte der auferstandene Jesus zu seinen Jüngern und zu Thomas, und was ist seine letzte Verheißung in der Bibel?",
-     "apply": "Gehöre ich zu denen, die nicht sehen und doch glauben? Bin ich bereit für sein Kommen?",
+    {"question": "Was sagte der auferstandene Jesus zu seinen Jüngern, und was sagte er zu Thomas?",
+     "apply": "Gehöre ich zu denen, die nicht sehen und doch glauben?",
      "facts": [
        "Dreimal sagte er: \"Friede sei mit euch\".",
        "\"Gleichwie mich der Vater gesandt hat, so sende ich euch\".",
-       "Thomas sagte: \"Mein HERR und mein Gott\". Jesus antwortete: \"Selig sind, die nicht sehen und doch glauben\".",
+       "Thomas sagte: \"Mein HERR und mein Gott\". Jesus antwortete: \"Selig sind, die nicht sehen und doch glauben\"."
+     ]},
+    {"intro": "Zum Schluss: Seine letzten Worte bei Matthäus sind ein Auftrag und eine Verheißung. Seine letzten Worte in der Bibel sind auch eine Verheißung.",
+     "question": "Wozu sandte der auferstandene Jesus seine Jünger, was versprach er ihnen, und was sind seine letzten Worte in der Bibel?",
+     "apply": "Wem könnte ich helfen, ihn zu kennen und ihm nachzufolgen? Bin ich bereit für sein Kommen?",
+     "facts": [
+       "\"Mir ist gegeben alle Gewalt im Himmel und auf Erden.\" \"Gewalt\" ist exousia, Strong: »übertragene Vollmacht«; die King James übersetzt es auch mit authority, »Autorität«.",
+       "\"Darum gehet hin und lehret alle Völker\": \"lehret\" ist matheteuo, Strong: »zu Jüngern machen«. Er sandte sie, Jünger zu machen, \"und taufet sie im Namen des Vaters und des Sohnes und des heiligen Geistes\".",
+       "\"und lehret sie halten alles, was ich euch befohlen habe\". Seine Verheißung: \"siehe, ich bin bei euch alle Tage bis an der Welt Ende\".",
        "Seine letzten Worte in der Bibel: \"Ja, ich komme bald\". \"bald\" ist tachu, Strong: »ohne Verzögerung«."
      ]}
   ],
@@ -93,6 +102,7 @@
     "\"Liebet eure Feinde\"",
     "\"doch nicht mein, sondern dein Wille geschehe\"",
     "\"Es ist vollbracht\"",
+    "\"Darum gehet hin und lehret alle Völker\"",
     "\"Ja, ich komme bald\""
   ],
   "red": {
@@ -120,6 +130,8 @@
     "John 20:26": ["Friede sei mit euch!"],
     "John 20:27": ["Reiche deinen Finger her und siehe meine Hände, und reiche dein Hand her und lege sie in meine Seite, und sei nicht ungläubig, sondern gläubig!"],
     "John 20:29": ["Dieweil du mich gesehen hast, Thomas, glaubest du. Selig sind, die nicht sehen und doch glauben!"],
+    "Matthew 28:18": ["Mir ist gegeben alle Gewalt im Himmel und auf Erden."],
+    "Matthew 28:20": ["und lehret sie halten alles, was ich euch befohlen habe. Und siehe, ich bin bei euch alle Tage bis an der Welt Ende."],
     "Revelation 22:20": ["Ja, ich komme bald."]
   }
 }
