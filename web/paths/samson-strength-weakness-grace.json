@@ -1,0 +1,1189 @@
+{
+ "id": "samson-strength-weakness-grace",
+ "title": "Samson: strength, weakness and grace",
+ "category": "People of the Bible",
+ "anim": {
+  "kind": "light",
+  "x": 50,
+  "y": 20,
+  "s": 32
+ },
+ "opening_question": "Samson was set apart to God before he was born, and the Spirit of the LORD came mightily upon him. Yet he played with his calling until he lost it. What happened, why did it happen, how did God answer his last prayer, and why does Hebrews still name him among the people of faith? Each step asks what happened and what it means for me.",
+ "required_refs": [
+  "Judges 13:1-25",
+  "Numbers 6:1-8",
+  "Judges 14:1-9",
+  "Judges 14:10-20",
+  "Judges 15:1-20",
+  "Judges 16:1-3",
+  "Judges 16:4-20",
+  "Judges 16:21-22",
+  "Judges 16:23-31",
+  "Hebrews 11:32-34"
+ ],
+ "words": [
+  "H5139",
+  "H6743",
+  "H6601",
+  "H2142",
+  "G769"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "intro": "Background first: Israel did evil again, and the LORD delivered them into the hand of the Philistines forty years (Judges 13:1).",
+   "question": "What did the angel of the LORD tell Manoah's wife, and what did it mean for the child to be a Nazarite unto God?",
+   "apply": "What has God set me apart for, and do I treat that calling as holy?",
+   "refs": [
+    "Judges 13:1-25",
+    "Numbers 6:1-8"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5139",
+     "H4177"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Nazarite\" is nazir, from a root meaning to separate. Strong's: \"separate that is consecrated\".",
+     "refs": [
+      "Judges 13:5"
+     ],
+     "strongs": [
+      "H5139"
+     ]
+    },
+    {
+     "text": "The vow had three marks: nothing \"made of the vine tree\", no razor on the head, and no coming near a \"dead body\".",
+     "refs": [
+      "Numbers 6:4-6"
+     ]
+    },
+    {
+     "text": "A Nazarite vow usually lasted a set time, \"until the days be fulfilled\". Samson was to be one \"from the womb to the day of his death\".",
+     "refs": [
+      "Numbers 6:5",
+      "Judges 13:7"
+     ]
+    },
+    {
+     "text": "He would only \"begin to deliver Israel out of the hand of the Philistines\". The Philistines were subdued later, in the days of Samuel.",
+     "refs": [
+      "Judges 13:5",
+      "1 Samuel 7:13"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Why did Samson want the woman of Timnath, what came upon him when the lion roared, and what did he take from the carcase of the lion?",
+   "apply": "Where do I treat small compromises as harmless because nobody sees them?",
+   "refs": [
+    "Judges 14:1-9"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H6743",
+     "H4658"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "His parents asked why he would take a wife \"of the uncircumcised Philistines\". Samson answered: \"Get her for me; for she pleaseth me well\".",
+     "refs": [
+      "Judges 14:3"
+     ]
+    },
+    {
+     "text": "The text adds that \"it was of the LORD, that he sought an occasion against the Philistines\". God worked even through Samson's choices; the text does not call the choices good.",
+     "refs": [
+      "Judges 14:4"
+     ]
+    },
+    {
+     "text": "\"came mightily upon him\" is tsalach. Strong's: \"to push forward\". The same words come again when the cords on his arms burn like flax.",
+     "refs": [
+      "Judges 14:6",
+      "Judges 15:14"
+     ],
+     "strongs": [
+      "H6743"
+     ]
+    },
+    {
+     "text": "A Nazarite was to come at no \"dead body\". Samson took honey out of \"the carcase of the lion\", and he told not his parents where it came from.",
+     "refs": [
+      "Numbers 6:6",
+      "Judges 14:8-9"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What was Samson's riddle, how did the Philistines get the answer, and what did Samson do then?",
+   "apply": "How do I react when I feel betrayed or pressured?",
+   "refs": [
+    "Judges 14:10-20"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2420",
+     "H6601"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The riddle: \"Out of the eater came forth meat, and out of the strong came forth sweetness\". Only Samson knew about the lion and the honey.",
+     "refs": [
+      "Judges 14:14"
+     ]
+    },
+    {
+     "text": "The companions told his wife: \"Entice thy husband\". \"Entice\" is pathah, Strong's: \"to open\". The lords of the Philistines will say the same word to Delilah.",
+     "refs": [
+      "Judges 14:15",
+      "Judges 16:5"
+     ],
+     "strongs": [
+      "H6601"
+     ]
+    },
+    {
+     "text": "She wept seven days, and he told her \"because she lay sore upon him\". Then \"his anger was kindled\".",
+     "refs": [
+      "Judges 14:17",
+      "Judges 14:19"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How did Samson pay the Philistines back, what did the men of Judah do to him, and what did he cry out when he was sore athirst?",
+   "apply": "Do I turn to God only when I am at the end of my strength?",
+   "refs": [
+    "Judges 15:1-20"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5875",
+     "H7121"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Samson said: \"As they did unto me, so have I done unto them\". Each side paid the other back, and each time it got worse.",
+     "refs": [
+      "Judges 15:6-11"
+     ]
+    },
+    {
+     "text": "Three thousand men of Judah bound their own judge to hand him over: \"Knowest thou not that the Philistines are rulers over us?\"",
+     "refs": [
+      "Judges 15:11-13"
+     ]
+    },
+    {
+     "text": "Here, for the first time, Samson \"called on the LORD\". God gave water, and Samson named the place En-hakkore. Strong's: \"fountain of One calling\".",
+     "refs": [
+      "Judges 15:18-19"
+     ],
+     "strongs": [
+      "H5875"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Why was Samson in Gaza, what did the men of the city plan, and how did he get away?",
+   "apply": "Do I mistake God's patience for His approval?",
+   "refs": [
+    "Judges 16:1-3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5804",
+     "H1817"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "In Timnath he \"saw a woman\"; in Gaza he \"saw there an harlot\". What he saw led him.",
+     "refs": [
+      "Judges 14:1",
+      "Judges 16:1"
+     ]
+    },
+    {
+     "text": "He took \"the doors of the gate of the city, and the two posts\" and carried them up to a hill \"before Hebron\", far inland and uphill. His strength was still there, but that did not mean all was well.",
+     "refs": [
+      "Judges 16:3"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How did Delilah wear Samson down, what did he finally tell her, and what does verse 20 say he did not know?",
+   "apply": "Where am I playing with a commitment I made to God?",
+   "refs": [
+    "Judges 16:4-20"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H6601",
+     "H3045",
+     "H5493"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Each of the lords of the Philistines promised her \"eleven hundred pieces of silver\".",
+     "refs": [
+      "Judges 16:5"
+     ]
+    },
+    {
+     "text": "Three times he told her lies, and each time men were lying in wait in the chamber. The third answer came close to the truth: \"the seven locks of my head\".",
+     "refs": [
+      "Judges 16:7-14"
+     ]
+    },
+    {
+     "text": "\"she pressed him daily with her words\", until \"his soul was vexed unto death\". Then \"he told her all his heart\".",
+     "refs": [
+      "Judges 16:16-17"
+     ]
+    },
+    {
+     "text": "\"he wist not that the LORD was departed from him\". \"wist\" is yada, to know. The strength had always come when \"the Spirit of the LORD came mightily upon him\".",
+     "refs": [
+      "Judges 16:20",
+      "Judges 14:6"
+     ],
+     "strongs": [
+      "H3045"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Look back at Timnath, the lion's carcase, Gaza and Delilah. What pattern do you see, and where does it lead?",
+   "apply": "What repeated pattern in my life could lead to a fall if I do not deal with it?",
+   "refs": [
+    "Judges 14:1-3",
+    "Judges 14:8-9",
+    "Judges 16:1",
+    "Judges 16:4",
+    "Judges 16:17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7200",
+     "H5139"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "It begins with seeing and wanting: \"I have seen a woman\", \"Get her for me; for she pleaseth me well\", \"saw there an harlot\", \"he loved a woman in the valley of Sorek\".",
+     "refs": [
+      "Judges 14:2-3",
+      "Judges 16:1",
+      "Judges 16:4"
+     ]
+    },
+    {
+     "text": "Each time he went a little further: a marriage his parents begged him not to make, honey from a dead lion, a harlot in Gaza, and at last \"he told her all his heart\".",
+     "refs": [
+      "Judges 14:3",
+      "Judges 14:9",
+      "Judges 16:1",
+      "Judges 16:17"
+     ]
+    },
+    {
+     "text": "James describes the same road: \"when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death\".",
+     "refs": [
+      "James 1:15"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did the Philistines do to Samson, where did they put him, and what small sign of hope is in verse 22?",
+   "apply": "Even in the consequences of my sin, where can I see that God is not finished with me?",
+   "refs": [
+    "Judges 16:21-22"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H6779",
+     "H2912"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The eyes that \"saw\" in Timnath and in Gaza were put out. The man who carried off the gates of Gaza was bound \"with fetters of brass\" in Gaza and made to grind in the prison house.",
+     "refs": [
+      "Judges 16:21",
+      "Judges 14:1",
+      "Judges 16:1"
+     ]
+    },
+    {
+     "text": "\"the hair of his head began to grow again\". \"grow again\" is tsamach, Strong's: \"to sprout\". The text says no more, but it lets us notice.",
+     "refs": [
+      "Judges 16:22"
+     ],
+     "strongs": [
+      "H6779"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What were the Philistines celebrating, what did Samson ask of God in verse 28, and what happened when the house fell?",
+   "apply": "What would it look like for me to stop relying on my own strength and depend on God?",
+   "refs": [
+    "Judges 16:23-31"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2142",
+     "H2388",
+     "H1712"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Philistines praised Dagon: \"Our god hath delivered Samson our enemy into our hand\". The question was whose God is God.",
+     "refs": [
+      "Judges 16:23"
+     ]
+    },
+    {
+     "text": "The man who had followed his eyes now asked \"the lad that held him by the hand\" to bring him to the pillars.",
+     "refs": [
+      "Judges 16:26"
+     ]
+    },
+    {
+     "text": "\"remember me, I pray thee, and strengthen me, I pray thee, only this once\": \"remember\" is zakar and \"strengthen\" is chazaq. He knew now where the strength came from.",
+     "refs": [
+      "Judges 16:28"
+     ],
+     "strongs": [
+      "H2142",
+      "H2388"
+     ]
+    },
+    {
+     "text": "The prayer is honest: he also asks to be \"avenged of the Philistines for my two eyes\". Yet he calls on the LORD instead of trusting himself, as he did once before when he was \"sore athirst\".",
+     "refs": [
+      "Judges 16:28",
+      "Judges 15:18"
+     ]
+    }
+   ]
+  },
+  {
+   "intro": "Closing: Hebrews 11 lists Samson with all his flaws. He is remembered not because he was faithful, but because God is.",
+   "question": "Where does Hebrews name Samson, who is named with him, and what did they do through faith?",
+   "apply": "If God could use Samson, what does that mean for my failures?",
+   "refs": [
+    "Hebrews 11:32-34"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G769",
+     "G1743"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Samson stands with Gedeon, Barak and Jephthae, judges whose stories also show weakness, and with David and Samuel.",
+     "refs": [
+      "Hebrews 11:32"
+     ]
+    },
+    {
+     "text": "\"out of weakness were made strong\": \"weakness\" is astheneia, Strong's: \"feebleness\"; \"made strong\" is endynamoo, \"to empower\".",
+     "refs": [
+      "Hebrews 11:34"
+     ],
+     "strongs": [
+      "G769",
+      "G1743"
+     ]
+    },
+    {
+     "text": "Samson's last prayer was \"strengthen me\", and Hebrews says they \"were made strong\". The strength was God's from the start.",
+     "refs": [
+      "Judges 16:28",
+      "Hebrews 11:34"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"the child shall be a Nazarite unto God from the womb\"",
+   "refs": [
+    "Judges 13:5"
+   ]
+  },
+  {
+   "text": "\"he was sore athirst, and called on the LORD\"",
+   "refs": [
+    "Judges 15:18"
+   ]
+  },
+  {
+   "text": "\"he wist not that the LORD was departed from him\"",
+   "refs": [
+    "Judges 16:20"
+   ]
+  },
+  {
+   "text": "\"the hair of his head began to grow again\"",
+   "refs": [
+    "Judges 16:22"
+   ]
+  },
+  {
+   "text": "\"O Lord GOD, remember me, I pray thee, and strengthen me\"",
+   "refs": [
+    "Judges 16:28"
+   ]
+  },
+  {
+   "text": "\"out of weakness were made strong\"",
+   "refs": [
+    "Hebrews 11:34"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"the child shall be a Nazarite unto God from the womb\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Judges 13:5"
+   ],
+   "signals": {
+    "xref": 8,
+    "votes": 59,
+    "word": "H5139",
+    "word_count": 4,
+    "differ": 0.347,
+    "quoted": null
+   },
+   "why": [
+    "8 cross-references point here",
+    "The Hebrew word nâzîyr (H5139) is in 4 verses of this path"
+   ],
+   "score": 0.5108
+  },
+  {
+   "q": "Fill in the word: \"and no ___ shall come on his head\"",
+   "type": "fill_word",
+   "ref": "Judges 13:5",
+   "bible": "KJV",
+   "word": "razor",
+   "answer_refs": [
+    "Judges 13:5"
+   ],
+   "signals": {
+    "xref": 8,
+    "votes": 59,
+    "word": "H5139",
+    "word_count": 4,
+    "differ": 0.347,
+    "quoted": null
+   },
+   "why": [
+    "8 cross-references point here",
+    "The Hebrew word nâzîyr (H5139) is in 4 verses of this path"
+   ],
+   "score": 0.5108
+  },
+  {
+   "q": "In Judges 14:5, what roared against Samson in the vineyards of Timnath?",
+   "type": "multiple_choice",
+   "options": [
+    "A young lion",
+    "A bear",
+    "A wolf",
+    "A leopard"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Judges 14:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "lion"
+   },
+   "signals": {
+    "xref": 4,
+    "votes": 28,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.239,
+    "quoted": null
+   },
+   "why": [
+    "4 cross-references point here"
+   ],
+   "score": 0.3126
+  },
+  {
+   "q": "Which verse says \"Out of the eater came forth meat, and out of the strong came forth sweetness\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Judges 14:14"
+   ],
+   "signals": {
+    "xref": 5,
+    "votes": 15,
+    "word": "H2420",
+    "word_count": 8,
+    "differ": 0.49,
+    "quoted": null
+   },
+   "why": [
+    "5 cross-references point here",
+    "The Hebrew word chîydâh (H2420) is in 8 verses of this path"
+   ],
+   "score": 0.564
+  },
+  {
+   "q": "Fill in the word: \"If ye had not plowed with my ___, ye had not found out my riddle\"",
+   "type": "fill_word",
+   "ref": "Judges 14:18",
+   "bible": "KJV",
+   "word": "heifer",
+   "answer_refs": [
+    "Judges 14:18"
+   ],
+   "signals": {
+    "xref": 6,
+    "votes": 22,
+    "word": "H2420",
+    "word_count": 8,
+    "differ": 0.324,
+    "quoted": null
+   },
+   "why": [
+    "6 cross-references point here",
+    "The Hebrew word chîydâh (H2420) is in 8 verses of this path"
+   ],
+   "score": 0.5497
+  },
+  {
+   "q": "In Judges 15:4, how many foxes did Samson catch?",
+   "type": "multiple_choice",
+   "options": [
+    "Three hundred",
+    "Thirty",
+    "A thousand",
+    "Seventy"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Judges 15:4"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "hundred"
+   },
+   "signals": {
+    "xref": 1,
+    "votes": 5,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.398,
+    "quoted": null
+   },
+   "why": [
+    "1 cross-reference point here"
+   ],
+   "score": 0.234
+  },
+  {
+   "q": "In Judges 15:15, with what did Samson slay a thousand men?",
+   "type": "multiple_choice",
+   "options": [
+    "A new jawbone of an ass",
+    "A sword",
+    "A spear",
+    "An ox goad"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Judges 15:15"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "jawbone"
+   },
+   "signals": {
+    "xref": 5,
+    "votes": 188,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.412,
+    "quoted": null
+   },
+   "why": [
+    "5 cross-references point here"
+   ],
+   "score": 0.4965
+  },
+  {
+   "q": "Which verse says \"he was sore athirst, and called on the LORD\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Judges 15:18"
+   ],
+   "signals": {
+    "xref": 5,
+    "votes": 17,
+    "word": "H7121",
+    "word_count": 10,
+    "differ": 0.515,
+    "quoted": null
+   },
+   "why": [
+    "5 cross-references point here",
+    "The Hebrew word qârâ' (H7121) is in 10 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6374
+  },
+  {
+   "q": "In Judges 16:3, what did Samson carry away from Gaza?",
+   "type": "multiple_choice",
+   "options": [
+    "The doors of the gate of the city",
+    "The idol of Dagon",
+    "A Philistine chariot",
+    "The pillars of the house"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Judges 16:3"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "doors"
+   },
+   "signals": {
+    "xref": 2,
+    "votes": 6,
+    "word": "H1817",
+    "word_count": 1,
+    "differ": 0.483,
+    "quoted": null
+   },
+   "why": [
+    "2 cross-references point here"
+   ],
+   "score": 0.296
+  },
+  {
+   "q": "Fill in the word: \"he loved a woman in the valley of Sorek, whose name was ___\"",
+   "type": "fill_word",
+   "ref": "Judges 16:4",
+   "bible": "KJV",
+   "word": "Delilah",
+   "answer_refs": [
+    "Judges 16:4"
+   ],
+   "signals": {
+    "xref": 0,
+    "votes": 0,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.407,
+    "quoted": null
+   },
+   "why": [],
+   "score": 0.1017
+  },
+  {
+   "q": "In Judges 16:5, how much silver did each lord of the Philistines promise Delilah?",
+   "type": "multiple_choice",
+   "options": [
+    "Eleven hundred pieces",
+    "Thirty pieces",
+    "Five hundred pieces",
+    "Two thousand pieces"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Judges 16:5"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "eleven"
+   },
+   "signals": {
+    "xref": 4,
+    "votes": 23,
+    "word": "H7200",
+    "word_count": 16,
+    "differ": 0.47,
+    "quoted": null
+   },
+   "why": [
+    "4 cross-references point here",
+    "The Hebrew word râ'âh (H7200) is in 16 verses of this path"
+   ],
+   "score": 0.7061
+  },
+  {
+   "q": "Which verse says \"he wist not that the LORD was departed from him\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Judges 16:20"
+   ],
+   "signals": {
+    "xref": 5,
+    "votes": 32,
+    "word": "H3045",
+    "word_count": 6,
+    "differ": 0.444,
+    "quoted": null
+   },
+   "why": [
+    "5 cross-references point here",
+    "The Hebrew word yâda‛ (H3045) is in 6 verses of this path"
+   ],
+   "score": 0.5485
+  },
+  {
+   "q": "Which translation says \"he wist not\" in Judges 16:20?",
+   "type": "which_translation",
+   "ref": "Judges 16:20",
+   "bible": "KJV",
+   "phrase": "he wist not",
+   "answer_refs": [
+    "Judges 16:20"
+   ],
+   "signals": {
+    "xref": 5,
+    "votes": 32,
+    "word": "H3045",
+    "word_count": 6,
+    "differ": 0.444,
+    "quoted": null
+   },
+   "why": [
+    "5 cross-references point here",
+    "The Hebrew word yâda‛ (H3045) is in 6 verses of this path"
+   ],
+   "score": 0.5485
+  },
+  {
+   "q": "Which verse says \"the hair of his head began to grow again after he was shaven\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Judges 16:22"
+   ],
+   "signals": {
+    "xref": 0,
+    "votes": 0,
+    "word": "H6779",
+    "word_count": 1,
+    "differ": 0.396,
+    "quoted": null
+   },
+   "why": [],
+   "score": 0.1282
+  },
+  {
+   "q": "Fill in the word: \"O Lord GOD, ___ me, I pray thee, and strengthen me\"",
+   "type": "fill_word",
+   "ref": "Judges 16:28",
+   "bible": "KJV",
+   "word": "remember",
+   "answer_refs": [
+    "Judges 16:28"
+   ],
+   "signals": {
+    "xref": 3,
+    "votes": 57,
+    "word": "H7121",
+    "word_count": 10,
+    "differ": 0.438,
+    "quoted": null
+   },
+   "why": [
+    "3 cross-references point here",
+    "The Hebrew word qârâ' (H7121) is in 10 verses of this path"
+   ],
+   "score": 0.706
+  },
+  {
+   "q": "Which verse says \"out of weakness were made strong\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Hebrews 11:34"
+   ],
+   "signals": {
+    "xref": 23,
+    "votes": 220,
+    "word": "G769",
+    "word_count": 1,
+    "differ": 0.567,
+    "quoted": null
+   },
+   "why": [
+    "23 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5762
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 107,
+ "image": "img/samson-strength-weakness-grace.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/samson-strength-weakness-grace.json",
+  "sha": "17dd1711ed9418a2",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ },
+ "i18n": {
+  "es": {
+   "title": "Sansón: fuerza, debilidad y gracia",
+   "opening_question": "Sansón fue apartado para Dios antes de nacer, y el espíritu de Jehová cayó sobre él. Aun así jugó con su llamado hasta perderlo. ¿Qué pasó, por qué pasó, cómo respondió Dios a su última oración, y por qué Hebreos todavía lo nombra entre los que vivieron por la fe? Cada paso pregunta qué pasó y qué significa para mí.",
+   "steps": [
+    {
+     "intro": "Primero el trasfondo: Israel volvió a hacer lo malo, y Jehová lo entregó en mano de los Filisteos cuarenta años (Jueces 13:1).",
+     "question": "¿Qué le dijo el ángel de Jehová a la mujer de Manoa, y qué significaba que el niño fuera Nazareo á Dios?",
+     "apply": "¿Para qué me ha apartado Dios, y trato ese llamado como algo santo?",
+     "facts": [
+      "\"Nazareo\" traduce nazir, de una raíz que significa apartar. Strong: «separado, es decir, consagrado».",
+      "El voto tenía tres señales: nada de lo que \"se hace de vid de vino\", ninguna navaja sobre la cabeza, y no acercarse a \"persona muerta\".",
+      "El voto de nazareo solía durar un tiempo fijo, \"hasta que sean cumplidos los días\". Sansón lo sería \"desde el vientre\" \"hasta el día de su muerte\".",
+      "Él solo \"comenzará á salvar á Israel de mano de los Filisteos\". Los Filisteos fueron humillados más tarde, en los días de Samuel."
+     ]
+    },
+    {
+     "question": "¿Por qué quería Sansón a la mujer de Timnah, qué cayó sobre él cuando rugió el león, y qué sacó del cuerpo muerto del león?",
+     "apply": "¿Dónde trato las pequeñas concesiones como inofensivas porque nadie las ve?",
+     "facts": [
+      "Sus padres le preguntaron por qué iba a tomar mujer \"de los Filisteos incircuncisos\". Sansón respondió: \"Tómamela por mujer, porque ésta agradó á mis ojos\".",
+      "El texto añade que \"esto venía de Jehová, y que él buscaba ocasión contra los Filisteos\". Dios obró aun a través de las decisiones de Sansón; el texto no dice que esas decisiones fueran buenas.",
+      "\"cayó sobre él\" traduce tsalach. Strong: «empujar hacia adelante». Las mismas palabras vuelven cuando las cuerdas de sus brazos se queman como lino.",
+      "Un nazareo no debía acercarse a \"persona muerta\". Sansón tomó miel \"del cuerpo del león\", y no les dijo a sus padres de dónde venía."
+     ]
+    },
+    {
+     "question": "¿Cuál fue el enigma de Sansón, cómo consiguieron los Filisteos la respuesta, y qué hizo Sansón después?",
+     "apply": "¿Cómo reacciono cuando me siento traicionado o presionado?",
+     "facts": [
+      "El enigma: \"Del comedor salió comida, y del fuerte salió dulzura\". Solo Sansón sabía lo del león y la miel.",
+      "Los compañeros dijeron a su mujer: \"Induce á tu marido\". La palabra hebrea es pathah, Strong: «abrir». Los príncipes de los Filisteos le dirán la misma palabra a Dalila.",
+      "Ella lloró siete días, y él se lo declaró \"porque le constriñó\". Después mató a treinta hombres en Ascalón y volvió airado a la casa de su padre."
+     ]
+    },
+    {
+     "question": "¿Cómo se vengó Sansón de los Filisteos, qué le hicieron los hombres de Judá, y qué clamó cuando tuvo gran sed?",
+     "apply": "¿Me vuelvo a Dios solo cuando ya no me quedan fuerzas?",
+     "facts": [
+      "Sansón dijo: \"Yo les he hecho como ellos me hicieron\". Cada lado se vengaba del otro, y cada vez era peor.",
+      "Tres mil hombres de Judá ataron a su propio juez para entregarlo: \"¿No sabes tú que los Filisteos dominan sobre nosotros?\"",
+      "Aquí, por primera vez, Sansón \"clamó luego á Jehová\". Dios le dio agua, y Sansón llamó al lugar En-haccore. Strong: «fuente del que llama»."
+     ]
+    },
+    {
+     "question": "¿Por qué estaba Sansón en Gaza, qué planearon los de la ciudad, y cómo escapó?",
+     "apply": "¿Confundo la paciencia de Dios con su aprobación?",
+     "facts": [
+      "En Timnah \"vió\" una mujer; en Gaza \"vió allí una mujer ramera\". Lo que veía lo llevaba.",
+      "Tomó \"las puertas de la ciudad con sus dos pilares\" y las subió a la cumbre del monte \"que está delante de Hebrón\", tierra adentro y cuesta arriba. Su fuerza seguía allí, pero eso no quería decir que todo estuviera bien."
+     ]
+    },
+    {
+     "question": "¿Cómo desgastó Dalila a Sansón, qué le dijo él al final, y qué dice el versículo 20 que él no sabía?",
+     "apply": "¿Dónde estoy jugando con un compromiso que hice con Dios?",
+     "facts": [
+      "Cada uno de los príncipes de los Filisteos le prometió \"mil y cien siclos de plata\".",
+      "Tres veces le dijo mentiras, y cada vez había hombres en acecho en la cámara. La tercera respuesta se acercó a la verdad: \"siete guedejas de mi cabeza\".",
+      "Ella lo apretaba \"cada día con sus palabras\", hasta que \"su alma fué reducida á mortal angustia\". Entonces \"descubrióle pues todo su corazón\".",
+      "\"no sabiendo que Jehová ya se había de él apartado\". El verbo es yada, saber. La fuerza siempre había venido cuando \"el espíritu de Jehová cayó sobre él\"."
+     ]
+    },
+    {
+     "question": "Mira atrás: Timnah, el cuerpo del león, Gaza y Dalila. ¿Qué patrón ves, y adónde lleva?",
+     "apply": "¿Qué patrón repetido en mi vida podría llevarme a una caída si no lo enfrento?",
+     "facts": [
+      "Empieza con ver y desear: \"Yo he visto en Timnah una mujer\", \"Tómamela por mujer, porque ésta agradó á mis ojos\", \"vió allí una mujer ramera\", \"se enamoró de una mujer en el valle de Sorec\".",
+      "Cada vez fue un poco más lejos: un matrimonio que sus padres le rogaron que no hiciera, miel de un león muerto, una ramera en Gaza, y al final \"descubrióle pues todo su corazón\".",
+      "Santiago describe el mismo camino: \"la concupiscencia, después que ha concebido, pare el pecado: y el pecado, siendo cumplido, engendra muerte\"."
+     ]
+    },
+    {
+     "question": "¿Qué le hicieron los Filisteos a Sansón, dónde lo pusieron, y qué pequeña señal de esperanza hay en el versículo 22?",
+     "apply": "Aun en las consecuencias de mi pecado, ¿dónde puedo ver que Dios no ha terminado conmigo?",
+     "facts": [
+      "Le sacaron los ojos con que \"vió\" en Timnah y en Gaza. El hombre que se llevó las puertas de Gaza fue atado \"con cadenas\" en Gaza para que moliese en la cárcel.",
+      "\"el cabello de su cabeza comenzó á crecer\". El verbo es tsamach, Strong: «brotar». El texto no dice más, pero nos deja notarlo."
+     ]
+    },
+    {
+     "question": "¿Qué celebraban los Filisteos, qué le pidió Sansón a Dios en el versículo 28, y qué pasó cuando cayó la casa?",
+     "apply": "¿Cómo sería para mí dejar de confiar en mis propias fuerzas y depender de Dios?",
+     "facts": [
+      "Los Filisteos alabaron a Dagón: \"Nuestro dios entregó en nuestras manos á Samsón nuestro enemigo\". La pregunta era quién es Dios.",
+      "El hombre que había seguido a sus ojos pidió ahora \"al mozo que le guiaba de la mano\" que lo llevara a las columnas.",
+      "\"acuérdate ahora de mí, y esfuérzame, te ruego, solamente esta vez\": acordarse es zakar y esforzar es chazaq. Ahora sabía de dónde venía la fuerza.",
+      "La oración es sincera: también pide tomar \"venganza de los Filisteos, por mis dos ojos\". Aun así clama a Jehová en lugar de confiar en sí mismo, como lo hizo una vez cuando tuvo \"gran sed\"."
+     ]
+    },
+    {
+     "intro": "Para terminar: Hebreos 11 nombra a Sansón con todos sus defectos. Se le recuerda no porque él fuera fiel, sino porque Dios lo es.",
+     "question": "¿Dónde nombra Hebreos a Sansón, quiénes aparecen con él, y qué hicieron por la fe?",
+     "apply": "Si Dios pudo usar a Sansón, ¿qué significa eso para mis fracasos?",
+     "facts": [
+      "Sansón aparece con Gedeón, Barac y Jephté, jueces cuyas historias también muestran debilidad, y con David y Samuel.",
+      "\"convalecieron de enfermedades\": la palabra griega es astheneia, Strong: «debilidad»; \"fueron hechos fuertes\" es endynamoo, «dar poder».",
+      "La última oración de Sansón fue \"esfuérzame\", y Hebreos dice que \"fueron hechos fuertes\". La fuerza fue de Dios desde el principio."
+     ]
+    }
+   ],
+   "remember": [
+    "\"aquel niño será Nazareo á Dios desde el vientre\"",
+    "\"teniendo gran sed, clamó luego á Jehová\"",
+    "\"no sabiendo que Jehová ya se había de él apartado\"",
+    "\"el cabello de su cabeza comenzó á crecer\"",
+    "\"Señor Jehová, acuérdate ahora de mí, y esfuérzame\"",
+    "\"convalecieron de enfermedades\""
+   ]
+  },
+  "de": {
+   "title": "Simson: Kraft, Schwachheit und Gnade",
+   "opening_question": "Simson wurde Gott geweiht, bevor er geboren war, und der Geist des HERRN geriet über ihn. Trotzdem spielte er mit seiner Berufung, bis er sie verlor. Was geschah, warum geschah es, wie antwortete Gott auf sein letztes Gebet, und warum nennt der Hebräerbrief ihn trotzdem unter den Menschen des Glaubens? Jeder Schritt fragt, was geschah und was es für mich bedeutet.",
+   "steps": [
+    {
+     "intro": "Zuerst die Vorgeschichte: Israel tat wieder übel, und der HERR gab sie in die Hände der Philister vierzig Jahre (Richter 13:1).",
+     "question": "Was sagte der Engel des HERRN zu Manoahs Frau, und was bedeutete es, dass der Knabe ein Geweihter Gottes sein sollte?",
+     "apply": "Wozu hat Gott mich ausgesondert, und halte ich diese Berufung heilig?",
+     "facts": [
+      "\"Geweihter\" steht für nazir, von einem Wort für absondern. Strong: »abgesondert, das heißt geweiht«.",
+      "Das Gelübde hatte drei Zeichen: nichts, \"das man vom Weinstock macht\", kein Schermesser auf dem Haupt, und \"zu keinem Toten gehen\".",
+      "Ein solches Gelübde galt meist für eine bestimmte Zeit, \"bis das die Zeit aus sei\". Simson sollte es sein \"von Mutterleibe an bis an seinen Tod\".",
+      "Er sollte nur \"anfangen, Israel zu erlösen aus der Philister Hand\". Gedemütigt wurden die Philister später, zur Zeit Samuels."
+     ]
+    },
+    {
+     "question": "Warum wollte Simson die Frau aus Thimnath, was geschah, als der Löwe brüllte, und was nahm er aus dem Aas des Löwen?",
+     "apply": "Wo halte ich kleine Zugeständnisse für harmlos, weil niemand sie sieht?",
+     "facts": [
+      "Seine Eltern fragten, warum er ein Weib nehmen wolle \"bei den Philistern, die unbeschnitten sind\". Simson antwortete: \"Gib mir diese; denn sie gefällt meinen Augen\".",
+      "Der Text fügt hinzu, \"daß es von dem HERRN wäre; denn er suchte Ursache wider die Philister\". Gott wirkte sogar durch Simsons Entscheidungen; der Text nennt diese Entscheidungen nicht gut.",
+      "\"geriet über ihn\" steht für tsalach. Strong: »vorwärts drängen«. Dieselben Worte kommen wieder, als die Stricke an seinen Armen wie versengte Fäden werden.",
+      "Ein Geweihter sollte \"zu keinem Toten gehen\". Simson nahm Honig \"aus des Löwen Leibe\" und sagte seinen Eltern nicht, woher er kam."
+     ]
+    },
+    {
+     "question": "Was war Simsons Rätsel, wie kamen die Philister an die Antwort, und was tat Simson danach?",
+     "apply": "Wie reagiere ich, wenn ich mich verraten oder unter Druck gesetzt fühle?",
+     "facts": [
+      "Das Rätsel: \"Speise ging von dem Fresser und Süßigkeit von dem Starken\". Nur Simson wusste vom Löwen und vom Honig.",
+      "Die Gefährten sagten zu seiner Frau: \"Überrede deinen Mann\". Das hebräische Wort ist pathah, Strong: »öffnen«. Die Fürsten der Philister werden dasselbe Wort zu Delila sagen.",
+      "Sie weinte sieben Tage, und er sagte es ihr, \"denn sie drängte ihn\". Danach \"ergrimmte\" er \"in seinem Zorn\"."
+     ]
+    },
+    {
+     "question": "Wie zahlte Simson es den Philistern heim, was taten die Männer von Juda mit ihm, und was rief er, als ihn sehr dürstete?",
+     "apply": "Wende ich mich erst dann an Gott, wenn ich am Ende meiner Kraft bin?",
+     "facts": [
+      "Simson sagte: \"Wie sie mir getan haben, so habe ich ihnen wieder getan\". Jede Seite zahlte es der anderen heim, und jedes Mal wurde es schlimmer.",
+      "Dreitausend Mann von Juda banden ihren eigenen Richter, um ihn auszuliefern: \"Weißt du nicht, daß die Philister über uns herrschen?\"",
+      "Hier rief Simson zum ersten Mal \"den HERRN an\". Gott gab Wasser, und der Ort heißt \"des Anrufers Brunnen\"."
+     ]
+    },
+    {
+     "question": "Warum war Simson in Gaza, was planten die Männer der Stadt, und wie entkam er?",
+     "apply": "Verwechsle ich Gottes Geduld mit seiner Zustimmung?",
+     "facts": [
+      "In Thimnath \"sah\" er ein Weib; in Gaza \"sah\" er \"daselbst eine Hure\". Was er sah, führte ihn.",
+      "Er nahm \"beide Türen an der Stadt Tor samt den Pfosten\" und trug sie hinauf auf die Höhe des Berges \"vor Hebron\", weit ins Land und bergauf. Seine Kraft war noch da, aber das hieß nicht, dass alles gut war."
+     ]
+    },
+    {
+     "question": "Wie zermürbte Delila Simson, was sagte er ihr schließlich, und was wusste er nach Vers 20 nicht?",
+     "apply": "Wo spiele ich mit einer Zusage, die ich Gott gegeben habe?",
+     "facts": [
+      "Jeder der Fürsten der Philister versprach ihr \"tausendundhundert Silberlinge\".",
+      "Dreimal log er sie an, und jedes Mal lauerten Männer in der Kammer. Die dritte Antwort kam der Wahrheit nahe: \"die sieben Locken meines Hauptes\".",
+      "Sie \"drängte\" ihn \"mit ihren Worten alle Tage\", bis \"seine Seele matt bis an den Tod\" war. Dann heißt es: \"er sagte ihr sein ganzes Herz\".",
+      "\"und wußte nicht, daß der HERR von ihm gewichen war\". Das Wort ist yada, wissen. Die Kraft war immer gekommen, wenn \"der Geist des HERRN\" über ihn geriet."
+     ]
+    },
+    {
+     "question": "Schau zurück auf Thimnath, das Aas des Löwen, Gaza und Delila. Welches Muster siehst du, und wohin führt es?",
+     "apply": "Welches wiederkehrende Muster in meinem Leben könnte zu einem Fall führen, wenn ich es nicht angehe?",
+     "facts": [
+      "Es beginnt mit Sehen und Wollen: \"Ich habe ein Weib gesehen zu Thimnath\", \"Gib mir diese; denn sie gefällt meinen Augen\", \"sah daselbst eine Hure\", \"gewann er ein Weib lieb am Bach Sorek\".",
+      "Jedes Mal ging er etwas weiter: eine Ehe, von der seine Eltern ihm abrieten, Honig aus einem toten Löwen, eine Hure in Gaza, und zuletzt: \"er sagte ihr sein ganzes Herz\".",
+      "Jakobus beschreibt denselben Weg: \"wenn die Lust empfangen hat, gebiert sie die Sünde; die Sünde aber, wenn sie vollendet ist, gebiert sie den Tod\"."
+     ]
+    },
+    {
+     "question": "Was taten die Philister mit Simson, wohin brachten sie ihn, und welches kleine Zeichen der Hoffnung steht in Vers 22?",
+     "apply": "Wo kann ich selbst in den Folgen meiner Sünde sehen, dass Gott mit mir noch nicht fertig ist?",
+     "facts": [
+      "Die Augen, mit denen er in Thimnath und in Gaza \"sah\", wurden ihm ausgestochen. Der Mann, der die Tore von Gaza davongetragen hatte, wurde in Gaza \"mit zwei ehernen Ketten\" gebunden und \"mußte mahlen im Gefängnis\".",
+      "\"das Haar seines Hauptes fing an, wieder zu wachsen\". Das Wort ist tsamach, Strong: »sprossen«. Der Text sagt nicht mehr, aber er lässt es uns bemerken."
+     ]
+    },
+    {
+     "question": "Was feierten die Philister, worum bat Simson Gott in Vers 28, und was geschah, als das Haus einstürzte?",
+     "apply": "Wie sähe es für mich aus, nicht mehr auf meine eigene Kraft zu bauen, sondern auf Gott?",
+     "facts": [
+      "Die Philister lobten Dagon: \"Unser Gott hat uns unsern Feind Simson in unsre Hände gegeben\". Die Frage war, wer Gott ist.",
+      "Der Mann, der seinen Augen gefolgt war, bat nun den \"Knabe, der ihn bei der Hand leitete\", ihn zu den Säulen zu bringen.",
+      "\"gedenke mein und stärke mich doch, Gott, diesmal\": gedenken ist zakar, stärken ist chazaq. Jetzt wusste er, woher die Kraft kam.",
+      "Das Gebet ist ehrlich: Er bittet auch, dass er sich \"für meine beiden Augen\" an den Philistern räche. Doch er ruft den HERRN an, statt auf sich selbst zu vertrauen, wie schon einmal, als \"ihn aber sehr dürstete\"."
+     ]
+    },
+    {
+     "intro": "Zum Schluss: Hebräer 11 nennt Simson mit all seinen Fehlern. Man erinnert sich an ihn nicht, weil er treu war, sondern weil Gott treu ist.",
+     "question": "Wo nennt der Hebräerbrief Simson, wer wird mit ihm genannt, und was taten sie durch den Glauben?",
+     "apply": "Wenn Gott Simson gebrauchen konnte, was bedeutet das für mein Versagen?",
+     "facts": [
+      "Simson steht neben Gideon, Barak und Jephthah, Richtern, deren Geschichten auch Schwachheit zeigen, und neben David und Samuel.",
+      "\"sind kräftig geworden aus der Schwachheit\": das griechische Wort ist astheneia, Strong: »Schwäche«; kräftig werden ist endynamoo, »Kraft geben«.",
+      "Simsons letztes Gebet war \"stärke mich doch\", und der Hebräerbrief sagt, sie \"sind kräftig geworden\". Die Kraft war von Anfang an Gottes."
+     ]
+    }
+   ],
+   "remember": [
+    "\"der Knabe wird ein Geweihter Gottes sein von Mutterleibe an\"",
+    "\"Da ihn aber sehr dürstete, rief er den HERRN an\"",
+    "\"und wußte nicht, daß der HERR von ihm gewichen war\"",
+    "\"das Haar seines Hauptes fing an, wieder zu wachsen\"",
+    "\"Herr, HERR, gedenke mein und stärke mich doch\"",
+    "\"sind kräftig geworden aus der Schwachheit\""
+   ]
+  }
+ }
+}

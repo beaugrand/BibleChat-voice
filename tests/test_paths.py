@@ -299,7 +299,19 @@ class PathPagesTest(unittest.TestCase):
         self.assertIn("Daniel 1–2", p["steps"][0]["intro"])
         for lang in ("es", "de"):
             self.assertIn("Daniel 1–2", p["i18n"][lang]["steps"][0]["intro"])
-        self.assertIn('if "intro" in s:', read("packaging", "build_paths.py"))
+        self.assertIn('for k, most in (("intro", 160), ("apply", 200))', read("packaging", "build_paths.py"))
+
+    def test_step_for_me_question(self):
+        """🙋 "For me:": a step can ask what it means for the reader (Samson: every step), in all three languages."""
+        js = read("web", "paths.js")
+        for part in ('class="pv-apply"', 'T("For me:")', "s.apply = pick(ts && ts.apply, es.apply)", 'st.apply && !p.mine ? " " + T("For me:")'):
+            self.assertIn(part, js)
+        p = json.loads(read("web", "paths", "samson-strength-weakness-grace.json"))
+        self.assertEqual(len(p["steps"]), 10)
+        self.assertTrue(all(s.get("apply") for s in p["steps"]))
+        for lang in ("es", "de"):
+            self.assertTrue(all(s.get("apply") for s in p["i18n"][lang]["steps"]))
+        self.assertIn('"For me:":', read("web", "i18n.js"))
 
     def test_make_your_own_and_community(self):
         js = read("web", "paths.js")

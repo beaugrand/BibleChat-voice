@@ -2356,6 +2356,74 @@
   }
  },
  {
+  "id": "samson-strength-weakness-grace",
+  "title": "Samson: strength, weakness and grace",
+  "category": "People of the Bible",
+  "image": "img/samson-strength-weakness-grace.jpg",
+  "opening_question": "Samson was set apart to God before he was born, and the Spirit of the LORD came mightily upon him. Yet he played with his calling until he lost it. What happened, why did it happen, how did God answer his last prayer, and why does Hebrews still name him among the people of faith? Each step asks what happened and what it means for me.",
+  "steps": 10,
+  "step_questions": [
+   "What did the angel of the LORD tell Manoah's wife, and what did it mean for the child to be a Nazarite unto God?",
+   "Why did Samson want the woman of Timnath, what came upon him when the lion roared, and what did he take from the carcase of the lion?",
+   "What was Samson's riddle, how did the Philistines get the answer, and what did Samson do then?",
+   "How did Samson pay the Philistines back, what did the men of Judah do to him, and what did he cry out when he was sore athirst?",
+   "Why was Samson in Gaza, what did the men of the city plan, and how did he get away?",
+   "How did Delilah wear Samson down, what did he finally tell her, and what does verse 20 say he did not know?",
+   "Look back at Timnath, the lion's carcase, Gaza and Delilah. What pattern do you see, and where does it lead?",
+   "What did the Philistines do to Samson, where did they put him, and what small sign of hope is in verse 22?",
+   "What were the Philistines celebrating, what did Samson ask of God in verse 28, and what happened when the house fell?",
+   "Where does Hebrews name Samson, who is named with him, and what did they do through faith?"
+  ],
+  "books": [
+   "Hebrews",
+   "Judges",
+   "Numbers"
+  ],
+  "show": 8,
+  "verses": 107,
+  "minutes": 65,
+  "anim": {
+   "kind": "light",
+   "x": 50,
+   "y": 20,
+   "s": 32
+  },
+  "i18n": {
+   "es": {
+    "title": "Sansón: fuerza, debilidad y gracia",
+    "opening_question": "Sansón fue apartado para Dios antes de nacer, y el espíritu de Jehová cayó sobre él. Aun así jugó con su llamado hasta perderlo. ¿Qué pasó, por qué pasó, cómo respondió Dios a su última oración, y por qué Hebreos todavía lo nombra entre los que vivieron por la fe? Cada paso pregunta qué pasó y qué significa para mí.",
+    "step_questions": [
+     "¿Qué le dijo el ángel de Jehová a la mujer de Manoa, y qué significaba que el niño fuera Nazareo á Dios?",
+     "¿Por qué quería Sansón a la mujer de Timnah, qué cayó sobre él cuando rugió el león, y qué sacó del cuerpo muerto del león?",
+     "¿Cuál fue el enigma de Sansón, cómo consiguieron los Filisteos la respuesta, y qué hizo Sansón después?",
+     "¿Cómo se vengó Sansón de los Filisteos, qué le hicieron los hombres de Judá, y qué clamó cuando tuvo gran sed?",
+     "¿Por qué estaba Sansón en Gaza, qué planearon los de la ciudad, y cómo escapó?",
+     "¿Cómo desgastó Dalila a Sansón, qué le dijo él al final, y qué dice el versículo 20 que él no sabía?",
+     "Mira atrás: Timnah, el cuerpo del león, Gaza y Dalila. ¿Qué patrón ves, y adónde lleva?",
+     "¿Qué le hicieron los Filisteos a Sansón, dónde lo pusieron, y qué pequeña señal de esperanza hay en el versículo 22?",
+     "¿Qué celebraban los Filisteos, qué le pidió Sansón a Dios en el versículo 28, y qué pasó cuando cayó la casa?",
+     "¿Dónde nombra Hebreos a Sansón, quiénes aparecen con él, y qué hicieron por la fe?"
+    ]
+   },
+   "de": {
+    "title": "Simson: Kraft, Schwachheit und Gnade",
+    "opening_question": "Simson wurde Gott geweiht, bevor er geboren war, und der Geist des HERRN geriet über ihn. Trotzdem spielte er mit seiner Berufung, bis er sie verlor. Was geschah, warum geschah es, wie antwortete Gott auf sein letztes Gebet, und warum nennt der Hebräerbrief ihn trotzdem unter den Menschen des Glaubens? Jeder Schritt fragt, was geschah und was es für mich bedeutet.",
+    "step_questions": [
+     "Was sagte der Engel des HERRN zu Manoahs Frau, und was bedeutete es, dass der Knabe ein Geweihter Gottes sein sollte?",
+     "Warum wollte Simson die Frau aus Thimnath, was geschah, als der Löwe brüllte, und was nahm er aus dem Aas des Löwen?",
+     "Was war Simsons Rätsel, wie kamen die Philister an die Antwort, und was tat Simson danach?",
+     "Wie zahlte Simson es den Philistern heim, was taten die Männer von Juda mit ihm, und was rief er, als ihn sehr dürstete?",
+     "Warum war Simson in Gaza, was planten die Männer der Stadt, und wie entkam er?",
+     "Wie zermürbte Delila Simson, was sagte er ihr schließlich, und was wusste er nach Vers 20 nicht?",
+     "Schau zurück auf Thimnath, das Aas des Löwen, Gaza und Delila. Welches Muster siehst du, und wohin führt es?",
+     "Was taten die Philister mit Simson, wohin brachten sie ihn, und welches kleine Zeichen der Hoffnung steht in Vers 22?",
+     "Was feierten die Philister, worum bat Simson Gott in Vers 28, und was geschah, als das Haus einstürzte?",
+     "Wo nennt der Hebräerbrief Simson, wer wird mit ihm genannt, und was taten sie durch den Glauben?"
+    ]
+   }
+  }
+ },
+ {
   "id": "signs-of-the-times-october-2026",
   "title": "Signs of the times: October 2026",
   "category": "Prophecy",
