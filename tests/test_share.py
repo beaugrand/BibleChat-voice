@@ -123,6 +123,19 @@ class XButtonTest(unittest.TestCase):
         self.assertIn('\n"Copied. Now open the X app, start a new post, and tap and hold in the text box to paste.": [', read("web", "i18n.js"))
 
 
+class FacebookButtonTest(unittest.TestCase):
+    """Hans, 1 November: Facebook on the iPhone opened his feed but posted nothing (the Facebook app catches facebook.com's
+    share page and drops what was shared). On a phone the path's picture goes through the share menu and the text and link
+    are copied; on a computer the button opens Facebook as before."""
+    def test_facebook_on_a_phone_shares_the_picture(self):
+        js = read("web", "paths.js")
+        for part in ("function fbPhone(e)", "async function makeCard(t)", 'if(t.closest(".pv-so-fb") && S.shareP && fbPhone(e)) return;',
+                     "navigator.share({files: [card.file], title: t.title})", "if(isPhone()) makeCard(t)", "pv-fbhint", "facebook.com/sharer"):
+            self.assertIn(part, js, part)
+        self.assertLess(js.index("if(!isPhone()) return false;\n    e.preventDefault();\n    const t = S.shareP"), js.index("navigator.share({files: [card.file]"))
+        self.assertIn('\n"The text and link are copied: paste them into your Facebook post.": [', read("web", "i18n.js"))
+
+
 class SharePagesTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

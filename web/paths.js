@@ -994,16 +994,20 @@ const BCPaths = (() => {
         <button class="pv-btn pv-so-tt pv-so-ig">Instagram</button>
         <button class="pv-btn pv-card-dl">🖼 Picture to post</button>
       </div>
+      <p class="pv-small pv-fbhint" hidden>${esc(T("Facebook: pick Facebook in the share menu to post the picture. The text and link are copied: tap and hold in your post to paste them."))}</p>
       <p class="pv-small pv-xhint" hidden>${esc(T("Copied. Now open the X app, start a new post, and tap and hold in the text box to paste."))}</p>
       <p class="pv-small pv-tthint" hidden>TikTok and Instagram don't take links from websites. Post the picture (it has the QR code and the address on it), and paste the link in your caption, bio or story link: it is copied.</p>
       <input class="pv-url" readonly value="${esc(url)}">
       ${wide ? "" : qr}
       <div class="pv-nav">${back}</div>`, true);
     const cv = A.qr(url, wide ? 280 : 220); if(cv) root.querySelector(".pv-qr").appendChild(cv);
+    S.card = null; if(isPhone()) makeCard(t).then(c => { if(S.shareP === t) S.card = c; }).catch(() => {});   // ready for Facebook and 🖼 Picture to post
   }
   function absImg(t){ return t.image ? new URL("paths/" + t.image, A.shareUrl("")).href : new URL("paths/img/og-studypaths.jpg", A.shareUrl("")).href; }
   /* 🖼 a picture to post (TikTok, Instagram, Facebook, a status): the path's picture, its title and question, and a QR code with the address */
-  async function shareCard(t){
+  /* the picture itself (a PNG file), made when the share screen opens, so a tap can hand it to the share menu at once:
+     the iPhone only opens the share menu straight from a tap, not after waiting for a picture to be drawn */
+  async function makeCard(t){
     const W = 1080, H = 1350, c = document.createElement("canvas"); c.width = W; c.height = H; const g = c.getContext("2d");
     g.fillStyle = "#16191d"; g.fillRect(0, 0, W, H);
     const src = t.image ? A.base + t.image : A.base + "img/og-studypaths.jpg";
@@ -1024,9 +1028,30 @@ const BCPaths = (() => {
     g.fillStyle = "#9aa3ad"; g.font = "30px system-ui, sans-serif"; g.fillText("Scan the code, or open", 70, H - 160); g.fillText("beaugrand.github.io/BibleChat-voice", 70, H - 118); g.fillText("No sign-up · no app needed", 70, H - 76);
     const blob = await new Promise(r => c.toBlob(r, "image/png")), name = "BibleChat-" + (t.id || t.kind || "study").replace(/[^a-z0-9-]/gi, "") + ".png";
     const file = typeof File === "function" ? new File([blob], name, {type: "image/png"}) : null;
+    return {blob, name, file, t};
+  }
+  async function shareCard(t){
+    const card = S.card && S.card.t === t ? S.card : await makeCard(t);
+    const {blob, name, file} = card;
     if(file && navigator.canShare && navigator.canShare({files: [file]})){ try{ await navigator.share({files: [file], title: t.title, text: shareText(t) + "\n" + linkOf(t.hash)}); return; }catch(e){ if(e && e.name === "AbortError") return; } }
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
     A.toast(T("Picture saved. Post it with the link."));
+  }
+  /* Facebook on a phone: the Facebook app catches facebook.com's share page and opens the feed without the post (Hans,
+     1 November). So on a phone the picture goes through the phone's share menu (pick Facebook there), like the verse of
+     the day, and the text and link are copied to paste into the post. On a computer the button opens Facebook as before. */
+  function fbPhone(e){
+    if(!isPhone()) return false;
+    e.preventDefault();
+    const t = S.shareP, text = shareText(t) + "\n" + linkOf(t.hash), card = S.card && S.card.t === t ? S.card : null;
+    try{ if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).catch(() => {}); }catch(err){}
+    const h = root.querySelector(".pv-fbhint"); if(h) h.hidden = false;
+    if(card && card.file && navigator.canShare && navigator.canShare({files: [card.file]})){
+      navigator.share({files: [card.file], title: t.title}).then(() => A.toast(T("The text and link are copied: paste them into your Facebook post."))).catch(err => { if(!(err && err.name === "AbortError")) shareCard(t); });
+      return true;
+    }
+    if(!card){ A.toast(T("The picture is still being made. Try again in a moment.")); return true; }
+    shareCard(t); return true;
   }
   /* the QR code over the whole screen, as big as it fits: for a TV, a projector or a room */
   function bigQr(){
@@ -1108,6 +1133,7 @@ const BCPaths = (() => {
     if(t.closest(".pv-qrbig")){ bigQr(); return; }
     if(t.closest(".pv-card-dl")){ shareCard(S.shareP).catch(() => A.toast(T("Couldn't make the picture."))); return; }
     const xb = t.closest(".pv-so-x"); if(xb && xPhone(e, xb, root, A.toast)) return;
+    if(t.closest(".pv-so-fb") && S.shareP && fbPhone(e)) return;
     if(t.closest(".pv-so-tt")){ const u = root.querySelector(".pv-url").value, h = root.querySelector(".pv-tthint"); if(h) h.hidden = false;
       (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(() => A.toast(T("Link copied")), () => {});
       if(navigator.share){ const p = S.shareP; navigator.share({title: p.title, text: shareText(p), url: u}).catch(() => {}); } return; }
