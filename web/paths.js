@@ -604,6 +604,19 @@ const BCPaths = (() => {
     for(let c = p.c1; c <= p.c2; c++) h += g.passageNotesHtml(p.book, c, p.v1 !== null && c === p.c1 ? p.v1 : 1, p.v2 !== null && c === p.c2 ? p.v2 : 200, o);
     return h;
   }
+  /* 🔴 Words in red: a path with "red_letters" shows the words of Jesus in red. packaging/build_paths.py takes them from the
+     King James file's own markup (and, for the Reina-Valera 1909 and Luther 1912, from marks checked by hand) and stores only
+     where the red starts and ends, with the length and a fingerprint of the verse text; a verse that reads differently
+     (another Bible) is shown without red, never with red in the wrong place. */
+  function fnv(t){ let h = 0x811c9dc5; for(let i = 0; i < t.length; i++){ h ^= t.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; } return h; }
+  function redHtml(b, c, v, t){
+    const marks = S.path && S.path.red && S.path.red[b + " " + c + ":" + v];
+    const m = marks && marks.find(x => x.n === t.length && x.h === fnv(t));
+    if(!m) return esc(t);
+    let out = "", at = 0;
+    for(const [a, z] of m.s){ if(a < at || z > t.length) return esc(t); out += esc(t.slice(at, a)) + `<span class="pv-red">${esc(t.slice(a, z))}</span>`; at = z; }
+    return out + esc(t.slice(at));
+  }
   async function drawVerses(s){
     const box = root.querySelector("#pvVerses"), my = S.step, html = [];
     if(typeof BCGuide !== "undefined") await BCGuide.load("guide.json");
@@ -611,7 +624,7 @@ const BCPaths = (() => {
       const {key, vs} = await readVerses(r); if(S.step !== my || !root.contains(box)) return;
       const p = parseRef(r), g = G();
       html.push(`<div class="pv-ref" data-ref="${esc(r)}" data-key="${esc(key || "")}"><div class="pv-refh">${refLink(p.book, p.c1, p.v1, label(r))}${g ? " " + g.tagHtml(p.book) : ""}${key && key !== "reader" ? ` <small class="pv-from">${esc(key === "ETH" ? "Ethiopian Canon" : key)}: not in your Bible</small>` : ""} ${readAlong(S.path, p)}${p.book in BOOKS66 ? nivLink(r) : ""}</div>`
-        + (vs.length ? `<div class="pvx pv-text">${vs.map(([b, c, v, t]) => `<span class="pv-v${hlClass(b, c, v)}"><sup>${p.c1 !== p.c2 || p.v1 === null ? c + ":" : ""}${v}</sup>${esc(t)} </span>`).join("")}</div>` : `<p class="pv-err">This passage isn't in the Bibles available here.</p>`)
+        + (vs.length ? `<div class="pvx pv-text">${vs.map(([b, c, v, t]) => `<span class="pv-v${hlClass(b, c, v)}"><sup>${p.c1 !== p.c2 || p.v1 === null ? c + ":" : ""}${v}</sup>${redHtml(b, c, v, t)} </span>`).join("")}</div>` : `<p class="pv-err">This passage isn't in the Bibles available here.</p>`)
         + (vs.length ? guideNotes(p) : "") + `</div>`);
     }
     box.innerHTML = html.join("");
@@ -1266,6 +1279,7 @@ const BCPaths = (() => {
 .pv-ref{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:0 0 10px}
 .pv-refh{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;font-weight:650;margin-bottom:4px}
 .pv-text{font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.6}
+.pv-red{color:#c0262d}.pv-dark .pv-red{color:#ff7a70}
 .pv-text sup{font-family:system-ui,sans-serif;font-size:.62em;color:var(--muted);margin-right:2px}
 .pv-from{font-weight:400;color:var(--muted)}
 .pv-outside{border:1px solid rgba(214,170,90,.55);background:rgba(214,170,90,.09);border-radius:10px;padding:8px 12px;margin:0 0 10px}.pv-outside h4{margin:2px 0}

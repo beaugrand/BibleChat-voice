@@ -1,0 +1,151 @@
+{
+  "id": "words-in-red-jesus-in-his-own-words",
+  "title": "The words in red: Jesus in His own words",
+  "category": "Foundations",
+  "anim": {"kind": "light", "x": 50, "y": 28, "s": 32},
+  "red_letters": true,
+  "red_fix": {"Mark 8:34": ["Whosoever will come after me, let him deny himself, and take up his cross, and follow me."]},
+  "opening_question": "In many Bibles the words Jesus spoke are printed in red. This path reads Him in His own words: from the first words the Bible records Him saying, at twelve, through His teaching, His prayer in the garden and His sayings from the cross, to His last words in the Bible: Surely I come quickly. His words are shown in red. Each step asks what He said and what it means for me.",
+  "required_refs": ["Luke 2:41-52", "Matthew 4:17-22", "John 3:1-8", "John 3:16-17", "Matthew 5:43-48", "Matthew 22:35-40", "Mark 8:34-38", "John 14:1-3", "John 14:27", "Luke 22:39-46", "Luke 23:33-34", "Luke 23:39-43", "John 19:25-30", "Matthew 27:45-46", "Luke 23:46", "John 20:19-21", "John 20:26-29", "Revelation 22:20"],
+  "words": ["G3340", "G190", "G509", "G25", "G5055"],
+  "show": 8,
+  "steps": [
+    {"question": "Where did Mary and Joseph find Jesus, and what did He answer His mother?",
+     "apply": "Is being about my Father's business first in my life, or something I fit in?",
+     "refs": ["Luke 2:41-52"],
+     "look_closer": {"strongs": ["G1163", "G3962"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "He was \"twelve years old\". His answer to His mother is the first saying of His that the Bible records.", "refs": ["Luke 2:42", "Luke 2:49"]},
+       {"text": "\"I must be about my Father's business\": \"must\" is dei, Strong's: \"necessary\".", "refs": ["Luke 2:49"], "strongs": ["G1163"]},
+       {"text": "\"they understood not the saying which he spake unto them\". Yet \"he went down with them\" and \"was subject unto them\".", "refs": ["Luke 2:50-51"]},
+       {"text": "\"Jesus increased in wisdom and stature, and in favour with God and man.\"", "refs": ["Luke 2:52"]}
+     ]},
+    {"question": "What did Jesus begin to preach, and what did He say to Simon and Andrew?",
+     "apply": "Is there something I need to turn from, or a net I need to leave, to follow Him?",
+     "refs": ["Matthew 4:17-22"],
+     "look_closer": {"strongs": ["G3340", "G190"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "His first message: \"Repent: for the kingdom of heaven is at hand\". \"Repent\" is metanoeo, Strong's: \"to think differently or afterwards\".", "refs": ["Matthew 4:17"], "strongs": ["G3340"]},
+       {"text": "\"Follow me, and I will make you fishers of men.\" They \"straightway left their nets, and followed him\": \"followed\" is akoloutheo, Strong's: \"to be in the same way with\".", "refs": ["Matthew 4:19-20"], "strongs": ["G190"]},
+       {"text": "James and John too \"immediately left the ship and their father, and followed him\".", "refs": ["Matthew 4:22"]}
+     ]},
+    {"question": "Who came to Jesus by night, and what did Jesus tell him he must be?",
+     "apply": "Have I been born again, or am I trying to see the kingdom some other way?",
+     "refs": ["John 3:1-8", "John 3:16-17"],
+     "look_closer": {"strongs": ["G509", "G3439"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Nicodemus was \"a man of the Pharisees\", \"a ruler of the Jews\", and he came \"by night\".", "refs": ["John 3:1-2"]},
+       {"text": "\"born again\": \"again\" is anothen, Strong's: \"from above\", and also \"anew\".", "refs": ["John 3:3"], "strongs": ["G509"]},
+       {"text": "Nicodemus asked \"How can a man be born when he is old?\" Jesus answered: \"born of water and of the Spirit\".", "refs": ["John 3:4-5"]},
+       {"text": "\"For God so loved the world, that he gave his only begotten Son\". \"only begotten\" is monogenes, Strong's: \"only-born\".", "refs": ["John 3:16"], "strongs": ["G3439"]},
+       {"text": "He was not sent \"to condemn the world; but that the world through him might be saved\".", "refs": ["John 3:17"]}
+     ]},
+    {"question": "What had the people heard said, and what did Jesus say instead?",
+     "apply": "Who is the person I find hardest to love, and will I pray for them this week?",
+     "refs": ["Matthew 5:43-48"],
+     "look_closer": {"strongs": ["G25", "G5046"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"Ye have heard that it hath been said\", then \"But I say unto you\". He speaks with His own authority.", "refs": ["Matthew 5:43-44"]},
+       {"text": "\"Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you\".", "refs": ["Matthew 5:44"]},
+       {"text": "God gives to all: \"he maketh his sun to rise on the evil and on the good, and sendeth rain on the just and on the unjust\".", "refs": ["Matthew 5:45"]},
+       {"text": "\"perfect\" is teleios. Strong's: \"complete\".", "refs": ["Matthew 5:48"], "strongs": ["G5046"]}
+     ]},
+    {"question": "What did the lawyer ask, and which two commandments did Jesus name?",
+     "apply": "Which of the two do I find harder to live, and why?",
+     "refs": ["Matthew 22:35-40", "Deuteronomy 6:5", "Leviticus 19:18"],
+     "look_closer": {"strongs": ["G25", "G1785"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "The lawyer asked, \"tempting him\": \"Master, which is the great commandment in the law?\"", "refs": ["Matthew 22:35-36"]},
+       {"text": "Jesus answered from the law itself: \"thou shalt love the LORD thy God with all thine heart\" (Deuteronomy) and \"thou shalt love thy neighbour as thyself\" (Leviticus).", "refs": ["Deuteronomy 6:5", "Leviticus 19:18"]},
+       {"text": "\"On these two commandments hang all the law and the prophets.\"", "refs": ["Matthew 22:40"]},
+       {"text": "\"commandment\" is entole. Strong's: \"an authoritative prescription\".", "refs": ["Matthew 22:38"], "strongs": ["G1785"]}
+     ]},
+    {"question": "What must anyone who will come after Jesus do, and what does it profit to gain the whole world?",
+     "apply": "What would denying myself and taking up my cross look like this week?",
+     "refs": ["Mark 8:34-38"],
+     "look_closer": {"strongs": ["G533", "G5590"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Three things: \"let him deny himself, and take up his cross, and follow me\".", "refs": ["Mark 8:34"]},
+       {"text": "\"deny\" is aparneomai. Strong's: \"to deny utterly\".", "refs": ["Mark 8:34"], "strongs": ["G533"]},
+       {"text": "\"what shall it profit a man, if he shall gain the whole world, and lose his own soul?\" \"soul\" is psyche, the word translated \"life\" in the verse before.", "refs": ["Mark 8:35-36"], "strongs": ["G5590"]},
+       {"text": "\"Whosoever therefore shall be ashamed of me and of my words\", of him \"shall the Son of man be ashamed\".", "refs": ["Mark 8:38"]}
+     ]},
+    {"question": "What did Jesus promise His disciples about His Father's house, and what peace did He leave them?",
+     "apply": "What is troubling my heart right now, and will I bring it to Him?",
+     "refs": ["John 14:1-3", "John 14:27"],
+     "look_closer": {"strongs": ["G5015", "G1515"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"troubled\" is tarasso. Strong's: \"to stir or agitate (roil water)\".", "refs": ["John 14:1"], "strongs": ["G5015"]},
+       {"text": "\"I go to prepare a place for you\", and \"I will come again, and receive you unto myself\".", "refs": ["John 14:2-3"]},
+       {"text": "\"Peace I leave with you, my peace I give unto you: not as the world giveth\". \"peace\" is eirene, Strong's: \"quietness, rest\".", "refs": ["John 14:27"], "strongs": ["G1515"]}
+     ]},
+    {"question": "What did Jesus pray on the mount of Olives, and what did He tell His disciples twice?",
+     "apply": "Is there something I need to pray about: not my will, but Thine, be done?",
+     "refs": ["Luke 22:39-46"],
+     "look_closer": {"strongs": ["G2307", "G74"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"Father, if thou be willing, remove this cup from me: nevertheless not my will, but thine, be done.\"", "refs": ["Luke 22:42"]},
+       {"text": "\"will\" is thelema. Strong's: \"a determination\".", "refs": ["Luke 22:42"], "strongs": ["G2307"]},
+       {"text": "\"there appeared an angel unto him from heaven, strengthening him\". \"being in an agony he prayed more earnestly\". \"agony\" is agonia, Strong's: \"anguish\".", "refs": ["Luke 22:43-44"], "strongs": ["G74"]},
+       {"text": "Twice He told them: \"Pray that ye enter not into temptation\", and \"rise and pray, lest ye enter into temptation\".", "refs": ["Luke 22:40", "Luke 22:46"]}
+     ]},
+    {"intro": "The seven sayings from the cross come from four Gospels. Read them in order.",
+     "question": "What seven things did Jesus say from the cross, and to whom did He say each one?",
+     "apply": "Which of the seven sayings do I most need to hear today?",
+     "refs": ["Luke 23:33-34", "Luke 23:39-43", "John 19:25-30", "Matthew 27:45-46", "Luke 23:46"],
+     "look_closer": {"strongs": ["G863", "G3857", "G5055"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "For those who crucified Him: \"Father, forgive them; for they know not what they do\".", "refs": ["Luke 23:34"]},
+       {"text": "To the malefactor who said \"Lord, remember me\": \"To day shalt thou be with me in paradise\".", "refs": ["Luke 23:42-43"]},
+       {"text": "To His mother and the disciple: \"Woman, behold thy son!\" and \"Behold thy mother!\"", "refs": ["John 19:26-27"]},
+       {"text": "\"My God, my God, why hast thou forsaken me?\" These are the first words of Psalm 22.", "refs": ["Matthew 27:46", "Psalms 22:1"]},
+       {"text": "\"I thirst\", then \"It is finished\". \"finished\" is teleo, Strong's: \"to end, i.e. complete\".", "refs": ["John 19:28-30"], "strongs": ["G5055"]},
+       {"text": "\"Father, into thy hands I commend my spirit\". Psalm 31 says: \"Into thine hand I commit my spirit\".", "refs": ["Luke 23:46", "Psalms 31:5"]}
+     ]},
+    {"intro": "Closing: His last words in the Bible are a promise.",
+     "question": "What did the risen Jesus say to His disciples and to Thomas, and what is His last promise in the Bible?",
+     "apply": "Am I one of those who have not seen, and yet have believed? Am I ready for His coming?",
+     "refs": ["John 20:19-21", "John 20:26-29", "Revelation 22:20"],
+     "look_closer": {"strongs": ["G1515", "G4100", "G5035"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Three times He said: \"Peace be unto you\".", "refs": ["John 20:19", "John 20:21", "John 20:26"]},
+       {"text": "\"as my Father hath sent me, even so send I you\".", "refs": ["John 20:21"]},
+       {"text": "Thomas said \"My Lord and my God\". Jesus answered: \"blessed are they that have not seen, and yet have believed\".", "refs": ["John 20:28-29"]},
+       {"text": "His last words in the Bible: \"Surely I come quickly\". \"quickly\" is tachu, Strong's: \"without delay\".", "refs": ["Revelation 22:20"], "strongs": ["G5035"]}
+     ]}
+  ],
+  "remember": [
+    {"text": "\"wist ye not that I must be about my Father's business?\"", "refs": ["Luke 2:49"]},
+    {"text": "\"Follow me, and I will make you fishers of men\"", "refs": ["Matthew 4:19"]},
+    {"text": "\"Except a man be born again, he cannot see the kingdom of God\"", "refs": ["John 3:3"]},
+    {"text": "\"Love your enemies\"", "refs": ["Matthew 5:44"]},
+    {"text": "\"not my will, but thine, be done\"", "refs": ["Luke 22:42"]},
+    {"text": "\"It is finished\"", "refs": ["John 19:30"]},
+    {"text": "\"Surely I come quickly\"", "refs": ["Revelation 22:20"]}
+  ],
+  "quiz": [
+    {"q": "In Luke 2:42, how old was Jesus when they went up to Jerusalem for the feast?", "type": "multiple_choice",
+     "options": ["Twelve years old", "Ten years old", "Thirteen years old", "Thirty years old"], "answer": 0, "answer_refs": ["Luke 2:42"], "check": {"bible": "KJV", "word": "twelve"}},
+    {"q": "Fill in the word: \"wist ye not that I must be about my Father's ___?\"", "type": "fill_word", "ref": "Luke 2:49", "bible": "KJV", "word": "business"},
+    {"q": "Which verse says \"Repent: for the kingdom of heaven is at hand\"?", "type": "find_the_verse", "answer_refs": ["Matthew 4:17"]},
+    {"q": "Fill in the word: \"Follow me, and I will make you ___ of men\"", "type": "fill_word", "ref": "Matthew 4:19", "bible": "KJV", "word": "fishers"},
+    {"q": "Which verse says \"Except a man be born again, he cannot see the kingdom of God\"?", "type": "find_the_verse", "answer_refs": ["John 3:3"]},
+    {"q": "Which verse says \"For God so loved the world, that he gave his only begotten Son\"?", "type": "find_the_verse", "answer_refs": ["John 3:16"]},
+    {"q": "Fill in the word: \"Love your ___, bless them that curse you\"", "type": "fill_word", "ref": "Matthew 5:44", "bible": "KJV", "word": "enemies"},
+    {"q": "Which translation says \"despitefully use you\" in Matthew 5:44?", "type": "which_translation", "ref": "Matthew 5:44", "bible": "KJV", "phrase": "despitefully use you"},
+    {"q": "In Matthew 22:38, what does Jesus call loving the Lord thy God with all thy heart?", "type": "multiple_choice",
+     "options": ["The first and great commandment", "The second commandment", "A new commandment", "The least commandment"], "answer": 0, "answer_refs": ["Matthew 22:38"], "check": {"bible": "KJV", "word": "great"}},
+    {"q": "Which verse says \"On these two commandments hang all the law and the prophets\"?", "type": "find_the_verse", "answer_refs": ["Matthew 22:40"]},
+    {"q": "Fill in the word: \"let him deny himself, and take up his ___, and follow me\"", "type": "fill_word", "ref": "Mark 8:34", "bible": "KJV", "word": "cross"},
+    {"q": "Which verse says \"In my Father's house are many mansions\"?", "type": "find_the_verse", "answer_refs": ["John 14:2"]},
+    {"q": "In Luke 22:44, what was His sweat like?", "type": "multiple_choice",
+     "options": ["Great drops of blood", "Rain", "Dew", "Tears"], "answer": 0, "answer_refs": ["Luke 22:44"], "check": {"bible": "KJV", "word": "blood"}},
+    {"q": "Which verse says \"Father, forgive them; for they know not what they do\"?", "type": "find_the_verse", "answer_refs": ["Luke 23:34"]},
+    {"q": "Fill in the word: \"To day shalt thou be with me in ___\"", "type": "fill_word", "ref": "Luke 23:43", "bible": "KJV", "word": "paradise"},
+    {"q": "In John 19:30, what did Jesus say when He had received the vinegar?", "type": "multiple_choice",
+     "options": ["It is finished", "I thirst", "Father, forgive them", "Behold thy mother"], "answer": 0, "answer_refs": ["John 19:30"], "check": {"bible": "KJV", "word": "finished"}},
+    {"q": "Which verse says \"blessed are they that have not seen, and yet have believed\"?", "type": "find_the_verse", "answer_refs": ["John 20:29"]},
+    {"q": "Fill in the word: \"Surely I come ___\"", "type": "fill_word", "ref": "Revelation 22:20", "bible": "KJV", "word": "quickly"}
+  ],
+  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]
+}

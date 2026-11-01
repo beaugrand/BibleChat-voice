@@ -313,6 +313,43 @@ class PathPagesTest(unittest.TestCase):
             self.assertTrue(all(s.get("apply") for s in p["i18n"][lang]["steps"]))
         self.assertIn('"For me:":', read("web", "i18n.js"))
 
+    def test_words_in_red(self):
+        """🔴 "The words in red": the words of Jesus in red, in the King James, the Reina-Valera 1909 and Luther 1912.
+        The path keeps only where the red starts and ends and a fingerprint of the verse; the page and the build
+        compute the same fingerprint, and a verse that reads differently gets no red."""
+        js = read("web", "paths.js")
+        for part in ('class="pv-red"', "function fnv(t)", "${redHtml(b, c, v, t)}", "x.n === t.length && x.h === fnv(t)"):
+            self.assertIn(part, js)
+        src = read("packaging", "build_paths.py")
+        for part in ("def red_marks(", "def jesus_words(", '"red_fix"', 'who") == "Jesus"'):
+            self.assertIn(part, src)
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("build_paths_red", os.path.join(ROOT, "packaging", "build_paths.py"))
+        bp = importlib.util.module_from_spec(spec); spec.loader.exec_module(bp)
+        kjv = "And he said unto them, How is it that ye sought me? wist ye not that I must be about my Father’s business?"
+        p = json.loads(read("web", "paths", "words-in-red-jesus-in-his-own-words.json"))
+        self.assertTrue(p["red_letters"])
+        self.assertNotIn("red_fix", p)
+        marks = p["red"]["Luke 2:49"]
+        self.assertEqual(len(marks), 3)   # KJV, Reina-Valera 1909, Luther 1912
+        m = [x for x in marks if x["n"] == len(kjv) and x["h"] == bp.fnv(kjv)]
+        self.assertEqual(len(m), 1)
+        a, z = m[0]["s"][0]
+        self.assertEqual(kjv[a:z], "How is it that ye sought me? wist ye not that I must be about my Father’s business?")
+        self.assertNotIn("And he said", kjv[a:z])
+        for lang in ("es", "de"):
+            self.assertNotIn("red", p["i18n"][lang])
+        # Mark 8:34: the King James markup puts the narration in red; red_fix leaves only His words
+        mk = "And when he had called the people unto him with his disciples also, he said unto them, Whosoever will come after me, let him deny himself, and take up his cross, and follow me."
+        m = [x for x in p["red"]["Mark 8:34"] if x["n"] == len(mk) and x["h"] == bp.fnv(mk)][0]
+        self.assertTrue(mk[m["s"][0][0]:].startswith("Whosoever will come after me"))
+        self.assertEqual(json.loads(read("web", "paths", "i-am-who-jesus-says-he-is.json"))["category"], "Name & Word")
+        ids = {x["id"] for x in json.loads(read("web", "prayers.json"))["prayers"]}
+        for pid in ("i-am-who-jesus-says-he-is", "words-in-red-jesus-in-his-own-words"):
+            self.assertIn("path-" + pid, ids)
+            for lang in ("es", "de"):
+                self.assertIn("path-" + pid, json.loads(read("web", f"prayers.{lang}.json"))["prayers"])
+
     def test_make_your_own_and_community(self):
         js = read("web", "paths.js")
         for part in ("Study Paths / Community", "pv-segb", "communityView", "＋ Make your own study path", "editPath", "normRef", "edAddRef",

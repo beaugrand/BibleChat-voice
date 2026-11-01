@@ -750,6 +750,75 @@
   }
  },
  {
+  "id": "i-am-who-jesus-says-he-is",
+  "title": "I AM: who Jesus says He is",
+  "category": "Name & Word",
+  "image": "img/i-am-who-jesus-says-he-is.jpg",
+  "opening_question": "At the burning bush God gave Moses His name: I AM THAT I AM. In the Gospel of John, Jesus says I am again and again: the bread of life, the light of the world, the door, the good shepherd, the resurrection and the life, the way, the truth and the life, the true vine. What does He claim each time, and why did some take up stones? Each step asks what He said and what it means for me.",
+  "steps": 10,
+  "step_questions": [
+   "What did Moses ask God at the bush, and what name did God give him?",
+   "What did the people ask Jesus for, and what did He say about the true bread from heaven?",
+   "What did Jesus say about Himself in John 8:12, and what did He do for the man born blind?",
+   "What did Jesus say about Abraham, and why did the people take up stones to cast at Him?",
+   "What did Jesus call Himself in John 10:7-9, and what does the thief come to do?",
+   "What does the good shepherd do that the hireling does not?",
+   "What did Martha believe about the last day, and what did Jesus tell her He is?",
+   "What did Thomas ask, and what did Jesus answer?",
+   "What does the Father do with the branches, and what does Jesus say we can do without Him?",
+   "What happened when Jesus said \"I am he\" in the garden, and how does He name Himself at the end of the Bible?"
+  ],
+  "books": [
+   "Exodus",
+   "John",
+   "Psalms",
+   "Revelation"
+  ],
+  "show": 8,
+  "verses": 60,
+  "minutes": 55,
+  "anim": {
+   "kind": "light",
+   "x": 50,
+   "y": 30,
+   "s": 34
+  },
+  "i18n": {
+   "es": {
+    "title": "YO SOY: quién dice Jesús que es",
+    "opening_question": "En la zarza ardiente Dios le dio a Moisés su nombre: YO SOY EL QUE SOY. En el Evangelio de Juan, Jesús dice yo soy una y otra vez: el pan de vida, la luz del mundo, la puerta, el buen pastor, la resurrección y la vida, el camino, la verdad y la vida, la vid verdadera. ¿Qué afirma de sí mismo cada vez, y por qué algunos tomaron piedras? Cada paso pregunta qué dijo y qué significa para mí.",
+    "step_questions": [
+     "¿Qué le preguntó Moisés a Dios en la zarza, y qué nombre le dio Dios?",
+     "¿Qué le pidió la gente a Jesús, y qué dijo Él del verdadero pan del cielo?",
+     "¿Qué dijo Jesús de sí mismo en Juan 8:12, y qué hizo por el hombre ciego de nacimiento?",
+     "¿Qué dijo Jesús de Abraham, y por qué tomaron piedras para tirarle?",
+     "¿Cómo se llamó Jesús a sí mismo en Juan 10:7-9, y a qué viene el ladrón?",
+     "¿Qué hace el buen pastor que el asalariado no hace?",
+     "¿Qué creía Marta sobre el día postrero, y qué le dijo Jesús que Él es?",
+     "¿Qué preguntó Tomás, y qué le respondió Jesús?",
+     "¿Qué hace el Padre con los pámpanos, y qué dice Jesús que podemos hacer sin Él?",
+     "¿Qué pasó cuando Jesús dijo \"Yo soy\" en el huerto, y cómo se nombra a sí mismo al final de la Biblia?"
+    ]
+   },
+   "de": {
+    "title": "ICH BIN: wer Jesus nach seinen eigenen Worten ist",
+    "opening_question": "Im brennenden Busch gab Gott dem Mose seinen Namen; in der Lutherbibel heißt er: ICH WERDE SEIN, DER ICH SEIN WERDE. Im Johannesevangelium sagt Jesus immer wieder: Ich bin. Das Brot des Lebens, das Licht der Welt, die Tür, der gute Hirte, die Auferstehung und das Leben, der Weg und die Wahrheit und das Leben, der rechte Weinstock. Was sagt er jedes Mal von sich, und warum hoben einige Steine auf? Jeder Schritt fragt, was er gesagt hat und was es für mich bedeutet.",
+    "step_questions": [
+     "Was fragte Mose Gott am Busch, und welchen Namen gab Gott ihm?",
+     "Worum bat das Volk Jesus, und was sagte er vom rechten Brot vom Himmel?",
+     "Was sagte Jesus in Johannes 8,12 von sich, und was tat er für den Blindgeborenen?",
+     "Was sagte Jesus über Abraham, und warum hoben sie Steine auf, um auf ihn zu werfen?",
+     "Wie nannte sich Jesus in Johannes 10,7-9, und wozu kommt der Dieb?",
+     "Was tut der gute Hirte, was der Mietling nicht tut?",
+     "Was glaubte Martha über den Jüngsten Tag, und was sagte Jesus ihr, wer er ist?",
+     "Was fragte Thomas, und was antwortete Jesus?",
+     "Was tut der Vater mit den Reben, und was können wir nach Jesu Worten ohne ihn tun?",
+     "Was geschah, als Jesus im Garten \"Ich bin's\" sagte, und wie nennt er sich am Ende der Bibel?"
+    ]
+   }
+  }
+ },
+ {
   "id": "isaiah-53-suffering-servant",
   "title": "Isaiah 53: the suffering Servant",
   "category": "Prophecy",
@@ -3094,6 +3163,78 @@
      "Was sagen diese Verse über Glauben, Werke und Gesetz? Lies Paulus und Jakobus nebeneinander, neben den Versen oben.",
      "Wie beschreibt die Offenbarung die Heiligen, und wer hat das Recht am Holz des Lebens? Vergleiche die Übersetzungen von 22,14.",
      "Für das Leben: Jesus sagte: \"Liebet ihr mich, so haltet ihr meine Gebote.\" Welches neue Gebot gibt Er, und woran wird man seine Jünger erkennen?"
+    ]
+   }
+  }
+ },
+ {
+  "id": "words-in-red-jesus-in-his-own-words",
+  "title": "The words in red: Jesus in His own words",
+  "category": "Foundations",
+  "image": "img/words-in-red-jesus-in-his-own-words.jpg",
+  "opening_question": "In many Bibles the words Jesus spoke are printed in red. This path reads Him in His own words: from the first words the Bible records Him saying, at twelve, through His teaching, His prayer in the garden and His sayings from the cross, to His last words in the Bible: Surely I come quickly. His words are shown in red. Each step asks what He said and what it means for me.",
+  "steps": 10,
+  "step_questions": [
+   "Where did Mary and Joseph find Jesus, and what did He answer His mother?",
+   "What did Jesus begin to preach, and what did He say to Simon and Andrew?",
+   "Who came to Jesus by night, and what did Jesus tell him he must be?",
+   "What had the people heard said, and what did Jesus say instead?",
+   "What did the lawyer ask, and which two commandments did Jesus name?",
+   "What must anyone who will come after Jesus do, and what does it profit to gain the whole world?",
+   "What did Jesus promise His disciples about His Father's house, and what peace did He leave them?",
+   "What did Jesus pray on the mount of Olives, and what did He tell His disciples twice?",
+   "What seven things did Jesus say from the cross, and to whom did He say each one?",
+   "What did the risen Jesus say to His disciples and to Thomas, and what is His last promise in the Bible?"
+  ],
+  "books": [
+   "Deuteronomy",
+   "John",
+   "Leviticus",
+   "Luke",
+   "Mark",
+   "Matthew",
+   "Revelation"
+  ],
+  "show": 8,
+  "verses": 83,
+  "minutes": 60,
+  "anim": {
+   "kind": "light",
+   "x": 50,
+   "y": 28,
+   "s": 32
+  },
+  "i18n": {
+   "es": {
+    "title": "Las palabras en rojo: Jesús en sus propias palabras",
+    "opening_question": "En muchas Biblias las palabras que Jesús dijo están impresas en rojo. Esta ruta lo lee en sus propias palabras: desde las primeras que la Biblia registra de Él, a los doce años, pasando por su enseñanza, su oración en el huerto y sus palabras en la cruz, hasta sus últimas palabras en la Biblia: \"Ciertamente, vengo en breve\". Sus palabras aparecen en rojo. Cada paso pregunta qué dijo y qué significa para mí.",
+    "step_questions": [
+     "¿Dónde encontraron José y María a Jesús, y qué le respondió Él a su madre?",
+     "¿Qué comenzó a predicar Jesús, y qué les dijo a Simón y Andrés?",
+     "¿Quién vino a Jesús de noche, y qué le dijo Jesús que le era necesario?",
+     "¿Qué habían oído que fue dicho, y qué dijo Jesús en cambio?",
+     "¿Qué preguntó el intérprete de la ley, y qué dos mandamientos nombró Jesús?",
+     "¿Qué debe hacer cualquiera que quiera venir en pos de Jesús, y de qué aprovecha ganar todo el mundo?",
+     "¿Qué prometió Jesús a sus discípulos sobre la casa de su Padre, y qué paz les dejó?",
+     "¿Qué oró Jesús en el monte de las Olivas, y qué les dijo dos veces a sus discípulos?",
+     "¿Qué siete cosas dijo Jesús desde la cruz, y a quién le dijo cada una?",
+     "¿Qué les dijo Jesús resucitado a sus discípulos y a Tomás, y cuál es su última promesa en la Biblia?"
+    ]
+   },
+   "de": {
+    "title": "Die Worte in Rot: Jesus in seinen eigenen Worten",
+    "opening_question": "In vielen Bibeln sind die Worte, die Jesus gesprochen hat, rot gedruckt. Dieser Pfad liest ihn in seinen eigenen Worten: von den ersten Worten, die die Bibel von ihm berichtet, mit zwölf Jahren, über seine Lehre, sein Gebet im Garten und seine Worte am Kreuz bis zu seinen letzten Worten in der Bibel: \"Ja, ich komme bald\". Seine Worte sind rot. Jeder Schritt fragt, was er gesagt hat und was es für mich bedeutet.",
+    "step_questions": [
+     "Wo fanden Maria und Joseph Jesus, und was antwortete er seiner Mutter?",
+     "Was fing Jesus an zu predigen, und was sagte er zu Simon und Andreas?",
+     "Wer kam bei Nacht zu Jesus, und was sagte Jesus ihm, was mit ihm geschehen muss?",
+     "Was hatten die Leute gehört, das gesagt ist, und was sagte Jesus stattdessen?",
+     "Was fragte der Schriftgelehrte, und welche zwei Gebote nannte Jesus?",
+     "Was muss jeder tun, der Jesus nachfolgen will, und was hilft es, die ganze Welt zu gewinnen?",
+     "Was versprach Jesus seinen Jüngern über das Haus seines Vaters, und welchen Frieden ließ er ihnen?",
+     "Was betete Jesus am Ölberg, und was sagte er seinen Jüngern zweimal?",
+     "Welche sieben Worte sprach Jesus am Kreuz, und zu wem sprach er jedes?",
+     "Was sagte der auferstandene Jesus zu seinen Jüngern und zu Thomas, und was ist seine letzte Verheißung in der Bibel?"
     ]
    }
   }

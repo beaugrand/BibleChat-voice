@@ -1,0 +1,2820 @@
+{
+ "id": "words-in-red-jesus-in-his-own-words",
+ "title": "The words in red: Jesus in His own words",
+ "category": "Foundations",
+ "anim": {
+  "kind": "light",
+  "x": 50,
+  "y": 28,
+  "s": 32
+ },
+ "red_letters": true,
+ "opening_question": "In many Bibles the words Jesus spoke are printed in red. This path reads Him in His own words: from the first words the Bible records Him saying, at twelve, through His teaching, His prayer in the garden and His sayings from the cross, to His last words in the Bible: Surely I come quickly. His words are shown in red. Each step asks what He said and what it means for me.",
+ "required_refs": [
+  "Luke 2:41-52",
+  "Matthew 4:17-22",
+  "John 3:1-8",
+  "John 3:16-17",
+  "Matthew 5:43-48",
+  "Matthew 22:35-40",
+  "Mark 8:34-38",
+  "John 14:1-3",
+  "John 14:27",
+  "Luke 22:39-46",
+  "Luke 23:33-34",
+  "Luke 23:39-43",
+  "John 19:25-30",
+  "Matthew 27:45-46",
+  "Luke 23:46",
+  "John 20:19-21",
+  "John 20:26-29",
+  "Revelation 22:20"
+ ],
+ "words": [
+  "G3340",
+  "G190",
+  "G509",
+  "G25",
+  "G5055"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Where did Mary and Joseph find Jesus, and what did He answer His mother?",
+   "apply": "Is being about my Father's business first in my life, or something I fit in?",
+   "refs": [
+    "Luke 2:41-52"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1163",
+     "G3962"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "He was \"twelve years old\". His answer to His mother is the first saying of His that the Bible records.",
+     "refs": [
+      "Luke 2:42",
+      "Luke 2:49"
+     ]
+    },
+    {
+     "text": "\"I must be about my Father's business\": \"must\" is dei, Strong's: \"necessary\".",
+     "refs": [
+      "Luke 2:49"
+     ],
+     "strongs": [
+      "G1163"
+     ]
+    },
+    {
+     "text": "\"they understood not the saying which he spake unto them\". Yet \"he went down with them\" and \"was subject unto them\".",
+     "refs": [
+      "Luke 2:50-51"
+     ]
+    },
+    {
+     "text": "\"Jesus increased in wisdom and stature, and in favour with God and man.\"",
+     "refs": [
+      "Luke 2:52"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jesus begin to preach, and what did He say to Simon and Andrew?",
+   "apply": "Is there something I need to turn from, or a net I need to leave, to follow Him?",
+   "refs": [
+    "Matthew 4:17-22"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3340",
+     "G190"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "His first message: \"Repent: for the kingdom of heaven is at hand\". \"Repent\" is metanoeo, Strong's: \"to think differently or afterwards\".",
+     "refs": [
+      "Matthew 4:17"
+     ],
+     "strongs": [
+      "G3340"
+     ]
+    },
+    {
+     "text": "\"Follow me, and I will make you fishers of men.\" They \"straightway left their nets, and followed him\": \"followed\" is akoloutheo, Strong's: \"to be in the same way with\".",
+     "refs": [
+      "Matthew 4:19-20"
+     ],
+     "strongs": [
+      "G190"
+     ]
+    },
+    {
+     "text": "James and John too \"immediately left the ship and their father, and followed him\".",
+     "refs": [
+      "Matthew 4:22"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who came to Jesus by night, and what did Jesus tell him he must be?",
+   "apply": "Have I been born again, or am I trying to see the kingdom some other way?",
+   "refs": [
+    "John 3:1-8",
+    "John 3:16-17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G509",
+     "G3439"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Nicodemus was \"a man of the Pharisees\", \"a ruler of the Jews\", and he came \"by night\".",
+     "refs": [
+      "John 3:1-2"
+     ]
+    },
+    {
+     "text": "\"born again\": \"again\" is anothen, Strong's: \"from above\", and also \"anew\".",
+     "refs": [
+      "John 3:3"
+     ],
+     "strongs": [
+      "G509"
+     ]
+    },
+    {
+     "text": "Nicodemus asked \"How can a man be born when he is old?\" Jesus answered: \"born of water and of the Spirit\".",
+     "refs": [
+      "John 3:4-5"
+     ]
+    },
+    {
+     "text": "\"For God so loved the world, that he gave his only begotten Son\". \"only begotten\" is monogenes, Strong's: \"only-born\".",
+     "refs": [
+      "John 3:16"
+     ],
+     "strongs": [
+      "G3439"
+     ]
+    },
+    {
+     "text": "He was not sent \"to condemn the world; but that the world through him might be saved\".",
+     "refs": [
+      "John 3:17"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What had the people heard said, and what did Jesus say instead?",
+   "apply": "Who is the person I find hardest to love, and will I pray for them this week?",
+   "refs": [
+    "Matthew 5:43-48"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G25",
+     "G5046"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Ye have heard that it hath been said\", then \"But I say unto you\". He speaks with His own authority.",
+     "refs": [
+      "Matthew 5:43-44"
+     ]
+    },
+    {
+     "text": "\"Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you\".",
+     "refs": [
+      "Matthew 5:44"
+     ]
+    },
+    {
+     "text": "God gives to all: \"he maketh his sun to rise on the evil and on the good, and sendeth rain on the just and on the unjust\".",
+     "refs": [
+      "Matthew 5:45"
+     ]
+    },
+    {
+     "text": "\"perfect\" is teleios. Strong's: \"complete\".",
+     "refs": [
+      "Matthew 5:48"
+     ],
+     "strongs": [
+      "G5046"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did the lawyer ask, and which two commandments did Jesus name?",
+   "apply": "Which of the two do I find harder to live, and why?",
+   "refs": [
+    "Matthew 22:35-40",
+    "Deuteronomy 6:5",
+    "Leviticus 19:18"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G25",
+     "G1785"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The lawyer asked, \"tempting him\": \"Master, which is the great commandment in the law?\"",
+     "refs": [
+      "Matthew 22:35-36"
+     ]
+    },
+    {
+     "text": "Jesus answered from the law itself: \"thou shalt love the LORD thy God with all thine heart\" (Deuteronomy) and \"thou shalt love thy neighbour as thyself\" (Leviticus).",
+     "refs": [
+      "Deuteronomy 6:5",
+      "Leviticus 19:18"
+     ]
+    },
+    {
+     "text": "\"On these two commandments hang all the law and the prophets.\"",
+     "refs": [
+      "Matthew 22:40"
+     ]
+    },
+    {
+     "text": "\"commandment\" is entole. Strong's: \"an authoritative prescription\".",
+     "refs": [
+      "Matthew 22:38"
+     ],
+     "strongs": [
+      "G1785"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What must anyone who will come after Jesus do, and what does it profit to gain the whole world?",
+   "apply": "What would denying myself and taking up my cross look like this week?",
+   "refs": [
+    "Mark 8:34-38"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G533",
+     "G5590"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Three things: \"let him deny himself, and take up his cross, and follow me\".",
+     "refs": [
+      "Mark 8:34"
+     ]
+    },
+    {
+     "text": "\"deny\" is aparneomai. Strong's: \"to deny utterly\".",
+     "refs": [
+      "Mark 8:34"
+     ],
+     "strongs": [
+      "G533"
+     ]
+    },
+    {
+     "text": "\"what shall it profit a man, if he shall gain the whole world, and lose his own soul?\" \"soul\" is psyche, the word translated \"life\" in the verse before.",
+     "refs": [
+      "Mark 8:35-36"
+     ],
+     "strongs": [
+      "G5590"
+     ]
+    },
+    {
+     "text": "\"Whosoever therefore shall be ashamed of me and of my words\", of him \"shall the Son of man be ashamed\".",
+     "refs": [
+      "Mark 8:38"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jesus promise His disciples about His Father's house, and what peace did He leave them?",
+   "apply": "What is troubling my heart right now, and will I bring it to Him?",
+   "refs": [
+    "John 14:1-3",
+    "John 14:27"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5015",
+     "G1515"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"troubled\" is tarasso. Strong's: \"to stir or agitate (roil water)\".",
+     "refs": [
+      "John 14:1"
+     ],
+     "strongs": [
+      "G5015"
+     ]
+    },
+    {
+     "text": "\"I go to prepare a place for you\", and \"I will come again, and receive you unto myself\".",
+     "refs": [
+      "John 14:2-3"
+     ]
+    },
+    {
+     "text": "\"Peace I leave with you, my peace I give unto you: not as the world giveth\". \"peace\" is eirene, Strong's: \"quietness, rest\".",
+     "refs": [
+      "John 14:27"
+     ],
+     "strongs": [
+      "G1515"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jesus pray on the mount of Olives, and what did He tell His disciples twice?",
+   "apply": "Is there something I need to pray about: not my will, but Thine, be done?",
+   "refs": [
+    "Luke 22:39-46"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G2307",
+     "G74"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Father, if thou be willing, remove this cup from me: nevertheless not my will, but thine, be done.\"",
+     "refs": [
+      "Luke 22:42"
+     ]
+    },
+    {
+     "text": "\"will\" is thelema. Strong's: \"a determination\".",
+     "refs": [
+      "Luke 22:42"
+     ],
+     "strongs": [
+      "G2307"
+     ]
+    },
+    {
+     "text": "\"there appeared an angel unto him from heaven, strengthening him\". \"being in an agony he prayed more earnestly\". \"agony\" is agonia, Strong's: \"anguish\".",
+     "refs": [
+      "Luke 22:43-44"
+     ],
+     "strongs": [
+      "G74"
+     ]
+    },
+    {
+     "text": "Twice He told them: \"Pray that ye enter not into temptation\", and \"rise and pray, lest ye enter into temptation\".",
+     "refs": [
+      "Luke 22:40",
+      "Luke 22:46"
+     ]
+    }
+   ]
+  },
+  {
+   "intro": "The seven sayings from the cross come from four Gospels. Read them in order.",
+   "question": "What seven things did Jesus say from the cross, and to whom did He say each one?",
+   "apply": "Which of the seven sayings do I most need to hear today?",
+   "refs": [
+    "Luke 23:33-34",
+    "Luke 23:39-43",
+    "John 19:25-30",
+    "Matthew 27:45-46",
+    "Luke 23:46"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G863",
+     "G3857",
+     "G5055"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "For those who crucified Him: \"Father, forgive them; for they know not what they do\".",
+     "refs": [
+      "Luke 23:34"
+     ]
+    },
+    {
+     "text": "To the malefactor who said \"Lord, remember me\": \"To day shalt thou be with me in paradise\".",
+     "refs": [
+      "Luke 23:42-43"
+     ]
+    },
+    {
+     "text": "To His mother and the disciple: \"Woman, behold thy son!\" and \"Behold thy mother!\"",
+     "refs": [
+      "John 19:26-27"
+     ]
+    },
+    {
+     "text": "\"My God, my God, why hast thou forsaken me?\" These are the first words of Psalm 22.",
+     "refs": [
+      "Matthew 27:46",
+      "Psalms 22:1"
+     ]
+    },
+    {
+     "text": "\"I thirst\", then \"It is finished\". \"finished\" is teleo, Strong's: \"to end, i.e. complete\".",
+     "refs": [
+      "John 19:28-30"
+     ],
+     "strongs": [
+      "G5055"
+     ]
+    },
+    {
+     "text": "\"Father, into thy hands I commend my spirit\". Psalm 31 says: \"Into thine hand I commit my spirit\".",
+     "refs": [
+      "Luke 23:46",
+      "Psalms 31:5"
+     ]
+    }
+   ]
+  },
+  {
+   "intro": "Closing: His last words in the Bible are a promise.",
+   "question": "What did the risen Jesus say to His disciples and to Thomas, and what is His last promise in the Bible?",
+   "apply": "Am I one of those who have not seen, and yet have believed? Am I ready for His coming?",
+   "refs": [
+    "John 20:19-21",
+    "John 20:26-29",
+    "Revelation 22:20"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1515",
+     "G4100",
+     "G5035"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Three times He said: \"Peace be unto you\".",
+     "refs": [
+      "John 20:19",
+      "John 20:21",
+      "John 20:26"
+     ]
+    },
+    {
+     "text": "\"as my Father hath sent me, even so send I you\".",
+     "refs": [
+      "John 20:21"
+     ]
+    },
+    {
+     "text": "Thomas said \"My Lord and my God\". Jesus answered: \"blessed are they that have not seen, and yet have believed\".",
+     "refs": [
+      "John 20:28-29"
+     ]
+    },
+    {
+     "text": "His last words in the Bible: \"Surely I come quickly\". \"quickly\" is tachu, Strong's: \"without delay\".",
+     "refs": [
+      "Revelation 22:20"
+     ],
+     "strongs": [
+      "G5035"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"wist ye not that I must be about my Father's business?\"",
+   "refs": [
+    "Luke 2:49"
+   ]
+  },
+  {
+   "text": "\"Follow me, and I will make you fishers of men\"",
+   "refs": [
+    "Matthew 4:19"
+   ]
+  },
+  {
+   "text": "\"Except a man be born again, he cannot see the kingdom of God\"",
+   "refs": [
+    "John 3:3"
+   ]
+  },
+  {
+   "text": "\"Love your enemies\"",
+   "refs": [
+    "Matthew 5:44"
+   ]
+  },
+  {
+   "text": "\"not my will, but thine, be done\"",
+   "refs": [
+    "Luke 22:42"
+   ]
+  },
+  {
+   "text": "\"It is finished\"",
+   "refs": [
+    "John 19:30"
+   ]
+  },
+  {
+   "text": "\"Surely I come quickly\"",
+   "refs": [
+    "Revelation 22:20"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "In Luke 2:42, how old was Jesus when they went up to Jerusalem for the feast?",
+   "type": "multiple_choice",
+   "options": [
+    "Twelve years old",
+    "Ten years old",
+    "Thirteen years old",
+    "Thirty years old"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 2:42"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "twelve"
+   },
+   "signals": {
+    "xref": 3,
+    "votes": 19,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.15,
+    "quoted": null
+   },
+   "why": [
+    "3 cross-references point here"
+   ],
+   "score": 0.2624
+  },
+  {
+   "q": "Fill in the word: \"wist ye not that I must be about my Father's ___?\"",
+   "type": "fill_word",
+   "ref": "Luke 2:49",
+   "bible": "KJV",
+   "word": "business",
+   "answer_refs": [
+    "Luke 2:49"
+   ],
+   "signals": {
+    "xref": 6,
+    "votes": 38,
+    "word": "G3962",
+    "word_count": 13,
+    "differ": 0.589,
+    "quoted": null
+   },
+   "why": [
+    "6 cross-references point here",
+    "The Greek word patḗr (G3962) is in 13 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.7723
+  },
+  {
+   "q": "Which verse says \"Repent: for the kingdom of heaven is at hand\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 4:17"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 212,
+    "word": "G3340",
+    "word_count": 1,
+    "differ": 0.2,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here"
+   ],
+   "score": 0.4817
+  },
+  {
+   "q": "Fill in the word: \"Follow me, and I will make you ___ of men\"",
+   "type": "fill_word",
+   "ref": "Matthew 4:19",
+   "bible": "KJV",
+   "word": "fishers",
+   "answer_refs": [
+    "Matthew 4:19"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 92,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.443,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here"
+   ],
+   "score": 0.451
+  },
+  {
+   "q": "Which verse says \"Except a man be born again, he cannot see the kingdom of God\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 3:3"
+   ],
+   "signals": {
+    "xref": 42,
+    "votes": 598,
+    "word": "G509",
+    "word_count": 2,
+    "differ": 0.674,
+    "quoted": null
+   },
+   "why": [
+    "42 cross-references point here",
+    "The Greek word ánōthen (G509) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6768
+  },
+  {
+   "q": "Which verse says \"For God so loved the world, that he gave his only begotten Son\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 3:16"
+   ],
+   "signals": {
+    "xref": 79,
+    "votes": 1315,
+    "word": "G25",
+    "word_count": 8,
+    "differ": 0.292,
+    "quoted": null
+   },
+   "why": [
+    "79 cross-references point here",
+    "The Greek word agapáō (G25) is in 8 verses of this path"
+   ],
+   "score": 0.7563
+  },
+  {
+   "q": "Fill in the word: \"Love your ___, bless them that curse you\"",
+   "type": "fill_word",
+   "ref": "Matthew 5:44",
+   "bible": "KJV",
+   "word": "enemies",
+   "answer_refs": [
+    "Matthew 5:44"
+   ],
+   "signals": {
+    "xref": 34,
+    "votes": 370,
+    "word": "G25",
+    "word_count": 8,
+    "differ": 0.458,
+    "quoted": null
+   },
+   "why": [
+    "34 cross-references point here",
+    "The Greek word agapáō (G25) is in 8 verses of this path"
+   ],
+   "score": 0.792
+  },
+  {
+   "q": "Which translation says \"despitefully use you\" in Matthew 5:44?",
+   "type": "which_translation",
+   "ref": "Matthew 5:44",
+   "bible": "KJV",
+   "phrase": "despitefully use you",
+   "answer_refs": [
+    "Matthew 5:44"
+   ],
+   "signals": {
+    "xref": 34,
+    "votes": 370,
+    "word": "G25",
+    "word_count": 8,
+    "differ": 0.458,
+    "quoted": null
+   },
+   "why": [
+    "34 cross-references point here",
+    "The Greek word agapáō (G25) is in 8 verses of this path"
+   ],
+   "score": 0.792
+  },
+  {
+   "q": "In Matthew 22:38, what does Jesus call loving the Lord thy God with all thy heart?",
+   "type": "multiple_choice",
+   "options": [
+    "The first and great commandment",
+    "The second commandment",
+    "A new commandment",
+    "The least commandment"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Matthew 22:38"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "great"
+   },
+   "signals": {
+    "xref": 9,
+    "votes": 192,
+    "word": "G1785",
+    "word_count": 4,
+    "differ": 0.167,
+    "quoted": null
+   },
+   "why": [
+    "9 cross-references point here",
+    "The Greek word entolḗ (G1785) is in 4 verses of this path"
+   ],
+   "score": 0.5535
+  },
+  {
+   "q": "Which verse says \"On these two commandments hang all the law and the prophets\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 22:40"
+   ],
+   "signals": {
+    "xref": 11,
+    "votes": 339,
+    "word": "G1785",
+    "word_count": 4,
+    "differ": 0.222,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Greek word entolḗ (G1785) is in 4 verses of this path"
+   ],
+   "score": 0.6098
+  },
+  {
+   "q": "Fill in the word: \"let him deny himself, and take up his ___, and follow me\"",
+   "type": "fill_word",
+   "ref": "Mark 8:34",
+   "bible": "KJV",
+   "word": "cross",
+   "answer_refs": [
+    "Mark 8:34"
+   ],
+   "signals": {
+    "xref": 11,
+    "votes": 200,
+    "word": "G190",
+    "word_count": 4,
+    "differ": 0.414,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Greek word akolouthéō (G190) is in 4 verses of this path"
+   ],
+   "score": 0.6183
+  },
+  {
+   "q": "Which verse says \"In my Father's house are many mansions\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 14:2"
+   ],
+   "signals": {
+    "xref": 14,
+    "votes": 79,
+    "word": "G3962",
+    "word_count": 13,
+    "differ": 0.265,
+    "quoted": null
+   },
+   "why": [
+    "14 cross-references point here",
+    "The Greek word patḗr (G3962) is in 13 verses of this path"
+   ],
+   "score": 0.7452
+  },
+  {
+   "q": "In Luke 22:44, what was His sweat like?",
+   "type": "multiple_choice",
+   "options": [
+    "Great drops of blood",
+    "Rain",
+    "Dew",
+    "Tears"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Luke 22:44"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "blood"
+   },
+   "signals": {
+    "xref": 27,
+    "votes": 178,
+    "word": "G74",
+    "word_count": 1,
+    "differ": 0.388,
+    "quoted": null
+   },
+   "why": [
+    "27 cross-references point here"
+   ],
+   "score": 0.5156
+  },
+  {
+   "q": "Which verse says \"Father, forgive them; for they know not what they do\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 23:34"
+   ],
+   "signals": {
+    "xref": 21,
+    "votes": 191,
+    "word": "G3962",
+    "word_count": 13,
+    "differ": 0.454,
+    "quoted": null
+   },
+   "why": [
+    "21 cross-references point here",
+    "The Greek word patḗr (G3962) is in 13 verses of this path"
+   ],
+   "score": 0.8582
+  },
+  {
+   "q": "Fill in the word: \"To day shalt thou be with me in ___\"",
+   "type": "fill_word",
+   "ref": "Luke 23:43",
+   "bible": "KJV",
+   "word": "paradise",
+   "answer_refs": [
+    "Luke 23:43"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 93,
+    "word": "G3857",
+    "word_count": 1,
+    "differ": 0.421,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here"
+   ],
+   "score": 0.4755
+  },
+  {
+   "q": "In John 19:30, what did Jesus say when He had received the vinegar?",
+   "type": "multiple_choice",
+   "options": [
+    "It is finished",
+    "I thirst",
+    "Father, forgive them",
+    "Behold thy mother"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "John 19:30"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "finished"
+   },
+   "signals": {
+    "xref": 20,
+    "votes": 197,
+    "word": "G5055",
+    "word_count": 2,
+    "differ": 0.288,
+    "quoted": null
+   },
+   "why": [
+    "20 cross-references point here",
+    "The Greek word teléō (G5055) is in 2 verses of this path"
+   ],
+   "score": 0.5274
+  },
+  {
+   "q": "Which verse says \"blessed are they that have not seen, and yet have believed\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "John 20:29"
+   ],
+   "signals": {
+    "xref": 14,
+    "votes": 184,
+    "word": "G4100",
+    "word_count": 5,
+    "differ": 0.367,
+    "quoted": null
+   },
+   "why": [
+    "14 cross-references point here",
+    "The Greek word pisteúō (G4100) is in 5 verses of this path"
+   ],
+   "score": 0.6295
+  },
+  {
+   "q": "Fill in the word: \"Surely I come ___\"",
+   "type": "fill_word",
+   "ref": "Revelation 22:20",
+   "bible": "KJV",
+   "word": "quickly",
+   "answer_refs": [
+    "Revelation 22:20"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 218,
+    "word": "G5035",
+    "word_count": 1,
+    "differ": 0.491,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here"
+   ],
+   "score": 0.5565
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 83,
+ "image": "img/words-in-red-jesus-in-his-own-words.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/words-in-red-jesus-in-his-own-words.json",
+  "sha": "b3a04b362cf6fb5f",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ },
+ "i18n": {
+  "es": {
+   "title": "Las palabras en rojo: Jesús en sus propias palabras",
+   "opening_question": "En muchas Biblias las palabras que Jesús dijo están impresas en rojo. Esta ruta lo lee en sus propias palabras: desde las primeras que la Biblia registra de Él, a los doce años, pasando por su enseñanza, su oración en el huerto y sus palabras en la cruz, hasta sus últimas palabras en la Biblia: \"Ciertamente, vengo en breve\". Sus palabras aparecen en rojo. Cada paso pregunta qué dijo y qué significa para mí.",
+   "steps": [
+    {
+     "question": "¿Dónde encontraron José y María a Jesús, y qué le respondió Él a su madre?",
+     "apply": "¿Estar en los negocios de mi Padre es lo primero en mi vida, o algo que acomodo cuando puedo?",
+     "facts": [
+      "Tenía \"doce años\". Su respuesta a su madre es lo primero que la Biblia registra de sus palabras.",
+      "\"en los negocios de mi Padre me conviene estar\": \"conviene\" traduce dei, Strong: «es necesario».",
+      "\"ellos no entendieron las palabras que les habló\". Aun así \"descendió con ellos\" y \"estaba sujeto á ellos\".",
+      "\"Jesús crecía en sabiduría, y en edad, y en gracia para con Dios y los hombres.\""
+     ]
+    },
+    {
+     "question": "¿Qué comenzó a predicar Jesús, y qué les dijo a Simón y Andrés?",
+     "apply": "¿Hay algo de lo que necesito volverme, o una red que necesito dejar, para seguirle?",
+     "facts": [
+      "Su primer mensaje: \"Arrepentíos, que el reino de los cielos se ha acercado\". \"Arrepentíos\" traduce metanoeo, Strong: «pensar de otra manera o después».",
+      "\"Venid en pos de mí, y os haré pescadores de hombres.\" Ellos, \"dejando luego las redes, le siguieron\": \"siguieron\" traduce akoloutheo, Strong: «ir por el mismo camino con».",
+      "También Jacobo y Juan, \"dejando luego el barco y á su padre, le siguieron\"."
+     ]
+    },
+    {
+     "question": "¿Quién vino a Jesús de noche, y qué le dijo Jesús que le era necesario?",
+     "apply": "¿He nacido otra vez, o trato de ver el reino de otra manera?",
+     "facts": [
+      "Nicodemo era \"un hombre de los Fariseos\", \"príncipe de los Judíos\", y vino \"de noche\".",
+      "\"nacer otra vez\": \"otra vez\" traduce anothen, Strong: «de arriba», y también «de nuevo».",
+      "Nicodemo preguntó \"¿Cómo puede el hombre nacer siendo viejo?\" Jesús respondió: \"de agua y del Espíritu\".",
+      "\"Porque de tal manera amó Dios al mundo, que ha dado á su Hijo unigénito\". \"unigénito\" traduce monogenes, Strong: «único nacido».",
+      "No fue enviado \"para que condene al mundo, mas para que el mundo sea salvo por él\"."
+     ]
+    },
+    {
+     "question": "¿Qué habían oído que fue dicho, y qué dijo Jesús en cambio?",
+     "apply": "¿Quién es la persona a quien más me cuesta amar, y oraré por ella esta semana?",
+     "facts": [
+      "\"Oísteis que fué dicho\", y luego \"Mas yo os digo\". Habla con su propia autoridad.",
+      "\"Amad á vuestros enemigos, bendecid á los que os maldicen, haced bien á los que os aborrecen, y orad por los que os ultrajan\".",
+      "Dios da a todos: \"hace que su sol salga sobre malos y buenos, y llueve sobre justos é injustos\".",
+      "\"perfectos\" traduce teleios. Strong: «completo»."
+     ]
+    },
+    {
+     "question": "¿Qué preguntó el intérprete de la ley, y qué dos mandamientos nombró Jesús?",
+     "apply": "¿Cuál de los dos me cuesta más vivir, y por qué?",
+     "facts": [
+      "El intérprete de la ley preguntó, \"tentándole\": \"Maestro, ¿cuál es el mandamiento grande en la ley?\"",
+      "Jesús respondió con la ley misma: \"amarás á Jehová tu Dios de todo tu corazón\" (Deuteronomio) y \"amarás á tu prójimo como á ti mismo\" (Levítico).",
+      "\"De estos dos mandamientos depende toda la ley y los profetas.\"",
+      "\"mandamiento\" traduce entole. Strong: «una prescripción con autoridad»."
+     ]
+    },
+    {
+     "question": "¿Qué debe hacer cualquiera que quiera venir en pos de Jesús, y de qué aprovecha ganar todo el mundo?",
+     "apply": "¿Cómo sería negarme a mí mismo y tomar mi cruz esta semana?",
+     "facts": [
+      "Tres cosas: \"niéguese á sí mismo, y tome su cruz, y sígame\".",
+      "\"niéguese\" traduce aparneomai. Strong: «negar por completo».",
+      "\"¿qué aprovechará al hombre, si granjeare todo el mundo, y pierde su alma?\" \"alma\" traduce psyche, la misma palabra que se traduce \"vida\" en el versículo anterior.",
+      "\"el que se avergonzare de mí y de mis palabras\", de él \"el Hijo del hombre se avergonzará también\"."
+     ]
+    },
+    {
+     "question": "¿Qué prometió Jesús a sus discípulos sobre la casa de su Padre, y qué paz les dejó?",
+     "apply": "¿Qué turba mi corazón ahora mismo, y se lo traeré a Él?",
+     "facts": [
+      "\"se turbe\" traduce tarasso. Strong: «agitar o revolver (el agua)».",
+      "\"voy, pues, á preparar lugar para vosotros\", y \"vendré otra vez, y os tomaré á mí mismo\".",
+      "\"La paz os dejo, mi paz os doy: no como el mundo la da\". \"paz\" traduce eirene, Strong: «quietud, reposo»."
+     ]
+    },
+    {
+     "question": "¿Qué oró Jesús en el monte de las Olivas, y qué les dijo dos veces a sus discípulos?",
+     "apply": "¿Hay algo por lo que necesito orar: no se haga mi voluntad, sino la tuya?",
+     "facts": [
+      "\"Padre, si quieres, pasa este vaso de mí; empero no se haga mi voluntad, sino la tuya.\"",
+      "\"voluntad\" traduce thelema. Strong: «una determinación».",
+      "\"le apareció un ángel del cielo confortándole\". \"estando en agonía, oraba más intensamente\". \"agonía\" traduce agonia, Strong: «angustia».",
+      "Dos veces les dijo: \"Orad que no entréis en tentación\", y \"Levantaos, y orad que no entréis en tentación\"."
+     ]
+    },
+    {
+     "intro": "Las siete palabras de la cruz vienen de cuatro Evangelios. Léelas en orden.",
+     "question": "¿Qué siete cosas dijo Jesús desde la cruz, y a quién le dijo cada una?",
+     "apply": "¿Cuál de las siete palabras necesito oír hoy más que ninguna?",
+     "facts": [
+      "Por los que le crucificaron: \"Padre, perdónalos, porque no saben lo que hacen\".",
+      "Al malhechor que dijo \"Acuérdate de mí\": \"hoy estarás conmigo en el paraíso\".",
+      "A su madre y al discípulo: \"Mujer, he ahí tu hijo\" y \"He ahí tu madre\".",
+      "\"Dios mío, Dios mío, ¿por qué me has desamparado?\" Son las primeras palabras del Salmo 22.",
+      "\"Sed tengo\", y luego \"Consumado es\". \"Consumado\" traduce teleo, Strong: «terminar, es decir, completar».",
+      "\"Padre, en tus manos encomiendo mi espíritu\". El Salmo 31 dice: \"En tu mano encomiendo mi espíritu\"."
+     ]
+    },
+    {
+     "intro": "Para cerrar: sus últimas palabras en la Biblia son una promesa.",
+     "question": "¿Qué les dijo Jesús resucitado a sus discípulos y a Tomás, y cuál es su última promesa en la Biblia?",
+     "apply": "¿Soy uno de los que no vieron y creyeron? ¿Estoy listo para su venida?",
+     "facts": [
+      "Tres veces dijo: \"Paz á vosotros\".",
+      "\"como me envió el Padre, así también yo os envío\".",
+      "Tomás dijo \"¡Señor mío, y Dios mío!\" Jesús respondió: \"bienaventurados los que no vieron y creyeron\".",
+      "Sus últimas palabras en la Biblia: \"Ciertamente, vengo en breve\". \"en breve\" traduce tachu, Strong: «sin demora»."
+     ]
+    }
+   ],
+   "remember": [
+    "\"¿No sabíais que en los negocios de mi Padre me conviene estar?\"",
+    "\"Venid en pos de mí, y os haré pescadores de hombres\"",
+    "\"el que no naciere otra vez, no puede ver el reino de Dios\"",
+    "\"Amad á vuestros enemigos\"",
+    "\"no se haga mi voluntad, sino la tuya\"",
+    "\"Consumado es\"",
+    "\"Ciertamente, vengo en breve\""
+   ]
+  },
+  "de": {
+   "title": "Die Worte in Rot: Jesus in seinen eigenen Worten",
+   "opening_question": "In vielen Bibeln sind die Worte, die Jesus gesprochen hat, rot gedruckt. Dieser Pfad liest ihn in seinen eigenen Worten: von den ersten Worten, die die Bibel von ihm berichtet, mit zwölf Jahren, über seine Lehre, sein Gebet im Garten und seine Worte am Kreuz bis zu seinen letzten Worten in der Bibel: \"Ja, ich komme bald\". Seine Worte sind rot. Jeder Schritt fragt, was er gesagt hat und was es für mich bedeutet.",
+   "steps": [
+    {
+     "question": "Wo fanden Maria und Joseph Jesus, und was antwortete er seiner Mutter?",
+     "apply": "Steht das, was meines Vaters ist, in meinem Leben an erster Stelle, oder passe ich es irgendwo ein?",
+     "facts": [
+      "Er war \"zwölf Jahre alt\". Seine Antwort an seine Mutter ist das erste Wort von ihm, das die Bibel berichtet.",
+      "\"daß ich sein muß in dem, das meines Vaters ist\": \"muß\" ist dei, Strong: »notwendig«.",
+      "\"sie verstanden das Wort nicht, das er mit ihnen redete\". Doch \"er ging mit ihnen hinab\" und \"war ihnen untertan\".",
+      "\"Jesus nahm zu an Weisheit, Alter und Gnade bei Gott und den Menschen.\""
+     ]
+    },
+    {
+     "question": "Was fing Jesus an zu predigen, und was sagte er zu Simon und Andreas?",
+     "apply": "Gibt es etwas, von dem ich umkehren, oder ein Netz, das ich verlassen muss, um ihm nachzufolgen?",
+     "facts": [
+      "Seine erste Botschaft: \"Tut Buße, das Himmelreich ist nahe herbeigekommen\". \"Tut Buße\" ist metanoeo, Strong: »anders oder hinterher denken«.",
+      "\"Folget mir nach; ich will euch zu Menschenfischern machen\". \"Alsbald verließen sie ihre Netze und folgten ihm nach\": \"folgten\" ist akoloutheo, Strong: »auf demselben Weg mit jemandem sein«.",
+      "Auch Jakobus und Johannes \"verließen sie das Schiff und ihren Vater und folgten ihm nach\"."
+     ]
+    },
+    {
+     "question": "Wer kam bei Nacht zu Jesus, und was sagte Jesus ihm, was mit ihm geschehen muss?",
+     "apply": "Bin ich von neuem geboren, oder versuche ich, das Reich Gottes auf andere Weise zu sehen?",
+     "facts": [
+      "Nikodemus war ein Mensch \"unter den Pharisäern\", \"ein Oberster unter den Juden\", und er kam \"bei der Nacht\".",
+      "\"von neuem geboren\": \"von neuem\" ist anothen, Strong: »von oben«, und auch »aufs Neue«.",
+      "Nikodemus fragte: \"Wie kann ein Mensch geboren werden wenn er alt ist?\" Jesus antwortete: \"aus Wasser und Geist\".",
+      "\"Also hat Gott die Welt geliebt, daß er seinen eingeborenen Sohn gab\". \"eingeboren\" ist monogenes, Strong: »einzig geboren«.",
+      "Er wurde nicht gesandt, \"daß er die Welt richte, sondern daß die Welt durch ihn selig werde\"."
+     ]
+    },
+    {
+     "question": "Was hatten die Leute gehört, das gesagt ist, und was sagte Jesus stattdessen?",
+     "apply": "Wer ist der Mensch, den ich am schwersten lieben kann, und werde ich diese Woche für ihn beten?",
+     "facts": [
+      "\"Ihr habt gehört, daß gesagt ist\", dann \"Ich aber sage euch\". Er spricht mit eigener Vollmacht.",
+      "\"Liebet eure Feinde; segnet, die euch fluchen; tut wohl denen, die euch hassen; bittet für die, so euch beleidigen und verfolgen\".",
+      "Gott gibt allen: \"er läßt seine Sonne aufgehen über die Bösen und über die Guten und läßt regnen über Gerechte und Ungerechte\".",
+      "\"vollkommen\" ist teleios. Strong: »vollständig«."
+     ]
+    },
+    {
+     "question": "Was fragte der Schriftgelehrte, und welche zwei Gebote nannte Jesus?",
+     "apply": "Welches der beiden fällt mir schwerer zu leben, und warum?",
+     "facts": [
+      "Der Schriftgelehrte \"versuchte ihn\" und fragte: \"Meister, welches ist das vornehmste Gebot im Gesetz?\"",
+      "Jesus antwortete aus dem Gesetz selbst: \"du sollst den HERRN, deinen Gott, liebhaben von ganzem Herzen\" (5. Mose) und \"Du sollst deinen Nächsten lieben wie dich selbst\" (3. Mose).",
+      "\"In diesen zwei Geboten hängt das ganze Gesetz und die Propheten.\"",
+      "\"Gebot\" ist entole. Strong: »eine verbindliche Vorschrift«."
+     ]
+    },
+    {
+     "question": "Was muss jeder tun, der Jesus nachfolgen will, und was hilft es, die ganze Welt zu gewinnen?",
+     "apply": "Wie sähe es diese Woche aus, mich selbst zu verleugnen und mein Kreuz auf mich zu nehmen?",
+     "facts": [
+      "Drei Dinge: \"der verleugne sich selbst und nehme sein Kreuz auf sich und folge mir nach\".",
+      "\"verleugne\" ist aparneomai. Strong: »völlig verleugnen«.",
+      "\"Was hülfe es dem Menschen, wenn er die ganze Welt gewönne, und nähme an seiner Seele Schaden?\" \"Seele\" ist psyche, dasselbe Wort, das im Vers davor mit \"Leben\" übersetzt ist.",
+      "\"Wer sich aber mein und meiner Worte schämt\", \"des wird sich auch des Menschen Sohn schämen\"."
+     ]
+    },
+    {
+     "question": "Was versprach Jesus seinen Jüngern über das Haus seines Vaters, und welchen Frieden ließ er ihnen?",
+     "apply": "Was erschreckt mein Herz gerade jetzt, und bringe ich es zu ihm?",
+     "facts": [
+      "\"erschrecke\" ist tarasso. Strong: »aufrühren oder aufwühlen (wie Wasser)«.",
+      "\"Ich gehe hin euch die Stätte zu bereiten\", und \"so will ich wiederkommen und euch zu mir nehmen\".",
+      "\"Den Frieden lasse ich euch, meinen Frieden gebe ich euch. Nicht gebe ich euch, wie die Welt gibt\". \"Frieden\" ist eirene, Strong: »Ruhe, Stille«."
+     ]
+    },
+    {
+     "question": "Was betete Jesus am Ölberg, und was sagte er seinen Jüngern zweimal?",
+     "apply": "Gibt es etwas, worüber ich beten muss: nicht mein, sondern dein Wille geschehe?",
+     "facts": [
+      "\"Vater, willst du, so nehme diesen Kelch von mir, doch nicht mein, sondern dein Wille geschehe!\"",
+      "\"Wille\" ist thelema. Strong: »ein Entschluss«.",
+      "\"Es erschien ihm aber ein Engel vom Himmel und stärkte ihn\". \"er mit dem Tode rang und betete heftiger\". \"mit dem Tode rang\" ist agonia, Strong: »Angst, Seelenqual«.",
+      "Zweimal sagte er ihnen: \"Betet, auf daß ihr nicht in Anfechtung fallet\", und \"Stehet auf und betet, auf das ihr nicht in Anfechtung fallet\"."
+     ]
+    },
+    {
+     "intro": "Die sieben Worte am Kreuz stehen in vier Evangelien. Lies sie der Reihe nach.",
+     "question": "Welche sieben Worte sprach Jesus am Kreuz, und zu wem sprach er jedes?",
+     "apply": "Welches der sieben Worte muss ich heute am meisten hören?",
+     "facts": [
+      "Für die, die ihn kreuzigten: \"Vater, vergib ihnen sie wissen nicht, was sie tun\".",
+      "Zu dem Übeltäter, der sagte \"HERR, gedenke an mich\": \"Heute wirst du mit mir im Paradiese sein\".",
+      "Zu seiner Mutter und dem Jünger: \"Weib, siehe, das ist dein Sohn\" und \"Siehe, das ist deine Mutter\".",
+      "\"Mein Gott, mein Gott, warum hast du mich verlassen?\" Das sind die ersten Worte von Psalm 22.",
+      "\"Mich dürstet\", dann \"Es ist vollbracht\". \"vollbracht\" ist teleo, Strong: »beenden, das heißt vollenden«.",
+      "\"Vater, ich befehle meinen Geist in deine Hände\". Psalm 31 sagt: \"In deine Hände befehle ich meinen Geist\"."
+     ]
+    },
+    {
+     "intro": "Zum Schluss: Seine letzten Worte in der Bibel sind eine Verheißung.",
+     "question": "Was sagte der auferstandene Jesus zu seinen Jüngern und zu Thomas, und was ist seine letzte Verheißung in der Bibel?",
+     "apply": "Gehöre ich zu denen, die nicht sehen und doch glauben? Bin ich bereit für sein Kommen?",
+     "facts": [
+      "Dreimal sagte er: \"Friede sei mit euch\".",
+      "\"Gleichwie mich der Vater gesandt hat, so sende ich euch\".",
+      "Thomas sagte: \"Mein HERR und mein Gott\". Jesus antwortete: \"Selig sind, die nicht sehen und doch glauben\".",
+      "Seine letzten Worte in der Bibel: \"Ja, ich komme bald\". \"bald\" ist tachu, Strong: »ohne Verzögerung«."
+     ]
+    }
+   ],
+   "remember": [
+    "\"Wisset ihr nicht, daß ich sein muß in dem, das meines Vaters ist?\"",
+    "\"Folget mir nach; ich will euch zu Menschenfischern machen\"",
+    "\"Es sei denn, daß jemand von neuem geboren werde, so kann er das Reich Gottes nicht sehen\"",
+    "\"Liebet eure Feinde\"",
+    "\"doch nicht mein, sondern dein Wille geschehe\"",
+    "\"Es ist vollbracht\"",
+    "\"Ja, ich komme bald\""
+   ]
+  }
+ },
+ "red": {
+  "John 3:3": [
+   {
+    "n": 128,
+    "h": 3350069888,
+    "s": [
+     [
+      34,
+      128
+     ]
+    ]
+   },
+   {
+    "n": 119,
+    "h": 3736216032,
+    "s": [
+     [
+      27,
+      119
+     ]
+    ]
+   },
+   {
+    "n": 159,
+    "h": 3683742138,
+    "s": [
+     [
+      36,
+      159
+     ]
+    ]
+   }
+  ],
+  "John 3:5": [
+   {
+    "n": 138,
+    "h": 2479448565,
+    "s": [
+     [
+      16,
+      138
+     ]
+    ]
+   },
+   {
+    "n": 129,
+    "h": 430865527,
+    "s": [
+     [
+      17,
+      129
+     ]
+    ]
+   },
+   {
+    "n": 154,
+    "h": 2381328040,
+    "s": [
+     [
+      18,
+      154
+     ]
+    ]
+   }
+  ],
+  "John 3:6": [
+   {
+    "n": 89,
+    "h": 2410699617,
+    "s": [
+     [
+      0,
+      89
+     ]
+    ]
+   },
+   {
+    "n": 85,
+    "h": 2798731676,
+    "s": [
+     [
+      0,
+      85
+     ]
+    ]
+   },
+   {
+    "n": 93,
+    "h": 1049504563,
+    "s": [
+     [
+      0,
+      93
+     ]
+    ]
+   }
+  ],
+  "John 3:7": [
+   {
+    "n": 56,
+    "h": 2041820787,
+    "s": [
+     [
+      0,
+      56
+     ]
+    ]
+   },
+   {
+    "n": 64,
+    "h": 3638590441,
+    "s": [
+     [
+      0,
+      64
+     ]
+    ]
+   },
+   {
+    "n": 87,
+    "h": 2070164411,
+    "s": [
+     [
+      0,
+      87
+     ]
+    ]
+   }
+  ],
+  "John 3:8": [
+   {
+    "n": 173,
+    "h": 4243729553,
+    "s": [
+     [
+      0,
+      173
+     ]
+    ]
+   },
+   {
+    "n": 142,
+    "h": 4291420059,
+    "s": [
+     [
+      0,
+      142
+     ]
+    ]
+   },
+   {
+    "n": 169,
+    "h": 3239826130,
+    "s": [
+     [
+      0,
+      169
+     ]
+    ]
+   }
+  ],
+  "John 3:16": [
+   {
+    "n": 141,
+    "h": 2363466936,
+    "s": [
+     [
+      0,
+      141
+     ]
+    ]
+   },
+   {
+    "n": 145,
+    "h": 2460362636,
+    "s": [
+     [
+      0,
+      145
+     ]
+    ]
+   },
+   {
+    "n": 156,
+    "h": 1930262727,
+    "s": [
+     [
+      0,
+      156
+     ]
+    ]
+   }
+  ],
+  "John 3:17": [
+   {
+    "n": 108,
+    "h": 1338833212,
+    "s": [
+     [
+      0,
+      108
+     ]
+    ]
+   },
+   {
+    "n": 106,
+    "h": 969888398,
+    "s": [
+     [
+      0,
+      106
+     ]
+    ]
+   },
+   {
+    "n": 120,
+    "h": 3254099517,
+    "s": [
+     [
+      0,
+      120
+     ]
+    ]
+   }
+  ],
+  "John 14:1": [
+   {
+    "n": 70,
+    "h": 1484774577,
+    "s": [
+     [
+      0,
+      70
+     ]
+    ]
+   },
+   {
+    "n": 65,
+    "h": 2243164647,
+    "s": [
+     [
+      0,
+      65
+     ]
+    ]
+   },
+   {
+    "n": 97,
+    "h": 1190595102,
+    "s": [
+     [
+      33,
+      97
+     ]
+    ]
+   }
+  ],
+  "John 14:2": [
+   {
+    "n": 114,
+    "h": 2164023476,
+    "s": [
+     [
+      0,
+      114
+     ]
+    ]
+   },
+   {
+    "n": 121,
+    "h": 554177122,
+    "s": [
+     [
+      0,
+      121
+     ]
+    ]
+   },
+   {
+    "n": 138,
+    "h": 1433622541,
+    "s": [
+     [
+      0,
+      138
+     ]
+    ]
+   }
+  ],
+  "John 14:3": [
+   {
+    "n": 127,
+    "h": 3484867483,
+    "s": [
+     [
+      0,
+      127
+     ]
+    ]
+   },
+   {
+    "n": 127,
+    "h": 26626989,
+    "s": [
+     [
+      0,
+      127
+     ]
+    ]
+   },
+   {
+    "n": 128,
+    "h": 2963273696,
+    "s": [
+     [
+      0,
+      128
+     ]
+    ]
+   }
+  ],
+  "John 14:27": [
+   {
+    "n": 149,
+    "h": 1699755435,
+    "s": [
+     [
+      0,
+      149
+     ]
+    ]
+   },
+   {
+    "n": 113,
+    "h": 436169553,
+    "s": [
+     [
+      0,
+      113
+     ]
+    ]
+   },
+   {
+    "n": 148,
+    "h": 572921201,
+    "s": [
+     [
+      0,
+      148
+     ]
+    ]
+   }
+  ],
+  "John 19:26": [
+   {
+    "n": 130,
+    "h": 182340756,
+    "s": [
+     [
+      108,
+      130
+     ]
+    ]
+   },
+   {
+    "n": 118,
+    "h": 4102352617,
+    "s": [
+     [
+      96,
+      118
+     ]
+    ]
+   },
+   {
+    "n": 136,
+    "h": 68130166,
+    "s": [
+     [
+      105,
+      136
+     ]
+    ]
+   }
+  ],
+  "John 19:27": [
+   {
+    "n": 110,
+    "h": 2969334619,
+    "s": [
+     [
+      31,
+      49
+     ]
+    ]
+   },
+   {
+    "n": 97,
+    "h": 636811851,
+    "s": [
+     [
+      27,
+      43
+     ]
+    ]
+   },
+   {
+    "n": 113,
+    "h": 2789922757,
+    "s": [
+     [
+      34,
+      62
+     ]
+    ]
+   }
+  ],
+  "John 19:28": [
+   {
+    "n": 120,
+    "h": 978864080,
+    "s": [
+     [
+      111,
+      120
+     ]
+    ]
+   },
+   {
+    "n": 123,
+    "h": 106570293,
+    "s": [
+     [
+      113,
+      123
+     ]
+    ]
+   },
+   {
+    "n": 113,
+    "h": 322289488,
+    "s": [
+     [
+      100,
+      113
+     ]
+    ]
+   }
+  ],
+  "John 19:30": [
+   {
+    "n": 117,
+    "h": 586074441,
+    "s": [
+     [
+      56,
+      71
+     ]
+    ]
+   },
+   {
+    "n": 98,
+    "h": 536457855,
+    "s": [
+     [
+      36,
+      49
+     ]
+    ]
+   },
+   {
+    "n": 104,
+    "h": 1378934972,
+    "s": [
+     [
+      50,
+      68
+     ]
+    ]
+   }
+  ],
+  "John 20:19": [
+   {
+    "n": 219,
+    "h": 617461405,
+    "s": [
+     [
+      201,
+      219
+     ]
+    ]
+   },
+   {
+    "n": 202,
+    "h": 2573174319,
+    "s": [
+     [
+      187,
+      202
+     ]
+    ]
+   },
+   {
+    "n": 204,
+    "h": 3831202915,
+    "s": [
+     [
+      184,
+      204
+     ]
+    ]
+   }
+  ],
+  "John 20:21": [
+   {
+    "n": 96,
+    "h": 3973731185,
+    "s": [
+     [
+      31,
+      96
+     ]
+    ]
+   },
+   {
+    "n": 98,
+    "h": 2944840164,
+    "s": [
+     [
+      34,
+      98
+     ]
+    ]
+   },
+   {
+    "n": 112,
+    "h": 211145259,
+    "s": [
+     [
+      35,
+      112
+     ]
+    ]
+   }
+  ],
+  "John 20:26": [
+   {
+    "n": 167,
+    "h": 1009720124,
+    "s": [
+     [
+      149,
+      167
+     ]
+    ]
+   },
+   {
+    "n": 156,
+    "h": 1075326660,
+    "s": [
+     [
+      141,
+      156
+     ]
+    ]
+   },
+   {
+    "n": 177,
+    "h": 2959960612,
+    "s": [
+     [
+      157,
+      177
+     ]
+    ]
+   }
+  ],
+  "John 20:27": [
+   {
+    "n": 162,
+    "h": 1580733813,
+    "s": [
+     [
+      25,
+      162
+     ]
+    ]
+   },
+   {
+    "n": 132,
+    "h": 821605293,
+    "s": [
+     [
+      20,
+      132
+     ]
+    ]
+   },
+   {
+    "n": 173,
+    "h": 1169466956,
+    "s": [
+     [
+      30,
+      173
+     ]
+    ]
+   }
+  ],
+  "John 20:29": [
+   {
+    "n": 136,
+    "h": 4074259057,
+    "s": [
+     [
+      22,
+      136
+     ]
+    ]
+   },
+   {
+    "n": 96,
+    "h": 3972968865,
+    "s": [
+     [
+      14,
+      96
+     ]
+    ]
+   },
+   {
+    "n": 118,
+    "h": 3224971666,
+    "s": [
+     [
+      22,
+      118
+     ]
+    ]
+   }
+  ],
+  "Luke 2:49": [
+   {
+    "n": 106,
+    "h": 873894379,
+    "s": [
+     [
+      23,
+      106
+     ]
+    ]
+   },
+   {
+    "n": 117,
+    "h": 828184707,
+    "s": [
+     [
+      22,
+      117
+     ]
+    ]
+   },
+   {
+    "n": 127,
+    "h": 44922109,
+    "s": [
+     [
+      24,
+      127
+     ]
+    ]
+   }
+  ],
+  "Luke 22:40": [
+   {
+    "n": 88,
+    "h": 3938040754,
+    "s": [
+     [
+      49,
+      88
+     ]
+    ]
+   },
+   {
+    "n": 71,
+    "h": 1838646239,
+    "s": [
+     [
+      38,
+      71
+     ]
+    ]
+   },
+   {
+    "n": 88,
+    "h": 3367560765,
+    "s": [
+     [
+      42,
+      88
+     ]
+    ]
+   }
+  ],
+  "Luke 22:42": [
+   {
+    "n": 106,
+    "h": 1728884479,
+    "s": [
+     [
+      8,
+      106
+     ]
+    ]
+   },
+   {
+    "n": 95,
+    "h": 3382127023,
+    "s": [
+     [
+      10,
+      95
+     ]
+    ]
+   },
+   {
+    "n": 106,
+    "h": 1345296354,
+    "s": [
+     [
+      12,
+      106
+     ]
+    ]
+   }
+  ],
+  "Luke 22:46": [
+   {
+    "n": 79,
+    "h": 1795172798,
+    "s": [
+     [
+      20,
+      79
+     ]
+    ]
+   },
+   {
+    "n": 75,
+    "h": 4197185604,
+    "s": [
+     [
+      12,
+      75
+     ]
+    ]
+   },
+   {
+    "n": 100,
+    "h": 256852603,
+    "s": [
+     [
+      21,
+      100
+     ]
+    ]
+   }
+  ],
+  "Luke 23:34": [
+   {
+    "n": 114,
+    "h": 3151351303,
+    "s": [
+     [
+      17,
+      70
+     ]
+    ]
+   },
+   {
+    "n": 106,
+    "h": 2937383023,
+    "s": [
+     [
+      15,
+      63
+     ]
+    ]
+   },
+   {
+    "n": 125,
+    "h": 4252919519,
+    "s": [
+     [
+      19,
+      69
+     ]
+    ]
+   }
+  ],
+  "Luke 23:43": [
+   {
+    "n": 90,
+    "h": 149990836,
+    "s": [
+     [
+      25,
+      90
+     ]
+    ]
+   },
+   {
+    "n": 81,
+    "h": 420485184,
+    "s": [
+     [
+      24,
+      81
+     ]
+    ]
+   },
+   {
+    "n": 89,
+    "h": 82560491,
+    "s": [
+     [
+      25,
+      89
+     ]
+    ]
+   }
+  ],
+  "Luke 23:46": [
+   {
+    "n": 140,
+    "h": 1260312055,
+    "s": [
+     [
+      53,
+      96
+     ]
+    ]
+   },
+   {
+    "n": 117,
+    "h": 1043750414,
+    "s": [
+     [
+      43,
+      86
+     ]
+    ]
+   },
+   {
+    "n": 116,
+    "h": 3944449928,
+    "s": [
+     [
+      32,
+      79
+     ]
+    ]
+   }
+  ],
+  "Mark 8:34": [
+   {
+    "n": 176,
+    "h": 3095429732,
+    "s": [
+     [
+      87,
+      176
+     ]
+    ]
+   },
+   {
+    "n": 142,
+    "h": 3504185779,
+    "s": [
+     [
+      52,
+      142
+     ]
+    ]
+   },
+   {
+    "n": 170,
+    "h": 1127203957,
+    "s": [
+     [
+      70,
+      170
+     ]
+    ]
+   }
+  ],
+  "Mark 8:35": [
+   {
+    "n": 135,
+    "h": 1808336922,
+    "s": [
+     [
+      0,
+      135
+     ]
+    ]
+   },
+   {
+    "n": 121,
+    "h": 1309287187,
+    "s": [
+     [
+      0,
+      121
+     ]
+    ]
+   },
+   {
+    "n": 144,
+    "h": 847578742,
+    "s": [
+     [
+      0,
+      144
+     ]
+    ]
+   }
+  ],
+  "Mark 8:36": [
+   {
+    "n": 88,
+    "h": 497539471,
+    "s": [
+     [
+      0,
+      88
+     ]
+    ]
+   },
+   {
+    "n": 80,
+    "h": 3659691856,
+    "s": [
+     [
+      0,
+      80
+     ]
+    ]
+   },
+   {
+    "n": 93,
+    "h": 1703525727,
+    "s": [
+     [
+      0,
+      93
+     ]
+    ]
+   }
+  ],
+  "Mark 8:37": [
+   {
+    "n": 50,
+    "h": 3043489383,
+    "s": [
+     [
+      0,
+      50
+     ]
+    ]
+   },
+   {
+    "n": 45,
+    "h": 3107159478,
+    "s": [
+     [
+      0,
+      45
+     ]
+    ]
+   },
+   {
+    "n": 58,
+    "h": 51587370,
+    "s": [
+     [
+      0,
+      58
+     ]
+    ]
+   }
+  ],
+  "Mark 8:38": [
+   {
+    "n": 209,
+    "h": 250794939,
+    "s": [
+     [
+      0,
+      209
+     ]
+    ]
+   },
+   {
+    "n": 206,
+    "h": 346456296,
+    "s": [
+     [
+      0,
+      206
+     ]
+    ]
+   },
+   {
+    "n": 222,
+    "h": 4025528333,
+    "s": [
+     [
+      0,
+      222
+     ]
+    ]
+   }
+  ],
+  "Matthew 4:17": [
+   {
+    "n": 95,
+    "h": 2442936436,
+    "s": [
+     [
+      50,
+      95
+     ]
+    ]
+   },
+   {
+    "n": 107,
+    "h": 1231208135,
+    "s": [
+     [
+      52,
+      107
+     ]
+    ]
+   },
+   {
+    "n": 107,
+    "h": 1250497108,
+    "s": [
+     [
+      57,
+      107
+     ]
+    ]
+   }
+  ],
+  "Matthew 4:19": [
+   {
+    "n": 70,
+    "h": 3615295581,
+    "s": [
+     [
+      24,
+      70
+     ]
+    ]
+   },
+   {
+    "n": 63,
+    "h": 3562043482,
+    "s": [
+     [
+      11,
+      63
+     ]
+    ]
+   },
+   {
+    "n": 82,
+    "h": 3521819013,
+    "s": [
+     [
+      24,
+      82
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:43": [
+   {
+    "n": 90,
+    "h": 975692156,
+    "s": [
+     [
+      0,
+      90
+     ]
+    ]
+   },
+   {
+    "n": 71,
+    "h": 3827842452,
+    "s": [
+     [
+      0,
+      71
+     ]
+    ]
+   },
+   {
+    "n": 92,
+    "h": 3825447565,
+    "s": [
+     [
+      0,
+      92
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:44": [
+   {
+    "n": 161,
+    "h": 257429926,
+    "s": [
+     [
+      0,
+      161
+     ]
+    ]
+   },
+   {
+    "n": 155,
+    "h": 2956103728,
+    "s": [
+     [
+      0,
+      155
+     ]
+    ]
+   },
+   {
+    "n": 148,
+    "h": 2992927246,
+    "s": [
+     [
+      0,
+      148
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:45": [
+   {
+    "n": 169,
+    "h": 2557006983,
+    "s": [
+     [
+      0,
+      169
+     ]
+    ]
+   },
+   {
+    "n": 143,
+    "h": 593010043,
+    "s": [
+     [
+      0,
+      143
+     ]
+    ]
+   },
+   {
+    "n": 160,
+    "h": 2894868946,
+    "s": [
+     [
+      0,
+      160
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:46": [
+   {
+    "n": 92,
+    "h": 942339121,
+    "s": [
+     [
+      0,
+      92
+     ]
+    ]
+   },
+   {
+    "n": 105,
+    "h": 3296856566,
+    "s": [
+     [
+      0,
+      105
+     ]
+    ]
+   },
+   {
+    "n": 104,
+    "h": 609962586,
+    "s": [
+     [
+      0,
+      104
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:47": [
+   {
+    "n": 95,
+    "h": 3577864640,
+    "s": [
+     [
+      0,
+      95
+     ]
+    ]
+   },
+   {
+    "n": 102,
+    "h": 1822820239,
+    "s": [
+     [
+      0,
+      102
+     ]
+    ]
+   },
+   {
+    "n": 111,
+    "h": 3874634361,
+    "s": [
+     [
+      0,
+      111
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:48": [
+   {
+    "n": 75,
+    "h": 778681146,
+    "s": [
+     [
+      0,
+      75
+     ]
+    ]
+   },
+   {
+    "n": 85,
+    "h": 3067643532,
+    "s": [
+     [
+      0,
+      85
+     ]
+    ]
+   },
+   {
+    "n": 79,
+    "h": 1688109520,
+    "s": [
+     [
+      0,
+      79
+     ]
+    ]
+   }
+  ],
+  "Matthew 22:37": [
+   {
+    "n": 119,
+    "h": 3534959088,
+    "s": [
+     [
+      21,
+      119
+     ]
+    ]
+   },
+   {
+    "n": 99,
+    "h": 439984216,
+    "s": [
+     [
+      17,
+      99
+     ]
+    ]
+   },
+   {
+    "n": 123,
+    "h": 2464273531,
+    "s": [
+     [
+      26,
+      123
+     ]
+    ]
+   }
+  ],
+  "Matthew 22:38": [
+   {
+    "n": 40,
+    "h": 4186290147,
+    "s": [
+     [
+      0,
+      40
+     ]
+    ]
+   },
+   {
+    "n": 43,
+    "h": 1766461677,
+    "s": [
+     [
+      0,
+      43
+     ]
+    ]
+   },
+   {
+    "n": 41,
+    "h": 816053936,
+    "s": [
+     [
+      0,
+      41
+     ]
+    ]
+   }
+  ],
+  "Matthew 22:39": [
+   {
+    "n": 73,
+    "h": 38803346,
+    "s": [
+     [
+      0,
+      73
+     ]
+    ]
+   },
+   {
+    "n": 70,
+    "h": 4272010296,
+    "s": [
+     [
+      0,
+      70
+     ]
+    ]
+   },
+   {
+    "n": 83,
+    "h": 660861047,
+    "s": [
+     [
+      0,
+      83
+     ]
+    ]
+   }
+  ],
+  "Matthew 22:40": [
+   {
+    "n": 60,
+    "h": 2750457258,
+    "s": [
+     [
+      0,
+      60
+     ]
+    ]
+   },
+   {
+    "n": 61,
+    "h": 697894865,
+    "s": [
+     [
+      0,
+      61
+     ]
+    ]
+   },
+   {
+    "n": 64,
+    "h": 1456197013,
+    "s": [
+     [
+      0,
+      64
+     ]
+    ]
+   }
+  ],
+  "Matthew 27:46": [
+   {
+    "n": 150,
+    "h": 2798996711,
+    "s": [
+     [
+      64,
+      91
+     ],
+     [
+      108,
+      150
+     ]
+    ]
+   },
+   {
+    "n": 153,
+    "h": 711982385,
+    "s": [
+     [
+      68,
+      95
+     ],
+     [
+      105,
+      153
+     ]
+    ]
+   },
+   {
+    "n": 143,
+    "h": 2511762298,
+    "s": [
+     [
+      55,
+      80
+     ],
+     [
+      92,
+      143
+     ]
+    ]
+   }
+  ],
+  "Revelation 22:20": [
+   {
+    "n": 95,
+    "h": 2866353980,
+    "s": [
+     [
+      40,
+      62
+     ]
+    ]
+   },
+   {
+    "n": 104,
+    "h": 2782700460,
+    "s": [
+     [
+      43,
+      71
+     ]
+    ]
+   },
+   {
+    "n": 78,
+    "h": 3450230660,
+    "s": [
+     [
+      33,
+      52
+     ]
+    ]
+   }
+  ]
+ }
+}

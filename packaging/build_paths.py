@@ -17,6 +17,10 @@ The rules it enforces (the build stops on the first broken rule):
   * Words of another faith (the Quran in "What does the Quran say about the Bible?") come only from the checked files
     in packaging/outside/ (packaging/build_outside.py); a step names them ("outside": ["Quran 5:47"]) next to its Bible
     verses, the app shows them in their own box labelled "not Scripture", and no quiz answer is ever one of them.
+  * 🔴 Words in red: a path with "red_letters": true shows the words of Jesus in red. They come from the King James
+    file's own markup (<q who="Jesus">); "red_fix" corrects a verse where that markup is wrong, and a Spanish or German
+    path marks by hand ("red") every verse that is only partly His words. Each mark must stand in its verse; the built
+    path keeps only where the red starts and ends, with a fingerprint of the verse text it was made for (red_marks()).
 
 It also works out, for every question, why it is worth asking: how many cross-references point to its verse
 (OpenBible.info votes), how often the path's Hebrew/Greek words occur in its verses, and how much KJV, the
@@ -92,12 +96,14 @@ class Bibles:
         self.text: dict[str, dict] = {}
         self.order: dict[str, list] = {}
         self.missing: list[str] = []
+        self.files: dict[str, str] = {}   # the downloaded Bible files, by key (the KJV file carries the words of Jesus)
         from bibleask.loaders import load_bible
         self._add("ETH", load_bible(os.path.join(ROOT, "bibles", "eng-ethiopian-canon.zefania.xml")).verses)
         self._add("JASHER", load_bible(os.path.join(ROOT, "bibles", "eng-jasher-1840.zefania.xml")).verses)
         for key, file in list(FILES.items()) + list(LANG_BIBLES.values()):
             path = self._find(file, src, download)
             if path:
+                self.files[key] = path
                 self._add(key, load_bible(path).verses)
             elif key == "KJV":
                 self._add_builtin_kjv()   # offline: the King James text that carries the Strong's numbers
@@ -524,6 +530,183 @@ def embed_outside(p: dict, lib: dict) -> None:
                                 for w in used.values() for t in w["translations"]]
 
 
+def red_marks(p: dict, B: Bibles, verses: list) -> dict:
+    """🔴 The words of Jesus in a path with "red_letters": {"John 6:35": [{"n": length, "h": fingerprint, "s": [[start, end],
+    ...]}, ...]}, one mark per Bible (KJV, Reina-Valera 1909, Luther 1912). The app colours a verse only when its text
+    has exactly that length and fingerprint, so another Bible (or a changed file) simply shows no red."""
+    where = f"path {p['id']!r}"
+    if "KJV" not in B.files:
+        raise PathError(f"{where}: words in red need the King James file (eng-kjv.osis.xml), which carries the words of Jesus")
+    jw = jesus_words(B.files["KJV"])
+    keys = sorted(set(verses), key=lambda k: (k[0], k[1], k[2]))
+    vref = lambda k: f"{k[0]} {k[1]}:{k[2]}"
+
+    def hand(marks: dict, key: str, ctx: str) -> dict:
+        """Hand marks ({"Mark 8:34": ["Whosoever will come after me, …"]}): every one a verse of this path, every piece in it."""
+        out = {}
+        for ref, pieces in (marks or {}).items():
+            ks = B.verses(ref, key)
+            if len(ks) != 1 or ks[0] not in set(verses):
+                raise PathError(f"{where}: {ctx}: {ref} must be one verse of this path")
+            t = B.text[key][ks[0]]
+            sp = []
+            for piece in pieces:
+                if t.count(piece) != 1:
+                    raise PathError(f"{where}: {ctx}: {piece!r} does not stand (once) in {ref} of the {key}")
+                a = t.index(piece)
+                sp.append([a, a + len(piece)])
+            out[ks[0]] = sorted(sp)
+        return out
+
+    fix = hand(p.pop("red_fix", None), "KJV", "red_fix")
+    for k in keys:
+        if k in jw and jw[k][0] != B.text["KJV"].get(k):
+            raise PathError(f"{where}: the King James text of {vref(k)} reads differently with its red-letter markup")
+    kjv = {k: fix.get(k, jw.get(k, (None, []))[1]) for k in keys}
+    kjv = {k: sp for k, sp in kjv.items() if sp}
+    if not kjv:
+        raise PathError(f"{where}: red_letters, but none of its verses has words of Jesus")
+    out: dict = defaultdict(list)
+    for k, sp in kjv.items():
+        out[vref(k)].append(mark(B.text["KJV"][k], sp))
+    for lang, (key, _) in LANG_BIBLES.items():
+        f = os.path.join(I18N_DIR, lang, p["id"] + ".json")
+        if not os.path.exists(f):
+            continue
+        with open(f, encoding="utf-8") as fh:
+            mine = hand(json.load(fh).get("red"), key, f"red ({lang})")
+        extra = [k for k in mine if k not in kjv]
+        if extra:
+            raise PathError(f"{where}: red ({lang}): {vref(extra[0])} has no words of Jesus in the King James")
+        for k, sp in kjv.items():
+            t = B.text[key].get(k)
+            if not t:
+                continue
+            if k in mine:
+                use = mine[k]
+            elif sp == [[0, len(B.text["KJV"][k])]]:   # the whole verse is His words: the whole verse in this Bible too
+                use = [[0, len(t)]]
+            else:
+                raise PathError(f"{where}: red ({lang}): {vref(k)} is only partly the words of Jesus; mark them by hand")
+            out[vref(k)].append(mark(t, use))
+    return dict(out)
+
+
+def mark(text: str, spans: list) -> dict:
+    """Length, fingerprint and red spans of one verse text, counted in UTF-16 units like JavaScript strings."""
+    units = text.encode("utf-16-le")
+    if len(units) // 2 != len(text):
+        raise PathError(f"a verse with characters outside the basic plane can't be marked in red: {text[:40]!r}")
+    return {"n": len(text), "h": fnv(text), "s": spans}
+
+
+def fnv(text: str) -> int:
+    """FNV-1a (32 bit) over the UTF-16 units of a verse; web/paths.js computes the same number (redHtml)."""
+    h = 0x811C9DC5
+    for ch in text:
+        h ^= ord(ch)
+        h = (h * 16777619) & 0xFFFFFFFF
+    return h
+
+
+_JW: dict = {}
+
+
+def jesus_words(path: str) -> dict:
+    """{(book, ch, v): (text, [[start, end], ...])}: the King James text exactly as bibleask/loaders.py reads it, with
+    the stretches its OSIS file marks as the words of Jesus (<q who="Jesus" sID/> … <q eID/>, or a <q who="Jesus"> element)."""
+    if path in _JW:
+        return _JW[path]
+    import xml.sax
+    from bibleask.loaders import _OSIS_NAME, _MilestoneReader
+    out: dict = {}
+    st = {"cur": None, "buf": [], "skip": 0}
+    open_ids: set = set()
+    stack: list = []
+    container: list = []
+
+    def close():
+        if st["cur"]:
+            t, m = [], []
+            for ch, r in st["buf"]:   # the same as loaders._clean: runs of white space become one space, ends trimmed
+                if ch.isspace():
+                    if t and t[-1] == " ":
+                        m[-1] = m[-1] and r
+                        continue
+                    ch = " "
+                t.append(ch); m.append(r)
+            while t and t[0] == " ":
+                t.pop(0); m.pop(0)
+            while t and t[-1] == " ":
+                t.pop(); m.pop()
+            if t:
+                k, text = st["cur"], "".join(t)
+                if k in out:
+                    old = out[k]
+                    text, m = old[0] + " " + text, old[1] + [False] + m
+                out[k] = (text, m)
+        st["cur"], st["buf"] = None, []
+
+    class H(xml.sax.ContentHandler):
+        def startElement(self, name, a):
+            tag = name.rsplit(":", 1)[-1].upper()
+            if tag in _MilestoneReader.SKIP:
+                st["skip"] += 1
+            elif tag == "VERSE":
+                if a.get("eID"):
+                    close()
+                    return
+                oid = (a.get("osisID") or "").split()[0] if a.get("osisID") else ""
+                parts = oid.split(".")
+                if len(parts) >= 3 and parts[1].isdigit() and parts[2].isdigit():
+                    close()
+                    st["cur"] = (_OSIS_NAME.get(parts[0], parts[0]), int(parts[1]), int(parts[2]))
+                container.append(not a.get("sID"))
+            elif tag == "CHAPTER" and a.get("eID"):
+                close()
+            elif tag == "Q":
+                if a.get("sID"):
+                    if a.get("who") == "Jesus":
+                        open_ids.add(a.get("sID"))
+                elif a.get("eID"):
+                    open_ids.discard(a.get("eID"))
+                else:
+                    stack.append(a.get("who") == "Jesus")
+
+        def endElement(self, name):
+            tag = name.rsplit(":", 1)[-1].upper()
+            if tag in _MilestoneReader.SKIP:
+                st["skip"] -= 1
+            elif tag == "VERSE" and container:
+                if container.pop():
+                    close()
+            elif tag == "Q" and stack:
+                stack.pop()
+
+        def characters(self, c):
+            if c and st["cur"] and not st["skip"]:
+                r = bool(open_ids) or any(stack)
+                st["buf"].extend((ch, r) for ch in c)
+
+    xml.sax.parse(path, H())
+    close()
+    res = {}
+    for k, (text, m) in out.items():
+        sp, i = [], 0
+        while i < len(m):
+            if m[i]:
+                j = i
+                while j < len(m) and m[j]:
+                    j += 1
+                sp.append([i, j])
+                i = j
+            else:
+                i += 1
+        res[k] = (text, sp)
+    _JW[path] = res
+    return res
+
+
 def build(B: Bibles) -> dict[str, dict]:
     from bibleask.strongs import STRONGS
     try:
@@ -551,6 +734,10 @@ def build(B: Bibles) -> dict[str, dict]:
         tr = translations(p, B)
         if tr:
             p["i18n"] = tr
+        if p.get("red_letters"):
+            p["red"] = red_marks(p, B, info["verses"])
+        elif "red_fix" in p:
+            raise PathError(f"path {p['id']!r}: red_fix without red_letters")
         out[p["id"]] = p
     balance(out)
     return out
@@ -612,6 +799,7 @@ def translations(p: dict, B: Bibles) -> dict:
                 quotes(ft, (fe.get("refs") or []) + s["refs"], f"step {i} fact {j}")
         for j, (re_, rt) in enumerate(zip(p.get("remember", []), t.get("remember", [])), 1):
             quotes(rt, re_["refs"], f"remember {j}")
+        t.pop("red", None)   # 🔴 the hand marks of the words of Jesus are checked and stored by red_marks()
         out[lang] = t
     return out
 

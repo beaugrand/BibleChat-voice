@@ -1,0 +1,145 @@
+{
+  "id": "i-am-who-jesus-says-he-is",
+  "title": "I AM: who Jesus says He is",
+  "category": "Name & Word",
+  "anim": {"kind": "light", "x": 50, "y": 30, "s": 34},
+  "opening_question": "At the burning bush God gave Moses His name: I AM THAT I AM. In the Gospel of John, Jesus says I am again and again: the bread of life, the light of the world, the door, the good shepherd, the resurrection and the life, the way, the truth and the life, the true vine. What does He claim each time, and why did some take up stones? Each step asks what He said and what it means for me.",
+  "required_refs": ["Exodus 3:13-15", "John 6:32-35", "John 6:47-51", "John 8:12", "John 9:1-7", "John 8:24", "John 8:56-59", "John 10:7-10", "John 10:11-15", "Psalms 23:1", "John 11:21-27", "John 14:5-6", "John 15:1-8", "John 18:3-8", "Revelation 22:12-13"],
+  "words": ["H1961", "H3068", "G1473", "G1510", "G2222"],
+  "show": 8,
+  "steps": [
+    {"intro": "Background first: before Jesus said I am in John, God gave Moses His name at the burning bush (Exodus 3).",
+     "question": "What did Moses ask God at the bush, and what name did God give him?",
+     "apply": "Do I know God by His name, or only as an idea?",
+     "refs": ["Exodus 3:13-15"],
+     "look_closer": {"strongs": ["H1961", "H3068"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Moses asked what to say when the people would ask \"What is his name?\"", "refs": ["Exodus 3:13"]},
+       {"text": "God answered: \"I AM THAT I AM\", and \"I AM hath sent me unto you\".", "refs": ["Exodus 3:14"]},
+       {"text": "\"I AM\" comes from hayah. Strong's: \"to exist\".", "refs": ["Exodus 3:14"], "strongs": ["H1961"]},
+       {"text": "The name the KJV prints as \"The LORD\" in the next verse is YHWH. Strong's: \"From H1961\", \"self Existent or eternal\". God adds: \"this is my name for ever\".", "refs": ["Exodus 3:15"], "strongs": ["H3068"]}
+     ]},
+    {"question": "What did the people ask Jesus for, and what did He say about the true bread from heaven?",
+     "apply": "What am I hungry for, and do I come to Him to be filled?",
+     "refs": ["John 6:32-35", "John 6:47-51"],
+     "look_closer": {"strongs": ["G740", "G1473", "G1510"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Moses gave manna, but Jesus said: \"my Father giveth you the true bread from heaven\".", "refs": ["John 6:32"]},
+       {"text": "\"I am\" is ego eimi. Ego, Strong's: \"only expressed when emphatic\"; eimi: \"I exist\".", "refs": ["John 6:35"], "strongs": ["G1473", "G1510"]},
+       {"text": "\"Your fathers did eat manna in the wilderness, and are dead.\" His bread is different: \"if any man eat of this bread, he shall live for ever\".", "refs": ["John 6:49-51"]},
+       {"text": "He said what the bread is: \"my flesh, which I will give for the life of the world\".", "refs": ["John 6:51"]}
+     ]},
+    {"question": "What did Jesus say about Himself in John 8:12, and what did He do for the man born blind?",
+     "apply": "Where am I still walking in darkness when I could follow the light?",
+     "refs": ["John 8:12", "John 9:1-7"],
+     "look_closer": {"strongs": ["G5457", "G2889"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"he that followeth me shall not walk in darkness, but shall have the light of life\".", "refs": ["John 8:12"]},
+       {"text": "\"light\" is phos. Strong's: \"luminousness\".", "refs": ["John 8:12"], "strongs": ["G5457"]},
+       {"text": "The disciples asked \"who did sin\". Jesus answered: \"that the works of God should be made manifest in him\".", "refs": ["John 9:2-3"]},
+       {"text": "Right after \"I am the light of the world\", He gave a blind man his sight: \"He went his way therefore, and washed, and came seeing\".", "refs": ["John 9:5-7"]}
+     ]},
+    {"question": "What did Jesus say about Abraham, and why did the people take up stones to cast at Him?",
+     "apply": "Is Jesus to me only a good teacher, or the One who always is?",
+     "refs": ["John 8:24", "John 8:56-59"],
+     "look_closer": {"strongs": ["G1096", "G1510"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "He did not say I was. He said \"Before Abraham was, I am\". \"was\" is ginomai, Strong's: \"to become\"; \"am\" is eimi, \"I exist\". Abraham came to be; He is.", "refs": ["John 8:58"], "strongs": ["G1096", "G1510"]},
+       {"text": "\"Then took they up stones to cast at him\". The law said: \"he that blasphemeth the name of the LORD, he shall surely be put to death\". They understood what He claimed.", "refs": ["John 8:59", "Leviticus 24:16"]},
+       {"text": "In \"I am he\" the KJV prints \"he\" in italics: the translators added it. The Greek has only ego eimi, I am.", "refs": ["John 8:24"], "strongs": ["G1473", "G1510"]}
+     ]},
+    {"question": "What did Jesus call Himself in John 10:7-9, and what does the thief come to do?",
+     "apply": "Am I trying to come to God some other way than through Him?",
+     "refs": ["John 10:7-10"],
+     "look_closer": {"strongs": ["G2374", "G4982"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"by me if any man enter in, he shall be saved, and shall go in and out, and find pasture\".", "refs": ["John 10:9"]},
+       {"text": "\"door\" is thura. Strong's: \"a portal or entrance\".", "refs": ["John 10:9"], "strongs": ["G2374"]},
+       {"text": "The thief comes \"to steal, and to kill, and to destroy\". He came \"that they might have life, and that they might have it more abundantly\".", "refs": ["John 10:10"]}
+     ]},
+    {"question": "What does the good shepherd do that the hireling does not?",
+     "apply": "Do I trust Him to lead me, and do I let Him know me?",
+     "refs": ["John 10:11-15", "Psalms 23:1"],
+     "look_closer": {"strongs": ["G4166", "G2570"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"the good shepherd giveth his life for the sheep\". The hireling \"seeth the wolf coming, and leaveth the sheep, and fleeth\".", "refs": ["John 10:11-12"]},
+       {"text": "\"good\" is kalos. Strong's: \"valuable or virtuous\".", "refs": ["John 10:11"], "strongs": ["G2570"]},
+       {"text": "David wrote \"The LORD is my shepherd\". Jesus says \"I am the good shepherd\".", "refs": ["Psalms 23:1", "John 10:11"]},
+       {"text": "He knows His own: \"I am the good shepherd, and know my sheep\", \"and am known of mine\".", "refs": ["John 10:14"]}
+     ]},
+    {"question": "What did Martha believe about the last day, and what did Jesus tell her He is?",
+     "apply": "Jesus asks me what He asked Martha. Do I believe this?",
+     "refs": ["John 11:21-27"],
+     "look_closer": {"strongs": ["G386", "G2222"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Martha said \"I know that he shall rise again in the resurrection at the last day\". Jesus answered with Himself: \"I am the resurrection, and the life\".", "refs": ["John 11:24-25"]},
+       {"text": "\"resurrection\" is anastasis. Strong's: \"a standing up again\".", "refs": ["John 11:25"], "strongs": ["G386"]},
+       {"text": "He asked her: \"Believest thou this?\" She answered: \"Yea, Lord: I believe that thou art the Christ, the Son of God\".", "refs": ["John 11:26-27"]}
+     ]},
+    {"question": "What did Thomas ask, and what did Jesus answer?",
+     "apply": "Am I still looking for a way to God, or have I come to the Way?",
+     "refs": ["John 14:5-6"],
+     "look_closer": {"strongs": ["G3598", "G225"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Thomas asked \"how can we know the way?\" Jesus did not point to a way. He said \"I am the way\".", "refs": ["John 14:5-6"]},
+       {"text": "\"way\" is hodos, Strong's: \"a road\". \"truth\" is aletheia.", "refs": ["John 14:6"], "strongs": ["G3598", "G225"]},
+       {"text": "\"no man cometh unto the Father, but by me\".", "refs": ["John 14:6"]}
+     ]},
+    {"question": "What does the Father do with the branches, and what does Jesus say we can do without Him?",
+     "apply": "What does it look like for me to abide in Him, day by day?",
+     "refs": ["John 15:1-8"],
+     "look_closer": {"strongs": ["G288", "G3306"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"I am the true vine, and my Father is the husbandman.\" \"true\" is alethinos, Strong's: \"truthful\".", "refs": ["John 15:1"], "strongs": ["G228"]},
+       {"text": "\"abide\" is meno. Strong's: \"to stay\".", "refs": ["John 15:4"], "strongs": ["G3306"]},
+       {"text": "\"without me ye can do nothing\".", "refs": ["John 15:5"]},
+       {"text": "The fruit is for the Father: \"Herein is my Father glorified, that ye bear much fruit\".", "refs": ["John 15:8"]}
+     ]},
+    {"intro": "Closing: every I am in John points back to the name God gave at the burning bush.",
+     "question": "What happened when Jesus said \"I am he\" in the garden, and how does He name Himself at the end of the Bible?",
+     "apply": "If He is the first and the last, what in my life do I still need to hand over to Him?",
+     "refs": ["John 18:3-8", "Revelation 22:12-13"],
+     "look_closer": {"strongs": ["G1510", "G4413", "G2078"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Judas came with \"a band of men and officers\", \"with lanterns and torches and weapons\".", "refs": ["John 18:3"]},
+       {"text": "When He said \"I am he\", \"they went backward, and fell to the ground\". Here too the KJV prints \"he\" in italics.", "refs": ["John 18:6"]},
+       {"text": "He gave Himself up and asked them to let His disciples go: \"if therefore ye seek me, let these go their way\".", "refs": ["John 18:8"]},
+       {"text": "At the end of the Bible He says: \"I am Alpha and Omega, the beginning and the end, the first and the last\".", "refs": ["Revelation 22:13"]}
+     ]}
+  ],
+  "remember": [
+    {"text": "\"I AM THAT I AM\"", "refs": ["Exodus 3:14"]},
+    {"text": "\"I am the bread of life\"", "refs": ["John 6:35"]},
+    {"text": "\"I am the light of the world\"", "refs": ["John 8:12"]},
+    {"text": "\"Before Abraham was, I am\"", "refs": ["John 8:58"]},
+    {"text": "\"I am the good shepherd\"", "refs": ["John 10:11"]},
+    {"text": "\"I am the resurrection, and the life\"", "refs": ["John 11:25"]},
+    {"text": "\"I am the way, the truth, and the life\"", "refs": ["John 14:6"]},
+    {"text": "\"I am the vine, ye are the branches\"", "refs": ["John 15:5"]}
+  ],
+  "quiz": [
+    {"q": "Which verse says \"I AM THAT I AM\"?", "type": "find_the_verse", "answer_refs": ["Exodus 3:14"]},
+    {"q": "Fill in the word: \"I am the ___ of life\"", "type": "fill_word", "ref": "John 6:35", "bible": "KJV", "word": "bread"},
+    {"q": "In John 6:49, what did your fathers eat in the wilderness?", "type": "multiple_choice",
+     "options": ["Manna", "Quails", "Locusts", "Barley loaves"], "answer": 0, "answer_refs": ["John 6:49"], "check": {"bible": "KJV", "word": "manna"}},
+    {"q": "Which verse says \"I am the light of the world: he that followeth me shall not walk in darkness\"?", "type": "find_the_verse", "answer_refs": ["John 8:12"]},
+    {"q": "In John 9:7, in which pool did the blind man wash?", "type": "multiple_choice",
+     "options": ["Siloam", "Bethesda", "Jordan", "Gihon"], "answer": 0, "answer_refs": ["John 9:7"], "check": {"bible": "KJV", "word": "Siloam"}},
+    {"q": "Which verse says \"Before Abraham was, I am\"?", "type": "find_the_verse", "answer_refs": ["John 8:58"]},
+    {"q": "In John 8:59, what did they take up to cast at Him?", "type": "multiple_choice",
+     "options": ["Stones", "Swords", "Staves", "Cords"], "answer": 0, "answer_refs": ["John 8:59"], "check": {"bible": "KJV", "word": "stones"}},
+    {"q": "Fill in the word: \"I am the ___: by me if any man enter in, he shall be saved\"", "type": "fill_word", "ref": "John 10:9", "bible": "KJV", "word": "door"},
+    {"q": "Which verse says \"I am come that they might have life, and that they might have it more abundantly\"?", "type": "find_the_verse", "answer_refs": ["John 10:10"]},
+    {"q": "Fill in the word: \"the good shepherd giveth his ___ for the sheep\"", "type": "fill_word", "ref": "John 10:11", "bible": "KJV", "word": "life"},
+    {"q": "In John 10:12, what does the hireling see coming before he flees?", "type": "multiple_choice",
+     "options": ["The wolf", "A lion", "The thief", "A bear"], "answer": 0, "answer_refs": ["John 10:12"], "check": {"bible": "KJV", "word": "wolf"}},
+    {"q": "Which verse says \"I am the resurrection, and the life\"?", "type": "find_the_verse", "answer_refs": ["John 11:25"]},
+    {"q": "Which translation says \"Believest thou this\" in John 11:26?", "type": "which_translation", "ref": "John 11:26", "bible": "KJV", "phrase": "Believest thou this"},
+    {"q": "Which verse says \"I am the way, the truth, and the life\"?", "type": "find_the_verse", "answer_refs": ["John 14:6"]},
+    {"q": "Fill in the word: \"I am the vine, ye are the ___\"", "type": "fill_word", "ref": "John 15:5", "bible": "KJV", "word": "branches"},
+    {"q": "In John 18:6, what happened when Jesus said \"I am he\"?", "type": "multiple_choice",
+     "options": ["They went backward, and fell to the ground", "They bowed and worshipped Him", "They ran away", "They bound Him at once"], "answer": 0, "answer_refs": ["John 18:6"], "check": {"bible": "KJV", "word": "backward"}},
+    {"q": "Which verse says \"I am Alpha and Omega, the beginning and the end\"?", "type": "find_the_verse", "answer_refs": ["Revelation 22:13"]}
+  ],
+  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]
+}
