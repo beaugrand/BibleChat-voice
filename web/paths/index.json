@@ -2345,6 +2345,153 @@
   }
  },
  {
+  "id": "sabbath-1-the-biblical-sabbath",
+  "title": "The Sabbath, part 1: the biblical Sabbath",
+  "category": "Foundations",
+  "image": "img/sabbath-1-the-biblical-sabbath.jpg",
+  "opening_question": "God rested on the seventh day, blessed it and made it holy. How important is the Sabbath to the Father? What does \"no work\" mean in the Law, how seriously did He take it, when does the day begin and end, and why do the prophets call it both a warning and a delight? This is part 1 of 3. Each step asks what the text says and what it means for me.",
+  "share": "How much does the Sabbath matter to the Father? From creation to the prophets: no work, a sign, and a delight.",
+  "steps": 9,
+  "step_questions": [
+   "What did God do on the seventh day, and what three things does Genesis 2 say He did with it?",
+   "Before Sinai, what did the LORD give Israel on the sixth day, what were they to do with it, and what happened when some went out to gather on the seventh day?",
+   "How do the two tellings of the fourth commandment begin, who must rest, and what reason does each one give?",
+   "What does the Law say about work on the seventh day, even \"in earing time and in harvest\"? What else was not to be done in their habitations?",
+   "What did the man in the wilderness do on the sabbath day, why was he put in ward, and what did the LORD say should be done?",
+   "What does God call the sabbath in Exodus 31 and Ezekiel 20, between whom, for how long, and what does it show about who sanctifies His people?",
+   "When does a Bible day begin and end? What did Nehemiah do \"when the gates of Jerusalem began to be dark before the sabbath\"?",
+   "What did Jeremiah promise if Judah would \"hallow the sabbath day\", what did he warn if they would not, and what did Nehemiah find and do?",
+   "What does Isaiah call the sabbath, what does God promise the stranger and the eunuch who keep it, and what will all flesh do \"from one sabbath to another\"?"
+  ],
+  "books": [
+   "Amos",
+   "Deuteronomy",
+   "Exodus",
+   "Ezekiel",
+   "Genesis",
+   "Isaiah",
+   "Jeremiah",
+   "Leviticus",
+   "Nehemiah",
+   "Numbers"
+  ],
+  "show": 8,
+  "verses": 66,
+  "minutes": 50,
+  "anim": {
+   "kind": "light",
+   "x": 69,
+   "y": 37,
+   "s": 30
+  },
+  "series": {
+   "id": "the-sabbath",
+   "title": "The Sabbath: God's day of rest",
+   "session": 1,
+   "of": 3,
+   "share": "Three studies: the biblical Sabbath, what Jesus said about it, and Romans 14, the seasons and life today."
+  }
+ },
+ {
+  "id": "sabbath-2-what-jesus-said",
+  "title": "The Sabbath, part 2: what did Jesus say?",
+  "category": "Foundations",
+  "image": "img/sabbath-2-what-jesus-said.jpg",
+  "opening_question": "The Father gave the Sabbath and said: no work. Jesus said: \"The sabbath was made for man, and not man for the sabbath\". Both are true. What did Jesus do on the Sabbath, what did He say about it, what did He set right, and did He do away with it or show what it is for? His words are shown in red. This is part 2 of 3. Each step asks what the text says and what it means for me.",
+  "share": "Jesus kept the Sabbath, healed on it and said it was made for man. What did He say, and what did He set right?",
+  "steps": 9,
+  "step_questions": [
+   "What was Jesus' custom on the sabbath day at Nazareth, and what did He do in the synagogue at Capernaum?",
+   "Did Jesus come to destroy the law? What did He say about \"one jot or one tittle\", and about those who break and teach others to break \"one of these least commandments\"?",
+   "Why did the Pharisees object in the corn fields, what example did Jesus give from David and the priests, and what two things did He say about the sabbath and the Son of man?",
+   "What did Jesus ask before He healed the withered hand, what did He say about a sheep in a pit, and what did the Pharisees do afterwards?",
+   "Whom did Jesus loose on the sabbath in the synagogue, what did He say to the ruler, and what did He ask at the Pharisee's table about the man with the dropsy?",
+   "Why did they say the healed man in John 5 was breaking the sabbath, how did Jesus answer, and what did He say in John 7 about circumcision on the sabbath day?",
+   "When Jesus opened the blind man's eyes on the sabbath, why were the Pharisees divided? And what did Jesus say about \"the commandments of men\" and \"the commandment of God\"?",
+   "What did Jesus tell His disciples to pray about their flight? When did the women rest after the burial, and when did they come to the sepulchre?",
+   "Whom does Jesus call to Himself, what does He promise them, and what does Matthew tell next \"on the sabbath day\"?"
+  ],
+  "books": [
+   "John",
+   "Luke",
+   "Mark",
+   "Matthew"
+  ],
+  "show": 8,
+  "verses": 91,
+  "minutes": 60,
+  "anim": {
+   "kind": "light",
+   "x": 15,
+   "y": 8,
+   "s": 30
+  },
+  "series": {
+   "id": "the-sabbath",
+   "title": "The Sabbath: God's day of rest",
+   "session": 2,
+   "of": 3,
+   "share": "Three studies: the biblical Sabbath, what Jesus said about it, and Romans 14, the seasons and life today."
+  }
+ },
+ {
+  "id": "sabbath-3-romans-14-seasons-today",
+  "title": "The Sabbath, part 3: Romans 14, the seasons and life today",
+  "category": "Foundations",
+  "image": "img/sabbath-3-romans-14-seasons-today.jpg",
+  "opening_question": "Romans 14 is often read as: worship the Father on any day, because He looks at the heart, not the calendar. Is that what it says, and how far does it go? Did the Father say to keep His feasts \"in their seasons\", and did Jesus? What did the apostles do, and how can a day of rest work in our society? Read every verse, also the ones Christians read in different ways, and let the text speak. This is part 3 of 3.",
+  "share": "Does Romans 14 mean any day will do? Did the Father or Jesus say to keep the seasons? And how can the Sabbath work today?",
+  "steps": 9,
+  "step_questions": [
+   "Whom are the Romans to receive, and \"not to doubtful disputations\"? What two things do the believers disagree about, and what does Paul tell each one?",
+   "Does the LORD look on the outward appearance or on the heart? How must true worshippers worship, what did Jesus say about love and commandments, and what does Paul say about faith and the law?",
+   "What does Paul say about being judged over \"the sabbath days\", what is \"a shadow of things to come\", and what did the Galatians \"observe\"?",
+   "What were the lights in the heaven made for? What does the LORD call His feasts in Leviticus 23, when were they to be proclaimed, and for how long?",
+   "Which feasts did Jesus go up to, from the age of twelve on? What did He cry \"In the last day, that great day of the feast\", and what did He say at His last Passover?",
+   "What did Paul say about Christ our passover and keeping the feast? Which feasts did he hurry to be at in Jerusalem, and what will the nations keep in Zechariah 14?",
+   "On which day did Jesus rise, and what happened \"upon the first day of the week\" at Troas? On what day was John \"in the Spirit\", and who are the saints of Revelation 14:12?",
+   "What did Israel do on the sixth day, what were they to do even \"in earing time and in harvest\", what did Nehemiah stop at the gates, and what did Jesus say was lawful on the sabbath days?",
+   "What rest does Hebrews say still remains for the people of God, how do we enter it, and why did some not enter?"
+  ],
+  "books": [
+   "1 Corinthians",
+   "1 John",
+   "1 Samuel",
+   "Acts",
+   "Colossians",
+   "Deuteronomy",
+   "Exodus",
+   "Galatians",
+   "Genesis",
+   "Hebrews",
+   "John",
+   "Leviticus",
+   "Luke",
+   "Mark",
+   "Matthew",
+   "Nehemiah",
+   "Revelation",
+   "Romans",
+   "Zechariah"
+  ],
+  "show": 8,
+  "verses": 70,
+  "minutes": 50,
+  "anim": {
+   "kind": "light",
+   "x": 81,
+   "y": 17,
+   "s": 26
+  },
+  "series": {
+   "id": "the-sabbath",
+   "title": "The Sabbath: God's day of rest",
+   "session": 3,
+   "of": 3,
+   "share": "Three studies: the biblical Sabbath, what Jesus said about it, and Romans 14, the seasons and life today."
+  }
+ },
+ {
   "id": "salvation-how-are-we-saved",
   "title": "Salvation: how are we saved?",
   "category": "Foundations",

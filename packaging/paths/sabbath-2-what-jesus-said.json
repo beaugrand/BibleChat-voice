@@ -1,0 +1,130 @@
+{
+  "id": "sabbath-2-what-jesus-said",
+  "title": "The Sabbath, part 2: what did Jesus say?",
+  "category": "Foundations",
+  "series": {"id": "the-sabbath", "title": "The Sabbath: God's day of rest", "session": 2, "of": 3, "share": "Three studies: the biblical Sabbath, what Jesus said about it, and Romans 14, the seasons and life today."},
+  "anim": {"kind": "light", "x": 15, "y": 8, "s": 30},
+  "red_letters": true,
+  "share": "Jesus kept the Sabbath, healed on it and said it was made for man. What did He say, and what did He set right?",
+  "opening_question": "The Father gave the Sabbath and said: no work. Jesus said: \"The sabbath was made for man, and not man for the sabbath\". Both are true. What did Jesus do on the Sabbath, what did He say about it, what did He set right, and did He do away with it or show what it is for? His words are shown in red. This is part 2 of 3. Each step asks what the text says and what it means for me.",
+  "required_refs": ["Luke 4:16", "Mark 1:21-32", "Matthew 5:17-19", "Mark 2:23-28", "Matthew 12:1-8", "Mark 3:1-6", "Matthew 12:9-14", "Luke 13:10-17", "Luke 14:1-6", "John 5:8-18", "John 7:21-24", "John 9:14-16", "Mark 7:7-9", "Luke 23:54-56", "Matthew 28:1", "Matthew 24:20", "Matthew 11:28-30"],
+  "words": ["G4521", "G1486", "G2647", "G4137", "G373"],
+  "show": 8,
+  "steps": [
+    {"question": "What was Jesus' custom on the sabbath day at Nazareth, and what did He do in the synagogue at Capernaum?",
+     "apply": "What are my habits of worship, and would anyone call them my custom?",
+     "refs": ["Luke 4:16", "Luke 4:31", "Mark 1:21-32"],
+     "look_closer": {"strongs": ["G1486", "G4864"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"as his custom was, he went into the synagogue on the sabbath day, and stood up for to read\". In Capernaum He \"taught them on the sabbath days\".", "refs": ["Luke 4:16", "Luke 4:31"]},
+       {"text": "\"custom\" is etho, Strong's: \"to be used (by habit or conventionality)\". Luke uses the same word for Paul in Acts 17:2, \"as his manner was\".", "refs": ["Luke 4:16", "Acts 17:2"], "strongs": ["G1486"]},
+       {"text": "In Capernaum He cast out an unclean spirit in the synagogue on the sabbath. The sick were brought \"at even, when the sun did set\": the people waited until the day was over.", "refs": ["Mark 1:21-26", "Mark 1:32"]}
+     ]},
+    {"intro": "Before the Sabbath debates: what Jesus said about the law itself.",
+     "question": "Did Jesus come to destroy the law? What did He say about \"one jot or one tittle\", and about those who break and teach others to break \"one of these least commandments\"?",
+     "apply": "Do I read Jesus as setting God's commands aside, or as showing what they truly mean?",
+     "refs": ["Matthew 5:17-19", "Matthew 23:23"],
+     "look_closer": {"strongs": ["G2647", "G4137"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"destroy\" is kataluo, Strong's: \"to demolish\"; \"fulfil\" is pleroo, \"to make replete\", \"fulfil\", \"complete\".", "refs": ["Matthew 5:17"], "strongs": ["G2647", "G4137"]},
+       {"text": "\"Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled\". Readers differ on what \"till all be fulfilled\" means: some say the law stands as long as the earth; others that it was fulfilled at the cross.", "refs": ["Matthew 5:18"]},
+       {"text": "Jesus faulted the Pharisees for leaving out \"judgment, mercy, and faith\", and added: \"these ought ye to have done, and not to leave the other undone\".", "refs": ["Matthew 23:23"]}
+     ]},
+    {"question": "Why did the Pharisees object in the corn fields, what example did Jesus give from David and the priests, and what two things did He say about the sabbath and the Son of man?",
+     "apply": "Do I use God's commands to serve people, or to judge them?",
+     "refs": ["Mark 2:23-28", "Matthew 12:1-8"],
+     "look_closer": {"strongs": ["G4521", "G2962"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Picking grain by hand in a neighbour's field was allowed: \"thou mayest pluck the ears with thine hand\". The Pharisees objected to doing it on the sabbath.", "refs": ["Deuteronomy 23:25", "Mark 2:24"]},
+       {"text": "\"The sabbath was made for man, and not man for the sabbath\". The day is God's gift for people's good. Some read this as Jesus restoring the sabbath to its first purpose; others as Jesus loosening it.", "refs": ["Mark 2:27"]},
+       {"text": "\"the Son of man is Lord also of the sabbath\". Matthew adds \"in this place is one greater than the temple\" and quotes Hosea: \"mercy, and not sacrifice\".", "refs": ["Mark 2:28", "Matthew 12:6-7", "Hosea 6:6"]},
+       {"text": "\"the priests in the temple profane the sabbath, and are blameless\": the temple offerings went on \"every sabbath\". Work for God's service was not counted as breaking it.", "refs": ["Matthew 12:5", "Numbers 28:9-10"]}
+     ]},
+    {"question": "What did Jesus ask before He healed the withered hand, what did He say about a sheep in a pit, and what did the Pharisees do afterwards?",
+     "apply": "When I see a need on my day of rest, do I look for a reason to help or a reason not to?",
+     "refs": ["Mark 3:1-6", "Matthew 12:9-14", "Luke 6:9"],
+     "look_closer": {"strongs": ["G2570", "G4982"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"Is it lawful to do good on the sabbath days, or to do evil? to save life, or to kill?\" They \"held their peace\".", "refs": ["Mark 3:4"]},
+       {"text": "\"How much then is a man better than a sheep? Wherefore it is lawful to do well on the sabbath days\".", "refs": ["Matthew 12:12"]},
+       {"text": "He was \"grieved for the hardness of their hearts\". Then the Pharisees \"took counsel with the Herodians against him, how they might destroy him\": on the sabbath, they planned to kill.", "refs": ["Mark 3:5-6"]}
+     ]},
+    {"question": "Whom did Jesus loose on the sabbath in the synagogue, what did He say to the ruler, and what did He ask at the Pharisee's table about the man with the dropsy?",
+     "apply": "Who near me is still bound, and how can my day of rest be a day of doing good?",
+     "refs": ["Luke 13:10-17", "Luke 14:1-6"],
+     "look_closer": {"strongs": ["G3089", "G2323"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "The ruler said \"There are six days in which men ought to work\". Jesus answered that each of them would \"loose his ox\" on the sabbath; how much more should she \"be loosed from this bond\".", "refs": ["Luke 13:14-16"]},
+       {"text": "\"loose\" and \"loosed\" are the same Greek word, luo, Strong's: to \"loosen\". The ox is loosed for water; the woman is loosed from Satan's bond.", "refs": ["Luke 13:15-16"], "strongs": ["G3089"]},
+       {"text": "At the Pharisee's house: \"Is it lawful to heal on the sabbath day?\" and \"Which of you shall have an ass or an ox fallen into a pit, and will not straightway pull him out on the sabbath day?\"", "refs": ["Luke 14:3", "Luke 14:5"]}
+     ]},
+    {"question": "Why did they say the healed man in John 5 was breaking the sabbath, how did Jesus answer, and what did He say in John 7 about circumcision on the sabbath day?",
+     "apply": "Do I judge others \"according to the appearance\", or with righteous judgment?",
+     "refs": ["John 5:8-18", "John 7:21-24"],
+     "look_closer": {"strongs": ["G2038", "G2919"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "They told the healed man: \"it is not lawful for thee to carry thy bed\", pointing to the law against burdens (Jeremiah 17:21).", "refs": ["John 5:10", "Jeremiah 17:21"]},
+       {"text": "Jesus answered: \"My Father worketh hitherto, and I work\". John records the charge \"he not only had broken the sabbath\"; readers differ on whether John reports what Jesus did or what His accusers claimed.", "refs": ["John 5:17-18"]},
+       {"text": "In John 7 Jesus argued from the law itself: if a man \"receive circumcision, that the law of Moses should not be broken\", why be angry that He made \"a man every whit whole on the sabbath day\"?", "refs": ["John 7:22-23"]},
+       {"text": "\"Judge not according to the appearance, but judge righteous judgment\".", "refs": ["John 7:24"]}
+     ]},
+    {"question": "When Jesus opened the blind man's eyes on the sabbath, why were the Pharisees divided? And what did Jesus say about \"the commandments of men\" and \"the commandment of God\"?",
+     "apply": "Which of my rules for the day come from God, and which come from people?",
+     "refs": ["John 9:14-16", "Mark 7:7-9"],
+     "look_closer": {"strongs": ["G3862", "G1785"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Some said \"This man is not of God, because he keepeth not the sabbath day\". Others said \"How can a man that is a sinner do such miracles?\"", "refs": ["John 9:16"]},
+       {"text": "The Law forbade work; the Pharisees had added many rules about what counted as work. Jesus said: \"laying aside the commandment of God, ye hold the tradition of men\".", "refs": ["Mark 7:8"]},
+       {"text": "Many read the Sabbath debates this way: Jesus broke the added traditions, not the commandment. Others read them as signs that He, the Lord of the sabbath, was bringing something new.", "refs": ["Mark 7:9", "Mark 2:28"]}
+     ]},
+    {"intro": "Background: the day and its time in the Gospels, at the cross and the empty tomb.",
+     "question": "What did Jesus tell His disciples to pray about their flight? When did the women rest after the burial, and when did they come to the sepulchre?",
+     "apply": "Do I plan my week so that the day of rest is ready when it comes?",
+     "refs": ["Matthew 24:20", "Luke 23:54-56", "Matthew 28:1", "Mark 16:1-2", "Luke 24:1"],
+     "look_closer": {"strongs": ["G3904", "G4521"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Of the days of trouble to come, Jesus said: \"pray ye that your flight be not in the winter, neither on the sabbath day\". Some read this as His followers still keeping the sabbath; others as the hardship of fleeing when gates were shut.", "refs": ["Matthew 24:20"]},
+       {"text": "\"that day was the preparation, and the sabbath drew on\". \"preparation\" is paraskeue, Strong's: \"readiness\". The women \"rested the sabbath day according to the commandment\".", "refs": ["Luke 23:54", "Luke 23:56"], "strongs": ["G3904"]},
+       {"text": "They came \"when the sabbath was past\", early on \"the first day of the week\". In Matthew 28:1 \"week\" is sabbaton, the word for sabbath; Strong's: \"the interval between two Sabbaths\".", "refs": ["Mark 16:1-2", "Matthew 28:1"], "strongs": ["G4521"]},
+       {"text": "So the seventh day is the day before the first day of the week, the day the women found the tomb. On today's calendar that is Saturday, from Friday sunset to Saturday sunset.", "refs": ["Luke 23:56", "Luke 24:1"]}
+     ]},
+    {"intro": "Closing: right before the corn fields, Jesus called the weary to Himself.",
+     "question": "Whom does Jesus call to Himself, what does He promise them, and what does Matthew tell next \"on the sabbath day\"?",
+     "apply": "What burden do I need to bring to Jesus, so that my rest is rest for the soul?",
+     "refs": ["Matthew 11:28-30", "Matthew 12:1"],
+     "look_closer": {"strongs": ["G373", "G5543"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "\"I will give you rest\" is anapauo, Strong's: \"to repose\", \"to refresh\".", "refs": ["Matthew 11:28"], "strongs": ["G373"]},
+       {"text": "\"my yoke is easy, and my burden is light\". The very next chapter opens \"on the sabbath day\" in the corn fields.", "refs": ["Matthew 11:30", "Matthew 12:1"]},
+       {"text": "Some see Jesus Himself as the true rest the Sabbath points to; others see Him giving the Sabbath back its rest from the burdens men had added. Part 3 reads Romans 14, the seasons, and how this works today.", "refs": ["Matthew 11:28-29", "Mark 2:27"]}
+     ]}
+  ],
+  "remember": [
+    {"text": "\"as his custom was, he went into the synagogue on the sabbath day\"", "refs": ["Luke 4:16"]},
+    {"text": "\"Think not that I am come to destroy the law, or the prophets\"", "refs": ["Matthew 5:17"]},
+    {"text": "\"The sabbath was made for man, and not man for the sabbath\"", "refs": ["Mark 2:27"]},
+    {"text": "\"it is lawful to do well on the sabbath days\"", "refs": ["Matthew 12:12"]},
+    {"text": "\"Judge not according to the appearance, but judge righteous judgment\"", "refs": ["John 7:24"]},
+    {"text": "\"rested the sabbath day according to the commandment\"", "refs": ["Luke 23:56"]},
+    {"text": "\"Come unto me, all ye that labour and are heavy laden, and I will give you rest\"", "refs": ["Matthew 11:28"]}
+  ],
+  "quiz": [
+    {"q": "In Luke 4:16, where did Jesus go on the sabbath day, as his custom was?", "type": "multiple_choice", "options": ["Into the synagogue", "Up into a mountain", "To the temple in Jerusalem", "To the sea of Galilee"], "answer": 0, "answer_refs": ["Luke 4:16"], "check": {"bible": "KJV", "word": "synagogue"}},
+    {"q": "Which verse says \"Think not that I am come to destroy the law, or the prophets\"?", "type": "find_the_verse", "answer_refs": ["Matthew 5:17"]},
+    {"q": "Fill in the word: \"one jot or one ___ shall in no wise pass from the law\"", "type": "fill_word", "ref": "Matthew 5:18", "bible": "KJV", "word": "tittle"},
+    {"q": "Which verse says \"The sabbath was made for man, and not man for the sabbath\"?", "type": "find_the_verse", "answer_refs": ["Mark 2:27"]},
+    {"q": "Fill in the word: \"Therefore the Son of man is ___ also of the sabbath\"", "type": "fill_word", "ref": "Mark 2:28", "bible": "KJV", "word": "Lord"},
+    {"q": "In Mark 2:26, what did David eat in the house of God?", "type": "multiple_choice", "options": ["The shewbread", "The passover lamb", "Manna", "Parched corn"], "answer": 0, "answer_refs": ["Mark 2:26"], "check": {"bible": "KJV", "word": "shewbread"}},
+    {"q": "Fill in the word: \"I will have ___, and not sacrifice\"", "type": "fill_word", "ref": "Matthew 12:7", "bible": "KJV", "word": "mercy"},
+    {"q": "Which verse says \"it is lawful to do well on the sabbath days\"?", "type": "find_the_verse", "answer_refs": ["Matthew 12:12"]},
+    {"q": "In Luke 13:11, how long had the woman been bowed together?", "type": "multiple_choice", "options": ["Eighteen years", "Twelve years", "Thirty and eight years", "Seven years"], "answer": 0, "answer_refs": ["Luke 13:11"], "check": {"bible": "KJV", "word": "eighteen"}},
+    {"q": "In Luke 14:2, what illness did the man at the Pharisee's house have?", "type": "multiple_choice", "options": ["The dropsy", "Leprosy", "A fever", "Palsy"], "answer": 0, "answer_refs": ["Luke 14:2"], "check": {"bible": "KJV", "word": "dropsy"}},
+    {"q": "Fill in the word: \"My Father worketh hitherto, and I ___\"", "type": "fill_word", "ref": "John 5:17", "bible": "KJV", "word": "work"},
+    {"q": "Which verse says \"Judge not according to the appearance, but judge righteous judgment\"?", "type": "find_the_verse", "answer_refs": ["John 7:24"]},
+    {"q": "Fill in the word: \"For laying aside the commandment of God, ye hold the ___ of men\"", "type": "fill_word", "ref": "Mark 7:8", "bible": "KJV", "word": "tradition"},
+    {"q": "Fill in the word: \"pray ye that your flight be not in the winter, neither on the ___ day\"", "type": "fill_word", "ref": "Matthew 24:20", "bible": "KJV", "word": "sabbath"},
+    {"q": "Fill in the word: \"and rested the sabbath day according to the ___\"", "type": "fill_word", "ref": "Luke 23:56", "bible": "KJV", "word": "commandment"},
+    {"q": "Which verse says \"Come unto me, all ye that labour and are heavy laden, and I will give you rest\"?", "type": "find_the_verse", "answer_refs": ["Matthew 11:28"]}
+  ],
+  "sources": ["KJV", "ETH", "BSB", "Strong's", "OpenBible cross-references", "Scofield (1917)", "Matthew Henry"]
+}

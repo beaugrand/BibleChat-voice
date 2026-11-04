@@ -1,0 +1,1014 @@
+{
+ "id": "sabbath-1-the-biblical-sabbath",
+ "title": "The Sabbath, part 1: the biblical Sabbath",
+ "category": "Foundations",
+ "series": {
+  "id": "the-sabbath",
+  "title": "The Sabbath: God's day of rest",
+  "session": 1,
+  "of": 3,
+  "share": "Three studies: the biblical Sabbath, what Jesus said about it, and Romans 14, the seasons and life today."
+ },
+ "anim": {
+  "kind": "light",
+  "x": 69,
+  "y": 37,
+  "s": 30
+ },
+ "share": "How much does the Sabbath matter to the Father? From creation to the prophets: no work, a sign, and a delight.",
+ "opening_question": "God rested on the seventh day, blessed it and made it holy. How important is the Sabbath to the Father? What does \"no work\" mean in the Law, how seriously did He take it, when does the day begin and end, and why do the prophets call it both a warning and a delight? This is part 1 of 3. Each step asks what the text says and what it means for me.",
+ "required_refs": [
+  "Genesis 2:1-3",
+  "Exodus 16:23-30",
+  "Exodus 20:8-11",
+  "Deuteronomy 5:12-15",
+  "Exodus 34:21",
+  "Exodus 35:2-3",
+  "Leviticus 23:3",
+  "Numbers 15:32-36",
+  "Exodus 31:13-17",
+  "Ezekiel 20:12-13",
+  "Leviticus 23:32",
+  "Nehemiah 13:15-22",
+  "Jeremiah 17:21-27",
+  "Isaiah 58:13-14",
+  "Isaiah 56:2-7"
+ ],
+ "words": [
+  "H7676",
+  "H7673",
+  "H6942",
+  "H226",
+  "H6027"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "intro": "Background first: God made all things in six days, and each day closed with \"the evening and the morning\" (Genesis 1:5).",
+   "question": "What did God do on the seventh day, and what three things does Genesis 2 say He did with it?",
+   "apply": "Do I treat rest as a gift from God, or as something I have to earn?",
+   "refs": [
+    "Genesis 2:1-3",
+    "Genesis 1:5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7673",
+     "H6942"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"rested\" is shabath, Strong's: \"to repose that is desist from exertion\". The word sabbath, shabbath, comes from it: \"intermission\".",
+     "refs": [
+      "Genesis 2:2"
+     ],
+     "strongs": [
+      "H7673",
+      "H7676"
+     ]
+    },
+    {
+     "text": "God did not rest because He was tired: He \"fainteth not, neither is weary\". He rested because the work was \"finished\".",
+     "refs": [
+      "Isaiah 40:28",
+      "Genesis 2:1-2"
+     ]
+    },
+    {
+     "text": "God \"blessed the seventh day, and sanctified it\". \"sanctified\" is qadash; Strong's lists \"consecrate\", \"hallow\" and \"sanctify\". It is the first time the Bible uses this word.",
+     "refs": [
+      "Genesis 2:3"
+     ],
+     "strongs": [
+      "H6942"
+     ]
+    },
+    {
+     "text": "Genesis does not use the word sabbath here, and it records no command to Adam. Readers differ on whether the day was kept from creation or first given to Israel.",
+     "refs": [
+      "Genesis 2:3",
+      "Exodus 16:23"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Before Sinai, what did the LORD give Israel on the sixth day, what were they to do with it, and what happened when some went out to gather on the seventh day?",
+   "apply": "Do I trust God enough to stop, even when there seems to be more to gather?",
+   "refs": [
+    "Exodus 16:5",
+    "Exodus 16:23-30"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7676",
+     "H3559"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "This is the first time the Bible uses the word sabbath: \"To morrow is the rest of the holy sabbath unto the LORD\".",
+     "refs": [
+      "Exodus 16:23"
+     ]
+    },
+    {
+     "text": "The rest was prepared for: \"on the sixth day they shall prepare that which they bring in\", \"bake that which ye will bake to day\".",
+     "refs": [
+      "Exodus 16:5",
+      "Exodus 16:23"
+     ]
+    },
+    {
+     "text": "Manna kept overnight on other days \"bred worms, and stank\". The portion kept for the sabbath \"did not stink, neither was there any worm therein\".",
+     "refs": [
+      "Exodus 16:20",
+      "Exodus 16:24"
+     ]
+    },
+    {
+     "text": "The LORD asked: \"How long refuse ye to keep my commandments and my laws?\" And He called it a gift: \"the LORD hath given you the sabbath\".",
+     "refs": [
+      "Exodus 16:28-29"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How do the two tellings of the fourth commandment begin, who must rest, and what reason does each one give?",
+   "apply": "Who in my home or at my work depends on me to give them rest?",
+   "refs": [
+    "Exodus 20:8-11",
+    "Deuteronomy 5:12-15",
+    "Exodus 23:12"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H5117",
+     "H2142"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Exodus begins \"Remember the sabbath day\"; Deuteronomy begins \"Keep the sabbath day\". It is the only one of the Ten Commandments that begins with \"Remember\".",
+     "refs": [
+      "Exodus 20:8",
+      "Deuteronomy 5:12"
+     ]
+    },
+    {
+     "text": "Exodus gives creation as the reason: \"in six days the LORD made heaven and earth\". Deuteronomy gives the exodus: \"remember that thou wast a servant in the land of Egypt\".",
+     "refs": [
+      "Exodus 20:11",
+      "Deuteronomy 5:15"
+     ]
+    },
+    {
+     "text": "The rest reached everyone: children, servants, cattle and \"thy stranger that is within thy gates\", \"that thy manservant and thy maidservant may rest as well as thou\".",
+     "refs": [
+      "Exodus 20:10",
+      "Deuteronomy 5:14"
+     ]
+    },
+    {
+     "text": "\"rested\" in Exodus 20:11 is nuach, Strong's: \"to rest that is settle down\". Exodus 23 adds that the ox, the servant and the stranger \"may be refreshed\".",
+     "refs": [
+      "Exodus 20:11",
+      "Exodus 23:12"
+     ],
+     "strongs": [
+      "H5117"
+     ]
+    }
+   ]
+  },
+  {
+   "intro": "No work: what the Law says, even in the busiest season of the year.",
+   "question": "What does the Law say about work on the seventh day, even \"in earing time and in harvest\"? What else was not to be done in their habitations?",
+   "apply": "What do I call too important to stop for, and what does that say about what I trust?",
+   "refs": [
+    "Exodus 34:21",
+    "Exodus 35:2-3",
+    "Leviticus 23:3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7673",
+     "H4399"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"in earing time and in harvest thou shalt rest\". Earing is ploughing. The two busiest times of a farmer's year were no exception.",
+     "refs": [
+      "Exodus 34:21"
+     ]
+    },
+    {
+     "text": "\"ye shall do no work therein: it is the sabbath of the LORD in all your dwellings\". The day was kept at home, not only at the tabernacle.",
+     "refs": [
+      "Leviticus 23:3"
+     ]
+    },
+    {
+     "text": "\"Ye shall kindle no fire throughout your habitations upon the sabbath day\". Readers differ on whether this meant all fire or the fire of work, such as cooking and the forge.",
+     "refs": [
+      "Exodus 35:3"
+     ]
+    },
+    {
+     "text": "It is \"an holy day, a sabbath of rest to the LORD\". The day belongs to the LORD; man's ordinary work stops.",
+     "refs": [
+      "Exodus 35:2"
+     ]
+    }
+   ]
+  },
+  {
+   "intro": "How seriously the Father took it: one case in the wilderness.",
+   "question": "What did the man in the wilderness do on the sabbath day, why was he put in ward, and what did the LORD say should be done?",
+   "apply": "Do I take lightly what God takes seriously?",
+   "refs": [
+    "Numbers 15:32-36",
+    "Exodus 31:14-15"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7197",
+     "H3772"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "He \"gathered sticks upon the sabbath day\". They put him in ward \"because it was not declared what should be done to him\": Moses waited for the LORD.",
+     "refs": [
+      "Numbers 15:32-34"
+     ]
+    },
+    {
+     "text": "The law had already said: \"whosoever doeth any work therein, that soul shall be cut off from among his people\", and \"he shall surely be put to death\".",
+     "refs": [
+      "Exodus 31:14-15"
+     ]
+    },
+    {
+     "text": "This case comes right after the law for sins done \"presumptuously\", the one who \"hath despised the word of the LORD\". Many read the stick-gatherer as an example of that open defiance.",
+     "refs": [
+      "Numbers 15:30-31"
+     ]
+    },
+    {
+     "text": "Under the law of Moses this was carried out by the whole congregation, \"as the LORD commanded Moses\". Christians differ on how the penalties of the law of Moses apply after the cross; the seriousness of the day is not in doubt.",
+     "refs": [
+      "Numbers 15:36"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does God call the sabbath in Exodus 31 and Ezekiel 20, between whom, for how long, and what does it show about who sanctifies His people?",
+   "apply": "What does the shape of my week show about whom I belong to?",
+   "refs": [
+    "Exodus 31:13-17",
+    "Ezekiel 20:12-13",
+    "Ezekiel 20:20"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H226",
+     "H5314"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"sign\" is 'owth, Strong's: \"a signal\", \"as a flag\". It is \"a sign between me and the children of Israel for ever\".",
+     "refs": [
+      "Exodus 31:17"
+     ],
+     "strongs": [
+      "H226"
+     ]
+    },
+    {
+     "text": "The sign is \"that ye may know that I am the LORD that doth sanctify you\". Ezekiel repeats it, and adds \"hallow my sabbaths\".",
+     "refs": [
+      "Exodus 31:13",
+      "Ezekiel 20:12",
+      "Ezekiel 20:20"
+     ]
+    },
+    {
+     "text": "God speaks of \"my sabbaths\". Ezekiel lists among Israel's sins in the wilderness: \"my sabbaths they greatly polluted\".",
+     "refs": [
+      "Ezekiel 20:13"
+     ]
+    },
+    {
+     "text": "\"and was refreshed\" is naphash, Strong's: \"to breathe\", \"to be breathed upon\". God's rest is pictured as taking a breath.",
+     "refs": [
+      "Exodus 31:17"
+     ],
+     "strongs": [
+      "H5314"
+     ]
+    },
+    {
+     "text": "It is called \"a perpetual covenant\". Some read this as binding on all God's people for ever; others read it as the sign of the covenant made with Israel at Sinai.",
+     "refs": [
+      "Exodus 31:16"
+     ]
+    }
+   ]
+  },
+  {
+   "intro": "Background first: in the Bible a day begins at evening. \"the evening and the morning were the first day\" (Genesis 1:5).",
+   "question": "When does a Bible day begin and end? What did Nehemiah do \"when the gates of Jerusalem began to be dark before the sabbath\"?",
+   "apply": "How could I prepare before a day of rest begins, so that it is truly rest?",
+   "refs": [
+    "Genesis 1:5",
+    "Leviticus 23:32",
+    "Nehemiah 13:19"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H6153",
+     "H6751"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The Day of Atonement, a yearly sabbath, was kept \"from even unto even\". \"even\" is ereb, Strong's: \"dusk\".",
+     "refs": [
+      "Leviticus 23:32"
+     ],
+     "strongs": [
+      "H6153"
+     ]
+    },
+    {
+     "text": "Nehemiah shut the gates as dusk came \"before the sabbath\" and kept them shut \"till after the sabbath\".",
+     "refs": [
+      "Nehemiah 13:19"
+     ]
+    },
+    {
+     "text": "Jews have kept the weekly sabbath the same way, from Friday sunset to Saturday sunset. Part 2 shows the Gospels counting it the same way.",
+     "refs": [
+      "Genesis 1:5",
+      "Leviticus 23:32"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Jeremiah promise if Judah would \"hallow the sabbath day\", what did he warn if they would not, and what did Nehemiah find and do?",
+   "apply": "Where do buying, selling and busyness crowd out my rest with God?",
+   "refs": [
+    "Jeremiah 17:21-27",
+    "Nehemiah 13:15-22",
+    "Amos 8:5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H4853",
+     "H2490"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The promise: \"this city shall remain for ever\". The warning: \"then will I kindle a fire in the gates thereof\".",
+     "refs": [
+      "Jeremiah 17:25",
+      "Jeremiah 17:27"
+     ]
+    },
+    {
+     "text": "Nehemiah asked the nobles: \"What evil thing is this that ye do, and profane the sabbath day?\" and reminded them: \"Did not your fathers thus\".",
+     "refs": [
+      "Nehemiah 13:17-18"
+     ]
+    },
+    {
+     "text": "Amos shows the heart behind it: \"When will the new moon be gone, that we may sell corn? and the sabbath, that we may set forth wheat\".",
+     "refs": [
+      "Amos 8:5"
+     ]
+    },
+    {
+     "text": "Nehemiah set guards at the gates \"to sanctify the sabbath day\", and prayed \"Remember me, O my God, concerning this also\".",
+     "refs": [
+      "Nehemiah 13:22"
+     ]
+    }
+   ]
+  },
+  {
+   "intro": "Closing: the prophets do not only warn. They call the day a delight and open it to all who come.",
+   "question": "What does Isaiah call the sabbath, what does God promise the stranger and the eunuch who keep it, and what will all flesh do \"from one sabbath to another\"?",
+   "apply": "Is my day of rest a burden I carry, or a delight I look forward to?",
+   "refs": [
+    "Isaiah 58:13-14",
+    "Isaiah 56:2-7",
+    "Isaiah 66:22-23"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H6027",
+     "H7676"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"call the sabbath a delight\": \"delight\" is oneg, Strong's: \"luxury\".",
+     "refs": [
+      "Isaiah 58:13"
+     ],
+     "strongs": [
+      "H6027"
+     ]
+    },
+    {
+     "text": "Isaiah ties the day to the heart: \"not doing thine own ways, nor finding thine own pleasure, nor speaking thine own words\". The promise: \"Then shalt thou delight thyself in the LORD\".",
+     "refs": [
+      "Isaiah 58:13-14"
+     ]
+    },
+    {
+     "text": "Isaiah 56 opens the sabbath to outsiders: \"the sons of the stranger\" who keep it, \"for mine house shall be called an house of prayer for all people\". Jesus quoted this in the temple.",
+     "refs": [
+      "Isaiah 56:6-7",
+      "Mark 11:17"
+     ]
+    },
+    {
+     "text": "In the new heavens and the new earth, \"from one sabbath to another, shall all flesh come to worship before me\". Readers differ on whether this is the weekly day or a picture of unbroken worship.",
+     "refs": [
+      "Isaiah 66:22-23"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"God blessed the seventh day, and sanctified it\"",
+   "refs": [
+    "Genesis 2:3"
+   ]
+  },
+  {
+   "text": "\"Remember the sabbath day, to keep it holy\"",
+   "refs": [
+    "Exodus 20:8"
+   ]
+  },
+  {
+   "text": "\"in earing time and in harvest thou shalt rest\"",
+   "refs": [
+    "Exodus 34:21"
+   ]
+  },
+  {
+   "text": "\"that ye may know that I am the LORD that doth sanctify you\"",
+   "refs": [
+    "Exodus 31:13"
+   ]
+  },
+  {
+   "text": "\"from even unto even, shall ye celebrate your sabbath\"",
+   "refs": [
+    "Leviticus 23:32"
+   ]
+  },
+  {
+   "text": "\"call the sabbath a delight, the holy of the LORD, honourable\"",
+   "refs": [
+    "Isaiah 58:13"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"God blessed the seventh day, and sanctified it\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 2:3"
+   ],
+   "signals": {
+    "xref": 7,
+    "votes": 45,
+    "word": "H4399",
+    "word_count": 16,
+    "differ": 0.357,
+    "quoted": null
+   },
+   "why": [
+    "7 cross-references point here",
+    "The Hebrew word melâ'kâh (H4399) is in 16 verses of this path"
+   ],
+   "score": 0.7267
+  },
+  {
+   "q": "Fill in the word: \"To morrow is the rest of the holy ___ unto the LORD\"",
+   "type": "fill_word",
+   "ref": "Exodus 16:23",
+   "bible": "KJV",
+   "word": "sabbath",
+   "answer_refs": [
+    "Exodus 16:23"
+   ],
+   "signals": {
+    "xref": 12,
+    "votes": 76,
+    "word": "H7676",
+    "word_count": 51,
+    "differ": 0.543,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 51 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.8119
+  },
+  {
+   "q": "In Exodus 16:29, what did the LORD give Israel on the sixth day?",
+   "type": "multiple_choice",
+   "options": [
+    "The bread of two days",
+    "Quails in the evening",
+    "Water from the rock",
+    "A double tithe"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Exodus 16:29"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "two"
+   },
+   "signals": {
+    "xref": 16,
+    "votes": 84,
+    "word": "H7676",
+    "word_count": 51,
+    "differ": 0.53,
+    "quoted": null
+   },
+   "why": [
+    "16 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 51 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.816
+  },
+  {
+   "q": "Fill in the word: \"Remember the sabbath day, to keep it ___\"",
+   "type": "fill_word",
+   "ref": "Exodus 20:8",
+   "bible": "KJV",
+   "word": "holy",
+   "answer_refs": [
+    "Exodus 20:8"
+   ],
+   "signals": {
+    "xref": 22,
+    "votes": 178,
+    "word": "H7676",
+    "word_count": 51,
+    "differ": 0.267,
+    "quoted": null
+   },
+   "why": [
+    "22 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 51 verses of this path"
+   ],
+   "score": 0.8062
+  },
+  {
+   "q": "In Deuteronomy 5:15, what does Israel remember as the reason to keep the sabbath day?",
+   "type": "multiple_choice",
+   "options": [
+    "That they were servants in the land of Egypt",
+    "The flood in the days of Noah",
+    "The fall of Jericho",
+    "The giving of the manna"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Deuteronomy 5:15"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "Egypt"
+   },
+   "signals": {
+    "xref": 11,
+    "votes": 117,
+    "word": "H7676",
+    "word_count": 51,
+    "differ": 0.403,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 51 verses of this path"
+   ],
+   "score": 0.8089
+  },
+  {
+   "q": "Which verse says \"in earing time and in harvest thou shalt rest\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Exodus 34:21"
+   ],
+   "signals": {
+    "xref": 8,
+    "votes": 45,
+    "word": "H7673",
+    "word_count": 8,
+    "differ": 0.442,
+    "quoted": null
+   },
+   "why": [
+    "8 cross-references point here",
+    "The Hebrew word shâbath (H7673) is in 8 verses of this path"
+   ],
+   "score": 0.6313
+  },
+  {
+   "q": "Fill in the word: \"Ye shall kindle no ___ throughout your habitations upon the sabbath day\"",
+   "type": "fill_word",
+   "ref": "Exodus 35:3",
+   "bible": "KJV",
+   "word": "fire",
+   "answer_refs": [
+    "Exodus 35:3"
+   ],
+   "signals": {
+    "xref": 7,
+    "votes": 34,
+    "word": "H7676",
+    "word_count": 51,
+    "differ": 0.603,
+    "quoted": null
+   },
+   "why": [
+    "7 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 51 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.7677
+  },
+  {
+   "q": "In Numbers 15:32, what was the man in the wilderness found doing on the sabbath day?",
+   "type": "multiple_choice",
+   "options": [
+    "Gathering sticks",
+    "Gathering manna",
+    "Selling corn",
+    "Carrying a burden through the gate"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Numbers 15:32"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "sticks"
+   },
+   "signals": {
+    "xref": 8,
+    "votes": 32,
+    "word": "H7676",
+    "word_count": 51,
+    "differ": 0.423,
+    "quoted": null
+   },
+   "why": [
+    "8 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 51 verses of this path"
+   ],
+   "score": 0.7183
+  },
+  {
+   "q": "Which verse says \"It is a sign between me and the children of Israel for ever\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Exodus 31:17"
+   ],
+   "signals": {
+    "xref": 16,
+    "votes": 102,
+    "word": "H7673",
+    "word_count": 8,
+    "differ": 0.253,
+    "quoted": null
+   },
+   "why": [
+    "16 cross-references point here",
+    "The Hebrew word shâbath (H7673) is in 8 verses of this path"
+   ],
+   "score": 0.6445
+  },
+  {
+   "q": "Fill in the word: \"and my sabbaths they greatly ___\"",
+   "type": "fill_word",
+   "ref": "Ezekiel 20:13",
+   "bible": "KJV",
+   "word": "polluted",
+   "answer_refs": [
+    "Ezekiel 20:13"
+   ],
+   "signals": {
+    "xref": 24,
+    "votes": 115,
+    "word": "H7676",
+    "word_count": 51,
+    "differ": 0.504,
+    "quoted": null
+   },
+   "why": [
+    "24 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 51 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.8329
+  },
+  {
+   "q": "Fill in the word: \"from even unto ___, shall ye celebrate your sabbath\"",
+   "type": "fill_word",
+   "ref": "Leviticus 23:32",
+   "bible": "KJV",
+   "word": "even",
+   "answer_refs": [
+    "Leviticus 23:32"
+   ],
+   "signals": {
+    "xref": 11,
+    "votes": 36,
+    "word": "H7676",
+    "word_count": 51,
+    "differ": 0.442,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 51 verses of this path"
+   ],
+   "score": 0.7316
+  },
+  {
+   "q": "In Nehemiah 13:19, what did Nehemiah command when the gates began to be dark before the sabbath?",
+   "type": "multiple_choice",
+   "options": [
+    "That the gates should be shut",
+    "That the trumpets should be blown",
+    "That the people should fast",
+    "That the merchants should pay a tax"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Nehemiah 13:19"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "shut"
+   },
+   "signals": {
+    "xref": 10,
+    "votes": 64,
+    "word": "H7676",
+    "word_count": 51,
+    "differ": 0.393,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 51 verses of this path"
+   ],
+   "score": 0.7616
+  },
+  {
+   "q": "In Jeremiah 17:27, what did the LORD say He would kindle in the gates if the sabbath was not hallowed?",
+   "type": "multiple_choice",
+   "options": [
+    "A fire",
+    "A lamp",
+    "A war",
+    "A famine"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Jeremiah 17:27"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "fire"
+   },
+   "signals": {
+    "xref": 15,
+    "votes": 85,
+    "word": "H7676",
+    "word_count": 51,
+    "differ": 0.478,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 51 verses of this path"
+   ],
+   "score": 0.8039
+  },
+  {
+   "q": "In Isaiah 58:13, what are we to call the sabbath?",
+   "type": "multiple_choice",
+   "options": [
+    "A delight",
+    "A burden",
+    "A shadow",
+    "A memorial"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Isaiah 58:13"
+   ],
+   "check": {
+    "bible": "KJV",
+    "word": "delight"
+   },
+   "signals": {
+    "xref": 17,
+    "votes": 97,
+    "word": "H7676",
+    "word_count": 51,
+    "differ": 0.454,
+    "quoted": null
+   },
+   "why": [
+    "17 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 51 verses of this path"
+   ],
+   "score": 0.8077
+  },
+  {
+   "q": "Which verse says \"mine house shall be called an house of prayer for all people\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Isaiah 56:7"
+   ],
+   "signals": {
+    "xref": 28,
+    "votes": 277,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.233,
+    "quoted": null
+   },
+   "why": [
+    "28 cross-references point here"
+   ],
+   "score": 0.4807
+  },
+  {
+   "q": "Fill in the word: \"from one sabbath to another, shall all flesh come to ___ before me\"",
+   "type": "fill_word",
+   "ref": "Isaiah 66:23",
+   "bible": "KJV",
+   "word": "worship",
+   "answer_refs": [
+    "Isaiah 66:23"
+   ],
+   "signals": {
+    "xref": 10,
+    "votes": 78,
+    "word": "H7676",
+    "word_count": 51,
+    "differ": 0.357,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 51 verses of this path"
+   ],
+   "score": 0.7673
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 66,
+ "image": "img/sabbath-1-the-biblical-sabbath.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/sabbath-1-the-biblical-sabbath.json",
+  "sha": "82872fd716bbe8f0",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ }
+}
