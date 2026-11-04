@@ -15,6 +15,7 @@ import os
 import re
 import sys
 import tempfile
+import time
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -89,11 +90,17 @@ def main() -> None:
             if not os.path.exists(path):
                 print("downloading", e["file"], flush=True)
                 from bibleask.llm import _open   # the same download the app does
-                try:
-                    with _open(catalog.url(e["file"])) as r, open(path, "wb") as f:
-                        f.write(r.read())
-                except Exception as err:
-                    raise SystemExit(f"Download failed: {catalog.url(e['file'])}: {err}")
+                for attempt in range(4):   # GitHub's file server sometimes times out: wait and try again
+                    try:
+                        with _open(catalog.url(e["file"])) as r, open(path + ".part", "wb") as f:
+                            f.write(r.read())
+                        os.replace(path + ".part", path)   # a broken download never stays behind as a whole file
+                        break
+                    except Exception as err:
+                        if attempt == 3:
+                            raise SystemExit(f"Download failed: {catalog.url(e['file'])}: {err}")
+                        print(f"  try {attempt + 2} of 4 in {15 * (attempt + 1)} s ({err})", flush=True)
+                        time.sleep(15 * (attempt + 1))
         if path.endswith(".zip"):   # eBible.org: the USFX XML is inside the zip
             with open(path, "rb") as f:
                 inner, data = catalog.unpack(e["file"], f.read())
