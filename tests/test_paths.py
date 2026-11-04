@@ -313,6 +313,23 @@ class PathPagesTest(unittest.TestCase):
             self.assertTrue(all(s.get("apply") for s in p["i18n"][lang]["steps"]))
         self.assertIn('"For me:":', read("web", "i18n.js"))
 
+    def test_sabbath_path(self):
+        """🌅 The Sabbath: the whole story in Scripture, the day and its time, and the views side by side (no verdict)."""
+        p = load(os.path.join(bp.SRC_DIR, "the-sabbath-gods-day-of-rest.json"))
+        for r in ("Genesis 2:1-3", "Exodus 16:23-30", "Exodus 20:8-11", "Deuteronomy 5:12-15", "Exodus 31:13-17", "Leviticus 23:32",
+                  "Isaiah 58:13-14", "Mark 2:23-28", "Luke 23:54-56", "Matthew 28:1", "Acts 20:7", "Revelation 1:10",
+                  "Colossians 2:16-17", "Romans 14:5-6", "Hebrews 4:1-11", "Matthew 11:28-30"):
+            self.assertIn(r, p["required_refs"])
+        self.assertEqual(p["category"], "Foundations")
+        self.assertTrue(all(s.get("apply") for s in p["steps"]))                     # 🙋 For me: in every step
+        facts = [f["text"] for s in p["steps"] for f in s["facts"]]
+        for view in ("The seventh-day view", "The Lord's Day view", "The rest in Christ view"):   # each view, with its own verses
+            self.assertEqual(sum(t.startswith(view) for t in facts), 1, view)
+        self.assertTrue(any(t.startswith("Outside history, not Scripture") for t in facts))
+        self.assertTrue(any('"from even unto even"' in t for t in facts))           # the day runs from sunset to sunset
+        index = {x["id"]: x for x in load(os.path.join(bp.OUT_DIR, "index.json"))}
+        self.assertTrue(bp.share_ok(index["the-sabbath-gods-day-of-rest"]["share"]))
+
     def test_share_text_and_picture(self):
         """📣 A shared link's preview: a short whole sentence ("share", no "…") and a 1200×630 picture (og-<id>.jpg)."""
         sys.path.insert(0, os.path.join(ROOT, "web"))
