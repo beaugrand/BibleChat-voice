@@ -143,7 +143,7 @@ def write_share_pages(out: str, web: str = WEB) -> list[str]:
         if isinstance(se, dict) and se.get("id") and (se["id"] not in series or se.get("session", 99) < series[se["id"]][0].get("session", 99)):
             series[se["id"]] = (se, p)
     for sid, (se, first) in series.items():
-        written.append(page(out, f"series/{sid}/", se.get("title", sid), f"{se.get('of', '')} study sessions, Daniel and Revelation side by side.".strip(),
+        written.append(page(out, f"series/{sid}/", se.get("title", sid), se.get("share") or f"{se.get('of', '')} study sessions, Daniel and Revelation side by side.".strip(),
                             images.get(first["id"], OG_PATHS), f"../../#/paths/series/{sid}", "Study sessions", "📂 Open the sessions"))
     groups = {}
     for p in paths:   # a Bible study group: its folder, with the picture of its newest study

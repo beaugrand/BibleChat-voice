@@ -313,22 +313,31 @@ class PathPagesTest(unittest.TestCase):
             self.assertTrue(all(s.get("apply") for s in p["i18n"][lang]["steps"]))
         self.assertIn('"For me:":', read("web", "i18n.js"))
 
-    def test_sabbath_path(self):
-        """🌅 The Sabbath: the whole story in Scripture, the day and its time, and the views side by side (no verdict)."""
-        p = load(os.path.join(bp.SRC_DIR, "the-sabbath-gods-day-of-rest.json"))
-        for r in ("Genesis 2:1-3", "Exodus 16:23-30", "Exodus 20:8-11", "Deuteronomy 5:12-15", "Exodus 31:13-17", "Leviticus 23:32",
-                  "Isaiah 58:13-14", "Mark 2:23-28", "Luke 23:54-56", "Matthew 28:1", "Acts 20:7", "Revelation 1:10",
-                  "Colossians 2:16-17", "Romans 14:5-6", "Hebrews 4:1-11", "Matthew 11:28-30"):
-            self.assertIn(r, p["required_refs"])
-        self.assertEqual(p["category"], "Foundations")
-        self.assertTrue(all(s.get("apply") for s in p["steps"]))                     # 🙋 For me: in every step
-        facts = [f["text"] for s in p["steps"] for f in s["facts"]]
+    def test_sabbath_series(self):
+        """🌅 The Sabbath in three parts: the biblical Sabbath, what Jesus said, and Romans 14, the seasons and life today."""
+        ids = ("sabbath-1-the-biblical-sabbath", "sabbath-2-what-jesus-said", "sabbath-3-romans-14-seasons-today")
+        parts = [load(os.path.join(bp.SRC_DIR, pid + ".json")) for pid in ids]
+        self.assertEqual([p["series"]["session"] for p in parts], [1, 2, 3])
+        self.assertEqual({p["series"]["id"] for p in parts}, {"the-sabbath"})
+        need = (("Genesis 2:1-3", "Exodus 20:8-11", "Exodus 34:21", "Numbers 15:32-36", "Exodus 31:13-17", "Leviticus 23:32", "Isaiah 58:13-14"),
+                ("Matthew 5:17-19", "Mark 2:23-28", "Mark 3:1-6", "Luke 13:10-17", "John 7:21-24", "Mark 7:7-9", "Luke 23:54-56"),
+                ("Romans 14:1-6", "Romans 14:23", "John 14:15", "Leviticus 23:1-4", "Luke 22:15", "1 Corinthians 5:7-8", "Hebrews 4:1-11"))
+        for p, refs in zip(parts, need):
+            for r in refs:
+                self.assertIn(r, p["required_refs"], p["id"])
+            self.assertEqual(p["category"], "Foundations")
+            self.assertTrue(all(s.get("apply") for s in p["steps"]), p["id"])          # 🙋 For me: in every step
+        self.assertTrue(parts[1].get("red_letters"))                                     # what did Jesus say: His words in red
+        facts = [f["text"] for s in parts[2]["steps"] for f in s["facts"]]
         for view in ("The seventh-day view", "The Lord's Day view", "The rest in Christ view"):   # each view, with its own verses
             self.assertEqual(sum(t.startswith(view) for t in facts), 1, view)
-        self.assertTrue(any(t.startswith("Outside history, not Scripture") for t in facts))
-        self.assertTrue(any('"from even unto even"' in t for t in facts))           # the day runs from sunset to sunset
+        self.assertTrue(any("The word sabbath does not stand in Romans 14" in t for t in facts))
+        self.assertTrue(any(t.startswith("Outside the Bible, not Scripture") for t in facts))
         index = {x["id"]: x for x in load(os.path.join(bp.OUT_DIR, "index.json"))}
-        self.assertTrue(bp.share_ok(index["the-sabbath-gods-day-of-rest"]["share"]))
+        for pid in ids:
+            self.assertTrue(bp.share_ok(index[pid]["share"]), pid)
+        self.assertTrue(bp.share_ok(parts[0]["series"]["share"]))
+        self.assertIn('se.get("share") or', read("web", "build_share.py"))           # the series preview uses its own sentence
 
     def test_share_text_and_picture(self):
         """📣 A shared link's preview: a short whole sentence ("share", no "…") and a 1200×630 picture (og-<id>.jpg)."""
