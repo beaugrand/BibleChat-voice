@@ -69,6 +69,8 @@ AMHARIC_NOTICE = ("Copyright © 1962, 2003 United Bible Societies. Used with the
                   "Society of Ethiopia; electronic text by the Lapsley/Brooks Foundation (1994) and Dirk Röckmann "
                   "(2003), via eBible.org. Free for non-commercial use with this notice; any commercial use needs "
                   "written permission of the Bible Society of Ethiopia.")
+NTBT_CREDIT = ("Santa Biblia, Nueva Traducción BibliaTodo (NTBT). Publicada por BibliaTodo Bible Society, sello "
+               "editorial de BibliaTodo LLC. https://www.bibliatodo.org/es/ntbt/")
 EXTRA: list[tuple[str, str, str, str, str, int, int, str, str]] = [
     ('eng-ethiopian-canon.zefania.xml', 'English', 'ETH', 'Ethiopian Canon (public-domain English)', 'Public Domain',
      6244619, 38590, '84 books of the Ethiopian Orthodox canon, incl. 1 Enoch, Jubilees, 2 Enoch, 1 Clement. '
@@ -83,6 +85,12 @@ EXTRA: list[tuple[str, str, str, str, str, int, int, str, str]] = [
     ('eng-Brenton_usfx.zip', 'English', 'BRENTON', 'Brenton Septuagint (1851)', 'Public Domain', 0, 28689,
      "Old Testament and Apocrypha (53 books): Sir Lancelot Brenton's English translation of the Greek Septuagint",
      'https://ebible.org/Scriptures/eng-Brenton_usfx.zip'),
+    # A modern Spanish Bible, free to share under BibliaTodo's agreement (LICENCIA.txt 1.4, registered by Hans W.
+    # Beaugrand on 6 November 2026). Built by packaging/build_ntbt.py with the wording unchanged. The license text is
+    # the official credit; the Bibles list turns its address into the active link the agreement asks for.
+    ('spa-ntbt.usfx.xml', 'Spanish', 'NTBT', 'Nueva Traducción BibliaTodo', NTBT_CREDIT, 4500976, 31104,
+     'Modern Spanish (2026), from the Hebrew, Aramaic and Greek. Verses that many Greek manuscripts leave out, '
+     'such as Mark 16:9-20 and Acts 8:37, stand in [brackets]', OWN + 'spa-ntbt.usfx.xml'),
     # other important writings and the original languages (each license checked on its source page, October 2026)
     ('eng-jasher-1840.zefania.xml', 'English', 'JASHER', 'Book of Jasher (1840 English translation)', 'Public Domain',
      0, 3910, 'The 1840 English Jasher; scholars dispute whether it is the book named in Joshua 10:13. '

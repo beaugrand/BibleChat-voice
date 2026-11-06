@@ -74,6 +74,11 @@ clicks to get it, and stays under its own license.
 - **Book of Jasher (1840 English translation)**, public domain, as transcribed by the
   [Scrollmapper](https://github.com/scrollmapper/bible_databases_deuterocanonical) project (commit 271173e), hosted by
   BibleChat (`bibles/eng-jasher-1840.zefania.xml`). Labelled in the app: scholars dispute whether it is the book named in Joshua 10:13.
+- **Nueva Traducción BibliaTodo (NTBT)**, Spanish, © 2026 BibliaTodo LLC, published by BibliaTodo Bible Society. Used free of
+  charge under BibliaTodo's free agreement of use and distribution (version 1.4), registered for BibleChat by Hans W. Beaugrand.
+  The wording is kept exactly as received, brackets included (`bibles/spa-ntbt.usfx.xml`, made by `packaging/build_ntbt.py`).
+  Credit: «Santa Biblia, Nueva Traducción BibliaTodo (NTBT). Publicada por [BibliaTodo Bible Society](https://www.bibliatodo.org/es/ntbt/),
+  sello editorial de BibliaTodo LLC.» BibliaTodo does not sponsor or endorse BibleChat.
 - **Westminster Leningrad Codex** (Hebrew Old Testament) from [eBible.org](https://ebible.org/hboWLC/copyright.htm): the WLC
   text is public domain. **Greek Textus Receptus New Testament** from [eBible.org](https://ebible.org/grctr/copyright.htm): public
   domain (Stephanus 1550, Elzevir 1624, Scrivener 1881 collated; Adam Boyd's notes dedicated to the public domain).
