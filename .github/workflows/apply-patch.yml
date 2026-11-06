@@ -1,0 +1,36 @@
+name: Apply a checked patch (temporary)
+
+# Used once by the BibleChat assistant to commit "What would Jesus do?" to the test branch wwjd-situations.
+# Runs only on that branch. It applies the patch only if its SHA-256 matches, runs the checks and tests,
+# commits and pushes to the branch. This file is deleted again right after.
+on:
+  push:
+    branches: [wwjd-situations]
+    paths: [".github/workflows/apply-patch.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply, test, commit
+        env:
+          URL: "https://us.migoo.ai/beeai/api/v1/media/signed/budee/2026/11/06/078e37eb.patch?expires=1793950018&sig=b0be6f4e1d672a0f81b3cd01eb84446b73a851eaf19522cb00f027ff5deb137f"
+          SUM: "d97fb1098eb5c69f2e62b2558e2dab23e40bc6065a2c9e700f6aa11609fd0bf3"
+          MSG: "🕊 What would Jesus do? (test): type your situation under the search field, get Scripture back: what Jesus said (in red), what Jesus did, more verses, a prayer; 24 hand-written situations checked by packaging/build_situations.py; offline and private; 212 tests"
+        run: |
+          curl -fsSL "$URL" -o /tmp/p.diff
+          echo "$SUM  /tmp/p.diff" | sha256sum -c -
+          git apply --index /tmp/p.diff
+          pip install -q numpy pypdfium2 certifi reportlab
+          python packaging/build_paths.py --check
+          python packaging/build_situations.py --check
+          python -m unittest discover -s tests
+          git -c user.name="BibleChat assistant" -c user.email="wbeaugrand@gmail.com" commit -q -m "$MSG"
+          git push
