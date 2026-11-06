@@ -1,0 +1,37 @@
+name: Add the NTBT on its branch (temporary)
+
+# Used once by the BibleChat assistant on the branch ntbt-spanish. It applies the checked patch (SHA-256 must match),
+# builds bibles/spa-ntbt.usfx.xml from BibliaTodo's pinned download with packaging/build_ntbt.py, checks the file is
+# exactly the one checked by hand (SHA-256), runs the tests, commits and pushes to this branch. Removed after use.
+on:
+  push:
+    branches: [ntbt-spanish]
+    paths: [".github/workflows/ntbt-apply.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Apply, build, test, commit
+        env:
+          URL: "https://us.migoo.ai/beeai/api/v1/media/signed/budee/2026/11/07/8ed6727b.diff?expires=1794026045&sig=05b5578d35f3d763f1a81b0ca6ad5fd7eb4a3cf994c5333b33651a1f3b558f92"
+          SUM: c2ae663282ba68f53c3919e4f70c39be8a424195114968436e0dc1ec99b32292
+          XML: 9e2591b943309e38dc5100cf48d6d511dc411df4803fae8eb7e345abd21c3eb2
+        run: |
+          curl -fsSL "$URL" -o /tmp/p.diff
+          echo "$SUM  /tmp/p.diff" | sha256sum -c -
+          git apply --index /tmp/p.diff
+          python packaging/build_ntbt.py
+          echo "$XML  bibles/spa-ntbt.usfx.xml" | sha256sum -c -
+          git add bibles/spa-ntbt.usfx.xml
+          pip install -q numpy pypdfium2 certifi reportlab
+          python -m unittest discover -s tests
+          git -c user.name="BibleChat assistant" -c user.email="wbeaugrand@gmail.com" commit -q -m "A new Spanish Bible: Nueva Traducción BibliaTodo (NTBT)" -m "BibliaTodo Bible Society offered the NTBT on 4 November 2026; Hans reviewed it and registered BibleChat under their free agreement (LICENCIA.txt 1.4). packaging/build_ntbt.py turns the pinned JSON download (delivery NTBT-2026-11-04) into bibles/spa-ntbt.usfx.xml with the wording unchanged (31,104 verses, brackets kept). Added to Get free Bibles with the official credit; a web address in a license is now a link in both Bible lists. New tests/test_ntbt.py (205 tests)."
+          git push
