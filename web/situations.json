@@ -1,0 +1,6918 @@
+{
+ "about": "🕊 What would Jesus do? Life situations for the phone's Search page, written by hand. Each holds references only, never verse text: what Jesus said (shown in red where the King James marks His words), what Jesus did, and more from Scripture. The headings are BibleChat's words, not Scripture. packaging/build_situations.py checks every reference against the Bible files and writes web/situations.json.",
+ "situations": [
+  {
+   "id": "fear-worry",
+   "title": "Fear and worry",
+   "words": [
+    "afraid",
+    "fear",
+    "fearful",
+    "scared",
+    "worry",
+    "worried",
+    "worrying",
+    "anxious",
+    "anxiety",
+    "panic",
+    "nervous",
+    "terrified",
+    "dread",
+    "frightened",
+    "uneasy",
+    "stress about",
+    "what if",
+    "worried sick"
+   ],
+   "jesus": [
+    "Matthew 6:31-34",
+    "John 14:27",
+    "Luke 12:32",
+    "Mark 4:40"
+   ],
+   "did": [
+    {
+     "point": "He slept in the storm, then rose and calmed it with a word",
+     "refs": [
+      "Mark 4:38-39"
+     ]
+    },
+    {
+     "point": "He came to His frightened disciples on the water: \"It is I; be not afraid\"",
+     "refs": [
+      "Matthew 14:26-27"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Bring every care to God in prayer, and His peace will keep your heart",
+     "refs": [
+      "Philippians 4:6-7",
+      "1 Peter 5:7"
+     ]
+    },
+    {
+     "point": "God is with you; you do not face it alone",
+     "refs": [
+      "Isaiah 41:10",
+      "Psalms 56:3",
+      "2 Timothy 1:7"
+     ]
+    }
+   ],
+   "prayer": "do-not-worry"
+  },
+  {
+   "id": "grief",
+   "title": "Grief and the death of someone you love",
+   "words": [
+    "died",
+    "dead",
+    "death",
+    "passed away",
+    "passed",
+    "funeral",
+    "grief",
+    "grieve",
+    "grieving",
+    "mourn",
+    "mourning",
+    "lost my mom",
+    "lost my mother",
+    "lost my dad",
+    "lost my father",
+    "lost my wife",
+    "lost my husband",
+    "lost my son",
+    "lost my daughter",
+    "lost my child",
+    "lost my baby",
+    "lost my friend",
+    "lost a loved one",
+    "miss him",
+    "miss her",
+    "widow",
+    "widower",
+    "loss",
+    "buried",
+    "cancer took"
+   ],
+   "jesus": [
+    "Matthew 5:4",
+    "John 11:25-26",
+    "John 14:1-3"
+   ],
+   "did": [
+    {
+     "point": "He wept at the grave of His friend Lazarus",
+     "refs": [
+      "John 11:33-35"
+     ]
+    },
+    {
+     "point": "He had compassion on a grieving widow and gave back her son",
+     "refs": [
+      "Luke 7:12-15"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "We grieve, but not as those who have no hope",
+     "refs": [
+      "1 Thessalonians 4:13-14"
+     ]
+    },
+    {
+     "point": "The LORD is near the brokenhearted; one day He wipes away every tear",
+     "refs": [
+      "Psalms 34:18",
+      "Revelation 21:4"
+     ]
+    }
+   ],
+   "prayer": "when-someone-has-died"
+  },
+  {
+   "id": "money-work",
+   "title": "Money troubles and losing a job",
+   "words": [
+    "job",
+    "jobs",
+    "work",
+    "fired",
+    "laid off",
+    "layoff",
+    "unemployed",
+    "money",
+    "bills",
+    "debt",
+    "debts",
+    "rent",
+    "broke",
+    "poor",
+    "poverty",
+    "afford",
+    "pay",
+    "paycheck",
+    "income",
+    "mortgage",
+    "eviction",
+    "evicted",
+    "foreclosure",
+    "provide"
+   ],
+   "jesus": [
+    "Matthew 6:25-26",
+    "Matthew 6:33",
+    "Matthew 7:7-8",
+    "Luke 12:15"
+   ],
+   "did": [
+    {
+     "point": "He fed five thousand with five loaves and two fishes",
+     "refs": [
+      "Matthew 14:17-20"
+     ]
+    },
+    {
+     "point": "He taught us to ask the Father for our daily bread",
+     "refs": [
+      "Matthew 6:11"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "God supplies every need; be content with what you have",
+     "refs": [
+      "Philippians 4:19",
+      "Hebrews 13:5"
+     ]
+    },
+    {
+     "point": "Work honestly, owe no one anything but love",
+     "refs": [
+      "Romans 13:8",
+      "Ephesians 4:28",
+      "Proverbs 3:9-10"
+     ]
+    }
+   ],
+   "prayer": "for-my-work"
+  },
+  {
+   "id": "anger",
+   "title": "Anger",
+   "words": [
+    "angry",
+    "anger",
+    "mad",
+    "furious",
+    "rage",
+    "temper",
+    "yelled",
+    "yell",
+    "yelling",
+    "scream",
+    "screamed",
+    "hate him",
+    "hate her",
+    "frustrated",
+    "annoyed",
+    "irritated",
+    "lost my temper",
+    "bitter",
+    "bitterness"
+   ],
+   "jesus": [
+    "Matthew 5:22-24",
+    "Matthew 5:9"
+   ],
+   "did": [
+    {
+     "point": "When He was reviled, He did not revile again",
+     "refs": [
+      "1 Peter 2:23"
+     ]
+    },
+    {
+     "point": "His zeal for His Father's house: He drove out those who made it a house of merchandise",
+     "refs": [
+      "John 2:15-17"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Be slow to wrath; a soft answer turns it away",
+     "refs": [
+      "James 1:19-20",
+      "Proverbs 15:1"
+     ]
+    },
+    {
+     "point": "Be angry and sin not; let not the sun go down on your wrath",
+     "refs": [
+      "Ephesians 4:26-27",
+      "Ephesians 4:31-32"
+     ]
+    }
+   ],
+   "prayer": "create-clean-heart"
+  },
+  {
+   "id": "someone-hurt-me",
+   "title": "Someone hurt or wronged me",
+   "words": [
+    "hurt me",
+    "wronged",
+    "betrayed",
+    "betrayal",
+    "cheated",
+    "lied to me",
+    "stole my",
+    "stole from me",
+    "robbed",
+    "stabbed me in the back",
+    "abused",
+    "offended",
+    "insulted",
+    "unfair",
+    "forgive",
+    "forgiving",
+    "forgiveness",
+    "grudge",
+    "resent",
+    "resentment",
+    "revenge",
+    "get back at",
+    "unforgiveness",
+    "can't forgive",
+    "cannot forgive"
+   ],
+   "jesus": [
+    "Matthew 6:14-15",
+    "Matthew 18:22",
+    "Luke 6:27-28",
+    "Matthew 18:15",
+    "Mark 11:25"
+   ],
+   "did": [
+    {
+     "point": "On the cross He prayed for those who crucified Him",
+     "refs": [
+      "Luke 23:34"
+     ]
+    },
+    {
+     "point": "He washed the feet of all His disciples, Judas too, then gave them a new commandment",
+     "refs": [
+      "John 13:3-5",
+      "John 13:34"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Forgive as God in Christ forgave you",
+     "refs": [
+      "Ephesians 4:32",
+      "Colossians 3:13"
+     ]
+    },
+    {
+     "point": "Do not take revenge; leave it to God and overcome evil with good",
+     "refs": [
+      "Romans 12:17-21"
+     ]
+    }
+   ],
+   "prayer": "for-those-who-hurt-me"
+  },
+  {
+   "id": "enemies",
+   "title": "Enemies, and people who mock my faith",
+   "words": [
+    "enemy",
+    "enemies",
+    "persecuted",
+    "persecution",
+    "mocked",
+    "mock",
+    "mocking",
+    "laughed at",
+    "ridiculed",
+    "bullied",
+    "bully",
+    "bullying",
+    "hate me",
+    "hates me",
+    "against me",
+    "attacked",
+    "my faith",
+    "because i am a christian",
+    "rejected"
+   ],
+   "jesus": [
+    "Matthew 5:10-12",
+    "Matthew 5:44",
+    "John 15:18-20",
+    "John 16:33"
+   ],
+   "did": [
+    {
+     "point": "When He was accused before Pilate, He answered nothing",
+     "refs": [
+      "Matthew 27:12-14"
+     ]
+    },
+    {
+     "point": "When a village would not receive Him, He rebuked the disciples who wanted fire from heaven, and went on",
+     "refs": [
+      "Luke 9:52-56"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Bless them that persecute you; feed your enemy",
+     "refs": [
+      "Romans 12:14",
+      "Romans 12:20"
+     ]
+    },
+    {
+     "point": "Suffering as a Christian is no shame",
+     "refs": [
+      "1 Peter 4:12-16",
+      "2 Timothy 3:12"
+     ]
+    }
+   ],
+   "prayer": "for-the-persecuted"
+  },
+  {
+   "id": "lonely",
+   "title": "Loneliness",
+   "words": [
+    "lonely",
+    "loneliness",
+    "alone",
+    "no friends",
+    "nobody",
+    "no one cares",
+    "isolated",
+    "abandoned",
+    "forsaken",
+    "left me",
+    "by myself",
+    "rejected",
+    "unloved",
+    "unwanted",
+    "forgotten"
+   ],
+   "jesus": [
+    "Matthew 28:20",
+    "John 14:18",
+    "John 15:14-15",
+    "Matthew 11:28-29"
+   ],
+   "did": [
+    {
+     "point": "His friends forsook Him and fled in His darkest hour",
+     "refs": [
+      "Mark 14:50"
+     ]
+    },
+    {
+     "point": "He went to the outcasts no one would eat with: Zacchaeus, and the woman at the well",
+     "refs": [
+      "Luke 19:5-6",
+      "John 4:7-10"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "He will never leave you nor forsake you",
+     "refs": [
+      "Hebrews 13:5",
+      "Deuteronomy 31:6"
+     ]
+    },
+    {
+     "point": "God sets the solitary in families; nothing can separate you from His love",
+     "refs": [
+      "Psalms 68:6",
+      "Romans 8:38-39"
+     ]
+    }
+   ],
+   "prayer": "when-i-feel-alone"
+  },
+  {
+   "id": "sickness",
+   "title": "Sickness and pain",
+   "words": [
+    "sick",
+    "sickness",
+    "ill",
+    "illness",
+    "disease",
+    "cancer",
+    "diagnosis",
+    "diagnosed",
+    "hospital",
+    "surgery",
+    "pain",
+    "chronic",
+    "doctor",
+    "healing",
+    "heal",
+    "healed",
+    "covid",
+    "stroke",
+    "heart attack",
+    "tumor",
+    "dying"
+   ],
+   "jesus": [
+    "Mark 5:34",
+    "Mark 11:22-24",
+    "John 11:4",
+    "Matthew 9:12"
+   ],
+   "did": [
+    {
+     "point": "He touched the leper and said, \"I will; be thou clean\"",
+     "refs": [
+      "Matthew 8:2-3"
+     ]
+    },
+    {
+     "point": "He healed all who came to Him",
+     "refs": [
+      "Matthew 4:23-24",
+      "Luke 4:40"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Is any sick? Call the elders; the prayer of faith",
+     "refs": [
+      "James 5:14-16"
+     ]
+    },
+    {
+     "point": "His grace is sufficient; by His stripes we are healed",
+     "refs": [
+      "2 Corinthians 12:9",
+      "Isaiah 53:5"
+     ]
+    }
+   ],
+   "prayer": "heal-me"
+  },
+  {
+   "id": "temptation",
+   "title": "Temptation and addiction",
+   "words": [
+    "tempted",
+    "temptation",
+    "addicted",
+    "addiction",
+    "drinking",
+    "alcohol",
+    "drunk",
+    "drugs",
+    "porn",
+    "pornography",
+    "lust",
+    "gambling",
+    "smoking",
+    "relapse",
+    "relapsed",
+    "craving",
+    "can't stop",
+    "cannot stop",
+    "habit",
+    "struggle with"
+   ],
+   "jesus": [
+    "Matthew 26:41",
+    "Matthew 6:13",
+    "John 8:34-36",
+    "Matthew 5:29-30"
+   ],
+   "did": [
+    {
+     "point": "Tempted in the wilderness, He answered each temptation with \"It is written\"",
+     "refs": [
+      "Matthew 4:1-4",
+      "Matthew 4:10-11"
+     ]
+    },
+    {
+     "point": "In Gethsemane He watched and prayed, and told His disciples to do the same",
+     "refs": [
+      "Matthew 26:39-41"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "God makes a way to escape; He knows our weakness",
+     "refs": [
+      "1 Corinthians 10:13",
+      "Hebrews 4:15-16"
+     ]
+    },
+    {
+     "point": "Resist the devil and he will flee; walk in the Spirit",
+     "refs": [
+      "James 4:7-8",
+      "Galatians 5:16"
+     ]
+    }
+   ],
+   "prayer": "in-temptation"
+  },
+  {
+   "id": "guilt-shame",
+   "title": "Guilt, shame and failure",
+   "words": [
+    "guilt",
+    "guilty",
+    "shame",
+    "ashamed",
+    "sinned",
+    "sin",
+    "messed up",
+    "failed",
+    "failure",
+    "regret",
+    "regrets",
+    "mistake",
+    "mistakes",
+    "my fault",
+    "unworthy",
+    "worthless",
+    "condemned",
+    "can god forgive",
+    "forgive me",
+    "backslid",
+    "backslidden"
+   ],
+   "jesus": [
+    "Luke 15:20-24",
+    "John 8:10-11",
+    "Luke 5:31-32",
+    "John 6:37"
+   ],
+   "did": [
+    {
+     "point": "After Peter denied Him three times, He asked him three times, \"Lovest thou me?\" and gave him work to do",
+     "refs": [
+      "John 21:15-17"
+     ]
+    },
+    {
+     "point": "He told a woman who washed His feet with tears, \"Thy sins are forgiven\"",
+     "refs": [
+      "Luke 7:47-50"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Confess, and He is faithful and just to forgive",
+     "refs": [
+      "1 John 1:9",
+      "Psalms 103:10-12"
+     ]
+    },
+    {
+     "point": "No condemnation to them which are in Christ Jesus",
+     "refs": [
+      "Romans 8:1",
+      "Isaiah 1:18"
+     ]
+    }
+   ],
+   "prayer": "faithful-and-just"
+  },
+  {
+   "id": "marriage",
+   "title": "Trouble in my marriage",
+   "words": [
+    "marriage",
+    "married",
+    "husband",
+    "wife",
+    "spouse",
+    "divorce",
+    "divorced",
+    "separated",
+    "separation",
+    "affair",
+    "unfaithful",
+    "adultery",
+    "cheating",
+    "cheated on me",
+    "fight",
+    "fighting",
+    "argue",
+    "arguing"
+   ],
+   "jesus": [
+    "Matthew 19:4-6",
+    "Matthew 7:3-5",
+    "Matthew 7:12"
+   ],
+   "did": [
+    {
+     "point": "His first sign was at a wedding: He turned the water into wine",
+     "refs": [
+      "John 2:1-3",
+      "John 2:7-10"
+     ]
+    },
+    {
+     "point": "He loved the church and gave Himself for it: the pattern for a husband",
+     "refs": [
+      "Ephesians 5:25"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Love is patient and kind, keeps no record of wrong",
+     "refs": [
+      "1 Corinthians 13:4-7"
+     ]
+    },
+    {
+     "point": "Husband and wife: love, honour, and do not be bitter",
+     "refs": [
+      "Ephesians 5:33",
+      "Colossians 3:18-19",
+      "1 Peter 3:7"
+     ]
+    }
+   ],
+   "prayer": "husband-wife-love",
+   "path": "husband-and-wife"
+  },
+  {
+   "id": "family",
+   "title": "Family conflict",
+   "words": [
+    "family",
+    "parents",
+    "mother",
+    "father",
+    "mom",
+    "dad",
+    "brother",
+    "sister",
+    "son",
+    "daughter",
+    "children",
+    "kids",
+    "relatives",
+    "in-laws",
+    "in law",
+    "siblings",
+    "teenager",
+    "rebellious",
+    "prodigal",
+    "estranged",
+    "doesn't understand",
+    "don't understand"
+   ],
+   "jesus": [
+    "Matthew 5:23-24",
+    "Matthew 10:34-37",
+    "Mark 3:33-35",
+    "Luke 15:31-32"
+   ],
+   "did": [
+    {
+     "point": "His own brothers did not believe in Him",
+     "refs": [
+      "John 7:3-5"
+     ]
+    },
+    {
+     "point": "From the cross He gave His mother into the care of John",
+     "refs": [
+      "John 19:26-27"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Honour father and mother; fathers, provoke not your children",
+     "refs": [
+      "Exodus 20:12",
+      "Ephesians 6:1-4"
+     ]
+    },
+    {
+     "point": "As much as lies in you, live peaceably with all",
+     "refs": [
+      "Romans 12:18",
+      "Psalms 133:1"
+     ]
+    }
+   ],
+   "prayer": "my-house"
+  },
+  {
+   "id": "doubt",
+   "title": "Doubt, and when God seems silent",
+   "words": [
+    "doubt",
+    "doubts",
+    "doubting",
+    "unbelief",
+    "faith is weak",
+    "is god real",
+    "god is real",
+    "if god is real",
+    "does god exist",
+    "if god exists",
+    "god exists",
+    "does god care",
+    "god is silent",
+    "silent",
+    "unanswered",
+    "no answer",
+    "why god",
+    "where is god",
+    "far from god",
+    "lost my faith",
+    "questions",
+    "confused"
+   ],
+   "jesus": [
+    "John 20:27",
+    "John 20:29",
+    "Mark 9:23",
+    "Matthew 17:20",
+    "John 14:1"
+   ],
+   "did": [
+    {
+     "point": "When a father cried, \"Help thou mine unbelief\", Jesus healed his son",
+     "refs": [
+      "Mark 9:24-27"
+     ]
+    },
+    {
+     "point": "When Peter began to sink, He stretched out His hand and caught him",
+     "refs": [
+      "Matthew 14:30-31"
+     ]
+    },
+    {
+     "point": "On the cross He cried, \"My God, my God, why hast thou forsaken me?\"",
+     "refs": [
+      "Matthew 27:46"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Ask for wisdom without wavering; draw near to God",
+     "refs": [
+      "James 1:5-6",
+      "Hebrews 11:6"
+     ]
+    },
+    {
+     "point": "Wait on the LORD; the psalmists asked \"How long?\" too",
+     "refs": [
+      "Psalms 13:1-6",
+      "Isaiah 40:31",
+      "Luke 18:1"
+     ]
+    }
+   ],
+   "prayer": "ask-for-wisdom"
+  },
+  {
+   "id": "despair",
+   "title": "Despair, depression and no hope",
+   "words": [
+    "depressed",
+    "depression",
+    "hopeless",
+    "no hope",
+    "despair",
+    "give up",
+    "giving up",
+    "can't go on",
+    "cannot go on",
+    "empty",
+    "numb",
+    "sad",
+    "sadness",
+    "crying",
+    "tears",
+    "broken",
+    "brokenhearted",
+    "heartbroken",
+    "darkness",
+    "dark place",
+    "no reason to live",
+    "end it",
+    "suicidal",
+    "suicide"
+   ],
+   "jesus": [
+    "Matthew 11:28-30",
+    "John 10:10-11",
+    "John 16:22",
+    "Luke 4:18"
+   ],
+   "did": [
+    {
+     "point": "In Gethsemane His soul was exceeding sorrowful, even unto death; He prayed, and an angel strengthened Him",
+     "refs": [
+      "Matthew 26:37-39",
+      "Luke 22:43-44"
+     ]
+    },
+    {
+     "point": "He walked with two downcast disciples on the road to Emmaus",
+     "refs": [
+      "Luke 24:15-17",
+      "Luke 24:31-32"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Why art thou cast down, O my soul? Hope thou in God",
+     "refs": [
+      "Psalms 42:11",
+      "Psalms 34:18"
+     ]
+    },
+    {
+     "point": "Elijah wanted to die; God gave him sleep, food and a still small voice",
+     "refs": [
+      "1 Kings 19:4-8",
+      "1 Kings 19:11-12"
+     ]
+    },
+    {
+     "point": "His mercies are new every morning",
+     "refs": [
+      "Lamentations 3:22-23",
+      "Jeremiah 29:11"
+     ]
+    }
+   ],
+   "prayer": "near-the-brokenhearted",
+   "help": "If you are thinking about ending your life, please call or text 988 now (Suicide & Crisis Lifeline, in the USA), or your local emergency number. You are not alone."
+  },
+  {
+   "id": "decision",
+   "title": "A hard decision",
+   "words": [
+    "decision",
+    "decide",
+    "deciding",
+    "choose",
+    "choice",
+    "should i",
+    "which way",
+    "direction",
+    "guidance",
+    "god's will",
+    "will of god",
+    "move",
+    "moving",
+    "new job",
+    "offer",
+    "confused about",
+    "not sure",
+    "crossroads"
+   ],
+   "jesus": [
+    "Matthew 7:7-8",
+    "John 16:13",
+    "Luke 14:28-30",
+    "Matthew 6:33"
+   ],
+   "did": [
+    {
+     "point": "Before choosing the twelve, He continued all night in prayer",
+     "refs": [
+      "Luke 6:12-13"
+     ]
+    },
+    {
+     "point": "Facing the cross, He prayed, \"Not my will, but thine, be done\"",
+     "refs": [
+      "Luke 22:41-42"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Trust in the LORD with all your heart; He shall direct your paths",
+     "refs": [
+      "Proverbs 3:5-6",
+      "Psalms 32:8"
+     ]
+    },
+    {
+     "point": "Ask God for wisdom; in a multitude of counsellors there is safety",
+     "refs": [
+      "James 1:5",
+      "Proverbs 11:14",
+      "Proverbs 16:9"
+     ]
+    }
+   ],
+   "prayer": "trust-with-all-heart"
+  },
+  {
+   "id": "tired",
+   "title": "Tired, stressed and overwhelmed",
+   "words": [
+    "tired",
+    "exhausted",
+    "worn out",
+    "burned out",
+    "burnout",
+    "overwhelmed",
+    "stressed",
+    "stress",
+    "too much",
+    "busy",
+    "no time",
+    "pressure",
+    "weary",
+    "can't sleep",
+    "cannot sleep",
+    "insomnia",
+    "drained"
+   ],
+   "jesus": [
+    "Matthew 11:28-30",
+    "Mark 6:31",
+    "Luke 10:41-42",
+    "John 15:5"
+   ],
+   "did": [
+    {
+     "point": "He rose a great while before day and went to a solitary place to pray",
+     "refs": [
+      "Mark 1:35",
+      "Luke 5:15-16"
+     ]
+    },
+    {
+     "point": "Wearied from His journey, He sat by the well and rested",
+     "refs": [
+      "John 4:6"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "They that wait upon the LORD shall renew their strength",
+     "refs": [
+      "Isaiah 40:29-31"
+     ]
+    },
+    {
+     "point": "He gives His beloved sleep; cast your burden on the LORD",
+     "refs": [
+      "Psalms 127:2",
+      "Psalms 55:22"
+     ]
+    }
+   ],
+   "prayer": "wings-as-eagles"
+  },
+  {
+   "id": "conflict",
+   "title": "Conflict with a neighbour, coworker or boss",
+   "words": [
+    "coworker",
+    "co-worker",
+    "boss",
+    "manager",
+    "neighbor",
+    "neighbour",
+    "neighbors",
+    "colleague",
+    "workplace",
+    "church member",
+    "argument",
+    "conflict",
+    "quarrel",
+    "dispute",
+    "lawsuit",
+    "sue",
+    "suing",
+    "gossip",
+    "gossiping",
+    "toxic",
+    "difficult person"
+   ],
+   "jesus": [
+    "Matthew 5:38-42",
+    "Matthew 18:15-17",
+    "Matthew 7:12",
+    "Luke 6:31-36"
+   ],
+   "did": [
+    {
+     "point": "When His disciples argued who was greatest, He took a child and taught them to serve",
+     "refs": [
+      "Mark 9:33-35"
+     ]
+    },
+    {
+     "point": "He told Peter to put away his sword, and healed the servant's ear",
+     "refs": [
+      "Luke 22:50-51",
+      "John 18:10-11"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Live peaceably; a soft answer turns away wrath",
+     "refs": [
+      "Romans 12:18",
+      "Proverbs 15:1"
+     ]
+    },
+    {
+     "point": "Work as for the Lord; speak no evil of anyone",
+     "refs": [
+      "Colossians 3:23-24",
+      "Titus 3:1-2"
+     ]
+    }
+   ],
+   "prayer": "for-my-work"
+  },
+  {
+   "id": "judging",
+   "title": "Judging others, and being judged",
+   "words": [
+    "judge",
+    "judging",
+    "judged",
+    "judgmental",
+    "criticize",
+    "criticized",
+    "criticism",
+    "hypocrite",
+    "hypocrites",
+    "hypocrisy",
+    "condemn",
+    "self-righteous",
+    "look down on",
+    "better than"
+   ],
+   "jesus": [
+    "Matthew 7:1-5",
+    "Luke 6:37",
+    "John 7:24",
+    "John 8:7"
+   ],
+   "did": [
+    {
+     "point": "He ate with publicans and sinners, and answered those who murmured",
+     "refs": [
+      "Luke 15:1-2",
+      "Mark 2:16-17"
+     ]
+    },
+    {
+     "point": "To the woman taken in adultery: \"Neither do I condemn thee: go, and sin no more\"",
+     "refs": [
+      "John 8:10-11"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Who art thou that judgest another man's servant?",
+     "refs": [
+      "Romans 14:10-13",
+      "James 4:11-12"
+     ]
+    },
+    {
+     "point": "Restore one another gently, considering yourself",
+     "refs": [
+      "Galatians 6:1-2"
+     ]
+    }
+   ],
+   "prayer": "create-clean-heart"
+  },
+  {
+   "id": "pride-success",
+   "title": "Success, pride and wanting more",
+   "words": [
+    "pride",
+    "proud",
+    "success",
+    "successful",
+    "promotion",
+    "famous",
+    "fame",
+    "rich",
+    "wealth",
+    "wealthy",
+    "greed",
+    "greedy",
+    "jealous",
+    "jealousy",
+    "envy",
+    "envious",
+    "compare",
+    "comparing",
+    "ambition",
+    "status",
+    "more money",
+    "lottery"
+   ],
+   "jesus": [
+    "Luke 12:15-21",
+    "Matthew 6:19-21",
+    "Matthew 23:11-12",
+    "Mark 8:36"
+   ],
+   "did": [
+    {
+     "point": "When they wanted to make Him king by force, He departed into a mountain alone",
+     "refs": [
+      "John 6:15"
+     ]
+    },
+    {
+     "point": "He washed His disciples' feet and said, \"I have given you an example\"",
+     "refs": [
+      "John 13:12-15"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Pride goes before destruction; God gives grace to the humble",
+     "refs": [
+      "Proverbs 16:18",
+      "James 4:6",
+      "Philippians 2:3-8"
+     ]
+    },
+    {
+     "point": "Godliness with contentment is great gain",
+     "refs": [
+      "1 Timothy 6:6-10",
+      "Hebrews 13:5"
+     ]
+    }
+   ],
+   "prayer": "thy-plans"
+  },
+  {
+   "id": "honesty",
+   "title": "Tempted to lie or cut corners",
+   "words": [
+    "lie",
+    "lying",
+    "lied",
+    "dishonest",
+    "honest",
+    "honesty",
+    "steal",
+    "stealing",
+    "taxes",
+    "cover up",
+    "cover it up",
+    "secret",
+    "deceive",
+    "deceived",
+    "fraud",
+    "integrity",
+    "nobody will know",
+    "get away with"
+   ],
+   "jesus": [
+    "Matthew 5:37",
+    "Luke 16:10",
+    "Matthew 22:21",
+    "Luke 8:17"
+   ],
+   "did": [
+    {
+     "point": "Zacchaeus met Jesus and gave back fourfold what he had taken",
+     "refs": [
+      "Luke 19:8-10"
+     ]
+    },
+    {
+     "point": "He paid the tribute money for Himself and Peter, lest they offend",
+     "refs": [
+      "Matthew 17:24-27"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Lie not one to another; speak truth with your neighbour",
+     "refs": [
+      "Colossians 3:9-10",
+      "Ephesians 4:25"
+     ]
+    },
+    {
+     "point": "Lying lips are an abomination; the integrity of the upright guides them",
+     "refs": [
+      "Proverbs 12:22",
+      "Proverbs 11:3"
+     ]
+    }
+   ],
+   "prayer": "create-clean-heart"
+  },
+  {
+   "id": "someone-in-need",
+   "title": "Someone in need: should I help?",
+   "words": [
+    "homeless",
+    "beggar",
+    "begging",
+    "needy",
+    "help someone",
+    "help him",
+    "help her",
+    "stranger",
+    "hungry",
+    "refugee",
+    "immigrant",
+    "charity",
+    "give",
+    "giving",
+    "donate",
+    "lend",
+    "loan",
+    "poor",
+    "orphan",
+    "widow",
+    "in need",
+    "struggling friend"
+   ],
+   "jesus": [
+    "Matthew 25:35-40",
+    "Luke 10:33-37",
+    "Luke 6:38",
+    "Matthew 5:42"
+   ],
+   "did": [
+    {
+     "point": "Moved with compassion, He fed the hungry crowd",
+     "refs": [
+      "Matthew 15:32",
+      "Matthew 15:36-37"
+     ]
+    },
+    {
+     "point": "He stopped for blind Bartimaeus when others told him to be quiet",
+     "refs": [
+      "Mark 10:46-52"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Faith without works is dead; love in deed and in truth",
+     "refs": [
+      "James 2:15-17",
+      "1 John 3:17-18"
+     ]
+    },
+    {
+     "point": "He that gives to the poor lends to the LORD; be hospitable to strangers",
+     "refs": [
+      "Proverbs 19:17",
+      "Hebrews 13:2"
+     ]
+    }
+   ],
+   "prayer": "for-those-who-hurt-me"
+  },
+  {
+   "id": "sharing-faith",
+   "title": "Talking about my faith",
+   "words": [
+    "share my faith",
+    "witness",
+    "witnessing",
+    "evangelize",
+    "evangelism",
+    "tell others",
+    "tell my",
+    "unbelieving",
+    "unbeliever",
+    "atheist",
+    "save my",
+    "salvation of",
+    "gospel",
+    "preach",
+    "invite to church",
+    "ashamed of the gospel"
+   ],
+   "jesus": [
+    "Matthew 28:18-20",
+    "Matthew 5:14-16",
+    "Acts 1:8",
+    "Luke 12:8"
+   ],
+   "did": [
+    {
+     "point": "He talked with a Samaritan woman at a well, and her whole town came to hear Him",
+     "refs": [
+      "John 4:39-42"
+     ]
+    },
+    {
+     "point": "He sent a healed man home: \"Go home to thy friends, and tell them\"",
+     "refs": [
+      "Mark 5:18-20"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "Be ready always to give an answer, with meekness and fear",
+     "refs": [
+      "1 Peter 3:15",
+      "Colossians 4:5-6"
+     ]
+    },
+    {
+     "point": "Not ashamed of the gospel: the power of God unto salvation",
+     "refs": [
+      "Romans 1:16",
+      "Romans 10:14-15"
+     ]
+    }
+   ],
+   "prayer": "for-someone-far"
+  },
+  {
+   "id": "fear-of-death",
+   "title": "Facing death",
+   "words": [
+    "dying",
+    "die",
+    "afraid to die",
+    "fear of death",
+    "terminal",
+    "hospice",
+    "end of life",
+    "last days",
+    "eternity",
+    "heaven",
+    "hell",
+    "afterlife",
+    "after i die",
+    "what happens when"
+   ],
+   "jesus": [
+    "John 11:25-26",
+    "John 14:1-3",
+    "John 5:24",
+    "Luke 23:43"
+   ],
+   "did": [
+    {
+     "point": "He rose from the dead and showed Himself alive",
+     "refs": [
+      "Luke 24:5-7",
+      "Luke 24:38-39"
+     ]
+    },
+    {
+     "point": "As He died, He committed His spirit into His Father's hands",
+     "refs": [
+      "Luke 23:46"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "O death, where is thy sting? Christ delivers those who feared death",
+     "refs": [
+      "1 Corinthians 15:54-57",
+      "Hebrews 2:14-15"
+     ]
+    },
+    {
+     "point": "Though I walk through the valley of the shadow of death",
+     "refs": [
+      "Psalms 23:4",
+      "Romans 14:8"
+     ]
+    }
+   ],
+   "prayer": "confess-and-believe",
+   "path": "salvation-how-are-we-saved"
+  },
+  {
+   "id": "waiting",
+   "title": "Waiting, and things not going my way",
+   "words": [
+    "waiting",
+    "wait",
+    "patience",
+    "impatient",
+    "delay",
+    "delayed",
+    "stuck",
+    "not working out",
+    "nothing works",
+    "setback",
+    "disappointed",
+    "disappointment",
+    "unfair",
+    "why me",
+    "plans failed",
+    "rejected",
+    "infertility",
+    "single",
+    "still single"
+   ],
+   "jesus": [
+    "John 13:7",
+    "Luke 18:6-8",
+    "Matthew 6:34",
+    "John 16:33"
+   ],
+   "did": [
+    {
+     "point": "When He heard Lazarus was sick, He waited two days, for the glory of God",
+     "refs": [
+      "John 11:4-6"
+     ]
+    },
+    {
+     "point": "\"Mine hour is not yet come\"",
+     "refs": [
+      "John 2:4",
+      "John 7:6"
+     ]
+    }
+   ],
+   "verses": [
+    {
+     "point": "All things work together for good to them that love God",
+     "refs": [
+      "Romans 8:28",
+      "Genesis 50:20"
+     ]
+    },
+    {
+     "point": "Wait on the LORD; be of good courage",
+     "refs": [
+      "Psalms 27:14",
+      "Lamentations 3:25-26",
+      "Habakkuk 2:3"
+     ]
+    }
+   ],
+   "prayer": "thy-plans"
+  }
+ ],
+ "red": {
+  "2 Corinthians 12:9": [
+   {
+    "n": 202,
+    "h": 191356127,
+    "s": [
+     [
+      21,
+      98
+     ]
+    ]
+   }
+  ],
+  "Acts 1:8": [
+   {
+    "n": 201,
+    "h": 293511102,
+    "s": [
+     [
+      0,
+      201
+     ]
+    ]
+   },
+   {
+    "n": 165,
+    "h": 2700855179,
+    "s": [
+     [
+      0,
+      165
+     ]
+    ]
+   },
+   {
+    "n": 193,
+    "h": 2176252284,
+    "s": [
+     [
+      0,
+      193
+     ]
+    ]
+   }
+  ],
+  "John 10:10": [
+   {
+    "n": 150,
+    "h": 1415984633,
+    "s": [
+     [
+      0,
+      150
+     ]
+    ]
+   },
+   {
+    "n": 128,
+    "h": 3980732171,
+    "s": [
+     [
+      0,
+      128
+     ]
+    ]
+   },
+   {
+    "n": 121,
+    "h": 3745644162,
+    "s": [
+     [
+      0,
+      121
+     ]
+    ]
+   }
+  ],
+  "John 10:11": [
+   {
+    "n": 72,
+    "h": 2152986422,
+    "s": [
+     [
+      0,
+      72
+     ]
+    ]
+   },
+   {
+    "n": 64,
+    "h": 512969118,
+    "s": [
+     [
+      0,
+      64
+     ]
+    ]
+   },
+   {
+    "n": 72,
+    "h": 3594244206,
+    "s": [
+     [
+      0,
+      72
+     ]
+    ]
+   }
+  ],
+  "John 11:25": [
+   {
+    "n": 122,
+    "h": 3993285717,
+    "s": [
+     [
+      21,
+      122
+     ]
+    ]
+   }
+  ],
+  "John 11:26": [
+   {
+    "n": 78,
+    "h": 2893857312,
+    "s": [
+     [
+      0,
+      78
+     ]
+    ]
+   },
+   {
+    "n": 71,
+    "h": 4095997556,
+    "s": [
+     [
+      0,
+      71
+     ]
+    ]
+   },
+   {
+    "n": 82,
+    "h": 2544968880,
+    "s": [
+     [
+      0,
+      82
+     ]
+    ]
+   }
+  ],
+  "John 11:34": [
+   {
+    "n": 73,
+    "h": 1922989917,
+    "s": [
+     [
+      10,
+      33
+     ]
+    ]
+   }
+  ],
+  "John 11:4": [
+   {
+    "n": 138,
+    "h": 3739264372,
+    "s": [
+     [
+      32,
+      138
+     ]
+    ]
+   }
+  ],
+  "John 13:12": [
+   {
+    "n": 138,
+    "h": 4111339938,
+    "s": [
+     [
+      106,
+      138
+     ]
+    ]
+   }
+  ],
+  "John 13:13": [
+   {
+    "n": 57,
+    "h": 4103852190,
+    "s": [
+     [
+      0,
+      57
+     ]
+    ]
+   },
+   {
+    "n": 68,
+    "h": 2067567149,
+    "s": [
+     [
+      0,
+      68
+     ]
+    ]
+   },
+   {
+    "n": 77,
+    "h": 25959522,
+    "s": [
+     [
+      0,
+      77
+     ]
+    ]
+   }
+  ],
+  "John 13:14": [
+   {
+    "n": 97,
+    "h": 2295390180,
+    "s": [
+     [
+      0,
+      97
+     ]
+    ]
+   },
+   {
+    "n": 120,
+    "h": 3228914881,
+    "s": [
+     [
+      0,
+      120
+     ]
+    ]
+   },
+   {
+    "n": 119,
+    "h": 3673057660,
+    "s": [
+     [
+      0,
+      119
+     ]
+    ]
+   }
+  ],
+  "John 13:15": [
+   {
+    "n": 73,
+    "h": 4055158236,
+    "s": [
+     [
+      0,
+      73
+     ]
+    ]
+   },
+   {
+    "n": 81,
+    "h": 3954713697,
+    "s": [
+     [
+      0,
+      81
+     ]
+    ]
+   },
+   {
+    "n": 73,
+    "h": 4154118839,
+    "s": [
+     [
+      0,
+      73
+     ]
+    ]
+   }
+  ],
+  "John 13:34": [
+   {
+    "n": 112,
+    "h": 2821383160,
+    "s": [
+     [
+      0,
+      112
+     ]
+    ]
+   },
+   {
+    "n": 116,
+    "h": 3973146519,
+    "s": [
+     [
+      0,
+      116
+     ]
+    ]
+   },
+   {
+    "n": 127,
+    "h": 1680191589,
+    "s": [
+     [
+      0,
+      127
+     ]
+    ]
+   }
+  ],
+  "John 13:7": [
+   {
+    "n": 96,
+    "h": 2824676795,
+    "s": [
+     [
+      34,
+      96
+     ]
+    ]
+   }
+  ],
+  "John 14:1": [
+   {
+    "n": 70,
+    "h": 1484774577,
+    "s": [
+     [
+      0,
+      70
+     ]
+    ]
+   },
+   {
+    "n": 65,
+    "h": 2243164647,
+    "s": [
+     [
+      0,
+      65
+     ]
+    ]
+   },
+   {
+    "n": 97,
+    "h": 1190595102,
+    "s": [
+     [
+      0,
+      97
+     ]
+    ]
+   }
+  ],
+  "John 14:18": [
+   {
+    "n": 53,
+    "h": 4101509305,
+    "s": [
+     [
+      0,
+      53
+     ]
+    ]
+   },
+   {
+    "n": 42,
+    "h": 2729862818,
+    "s": [
+     [
+      0,
+      42
+     ]
+    ]
+   },
+   {
+    "n": 53,
+    "h": 1836319369,
+    "s": [
+     [
+      0,
+      53
+     ]
+    ]
+   }
+  ],
+  "John 14:2": [
+   {
+    "n": 114,
+    "h": 2164023476,
+    "s": [
+     [
+      0,
+      114
+     ]
+    ]
+   },
+   {
+    "n": 121,
+    "h": 554177122,
+    "s": [
+     [
+      0,
+      121
+     ]
+    ]
+   },
+   {
+    "n": 138,
+    "h": 1433622541,
+    "s": [
+     [
+      0,
+      138
+     ]
+    ]
+   }
+  ],
+  "John 14:27": [
+   {
+    "n": 149,
+    "h": 1699755435,
+    "s": [
+     [
+      0,
+      149
+     ]
+    ]
+   },
+   {
+    "n": 113,
+    "h": 436169553,
+    "s": [
+     [
+      0,
+      113
+     ]
+    ]
+   },
+   {
+    "n": 148,
+    "h": 572921201,
+    "s": [
+     [
+      0,
+      148
+     ]
+    ]
+   }
+  ],
+  "John 14:3": [
+   {
+    "n": 127,
+    "h": 3484867483,
+    "s": [
+     [
+      0,
+      127
+     ]
+    ]
+   },
+   {
+    "n": 127,
+    "h": 26626989,
+    "s": [
+     [
+      0,
+      127
+     ]
+    ]
+   },
+   {
+    "n": 128,
+    "h": 2963273696,
+    "s": [
+     [
+      0,
+      128
+     ]
+    ]
+   }
+  ],
+  "John 15:14": [
+   {
+    "n": 53,
+    "h": 1252281117,
+    "s": [
+     [
+      0,
+      53
+     ]
+    ]
+   },
+   {
+    "n": 65,
+    "h": 207970077,
+    "s": [
+     [
+      0,
+      65
+     ]
+    ]
+   },
+   {
+    "n": 57,
+    "h": 554558899,
+    "s": [
+     [
+      0,
+      57
+     ]
+    ]
+   }
+  ],
+  "John 15:15": [
+   {
+    "n": 189,
+    "h": 1967855286,
+    "s": [
+     [
+      0,
+      189
+     ]
+    ]
+   },
+   {
+    "n": 163,
+    "h": 3990847798,
+    "s": [
+     [
+      0,
+      163
+     ]
+    ]
+   },
+   {
+    "n": 216,
+    "h": 164060843,
+    "s": [
+     [
+      0,
+      216
+     ]
+    ]
+   }
+  ],
+  "John 15:18": [
+   {
+    "n": 68,
+    "h": 780905174,
+    "s": [
+     [
+      0,
+      68
+     ]
+    ]
+   },
+   {
+    "n": 74,
+    "h": 1497650201,
+    "s": [
+     [
+      0,
+      74
+     ]
+    ]
+   },
+   {
+    "n": 67,
+    "h": 1069617044,
+    "s": [
+     [
+      0,
+      67
+     ]
+    ]
+   }
+  ],
+  "John 15:19": [
+   {
+    "n": 163,
+    "h": 990798914,
+    "s": [
+     [
+      0,
+      163
+     ]
+    ]
+   },
+   {
+    "n": 135,
+    "h": 3072416669,
+    "s": [
+     [
+      0,
+      135
+     ]
+    ]
+   },
+   {
+    "n": 165,
+    "h": 2823174519,
+    "s": [
+     [
+      0,
+      165
+     ]
+    ]
+   }
+  ],
+  "John 15:20": [
+   {
+    "n": 195,
+    "h": 2434782714,
+    "s": [
+     [
+      0,
+      195
+     ]
+    ]
+   },
+   {
+    "n": 195,
+    "h": 2286106181,
+    "s": [
+     [
+      0,
+      195
+     ]
+    ]
+   },
+   {
+    "n": 214,
+    "h": 3643660389,
+    "s": [
+     [
+      0,
+      214
+     ]
+    ]
+   }
+  ],
+  "John 15:5": [
+   {
+    "n": 142,
+    "h": 2500722524,
+    "s": [
+     [
+      0,
+      142
+     ]
+    ]
+   },
+   {
+    "n": 125,
+    "h": 3624598022,
+    "s": [
+     [
+      0,
+      125
+     ]
+    ]
+   },
+   {
+    "n": 138,
+    "h": 1796687509,
+    "s": [
+     [
+      0,
+      138
+     ]
+    ]
+   }
+  ],
+  "John 16:13": [
+   {
+    "n": 203,
+    "h": 3149654551,
+    "s": [
+     [
+      0,
+      203
+     ]
+    ]
+   },
+   {
+    "n": 184,
+    "h": 4264858304,
+    "s": [
+     [
+      0,
+      184
+     ]
+    ]
+   },
+   {
+    "n": 227,
+    "h": 899691032,
+    "s": [
+     [
+      0,
+      227
+     ]
+    ]
+   }
+  ],
+  "John 16:22": [
+   {
+    "n": 126,
+    "h": 2518844872,
+    "s": [
+     [
+      0,
+      126
+     ]
+    ]
+   },
+   {
+    "n": 151,
+    "h": 1613445553,
+    "s": [
+     [
+      0,
+      151
+     ]
+    ]
+   },
+   {
+    "n": 144,
+    "h": 2558002441,
+    "s": [
+     [
+      0,
+      144
+     ]
+    ]
+   }
+  ],
+  "John 16:33": [
+   {
+    "n": 157,
+    "h": 968596295,
+    "s": [
+     [
+      0,
+      157
+     ]
+    ]
+   },
+   {
+    "n": 123,
+    "h": 3775394423,
+    "s": [
+     [
+      0,
+      123
+     ]
+    ]
+   },
+   {
+    "n": 141,
+    "h": 2732871105,
+    "s": [
+     [
+      0,
+      141
+     ]
+    ]
+   }
+  ],
+  "John 18:11": [
+   {
+    "n": 122,
+    "h": 550413285,
+    "s": [
+     [
+      28,
+      122
+     ]
+    ]
+   }
+  ],
+  "John 19:26": [
+   {
+    "n": 130,
+    "h": 182340756,
+    "s": [
+     [
+      108,
+      130
+     ]
+    ]
+   }
+  ],
+  "John 19:27": [
+   {
+    "n": 110,
+    "h": 2969334619,
+    "s": [
+     [
+      31,
+      49
+     ]
+    ]
+   }
+  ],
+  "John 20:27": [
+   {
+    "n": 162,
+    "h": 1580733813,
+    "s": [
+     [
+      25,
+      162
+     ]
+    ]
+   }
+  ],
+  "John 20:29": [
+   {
+    "n": 136,
+    "h": 4074259057,
+    "s": [
+     [
+      22,
+      136
+     ]
+    ]
+   }
+  ],
+  "John 21:15": [
+   {
+    "n": 199,
+    "h": 980143060,
+    "s": [
+     [
+      52,
+      104
+     ],
+     [
+      185,
+      199
+     ]
+    ]
+   }
+  ],
+  "John 21:16": [
+   {
+    "n": 170,
+    "h": 1216569819,
+    "s": [
+     [
+      39,
+      75
+     ],
+     [
+      156,
+      170
+     ]
+    ]
+   }
+  ],
+  "John 21:17": [
+   {
+    "n": 266,
+    "h": 3576831771,
+    "s": [
+     [
+      34,
+      70
+     ],
+     [
+      252,
+      266
+     ]
+    ]
+   }
+  ],
+  "John 2:16": [
+   {
+    "n": 112,
+    "h": 3743416554,
+    "s": [
+     [
+      36,
+      112
+     ]
+    ]
+   }
+  ],
+  "John 2:4": [
+   {
+    "n": 84,
+    "h": 522467057,
+    "s": [
+     [
+      22,
+      84
+     ]
+    ]
+   }
+  ],
+  "John 2:7": [
+   {
+    "n": 90,
+    "h": 2522008338,
+    "s": [
+     [
+      23,
+      53
+     ]
+    ]
+   }
+  ],
+  "John 2:8": [
+   {
+    "n": 96,
+    "h": 3196122759,
+    "s": [
+     [
+      24,
+      78
+     ]
+    ]
+   }
+  ],
+  "John 4:10": [
+   {
+    "n": 194,
+    "h": 4033723725,
+    "s": [
+     [
+      34,
+      194
+     ]
+    ]
+   }
+  ],
+  "John 4:7": [
+   {
+    "n": 86,
+    "h": 2575794247,
+    "s": [
+     [
+      69,
+      86
+     ]
+    ]
+   }
+  ],
+  "John 5:24": [
+   {
+    "n": 188,
+    "h": 3823434782,
+    "s": [
+     [
+      0,
+      188
+     ]
+    ]
+   },
+   {
+    "n": 154,
+    "h": 2547647746,
+    "s": [
+     [
+      0,
+      154
+     ]
+    ]
+   },
+   {
+    "n": 200,
+    "h": 1388840405,
+    "s": [
+     [
+      0,
+      200
+     ]
+    ]
+   }
+  ],
+  "John 6:37": [
+   {
+    "n": 101,
+    "h": 3321067846,
+    "s": [
+     [
+      0,
+      101
+     ]
+    ]
+   },
+   {
+    "n": 80,
+    "h": 484636606,
+    "s": [
+     [
+      0,
+      80
+     ]
+    ]
+   },
+   {
+    "n": 105,
+    "h": 4234770812,
+    "s": [
+     [
+      0,
+      105
+     ]
+    ]
+   }
+  ],
+  "John 7:24": [
+   {
+    "n": 68,
+    "h": 1556391991,
+    "s": [
+     [
+      0,
+      68
+     ]
+    ]
+   },
+   {
+    "n": 57,
+    "h": 441704137,
+    "s": [
+     [
+      0,
+      57
+     ]
+    ]
+   },
+   {
+    "n": 68,
+    "h": 519145630,
+    "s": [
+     [
+      0,
+      68
+     ]
+    ]
+   }
+  ],
+  "John 7:6": [
+   {
+    "n": 81,
+    "h": 542656529,
+    "s": [
+     [
+      27,
+      81
+     ]
+    ]
+   }
+  ],
+  "John 8:10": [
+   {
+    "n": 146,
+    "h": 3759688174,
+    "s": [
+     [
+      80,
+      146
+     ]
+    ]
+   }
+  ],
+  "John 8:11": [
+   {
+    "n": 96,
+    "h": 1115482763,
+    "s": [
+     [
+      49,
+      96
+     ]
+    ]
+   }
+  ],
+  "John 8:34": [
+   {
+    "n": 100,
+    "h": 1434849078,
+    "s": [
+     [
+      21,
+      100
+     ]
+    ]
+   }
+  ],
+  "John 8:35": [
+   {
+    "n": 76,
+    "h": 4066002358,
+    "s": [
+     [
+      0,
+      76
+     ]
+    ]
+   },
+   {
+    "n": 70,
+    "h": 2020166060,
+    "s": [
+     [
+      0,
+      70
+     ]
+    ]
+   },
+   {
+    "n": 73,
+    "h": 4182546917,
+    "s": [
+     [
+      0,
+      73
+     ]
+    ]
+   }
+  ],
+  "John 8:36": [
+   {
+    "n": 66,
+    "h": 499685010,
+    "s": [
+     [
+      0,
+      66
+     ]
+    ]
+   },
+   {
+    "n": 63,
+    "h": 2437854333,
+    "s": [
+     [
+      0,
+      63
+     ]
+    ]
+   },
+   {
+    "n": 56,
+    "h": 3340774865,
+    "s": [
+     [
+      0,
+      56
+     ]
+    ]
+   }
+  ],
+  "John 8:7": [
+   {
+    "n": 145,
+    "h": 3287812436,
+    "s": [
+     [
+      77,
+      145
+     ]
+    ]
+   }
+  ],
+  "Luke 10:33": [
+   {
+    "n": 107,
+    "h": 3489659780,
+    "s": [
+     [
+      0,
+      107
+     ]
+    ]
+   },
+   {
+    "n": 94,
+    "h": 952658242,
+    "s": [
+     [
+      0,
+      94
+     ]
+    ]
+   },
+   {
+    "n": 78,
+    "h": 1789082909,
+    "s": [
+     [
+      0,
+      78
+     ]
+    ]
+   }
+  ],
+  "Luke 10:34": [
+   {
+    "n": 145,
+    "h": 3333167202,
+    "s": [
+     [
+      0,
+      145
+     ]
+    ]
+   },
+   {
+    "n": 126,
+    "h": 4212755421,
+    "s": [
+     [
+      0,
+      126
+     ]
+    ]
+   },
+   {
+    "n": 139,
+    "h": 1269003664,
+    "s": [
+     [
+      0,
+      139
+     ]
+    ]
+   }
+  ],
+  "Luke 10:35": [
+   {
+    "n": 195,
+    "h": 1972939776,
+    "s": [
+     [
+      0,
+      195
+     ]
+    ]
+   },
+   {
+    "n": 145,
+    "h": 4080025666,
+    "s": [
+     [
+      0,
+      145
+     ]
+    ]
+   },
+   {
+    "n": 190,
+    "h": 809771126,
+    "s": [
+     [
+      0,
+      190
+     ]
+    ]
+   }
+  ],
+  "Luke 10:36": [
+   {
+    "n": 92,
+    "h": 590115724,
+    "s": [
+     [
+      0,
+      92
+     ]
+    ]
+   },
+   {
+    "n": 100,
+    "h": 2040650312,
+    "s": [
+     [
+      0,
+      100
+     ]
+    ]
+   },
+   {
+    "n": 107,
+    "h": 256890979,
+    "s": [
+     [
+      0,
+      107
+     ]
+    ]
+   }
+  ],
+  "Luke 10:37": [
+   {
+    "n": 93,
+    "h": 2004214030,
+    "s": [
+     [
+      68,
+      93
+     ]
+    ]
+   }
+  ],
+  "Luke 10:41": [
+   {
+    "n": 102,
+    "h": 1287091146,
+    "s": [
+     [
+      38,
+      102
+     ]
+    ]
+   }
+  ],
+  "Luke 10:42": [
+   {
+    "n": 102,
+    "h": 283856330,
+    "s": [
+     [
+      0,
+      102
+     ]
+    ]
+   },
+   {
+    "n": 89,
+    "h": 3877008697,
+    "s": [
+     [
+      0,
+      89
+     ]
+    ]
+   },
+   {
+    "n": 91,
+    "h": 3339450635,
+    "s": [
+     [
+      0,
+      91
+     ]
+    ]
+   }
+  ],
+  "Luke 12:15": [
+   {
+    "n": 145,
+    "h": 2012177756,
+    "s": [
+     [
+      23,
+      145
+     ]
+    ]
+   }
+  ],
+  "Luke 12:16": [
+   {
+    "n": 101,
+    "h": 1933638702,
+    "s": [
+     [
+      42,
+      101
+     ]
+    ]
+   }
+  ],
+  "Luke 12:17": [
+   {
+    "n": 105,
+    "h": 1411054963,
+    "s": [
+     [
+      0,
+      105
+     ]
+    ]
+   },
+   {
+    "n": 88,
+    "h": 1758224586,
+    "s": [
+     [
+      0,
+      88
+     ]
+    ]
+   },
+   {
+    "n": 110,
+    "h": 3249499364,
+    "s": [
+     [
+      0,
+      110
+     ]
+    ]
+   }
+  ],
+  "Luke 12:18": [
+   {
+    "n": 126,
+    "h": 3227798859,
+    "s": [
+     [
+      0,
+      126
+     ]
+    ]
+   },
+   {
+    "n": 113,
+    "h": 411129126,
+    "s": [
+     [
+      0,
+      113
+     ]
+    ]
+   },
+   {
+    "n": 151,
+    "h": 1230259332,
+    "s": [
+     [
+      0,
+      151
+     ]
+    ]
+   }
+  ],
+  "Luke 12:19": [
+   {
+    "n": 120,
+    "h": 3681276918,
+    "s": [
+     [
+      0,
+      120
+     ]
+    ]
+   },
+   {
+    "n": 106,
+    "h": 4083287284,
+    "s": [
+     [
+      0,
+      106
+     ]
+    ]
+   },
+   {
+    "n": 134,
+    "h": 1462224784,
+    "s": [
+     [
+      0,
+      134
+     ]
+    ]
+   }
+  ],
+  "Luke 12:20": [
+   {
+    "n": 140,
+    "h": 2947092789,
+    "s": [
+     [
+      0,
+      140
+     ]
+    ]
+   },
+   {
+    "n": 97,
+    "h": 2865846470,
+    "s": [
+     [
+      0,
+      97
+     ]
+    ]
+   },
+   {
+    "n": 126,
+    "h": 1002584105,
+    "s": [
+     [
+      0,
+      126
+     ]
+    ]
+   }
+  ],
+  "Luke 12:21": [
+   {
+    "n": 73,
+    "h": 1367623960,
+    "s": [
+     [
+      0,
+      73
+     ]
+    ]
+   },
+   {
+    "n": 56,
+    "h": 2947408302,
+    "s": [
+     [
+      0,
+      56
+     ]
+    ]
+   },
+   {
+    "n": 67,
+    "h": 2513938624,
+    "s": [
+     [
+      0,
+      67
+     ]
+    ]
+   }
+  ],
+  "Luke 12:32": [
+   {
+    "n": 86,
+    "h": 1452268818,
+    "s": [
+     [
+      0,
+      86
+     ]
+    ]
+   },
+   {
+    "n": 69,
+    "h": 4101129235,
+    "s": [
+     [
+      0,
+      69
+     ]
+    ]
+   },
+   {
+    "n": 100,
+    "h": 313225041,
+    "s": [
+     [
+      0,
+      100
+     ]
+    ]
+   }
+  ],
+  "Luke 12:8": [
+   {
+    "n": 123,
+    "h": 1632031528,
+    "s": [
+     [
+      0,
+      123
+     ]
+    ]
+   },
+   {
+    "n": 137,
+    "h": 1556049673,
+    "s": [
+     [
+      0,
+      137
+     ]
+    ]
+   },
+   {
+    "n": 119,
+    "h": 3969618324,
+    "s": [
+     [
+      0,
+      119
+     ]
+    ]
+   }
+  ],
+  "Luke 14:28": [
+   {
+    "n": 133,
+    "h": 802391995,
+    "s": [
+     [
+      0,
+      133
+     ]
+    ]
+   },
+   {
+    "n": 133,
+    "h": 3953532079,
+    "s": [
+     [
+      0,
+      133
+     ]
+    ]
+   },
+   {
+    "n": 131,
+    "h": 2067065624,
+    "s": [
+     [
+      0,
+      131
+     ]
+    ]
+   }
+  ],
+  "Luke 14:29": [
+   {
+    "n": 114,
+    "h": 4175346637,
+    "s": [
+     [
+      0,
+      114
+     ]
+    ]
+   },
+   {
+    "n": 125,
+    "h": 848875500,
+    "s": [
+     [
+      0,
+      125
+     ]
+    ]
+   },
+   {
+    "n": 116,
+    "h": 714815851,
+    "s": [
+     [
+      0,
+      116
+     ]
+    ]
+   }
+  ],
+  "Luke 14:30": [
+   {
+    "n": 60,
+    "h": 2898537585,
+    "s": [
+     [
+      0,
+      60
+     ]
+    ]
+   },
+   {
+    "n": 59,
+    "h": 1874956939,
+    "s": [
+     [
+      0,
+      59
+     ]
+    ]
+   },
+   {
+    "n": 72,
+    "h": 2327597408,
+    "s": [
+     [
+      0,
+      72
+     ]
+    ]
+   }
+  ],
+  "Luke 15:20": [
+   {
+    "n": 161,
+    "h": 659863143,
+    "s": [
+     [
+      0,
+      161
+     ]
+    ]
+   },
+   {
+    "n": 151,
+    "h": 2649126811,
+    "s": [
+     [
+      0,
+      151
+     ]
+    ]
+   },
+   {
+    "n": 174,
+    "h": 388940854,
+    "s": [
+     [
+      0,
+      174
+     ]
+    ]
+   }
+  ],
+  "Luke 15:21": [
+   {
+    "n": 126,
+    "h": 1642092094,
+    "s": [
+     [
+      0,
+      126
+     ]
+    ]
+   },
+   {
+    "n": 107,
+    "h": 95000876,
+    "s": [
+     [
+      0,
+      107
+     ]
+    ]
+   },
+   {
+    "n": 142,
+    "h": 1930287557,
+    "s": [
+     [
+      0,
+      142
+     ]
+    ]
+   }
+  ],
+  "Luke 15:22": [
+   {
+    "n": 133,
+    "h": 3755853847,
+    "s": [
+     [
+      0,
+      133
+     ]
+    ]
+   },
+   {
+    "n": 125,
+    "h": 3445355474,
+    "s": [
+     [
+      0,
+      125
+     ]
+    ]
+   },
+   {
+    "n": 162,
+    "h": 2757119602,
+    "s": [
+     [
+      0,
+      162
+     ]
+    ]
+   }
+  ],
+  "Luke 15:23": [
+   {
+    "n": 76,
+    "h": 1912991219,
+    "s": [
+     [
+      0,
+      76
+     ]
+    ]
+   },
+   {
+    "n": 66,
+    "h": 2162106100,
+    "s": [
+     [
+      0,
+      66
+     ]
+    ]
+   },
+   {
+    "n": 87,
+    "h": 3837594577,
+    "s": [
+     [
+      0,
+      87
+     ]
+    ]
+   }
+  ],
+  "Luke 15:24": [
+   {
+    "n": 100,
+    "h": 4005856954,
+    "s": [
+     [
+      0,
+      100
+     ]
+    ]
+   },
+   {
+    "n": 105,
+    "h": 4278819209,
+    "s": [
+     [
+      0,
+      105
+     ]
+    ]
+   },
+   {
+    "n": 140,
+    "h": 3173983049,
+    "s": [
+     [
+      0,
+      140
+     ]
+    ]
+   }
+  ],
+  "Luke 15:31": [
+   {
+    "n": 79,
+    "h": 2250973767,
+    "s": [
+     [
+      0,
+      79
+     ]
+    ]
+   },
+   {
+    "n": 81,
+    "h": 2961366723,
+    "s": [
+     [
+      0,
+      81
+     ]
+    ]
+   },
+   {
+    "n": 98,
+    "h": 2082659208,
+    "s": [
+     [
+      0,
+      98
+     ]
+    ]
+   }
+  ],
+  "Luke 15:32": [
+   {
+    "n": 130,
+    "h": 3893283288,
+    "s": [
+     [
+      0,
+      130
+     ]
+    ]
+   },
+   {
+    "n": 123,
+    "h": 1599456707,
+    "s": [
+     [
+      0,
+      123
+     ]
+    ]
+   },
+   {
+    "n": 153,
+    "h": 3094187804,
+    "s": [
+     [
+      0,
+      153
+     ]
+    ]
+   }
+  ],
+  "Luke 16:10": [
+   {
+    "n": 127,
+    "h": 1573551729,
+    "s": [
+     [
+      0,
+      127
+     ]
+    ]
+   },
+   {
+    "n": 123,
+    "h": 2708002378,
+    "s": [
+     [
+      0,
+      123
+     ]
+    ]
+   },
+   {
+    "n": 123,
+    "h": 743438825,
+    "s": [
+     [
+      0,
+      123
+     ]
+    ]
+   }
+  ],
+  "Luke 18:6": [
+   {
+    "n": 52,
+    "h": 3975920555,
+    "s": [
+     [
+      19,
+      52
+     ]
+    ]
+   }
+  ],
+  "Luke 18:7": [
+   {
+    "n": 104,
+    "h": 1744807459,
+    "s": [
+     [
+      0,
+      104
+     ]
+    ]
+   },
+   {
+    "n": 108,
+    "h": 428970026,
+    "s": [
+     [
+      0,
+      108
+     ]
+    ]
+   },
+   {
+    "n": 123,
+    "h": 1660778023,
+    "s": [
+     [
+      0,
+      123
+     ]
+    ]
+   }
+  ],
+  "Luke 18:8": [
+   {
+    "n": 120,
+    "h": 99320274,
+    "s": [
+     [
+      0,
+      120
+     ]
+    ]
+   },
+   {
+    "n": 101,
+    "h": 3856395542,
+    "s": [
+     [
+      0,
+      101
+     ]
+    ]
+   },
+   {
+    "n": 147,
+    "h": 7150344,
+    "s": [
+     [
+      0,
+      147
+     ]
+    ]
+   }
+  ],
+  "Luke 19:10": [
+   {
+    "n": 67,
+    "h": 2932324761,
+    "s": [
+     [
+      0,
+      67
+     ]
+    ]
+   },
+   {
+    "n": 75,
+    "h": 1209704734,
+    "s": [
+     [
+      0,
+      75
+     ]
+    ]
+   },
+   {
+    "n": 85,
+    "h": 3244524400,
+    "s": [
+     [
+      0,
+      85
+     ]
+    ]
+   }
+  ],
+  "Luke 19:5": [
+   {
+    "n": 155,
+    "h": 454129206,
+    "s": [
+     [
+      80,
+      155
+     ]
+    ]
+   }
+  ],
+  "Luke 19:9": [
+   {
+    "n": 108,
+    "h": 2099432153,
+    "s": [
+     [
+      25,
+      108
+     ]
+    ]
+   }
+  ],
+  "Luke 22:42": [
+   {
+    "n": 106,
+    "h": 1728884479,
+    "s": [
+     [
+      8,
+      106
+     ]
+    ]
+   }
+  ],
+  "Luke 22:51": [
+   {
+    "n": 88,
+    "h": 3934826737,
+    "s": [
+     [
+      29,
+      48
+     ]
+    ]
+   }
+  ],
+  "Luke 23:34": [
+   {
+    "n": 114,
+    "h": 3151351303,
+    "s": [
+     [
+      17,
+      70
+     ]
+    ]
+   }
+  ],
+  "Luke 23:43": [
+   {
+    "n": 90,
+    "h": 149990836,
+    "s": [
+     [
+      25,
+      90
+     ]
+    ]
+   }
+  ],
+  "Luke 23:46": [
+   {
+    "n": 140,
+    "h": 1260312055,
+    "s": [
+     [
+      53,
+      96
+     ]
+    ]
+   }
+  ],
+  "Luke 24:17": [
+   {
+    "n": 116,
+    "h": 1351014212,
+    "s": [
+     [
+      23,
+      116
+     ]
+    ]
+   }
+  ],
+  "Luke 24:38": [
+   {
+    "n": 85,
+    "h": 3491100986,
+    "s": [
+     [
+      23,
+      85
+     ]
+    ]
+   }
+  ],
+  "Luke 24:39": [
+   {
+    "n": 127,
+    "h": 2899891296,
+    "s": [
+     [
+      0,
+      127
+     ]
+    ]
+   },
+   {
+    "n": 126,
+    "h": 572402651,
+    "s": [
+     [
+      0,
+      126
+     ]
+    ]
+   },
+   {
+    "n": 149,
+    "h": 3313235590,
+    "s": [
+     [
+      0,
+      149
+     ]
+    ]
+   }
+  ],
+  "Luke 4:18": [
+   {
+    "n": 257,
+    "h": 2786207315,
+    "s": [
+     [
+      0,
+      257
+     ]
+    ]
+   },
+   {
+    "n": 255,
+    "h": 4206116024,
+    "s": [
+     [
+      0,
+      255
+     ]
+    ]
+   },
+   {
+    "n": 302,
+    "h": 3827222986,
+    "s": [
+     [
+      0,
+      302
+     ]
+    ]
+   }
+  ],
+  "Luke 5:31": [
+   {
+    "n": 101,
+    "h": 2692929834,
+    "s": [
+     [
+      36,
+      101
+     ]
+    ]
+   }
+  ],
+  "Luke 5:32": [
+   {
+    "n": 60,
+    "h": 1642018574,
+    "s": [
+     [
+      0,
+      60
+     ]
+    ]
+   },
+   {
+    "n": 63,
+    "h": 41407878,
+    "s": [
+     [
+      0,
+      63
+     ]
+    ]
+   },
+   {
+    "n": 71,
+    "h": 992440504,
+    "s": [
+     [
+      0,
+      71
+     ]
+    ]
+   }
+  ],
+  "Luke 6:27": [
+   {
+    "n": 81,
+    "h": 3784443670,
+    "s": [
+     [
+      0,
+      81
+     ]
+    ]
+   },
+   {
+    "n": 94,
+    "h": 1560079390,
+    "s": [
+     [
+      0,
+      94
+     ]
+    ]
+   },
+   {
+    "n": 88,
+    "h": 2604209333,
+    "s": [
+     [
+      0,
+      88
+     ]
+    ]
+   }
+  ],
+  "Luke 6:28": [
+   {
+    "n": 72,
+    "h": 340988399,
+    "s": [
+     [
+      0,
+      72
+     ]
+    ]
+   },
+   {
+    "n": 64,
+    "h": 2706729059,
+    "s": [
+     [
+      0,
+      64
+     ]
+    ]
+   },
+   {
+    "n": 70,
+    "h": 1381985278,
+    "s": [
+     [
+      0,
+      70
+     ]
+    ]
+   }
+  ],
+  "Luke 6:31": [
+   {
+    "n": 71,
+    "h": 483036266,
+    "s": [
+     [
+      0,
+      71
+     ]
+    ]
+   },
+   {
+    "n": 71,
+    "h": 1669886053,
+    "s": [
+     [
+      0,
+      71
+     ]
+    ]
+   },
+   {
+    "n": 81,
+    "h": 38694020,
+    "s": [
+     [
+      0,
+      81
+     ]
+    ]
+   }
+  ],
+  "Luke 6:32": [
+   {
+    "n": 99,
+    "h": 1601140958,
+    "s": [
+     [
+      0,
+      99
+     ]
+    ]
+   },
+   {
+    "n": 111,
+    "h": 2419569642,
+    "s": [
+     [
+      0,
+      111
+     ]
+    ]
+   },
+   {
+    "n": 108,
+    "h": 285222907,
+    "s": [
+     [
+      0,
+      108
+     ]
+    ]
+   }
+  ],
+  "Luke 6:33": [
+   {
+    "n": 102,
+    "h": 2974458262,
+    "s": [
+     [
+      0,
+      102
+     ]
+    ]
+   },
+   {
+    "n": 112,
+    "h": 1305894440,
+    "s": [
+     [
+      0,
+      112
+     ]
+    ]
+   },
+   {
+    "n": 97,
+    "h": 934403537,
+    "s": [
+     [
+      0,
+      97
+     ]
+    ]
+   }
+  ],
+  "Luke 6:34": [
+   {
+    "n": 130,
+    "h": 2441215405,
+    "s": [
+     [
+      0,
+      130
+     ]
+    ]
+   },
+   {
+    "n": 157,
+    "h": 561363545,
+    "s": [
+     [
+      0,
+      157
+     ]
+    ]
+   },
+   {
+    "n": 157,
+    "h": 2625406320,
+    "s": [
+     [
+      0,
+      157
+     ]
+    ]
+   }
+  ],
+  "Luke 6:35": [
+   {
+    "n": 203,
+    "h": 1699792839,
+    "s": [
+     [
+      0,
+      203
+     ]
+    ]
+   },
+   {
+    "n": 197,
+    "h": 1505425172,
+    "s": [
+     [
+      0,
+      197
+     ]
+    ]
+   },
+   {
+    "n": 203,
+    "h": 1483418708,
+    "s": [
+     [
+      0,
+      203
+     ]
+    ]
+   }
+  ],
+  "Luke 6:36": [
+   {
+    "n": 58,
+    "h": 641644076,
+    "s": [
+     [
+      0,
+      58
+     ]
+    ]
+   },
+   {
+    "n": 71,
+    "h": 74100819,
+    "s": [
+     [
+      0,
+      71
+     ]
+    ]
+   },
+   {
+    "n": 58,
+    "h": 4122264544,
+    "s": [
+     [
+      0,
+      58
+     ]
+    ]
+   }
+  ],
+  "Luke 6:37": [
+   {
+    "n": 117,
+    "h": 1669945652,
+    "s": [
+     [
+      0,
+      117
+     ]
+    ]
+   },
+   {
+    "n": 103,
+    "h": 3291674740,
+    "s": [
+     [
+      0,
+      103
+     ]
+    ]
+   },
+   {
+    "n": 130,
+    "h": 151272390,
+    "s": [
+     [
+      0,
+      130
+     ]
+    ]
+   }
+  ],
+  "Luke 6:38": [
+   {
+    "n": 217,
+    "h": 1347880029,
+    "s": [
+     [
+      0,
+      217
+     ]
+    ]
+   },
+   {
+    "n": 153,
+    "h": 1303427287,
+    "s": [
+     [
+      0,
+      153
+     ]
+    ]
+   },
+   {
+    "n": 181,
+    "h": 1238887762,
+    "s": [
+     [
+      0,
+      181
+     ]
+    ]
+   }
+  ],
+  "Luke 7:13": [
+   {
+    "n": 81,
+    "h": 1593359511,
+    "s": [
+     [
+      72,
+      81
+     ]
+    ]
+   }
+  ],
+  "Luke 7:14": [
+   {
+    "n": 117,
+    "h": 2497742229,
+    "s": [
+     [
+      83,
+      117
+     ]
+    ]
+   }
+  ],
+  "Luke 7:47": [
+   {
+    "n": 142,
+    "h": 2989296545,
+    "s": [
+     [
+      0,
+      142
+     ]
+    ]
+   },
+   {
+    "n": 114,
+    "h": 2150131908,
+    "s": [
+     [
+      0,
+      114
+     ]
+    ]
+   },
+   {
+    "n": 133,
+    "h": 1452217331,
+    "s": [
+     [
+      0,
+      133
+     ]
+    ]
+   }
+  ],
+  "Luke 7:48": [
+   {
+    "n": 44,
+    "h": 2301327881,
+    "s": [
+     [
+      22,
+      44
+     ]
+    ]
+   }
+  ],
+  "Luke 7:50": [
+   {
+    "n": 65,
+    "h": 464404107,
+    "s": [
+     [
+      26,
+      65
+     ]
+    ]
+   }
+  ],
+  "Luke 8:17": [
+   {
+    "n": 119,
+    "h": 1104091385,
+    "s": [
+     [
+      0,
+      119
+     ]
+    ]
+   },
+   {
+    "n": 125,
+    "h": 974680377,
+    "s": [
+     [
+      0,
+      125
+     ]
+    ]
+   },
+   {
+    "n": 119,
+    "h": 74318797,
+    "s": [
+     [
+      0,
+      119
+     ]
+    ]
+   }
+  ],
+  "Luke 9:55": [
+   {
+    "n": 87,
+    "h": 3067647350,
+    "s": [
+     [
+      43,
+      87
+     ]
+    ]
+   }
+  ],
+  "Luke 9:56": [
+   {
+    "n": 106,
+    "h": 1537679231,
+    "s": [
+     [
+      0,
+      72
+     ]
+    ]
+   }
+  ],
+  "Mark 10:51": [
+   {
+    "n": 146,
+    "h": 296473107,
+    "s": [
+     [
+      38,
+      80
+     ]
+    ]
+   }
+  ],
+  "Mark 10:52": [
+   {
+    "n": 138,
+    "h": 3325973762,
+    "s": [
+     [
+      25,
+      68
+     ]
+    ]
+   }
+  ],
+  "Mark 11:22": [
+   {
+    "n": 55,
+    "h": 1094218182,
+    "s": [
+     [
+      37,
+      55
+     ]
+    ]
+   }
+  ],
+  "Mark 11:23": [
+   {
+    "n": 259,
+    "h": 4135978430,
+    "s": [
+     [
+      0,
+      259
+     ]
+    ]
+   },
+   {
+    "n": 189,
+    "h": 3466638885,
+    "s": [
+     [
+      0,
+      189
+     ]
+    ]
+   },
+   {
+    "n": 217,
+    "h": 777445722,
+    "s": [
+     [
+      0,
+      217
+     ]
+    ]
+   }
+  ],
+  "Mark 11:24": [
+   {
+    "n": 122,
+    "h": 4041330322,
+    "s": [
+     [
+      0,
+      117
+     ]
+    ]
+   }
+  ],
+  "Mark 11:25": [
+   {
+    "n": 139,
+    "h": 3824104515,
+    "s": [
+     [
+      0,
+      139
+     ]
+    ]
+   },
+   {
+    "n": 162,
+    "h": 1876699668,
+    "s": [
+     [
+      0,
+      162
+     ]
+    ]
+   },
+   {
+    "n": 135,
+    "h": 1647038483,
+    "s": [
+     [
+      0,
+      135
+     ]
+    ]
+   }
+  ],
+  "Mark 2:17": [
+   {
+    "n": 176,
+    "h": 960168652,
+    "s": [
+     [
+      41,
+      176
+     ]
+    ]
+   }
+  ],
+  "Mark 3:33": [
+   {
+    "n": 63,
+    "h": 3425242666,
+    "s": [
+     [
+      30,
+      63
+     ]
+    ]
+   }
+  ],
+  "Mark 3:34": [
+   {
+    "n": 98,
+    "h": 3172174290,
+    "s": [
+     [
+      65,
+      98
+     ]
+    ]
+   }
+  ],
+  "Mark 3:35": [
+   {
+    "n": 90,
+    "h": 4078963161,
+    "s": [
+     [
+      0,
+      90
+     ]
+    ]
+   },
+   {
+    "n": 96,
+    "h": 4091362589,
+    "s": [
+     [
+      0,
+      96
+     ]
+    ]
+   },
+   {
+    "n": 85,
+    "h": 497283097,
+    "s": [
+     [
+      0,
+      85
+     ]
+    ]
+   }
+  ],
+  "Mark 4:39": [
+   {
+    "n": 124,
+    "h": 459778410,
+    "s": [
+     [
+      59,
+      75
+     ]
+    ]
+   }
+  ],
+  "Mark 4:40": [
+   {
+    "n": 78,
+    "h": 2235311616,
+    "s": [
+     [
+      23,
+      78
+     ]
+    ]
+   }
+  ],
+  "Mark 5:19": [
+   {
+    "n": 168,
+    "h": 2915245998,
+    "s": [
+     [
+      52,
+      168
+     ]
+    ]
+   }
+  ],
+  "Mark 5:34": [
+   {
+    "n": 104,
+    "h": 154344968,
+    "s": [
+     [
+      22,
+      104
+     ]
+    ]
+   }
+  ],
+  "Mark 6:31": [
+   {
+    "n": 167,
+    "h": 3069838102,
+    "s": [
+     [
+      23,
+      86
+     ]
+    ]
+   }
+  ],
+  "Mark 8:36": [
+   {
+    "n": 88,
+    "h": 497539471,
+    "s": [
+     [
+      0,
+      88
+     ]
+    ]
+   },
+   {
+    "n": 80,
+    "h": 3659691856,
+    "s": [
+     [
+      0,
+      80
+     ]
+    ]
+   },
+   {
+    "n": 93,
+    "h": 1703525727,
+    "s": [
+     [
+      0,
+      93
+     ]
+    ]
+   }
+  ],
+  "Mark 9:23": [
+   {
+    "n": 90,
+    "h": 1365421555,
+    "s": [
+     [
+      21,
+      90
+     ]
+    ]
+   }
+  ],
+  "Mark 9:25": [
+   {
+    "n": 185,
+    "h": 3281077097,
+    "s": [
+     [
+      99,
+      185
+     ]
+    ]
+   }
+  ],
+  "Mark 9:33": [
+   {
+    "n": 121,
+    "h": 2729747837,
+    "s": [
+     [
+      64,
+      121
+     ]
+    ]
+   }
+  ],
+  "Mark 9:35": [
+   {
+    "n": 142,
+    "h": 4292411408,
+    "s": [
+     [
+      61,
+      142
+     ]
+    ]
+   }
+  ],
+  "Matthew 10:34": [
+   {
+    "n": 87,
+    "h": 3996085104,
+    "s": [
+     [
+      0,
+      87
+     ]
+    ]
+   },
+   {
+    "n": 95,
+    "h": 897045431,
+    "s": [
+     [
+      0,
+      95
+     ]
+    ]
+   },
+   {
+    "n": 141,
+    "h": 3374446501,
+    "s": [
+     [
+      0,
+      141
+     ]
+    ]
+   }
+  ],
+  "Matthew 10:35": [
+   {
+    "n": 146,
+    "h": 3783295250,
+    "s": [
+     [
+      0,
+      146
+     ]
+    ]
+   },
+   {
+    "n": 127,
+    "h": 3251321566,
+    "s": [
+     [
+      0,
+      127
+     ]
+    ]
+   },
+   {
+    "n": 152,
+    "h": 2353238861,
+    "s": [
+     [
+      0,
+      152
+     ]
+    ]
+   }
+  ],
+  "Matthew 10:36": [
+   {
+    "n": 52,
+    "h": 2316029013,
+    "s": [
+     [
+      0,
+      52
+     ]
+    ]
+   },
+   {
+    "n": 47,
+    "h": 2003633483,
+    "s": [
+     [
+      0,
+      47
+     ]
+    ]
+   },
+   {
+    "n": 63,
+    "h": 263458150,
+    "s": [
+     [
+      0,
+      63
+     ]
+    ]
+   }
+  ],
+  "Matthew 10:37": [
+   {
+    "n": 134,
+    "h": 2950449269,
+    "s": [
+     [
+      0,
+      134
+     ]
+    ]
+   },
+   {
+    "n": 115,
+    "h": 2157119150,
+    "s": [
+     [
+      0,
+      115
+     ]
+    ]
+   },
+   {
+    "n": 141,
+    "h": 532638311,
+    "s": [
+     [
+      0,
+      141
+     ]
+    ]
+   }
+  ],
+  "Matthew 11:28": [
+   {
+    "n": 79,
+    "h": 3284859176,
+    "s": [
+     [
+      0,
+      79
+     ]
+    ]
+   },
+   {
+    "n": 80,
+    "h": 2465172480,
+    "s": [
+     [
+      0,
+      80
+     ]
+    ]
+   },
+   {
+    "n": 83,
+    "h": 621329902,
+    "s": [
+     [
+      0,
+      83
+     ]
+    ]
+   }
+  ],
+  "Matthew 11:29": [
+   {
+    "n": 113,
+    "h": 579666650,
+    "s": [
+     [
+      0,
+      113
+     ]
+    ]
+   },
+   {
+    "n": 126,
+    "h": 2219294926,
+    "s": [
+     [
+      0,
+      126
+     ]
+    ]
+   },
+   {
+    "n": 136,
+    "h": 184137972,
+    "s": [
+     [
+      0,
+      136
+     ]
+    ]
+   }
+  ],
+  "Matthew 11:30": [
+   {
+    "n": 44,
+    "h": 3632515429,
+    "s": [
+     [
+      0,
+      44
+     ]
+    ]
+   },
+   {
+    "n": 43,
+    "h": 1835787009,
+    "s": [
+     [
+      0,
+      43
+     ]
+    ]
+   },
+   {
+    "n": 52,
+    "h": 2917747561,
+    "s": [
+     [
+      0,
+      52
+     ]
+    ]
+   }
+  ],
+  "Matthew 14:18": [
+   {
+    "n": 33,
+    "h": 1750946248,
+    "s": [
+     [
+      9,
+      33
+     ]
+    ]
+   }
+  ],
+  "Matthew 14:27": [
+   {
+    "n": 88,
+    "h": 2436322879,
+    "s": [
+     [
+      47,
+      88
+     ]
+    ]
+   }
+  ],
+  "Matthew 14:31": [
+   {
+    "n": 134,
+    "h": 1870505509,
+    "s": [
+     [
+      83,
+      134
+     ]
+    ]
+   }
+  ],
+  "Matthew 15:32": [
+   {
+    "n": 225,
+    "h": 2924056976,
+    "s": [
+     [
+      52,
+      225
+     ]
+    ]
+   }
+  ],
+  "Matthew 17:20": [
+   {
+    "n": 249,
+    "h": 1812410646,
+    "s": [
+     [
+      26,
+      249
+     ]
+    ]
+   }
+  ],
+  "Matthew 17:25": [
+   {
+    "n": 205,
+    "h": 2945362204,
+    "s": [
+     [
+      81,
+      205
+     ]
+    ]
+   }
+  ],
+  "Matthew 17:26": [
+   {
+    "n": 85,
+    "h": 2084707078,
+    "s": [
+     [
+      58,
+      85
+     ]
+    ]
+   }
+  ],
+  "Matthew 17:27": [
+   {
+    "n": 243,
+    "h": 1855669883,
+    "s": [
+     [
+      0,
+      243
+     ]
+    ]
+   },
+   {
+    "n": 177,
+    "h": 1923018978,
+    "s": [
+     [
+      0,
+      177
+     ]
+    ]
+   },
+   {
+    "n": 232,
+    "h": 1225707031,
+    "s": [
+     [
+      0,
+      232
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:15": [
+   {
+    "n": 159,
+    "h": 1559121745,
+    "s": [
+     [
+      0,
+      159
+     ]
+    ]
+   },
+   {
+    "n": 118,
+    "h": 3712626858,
+    "s": [
+     [
+      0,
+      118
+     ]
+    ]
+   },
+   {
+    "n": 137,
+    "h": 1790963215,
+    "s": [
+     [
+      0,
+      137
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:16": [
+   {
+    "n": 141,
+    "h": 3434879401,
+    "s": [
+     [
+      0,
+      141
+     ]
+    ]
+   },
+   {
+    "n": 111,
+    "h": 4233302231,
+    "s": [
+     [
+      0,
+      111
+     ]
+    ]
+   },
+   {
+    "n": 119,
+    "h": 28302178,
+    "s": [
+     [
+      0,
+      119
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:17": [
+   {
+    "n": 155,
+    "h": 1075320689,
+    "s": [
+     [
+      0,
+      155
+     ]
+    ]
+   },
+   {
+    "n": 99,
+    "h": 1783115408,
+    "s": [
+     [
+      0,
+      99
+     ]
+    ]
+   },
+   {
+    "n": 114,
+    "h": 2662413817,
+    "s": [
+     [
+      0,
+      114
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:22": [
+   {
+    "n": 93,
+    "h": 2845798806,
+    "s": [
+     [
+      22,
+      93
+     ]
+    ]
+   }
+  ],
+  "Matthew 19:4": [
+   {
+    "n": 121,
+    "h": 286765275,
+    "s": [
+     [
+      36,
+      121
+     ]
+    ]
+   }
+  ],
+  "Matthew 19:5": [
+   {
+    "n": 126,
+    "h": 3203543460,
+    "s": [
+     [
+      0,
+      126
+     ]
+    ]
+   },
+   {
+    "n": 99,
+    "h": 2115032285,
+    "s": [
+     [
+      0,
+      99
+     ]
+    ]
+   },
+   {
+    "n": 128,
+    "h": 3401076922,
+    "s": [
+     [
+      0,
+      128
+     ]
+    ]
+   }
+  ],
+  "Matthew 19:6": [
+   {
+    "n": 114,
+    "h": 4073652729,
+    "s": [
+     [
+      0,
+      114
+     ]
+    ]
+   },
+   {
+    "n": 97,
+    "h": 1673183830,
+    "s": [
+     [
+      0,
+      97
+     ]
+    ]
+   },
+   {
+    "n": 117,
+    "h": 3493130757,
+    "s": [
+     [
+      0,
+      117
+     ]
+    ]
+   }
+  ],
+  "Matthew 22:21": [
+   {
+    "n": 153,
+    "h": 3810284332,
+    "s": [
+     [
+      54,
+      153
+     ]
+    ]
+   }
+  ],
+  "Matthew 23:11": [
+   {
+    "n": 56,
+    "h": 4192393355,
+    "s": [
+     [
+      0,
+      56
+     ]
+    ]
+   },
+   {
+    "n": 51,
+    "h": 2416346453,
+    "s": [
+     [
+      0,
+      51
+     ]
+    ]
+   },
+   {
+    "n": 44,
+    "h": 713361197,
+    "s": [
+     [
+      0,
+      44
+     ]
+    ]
+   }
+  ],
+  "Matthew 23:12": [
+   {
+    "n": 101,
+    "h": 3088061632,
+    "s": [
+     [
+      0,
+      101
+     ]
+    ]
+   },
+   {
+    "n": 82,
+    "h": 2584907257,
+    "s": [
+     [
+      0,
+      82
+     ]
+    ]
+   },
+   {
+    "n": 98,
+    "h": 3715344374,
+    "s": [
+     [
+      0,
+      98
+     ]
+    ]
+   }
+  ],
+  "Matthew 25:35": [
+   {
+    "n": 116,
+    "h": 3769959944,
+    "s": [
+     [
+      0,
+      116
+     ]
+    ]
+   },
+   {
+    "n": 106,
+    "h": 1660190159,
+    "s": [
+     [
+      0,
+      106
+     ]
+    ]
+   },
+   {
+    "n": 162,
+    "h": 2692756729,
+    "s": [
+     [
+      0,
+      162
+     ]
+    ]
+   }
+  ],
+  "Matthew 25:36": [
+   {
+    "n": 94,
+    "h": 4187374670,
+    "s": [
+     [
+      0,
+      94
+     ]
+    ]
+   },
+   {
+    "n": 91,
+    "h": 3854030868,
+    "s": [
+     [
+      0,
+      91
+     ]
+    ]
+   },
+   {
+    "n": 156,
+    "h": 3667492575,
+    "s": [
+     [
+      0,
+      156
+     ]
+    ]
+   }
+  ],
+  "Matthew 25:37": [
+   {
+    "n": 126,
+    "h": 1028643892,
+    "s": [
+     [
+      0,
+      126
+     ]
+    ]
+   },
+   {
+    "n": 133,
+    "h": 3016684034,
+    "s": [
+     [
+      0,
+      133
+     ]
+    ]
+   },
+   {
+    "n": 149,
+    "h": 2750694637,
+    "s": [
+     [
+      0,
+      149
+     ]
+    ]
+   }
+  ],
+  "Matthew 25:38": [
+   {
+    "n": 74,
+    "h": 1925267292,
+    "s": [
+     [
+      0,
+      74
+     ]
+    ]
+   },
+   {
+    "n": 70,
+    "h": 1975387106,
+    "s": [
+     [
+      0,
+      70
+     ]
+    ]
+   },
+   {
+    "n": 89,
+    "h": 2017444456,
+    "s": [
+     [
+      0,
+      89
+     ]
+    ]
+   }
+  ],
+  "Matthew 25:39": [
+   {
+    "n": 59,
+    "h": 1163567978,
+    "s": [
+     [
+      0,
+      59
+     ]
+    ]
+   },
+   {
+    "n": 59,
+    "h": 924773032,
+    "s": [
+     [
+      0,
+      59
+     ]
+    ]
+   },
+   {
+    "n": 73,
+    "h": 2148545173,
+    "s": [
+     [
+      0,
+      73
+     ]
+    ]
+   }
+  ],
+  "Matthew 25:40": [
+   {
+    "n": 164,
+    "h": 3695678801,
+    "s": [
+     [
+      0,
+      164
+     ]
+    ]
+   },
+   {
+    "n": 136,
+    "h": 785509920,
+    "s": [
+     [
+      0,
+      136
+     ]
+    ]
+   },
+   {
+    "n": 161,
+    "h": 3485654903,
+    "s": [
+     [
+      0,
+      161
+     ]
+    ]
+   }
+  ],
+  "Matthew 26:38": [
+   {
+    "n": 107,
+    "h": 980708698,
+    "s": [
+     [
+      25,
+      107
+     ]
+    ]
+   }
+  ],
+  "Matthew 26:39": [
+   {
+    "n": 176,
+    "h": 1760734453,
+    "s": [
+     [
+      72,
+      176
+     ]
+    ]
+   }
+  ],
+  "Matthew 26:40": [
+   {
+    "n": 123,
+    "h": 953063281,
+    "s": [
+     [
+      0,
+      123
+     ]
+    ]
+   },
+   {
+    "n": 109,
+    "h": 1928018542,
+    "s": [
+     [
+      0,
+      109
+     ]
+    ]
+   },
+   {
+    "n": 123,
+    "h": 1619046495,
+    "s": [
+     [
+      0,
+      123
+     ]
+    ]
+   }
+  ],
+  "Matthew 26:41": [
+   {
+    "n": 103,
+    "h": 1970626663,
+    "s": [
+     [
+      0,
+      103
+     ]
+    ]
+   },
+   {
+    "n": 106,
+    "h": 3211322731,
+    "s": [
+     [
+      0,
+      106
+     ]
+    ]
+   },
+   {
+    "n": 105,
+    "h": 1455021713,
+    "s": [
+     [
+      0,
+      105
+     ]
+    ]
+   }
+  ],
+  "Matthew 27:46": [
+   {
+    "n": 150,
+    "h": 2798996711,
+    "s": [
+     [
+      64,
+      91
+     ],
+     [
+      108,
+      150
+     ]
+    ]
+   }
+  ],
+  "Matthew 28:18": [
+   {
+    "n": 94,
+    "h": 3446213715,
+    "s": [
+     [
+      44,
+      94
+     ]
+    ]
+   }
+  ],
+  "Matthew 28:19": [
+   {
+    "n": 120,
+    "h": 2882630996,
+    "s": [
+     [
+      0,
+      120
+     ]
+    ]
+   },
+   {
+    "n": 120,
+    "h": 3179541534,
+    "s": [
+     [
+      0,
+      120
+     ]
+    ]
+   },
+   {
+    "n": 114,
+    "h": 1875830067,
+    "s": [
+     [
+      0,
+      114
+     ]
+    ]
+   }
+  ],
+  "Matthew 28:20": [
+   {
+    "n": 136,
+    "h": 1400964264,
+    "s": [
+     [
+      0,
+      130
+     ]
+    ]
+   }
+  ],
+  "Matthew 4:10": [
+   {
+    "n": 136,
+    "h": 213628085,
+    "s": [
+     [
+      27,
+      136
+     ]
+    ]
+   }
+  ],
+  "Matthew 4:4": [
+   {
+    "n": 134,
+    "h": 3356617738,
+    "s": [
+     [
+      26,
+      134
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:10": [
+   {
+    "n": 98,
+    "h": 152015784,
+    "s": [
+     [
+      0,
+      98
+     ]
+    ]
+   },
+   {
+    "n": 112,
+    "h": 1397767784,
+    "s": [
+     [
+      0,
+      112
+     ]
+    ]
+   },
+   {
+    "n": 86,
+    "h": 3601085219,
+    "s": [
+     [
+      0,
+      86
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:11": [
+   {
+    "n": 128,
+    "h": 3576094411,
+    "s": [
+     [
+      0,
+      128
+     ]
+    ]
+   },
+   {
+    "n": 117,
+    "h": 2488719240,
+    "s": [
+     [
+      0,
+      117
+     ]
+    ]
+   },
+   {
+    "n": 134,
+    "h": 3119852132,
+    "s": [
+     [
+      0,
+      134
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:12": [
+   {
+    "n": 126,
+    "h": 3617403859,
+    "s": [
+     [
+      0,
+      126
+     ]
+    ]
+   },
+   {
+    "n": 131,
+    "h": 56798203,
+    "s": [
+     [
+      0,
+      131
+     ]
+    ]
+   },
+   {
+    "n": 141,
+    "h": 1998492663,
+    "s": [
+     [
+      0,
+      141
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:14": [
+   {
+    "n": 75,
+    "h": 3927292895,
+    "s": [
+     [
+      0,
+      75
+     ]
+    ]
+   },
+   {
+    "n": 88,
+    "h": 1367304985,
+    "s": [
+     [
+      0,
+      88
+     ]
+    ]
+   },
+   {
+    "n": 96,
+    "h": 2508959837,
+    "s": [
+     [
+      0,
+      96
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:15": [
+   {
+    "n": 131,
+    "h": 3978314562,
+    "s": [
+     [
+      0,
+      131
+     ]
+    ]
+   },
+   {
+    "n": 121,
+    "h": 3248904002,
+    "s": [
+     [
+      0,
+      121
+     ]
+    ]
+   },
+   {
+    "n": 143,
+    "h": 3005442626,
+    "s": [
+     [
+      0,
+      143
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:16": [
+   {
+    "n": 114,
+    "h": 2564493553,
+    "s": [
+     [
+      0,
+      114
+     ]
+    ]
+   },
+   {
+    "n": 138,
+    "h": 1927032925,
+    "s": [
+     [
+      0,
+      138
+     ]
+    ]
+   },
+   {
+    "n": 111,
+    "h": 189264674,
+    "s": [
+     [
+      0,
+      111
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:22": [
+   {
+    "n": 262,
+    "h": 1373420159,
+    "s": [
+     [
+      0,
+      262
+     ]
+    ]
+   },
+   {
+    "n": 235,
+    "h": 2902533549,
+    "s": [
+     [
+      0,
+      235
+     ]
+    ]
+   },
+   {
+    "n": 210,
+    "h": 3987885400,
+    "s": [
+     [
+      0,
+      210
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:23": [
+   {
+    "n": 110,
+    "h": 3283998915,
+    "s": [
+     [
+      0,
+      110
+     ]
+    ]
+   },
+   {
+    "n": 104,
+    "h": 2256154381,
+    "s": [
+     [
+      0,
+      104
+     ]
+    ]
+   },
+   {
+    "n": 113,
+    "h": 1813584865,
+    "s": [
+     [
+      0,
+      113
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:24": [
+   {
+    "n": 124,
+    "h": 2189175466,
+    "s": [
+     [
+      0,
+      124
+     ]
+    ]
+   },
+   {
+    "n": 127,
+    "h": 319436338,
+    "s": [
+     [
+      0,
+      127
+     ]
+    ]
+   },
+   {
+    "n": 133,
+    "h": 307915021,
+    "s": [
+     [
+      0,
+      133
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:29": [
+   {
+    "n": 193,
+    "h": 3953639530,
+    "s": [
+     [
+      0,
+      193
+     ]
+    ]
+   },
+   {
+    "n": 179,
+    "h": 2479365183,
+    "s": [
+     [
+      0,
+      179
+     ]
+    ]
+   },
+   {
+    "n": 177,
+    "h": 4065393339,
+    "s": [
+     [
+      0,
+      177
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:30": [
+   {
+    "n": 192,
+    "h": 3681722902,
+    "s": [
+     [
+      0,
+      192
+     ]
+    ]
+   },
+   {
+    "n": 172,
+    "h": 2715013625,
+    "s": [
+     [
+      0,
+      172
+     ]
+    ]
+   },
+   {
+    "n": 174,
+    "h": 2735169152,
+    "s": [
+     [
+      0,
+      174
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:37": [
+   {
+    "n": 100,
+    "h": 2422682067,
+    "s": [
+     [
+      0,
+      100
+     ]
+    ]
+   },
+   {
+    "n": 85,
+    "h": 2448012057,
+    "s": [
+     [
+      0,
+      85
+     ]
+    ]
+   },
+   {
+    "n": 74,
+    "h": 4199013460,
+    "s": [
+     [
+      0,
+      74
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:38": [
+   {
+    "n": 81,
+    "h": 212415776,
+    "s": [
+     [
+      0,
+      81
+     ]
+    ]
+   },
+   {
+    "n": 71,
+    "h": 1531346573,
+    "s": [
+     [
+      0,
+      71
+     ]
+    ]
+   },
+   {
+    "n": 65,
+    "h": 354982503,
+    "s": [
+     [
+      0,
+      65
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:39": [
+   {
+    "n": 123,
+    "h": 4113055574,
+    "s": [
+     [
+      0,
+      123
+     ]
+    ]
+   },
+   {
+    "n": 119,
+    "h": 3699825349,
+    "s": [
+     [
+      0,
+      119
+     ]
+    ]
+   },
+   {
+    "n": 162,
+    "h": 609280051,
+    "s": [
+     [
+      0,
+      162
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:4": [
+   {
+    "n": 57,
+    "h": 3531751398,
+    "s": [
+     [
+      0,
+      57
+     ]
+    ]
+   },
+   {
+    "n": 67,
+    "h": 2909773826,
+    "s": [
+     [
+      0,
+      67
+     ]
+    ]
+   },
+   {
+    "n": 65,
+    "h": 2823183268,
+    "s": [
+     [
+      0,
+      65
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:40": [
+   {
+    "n": 93,
+    "h": 689414381,
+    "s": [
+     [
+      0,
+      93
+     ]
+    ]
+   },
+   {
+    "n": 77,
+    "h": 1581729800,
+    "s": [
+     [
+      0,
+      77
+     ]
+    ]
+   },
+   {
+    "n": 83,
+    "h": 3049335722,
+    "s": [
+     [
+      0,
+      83
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:41": [
+   {
+    "n": 64,
+    "h": 1537609962,
+    "s": [
+     [
+      0,
+      64
+     ]
+    ]
+   },
+   {
+    "n": 59,
+    "h": 4279766656,
+    "s": [
+     [
+      0,
+      59
+     ]
+    ]
+   },
+   {
+    "n": 59,
+    "h": 4173656506,
+    "s": [
+     [
+      0,
+      59
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:42": [
+   {
+    "n": 88,
+    "h": 98918521,
+    "s": [
+     [
+      0,
+      88
+     ]
+    ]
+   },
+   {
+    "n": 82,
+    "h": 2351701049,
+    "s": [
+     [
+      0,
+      82
+     ]
+    ]
+   },
+   {
+    "n": 78,
+    "h": 2903862691,
+    "s": [
+     [
+      0,
+      78
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:44": [
+   {
+    "n": 161,
+    "h": 257429926,
+    "s": [
+     [
+      0,
+      161
+     ]
+    ]
+   },
+   {
+    "n": 155,
+    "h": 2956103728,
+    "s": [
+     [
+      0,
+      155
+     ]
+    ]
+   },
+   {
+    "n": 148,
+    "h": 2992927246,
+    "s": [
+     [
+      0,
+      148
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:9": [
+   {
+    "n": 74,
+    "h": 4171354795,
+    "s": [
+     [
+      0,
+      74
+     ]
+    ]
+   },
+   {
+    "n": 77,
+    "h": 2832967622,
+    "s": [
+     [
+      0,
+      77
+     ]
+    ]
+   },
+   {
+    "n": 67,
+    "h": 3874893972,
+    "s": [
+     [
+      0,
+      67
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:11": [
+   {
+    "n": 33,
+    "h": 3189795799,
+    "s": [
+     [
+      0,
+      33
+     ]
+    ]
+   },
+   {
+    "n": 32,
+    "h": 3245569107,
+    "s": [
+     [
+      0,
+      32
+     ]
+    ]
+   },
+   {
+    "n": 33,
+    "h": 1083114763,
+    "s": [
+     [
+      0,
+      33
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:13": [
+   {
+    "n": 130,
+    "h": 1874947643,
+    "s": [
+     [
+      0,
+      130
+     ]
+    ]
+   },
+   {
+    "n": 128,
+    "h": 1440186454,
+    "s": [
+     [
+      0,
+      128
+     ]
+    ]
+   },
+   {
+    "n": 146,
+    "h": 2241738659,
+    "s": [
+     [
+      0,
+      146
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:14": [
+   {
+    "n": 83,
+    "h": 1983323131,
+    "s": [
+     [
+      0,
+      83
+     ]
+    ]
+   },
+   {
+    "n": 105,
+    "h": 3308356520,
+    "s": [
+     [
+      0,
+      105
+     ]
+    ]
+   },
+   {
+    "n": 97,
+    "h": 962669283,
+    "s": [
+     [
+      0,
+      97
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:15": [
+   {
+    "n": 93,
+    "h": 1710936465,
+    "s": [
+     [
+      0,
+      93
+     ]
+    ]
+   },
+   {
+    "n": 101,
+    "h": 367472867,
+    "s": [
+     [
+      0,
+      101
+     ]
+    ]
+   },
+   {
+    "n": 109,
+    "h": 253558442,
+    "s": [
+     [
+      0,
+      109
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:19": [
+   {
+    "n": 124,
+    "h": 3824505341,
+    "s": [
+     [
+      0,
+      124
+     ]
+    ]
+   },
+   {
+    "n": 104,
+    "h": 2214359114,
+    "s": [
+     [
+      0,
+      104
+     ]
+    ]
+   },
+   {
+    "n": 127,
+    "h": 2143289212,
+    "s": [
+     [
+      0,
+      127
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:20": [
+   {
+    "n": 138,
+    "h": 648576966,
+    "s": [
+     [
+      0,
+      138
+     ]
+    ]
+   },
+   {
+    "n": 103,
+    "h": 1858946342,
+    "s": [
+     [
+      0,
+      103
+     ]
+    ]
+   },
+   {
+    "n": 122,
+    "h": 1200062511,
+    "s": [
+     [
+      0,
+      122
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:21": [
+   {
+    "n": 58,
+    "h": 191383464,
+    "s": [
+     [
+      0,
+      58
+     ]
+    ]
+   },
+   {
+    "n": 67,
+    "h": 3159200505,
+    "s": [
+     [
+      0,
+      67
+     ]
+    ]
+   },
+   {
+    "n": 47,
+    "h": 3970939722,
+    "s": [
+     [
+      0,
+      47
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:25": [
+   {
+    "n": 203,
+    "h": 4262501573,
+    "s": [
+     [
+      0,
+      203
+     ]
+    ]
+   },
+   {
+    "n": 205,
+    "h": 2346069173,
+    "s": [
+     [
+      0,
+      205
+     ]
+    ]
+   },
+   {
+    "n": 210,
+    "h": 3559792252,
+    "s": [
+     [
+      0,
+      210
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:26": [
+   {
+    "n": 164,
+    "h": 1570541519,
+    "s": [
+     [
+      0,
+      164
+     ]
+    ]
+   },
+   {
+    "n": 160,
+    "h": 3510820128,
+    "s": [
+     [
+      0,
+      160
+     ]
+    ]
+   },
+   {
+    "n": 188,
+    "h": 484941092,
+    "s": [
+     [
+      0,
+      188
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:31": [
+   {
+    "n": 115,
+    "h": 1352719836,
+    "s": [
+     [
+      0,
+      115
+     ]
+    ]
+   },
+   {
+    "n": 90,
+    "h": 2615200887,
+    "s": [
+     [
+      0,
+      90
+     ]
+    ]
+   },
+   {
+    "n": 115,
+    "h": 1839318043,
+    "s": [
+     [
+      0,
+      115
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:32": [
+   {
+    "n": 122,
+    "h": 4242907150,
+    "s": [
+     [
+      0,
+      122
+     ]
+    ]
+   },
+   {
+    "n": 120,
+    "h": 3889219983,
+    "s": [
+     [
+      0,
+      120
+     ]
+    ]
+   },
+   {
+    "n": 101,
+    "h": 3409085294,
+    "s": [
+     [
+      0,
+      101
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:33": [
+   {
+    "n": 106,
+    "h": 3529741974,
+    "s": [
+     [
+      0,
+      106
+     ]
+    ]
+   },
+   {
+    "n": 94,
+    "h": 376417854,
+    "s": [
+     [
+      0,
+      94
+     ]
+    ]
+   },
+   {
+    "n": 108,
+    "h": 3184363100,
+    "s": [
+     [
+      0,
+      108
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:34": [
+   {
+    "n": 146,
+    "h": 2218123830,
+    "s": [
+     [
+      0,
+      146
+     ]
+    ]
+   },
+   {
+    "n": 107,
+    "h": 2043762727,
+    "s": [
+     [
+      0,
+      107
+     ]
+    ]
+   },
+   {
+    "n": 150,
+    "h": 1420907241,
+    "s": [
+     [
+      0,
+      150
+     ]
+    ]
+   }
+  ],
+  "Matthew 7:1": [
+   {
+    "n": 33,
+    "h": 3077169527,
+    "s": [
+     [
+      0,
+      33
+     ]
+    ]
+   },
+   {
+    "n": 40,
+    "h": 3480077338,
+    "s": [
+     [
+      0,
+      40
+     ]
+    ]
+   },
+   {
+    "n": 50,
+    "h": 1006840905,
+    "s": [
+     [
+      0,
+      50
+     ]
+    ]
+   }
+  ],
+  "Matthew 7:12": [
+   {
+    "n": 128,
+    "h": 2277705118,
+    "s": [
+     [
+      0,
+      128
+     ]
+    ]
+   },
+   {
+    "n": 154,
+    "h": 285133817,
+    "s": [
+     [
+      0,
+      154
+     ]
+    ]
+   },
+   {
+    "n": 118,
+    "h": 4256449574,
+    "s": [
+     [
+      0,
+      118
+     ]
+    ]
+   }
+  ],
+  "Matthew 7:2": [
+   {
+    "n": 118,
+    "h": 1069826021,
+    "s": [
+     [
+      0,
+      118
+     ]
+    ]
+   },
+   {
+    "n": 106,
+    "h": 2783566828,
+    "s": [
+     [
+      0,
+      106
+     ]
+    ]
+   },
+   {
+    "n": 131,
+    "h": 3800669700,
+    "s": [
+     [
+      0,
+      131
+     ]
+    ]
+   }
+  ],
+  "Matthew 7:3": [
+   {
+    "n": 116,
+    "h": 2575678601,
+    "s": [
+     [
+      0,
+      116
+     ]
+    ]
+   },
+   {
+    "n": 104,
+    "h": 3363333942,
+    "s": [
+     [
+      0,
+      104
+     ]
+    ]
+   },
+   {
+    "n": 106,
+    "h": 3629286683,
+    "s": [
+     [
+      0,
+      106
+     ]
+    ]
+   }
+  ],
+  "Matthew 7:4": [
+   {
+    "n": 120,
+    "h": 2991291622,
+    "s": [
+     [
+      0,
+      120
+     ]
+    ]
+   },
+   {
+    "n": 90,
+    "h": 1083222697,
+    "s": [
+     [
+      0,
+      90
+     ]
+    ]
+   },
+   {
+    "n": 140,
+    "h": 1203154732,
+    "s": [
+     [
+      0,
+      140
+     ]
+    ]
+   }
+  ],
+  "Matthew 7:5": [
+   {
+    "n": 140,
+    "h": 3771855948,
+    "s": [
+     [
+      0,
+      140
+     ]
+    ]
+   },
+   {
+    "n": 102,
+    "h": 1634246269,
+    "s": [
+     [
+      0,
+      102
+     ]
+    ]
+   },
+   {
+    "n": 125,
+    "h": 3515329641,
+    "s": [
+     [
+      0,
+      125
+     ]
+    ]
+   }
+  ],
+  "Matthew 7:7": [
+   {
+    "n": 96,
+    "h": 3769303238,
+    "s": [
+     [
+      0,
+      96
+     ]
+    ]
+   },
+   {
+    "n": 65,
+    "h": 2134599529,
+    "s": [
+     [
+      0,
+      65
+     ]
+    ]
+   },
+   {
+    "n": 94,
+    "h": 2166139827,
+    "s": [
+     [
+      0,
+      94
+     ]
+    ]
+   }
+  ],
+  "Matthew 7:8": [
+   {
+    "n": 110,
+    "h": 3486193300,
+    "s": [
+     [
+      0,
+      110
+     ]
+    ]
+   },
+   {
+    "n": 85,
+    "h": 3206103242,
+    "s": [
+     [
+      0,
+      85
+     ]
+    ]
+   },
+   {
+    "n": 103,
+    "h": 3411808971,
+    "s": [
+     [
+      0,
+      103
+     ]
+    ]
+   }
+  ],
+  "Matthew 8:3": [
+   {
+    "n": 119,
+    "h": 396836440,
+    "s": [
+     [
+      55,
+      77
+     ]
+    ]
+   }
+  ],
+  "Matthew 9:12": [
+   {
+    "n": 110,
+    "h": 2199324242,
+    "s": [
+     [
+      46,
+      110
+     ]
+    ]
+   }
+  ]
+ }
+}

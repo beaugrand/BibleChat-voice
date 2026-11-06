@@ -344,6 +344,33 @@ body.has-church #top .brand{display:none}
 #langList .btn{justify-content:flex-start;padding:11px 12px;font-size:16px}
 #langList .btn.on{border-color:var(--accent);color:var(--accent);font-weight:650}
 @media (max-width:440px){#top .bword{display:none}}
+/* 🕊 What would Jesus do? (web/situations.js) */
+.wwjd{margin:6px 0 14px;padding:14px 14px 10px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.wwjd h2{font-size:17px;margin:0 0 4px}
+.wwjd .wj-lead{font-size:13.5px;color:var(--muted);margin:0 0 10px}
+#wwjdForm{display:flex;gap:8px;align-items:flex-end}
+#wwjdIn{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:inherit;font:inherit;font-size:16px;resize:vertical;min-height:44px}
+.wj-chat{display:flex;flex-direction:column;gap:10px;margin-bottom:10px}
+.wj-me{scroll-margin-top:70px;align-self:flex-end;max-width:85%;background:var(--accent);color:var(--accent-text);padding:8px 12px;border-radius:14px 14px 4px 14px;white-space:pre-wrap;font-size:15px}
+.wj-bc{align-self:stretch;background:var(--panel);padding:10px 12px;border-radius:14px 14px 14px 4px;font-size:15px}
+.wj-bc h3{font-size:14.5px;margin:12px 0 4px}
+.wj-bc h3:first-child{margin-top:0}
+.wj-fits{font-size:14px;color:var(--muted)}
+.wj-fits b{color:var(--text)}
+.wj-pt{font-size:13.5px;color:var(--muted);margin:8px 0 2px}
+.wj-v{padding:6px 0;border-bottom:1px solid var(--line);font-family:Georgia,"Times New Roman",serif;font-size:calc(16.5px * var(--rs))}
+.wj-v:last-child{border-bottom:0}
+.wj-v a{font-family:system-ui,sans-serif;font-weight:650;font-size:13.5px;text-decoration:none;margin-right:6px;white-space:nowrap}
+.wj-v sup{font-family:system-ui,sans-serif;font-size:10.5px;color:var(--muted);margin-right:2px}
+.wj-red{color:#c0262d}
+[data-theme="dark"] .wj-red{color:#ff7a70}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .wj-red{color:#ff7a70}}
+.wj-bc details summary{cursor:pointer;font-weight:650;font-size:14.5px;margin:12px 0 4px}
+.wj-help{border:1px solid var(--danger);color:var(--text);border-radius:10px;padding:8px 10px;margin:4px 0 8px;font-size:14.5px}
+.wj-note{font-size:12.5px;color:var(--muted);margin:10px 0 4px}
+.wj-acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.wj-acts .btn{font-size:14px;padding:6px 10px}
+.wj-chips button{border:1px solid var(--line);background:var(--card);color:inherit;border-radius:99px;padding:4px 11px;margin:4px 4px 0 0;font-size:13.5px}
 </style>
 </head>
 <body>
@@ -403,6 +430,13 @@ body.has-church #top .brand{display:none}
   <section id="v-search" hidden><div class="wrap">
     <form id="sform"><input type="search" id="q" placeholder="Words or a verse, e.g. John 3:16" enterkeyhint="search" autocomplete="off"><button class="btn primary">Find</button></form>
     <div class="hint">Try: <button data-q="John 3:16">John 3:16</button><button data-q="Psalm 23">Psalm 23</button><button data-q="love is patient">love is patient</button><button data-q="the Lord is my shepherd">the Lord is my shepherd</button><button data-q="Daniel to Revelation cross references">Daniel to Revelation cross references</button></div>
+    <div class="wwjd" id="wwjd">
+      <h2>🕊 What would Jesus do?</h2>
+      <p class="wj-lead">Tell me your situation. BibleChat answers with Scripture: what Jesus said, what He did, and more verses. Nothing you type leaves this phone.</p>
+      <div class="wj-chat" id="wwjdChat" aria-live="polite"></div>
+      <form id="wwjdForm"><textarea id="wwjdIn" rows="2" placeholder="Tell me your situation…" enterkeyhint="send" aria-label="Tell me your situation…"></textarea><button class="btn primary">Send</button></form>
+      <div class="wj-acts" id="wwjdTools" hidden><button class="btn" id="wwjdClear" type="button">Start over</button></div>
+    </div>
     <div id="results"></div>
   </div></section>
 
@@ -613,6 +647,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 <script src="paths.js"></script>
 <script src="prayers.js"></script>
 <script src="news.js"></script>
+<script src="situations.js"></script>
 <script>
 "use strict";
 /* a shared link that came back from Facebook, Messenger, Instagram, email or a text message: cut off what those apps add
@@ -1173,6 +1208,63 @@ let searchSeq = 0, meaningLoad = null, meaningOK = true, meaningNote = "";
 $("#sform").onsubmit = e => { e.preventDefault(); $("#q").blur(); runSearch($("#q").value); navNote(); };
 document.querySelectorAll(".hint [data-q]").forEach(b => b.onclick = () => { $("#q").value = b.dataset.q; runSearch(b.dataset.q); navNote(); });
 $("#results").addEventListener("click", e => { const a = e.target.closest("a[data-b]"); if(!a) return; e.preventDefault(); go(a.dataset.b, +a.dataset.c, +a.dataset.v); });
+
+/* 🕊 What would Jesus do? (web/situations.js, web/situations.json): type a situation, get Scripture back. It is
+   recognised by its words on this phone (nothing is sent anywhere or kept) and answered with the verses of the Bible
+   being read: what Jesus said (His words in red where the Bible reads like the King James, the Reina-Valera 1909 or the
+   Luther 1912), what Jesus did, and more verses. The headings are BibleChat's words, and the answer says so. */
+const wjHas = b => bible && (bible.byName[b] ? b : resolveBooks(b)[0]);
+function wjVerses(ref){
+  const r = BCSituations.parseRef(ref), t = r && wjHas(r.book), vs = t && bible.byName[t].map.get(r.c);
+  const label = r ? `${bName(t || r.book)} ${r.c}:${r.v1}${r.v2 > r.v1 ? "-" + r.v2 : ""}` : ref;
+  const pick = vs ? vs.filter(([n]) => n >= r.v1 && n <= r.v2) : [];
+  if(!pick.length) return `<div class="wj-v"><b>${esc(label)}</b> <i class="small">${esc(tr("This passage isn't in the Bible you are reading."))}</i></div>`;
+  const text = pick.map(([n, x]) => (pick.length > 1 ? `<sup>${n}</sup>` : "") + BCSituations.redHtml(`${r.book} ${r.c}:${n}`, x)).join(" ");
+  return `<div class="wj-v"><a href="#" data-b="${esc(t)}" data-c="${r.c}" data-v="${r.v1}">${esc(label)}</a>${text}</div>`;
+}
+function wjAnswer(s, others){
+  const groups = gs => gs.map(g => `<div class="wj-pt">${esc(g.point)}</div>${g.refs.map(r => wjVerses(r)).join("")}`).join("");
+  const path = s.path && typeof BCPaths !== "undefined" && BCPaths.title(s.path);
+  return `<div class="wj-fits">${esc(tr("This may speak to:"))} <b class="pvx">${esc(s.title)}</b></div>`
+    + (s.help ? `<div class="wj-help pvx">${esc(s.help)}</div>` : "")
+    + `<h3>🔴 ${esc(tr("What Jesus said"))}</h3><div class="pvx">${s.jesus.map(r => wjVerses(r)).join("")}</div>`
+    + `<h3>👣 ${esc(tr("What Jesus did"))}</h3><div class="pvx">${groups(s.did)}</div>`
+    + `<details><summary>📖 ${esc(tr("More from Scripture"))}</summary><div class="pvx">${groups(s.verses)}</div></details>`
+    + `<p class="wj-note">${esc(tr("The headings are BibleChat's words, not Scripture. The verses are from the Bible you are reading."))}</p>`
+    + `<div class="wj-acts"><button class="btn" data-wjpray="${esc(s.prayer)}">🙏 ${esc(tr("A prayer for this"))}</button>`
+    + (path ? `<button class="btn" data-wjpath="${esc(s.path)}">📜 <span class="pvx">${esc(path)}</span></button>` : "") + `</div>`
+    + (others.length ? `<div class="wj-chips"><span class="wj-fits">${esc(tr("Also:"))}</span> ${others.map(o => `<button data-wjsit="${esc(o.id)}" class="pvx">${esc(o.title)}</button>`).join("")}</div>` : "");
+}
+function wjBubble(cls, html){
+  const d = document.createElement("div"); d.className = cls; d.innerHTML = html; $("#wwjdChat").appendChild(d); $("#wwjdTools").hidden = false; return d;
+}
+async function wjSend(text, id){
+  text = text.trim(); if(!text && !id) return;
+  if(text) wjBubble("wj-me", esc(text));
+  const box = wjBubble("wj-bc", `<span class="small">${esc(tr("Loading…"))}</span>`);
+  box.scrollIntoView({block: "nearest", behavior: "smooth"});
+  if(!await BCSituations.load("situations.json") || !bible){ box.innerHTML = `<span class="small">${esc(tr("Couldn't load this yet. Check the internet connection and try again."))}</span>`; return; }
+  const hits = id ? [{id}] : BCSituations.match(text), s = hits.length && BCSituations.byId(hits[0].id);
+  if(!s){
+    box.innerHTML = `<p>${esc(tr("I couldn't find a situation for those words yet. Pick one, or search the whole Bible:"))}</p>`
+      + `<div class="wj-chips">${BCSituations.list().map(x => `<button data-wjsit="${esc(x.id)}" class="pvx">${esc(x.title)}</button>`).join("")}</div>`
+      + (text ? `<div class="wj-acts"><button class="btn" data-wjsearch="${esc(text)}">🔎 ${esc(tr("Search the Bible for these words"))}</button></div>` : "");
+    return;
+  }
+  box.innerHTML = wjAnswer(s, hits.slice(1).map(h => BCSituations.byId(h.id)).filter(Boolean));
+  (box.previousElementSibling || box).scrollIntoView({block: "start", behavior: "smooth"});   // the question on top, the answer under it
+}
+$("#wwjdForm").onsubmit = e => { e.preventDefault(); const t = $("#wwjdIn").value; $("#wwjdIn").value = ""; $("#wwjdIn").blur(); wjSend(t); };
+$("#wwjdIn").addEventListener("keydown", e => { if(e.key === "Enter" && !e.shiftKey){ e.preventDefault(); $("#wwjdForm").requestSubmit(); } });
+$("#wwjdClear").onclick = () => { $("#wwjdChat").innerHTML = ""; $("#wwjdTools").hidden = true; $("#wwjdIn").focus(); };
+$("#wwjdChat").addEventListener("click", e => {
+  const a = e.target.closest("a[data-b]"); if(a){ e.preventDefault(); if(a.dataset.b) go(a.dataset.b, +a.dataset.c, +a.dataset.v); return; }
+  const b = e.target.closest("button"); if(!b) return;
+  if(b.dataset.wjsit){ const s = BCSituations.byId(b.dataset.wjsit); wjBubble("wj-me", `<span class="pvx">${esc(s ? s.title : "")}</span>`); wjSend("", b.dataset.wjsit); return; }
+  if(b.dataset.wjsearch){ $("#q").value = b.dataset.wjsearch; runSearch(b.dataset.wjsearch); $("#results").scrollIntoView({behavior: "smooth"}); return; }
+  if(b.dataset.wjpath){ BCPaths.open(b.dataset.wjpath); return; }
+  if(b.dataset.wjpray){ sayStop(); BCPrayers.open(b.dataset.wjpray); }
+});
 
 /* ---------- Bibles list ---------- */
 const busy = {};

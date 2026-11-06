@@ -1,0 +1,370 @@
+{
+  "about": "🕊 What would Jesus do? Life situations for the phone's Search page, written by hand. Each holds references only, never verse text: what Jesus said (shown in red where the King James marks His words), what Jesus did, and more from Scripture. The headings are BibleChat's words, not Scripture. packaging/build_situations.py checks every reference against the Bible files and writes web/situations.json.",
+  "situations": [
+    {
+      "id": "fear-worry",
+      "title": "Fear and worry",
+      "words": ["afraid", "fear", "fearful", "scared", "worry", "worried", "worrying", "anxious", "anxiety", "panic", "nervous", "terrified", "dread", "frightened", "uneasy", "stress about", "what if", "worried sick"],
+      "jesus": ["Matthew 6:31-34", "John 14:27", "Luke 12:32", "Mark 4:40"],
+      "did": [
+        {"point": "He slept in the storm, then rose and calmed it with a word", "refs": ["Mark 4:38-39"]},
+        {"point": "He came to His frightened disciples on the water: \"It is I; be not afraid\"", "refs": ["Matthew 14:26-27"]}
+      ],
+      "verses": [
+        {"point": "Bring every care to God in prayer, and His peace will keep your heart", "refs": ["Philippians 4:6-7", "1 Peter 5:7"]},
+        {"point": "God is with you; you do not face it alone", "refs": ["Isaiah 41:10", "Psalms 56:3", "2 Timothy 1:7"]}
+      ],
+      "prayer": "do-not-worry"
+    },
+    {
+      "id": "grief",
+      "title": "Grief and the death of someone you love",
+      "words": ["died", "dead", "death", "passed away", "passed", "funeral", "grief", "grieve", "grieving", "mourn", "mourning", "lost my mom", "lost my mother", "lost my dad", "lost my father", "lost my wife", "lost my husband", "lost my son", "lost my daughter", "lost my child", "lost my baby", "lost my friend", "lost a loved one", "miss him", "miss her", "widow", "widower", "loss", "buried", "cancer took"],
+      "jesus": ["Matthew 5:4", "John 11:25-26", "John 14:1-3"],
+      "did": [
+        {"point": "He wept at the grave of His friend Lazarus", "refs": ["John 11:33-35"]},
+        {"point": "He had compassion on a grieving widow and gave back her son", "refs": ["Luke 7:12-15"]}
+      ],
+      "verses": [
+        {"point": "We grieve, but not as those who have no hope", "refs": ["1 Thessalonians 4:13-14"]},
+        {"point": "The LORD is near the brokenhearted; one day He wipes away every tear", "refs": ["Psalms 34:18", "Revelation 21:4"]}
+      ],
+      "prayer": "when-someone-has-died"
+    },
+    {
+      "id": "money-work",
+      "title": "Money troubles and losing a job",
+      "words": ["job", "jobs", "work", "fired", "laid off", "layoff", "unemployed", "money", "bills", "debt", "debts", "rent", "broke", "poor", "poverty", "afford", "pay", "paycheck", "income", "mortgage", "eviction", "evicted", "foreclosure", "provide"],
+      "jesus": ["Matthew 6:25-26", "Matthew 6:33", "Matthew 7:7-8", "Luke 12:15"],
+      "did": [
+        {"point": "He fed five thousand with five loaves and two fishes", "refs": ["Matthew 14:17-20"]},
+        {"point": "He taught us to ask the Father for our daily bread", "refs": ["Matthew 6:11"]}
+      ],
+      "verses": [
+        {"point": "God supplies every need; be content with what you have", "refs": ["Philippians 4:19", "Hebrews 13:5"]},
+        {"point": "Work honestly, owe no one anything but love", "refs": ["Romans 13:8", "Ephesians 4:28", "Proverbs 3:9-10"]}
+      ],
+      "prayer": "for-my-work"
+    },
+    {
+      "id": "anger",
+      "title": "Anger",
+      "words": ["angry", "anger", "mad", "furious", "rage", "temper", "yelled", "yell", "yelling", "scream", "screamed", "hate him", "hate her", "frustrated", "annoyed", "irritated", "lost my temper", "bitter", "bitterness"],
+      "jesus": ["Matthew 5:22-24", "Matthew 5:9"],
+      "did": [
+        {"point": "When He was reviled, He did not revile again", "refs": ["1 Peter 2:23"]},
+        {"point": "His zeal for His Father's house: He drove out those who made it a house of merchandise", "refs": ["John 2:15-17"]}
+      ],
+      "verses": [
+        {"point": "Be slow to wrath; a soft answer turns it away", "refs": ["James 1:19-20", "Proverbs 15:1"]},
+        {"point": "Be angry and sin not; let not the sun go down on your wrath", "refs": ["Ephesians 4:26-27", "Ephesians 4:31-32"]}
+      ],
+      "prayer": "create-clean-heart"
+    },
+    {
+      "id": "someone-hurt-me",
+      "title": "Someone hurt or wronged me",
+      "words": ["hurt me", "wronged", "betrayed", "betrayal", "cheated", "lied to me", "stole my", "stole from me", "robbed", "stabbed me in the back", "abused", "offended", "insulted", "unfair", "forgive", "forgiving", "forgiveness", "grudge", "resent", "resentment", "revenge", "get back at", "unforgiveness", "can't forgive", "cannot forgive"],
+      "jesus": ["Matthew 6:14-15", "Matthew 18:22", "Luke 6:27-28", "Matthew 18:15", "Mark 11:25"],
+      "did": [
+        {"point": "On the cross He prayed for those who crucified Him", "refs": ["Luke 23:34"]},
+        {"point": "He washed the feet of all His disciples, Judas too, then gave them a new commandment", "refs": ["John 13:3-5", "John 13:34"]}
+      ],
+      "verses": [
+        {"point": "Forgive as God in Christ forgave you", "refs": ["Ephesians 4:32", "Colossians 3:13"]},
+        {"point": "Do not take revenge; leave it to God and overcome evil with good", "refs": ["Romans 12:17-21"]}
+      ],
+      "prayer": "for-those-who-hurt-me"
+    },
+    {
+      "id": "enemies",
+      "title": "Enemies, and people who mock my faith",
+      "words": ["enemy", "enemies", "persecuted", "persecution", "mocked", "mock", "mocking", "laughed at", "ridiculed", "bullied", "bully", "bullying", "hate me", "hates me", "against me", "attacked", "my faith", "because i am a christian", "rejected"],
+      "jesus": ["Matthew 5:10-12", "Matthew 5:44", "John 15:18-20", "John 16:33"],
+      "did": [
+        {"point": "When He was accused before Pilate, He answered nothing", "refs": ["Matthew 27:12-14"]},
+        {"point": "When a village would not receive Him, He rebuked the disciples who wanted fire from heaven, and went on", "refs": ["Luke 9:52-56"]}
+      ],
+      "verses": [
+        {"point": "Bless them that persecute you; feed your enemy", "refs": ["Romans 12:14", "Romans 12:20"]},
+        {"point": "Suffering as a Christian is no shame", "refs": ["1 Peter 4:12-16", "2 Timothy 3:12"]}
+      ],
+      "prayer": "for-the-persecuted"
+    },
+    {
+      "id": "lonely",
+      "title": "Loneliness",
+      "words": ["lonely", "loneliness", "alone", "no friends", "nobody", "no one cares", "isolated", "abandoned", "forsaken", "left me", "by myself", "rejected", "unloved", "unwanted", "forgotten"],
+      "jesus": ["Matthew 28:20", "John 14:18", "John 15:14-15", "Matthew 11:28-29"],
+      "did": [
+        {"point": "His friends forsook Him and fled in His darkest hour", "refs": ["Mark 14:50"]},
+        {"point": "He went to the outcasts no one would eat with: Zacchaeus, and the woman at the well", "refs": ["Luke 19:5-6", "John 4:7-10"]}
+      ],
+      "verses": [
+        {"point": "He will never leave you nor forsake you", "refs": ["Hebrews 13:5", "Deuteronomy 31:6"]},
+        {"point": "God sets the solitary in families; nothing can separate you from His love", "refs": ["Psalms 68:6", "Romans 8:38-39"]}
+      ],
+      "prayer": "when-i-feel-alone"
+    },
+    {
+      "id": "sickness",
+      "title": "Sickness and pain",
+      "words": ["sick", "sickness", "ill", "illness", "disease", "cancer", "diagnosis", "diagnosed", "hospital", "surgery", "pain", "chronic", "doctor", "healing", "heal", "healed", "covid", "stroke", "heart attack", "tumor", "dying"],
+      "jesus": ["Mark 5:34", "Mark 11:22-24", "John 11:4", "Matthew 9:12"],
+      "did": [
+        {"point": "He touched the leper and said, \"I will; be thou clean\"", "refs": ["Matthew 8:2-3"]},
+        {"point": "He healed all who came to Him", "refs": ["Matthew 4:23-24", "Luke 4:40"]}
+      ],
+      "verses": [
+        {"point": "Is any sick? Call the elders; the prayer of faith", "refs": ["James 5:14-16"]},
+        {"point": "His grace is sufficient; by His stripes we are healed", "refs": ["2 Corinthians 12:9", "Isaiah 53:5"]}
+      ],
+      "prayer": "heal-me"
+    },
+    {
+      "id": "temptation",
+      "title": "Temptation and addiction",
+      "words": ["tempted", "temptation", "addicted", "addiction", "drinking", "alcohol", "drunk", "drugs", "porn", "pornography", "lust", "gambling", "smoking", "relapse", "relapsed", "craving", "can't stop", "cannot stop", "habit", "struggle with"],
+      "jesus": ["Matthew 26:41", "Matthew 6:13", "John 8:34-36", "Matthew 5:29-30"],
+      "did": [
+        {"point": "Tempted in the wilderness, He answered each temptation with \"It is written\"", "refs": ["Matthew 4:1-4", "Matthew 4:10-11"]},
+        {"point": "In Gethsemane He watched and prayed, and told His disciples to do the same", "refs": ["Matthew 26:39-41"]}
+      ],
+      "verses": [
+        {"point": "God makes a way to escape; He knows our weakness", "refs": ["1 Corinthians 10:13", "Hebrews 4:15-16"]},
+        {"point": "Resist the devil and he will flee; walk in the Spirit", "refs": ["James 4:7-8", "Galatians 5:16"]}
+      ],
+      "prayer": "in-temptation"
+    },
+    {
+      "id": "guilt-shame",
+      "title": "Guilt, shame and failure",
+      "words": ["guilt", "guilty", "shame", "ashamed", "sinned", "sin", "messed up", "failed", "failure", "regret", "regrets", "mistake", "mistakes", "my fault", "unworthy", "worthless", "condemned", "can god forgive", "forgive me", "backslid", "backslidden"],
+      "jesus": ["Luke 15:20-24", "John 8:10-11", "Luke 5:31-32", "John 6:37"],
+      "did": [
+        {"point": "After Peter denied Him three times, He asked him three times, \"Lovest thou me?\" and gave him work to do", "refs": ["John 21:15-17"]},
+        {"point": "He told a woman who washed His feet with tears, \"Thy sins are forgiven\"", "refs": ["Luke 7:47-50"]}
+      ],
+      "verses": [
+        {"point": "Confess, and He is faithful and just to forgive", "refs": ["1 John 1:9", "Psalms 103:10-12"]},
+        {"point": "No condemnation to them which are in Christ Jesus", "refs": ["Romans 8:1", "Isaiah 1:18"]}
+      ],
+      "prayer": "faithful-and-just"
+    },
+    {
+      "id": "marriage",
+      "title": "Trouble in my marriage",
+      "words": ["marriage", "married", "husband", "wife", "spouse", "divorce", "divorced", "separated", "separation", "affair", "unfaithful", "adultery", "cheating", "cheated on me", "fight", "fighting", "argue", "arguing"],
+      "jesus": ["Matthew 19:4-6", "Matthew 7:3-5", "Matthew 7:12"],
+      "did": [
+        {"point": "His first sign was at a wedding: He turned the water into wine", "refs": ["John 2:1-3", "John 2:7-10"]},
+        {"point": "He loved the church and gave Himself for it: the pattern for a husband", "refs": ["Ephesians 5:25"]}
+      ],
+      "verses": [
+        {"point": "Love is patient and kind, keeps no record of wrong", "refs": ["1 Corinthians 13:4-7"]},
+        {"point": "Husband and wife: love, honour, and do not be bitter", "refs": ["Ephesians 5:33", "Colossians 3:18-19", "1 Peter 3:7"]}
+      ],
+      "prayer": "husband-wife-love",
+      "path": "husband-and-wife"
+    },
+    {
+      "id": "family",
+      "title": "Family conflict",
+      "words": ["family", "parents", "mother", "father", "mom", "dad", "brother", "sister", "son", "daughter", "children", "kids", "relatives", "in-laws", "in law", "siblings", "teenager", "rebellious", "prodigal", "estranged", "doesn't understand", "don't understand"],
+      "jesus": ["Matthew 5:23-24", "Matthew 10:34-37", "Mark 3:33-35", "Luke 15:31-32"],
+      "did": [
+        {"point": "His own brothers did not believe in Him", "refs": ["John 7:3-5"]},
+        {"point": "From the cross He gave His mother into the care of John", "refs": ["John 19:26-27"]}
+      ],
+      "verses": [
+        {"point": "Honour father and mother; fathers, provoke not your children", "refs": ["Exodus 20:12", "Ephesians 6:1-4"]},
+        {"point": "As much as lies in you, live peaceably with all", "refs": ["Romans 12:18", "Psalms 133:1"]}
+      ],
+      "prayer": "my-house"
+    },
+    {
+      "id": "doubt",
+      "title": "Doubt, and when God seems silent",
+      "words": ["doubt", "doubts", "doubting", "unbelief", "faith is weak", "is god real", "god is real", "if god is real", "does god exist", "if god exists", "god exists", "does god care", "god is silent", "silent", "unanswered", "no answer", "why god", "where is god", "far from god", "lost my faith", "questions", "confused"],
+      "jesus": ["John 20:27", "John 20:29", "Mark 9:23", "Matthew 17:20", "John 14:1"],
+      "did": [
+        {"point": "When a father cried, \"Help thou mine unbelief\", Jesus healed his son", "refs": ["Mark 9:24-27"]},
+        {"point": "When Peter began to sink, He stretched out His hand and caught him", "refs": ["Matthew 14:30-31"]},
+        {"point": "On the cross He cried, \"My God, my God, why hast thou forsaken me?\"", "refs": ["Matthew 27:46"]}
+      ],
+      "verses": [
+        {"point": "Ask for wisdom without wavering; draw near to God", "refs": ["James 1:5-6", "Hebrews 11:6"]},
+        {"point": "Wait on the LORD; the psalmists asked \"How long?\" too", "refs": ["Psalms 13:1-6", "Isaiah 40:31", "Luke 18:1"]}
+      ],
+      "prayer": "ask-for-wisdom"
+    },
+    {
+      "id": "despair",
+      "title": "Despair, depression and no hope",
+      "words": ["depressed", "depression", "hopeless", "no hope", "despair", "give up", "giving up", "can't go on", "cannot go on", "empty", "numb", "sad", "sadness", "crying", "tears", "broken", "brokenhearted", "heartbroken", "darkness", "dark place", "no reason to live", "end it", "suicidal", "suicide"],
+      "jesus": ["Matthew 11:28-30", "John 10:10-11", "John 16:22", "Luke 4:18"],
+      "did": [
+        {"point": "In Gethsemane His soul was exceeding sorrowful, even unto death; He prayed, and an angel strengthened Him", "refs": ["Matthew 26:37-39", "Luke 22:43-44"]},
+        {"point": "He walked with two downcast disciples on the road to Emmaus", "refs": ["Luke 24:15-17", "Luke 24:31-32"]}
+      ],
+      "verses": [
+        {"point": "Why art thou cast down, O my soul? Hope thou in God", "refs": ["Psalms 42:11", "Psalms 34:18"]},
+        {"point": "Elijah wanted to die; God gave him sleep, food and a still small voice", "refs": ["1 Kings 19:4-8", "1 Kings 19:11-12"]},
+        {"point": "His mercies are new every morning", "refs": ["Lamentations 3:22-23", "Jeremiah 29:11"]}
+      ],
+      "prayer": "near-the-brokenhearted",
+      "help": "If you are thinking about ending your life, please call or text 988 now (Suicide & Crisis Lifeline, in the USA), or your local emergency number. You are not alone."
+    },
+    {
+      "id": "decision",
+      "title": "A hard decision",
+      "words": ["decision", "decide", "deciding", "choose", "choice", "should i", "which way", "direction", "guidance", "god's will", "will of god", "move", "moving", "new job", "offer", "confused about", "not sure", "crossroads"],
+      "jesus": ["Matthew 7:7-8", "John 16:13", "Luke 14:28-30", "Matthew 6:33"],
+      "did": [
+        {"point": "Before choosing the twelve, He continued all night in prayer", "refs": ["Luke 6:12-13"]},
+        {"point": "Facing the cross, He prayed, \"Not my will, but thine, be done\"", "refs": ["Luke 22:41-42"]}
+      ],
+      "verses": [
+        {"point": "Trust in the LORD with all your heart; He shall direct your paths", "refs": ["Proverbs 3:5-6", "Psalms 32:8"]},
+        {"point": "Ask God for wisdom; in a multitude of counsellors there is safety", "refs": ["James 1:5", "Proverbs 11:14", "Proverbs 16:9"]}
+      ],
+      "prayer": "trust-with-all-heart"
+    },
+    {
+      "id": "tired",
+      "title": "Tired, stressed and overwhelmed",
+      "words": ["tired", "exhausted", "worn out", "burned out", "burnout", "overwhelmed", "stressed", "stress", "too much", "busy", "no time", "pressure", "weary", "can't sleep", "cannot sleep", "insomnia", "drained"],
+      "jesus": ["Matthew 11:28-30", "Mark 6:31", "Luke 10:41-42", "John 15:5"],
+      "did": [
+        {"point": "He rose a great while before day and went to a solitary place to pray", "refs": ["Mark 1:35", "Luke 5:15-16"]},
+        {"point": "Wearied from His journey, He sat by the well and rested", "refs": ["John 4:6"]}
+      ],
+      "verses": [
+        {"point": "They that wait upon the LORD shall renew their strength", "refs": ["Isaiah 40:29-31"]},
+        {"point": "He gives His beloved sleep; cast your burden on the LORD", "refs": ["Psalms 127:2", "Psalms 55:22"]}
+      ],
+      "prayer": "wings-as-eagles"
+    },
+    {
+      "id": "conflict",
+      "title": "Conflict with a neighbour, coworker or boss",
+      "words": ["coworker", "co-worker", "boss", "manager", "neighbor", "neighbour", "neighbors", "colleague", "workplace", "church member", "argument", "conflict", "quarrel", "dispute", "lawsuit", "sue", "suing", "gossip", "gossiping", "toxic", "difficult person"],
+      "jesus": ["Matthew 5:38-42", "Matthew 18:15-17", "Matthew 7:12", "Luke 6:31-36"],
+      "did": [
+        {"point": "When His disciples argued who was greatest, He took a child and taught them to serve", "refs": ["Mark 9:33-35"]},
+        {"point": "He told Peter to put away his sword, and healed the servant's ear", "refs": ["Luke 22:50-51", "John 18:10-11"]}
+      ],
+      "verses": [
+        {"point": "Live peaceably; a soft answer turns away wrath", "refs": ["Romans 12:18", "Proverbs 15:1"]},
+        {"point": "Work as for the Lord; speak no evil of anyone", "refs": ["Colossians 3:23-24", "Titus 3:1-2"]}
+      ],
+      "prayer": "for-my-work"
+    },
+    {
+      "id": "judging",
+      "title": "Judging others, and being judged",
+      "words": ["judge", "judging", "judged", "judgmental", "criticize", "criticized", "criticism", "hypocrite", "hypocrites", "hypocrisy", "condemn", "self-righteous", "look down on", "better than"],
+      "jesus": ["Matthew 7:1-5", "Luke 6:37", "John 7:24", "John 8:7"],
+      "did": [
+        {"point": "He ate with publicans and sinners, and answered those who murmured", "refs": ["Luke 15:1-2", "Mark 2:16-17"]},
+        {"point": "To the woman taken in adultery: \"Neither do I condemn thee: go, and sin no more\"", "refs": ["John 8:10-11"]}
+      ],
+      "verses": [
+        {"point": "Who art thou that judgest another man's servant?", "refs": ["Romans 14:10-13", "James 4:11-12"]},
+        {"point": "Restore one another gently, considering yourself", "refs": ["Galatians 6:1-2"]}
+      ],
+      "prayer": "create-clean-heart"
+    },
+    {
+      "id": "pride-success",
+      "title": "Success, pride and wanting more",
+      "words": ["pride", "proud", "success", "successful", "promotion", "famous", "fame", "rich", "wealth", "wealthy", "greed", "greedy", "jealous", "jealousy", "envy", "envious", "compare", "comparing", "ambition", "status", "more money", "lottery"],
+      "jesus": ["Luke 12:15-21", "Matthew 6:19-21", "Matthew 23:11-12", "Mark 8:36"],
+      "did": [
+        {"point": "When they wanted to make Him king by force, He departed into a mountain alone", "refs": ["John 6:15"]},
+        {"point": "He washed His disciples' feet and said, \"I have given you an example\"", "refs": ["John 13:12-15"]}
+      ],
+      "verses": [
+        {"point": "Pride goes before destruction; God gives grace to the humble", "refs": ["Proverbs 16:18", "James 4:6", "Philippians 2:3-8"]},
+        {"point": "Godliness with contentment is great gain", "refs": ["1 Timothy 6:6-10", "Hebrews 13:5"]}
+      ],
+      "prayer": "thy-plans"
+    },
+    {
+      "id": "honesty",
+      "title": "Tempted to lie or cut corners",
+      "words": ["lie", "lying", "lied", "dishonest", "honest", "honesty", "steal", "stealing", "taxes", "cover up", "cover it up", "secret", "deceive", "deceived", "fraud", "integrity", "nobody will know", "get away with"],
+      "jesus": ["Matthew 5:37", "Luke 16:10", "Matthew 22:21", "Luke 8:17"],
+      "did": [
+        {"point": "Zacchaeus met Jesus and gave back fourfold what he had taken", "refs": ["Luke 19:8-10"]},
+        {"point": "He paid the tribute money for Himself and Peter, lest they offend", "refs": ["Matthew 17:24-27"]}
+      ],
+      "verses": [
+        {"point": "Lie not one to another; speak truth with your neighbour", "refs": ["Colossians 3:9-10", "Ephesians 4:25"]},
+        {"point": "Lying lips are an abomination; the integrity of the upright guides them", "refs": ["Proverbs 12:22", "Proverbs 11:3"]}
+      ],
+      "prayer": "create-clean-heart"
+    },
+    {
+      "id": "someone-in-need",
+      "title": "Someone in need: should I help?",
+      "words": ["homeless", "beggar", "begging", "needy", "help someone", "help him", "help her", "stranger", "hungry", "refugee", "immigrant", "charity", "give", "giving", "donate", "lend", "loan", "poor", "orphan", "widow", "in need", "struggling friend"],
+      "jesus": ["Matthew 25:35-40", "Luke 10:33-37", "Luke 6:38", "Matthew 5:42"],
+      "did": [
+        {"point": "Moved with compassion, He fed the hungry crowd", "refs": ["Matthew 15:32", "Matthew 15:36-37"]},
+        {"point": "He stopped for blind Bartimaeus when others told him to be quiet", "refs": ["Mark 10:46-52"]}
+      ],
+      "verses": [
+        {"point": "Faith without works is dead; love in deed and in truth", "refs": ["James 2:15-17", "1 John 3:17-18"]},
+        {"point": "He that gives to the poor lends to the LORD; be hospitable to strangers", "refs": ["Proverbs 19:17", "Hebrews 13:2"]}
+      ],
+      "prayer": "for-those-who-hurt-me"
+    },
+    {
+      "id": "sharing-faith",
+      "title": "Talking about my faith",
+      "words": ["share my faith", "witness", "witnessing", "evangelize", "evangelism", "tell others", "tell my", "unbelieving", "unbeliever", "atheist", "save my", "salvation of", "gospel", "preach", "invite to church", "ashamed of the gospel"],
+      "jesus": ["Matthew 28:18-20", "Matthew 5:14-16", "Acts 1:8", "Luke 12:8"],
+      "did": [
+        {"point": "He talked with a Samaritan woman at a well, and her whole town came to hear Him", "refs": ["John 4:39-42"]},
+        {"point": "He sent a healed man home: \"Go home to thy friends, and tell them\"", "refs": ["Mark 5:18-20"]}
+      ],
+      "verses": [
+        {"point": "Be ready always to give an answer, with meekness and fear", "refs": ["1 Peter 3:15", "Colossians 4:5-6"]},
+        {"point": "Not ashamed of the gospel: the power of God unto salvation", "refs": ["Romans 1:16", "Romans 10:14-15"]}
+      ],
+      "prayer": "for-someone-far"
+    },
+    {
+      "id": "fear-of-death",
+      "title": "Facing death",
+      "words": ["dying", "die", "afraid to die", "fear of death", "terminal", "hospice", "end of life", "last days", "eternity", "heaven", "hell", "afterlife", "after i die", "what happens when"],
+      "jesus": ["John 11:25-26", "John 14:1-3", "John 5:24", "Luke 23:43"],
+      "did": [
+        {"point": "He rose from the dead and showed Himself alive", "refs": ["Luke 24:5-7", "Luke 24:38-39"]},
+        {"point": "As He died, He committed His spirit into His Father's hands", "refs": ["Luke 23:46"]}
+      ],
+      "verses": [
+        {"point": "O death, where is thy sting? Christ delivers those who feared death", "refs": ["1 Corinthians 15:54-57", "Hebrews 2:14-15"]},
+        {"point": "Though I walk through the valley of the shadow of death", "refs": ["Psalms 23:4", "Romans 14:8"]}
+      ],
+      "prayer": "confess-and-believe",
+      "path": "salvation-how-are-we-saved"
+    },
+    {
+      "id": "waiting",
+      "title": "Waiting, and things not going my way",
+      "words": ["waiting", "wait", "patience", "impatient", "delay", "delayed", "stuck", "not working out", "nothing works", "setback", "disappointed", "disappointment", "unfair", "why me", "plans failed", "rejected", "infertility", "single", "still single"],
+      "jesus": ["John 13:7", "Luke 18:6-8", "Matthew 6:34", "John 16:33"],
+      "did": [
+        {"point": "When He heard Lazarus was sick, He waited two days, for the glory of God", "refs": ["John 11:4-6"]},
+        {"point": "\"Mine hour is not yet come\"", "refs": ["John 2:4", "John 7:6"]}
+      ],
+      "verses": [
+        {"point": "All things work together for good to them that love God", "refs": ["Romans 8:28", "Genesis 50:20"]},
+        {"point": "Wait on the LORD; be of good courage", "refs": ["Psalms 27:14", "Lamentations 3:25-26", "Habakkuk 2:3"]}
+      ],
+      "prayer": "thy-plans"
+    }
+  ]
+}
