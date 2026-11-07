@@ -97,8 +97,8 @@ EXTRA: list[tuple[str, str, str, str, str, int, int, str, str]] = [
     ('eng-yahweh-edition.usfx.xml', 'English', 'YAHWEH', 'Yahweh Edition (based on the World Messianic Bible)',
      'Public domain. Based on the World Messianic Bible (https://ebible.org/engwmb/), changed only so that God\'s Name '
      'is written "Yahweh" instead of "LORD"/"GOD"; because the text was changed it is not called the World Messianic Bible.',
-     17458338, 31098,
-     'Modern English, 66 books. Uses Yeshua for Jesus the Messiah and Yahweh for God\'s Name (6,882 places)',
+     17458926, 31098,
+     'Modern English, 66 books. Uses Yeshua for Jesus the Messiah and Yahweh for God\'s Name (6,879 places; 3 awkward places say "Lord*" with a note)',
      OWN + 'eng-yahweh-edition.usfx.xml'),
     # other important writings and the original languages (each license checked on its source page, October 2026)
     ('eng-jasher-1840.zefania.xml', 'English', 'JASHER', 'Book of Jasher (1840 English translation)', 'Public Domain',

@@ -61,6 +61,16 @@ class YahwehEditionTest(unittest.TestCase):
     def test_the_word_the_is_dropped_before_the_name(self):
         self.assertFalse([k for k, t in self.text.items() if re.search(r"\b[Tt]he Yahweh\b", t)])
 
+    def test_awkward_places_say_lord_with_a_note_giving_the_hebrew(self):
+        self.assertIn("you Lord are among this people; for you Lord are seen face to face", self.text[("Numbers", 14, 14)])
+        self.assertIn("May the good Lord pardon everyone", self.text[("2 Chronicles", 30, 18)])
+        raw = open(FILE, encoding="utf-8").read()
+        notes = re.findall(r'<f caller="\*"><fr>([^<]*)</fr><ft>([^<]*)</ft></f>', raw)
+        self.assertEqual([n[0].strip() for n in notes], ["14:14", "14:14", "30:18"])
+        for _ref, text in notes:
+            self.assertIn("יהוה (YHWH)", text)
+            self.assertIn("H3068", text)
+
     def test_nothing_else_changed(self):
         # John 3:16 has no divine name, so it must be exactly the World Messianic Bible's wording
         self.assertEqual(self.text[("John", 3, 16)],
