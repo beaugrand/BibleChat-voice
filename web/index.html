@@ -513,7 +513,7 @@ body.has-church #top .brand{display:none}
     <button class="btn primary" id="welcomeRead">📖 Keep reading here</button>
     <a class="btn" id="dlWin" href="https://github.com/beaugrand/BibleChat-voice/releases/latest/download/BibleChat-Windows.zip">⬇ Download for Windows</a>
     <a class="btn" id="dlMac" href="https://github.com/beaugrand/BibleChat-voice/releases/latest/download/BibleChat-Mac.zip">⬇ Download for Mac <span class="muted" style="font-size:12.5px">(M1 and newer)</span></a>
-    <p class="small">BibleChat is free: read and search 51 Bibles and writings right here, or download the app for your computer, which adds AI explanations. <a href="https://github.com/beaugrand/BibleChat-voice/releases/latest" target="_blank" rel="noopener">Linux and more</a></p>
+    <p class="small">BibleChat is free: read and search 52 Bibles and writings right here, or download the app for your computer, which adds AI explanations. <a href="https://github.com/beaugrand/BibleChat-voice/releases/latest" target="_blank" rel="noopener">Linux and more</a></p>
   </div>
 </div></div>
 
@@ -620,6 +620,8 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 if(location.hash){ const ch = BCPaths.cleanHash(location.hash); if(ch !== location.hash) history.replaceState(null, "", location.pathname + location.search + ch); }
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+/* a license with a web address (the NTBT credit asks for an active link to its page): the address becomes a link */
+const escLinks = s => esc(s).replace(/https:\/\/[^\s<"]+[^\s<".,;)]/g, u => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
 const store = {
   get(k, d){ try{ const v = localStorage.getItem("bcw." + k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
   set(k, v){ try{ localStorage.setItem("bcw." + k, JSON.stringify(v)); }catch(e){} }
@@ -1182,7 +1184,7 @@ function renderBibles(){
   $("#blist").innerHTML = list.map(c => {
     const cur = c.id === place.bible;
     const act = cur ? `<span class="muted" style="font-size:14px">✓ Reading</span>` : busy[c.id] ? `<span class="muted" style="font-size:14px">Opening…</span>` : `<button class="btn" data-id="${esc(c.id)}">Open</button>`;
-    return `<div class="bl${cur ? " cur" : ""}"><div class="i"><b>${esc(c.name)}</b><small>${esc(c.language)} · ${c.verses.toLocaleString()} verses · ${(c.bytes / 3.4e6).toFixed(1)} MB download · ${esc(c.license)}${c.note ? " · " + esc(c.note) : ""}</small>${busy[c.id] ? '<div class="progress"><i></i></div>' : ""}</div>${act}</div>`;
+    return `<div class="bl${cur ? " cur" : ""}"><div class="i"><b>${esc(c.name)}</b><small>${esc(c.language)} · ${c.verses.toLocaleString()} verses · ${(c.bytes / 3.4e6).toFixed(1)} MB download · ${escLinks(c.license)}${c.note ? " · " + esc(c.note) : ""}</small>${busy[c.id] ? '<div class="progress"><i></i></div>' : ""}</div>${act}</div>`;
   }).join("") || `<div class="notice">Nothing matches.</div>`;
 }
 $("#bfind").addEventListener("input", renderBibles);
