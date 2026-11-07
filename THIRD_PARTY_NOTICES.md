@@ -79,6 +79,10 @@ clicks to get it, and stays under its own license.
   The wording is kept exactly as received, brackets included (`bibles/spa-ntbt.usfx.xml`, made by `packaging/build_ntbt.py`).
   Credit: «Santa Biblia, Nueva Traducción BibliaTodo (NTBT). Publicada por [BibliaTodo Bible Society](https://www.bibliatodo.org/es/ntbt/),
   sello editorial de BibliaTodo LLC.» BibliaTodo does not sponsor or endorse BibleChat.
+- **Yahweh Edition (English)**, made by BibleChat from the **World Messianic Bible** (public domain, [eBible.org](https://ebible.org/engwmb/)). The only
+  change to the wording is that God's Name, written LORD or GOD in capital letters in the source, is written "Yahweh"
+  (`bibles/eng-yahweh-edition.usfx.xml`, made by `packaging/build_yahweh.py`). Because the text was changed it is not called the
+  World Messianic Bible, as that license asks. "World Messianic Bible" is a trademark of its owners; the eBible.org page and the Bibles list say where the text comes from.
 - **Westminster Leningrad Codex** (Hebrew Old Testament) from [eBible.org](https://ebible.org/hboWLC/copyright.htm): the WLC
   text is public domain. **Greek Textus Receptus New Testament** from [eBible.org](https://ebible.org/grctr/copyright.htm): public
   domain (Stephanus 1550, Elzevir 1624, Scrivener 1881 collated; Adam Boyd's notes dedicated to the public domain).
