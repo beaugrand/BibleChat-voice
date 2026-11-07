@@ -91,6 +91,15 @@ EXTRA: list[tuple[str, str, str, str, str, int, int, str, str]] = [
     ('spa-ntbt.usfx.xml', 'Spanish', 'NTBT', 'Nueva Traducción BibliaTodo', NTBT_CREDIT, 4506724, 31104,
      'Modern Spanish (2026), from the Hebrew, Aramaic and Greek. Verses that many Greek manuscripts leave out, '
      'such as Mark 16:9-20 and Acts 8:37, stand in [brackets]', OWN + 'spa-ntbt.usfx.xml'),
+    # The World Messianic Bible (public domain, eBible.org) with God's Name written "Yahweh" instead of LORD/GOD.
+    # Its license asks that a changed text is not called "World Messianic Bible", so it has its own name. Built by
+    # packaging/build_yahweh.py (Hans W. Beaugrand chose it on 7 November 2026 for the printed Bible and the app).
+    ('eng-yahweh-edition.usfx.xml', 'English', 'YAHWEH', 'Yahweh Edition (based on the World Messianic Bible)',
+     'Public domain. Based on the World Messianic Bible (https://ebible.org/engwmb/), changed only so that God\'s Name '
+     'is written "Yahweh" instead of "LORD"/"GOD"; because the text was changed it is not called the World Messianic Bible.',
+     17458926, 31098,
+     'Modern English, 66 books. Uses Yeshua for Jesus the Messiah and Yahweh for God\'s Name (6,879 places; 3 awkward places say "Lord*" with a note)',
+     OWN + 'eng-yahweh-edition.usfx.xml'),
     # other important writings and the original languages (each license checked on its source page, October 2026)
     ('eng-jasher-1840.zefania.xml', 'English', 'JASHER', 'Book of Jasher (1840 English translation)', 'Public Domain',
      0, 3910, 'The 1840 English Jasher; scholars dispute whether it is the book named in Joshua 10:13. '
