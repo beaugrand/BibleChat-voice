@@ -28,8 +28,8 @@ from xml.sax.saxutils import escape
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 URL = "https://downloads.bibliatodo.org/texto/NTBT-json.zip"   # the Bible text edition, without study notes
-DELIVERY = "NTBT-2026-11-04"
-SHA256 = "5c22886eb12f1ea7be6e35259a0ecf9bee13b06b29c958b6a55a7cdf40e08fba"
+DELIVERY = "NTBT-2026-11-06"
+SHA256 = "1f5f7be551e66915204186b2befb47e59f98c082972480a1a47f2c6383739942"
 OUT = os.path.join(ROOT, "bibles", "spa-ntbt.usfx.xml")
 CREDIT = ("Santa Biblia, Nueva Traducción BibliaTodo (NTBT). Publicada por BibliaTodo Bible Society, "
           "sello editorial de BibliaTodo LLC. https://www.bibliatodo.org/es/ntbt/")

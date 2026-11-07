@@ -44,6 +44,14 @@ class NtbtTest(unittest.TestCase):
             self.assertTrue(t.startswith("[") and t.endswith("]"), ref)
         self.assertEqual(sum(t.startswith("[") for t in self.text.values()), 31)
 
+    def test_newest_delivery_el_senor(self):
+        # Hans chose BibliaTodo's delivery NTBT-2026-11-06 (7 November 2026): God's name in the Old Testament is "el SEÑOR"
+        with open(FILE, encoding="utf-8") as f:
+            s = f.read()
+        self.assertIn("Delivery NTBT-2026-11-06", s)
+        self.assertNotIn("Jehová", s)
+        self.assertEqual(self.text[("Psalms", 23, 1)], "El SEÑOR es mi pastor; nada me faltará.")
+
     def test_spanish_book_names_for_the_reader(self):
         import build_data
         names = build_data.source_names(FILE)

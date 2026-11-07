@@ -88,7 +88,7 @@ EXTRA: list[tuple[str, str, str, str, str, int, int, str, str]] = [
     # A modern Spanish Bible, free to share under BibliaTodo's agreement (LICENCIA.txt 1.4, registered by Hans W.
     # Beaugrand on 6 November 2026). Built by packaging/build_ntbt.py with the wording unchanged. The license text is
     # the official credit; the Bibles list turns its address into the active link the agreement asks for.
-    ('spa-ntbt.usfx.xml', 'Spanish', 'NTBT', 'Nueva Traducción BibliaTodo', NTBT_CREDIT, 4500976, 31104,
+    ('spa-ntbt.usfx.xml', 'Spanish', 'NTBT', 'Nueva Traducción BibliaTodo', NTBT_CREDIT, 4506724, 31104,
      'Modern Spanish (2026), from the Hebrew, Aramaic and Greek. Verses that many Greek manuscripts leave out, '
      'such as Mark 16:9-20 and Acts 8:37, stand in [brackets]', OWN + 'spa-ntbt.usfx.xml'),
     # other important writings and the original languages (each license checked on its source page, October 2026)
