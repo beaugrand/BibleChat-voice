@@ -1,6 +1,6 @@
 // BibleChat web: keeps the app and every Bible you opened on this phone, so it also works offline.
 // index.html (offline()) also fetches the KJV, the Ethiopian Canon and the study data in the background; they are kept here.
-const SHELL = "bc-shell-v21", DATA = "bc-data-v1", MEANING = "bc-meaning-v1", STUDY = "bc-study-v1";   // a new model: change MEANING
+const SHELL = "bc-shell-v22", DATA = "bc-data-v1", MEANING = "bc-meaning-v1", STUDY = "bc-study-v1";   // a new model: change MEANING
 const FILES = ["./", "index.html", "manifest.webmanifest", "icon.svg", "icon-192.png", "icon-512.png", "cashapp-qr.jpg", "i18n.js", "smart.js", "guide.js", "guide.json", "paths.js", "quoted.json", "paths/index.json", "prayers.js", "prayers.json", "prayers.es.json", "prayers.de.json", "news.js", "prophecy.json", "data/catalog.json"];
 // the study paths and their pictures are kept too, so a path works offline after the first visit;
 // one file at a time, so one failed download can't stop the others (index.html fetches any missing one again later)
@@ -8,8 +8,10 @@ self.addEventListener("install", e => { e.waitUntil(caches.open(SHELL).then(c =>
   fetch("paths/index.json").then(r => r.json()).then(list => Promise.allSettled(list.map(p => "paths/" + p.id + ".json")
     .concat(list.filter(p => p.image).map(p => "paths/" + p.image)).map(u => c.add(u)))).catch(() => {})))
   .then(() => self.skipWaiting())); });
+// a Bible whose publisher sent a new edition: when this app version starts, its saved copy is thrown away so the phone loads the new text
+const RENEWED = ["data/spa-ntbt.json"];   // NTBT: delivery NTBT-2026-11-06 ("el SEÑOR"), 7 November 2026
 self.addEventListener("activate", e => {
-  e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => ![SHELL, DATA, MEANING, STUDY].includes(k)).map(k => caches.delete(k)))).then(() => self.clients.claim()));
+  e.waitUntil(caches.open(DATA).then(c => Promise.all(RENEWED.map(u => c.delete(u)))).catch(() => {}).then(() => caches.keys()).then(ks => Promise.all(ks.filter(k => ![SHELL, DATA, MEANING, STUDY].includes(k)).map(k => caches.delete(k)))).then(() => self.clients.claim()));
 });
 self.addEventListener("fetch", e => {
   const url = new URL(e.request.url);
