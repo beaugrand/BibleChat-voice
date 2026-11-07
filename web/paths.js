@@ -138,6 +138,7 @@ const BCPaths = (() => {
       ${S.path && (S.view === "step" || S.view === "quiz" || S.view === "reflect") ? `<button class="pv-ib pv-share" title="Share this path">↗</button>` : ""}<button class="pv-ib pv-close" aria-label="Close">✕</button></header><div class="pv-body">${body}</div></div>`;
     root.classList.toggle("pv-wide", S.view === "list");
     root.hidden = false; root.scrollTop = 0; const b = root.querySelector(".pv-body"); if(b) b.scrollTop = 0;
+    if(A.onOpen) A.onOpen();   // the phone lights 📜 Paths in the tab bar, however the page was opened
   }
   /* the list of paths: filter chips on top, then a grid of cards, each with the path's own picture, its size and time,
      the steps ticked off so far and the steps themselves (open "Steps" to jump straight to one) */
