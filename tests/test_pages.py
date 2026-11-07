@@ -93,6 +93,21 @@ console.log(JSON.stringify(out));"""
             self.assertTrue(all(o[1] <= 196 for o in out), out)
         self.assertIn(".coverart", read(os.path.join(ROOT, "web", "i18n.js")))   # same abbreviations in every app language
 
+    def test_paths_and_prayers_are_pages_on_the_phone(self):
+        # on the phone, Study Paths and Prayers are pages like the others: the dark page stops above the tab bar (the menu
+        # stays), it has no ✕, and tapping another tab leaves it (people found the window on top confusing on the iPhone)
+        s = read(PAGES[0])
+        self.assertIn("#pathsView.pv,#prayView.pv{bottom:calc(var(--tabh) + env(safe-area-inset-bottom));z-index:28", s)
+        self.assertIn("#pathsView .pv-close,#prayView .pr-close{display:none}", s)
+        show = s[s.index("function show(t, noFocus){"):]
+        show = show[:show.index("\n}\n")]
+        self.assertIn("BCPaths.close()", show)
+        self.assertIn("BCPrayers.close()", show)
+        self.assertIn('b.dataset.tab === "paths"', s[s.index("BCPaths.mount({"):s.index("BCPrayers.mount({")])   # onOpen lights 📜 Paths
+        self.assertIn("if(A.onOpen) A.onOpen();", read(os.path.join(ROOT, "web", "paths.js")))
+        # the computer keeps its own layout
+        self.assertNotIn("#pathsView.pv,#prayView.pv", read(PAGES[1]))
+
     def test_love_tab_section_tabs(self):
         # the phone's Love tab starts with tabs (Donate, About, Churches, Ideas), so people see there is more below
         s = read(PAGES[0])

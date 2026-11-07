@@ -78,6 +78,13 @@ body.playing{padding-bottom:calc(var(--tabh) + 62px + env(safe-area-inset-bottom
 #tabs button b{font-size:20px;line-height:1.1;font-weight:400}
 #tabs button.on{color:var(--accent);font-weight:650}
 #tabs button.love b{color:#c2455a}
+/* 📜 Study Paths and 🙏 Prayers on the phone: a page like the others, not a window on top. The dark page stops at the
+   tab bar, so the menu at the bottom stays; no ✕ (another tab leaves the page). The computer keeps its own layout. */
+#pathsView.pv,#prayView.pv{bottom:calc(var(--tabh) + env(safe-area-inset-bottom));z-index:28;overscroll-behavior:contain}
+#pathsView .pv-close,#prayView .pr-close{display:none}
+#pathsView .pv-in,#prayView .pv-in{padding-bottom:28px}
+#pathsView .pv-player{padding-bottom:8px}
+#pathsView .pv-qrfull{bottom:calc(var(--tabh) + env(safe-area-inset-bottom))}
 #tabs button small{font-size:8.5px;line-height:1;margin-top:-1px;opacity:.85;white-space:nowrap;letter-spacing:-.1px}
 .pathhits{margin:0 0 10px}.pathhits .btn{margin:0 6px 6px 0;text-align:left}
 /* home: the Bible cover */
@@ -644,6 +651,8 @@ let tab = "read";
 function show(t, noFocus){
   tab = t;
   if(t !== "read" && typeof penStop === "function") penStop();
+  if(BCPaths.isOpen()) BCPaths.close();   // 📜 Study Paths and 🙏 Prayers are pages too: another tab leaves them
+  if(BCPrayers.isOpen()) BCPrayers.close();
   for(const n of ["home", "read", "search", "bibles", "love"]) $("#v-" + n).hidden = n !== t;
   document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === t));
   if(t === "bibles") renderBibles();
@@ -653,6 +662,7 @@ function show(t, noFocus){
   navNote();
 }
 document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => { if(b.dataset.tab !== "read") sayStop();
+  if((b.dataset.tab === "paths" || b.dataset.tab === "pray") && typeof penStop === "function") penStop();   // the highlighter bar belongs to Read
   if(b.dataset.tab === "paths"){ if(BCPrayers.isOpen()) BCPrayers.close(); document.querySelectorAll("#tabs button").forEach(x => x.classList.toggle("on", x === b)); BCPaths.open(); return; }   // 📜 Study Paths / Community
   if(b.dataset.tab === "pray"){ document.querySelectorAll("#tabs button").forEach(x => x.classList.toggle("on", x === b)); BCPrayers.open(); return; }   // 🙏 Prayers (web/prayers.js)
   show(b.dataset.tab); });
@@ -1534,6 +1544,8 @@ BCPaths.mount({
   highlight: (b, c, v) => hlGet(b, c, v),
   get: (k, d) => store.get(k, d), set: (k, v) => store.set(k, v), toast: m => toast(tr(m)),
   canGet: false, getBibles: () => show("bibles"),
+  onOpen: () => { if(BCPrayers.isOpen()) BCPrayers.close();   // one page at a time
+    document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === "paths")); },
   onClose: () => document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab)),
   /* 🔊 Listen in Study Paths: the phone's own voice, the Bible's language for its verses, English for the path's own words */
   voice: kind => { loadVoices(); const lang = kind === "reader" ? bibleLang() : "en-US"; return {lang, voice: pickVoice(lang)}; },
