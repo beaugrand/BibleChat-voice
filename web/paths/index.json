@@ -2351,7 +2351,7 @@
   "image": "img/sabbath-1-the-biblical-sabbath.jpg",
   "opening_question": "God rested on the seventh day, blessed it and made it holy. How important is the Sabbath to the Father? What does \"no work\" mean in the Law, how seriously did He take it, when does the day begin and end, and why do the prophets call it both a warning and a delight? This is part 1 of 3. Each step asks what the text says and what it means for me.",
   "share": "How much does the Sabbath matter to the Father? From creation to the prophets: no work, a sign, and a delight.",
-  "steps": 9,
+  "steps": 10,
   "step_questions": [
    "What did God do on the seventh day, and what three things does Genesis 2 say He did with it?",
    "Before Sinai, what did the LORD give Israel on the sixth day, what were they to do with it, and what happened when some went out to gather on the seventh day?",
@@ -2359,6 +2359,7 @@
    "What does the Law say about work on the seventh day, even \"in earing time and in harvest\"? What else was not to be done in their habitations?",
    "What did the man in the wilderness do on the sabbath day, why was he put in ward, and what did the LORD say should be done?",
    "What does God call the sabbath in Exodus 31 and Ezekiel 20, between whom, for how long, and what does it show about who sanctifies His people?",
+   "In Exodus 31, who does the LORD say will keep the sabbath, and for whom is it a sign? In Isaiah 56, who else does He name, what do they do, and what does He promise them?",
    "When does a Bible day begin and end? What did Nehemiah do \"when the gates of Jerusalem began to be dark before the sabbath\"?",
    "What did Jeremiah promise if Judah would \"hallow the sabbath day\", what did he warn if they would not, and what did Nehemiah find and do?",
    "What does Isaiah call the sabbath, what does God promise the stranger and the eunuch who keep it, and what will all flesh do \"from one sabbath to another\"?"
@@ -2377,7 +2378,7 @@
   ],
   "show": 8,
   "verses": 66,
-  "minutes": 50,
+  "minutes": 55,
   "anim": {
    "kind": "light",
    "x": 69,

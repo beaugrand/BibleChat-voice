@@ -74,6 +74,20 @@
        {"text": "\"and was refreshed\" is naphash, Strong's: \"to breathe\", \"to be breathed upon\". God's rest is pictured as taking a breath.", "refs": ["Exodus 31:17"], "strongs": ["H5314"]},
        {"text": "It is called \"a perpetual covenant\". Some read this as binding on all God's people for ever; others read it as the sign of the covenant made with Israel at Sinai.", "refs": ["Exodus 31:16"]}
      ]},
+    {"intro": "Two groups appear in the sabbath texts: the children of Israel, and the stranger who joins himself to the LORD.",
+     "question": "In Exodus 31, who does the LORD say will keep the sabbath, and for whom is it a sign? In Isaiah 56, who else does He name, what do they do, and what does He promise them?",
+     "apply": "Whichever group I belong to, what does the LORD ask of me on His sabbath, and what does He promise?",
+     "refs": ["Exodus 31:16-17", "Isaiah 56:3", "Isaiah 56:6-7"],
+     "look_closer": {"strongs": ["H5236", "H3867"], "xref_top": 5}, "compare": ["KJV", "ETH", "BSB"], "notes": ["scofield", "henry"],
+     "facts": [
+       {"text": "Exodus 31 names the people: \"the children of Israel shall keep the sabbath\". It is \"a sign between me and the children of Israel for ever\".", "refs": ["Exodus 31:16", "Exodus 31:17"]},
+       {"text": "It is kept \"throughout their generations\", the generations of Israel, \"for a perpetual covenant\".", "refs": ["Exodus 31:16"]},
+       {"text": "Isaiah 56 names a second group: \"the sons of the stranger\". \"stranger\" is nekar, Strong's: \"a foreigner\". \"join themselves\" is lavah, Strong's: \"to unite\".", "refs": ["Isaiah 56:6"], "strongs": ["H5236", "H3867"]},
+       {"text": "The foreigner feared being left out: \"The LORD hath utterly separated me from his people\". The chapter is God's answer to that fear.", "refs": ["Isaiah 56:3"]},
+       {"text": "What the foreigner does: he joins himself \"to the LORD\", serves Him, loves \"the name of the LORD\", \"keepeth the sabbath from polluting it\", and \"taketh hold of my covenant\".", "refs": ["Isaiah 56:6"]},
+       {"text": "What God promises him: \"Even them will I bring to my holy mountain, and make them joyful in my house of prayer\".", "refs": ["Isaiah 56:7"]},
+       {"text": "So the text keeps the two apart: Exodus 31 names Israel as the people of the sign, and Isaiah 56 welcomes the foreigner who joins the LORD and keeps the day. Readers differ on whether the Messiah makes them one people or leaves them two groups under one God.", "refs": ["Exodus 31:17", "Isaiah 56:6-7"]}
+     ]},
     {"intro": "Background first: in the Bible a day begins at evening. \"the evening and the morning were the first day\" (Genesis 1:5).",
      "question": "When does a Bible day begin and end? What did Nehemiah do \"when the gates of Jerusalem began to be dark before the sabbath\"?",
      "apply": "How could I prepare before a day of rest begins, so that it is truly rest?",
@@ -129,6 +143,8 @@
     {"q": "In Nehemiah 13:19, what did Nehemiah command when the gates began to be dark before the sabbath?", "type": "multiple_choice", "options": ["That the gates should be shut", "That the trumpets should be blown", "That the people should fast", "That the merchants should pay a tax"], "answer": 0, "answer_refs": ["Nehemiah 13:19"], "check": {"bible": "KJV", "word": "shut"}},
     {"q": "In Jeremiah 17:27, what did the LORD say He would kindle in the gates if the sabbath was not hallowed?", "type": "multiple_choice", "options": ["A fire", "A lamp", "A war", "A famine"], "answer": 0, "answer_refs": ["Jeremiah 17:27"], "check": {"bible": "KJV", "word": "fire"}},
     {"q": "In Isaiah 58:13, what are we to call the sabbath?", "type": "multiple_choice", "options": ["A delight", "A burden", "A shadow", "A memorial"], "answer": 0, "answer_refs": ["Isaiah 58:13"], "check": {"bible": "KJV", "word": "delight"}},
+    {"q": "In Isaiah 56:6, who does the LORD name as joining themselves to Him and keeping the sabbath?", "type": "multiple_choice", "options": ["The sons of the stranger", "The sons of Levi", "The kings of Judah", "The elders of the city"], "answer": 0, "answer_refs": ["Isaiah 56:6"], "check": {"bible": "KJV", "word": "stranger"}},
+    {"q": "Fill in the word: \"Even them will I bring to my holy ___\"", "type": "fill_word", "ref": "Isaiah 56:7", "bible": "KJV", "word": "mountain"},
     {"q": "Which verse says \"mine house shall be called an house of prayer for all people\"?", "type": "find_the_verse", "answer_refs": ["Isaiah 56:7"]},
     {"q": "Fill in the word: \"from one sabbath to another, shall all flesh come to ___ before me\"", "type": "fill_word", "ref": "Isaiah 66:23", "bible": "KJV", "word": "worship"}
   ],
