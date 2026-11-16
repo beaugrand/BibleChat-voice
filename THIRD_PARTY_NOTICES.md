@@ -79,6 +79,8 @@ clicks to get it, and stays under its own license.
   The wording is kept exactly as received, brackets included (`bibles/spa-ntbt.usfx.xml`, made by `packaging/build_ntbt.py`).
   Credit: «Santa Biblia, Nueva Traducción BibliaTodo (NTBT). Publicada por [BibliaTodo Bible Society](https://www.bibliatodo.org/es/ntbt/),
   sello editorial de BibliaTodo LLC.» BibliaTodo does not sponsor or endorse BibleChat.
+  Written permission: email from BibliaTodo Bible Society to Hans W. Beaugrand, 6 November 2026, reference
+  BT-EMAIL-20261106-1536 (worldwide, no royalties or fees). License: https://www.bibliatodo.org/en/license
 - **Yahweh Edition (English)**, made by BibleChat from the **World Messianic Bible** (public domain, [eBible.org](https://ebible.org/engwmb/)). The only
   change to the wording is that God's Name, written LORD or GOD in capital letters in the source, is written "Yahweh"
   (`bibles/eng-yahweh-edition.usfx.xml`, made by `packaging/build_yahweh.py`). Because the text was changed it is not called the

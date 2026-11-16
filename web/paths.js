@@ -562,6 +562,7 @@ const BCPaths = (() => {
     const s = p.steps[S.step], n = p.steps.length, notes = get("notes", {}), mineNote = (notes[p.id] || {})[S.step] || "", done = doneSteps(p.id);
     const arrived = S.arrived; S.arrived = false;
     frame(p.title, `${arrived ? `<div class="pv-welcome">👋 <b>Someone shared this study path with you.</b> Read the question, then the verses of each step, and press <b>Next step</b>. Your notes and answers stay on your device.</div>` : ""}${p.image ? `<div class="pv-hero">${picture(p, true)}<span class="pv-pc-cat">${esc(p.series ? "Session " + p.series.session + " of " + p.series.of : p.group ? "👥 " + p.group : p.category || "")}</span></div>` : ""}${p.series ? `<p class="pv-small pv-serline">📖 <span class="pvx">${esc(p.series.title)}</span></p>` : ""}<div class="pv-open pvx"><small>The question</small>${esc(p.opening_question)}</div>
+      <div class="pv-about" id="pvAbout" hidden></div>
       <button class="pv-btn pv-listen" data-ls="step">🔊 Listen to this step</button>
       <div class="pv-stepno">Step ${S.step + 1} of ${n}</div>
       <div class="pv-track" role="navigation" aria-label="Steps">${p.steps.map((x, i) => `<button class="pv-dot${i === S.step ? " pv-dot-now" : ""}${done.has(i) ? " pv-dot-ok" : ""}" data-step="${i}" title="${esc("Step " + (i + 1) + ": " + x.question)}">${done.has(i) ? "✓" : i + 1}</button>`).join(`<i class="pv-track-line"></i>`)}</div>
@@ -581,8 +582,22 @@ const BCPaths = (() => {
       ${p.mine ? `<button class="pv-btn pv-sharewide pv-edit" data-id="${esc(p.id)}">✏️ ${p.received ? "Make it your own (edit a copy)" : "Edit this path"}</button>` : ""}
       <p class="pv-small"><span>Sources:</span> <span class="pvx">${esc((p.sources || []).join(" · "))}</span></p>
       ${(p.outside_sources || []).length ? `<p class="pv-small">${p.outside_sources.map(o => `<b class="pvx">${esc(o.name)}</b>: <span class="pvx">${esc(o.about)}</span> <a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.source)} ↗</a>`).join("<br>")}</p>` : ""}`, true);
+    aboutBooks(p, S.step);
     S.versesP = drawVerses(s);
     if(S.lsAuto){ S.lsAuto = false; lsStart("step"); }   // 🔊 Listen goes on into the next step
+  }
+  /* 📚 About these books: a path that reads a book outside the 66 (1 Enoch, Jubilees, Jasher, 1 Clement, the Apocrypha)
+     says plainly what that book is, in a box anyone can see (the 📚 tag's own text only shows on hover). Step 1 lists
+     every such book in the path; a later step lists the ones it reads. Text from web/guide.json (canon.about, else the
+     book's group); the words are translated in web/i18n.js. */
+  async function aboutBooks(p, step){
+    try{ if(typeof BCGuide === "undefined") return; await BCGuide.load("guide.json"); }catch(e){ return; }
+    const box = root.querySelector("#pvAbout"); if(!box || S.path !== p || S.step !== step) return;
+    const refs = step === 0 ? p.steps.flatMap(x => x.refs || []) : (p.steps[step].refs || []), seen = new Set(), rows = [];
+    for(const r of refs){ const q = parseRef(r), c = q && BCGuide.canon(q.book);
+      if(c && !seen.has(q.book)){ seen.add(q.book); rows.push(`<p><b class="pvx">${esc(q.book)}</b>: <span>${esc(c.long)}</span></p>`); } }
+    if(!rows.length) return;
+    box.innerHTML = `<h4>📚 About these books</h4>${rows.join("")}`; box.hidden = false;
   }
   /* Words of another faith (the Quran in "What does the Quran say about the Bible?"): never Scripture. Each passage sits
      in its own box above the Bible verses, labelled "not Scripture", every translation side by side under its
@@ -1276,6 +1291,7 @@ const BCPaths = (() => {
 .pv-bar{height:5px;background:var(--line);border-radius:9px;overflow:hidden;margin:4px 0 8px}.pv-bar i{display:block;height:100%;background:var(--accent)}
 .pv-q{font-size:18px;margin:8px 0 10px}
 .pv-apply{font-size:15px;line-height:1.45;margin:-4px 0 12px;font-style:italic}.pv-apply b{font-style:normal;color:var(--accent)}
+.pv-about{font-size:14px;line-height:1.45;margin:10px 0 0;padding:7px 10px;border-left:3px solid var(--line);background:rgba(127,127,127,.10);border-radius:6px}.pv-about h4{margin:0 0 4px;font-size:14px}.pv-about p{margin:4px 0 0}
 .pv-intro{font-size:14px;line-height:1.45;margin:10px 0 0;padding:7px 10px;border-left:3px solid var(--accent);background:rgba(127,127,127,.12);border-radius:6px}
 .pv-ref{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:0 0 10px}
 .pv-refh{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;font-weight:650;margin-bottom:4px}

@@ -96,7 +96,12 @@ def broad(question: str) -> bool:
 def canon(book: str) -> Optional[dict]:
     d = load()["canon"]
     g = d["books"].get(book)
-    return dict(d["groups"][g], group=g) if g else None
+    if not g:
+        return None
+    c = dict(d["groups"][g], group=g)
+    if d.get("about", {}).get(book):   # a book's own line (1 Enoch) replaces its group's long text
+        c["long"] = d["about"][book]
+    return c
 
 
 def canon_short(book: str) -> str:
