@@ -24,6 +24,7 @@
       "letter": {"short": "Early church letter", "long": "1 Clement is a letter from the church at Rome to Corinth (about AD 96). It is not in today's Bibles; one old Greek Bible, Codex Alexandrinus, copied it after Revelation."},
       "jasher": {"short": "Not Scripture in any church", "long": "The 1840 English Book of Jasher. Scholars dispute whether it is the book named in Joshua 10:13 and 2 Samuel 1:18. No church counts it as Scripture."}
     },
+    "about": {"1 Enoch": "1 Enoch is an ancient Jewish book, quoted in Jude 14-15, and part of the Ethiopian Orthodox canon. It is shown here as a historical source, not as part of the 66-book Bible.", "Enoch": "1 Enoch is an ancient Jewish book, quoted in Jude 14-15, and part of the Ethiopian Orthodox canon. It is shown here as a historical source, not as part of the 66-book Bible."},
     "books": {
       "Tobit": "deutero", "Tobias": "deutero", "Judith": "deutero", "Wisdom": "deutero", "Wisdom of Solomon": "deutero",
       "Sirach": "deutero", "Ecclesiasticus": "deutero", "Baruch": "deutero", "Letter of Jeremiah": "deutero",

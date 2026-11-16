@@ -364,6 +364,48 @@
   }
  },
  {
+  "id": "forgiveness",
+  "title": "Forgiveness: seventy times seven",
+  "category": "Foundations",
+  "image": "img/forgiveness.jpg",
+  "opening_question": "How many times must we forgive, and what does being forgiven ask of us? Read what Yeshua told Peter, the two parables, the prayer He taught, how the Father forgives, His words on the cross, and the promise for the one who confesses. Each step asks what the text says and what it means for me.",
+  "share": "How many times must we forgive, and what does being forgiven ask of us? Nine steps through what Yeshua and the Scriptures say.",
+  "steps": 9,
+  "step_questions": [
+   "Peter asked how often he must forgive his brother, \"till seven times?\" What did Yeshua answer, and what does Luke add about the brother who comes back saying \"I repent\"?",
+   "In the parable, what did the king forgive his servant, and what did that servant do to his fellowservant who owed him \"an hundred pence\"?",
+   "In the prayer Yeshua taught, what do we ask the Father to forgive, and on what measure? What does He say right after the prayer, and in Mark when we \"stand praying\"?",
+   "How does the LORD forgive? What does Psalm 103 say about how far He has \"removed our transgressions\", and what do Micah and Isaiah say He does with our sins?",
+   "When the younger son came home, what had he planned to say, and what did the father do \"when he was yet a great way off\"?",
+   "Why was the elder son angry, and what did the father say to him? Does the parable tell us whether he went in?",
+   "On the cross, what did Yeshua pray for the people who crucified Him? What did Stephen pray when he was stoned?",
+   "What does Paul tell believers to put away, and what pattern does he give for forgiving one another?",
+   "What does John promise to the one who confesses, and what does David say happened while he \"kept silence\"?"
+  ],
+  "books": [
+   "1 John",
+   "Acts",
+   "Colossians",
+   "Ephesians",
+   "Genesis",
+   "Isaiah",
+   "Luke",
+   "Mark",
+   "Matthew",
+   "Micah",
+   "Psalms"
+  ],
+  "show": 8,
+  "verses": 69,
+  "minutes": 50,
+  "anim": {
+   "kind": "light",
+   "x": 50,
+   "y": 22,
+   "s": 30
+  }
+ },
+ {
   "id": "freedom-from-bondage",
   "title": "Freedom from bondage",
   "category": "Freedom",

@@ -121,6 +121,21 @@ class GuideData(unittest.TestCase):
             if name not in sixty_six:
                 self.assertTrue(guide.canon_short(name), name)
 
+    def test_enoch_about_line(self):
+        """1 Enoch says plainly what it is (Hans, 15 November 2026: a pastor took it for a Gnostic text)."""
+        line = ("1 Enoch is an ancient Jewish book, quoted in Jude 14-15, and part of the Ethiopian Orthodox canon. "
+                "It is shown here as a historical source, not as part of the 66-book Bible.")
+        self.assertEqual(guide.canon("1 Enoch")["long"], line)
+        self.assertEqual(guide.canon("1 Enoch")["short"], "Ethiopian Bible only")
+        self.assertIn("Ethiopian Orthodox Church only", guide.canon("Jubilees")["long"])   # other books keep their group's line
+        self.assertIn("a ? {long: a} : {}", open(os.path.join(WEB, "guide.js"), encoding="utf-8").read())
+        js = open(os.path.join(ROOT, "web", "paths.js"), encoding="utf-8").read()
+        for part in ('id="pvAbout"', "function aboutBooks", "aboutBooks(p, S.step)", "📚 About these books"):
+            self.assertIn(part, js)
+        i18n = open(os.path.join(ROOT, "web", "i18n.js"), encoding="utf-8").read()
+        self.assertIn(json.dumps(line), i18n)
+        self.assertIn('"📚 About these books"', i18n)
+
     def test_topic_matching(self):
         self.assertEqual(guide.topic_for("What does the Bible say about the love of money?")["id"], "money")
         self.assertEqual(guide.topic_for("end times")["id"], "end-times")

@@ -44,7 +44,9 @@ const BCGuide = (() => {
     return best;
   }
   const broad = q => !!topicFor(q) || (contentWords(q).length > 0 && contentWords(q).length <= 2);
-  function canon(book){ if(!D) return null; const g = (D.canon.books || {})[book]; return g ? Object.assign({group: g}, D.canon.groups[g]) : null; }
+  function canon(book){   // a book's own "about" line (canon.about: 1 Enoch) replaces its group's long text
+    if(!D) return null; const g = (D.canon.books || {})[book], a = (D.canon.about || {})[book];
+    return g ? Object.assign({group: g}, D.canon.groups[g], a ? {long: a} : {}) : null; }
   const notesFor = (book, c, v) => NOTES.get(book + "|" + c + "|" + v) || {};
   const sectionOf = book => SECTION.get(book) || (D && D.other_section) || "Other books";
   /* the first k with at most `cap` from one part of the Bible, best first; the rest after them (bibleask/guide.py spread) */

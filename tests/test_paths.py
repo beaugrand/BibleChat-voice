@@ -118,6 +118,19 @@ class PathRulesTest(unittest.TestCase):
         self.assertTrue(any(s["look_closer"].get("letters") == "H3068" for s in p["steps"]))   # YHWH letter by letter
 
 
+    def test_forgiveness_path(self):
+        """The first of the six common topics (handover, 14 November 2026): Forgiveness, in Foundations, not a group path."""
+        f = load(os.path.join(bp.SRC_DIR, "forgiveness.json"))
+        self.assertEqual(f["category"], "Foundations"); self.assertNotIn("group", f); self.assertTrue(f["red_letters"])
+        self.assertTrue(f["opening_question"].startswith("How many times must we forgive, and what does being forgiven ask of us?"))
+        for r in ("Matthew 18:21-22", "Matthew 18:23-35", "Matthew 6:12-15", "Psalms 103:8-12", "Luke 15:11-24", "Luke 23:33-34",
+                  "Ephesians 4:31-32", "1 John 1:8-10"):
+            self.assertIn(r, f["required_refs"])
+        self.assertTrue(all(s.get("apply") for s in f["steps"]))                   # a "For me" question on every step
+        text = json.dumps(f)
+        self.assertNotIn("Jesus", text)   # Yeshua in our own words; verse text is never in the file
+        self.assertTrue(os.path.exists(os.path.join(ROOT, "web", "paths", "img", "forgiveness.jpg")))
+
     def test_hans_new_paths_and_pictures(self):
         names = {os.path.basename(f)[:-5] for f in SOURCES}
         self.assertIn("husband-and-wife", names); self.assertIn("the-rainbow", names)
