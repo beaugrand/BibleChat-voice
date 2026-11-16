@@ -1,5 +1,47 @@
 [
  {
+  "id": "baptism",
+  "title": "Baptism: what it is and who it is for",
+  "category": "Foundations",
+  "image": "img/baptism.jpg",
+  "opening_question": "What does the Bible say baptism is, and who is it for? Read how Yeshua was baptized, the command He gave, Pentecost, the Ethiopian, and what Paul and Peter say it means. Christians read some of these verses differently: who is baptized, how, and in what words. Each reading is shown with its own verses, and BibleChat gives no verdict.",
+  "share": "What does the Bible say baptism is, and who is it for? Ten steps through every passage, with each reading Christians hold.",
+  "steps": 10,
+  "step_questions": [
+   "Why did Yeshua come to John to be baptized, when John said \"I have need to be baptized of thee\"? What happened when He came up out of the water?",
+   "What did the risen Yeshua command His disciples to do, and in whose name? What does Mark add about the one who \"believeth and is baptized\"?",
+   "At Pentecost, when the people asked \"what shall we do?\", what did Peter answer? Who did he say the promise is for?",
+   "In Samaria and on the desert road, what came before baptism? What did the Ethiopian ask when they \"came unto a certain water\"?",
+   "What does Paul say happens to those \"baptized into Jesus Christ\"? How does Colossians link baptism to burial, rising and circumcision?",
+   "What does Paul say those \"baptized into Christ\" have put on? What differences no longer divide them?",
+   "Peter compares baptism with Noah's ark. What does he say baptism is, and what is it not? What was Paul told in Acts 22?",
+   "At Cornelius' house, what came first, the Holy Ghost or the water? What did Yeshua promise the thief on the cross? What does Paul say he was sent to do?",
+   "Who was baptized with Lydia and with the jailer at Philippi? Read these beside Acts 2:39 and Acts 8:12. What do the verses say, and what do they not say?",
+   "Why was John baptizing at Aenon? What does the Greek word for baptize mean, and how is it used in Luke 11:38? In whose name were people baptized in Matthew 28 and in Acts?"
+  ],
+  "books": [
+   "1 Corinthians",
+   "1 Peter",
+   "Acts",
+   "Colossians",
+   "Galatians",
+   "John",
+   "Luke",
+   "Mark",
+   "Matthew",
+   "Romans"
+  ],
+  "show": 8,
+  "verses": 58,
+  "minutes": 50,
+  "anim": {
+   "kind": "light",
+   "x": 50,
+   "y": 18,
+   "s": 30
+  }
+ },
+ {
   "id": "daniel-2-statue-and-stone",
   "title": "Daniel 2: the statue and the stone",
   "category": "Bible Study Groups",
@@ -3164,6 +3206,45 @@
      "Für das Leben: Wie auch immer der Zeitpunkt ist, was verlangen diese Verse von uns, während wir warten?"
     ]
    }
+  }
+ },
+ {
+  "id": "the-ten-commandments",
+  "title": "The Ten Commandments",
+  "category": "Foundations",
+  "image": "img/the-ten-commandments.jpg",
+  "opening_question": "What did God say at Sinai, and what did Yeshua say about it? Read the ten words in Exodus 20 beside Deuteronomy 5, what Yeshua said about the law, and what Paul and James say about love and the law. Christians number the commandments differently and apply them differently, the Sabbath most of all. Each reading is shown with its own verses, and BibleChat gives no verdict.",
+  "share": "What did God say at Sinai, and what did Yeshua say about it? Nine steps through the ten words, Exodus 20 beside Deuteronomy 5.",
+  "steps": 9,
+  "step_questions": [
+   "Before any commandment, what does God say about who He is and what He has done? What does the Bible call these words, and where were they written?",
+   "What do the first words say about other gods and graven images? To whom does God show mercy \"unto thousands\"?",
+   "What does it mean to take the name of the LORD \"in vain\"? What does He say about the one who does it?",
+   "Read the Sabbath commandment in Exodus beside Deuteronomy. What reason does each give for the day?",
+   "What does God promise to the one who honours father and mother? How does Paul repeat this commandment?",
+   "What do the next four words protect? How did Yeshua take \"Thou shalt not kill\" and \"Thou shalt not commit adultery\" into the heart?",
+   "The last word is about desire, not deeds. What may we not covet? How does the order differ in Deuteronomy, and what did this commandment show Paul?",
+   "What did Yeshua say He came to do with the law? When asked for the great commandment, which two did He name?",
+   "How do Paul and James sum up the commandments? What does Jeremiah say God will do with His law in the new covenant?"
+  ],
+  "books": [
+   "Deuteronomy",
+   "Ephesians",
+   "Exodus",
+   "James",
+   "Jeremiah",
+   "Leviticus",
+   "Matthew",
+   "Romans"
+  ],
+  "show": 8,
+  "verses": 52,
+  "minutes": 50,
+  "anim": {
+   "kind": "fire",
+   "x": 50,
+   "y": 22,
+   "s": 30
   }
  },
  {

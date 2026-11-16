@@ -144,6 +144,34 @@ class PathRulesTest(unittest.TestCase):
         self.assertTrue(all(s.get("apply") for s in f["steps"]))
         self.assertTrue(os.path.exists(os.path.join(ROOT, "web", "paths", "img", "faith.jpg")))
 
+    def test_baptism_path(self):
+        """The third common topic: Baptism. Each Christian reading is shown with its own verses, no verdict."""
+        f = load(os.path.join(bp.SRC_DIR, "baptism.json"))
+        self.assertEqual(f["category"], "Foundations"); self.assertNotIn("group", f)
+        self.assertTrue(f["opening_question"].startswith("What does the Bible say baptism is, and who is it for?"))
+        for r in ("Matthew 3:13-17", "Matthew 28:18-20", "Mark 16:15-16", "Acts 2:37-41", "Acts 8:35-39", "Romans 6:3-5",
+                  "Colossians 2:11-12", "1 Peter 3:20-21", "Galatians 3:26-29"):
+            self.assertIn(r, f["required_refs"])
+        verdicts = [x for s in f["steps"] for x in s["facts"] if "no verdict" in x["text"]]
+        self.assertGreaterEqual(len(verdicts), 4)   # saved by it or a sign; who; how; in what words
+        self.assertTrue(all(s.get("apply") for s in f["steps"]))
+        self.assertTrue(os.path.exists(os.path.join(ROOT, "web", "paths", "img", "baptism.jpg")))
+
+    def test_ten_commandments_path(self):
+        """The fourth common topic: Exodus 20 beside Deuteronomy 5, the numberings shown, the Sabbath study pointed to."""
+        f = load(os.path.join(bp.SRC_DIR, "the-ten-commandments.json"))
+        self.assertEqual(f["category"], "Foundations"); self.assertNotIn("group", f)
+        self.assertTrue(f["opening_question"].startswith("What did God say at Sinai, and what did Yeshua say about it?"))
+        for r in ("Exodus 20:1-2", "Exodus 20:3-6", "Exodus 20:8-11", "Exodus 20:17", "Matthew 5:17-19", "Matthew 22:36-40",
+                  "Romans 13:8-10", "James 2:10-12"):
+            self.assertIn(r, f["required_refs"])
+        sab = [s for s in f["steps"] if "Exodus 20:8-11" in s["refs"]][0]
+        self.assertTrue(sab["side_by_side"]); self.assertIn("Deuteronomy 5:12-15", sab["refs"])
+        self.assertIn("The Sabbath: God's day of rest", json.dumps(sab["facts"]))      # points to the 3-part study
+        self.assertIn("Jewish tradition", json.dumps(f["steps"][1]["facts"]))           # the ways of numbering
+        self.assertTrue(all(s.get("apply") for s in f["steps"]))
+        self.assertTrue(os.path.exists(os.path.join(ROOT, "web", "paths", "img", "the-ten-commandments.jpg")))
+
     def test_hans_new_paths_and_pictures(self):
         names = {os.path.basename(f)[:-5] for f in SOURCES}
         self.assertIn("husband-and-wife", names); self.assertIn("the-rainbow", names)
