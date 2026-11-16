@@ -1,0 +1,1099 @@
+{
+ "id": "the-ten-commandments",
+ "title": "The Ten Commandments",
+ "category": "Foundations",
+ "red_letters": true,
+ "anim": {
+  "kind": "fire",
+  "x": 50,
+  "y": 22,
+  "s": 30
+ },
+ "share": "What did God say at Sinai, and what did Yeshua say about it? Nine steps through the ten words, Exodus 20 beside Deuteronomy 5.",
+ "opening_question": "What did God say at Sinai, and what did Yeshua say about it? Read the ten words in Exodus 20 beside Deuteronomy 5, what Yeshua said about the law, and what Paul and James say about love and the law. Christians number the commandments differently and apply them differently, the Sabbath most of all. Each reading is shown with its own verses, and BibleChat gives no verdict.",
+ "required_refs": [
+  "Exodus 20:1-2",
+  "Deuteronomy 5:6",
+  "Exodus 34:28",
+  "Deuteronomy 4:13",
+  "Exodus 31:18",
+  "Exodus 20:3-6",
+  "Deuteronomy 6:4-5",
+  "Exodus 20:7",
+  "Exodus 20:8-11",
+  "Deuteronomy 5:12-15",
+  "Exodus 20:12",
+  "Ephesians 6:1-3",
+  "Exodus 20:13-16",
+  "Matthew 5:21-22",
+  "Matthew 5:27-28",
+  "Exodus 20:17",
+  "Deuteronomy 5:21",
+  "Romans 7:7",
+  "Matthew 5:17-19",
+  "Matthew 22:36-40",
+  "Leviticus 19:18",
+  "Romans 13:8-10",
+  "James 2:10-12",
+  "Jeremiah 31:33"
+ ],
+ "words": [
+  "H1697",
+  "H7523",
+  "H2530",
+  "G4137"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Before any commandment, what does God say about who He is and what He has done? What does the Bible call these words, and where were they written?",
+   "apply": "Do I obey God to earn His love, or because He has already brought me out?",
+   "refs": [
+    "Exodus 20:1-2",
+    "Deuteronomy 5:6",
+    "Exodus 34:28",
+    "Deuteronomy 4:13",
+    "Exodus 31:18"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H1697"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The first words are not a command but who He is: \"I am the LORD thy God, which have brought thee out of the land of Egypt\".",
+     "refs": [
+      "Exodus 20:2"
+     ]
+    },
+    {
+     "text": "\"the ten commandments\" is in Hebrew the ten words: dabar is \"a word\", \"a matter\". The Bible never numbers them one by one.",
+     "refs": [
+      "Exodus 34:28",
+      "Deuteronomy 4:13"
+     ],
+     "strongs": [
+      "H1697"
+     ]
+    },
+    {
+     "text": "They were \"tables of stone, written with the finger of God\".",
+     "refs": [
+      "Exodus 31:18"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What do the first words say about other gods and graven images? To whom does God show mercy \"unto thousands\"?",
+   "apply": "What do I bow down to, or serve, in place of God?",
+   "refs": [
+    "Exodus 20:3-6",
+    "Deuteronomy 6:4-5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H6459",
+     "H7067"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Thou shalt have no other gods before me.\" Then: \"Thou shalt not make unto thee any graven image\"; pesel is \"an idol\".",
+     "refs": [
+      "Exodus 20:3-4"
+     ],
+     "strongs": [
+      "H6459"
+     ]
+    },
+    {
+     "text": "\"visiting the iniquity\" reaches \"unto the third and fourth generation\"; \"shewing mercy\" reaches \"unto thousands of them that love me\".",
+     "refs": [
+      "Exodus 20:5-6"
+     ]
+    },
+    {
+     "text": "Christians count the ten in different ways, all from these same verses. In Jewish tradition the first word is \"I am the LORD thy God\" and other gods and images are the second. Catholics and Lutherans join other gods and images as the first and count the coveting of the wife and of the goods as two. The Orthodox and most Protestants count other gods first, images second, and coveting as one. BibleChat gives no verdict.",
+     "refs": [
+      "Exodus 20:2-6",
+      "Exodus 20:17",
+      "Deuteronomy 5:21"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does it mean to take the name of the LORD \"in vain\"? What does He say about the one who does it?",
+   "apply": "How do I use His name when I speak, promise or pray?",
+   "refs": [
+    "Exodus 20:7"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7723",
+     "H5375"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"take\" is nasa: \"to lift\", to carry. \"vain\" is shav: \"uselessness\", \"false\", \"lie\". It covers more than cursing: carrying His name falsely or emptily.",
+     "refs": [
+      "Exodus 20:7"
+     ],
+     "strongs": [
+      "H5375",
+      "H7723"
+     ]
+    },
+    {
+     "text": "\"the LORD will not hold him guiltless that taketh his name in vain.\"",
+     "refs": [
+      "Exodus 20:7"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Read the Sabbath commandment in Exodus beside Deuteronomy. What reason does each give for the day?",
+   "apply": "When do I stop and rest, and who else can rest because I do?",
+   "refs": [
+    "Exodus 20:8-11",
+    "Deuteronomy 5:12-15"
+   ],
+   "side_by_side": true,
+   "look_closer": {
+    "strongs": [
+     "H7676"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Exodus begins \"Remember the sabbath day\" and gives creation as the reason: \"For in six days the LORD made heaven and earth\".",
+     "refs": [
+      "Exodus 20:8",
+      "Exodus 20:11"
+     ]
+    },
+    {
+     "text": "Deuteronomy begins \"Keep the sabbath day\" and gives Egypt as the reason: \"remember that thou wast a servant in the land of Egypt\", and adds \"that thy manservant and thy maidservant may rest as well as thou.\"",
+     "refs": [
+      "Deuteronomy 5:12",
+      "Deuteronomy 5:14-15"
+     ]
+    },
+    {
+     "text": "Christians apply this commandment in different ways: some keep the seventh day, some keep the first day, the Lord's day, and some hold that the rest is fulfilled in Christ. The three-part Study Path The Sabbath: God's day of rest (in Foundations) walks through every passage. BibleChat gives no verdict here.",
+     "refs": [
+      "Exodus 20:10",
+      "Deuteronomy 5:14"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does God promise to the one who honours father and mother? How does Paul repeat this commandment?",
+   "apply": "How can I honour my parents, living or not, this week?",
+   "refs": [
+    "Exodus 20:12",
+    "Ephesians 6:1-3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H3513"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Honour\" is kabad: \"to be heavy\", to make \"weighty\". To honour is to give weight to.",
+     "refs": [
+      "Exodus 20:12"
+     ],
+     "strongs": [
+      "H3513"
+     ]
+    },
+    {
+     "text": "Paul repeats it and calls it \"the first commandment with promise\".",
+     "refs": [
+      "Ephesians 6:2"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What do the next four words protect? How did Yeshua take \"Thou shalt not kill\" and \"Thou shalt not commit adultery\" into the heart?",
+   "apply": "Where has anger or a look already crossed a line in my heart?",
+   "refs": [
+    "Exodus 20:13-16",
+    "Matthew 5:21-22",
+    "Matthew 5:27-28"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7523",
+     "H8267"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Four short words: life, marriage, property and truth. \"kill\" is ratsach: \"especially to murder\". The BSB and the Ethiopian Canon read \"You shall not murder.\"",
+     "refs": [
+      "Exodus 20:13-16"
+     ],
+     "strongs": [
+      "H7523"
+     ]
+    },
+    {
+     "text": "\"false witness\": sheqer is \"an untruth\", \"a sham\".",
+     "refs": [
+      "Exodus 20:16"
+     ],
+     "strongs": [
+      "H8267"
+     ]
+    },
+    {
+     "text": "Yeshua: \"whosoever is angry with his brother without a cause shall be in danger of the judgment\", and \"whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.\"",
+     "refs": [
+      "Matthew 5:22",
+      "Matthew 5:28"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "The last word is about desire, not deeds. What may we not covet? How does the order differ in Deuteronomy, and what did this commandment show Paul?",
+   "apply": "What do I want so much that it has started to own me?",
+   "refs": [
+    "Exodus 20:17",
+    "Deuteronomy 5:21",
+    "Romans 7:7"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H2530"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"covet\" is chamad: \"to delight in\", \"desire\". The same word describes Eden's trees as \"pleasant to the sight\".",
+     "refs": [
+      "Exodus 20:17",
+      "Genesis 2:9"
+     ],
+     "strongs": [
+      "H2530"
+     ]
+    },
+    {
+     "text": "Exodus names \"thy neighbour's house\" first; Deuteronomy names \"thy neighbour's wife\" first and uses a second verb, \"desire\".",
+     "refs": [
+      "Exodus 20:17",
+      "Deuteronomy 5:21"
+     ]
+    },
+    {
+     "text": "Paul: \"I had not known lust, except the law had said, Thou shalt not covet.\"",
+     "refs": [
+      "Romans 7:7"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Yeshua say He came to do with the law? When asked for the great commandment, which two did He name?",
+   "apply": "Which of the two great commandments do I find harder today?",
+   "refs": [
+    "Matthew 5:17-19",
+    "Matthew 22:36-40",
+    "Deuteronomy 6:4-5",
+    "Leviticus 19:18"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4137"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"I am not come to destroy, but to fulfil.\" \"fulfil\" is pleroo: \"to make replete\", to \"fill (up)\", \"finish\", \"complete\".",
+     "refs": [
+      "Matthew 5:17"
+     ],
+     "strongs": [
+      "G4137"
+     ]
+    },
+    {
+     "text": "\"one jot or one tittle shall in no wise pass from the law, till all be fulfilled.\"",
+     "refs": [
+      "Matthew 5:18"
+     ]
+    },
+    {
+     "text": "Both great commandments come from the Law of Moses: \"thou shalt love the LORD thy God with all thine heart\" and \"thou shalt love thy neighbour as thyself\". \"On these two commandments hang all the law and the prophets.\"",
+     "refs": [
+      "Deuteronomy 6:5",
+      "Leviticus 19:18",
+      "Matthew 22:40"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How do Paul and James sum up the commandments? What does Jeremiah say God will do with His law in the new covenant?",
+   "apply": "Which commandment do I most need God to write on my heart?",
+   "refs": [
+    "Romans 13:8-10",
+    "James 2:10-12",
+    "Jeremiah 31:33"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G26"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Paul lists five of the ten and sums them up: \"Thou shalt love thy neighbour as thyself\". \"love is the fulfilling of the law.\"",
+     "refs": [
+      "Romans 13:9-10"
+     ]
+    },
+    {
+     "text": "James: \"whosoever shall keep the whole law, and yet offend in one point, he is guilty of all.\" He calls it \"the law of liberty\".",
+     "refs": [
+      "James 2:10",
+      "James 2:12"
+     ]
+    },
+    {
+     "text": "God's promise: \"I will put my law in their inward parts, and write it in their hearts\". First on stone, then on the heart.",
+     "refs": [
+      "Jeremiah 31:33"
+     ]
+    },
+    {
+     "text": "Christians differ on how the ten apply to believers today. Some hold that all ten are binding as written, the seventh-day Sabbath included. Some hold that the moral law stands and the Sabbath is kept on the Lord's day or fulfilled in Christ. Many add that keeping the law does not save, but shows love for the One who saves. Each reading points to these verses; BibleChat gives no verdict.",
+     "refs": [
+      "Matthew 5:17-19",
+      "Romans 13:10",
+      "James 2:10-12"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"I am the LORD thy God, which have brought thee out of the land of Egypt\"",
+   "refs": [
+    "Exodus 20:2"
+   ]
+  },
+  {
+   "text": "\"Thou shalt have no other gods before me.\"",
+   "refs": [
+    "Exodus 20:3"
+   ]
+  },
+  {
+   "text": "\"Remember the sabbath day, to keep it holy.\"",
+   "refs": [
+    "Exodus 20:8"
+   ]
+  },
+  {
+   "text": "\"Honour thy father and thy mother\"",
+   "refs": [
+    "Exodus 20:12"
+   ]
+  },
+  {
+   "text": "\"I am not come to destroy, but to fulfil.\"",
+   "refs": [
+    "Matthew 5:17"
+   ]
+  },
+  {
+   "text": "\"On these two commandments hang all the law and the prophets.\"",
+   "refs": [
+    "Matthew 22:40"
+   ]
+  },
+  {
+   "text": "\"love is the fulfilling of the law.\"",
+   "refs": [
+    "Romans 13:10"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse begins the commandments with \"I am the LORD thy God, which have brought thee out of the land of Egypt\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Exodus 20:2"
+   ],
+   "signals": {
+    "xref": 32,
+    "votes": 245,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.378,
+    "quoted": null
+   },
+   "why": [
+    "32 cross-references point here"
+   ],
+   "score": 0.5078
+  },
+  {
+   "q": "What were the commandments written with, according to Exodus 31:18?",
+   "type": "multiple_choice",
+   "options": [
+    "The hand of Moses",
+    "The finger of God",
+    "A pen of iron"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "Exodus 31:18"
+   ],
+   "check": {
+    "word": "finger of God"
+   },
+   "signals": {
+    "xref": 14,
+    "votes": 78,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.441,
+    "quoted": null
+   },
+   "why": [
+    "14 cross-references point here"
+   ],
+   "score": 0.4383
+  },
+  {
+   "q": "Which verse calls them \"the ten commandments\" written \"upon the tables\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Exodus 34:28"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 92,
+    "word": "H1697",
+    "word_count": 4,
+    "differ": 0.403,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here",
+    "The Hebrew word dâbâr (H1697) is in 4 verses of this path"
+   ],
+   "score": 0.5577
+  },
+  {
+   "q": "Fill in the word: \"Thou shalt have no other ___ before me.\"",
+   "type": "fill_word",
+   "ref": "Exodus 20:3",
+   "bible": "KJV",
+   "word": "gods",
+   "answer_refs": [
+    "Exodus 20:3"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 182,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.267,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here"
+   ],
+   "score": 0.4579
+  },
+  {
+   "q": "To how many does God show mercy, of them that love Him and keep His commandments?",
+   "type": "multiple_choice",
+   "options": [
+    "Unto the third and fourth generation",
+    "Unto thousands",
+    "Unto seven"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "Exodus 20:6"
+   ],
+   "check": {
+    "word": "thousands"
+   },
+   "signals": {
+    "xref": 20,
+    "votes": 352,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.548,
+    "quoted": null
+   },
+   "why": [
+    "20 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5774
+  },
+  {
+   "q": "Which verse says \"Thou shalt not take the name of the LORD thy God in vain\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Exodus 20:7"
+   ],
+   "signals": {
+    "xref": 16,
+    "votes": 130,
+    "word": "H5375",
+    "word_count": 2,
+    "differ": 0.455,
+    "quoted": null
+   },
+   "why": [
+    "16 cross-references point here",
+    "The Hebrew word nâώâ' (H5375) is in 2 verses of this path"
+   ],
+   "score": 0.5381
+  },
+  {
+   "q": "Fill in the word: \"___ the sabbath day, to keep it holy.\"",
+   "type": "fill_word",
+   "ref": "Exodus 20:8",
+   "bible": "KJV",
+   "word": "Remember",
+   "answer_refs": [
+    "Exodus 20:8"
+   ],
+   "signals": {
+    "xref": 22,
+    "votes": 178,
+    "word": "H7676",
+    "word_count": 6,
+    "differ": 0.267,
+    "quoted": null
+   },
+   "why": [
+    "22 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 6 verses of this path"
+   ],
+   "score": 0.6312
+  },
+  {
+   "q": "What reason does Deuteronomy 5:15 give for the Sabbath?",
+   "type": "multiple_choice",
+   "options": [
+    "The six days of creation",
+    "That thou wast a servant in the land of Egypt",
+    "The giving of the manna"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "Deuteronomy 5:15"
+   ],
+   "check": {
+    "word": "servant in the land of Egypt"
+   },
+   "signals": {
+    "xref": 11,
+    "votes": 117,
+    "word": "H7676",
+    "word_count": 6,
+    "differ": 0.403,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Hebrew word shabbâth (H7676) is in 6 verses of this path"
+   ],
+   "score": 0.6339
+  },
+  {
+   "q": "Which verse calls honouring father and mother \"the first commandment with promise\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Ephesians 6:2"
+   ],
+   "signals": {
+    "xref": 17,
+    "votes": 224,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.222,
+    "quoted": null
+   },
+   "why": [
+    "17 cross-references point here"
+   ],
+   "score": 0.4621
+  },
+  {
+   "q": "Which Bible reads \"give false testimony\" in Exodus 20:16?",
+   "type": "which_translation",
+   "ref": "Exodus 20:16",
+   "bible": "ETH",
+   "phrase": "false testimony",
+   "answer_refs": [
+    "Exodus 20:16"
+   ],
+   "signals": {
+    "xref": 13,
+    "votes": 169,
+    "word": "H8267",
+    "word_count": 1,
+    "differ": 0.593,
+    "quoted": null
+   },
+   "why": [
+    "13 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.563
+  },
+  {
+   "q": "Which verse says whoever looks on a woman to lust after her \"hath committed adultery with her already in his heart\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 5:28"
+   ],
+   "signals": {
+    "xref": 27,
+    "votes": 178,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.329,
+    "quoted": null
+   },
+   "why": [
+    "27 cross-references point here"
+   ],
+   "score": 0.4717
+  },
+  {
+   "q": "Fill in the word: \"Thou shalt not ___ thy neighbour's house\"",
+   "type": "fill_word",
+   "ref": "Exodus 20:17",
+   "bible": "KJV",
+   "word": "covet",
+   "answer_refs": [
+    "Exodus 20:17"
+   ],
+   "signals": {
+    "xref": 18,
+    "votes": 210,
+    "word": "H2530",
+    "word_count": 3,
+    "differ": 0.601,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here",
+    "The Hebrew word châmad (H2530) is in 3 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.6395
+  },
+  {
+   "q": "Which verse says \"I had not known lust, except the law had said, Thou shalt not covet\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 7:7"
+   ],
+   "signals": {
+    "xref": 28,
+    "votes": 181,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.551,
+    "quoted": null
+   },
+   "why": [
+    "28 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5284
+  },
+  {
+   "q": "Which verse says \"I am not come to destroy, but to fulfil\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 5:17"
+   ],
+   "signals": {
+    "xref": 12,
+    "votes": 73,
+    "word": "G4137",
+    "word_count": 2,
+    "differ": 0.42,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here",
+    "The Greek word plēróō (G4137) is in 2 verses of this path"
+   ],
+   "score": 0.4865
+  },
+  {
+   "q": "Fill in the word: \"On these two commandments hang all the law and the ___.\"",
+   "type": "fill_word",
+   "ref": "Matthew 22:40",
+   "bible": "KJV",
+   "word": "prophets",
+   "answer_refs": [
+    "Matthew 22:40"
+   ],
+   "signals": {
+    "xref": 11,
+    "votes": 339,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.222,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here"
+   ],
+   "score": 0.4931
+  },
+  {
+   "q": "Which verse says \"love is the fulfilling of the law\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 13:10"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 251,
+    "word": "G26",
+    "word_count": 2,
+    "differ": 0.574,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here",
+    "The Greek word agápē (G26) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.617
+  },
+  {
+   "q": "What does James call the law by which we shall be judged?",
+   "type": "multiple_choice",
+   "options": [
+    "The law of Moses",
+    "The law of liberty",
+    "The royal law of the kings"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "James 2:12"
+   ],
+   "check": {
+    "word": "liberty"
+   },
+   "signals": {
+    "xref": 14,
+    "votes": 127,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.557,
+    "quoted": null
+   },
+   "why": [
+    "14 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5035
+  },
+  {
+   "q": "Where does God say He will write His law in the new covenant?",
+   "type": "multiple_choice",
+   "options": [
+    "On tables of stone",
+    "In their hearts",
+    "On the doorposts"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "Jeremiah 31:33"
+   ],
+   "check": {
+    "word": "hearts"
+   },
+   "signals": {
+    "xref": 94,
+    "votes": 1919,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.276,
+    "quoted": null
+   },
+   "why": [
+    "94 cross-references point here"
+   ],
+   "score": 0.519
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 52,
+ "image": "img/the-ten-commandments.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/the-ten-commandments.json",
+  "sha": "32e93226ea7d4def",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ },
+ "red": {
+  "Matthew 5:17": [
+   {
+    "n": 102,
+    "h": 1412602656,
+    "s": [
+     [
+      0,
+      102
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:18": [
+   {
+    "n": 135,
+    "h": 4145566450,
+    "s": [
+     [
+      0,
+      135
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:19": [
+   {
+    "n": 239,
+    "h": 2859273094,
+    "s": [
+     [
+      0,
+      239
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:21": [
+   {
+    "n": 133,
+    "h": 3551618177,
+    "s": [
+     [
+      0,
+      133
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:22": [
+   {
+    "n": 262,
+    "h": 1373420159,
+    "s": [
+     [
+      0,
+      262
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:27": [
+   {
+    "n": 83,
+    "h": 137971391,
+    "s": [
+     [
+      0,
+      83
+     ]
+    ]
+   }
+  ],
+  "Matthew 5:28": [
+   {
+    "n": 126,
+    "h": 3155822029,
+    "s": [
+     [
+      0,
+      126
+     ]
+    ]
+   }
+  ],
+  "Matthew 22:37": [
+   {
+    "n": 119,
+    "h": 3534959088,
+    "s": [
+     [
+      21,
+      119
+     ]
+    ]
+   }
+  ],
+  "Matthew 22:38": [
+   {
+    "n": 40,
+    "h": 4186290147,
+    "s": [
+     [
+      0,
+      40
+     ]
+    ]
+   }
+  ],
+  "Matthew 22:39": [
+   {
+    "n": 73,
+    "h": 38803346,
+    "s": [
+     [
+      0,
+      73
+     ]
+    ]
+   }
+  ],
+  "Matthew 22:40": [
+   {
+    "n": 60,
+    "h": 2750457258,
+    "s": [
+     [
+      0,
+      60
+     ]
+    ]
+   }
+  ]
+ }
+}
