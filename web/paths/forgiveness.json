@@ -1,0 +1,1504 @@
+{
+ "id": "forgiveness",
+ "title": "Forgiveness: seventy times seven",
+ "category": "Foundations",
+ "red_letters": true,
+ "anim": {
+  "kind": "light",
+  "x": 50,
+  "y": 22,
+  "s": 30
+ },
+ "share": "How many times must we forgive, and what does being forgiven ask of us? Nine steps through what Yeshua and the Scriptures say.",
+ "opening_question": "How many times must we forgive, and what does being forgiven ask of us? Read what Yeshua told Peter, the two parables, the prayer He taught, how the Father forgives, His words on the cross, and the promise for the one who confesses. Each step asks what the text says and what it means for me.",
+ "required_refs": [
+  "Matthew 18:21-22",
+  "Genesis 4:24",
+  "Luke 17:3-4",
+  "Matthew 18:23-35",
+  "Matthew 6:12-15",
+  "Mark 11:25-26",
+  "Psalms 103:8-12",
+  "Micah 7:18-19",
+  "Isaiah 43:25",
+  "Luke 15:11-24",
+  "Luke 15:25-32",
+  "Luke 23:33-34",
+  "Acts 7:59-60",
+  "Ephesians 4:31-32",
+  "Colossians 3:13",
+  "1 John 1:8-10",
+  "Psalms 32:1-5"
+ ],
+ "words": [
+  "G863",
+  "G5483",
+  "H5545",
+  "G3900"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Peter asked how often he must forgive his brother, \"till seven times?\" What did Yeshua answer, and what does Luke add about the brother who comes back saying \"I repent\"?",
+   "apply": "Is there someone I have stopped counting as forgivable because they have done it again?",
+   "refs": [
+    "Matthew 18:21-22",
+    "Genesis 4:24",
+    "Luke 17:3-4"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G863"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"forgive\" here is aphiemi. Strong's: \"to send forth\". The King James also translates it \"leave\", \"forsake\" and \"remit\".",
+     "refs": [
+      "Matthew 18:21"
+     ],
+     "strongs": [
+      "G863"
+     ]
+    },
+    {
+     "text": "Lamech boasted of revenge: \"truly Lamech seventy and sevenfold\". Yeshua answers Peter with the same kind of number, \"Until seventy times seven\", for forgiveness instead of revenge.",
+     "refs": [
+      "Genesis 4:24",
+      "Matthew 18:22"
+     ]
+    },
+    {
+     "text": "Luke gives the order: \"If thy brother trespass against thee, rebuke him; and if he repent, forgive him.\" Even \"seven times in a day\".",
+     "refs": [
+      "Luke 17:3-4"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "In the parable, what did the king forgive his servant, and what did that servant do to his fellowservant who owed him \"an hundred pence\"?",
+   "apply": "When I remember how much I have been forgiven, how does the debt someone owes me look?",
+   "refs": [
+    "Matthew 18:23-35"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4697"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The first servant \"owed him ten thousand talents\"; his fellowservant \"owed him an hundred pence\". Both said the same words: \"Have patience with me, and I will pay thee all.\"",
+     "refs": [
+      "Matthew 18:24",
+      "Matthew 18:26",
+      "Matthew 18:28-29"
+     ]
+    },
+    {
+     "text": "The king \"was moved with compassion\". The Greek splagchnizomai means \"to have the bowels yearn\": a pity felt deep inside.",
+     "refs": [
+      "Matthew 18:27"
+     ],
+     "strongs": [
+      "G4697"
+     ]
+    },
+    {
+     "text": "The king's question is the point of the parable: \"Shouldest not thou also have had compassion on thy fellowservant\"?",
+     "refs": [
+      "Matthew 18:33"
+     ]
+    },
+    {
+     "text": "Yeshua ends with the heart, not only the words: \"if ye from your hearts forgive not every one his brother their trespasses\".",
+     "refs": [
+      "Matthew 18:35"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "In the prayer Yeshua taught, what do we ask the Father to forgive, and on what measure? What does He say right after the prayer, and in Mark when we \"stand praying\"?",
+   "apply": "Can I pray \"forgive us our debts, as we forgive our debtors\" today and mean it?",
+   "refs": [
+    "Matthew 6:12-15",
+    "Mark 11:25-26"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3783",
+     "G3900"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"debts\" is opheilema: \"something owed\", and \"morally, a fault\".",
+     "refs": [
+      "Matthew 6:12"
+     ],
+     "strongs": [
+      "G3783"
+     ]
+    },
+    {
+     "text": "In the next verses the word is \"trespasses\", paraptoma: \"a side-slip\", an error or a \"transgression\".",
+     "refs": [
+      "Matthew 6:14-15"
+     ],
+     "strongs": [
+      "G3900"
+     ]
+    },
+    {
+     "text": "Mark does not wait for the other person: \"when ye stand praying, forgive, if ye have ought against any\". Luke 17 says \"if he repent, forgive him\". Christians read these two side by side in different ways: some say forgiveness is offered at once and fully restored when the other repents, others say it is always given at once. Both passages are here.",
+     "refs": [
+      "Mark 11:25",
+      "Luke 17:3"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How does the LORD forgive? What does Psalm 103 say about how far He has \"removed our transgressions\", and what do Micah and Isaiah say He does with our sins?",
+   "apply": "Do I still carry something God has already put \"as far as the east is from the west\"?",
+   "refs": [
+    "Psalms 103:8-12",
+    "Micah 7:18-19",
+    "Isaiah 43:25"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H7368",
+     "H5545"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"He hath not dealt with us after our sins\", nor rewarded us by what we have earned.",
+     "refs": [
+      "Psalms 103:10"
+     ]
+    },
+    {
+     "text": "\"removed\" is rachaq: to \"recede or (transitively) remove\", to put far away.",
+     "refs": [
+      "Psalms 103:12"
+     ],
+     "strongs": [
+      "H7368"
+     ]
+    },
+    {
+     "text": "Micah: \"thou wilt cast all their sins into the depths of the sea\". Isaiah: \"I, even I, am he that blotteth out thy transgressions\", and He \"will not remember thy sins.\"",
+     "refs": [
+      "Micah 7:19",
+      "Isaiah 43:25"
+     ]
+    },
+    {
+     "text": "The Hebrew word most often translated \"forgive\" in the Old Testament is salach, used of God forgiving.",
+     "refs": [
+      "Psalms 103:3"
+     ],
+     "strongs": [
+      "H5545"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "When the younger son came home, what had he planned to say, and what did the father do \"when he was yet a great way off\"?",
+   "apply": "Is there a way back to the Father, or to a person, that I have been afraid to take?",
+   "refs": [
+    "Luke 15:11-24"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4697"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The son \"came to himself\" and planned his words: \"Father, I have sinned against heaven, and before thee\".",
+     "refs": [
+      "Luke 15:17-18"
+     ]
+    },
+    {
+     "text": "The father moved first: he \"saw him, and had compassion, and ran, and fell on his neck, and kissed him.\" The same word for compassion as in the parable of the two servants.",
+     "refs": [
+      "Luke 15:20"
+     ],
+     "strongs": [
+      "G4697"
+     ]
+    },
+    {
+     "text": "The son never finished his speech. He did not get to say \"make me as one of thy hired servants\". The father called for \"the best robe\", \"a ring\" and \"shoes\".",
+     "refs": [
+      "Luke 15:19",
+      "Luke 15:21-22"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Why was the elder son angry, and what did the father say to him? Does the parable tell us whether he went in?",
+   "apply": "Am I standing outside, angry that someone else was forgiven?",
+   "refs": [
+    "Luke 15:25-32"
+   ],
+   "look_closer": {
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"he was angry, and would not go in: therefore came his father out, and intreated him.\" The father went out to both sons.",
+     "refs": [
+      "Luke 15:28"
+     ]
+    },
+    {
+     "text": "The elder son says \"this thy son\". The father answers \"this thy brother\".",
+     "refs": [
+      "Luke 15:30",
+      "Luke 15:32"
+     ]
+    },
+    {
+     "text": "The father's words to him: \"Son, thou art ever with me, and all that I have is thine.\" The parable ends there and does not say what the elder son did.",
+     "refs": [
+      "Luke 15:31"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "On the cross, what did Yeshua pray for the people who crucified Him? What did Stephen pray when he was stoned?",
+   "apply": "Can I pray for the person who hurt me, even before I feel that I forgive them?",
+   "refs": [
+    "Luke 23:33-34",
+    "Acts 7:59-60"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G863"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Father, forgive them; for they know not what they do.\" He prayed this at the place \"which is called Calvary\", while \"they parted his raiment, and cast lots\".",
+     "refs": [
+      "Luke 23:33-34"
+     ]
+    },
+    {
+     "text": "Stephen prayed the same way: \"Lord, lay not this sin to their charge.\"",
+     "refs": [
+      "Acts 7:60"
+     ]
+    },
+    {
+     "text": "Some old Greek manuscripts do not have the first half of Luke 23:34. Most Bibles print it, some with a note.",
+     "refs": [
+      "Luke 23:34"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does Paul tell believers to put away, and what pattern does he give for forgiving one another?",
+   "apply": "What would it look like to be \"tenderhearted\" toward one person this week?",
+   "refs": [
+    "Ephesians 4:31-32",
+    "Colossians 3:13"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5483"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "First something is put away: \"all bitterness, and wrath, and anger, and clamour, and evil speaking\".",
+     "refs": [
+      "Ephesians 4:31"
+     ]
+    },
+    {
+     "text": "\"forgiving\" here is charizomai, from the word for grace: \"to grant as a favor, i.e. gratuitously, in kindness, pardon\".",
+     "refs": [
+      "Ephesians 4:32"
+     ],
+     "strongs": [
+      "G5483"
+     ]
+    },
+    {
+     "text": "The measure is the same in both letters: \"even as God for Christ\" and \"even as Christ forgave you, so also do ye.\"",
+     "refs": [
+      "Ephesians 4:32",
+      "Colossians 3:13"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does John promise to the one who confesses, and what does David say happened while he \"kept silence\"?",
+   "apply": "Is there a sin I have kept silent about? Who is the person I most need to forgive, or ask forgiveness from?",
+   "refs": [
+    "1 John 1:8-10",
+    "Psalms 32:1-5"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3670",
+     "G2511"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The promise: \"he is faithful and just to forgive us our sins, and to cleanse us\".",
+     "refs": [
+      "1 John 1:9"
+     ]
+    },
+    {
+     "text": "\"confess\" is homologeo: to \"assent\", \"acknowledge\". To say the same thing about my sin that God says.",
+     "refs": [
+      "1 John 1:9"
+     ],
+     "strongs": [
+      "G3670"
+     ]
+    },
+    {
+     "text": "David: \"When I kept silence, my bones waxed old\". Then: \"I acknowledged my sin unto thee\" and \"thou forgavest the iniquity of my sin.\"",
+     "refs": [
+      "Psalms 32:3",
+      "Psalms 32:5"
+     ]
+    },
+    {
+     "text": "The psalm begins with the result: \"Blessed is he whose transgression is forgiven\".",
+     "refs": [
+      "Psalms 32:1"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"I say not unto thee, Until seven times: but, Until seventy times seven.\"",
+   "refs": [
+    "Matthew 18:22"
+   ]
+  },
+  {
+   "text": "\"even as I had pity on thee\"",
+   "refs": [
+    "Matthew 18:33"
+   ]
+  },
+  {
+   "text": "\"forgive us our debts, as we forgive our debtors\"",
+   "refs": [
+    "Matthew 6:12"
+   ]
+  },
+  {
+   "text": "\"As far as the east is from the west, so far hath he removed\" our sins.",
+   "refs": [
+    "Psalms 103:12"
+   ]
+  },
+  {
+   "text": "The father \"ran, and fell on his neck, and kissed him.\"",
+   "refs": [
+    "Luke 15:20"
+   ]
+  },
+  {
+   "text": "\"Father, forgive them; for they know not what they do.\"",
+   "refs": [
+    "Luke 23:34"
+   ]
+  },
+  {
+   "text": "\"If we confess our sins, he is faithful and just to forgive us our sins\"",
+   "refs": [
+    "1 John 1:9"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says \"Until seventy times seven\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 18:22"
+   ],
+   "signals": {
+    "xref": 9,
+    "votes": 103,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.548,
+    "quoted": null
+   },
+   "why": [
+    "9 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.4857
+  },
+  {
+   "q": "Fill in the word: \"If thy brother trespass against thee, rebuke him; and if he ___, forgive him.\"",
+   "type": "fill_word",
+   "ref": "Luke 17:3",
+   "bible": "KJV",
+   "word": "repent",
+   "answer_refs": [
+    "Luke 17:3"
+   ],
+   "signals": {
+    "xref": 9,
+    "votes": 111,
+    "word": "G863",
+    "word_count": 23,
+    "differ": 0.573,
+    "quoted": null
+   },
+   "why": [
+    "9 cross-references point here",
+    "The Greek word aphíēmi (G863) is in 23 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.8475
+  },
+  {
+   "q": "How much did the first servant owe the king?",
+   "type": "multiple_choice",
+   "options": [
+    "An hundred pence",
+    "Ten thousand talents",
+    "Seven talents"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "Matthew 18:24"
+   ],
+   "check": {
+    "word": "ten thousand talents"
+   },
+   "signals": {
+    "xref": 8,
+    "votes": 100,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.54,
+    "quoted": null
+   },
+   "why": [
+    "8 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.4815
+  },
+  {
+   "q": "Which verse asks \"Shouldest not thou also have had compassion on thy fellowservant\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 18:33"
+   ],
+   "signals": {
+    "xref": 19,
+    "votes": 208,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.555,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5398
+  },
+  {
+   "q": "Fill in the word: \"And forgive us our ___, as we forgive our debtors.\"",
+   "type": "fill_word",
+   "ref": "Matthew 6:12",
+   "bible": "KJV",
+   "word": "debts",
+   "answer_refs": [
+    "Matthew 6:12"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 168,
+    "word": "G863",
+    "word_count": 23,
+    "differ": 0.256,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here",
+    "The Greek word aphíēmi (G863) is in 23 verses of this path"
+   ],
+   "score": 0.7991
+  },
+  {
+   "q": "Which verse says \"when ye stand praying, forgive, if ye have ought against any\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Mark 11:25"
+   ],
+   "signals": {
+    "xref": 12,
+    "votes": 305,
+    "word": "G863",
+    "word_count": 23,
+    "differ": 0.561,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here",
+    "The Greek word aphíēmi (G863) is in 23 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.92
+  },
+  {
+   "q": "Which verse says \"As far as the east is from the west\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 103:12"
+   ],
+   "signals": {
+    "xref": 19,
+    "votes": 273,
+    "word": "H7368",
+    "word_count": 2,
+    "differ": 0.089,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here",
+    "The Hebrew word râchaq (H7368) is in 2 verses of this path"
+   ],
+   "score": 0.502
+  },
+  {
+   "q": "Where does Micah say God will cast all their sins?",
+   "type": "multiple_choice",
+   "options": [
+    "Behind his back",
+    "Into the depths of the sea",
+    "Into the wilderness"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "Micah 7:19"
+   ],
+   "check": {
+    "word": "depths of the sea"
+   },
+   "signals": {
+    "xref": 60,
+    "votes": 861,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.348,
+    "quoted": null
+   },
+   "why": [
+    "60 cross-references point here"
+   ],
+   "score": 0.537
+  },
+  {
+   "q": "Fill in the word: \"I, even I, am he that blotteth out thy transgressions for mine own sake, and will not ___ thy sins.\"",
+   "type": "fill_word",
+   "ref": "Isaiah 43:25",
+   "bible": "KJV",
+   "word": "remember",
+   "answer_refs": [
+    "Isaiah 43:25"
+   ],
+   "signals": {
+    "xref": 44,
+    "votes": 557,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.448,
+    "quoted": null
+   },
+   "why": [
+    "44 cross-references point here"
+   ],
+   "score": 0.562
+  },
+  {
+   "q": "What did the father do when the son was \"yet a great way off\"?",
+   "type": "multiple_choice",
+   "options": [
+    "He waited at the door",
+    "He sent a servant",
+    "He ran, and fell on his neck, and kissed him"
+   ],
+   "answer": 2,
+   "answer_refs": [
+    "Luke 15:20"
+   ],
+   "check": {
+    "word": "ran"
+   },
+   "signals": {
+    "xref": 35,
+    "votes": 209,
+    "word": "G4697",
+    "word_count": 2,
+    "differ": 0.533,
+    "quoted": null
+   },
+   "why": [
+    "35 cross-references point here",
+    "The Greek word splanchnízomai (G4697) is in 2 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.593
+  },
+  {
+   "q": "Which verse says \"this my son was dead, and is alive again; he was lost, and is found\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 15:24"
+   ],
+   "signals": {
+    "xref": 28,
+    "votes": 208,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.246,
+    "quoted": null
+   },
+   "why": [
+    "28 cross-references point here"
+   ],
+   "score": 0.4626
+  },
+  {
+   "q": "Which verse has the father say \"Son, thou art ever with me, and all that I have is thine\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 15:31"
+   ],
+   "signals": {
+    "xref": 10,
+    "votes": 70,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.601,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.4703
+  },
+  {
+   "q": "Which verse says \"Father, forgive them; for they know not what they do\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 23:34"
+   ],
+   "signals": {
+    "xref": 21,
+    "votes": 191,
+    "word": "G863",
+    "word_count": 23,
+    "differ": 0.454,
+    "quoted": null
+   },
+   "why": [
+    "21 cross-references point here",
+    "The Greek word aphíēmi (G863) is in 23 verses of this path"
+   ],
+   "score": 0.8582
+  },
+  {
+   "q": "What did Stephen pray as he was stoned?",
+   "type": "multiple_choice",
+   "options": [
+    "Lord, avenge my blood",
+    "Lord, lay not this sin to their charge",
+    "Lord, judge them"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "Acts 7:60"
+   ],
+   "check": {
+    "word": "lay not this sin to their charge"
+   },
+   "signals": {
+    "xref": 23,
+    "votes": 203,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.43,
+    "quoted": null
+   },
+   "why": [
+    "23 cross-references point here"
+   ],
+   "score": 0.5068
+  },
+  {
+   "q": "Fill in the word: \"And be ye kind one to another, ___, forgiving one another\"",
+   "type": "fill_word",
+   "ref": "Ephesians 4:32",
+   "bible": "KJV",
+   "word": "tenderhearted",
+   "answer_refs": [
+    "Ephesians 4:32"
+   ],
+   "signals": {
+    "xref": 36,
+    "votes": 756,
+    "word": "G5483",
+    "word_count": 4,
+    "differ": 0.457,
+    "quoted": null
+   },
+   "why": [
+    "36 cross-references point here",
+    "The Greek word charízomai (G5483) is in 4 verses of this path"
+   ],
+   "score": 0.6809
+  },
+  {
+   "q": "Which verse says \"even as Christ forgave you, so also do ye\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Colossians 3:13"
+   ],
+   "signals": {
+    "xref": 29,
+    "votes": 706,
+    "word": "G5483",
+    "word_count": 4,
+    "differ": 0.583,
+    "quoted": null
+   },
+   "why": [
+    "29 cross-references point here",
+    "The Greek word charízomai (G5483) is in 4 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.7124
+  },
+  {
+   "q": "Fill in the word: \"If we ___ our sins, he is faithful and just to forgive us our sins\"",
+   "type": "fill_word",
+   "ref": "1 John 1:9",
+   "bible": "KJV",
+   "word": "confess",
+   "answer_refs": [
+    "1 John 1:9"
+   ],
+   "signals": {
+    "xref": 69,
+    "votes": 713,
+    "word": "G863",
+    "word_count": 23,
+    "differ": 0.105,
+    "quoted": null
+   },
+   "why": [
+    "69 cross-references point here",
+    "The Greek word aphíēmi (G863) is in 23 verses of this path"
+   ],
+   "score": 0.8263
+  },
+  {
+   "q": "Which verse says \"Blessed is he whose transgression is forgiven\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Psalms 32:1"
+   ],
+   "signals": {
+    "xref": 24,
+    "votes": 221,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.377,
+    "quoted": null
+   },
+   "why": [
+    "24 cross-references point here"
+   ],
+   "score": 0.4999
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 69,
+ "image": "img/forgiveness.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/forgiveness.json",
+  "sha": "e9d51695e500de11",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ },
+ "red": {
+  "Luke 15:11": [
+   {
+    "n": 40,
+    "h": 3416652497,
+    "s": [
+     [
+      13,
+      40
+     ]
+    ]
+   }
+  ],
+  "Luke 15:12": [
+   {
+    "n": 137,
+    "h": 3530891849,
+    "s": [
+     [
+      0,
+      137
+     ]
+    ]
+   }
+  ],
+  "Luke 15:13": [
+   {
+    "n": 155,
+    "h": 3058515413,
+    "s": [
+     [
+      0,
+      155
+     ]
+    ]
+   }
+  ],
+  "Luke 15:14": [
+   {
+    "n": 96,
+    "h": 626194660,
+    "s": [
+     [
+      0,
+      96
+     ]
+    ]
+   }
+  ],
+  "Luke 15:15": [
+   {
+    "n": 107,
+    "h": 3856697336,
+    "s": [
+     [
+      0,
+      107
+     ]
+    ]
+   }
+  ],
+  "Luke 15:16": [
+   {
+    "n": 104,
+    "h": 1268103403,
+    "s": [
+     [
+      0,
+      104
+     ]
+    ]
+   }
+  ],
+  "Luke 15:17": [
+   {
+    "n": 134,
+    "h": 2407192018,
+    "s": [
+     [
+      0,
+      134
+     ]
+    ]
+   }
+  ],
+  "Luke 15:18": [
+   {
+    "n": 111,
+    "h": 3910700050,
+    "s": [
+     [
+      0,
+      111
+     ]
+    ]
+   }
+  ],
+  "Luke 15:19": [
+   {
+    "n": 81,
+    "h": 2526588929,
+    "s": [
+     [
+      0,
+      81
+     ]
+    ]
+   }
+  ],
+  "Luke 15:20": [
+   {
+    "n": 161,
+    "h": 659863143,
+    "s": [
+     [
+      0,
+      161
+     ]
+    ]
+   }
+  ],
+  "Luke 15:21": [
+   {
+    "n": 126,
+    "h": 1642092094,
+    "s": [
+     [
+      0,
+      126
+     ]
+    ]
+   }
+  ],
+  "Luke 15:22": [
+   {
+    "n": 133,
+    "h": 3755853847,
+    "s": [
+     [
+      0,
+      133
+     ]
+    ]
+   }
+  ],
+  "Luke 15:23": [
+   {
+    "n": 76,
+    "h": 1912991219,
+    "s": [
+     [
+      0,
+      76
+     ]
+    ]
+   }
+  ],
+  "Luke 15:24": [
+   {
+    "n": 100,
+    "h": 4005856954,
+    "s": [
+     [
+      0,
+      100
+     ]
+    ]
+   }
+  ],
+  "Luke 15:25": [
+   {
+    "n": 107,
+    "h": 2152695667,
+    "s": [
+     [
+      0,
+      107
+     ]
+    ]
+   }
+  ],
+  "Luke 15:26": [
+   {
+    "n": 69,
+    "h": 515859680,
+    "s": [
+     [
+      0,
+      69
+     ]
+    ]
+   }
+  ],
+  "Luke 15:27": [
+   {
+    "n": 131,
+    "h": 4213161185,
+    "s": [
+     [
+      0,
+      131
+     ]
+    ]
+   }
+  ],
+  "Luke 15:28": [
+   {
+    "n": 88,
+    "h": 631153704,
+    "s": [
+     [
+      0,
+      88
+     ]
+    ]
+   }
+  ],
+  "Luke 15:29": [
+   {
+    "n": 203,
+    "h": 1829590477,
+    "s": [
+     [
+      0,
+      203
+     ]
+    ]
+   }
+  ],
+  "Luke 15:30": [
+   {
+    "n": 124,
+    "h": 1233631505,
+    "s": [
+     [
+      0,
+      124
+     ]
+    ]
+   }
+  ],
+  "Luke 15:31": [
+   {
+    "n": 79,
+    "h": 2250973767,
+    "s": [
+     [
+      0,
+      79
+     ]
+    ]
+   }
+  ],
+  "Luke 15:32": [
+   {
+    "n": 130,
+    "h": 3893283288,
+    "s": [
+     [
+      0,
+      130
+     ]
+    ]
+   }
+  ],
+  "Luke 17:3": [
+   {
+    "n": 105,
+    "h": 3432858302,
+    "s": [
+     [
+      0,
+      105
+     ]
+    ]
+   }
+  ],
+  "Luke 17:4": [
+   {
+    "n": 140,
+    "h": 3105324406,
+    "s": [
+     [
+      0,
+      140
+     ]
+    ]
+   }
+  ],
+  "Luke 23:34": [
+   {
+    "n": 114,
+    "h": 3151351303,
+    "s": [
+     [
+      17,
+      70
+     ]
+    ]
+   }
+  ],
+  "Mark 11:25": [
+   {
+    "n": 139,
+    "h": 3824104515,
+    "s": [
+     [
+      0,
+      139
+     ]
+    ]
+   }
+  ],
+  "Mark 11:26": [
+   {
+    "n": 94,
+    "h": 4070367992,
+    "s": [
+     [
+      0,
+      94
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:12": [
+   {
+    "n": 52,
+    "h": 2344657013,
+    "s": [
+     [
+      0,
+      52
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:13": [
+   {
+    "n": 130,
+    "h": 1874947643,
+    "s": [
+     [
+      0,
+      130
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:14": [
+   {
+    "n": 83,
+    "h": 1983323131,
+    "s": [
+     [
+      0,
+      83
+     ]
+    ]
+   }
+  ],
+  "Matthew 6:15": [
+   {
+    "n": 93,
+    "h": 1710936465,
+    "s": [
+     [
+      0,
+      93
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:22": [
+   {
+    "n": 93,
+    "h": 2845798806,
+    "s": [
+     [
+      22,
+      93
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:23": [
+   {
+    "n": 105,
+    "h": 2479001600,
+    "s": [
+     [
+      0,
+      105
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:24": [
+   {
+    "n": 95,
+    "h": 1023621628,
+    "s": [
+     [
+      0,
+      95
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:25": [
+   {
+    "n": 143,
+    "h": 3923976880,
+    "s": [
+     [
+      0,
+      143
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:26": [
+   {
+    "n": 114,
+    "h": 3417765812,
+    "s": [
+     [
+      0,
+      114
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:27": [
+   {
+    "n": 98,
+    "h": 4084269563,
+    "s": [
+     [
+      0,
+      98
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:28": [
+   {
+    "n": 186,
+    "h": 1512982562,
+    "s": [
+     [
+      0,
+      186
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:29": [
+   {
+    "n": 118,
+    "h": 750627285,
+    "s": [
+     [
+      0,
+      118
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:30": [
+   {
+    "n": 81,
+    "h": 2453659514,
+    "s": [
+     [
+      0,
+      81
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:31": [
+   {
+    "n": 120,
+    "h": 1311921705,
+    "s": [
+     [
+      0,
+      120
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:32": [
+   {
+    "n": 139,
+    "h": 3927420604,
+    "s": [
+     [
+      0,
+      139
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:33": [
+   {
+    "n": 93,
+    "h": 3795944365,
+    "s": [
+     [
+      0,
+      93
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:34": [
+   {
+    "n": 106,
+    "h": 3050992426,
+    "s": [
+     [
+      0,
+      106
+     ]
+    ]
+   }
+  ],
+  "Matthew 18:35": [
+   {
+    "n": 129,
+    "h": 1359070033,
+    "s": [
+     [
+      0,
+      129
+     ]
+    ]
+   }
+  ]
+ }
+}
