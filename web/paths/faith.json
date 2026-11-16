@@ -1,0 +1,1176 @@
+{
+ "id": "faith",
+ "title": "Faith: what it is and how it grows",
+ "category": "Foundations",
+ "red_letters": true,
+ "anim": {
+  "kind": "stars",
+  "x": 50,
+  "y": 20,
+  "s": 30
+ },
+ "share": "What is faith, and how does it grow? Ten steps from Hebrews 11 and Abraham to the mustard seed, and faith and works side by side.",
+ "opening_question": "What is faith, and how does it grow? Read what Hebrews says faith is, how Abraham believed, how faith comes, what Yeshua said to the father who cried \"help thou mine unbelief\", and what Paul and James say about faith and works, side by side. Each step asks what the text says and what it means for me.",
+ "required_refs": [
+  "Hebrews 11:1-3",
+  "Hebrews 11:4-6",
+  "Genesis 15:5-6",
+  "Romans 4:3",
+  "Romans 4:18-21",
+  "Habakkuk 2:2-4",
+  "Romans 1:17",
+  "Romans 10:17",
+  "Mark 9:17-29",
+  "Matthew 17:19-20",
+  "Luke 17:5-6",
+  "Matthew 8:5-13",
+  "Matthew 14:28-31",
+  "Ephesians 2:8-10",
+  "James 2:14-26",
+  "Galatians 2:20",
+  "2 Corinthians 5:7",
+  "Hebrews 12:1-2"
+ ],
+ "words": [
+  "G4102",
+  "G4100",
+  "H539",
+  "H530"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "How does Hebrews describe faith? What does it call \"the substance of things hoped for\", and what does faith let us understand about how the worlds were made?",
+   "apply": "What am I hoping for that I cannot see yet?",
+   "refs": [
+    "Hebrews 11:1-3"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G5287",
+     "G1650"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"faith\" is pistis: \"persuasion\", \"moral conviction\", and also \"constancy\". The King James also translates it \"assurance\" and \"fidelity\".",
+     "refs": [
+      "Hebrews 11:1"
+     ],
+     "strongs": [
+      "G4102"
+     ]
+    },
+    {
+     "text": "\"substance\" is hypostasis: \"a setting under (support)\", \"assurance\". Faith is what stands under the hope.",
+     "refs": [
+      "Hebrews 11:1"
+     ],
+     "strongs": [
+      "G5287"
+     ]
+    },
+    {
+     "text": "\"evidence\" is elenchos: \"proof, conviction\". The BSB reads \"certainty\".",
+     "refs": [
+      "Hebrews 11:1"
+     ],
+     "strongs": [
+      "G1650"
+     ]
+    },
+    {
+     "text": "Faith reaches back to creation too: \"Through faith we understand that the worlds were framed by the word of God\".",
+     "refs": [
+      "Hebrews 11:3"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did Abel and Enoch do \"by faith\", and what two things must the one who comes to God believe?",
+   "apply": "Do I seek God diligently, or only when I need something?",
+   "refs": [
+    "Hebrews 11:4-6"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4100"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Abel \"offered unto God a more excellent sacrifice than Cain\", and \"by it he being dead yet speaketh\".",
+     "refs": [
+      "Hebrews 11:4"
+     ]
+    },
+    {
+     "text": "Enoch \"had this testimony, that he pleased God\".",
+     "refs": [
+      "Hebrews 11:5"
+     ]
+    },
+    {
+     "text": "\"without faith it is impossible to please him\". The one who comes \"must believe that he is, and that he is a rewarder of them that diligently seek him.\"",
+     "refs": [
+      "Hebrews 11:6"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did the LORD tell Abram to look at, and what was \"counted\" to him? How does Paul describe Abraham's faith when he was \"about an hundred years old\"?",
+   "apply": "Which promise of God am I tempted to stagger at because it looks impossible?",
+   "refs": [
+    "Genesis 15:5-6",
+    "Romans 4:3",
+    "Romans 4:18-21"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H539"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"believed\" in Genesis 15:6 is aman: \"to build up or support\", to \"render (or be) firm or faithful\", to \"trust or believe\". The same root gives the word Amen.",
+     "refs": [
+      "Genesis 15:6"
+     ],
+     "strongs": [
+      "H539"
+     ]
+    },
+    {
+     "text": "Abram was told: \"Look now toward heaven, and tell the stars\". Then: \"he believed in the LORD; and he counted it to him for righteousness.\"",
+     "refs": [
+      "Genesis 15:5-6"
+     ]
+    },
+    {
+     "text": "Paul: \"against hope believed in hope\". \"He staggered not at the promise of God through unbelief; but was strong in faith, giving glory to God\".",
+     "refs": [
+      "Romans 4:18",
+      "Romans 4:20"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "When the LORD answered Habakkuk, what did He say about the vision that tarries, and how shall the just live?",
+   "apply": "What am I waiting for, and can I keep living by faith while it tarries?",
+   "refs": [
+    "Habakkuk 2:2-4",
+    "Romans 1:17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "H530"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"though it tarry, wait for it; because it will surely come\".",
+     "refs": [
+      "Habakkuk 2:3"
+     ]
+    },
+    {
+     "text": "\"faith\" in Habakkuk 2:4 is emunah: \"literally firmness\", \"security\", \"moral fidelity\". It is steadiness, holding on.",
+     "refs": [
+      "Habakkuk 2:4"
+     ],
+     "strongs": [
+      "H530"
+     ]
+    },
+    {
+     "text": "Paul quotes Habakkuk: \"as it is written, The just shall live by faith.\" Hebrews 10:38 and Galatians 3:11 quote it too.",
+     "refs": [
+      "Romans 1:17",
+      "Habakkuk 2:4",
+      "Hebrews 10:38",
+      "Galatians 3:11"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "According to Paul, how does faith come? What does it come by, and what does the hearing come by?",
+   "apply": "How much of God's word do I actually hear in a week?",
+   "refs": [
+    "Romans 10:17"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G189",
+     "G4487"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"hearing\" is akoe: \"hearing (the act, the sense or the thing heard)\". Faith comes from what is heard.",
+     "refs": [
+      "Romans 10:17"
+     ],
+     "strongs": [
+      "G189"
+     ]
+    },
+    {
+     "text": "The KJV and the Ethiopian Canon read \"the word of God\"; the BSB reads \"the word of Christ\". Greek manuscripts differ here.",
+     "refs": [
+      "Romans 10:17"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did the father of the boy say to Yeshua, what did Yeshua answer, and what did the father cry \"with tears\"?",
+   "apply": "Can I bring my unbelief to Him honestly, as this father did?",
+   "refs": [
+    "Mark 9:17-29"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G570"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The father said \"if thou canst do any thing\". Yeshua turned the \"if\" around: \"If thou canst believe, all things are possible to him that believeth.\"",
+     "refs": [
+      "Mark 9:22-23"
+     ]
+    },
+    {
+     "text": "\"Lord, I believe; help thou mine unbelief.\" \"unbelief\" is apistia: \"faithlessness\", \"disbelief\". The father had both at once, and Yeshua still healed his son.",
+     "refs": [
+      "Mark 9:24",
+      "Mark 9:27"
+     ],
+     "strongs": [
+      "G570"
+     ]
+    },
+    {
+     "text": "To the disciples: \"This kind can come forth by nothing, but by prayer and fasting.\" The BSB reads only \"by prayer\"; the KJV and the Ethiopian Canon add \"fasting\".",
+     "refs": [
+      "Mark 9:29"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Why could the disciples not cast the spirit out? What did Yeshua say a little faith, \"as a grain of mustard seed\", can do? What did the apostles ask Him?",
+   "apply": "Is my faith too small, or is it resting on something too small?",
+   "refs": [
+    "Matthew 17:19-20",
+    "Luke 17:5-6"
+   ],
+   "look_closer": {
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Because of your unbelief\". Then: \"If ye have faith as a grain of mustard seed, ye shall say unto this mountain, Remove hence\".",
+     "refs": [
+      "Matthew 17:20"
+     ]
+    },
+    {
+     "text": "The apostles asked: \"Increase our faith.\" The answer was about the mustard seed and \"this sycamine tree\".",
+     "refs": [
+      "Luke 17:5-6"
+     ]
+    },
+    {
+     "text": "The power is not in the size of the faith: \"nothing shall be impossible unto you\" is said of faith as small as a seed.",
+     "refs": [
+      "Matthew 17:20"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Why did Yeshua marvel at the centurion? And when Peter walked on the water, what made him begin to sink?",
+   "apply": "When I see the wind, where do my eyes go?",
+   "refs": [
+    "Matthew 8:5-13",
+    "Matthew 14:28-31"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3640"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The centurion: \"speak the word only, and my servant shall be healed.\" Yeshua: \"I have not found so great faith, no, not in Israel.\"",
+     "refs": [
+      "Matthew 8:8",
+      "Matthew 8:10"
+     ]
+    },
+    {
+     "text": "\"as thou hast believed, so be it done unto thee.\"",
+     "refs": [
+      "Matthew 8:13"
+     ]
+    },
+    {
+     "text": "Peter \"walked on the water\". \"But when he saw the wind boisterous, he was afraid\". Yeshua \"caught him\" and said \"O thou of little faith\": oligopistos, \"lacking confidence\".",
+     "refs": [
+      "Matthew 14:29-31"
+     ],
+     "strongs": [
+      "G3640"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Read Paul and James side by side. What does Paul say we are saved by, and what are we created for? What does James say about \"faith without works\"?",
+   "apply": "Where can someone see my faith this week?",
+   "refs": [
+    "Ephesians 2:8-10",
+    "James 2:14-26"
+   ],
+   "side_by_side": true,
+   "look_closer": {
+    "strongs": [
+     "G2041",
+     "G1344"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Paul: \"by grace are ye saved through faith\", \"Not of works, lest any man should boast\". And in the next verse: \"created in Christ Jesus unto good works\".",
+     "refs": [
+      "Ephesians 2:8-10"
+     ]
+    },
+    {
+     "text": "James: \"faith without works is dead\", and \"by works a man is justified, and not by faith only.\" Both Paul and James quote the same verse about Abraham.",
+     "refs": [
+      "James 2:20",
+      "James 2:23-24",
+      "Romans 4:3"
+     ]
+    },
+    {
+     "text": "\"justified\" is dikaioo: \"to render (i.e. show or regard as) just or innocent\".",
+     "refs": [
+      "James 2:24"
+     ],
+     "strongs": [
+      "G1344"
+     ]
+    },
+    {
+     "text": "Christians read these two passages in different ways. Some say Paul speaks of how a person is made right with God and James of how faith shows itself. Others say faith and works together justify. Some say both. Each reading points to these same verses; BibleChat gives no verdict.",
+     "refs": [
+      "Ephesians 2:8-9",
+      "James 2:24"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "How does Paul describe the life he now lives, and how do believers walk? Who does Hebrews say to look to in the race?",
+   "apply": "What weight do I need to lay aside, and where are my eyes fixed?",
+   "refs": [
+    "Galatians 2:20",
+    "2 Corinthians 5:7",
+    "Hebrews 12:1-2"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4102"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Paul: \"the life which I now live in the flesh I live by the faith of the Son of God, who loved me, and gave himself for me.\"",
+     "refs": [
+      "Galatians 2:20"
+     ]
+    },
+    {
+     "text": "\"we walk by faith, not by sight\".",
+     "refs": [
+      "2 Corinthians 5:7"
+     ]
+    },
+    {
+     "text": "After the list of Hebrews 11 comes \"so great a cloud of witnesses\". The race is run \"Looking unto\" the \"author and finisher of our faith\".",
+     "refs": [
+      "Hebrews 12:1-2"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"faith is the substance of things hoped for, the evidence of things not seen.\"",
+   "refs": [
+    "Hebrews 11:1"
+   ]
+  },
+  {
+   "text": "\"without faith it is impossible to please him\"",
+   "refs": [
+    "Hebrews 11:6"
+   ]
+  },
+  {
+   "text": "Abraham \"believed in the LORD; and he counted it to him for righteousness.\"",
+   "refs": [
+    "Genesis 15:6"
+   ]
+  },
+  {
+   "text": "\"the just shall live by his faith.\"",
+   "refs": [
+    "Habakkuk 2:4"
+   ]
+  },
+  {
+   "text": "\"faith cometh by hearing, and hearing by the word of God.\"",
+   "refs": [
+    "Romans 10:17"
+   ]
+  },
+  {
+   "text": "\"Lord, I believe; help thou mine unbelief.\"",
+   "refs": [
+    "Mark 9:24"
+   ]
+  },
+  {
+   "text": "\"by grace are ye saved through faith\", and \"faith without works is dead\".",
+   "refs": [
+    "Ephesians 2:8",
+    "James 2:20"
+   ]
+  },
+  {
+   "text": "\"we walk by faith, not by sight\"",
+   "refs": [
+    "2 Corinthians 5:7"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which verse says faith is \"the substance of things hoped for, the evidence of things not seen\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Hebrews 11:1"
+   ],
+   "signals": {
+    "xref": 14,
+    "votes": 301,
+    "word": "G4102",
+    "word_count": 31,
+    "differ": 0.546,
+    "quoted": null
+   },
+   "why": [
+    "14 cross-references point here",
+    "The Greek word pístis (G4102) is in 31 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.9152
+  },
+  {
+   "q": "Fill in the word: \"But without ___ it is impossible to please him\"",
+   "type": "fill_word",
+   "ref": "Hebrews 11:6",
+   "bible": "KJV",
+   "word": "faith",
+   "answer_refs": [
+    "Hebrews 11:6"
+   ],
+   "signals": {
+    "xref": 37,
+    "votes": 726,
+    "word": "G4102",
+    "word_count": 31,
+    "differ": 0.456,
+    "quoted": null
+   },
+   "why": [
+    "37 cross-references point here",
+    "The Greek word pístis (G4102) is in 31 verses of this path"
+   ],
+   "score": 0.914
+  },
+  {
+   "q": "What does Hebrews 11:6 say God is to them that diligently seek him?",
+   "type": "multiple_choice",
+   "options": [
+    "A judge",
+    "A rewarder",
+    "A stranger"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "Hebrews 11:6"
+   ],
+   "check": {
+    "word": "rewarder"
+   },
+   "signals": {
+    "xref": 37,
+    "votes": 726,
+    "word": "G4102",
+    "word_count": 31,
+    "differ": 0.456,
+    "quoted": null
+   },
+   "why": [
+    "37 cross-references point here",
+    "The Greek word pístis (G4102) is in 31 verses of this path"
+   ],
+   "score": 0.914
+  },
+  {
+   "q": "What did the LORD tell Abram to number?",
+   "type": "multiple_choice",
+   "options": [
+    "The sand",
+    "The stars",
+    "The nations"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "Genesis 15:5"
+   ],
+   "check": {
+    "word": "stars"
+   },
+   "signals": {
+    "xref": 25,
+    "votes": 158,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.528,
+    "quoted": null
+   },
+   "why": [
+    "25 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5126
+  },
+  {
+   "q": "Which verse says \"he believed in the LORD; and he counted it to him for righteousness\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Genesis 15:6"
+   ],
+   "signals": {
+    "xref": 9,
+    "votes": 104,
+    "word": "H539",
+    "word_count": 1,
+    "differ": 0.538,
+    "quoted": null
+   },
+   "why": [
+    "9 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5131
+  },
+  {
+   "q": "Fill in the word: \"He ___ not at the promise of God through unbelief; but was strong in faith\"",
+   "type": "fill_word",
+   "ref": "Romans 4:20",
+   "bible": "KJV",
+   "word": "staggered",
+   "answer_refs": [
+    "Romans 4:20"
+   ],
+   "signals": {
+    "xref": 32,
+    "votes": 370,
+    "word": "G4102",
+    "word_count": 31,
+    "differ": 0.497,
+    "quoted": null
+   },
+   "why": [
+    "32 cross-references point here",
+    "The Greek word pístis (G4102) is in 31 verses of this path"
+   ],
+   "score": 0.9184
+  },
+  {
+   "q": "Which verse says \"though it tarry, wait for it\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Habakkuk 2:3"
+   ],
+   "signals": {
+    "xref": 34,
+    "votes": 417,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.51,
+    "quoted": null
+   },
+   "why": [
+    "34 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.5775
+  },
+  {
+   "q": "Fill in the word: \"the just shall live by his ___\"",
+   "type": "fill_word",
+   "ref": "Habakkuk 2:4",
+   "bible": "KJV",
+   "word": "faith",
+   "answer_refs": [
+    "Habakkuk 2:4"
+   ],
+   "signals": {
+    "xref": 19,
+    "votes": 276,
+    "word": "H530",
+    "word_count": 1,
+    "differ": 0.467,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here"
+   ],
+   "score": 0.5681
+  },
+  {
+   "q": "Which Bible says faith comes by hearing \"the word of Christ\"?",
+   "type": "which_translation",
+   "ref": "Romans 10:17",
+   "bible": "BSB",
+   "phrase": "word of Christ",
+   "answer_refs": [
+    "Romans 10:17"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 464,
+    "word": "G4102",
+    "word_count": 31,
+    "differ": 0.361,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here",
+    "The Greek word pístis (G4102) is in 31 verses of this path"
+   ],
+   "score": 0.8902
+  },
+  {
+   "q": "Which verse says \"faith cometh by hearing\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Romans 10:17"
+   ],
+   "signals": {
+    "xref": 26,
+    "votes": 464,
+    "word": "G4102",
+    "word_count": 31,
+    "differ": 0.361,
+    "quoted": null
+   },
+   "why": [
+    "26 cross-references point here",
+    "The Greek word pístis (G4102) is in 31 verses of this path"
+   ],
+   "score": 0.8902
+  },
+  {
+   "q": "Which verse says \"Lord, I believe; help thou mine unbelief\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Mark 9:24"
+   ],
+   "signals": {
+    "xref": 11,
+    "votes": 80,
+    "word": "G4100",
+    "word_count": 10,
+    "differ": 0.47,
+    "quoted": null
+   },
+   "why": [
+    "11 cross-references point here",
+    "The Greek word pisteúō (G4100) is in 10 verses of this path"
+   ],
+   "score": 0.7391
+  },
+  {
+   "q": "As small as what seed did Yeshua say faith could be?",
+   "type": "multiple_choice",
+   "options": [
+    "A grain of wheat",
+    "A grain of mustard seed",
+    "A fig seed"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "Matthew 17:20"
+   ],
+   "check": {
+    "word": "mustard"
+   },
+   "signals": {
+    "xref": 25,
+    "votes": 275,
+    "word": "G4102",
+    "word_count": 31,
+    "differ": 0.476,
+    "quoted": null
+   },
+   "why": [
+    "25 cross-references point here",
+    "The Greek word pístis (G4102) is in 31 verses of this path"
+   ],
+   "score": 0.891
+  },
+  {
+   "q": "Which verse has the apostles say \"Increase our faith\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Luke 17:5"
+   ],
+   "signals": {
+    "xref": 7,
+    "votes": 64,
+    "word": "G4102",
+    "word_count": 31,
+    "differ": 0.2,
+    "quoted": null
+   },
+   "why": [
+    "7 cross-references point here",
+    "The Greek word pístis (G4102) is in 31 verses of this path"
+   ],
+   "score": 0.7134
+  },
+  {
+   "q": "Which verse says \"I have not found so great faith, no, not in Israel\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 8:10"
+   ],
+   "signals": {
+    "xref": 10,
+    "votes": 47,
+    "word": "G4102",
+    "word_count": 31,
+    "differ": 0.509,
+    "quoted": null
+   },
+   "why": [
+    "10 cross-references point here",
+    "The Greek word pístis (G4102) is in 31 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.7679
+  },
+  {
+   "q": "What made Peter afraid on the water?",
+   "type": "multiple_choice",
+   "options": [
+    "The dark",
+    "The wind boisterous",
+    "The other disciples"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "Matthew 14:30"
+   ],
+   "check": {
+    "word": "boisterous"
+   },
+   "signals": {
+    "xref": 12,
+    "votes": 71,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.219,
+    "quoted": null
+   },
+   "why": [
+    "12 cross-references point here"
+   ],
+   "score": 0.3758
+  },
+  {
+   "q": "Fill in the word: \"For by grace are ye saved through faith; and that not of yourselves: it is the ___ of God\"",
+   "type": "fill_word",
+   "ref": "Ephesians 2:8",
+   "bible": "KJV",
+   "word": "gift",
+   "answer_refs": [
+    "Ephesians 2:8"
+   ],
+   "signals": {
+    "xref": 64,
+    "votes": 833,
+    "word": "G4102",
+    "word_count": 31,
+    "differ": 0.243,
+    "quoted": null
+   },
+   "why": [
+    "64 cross-references point here",
+    "The Greek word pístis (G4102) is in 31 verses of this path"
+   ],
+   "score": 0.8608
+  },
+  {
+   "q": "Which verse says \"faith without works is dead\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "James 2:20"
+   ],
+   "signals": {
+    "xref": 24,
+    "votes": 270,
+    "word": "G4102",
+    "word_count": 31,
+    "differ": 0.631,
+    "quoted": null
+   },
+   "why": [
+    "24 cross-references point here",
+    "The Greek word pístis (G4102) is in 31 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.9283
+  },
+  {
+   "q": "Fill in the word: \"For we walk by faith, not by ___\"",
+   "type": "fill_word",
+   "ref": "2 Corinthians 5:7",
+   "bible": "KJV",
+   "word": "sight",
+   "answer_refs": [
+    "2 Corinthians 5:7"
+   ],
+   "signals": {
+    "xref": 16,
+    "votes": 544,
+    "word": "G4102",
+    "word_count": 31,
+    "differ": 0.0,
+    "quoted": null
+   },
+   "why": [
+    "16 cross-references point here",
+    "The Greek word pístis (G4102) is in 31 verses of this path"
+   ],
+   "score": 0.8
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 68,
+ "image": "img/faith.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/faith.json",
+  "sha": "7986805df3d5e831",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ },
+ "red": {
+  "Luke 17:6": [
+   {
+    "n": 188,
+    "h": 3667727801,
+    "s": [
+     [
+      19,
+      188
+     ]
+    ]
+   }
+  ],
+  "Mark 9:19": [
+   {
+    "n": 130,
+    "h": 4288783739,
+    "s": [
+     [
+      29,
+      130
+     ]
+    ]
+   }
+  ],
+  "Mark 9:21": [
+   {
+    "n": 94,
+    "h": 1219696773,
+    "s": [
+     [
+      25,
+      69
+     ]
+    ]
+   }
+  ],
+  "Mark 9:23": [
+   {
+    "n": 90,
+    "h": 1365421555,
+    "s": [
+     [
+      21,
+      90
+     ]
+    ]
+   }
+  ],
+  "Mark 9:25": [
+   {
+    "n": 185,
+    "h": 3281077097,
+    "s": [
+     [
+      99,
+      185
+     ]
+    ]
+   }
+  ],
+  "Mark 9:29": [
+   {
+    "n": 86,
+    "h": 2074325905,
+    "s": [
+     [
+      23,
+      86
+     ]
+    ]
+   }
+  ],
+  "Matthew 8:7": [
+   {
+    "n": 51,
+    "h": 3931472023,
+    "s": [
+     [
+      26,
+      51
+     ]
+    ]
+   }
+  ],
+  "Matthew 8:10": [
+   {
+    "n": 141,
+    "h": 3795143827,
+    "s": [
+     [
+      67,
+      141
+     ]
+    ]
+   }
+  ],
+  "Matthew 8:11": [
+   {
+    "n": 145,
+    "h": 3859277959,
+    "s": [
+     [
+      0,
+      145
+     ]
+    ]
+   }
+  ],
+  "Matthew 8:12": [
+   {
+    "n": 116,
+    "h": 3883151348,
+    "s": [
+     [
+      0,
+      116
+     ]
+    ]
+   }
+  ],
+  "Matthew 8:13": [
+   {
+    "n": 147,
+    "h": 1769785971,
+    "s": [
+     [
+      35,
+      98
+     ]
+    ]
+   }
+  ],
+  "Matthew 14:29": [
+   {
+    "n": 104,
+    "h": 198688368,
+    "s": [
+     [
+      13,
+      18
+     ]
+    ]
+   }
+  ],
+  "Matthew 14:31": [
+   {
+    "n": 134,
+    "h": 1870505509,
+    "s": [
+     [
+      83,
+      134
+     ]
+    ]
+   }
+  ],
+  "Matthew 17:20": [
+   {
+    "n": 249,
+    "h": 1812410646,
+    "s": [
+     [
+      26,
+      249
+     ]
+    ]
+   }
+  ]
+ }
+}
