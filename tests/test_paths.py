@@ -131,6 +131,19 @@ class PathRulesTest(unittest.TestCase):
         self.assertNotIn("Jesus", text)   # Yeshua in our own words; verse text is never in the file
         self.assertTrue(os.path.exists(os.path.join(ROOT, "web", "paths", "img", "forgiveness.jpg")))
 
+    def test_faith_path(self):
+        """The second common topic: Faith, with Ephesians 2:8-9 and James 2:14-26 on the screen together."""
+        f = load(os.path.join(bp.SRC_DIR, "faith.json"))
+        self.assertEqual(f["category"], "Foundations"); self.assertNotIn("group", f)
+        self.assertTrue(f["opening_question"].startswith("What is faith, and how does it grow?"))
+        for r in ("Hebrews 11:1-3", "Hebrews 11:4-6", "Romans 10:17", "Habakkuk 2:2-4", "Matthew 17:19-20", "Ephesians 2:8-10", "James 2:14-26"):
+            self.assertIn(r, f["required_refs"])
+        both = [s for s in f["steps"] if "Ephesians 2:8-10" in s["refs"]]
+        self.assertEqual(len(both), 1); self.assertIn("James 2:14-26", both[0]["refs"]); self.assertTrue(both[0]["side_by_side"])
+        self.assertIn("no verdict", json.dumps(both[0]["facts"]))
+        self.assertTrue(all(s.get("apply") for s in f["steps"]))
+        self.assertTrue(os.path.exists(os.path.join(ROOT, "web", "paths", "img", "faith.jpg")))
+
     def test_hans_new_paths_and_pictures(self):
         names = {os.path.basename(f)[:-5] for f in SOURCES}
         self.assertIn("husband-and-wife", names); self.assertIn("the-rainbow", names)

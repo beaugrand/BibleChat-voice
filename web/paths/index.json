@@ -364,6 +364,49 @@
   }
  },
  {
+  "id": "faith",
+  "title": "Faith: what it is and how it grows",
+  "category": "Foundations",
+  "image": "img/faith.jpg",
+  "opening_question": "What is faith, and how does it grow? Read what Hebrews says faith is, how Abraham believed, how faith comes, what Yeshua said to the father who cried \"help thou mine unbelief\", and what Paul and James say about faith and works, side by side. Each step asks what the text says and what it means for me.",
+  "share": "What is faith, and how does it grow? Ten steps from Hebrews 11 and Abraham to the mustard seed, and faith and works side by side.",
+  "steps": 10,
+  "step_questions": [
+   "How does Hebrews describe faith? What does it call \"the substance of things hoped for\", and what does faith let us understand about how the worlds were made?",
+   "What did Abel and Enoch do \"by faith\", and what two things must the one who comes to God believe?",
+   "What did the LORD tell Abram to look at, and what was \"counted\" to him? How does Paul describe Abraham's faith when he was \"about an hundred years old\"?",
+   "When the LORD answered Habakkuk, what did He say about the vision that tarries, and how shall the just live?",
+   "According to Paul, how does faith come? What does it come by, and what does the hearing come by?",
+   "What did the father of the boy say to Yeshua, what did Yeshua answer, and what did the father cry \"with tears\"?",
+   "Why could the disciples not cast the spirit out? What did Yeshua say a little faith, \"as a grain of mustard seed\", can do? What did the apostles ask Him?",
+   "Why did Yeshua marvel at the centurion? And when Peter walked on the water, what made him begin to sink?",
+   "Read Paul and James side by side. What does Paul say we are saved by, and what are we created for? What does James say about \"faith without works\"?",
+   "How does Paul describe the life he now lives, and how do believers walk? Who does Hebrews say to look to in the race?"
+  ],
+  "books": [
+   "2 Corinthians",
+   "Ephesians",
+   "Galatians",
+   "Genesis",
+   "Habakkuk",
+   "Hebrews",
+   "James",
+   "Luke",
+   "Mark",
+   "Matthew",
+   "Romans"
+  ],
+  "show": 8,
+  "verses": 68,
+  "minutes": 55,
+  "anim": {
+   "kind": "stars",
+   "x": 50,
+   "y": 20,
+   "s": 30
+  }
+ },
+ {
   "id": "forgiveness",
   "title": "Forgiveness: seventy times seven",
   "category": "Foundations",
