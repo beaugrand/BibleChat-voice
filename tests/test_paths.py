@@ -144,6 +144,19 @@ class PathRulesTest(unittest.TestCase):
         self.assertTrue(all(s.get("apply") for s in f["steps"]))
         self.assertTrue(os.path.exists(os.path.join(ROOT, "web", "paths", "img", "faith.jpg")))
 
+    def test_baptism_path(self):
+        """The third common topic: Baptism. Each Christian reading is shown with its own verses, no verdict."""
+        f = load(os.path.join(bp.SRC_DIR, "baptism.json"))
+        self.assertEqual(f["category"], "Foundations"); self.assertNotIn("group", f)
+        self.assertTrue(f["opening_question"].startswith("What does the Bible say baptism is, and who is it for?"))
+        for r in ("Matthew 3:13-17", "Matthew 28:18-20", "Mark 16:15-16", "Acts 2:37-41", "Acts 8:35-39", "Romans 6:3-5",
+                  "Colossians 2:11-12", "1 Peter 3:20-21", "Galatians 3:26-29"):
+            self.assertIn(r, f["required_refs"])
+        verdicts = [x for s in f["steps"] for x in s["facts"] if "no verdict" in x["text"]]
+        self.assertGreaterEqual(len(verdicts), 4)   # saved by it or a sign; who; how; in what words
+        self.assertTrue(all(s.get("apply") for s in f["steps"]))
+        self.assertTrue(os.path.exists(os.path.join(ROOT, "web", "paths", "img", "baptism.jpg")))
+
     def test_hans_new_paths_and_pictures(self):
         names = {os.path.basename(f)[:-5] for f in SOURCES}
         self.assertIn("husband-and-wife", names); self.assertIn("the-rainbow", names)

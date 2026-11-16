@@ -1,0 +1,1132 @@
+{
+ "id": "baptism",
+ "title": "Baptism: what it is and who it is for",
+ "category": "Foundations",
+ "red_letters": true,
+ "anim": {
+  "kind": "light",
+  "x": 50,
+  "y": 18,
+  "s": 30
+ },
+ "share": "What does the Bible say baptism is, and who is it for? Ten steps through every passage, with each reading Christians hold.",
+ "opening_question": "What does the Bible say baptism is, and who is it for? Read how Yeshua was baptized, the command He gave, Pentecost, the Ethiopian, and what Paul and Peter say it means. Christians read some of these verses differently: who is baptized, how, and in what words. Each reading is shown with its own verses, and BibleChat gives no verdict.",
+ "required_refs": [
+  "Matthew 3:11",
+  "Matthew 3:13-17",
+  "Mark 1:9-10",
+  "Matthew 28:18-20",
+  "Mark 16:15-16",
+  "Acts 2:37-41",
+  "Acts 8:12",
+  "Acts 8:35-39",
+  "Romans 6:3-5",
+  "Colossians 2:11-12",
+  "Galatians 3:26-29",
+  "1 Peter 3:20-21",
+  "Acts 22:16",
+  "Acts 10:44-48",
+  "Luke 23:42-43",
+  "1 Corinthians 1:14-17",
+  "Acts 16:14-15",
+  "Acts 16:30-34",
+  "John 3:23",
+  "Luke 11:38",
+  "Acts 19:4-5"
+ ],
+ "words": [
+  "G907",
+  "G908",
+  "G4916",
+  "G3340"
+ ],
+ "show": 8,
+ "steps": [
+  {
+   "question": "Why did Yeshua come to John to be baptized, when John said \"I have need to be baptized of thee\"? What happened when He came up out of the water?",
+   "apply": "Yeshua went down into the water although He had no sin. What does that tell me about Him?",
+   "refs": [
+    "Matthew 3:11",
+    "Matthew 3:13-17",
+    "Mark 1:9-10"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G907"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "John's baptism was \"with water unto repentance\". He said the One after him \"shall baptize you with the Holy Ghost, and with fire\".",
+     "refs": [
+      "Matthew 3:11"
+     ]
+    },
+    {
+     "text": "Yeshua's reason: \"thus it becometh us to fulfil all righteousness.\"",
+     "refs": [
+      "Matthew 3:15"
+     ]
+    },
+    {
+     "text": "The Father and the Spirit are both there: \"the Spirit of God descending like a dove\", and \"a voice from heaven, saying, This is my beloved Son, in whom I am well pleased.\"",
+     "refs": [
+      "Matthew 3:16-17"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What did the risen Yeshua command His disciples to do, and in whose name? What does Mark add about the one who \"believeth and is baptized\"?",
+   "apply": "The command ends with \"I am with you alway\". Do I hear that promise as mine?",
+   "refs": [
+    "Matthew 28:18-20",
+    "Mark 16:15-16"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3686"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "The order of the command: \"teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost\", then \"Teaching them to observe all things\".",
+     "refs": [
+      "Matthew 28:19-20"
+     ]
+    },
+    {
+     "text": "Mark: \"He that believeth and is baptized shall be saved\". The second half names only unbelief: \"he that believeth not shall be damned.\"",
+     "refs": [
+      "Mark 16:16"
+     ]
+    },
+    {
+     "text": "Some of the oldest Greek manuscripts end Mark at 16:8. Most Bibles print verses 9-20, some with a note.",
+     "refs": [
+      "Mark 16:16"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "At Pentecost, when the people asked \"what shall we do?\", what did Peter answer? Who did he say the promise is for?",
+   "apply": "Have I answered the question \"what shall we do?\" for myself?",
+   "refs": [
+    "Acts 2:37-41"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3340",
+     "G859"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"Repent, and be baptized every one of you\". \"repent\" is metanoeo: \"to think differently or afterwards\".",
+     "refs": [
+      "Acts 2:38"
+     ],
+     "strongs": [
+      "G3340"
+     ]
+    },
+    {
+     "text": "\"remission\" is aphesis: \"freedom; (figuratively) pardon\".",
+     "refs": [
+      "Acts 2:38"
+     ],
+     "strongs": [
+      "G859"
+     ]
+    },
+    {
+     "text": "\"the promise is unto you, and to your children, and to all that are afar off\". \"they that gladly received his word were baptized\": \"about three thousand souls\" on one day.",
+     "refs": [
+      "Acts 2:39",
+      "Acts 2:41"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "In Samaria and on the desert road, what came before baptism? What did the Ethiopian ask when they \"came unto a certain water\"?",
+   "apply": "Is anything hindering me from the next step of obedience?",
+   "refs": [
+    "Acts 8:12",
+    "Acts 8:35-39"
+   ],
+   "look_closer": {
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "In Samaria: \"when they believed Philip preaching\", \"they were baptized, both men and women.\"",
+     "refs": [
+      "Acts 8:12"
+     ]
+    },
+    {
+     "text": "Philip \"preached unto him Jesus\". Then the eunuch: \"See, here is water; what doth hinder me to be baptized?\"",
+     "refs": [
+      "Acts 8:35-36"
+     ]
+    },
+    {
+     "text": "Acts 8:37 (\"If thou believest with all thine heart, thou mayest\") is in the King James. The BSB and the Ethiopian Canon leave it out, because many old Greek manuscripts do not have it.",
+     "refs": [
+      "Acts 8:37"
+     ]
+    },
+    {
+     "text": "\"they went down both into the water\", and \"they were come up out of the water\". Then \"he went on his way rejoicing.\"",
+     "refs": [
+      "Acts 8:38-39"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does Paul say happens to those \"baptized into Jesus Christ\"? How does Colossians link baptism to burial, rising and circumcision?",
+   "apply": "What would it mean for me to \"walk in newness of life\" this week?",
+   "refs": [
+    "Romans 6:3-5",
+    "Colossians 2:11-12"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G4916"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"we are buried with him by baptism into death\", so \"we also should walk in newness of life.\"",
+     "refs": [
+      "Romans 6:4"
+     ]
+    },
+    {
+     "text": "\"Buried with him\" is synthapto: \"to inter in company with\".",
+     "refs": [
+      "Colossians 2:12"
+     ],
+     "strongs": [
+      "G4916"
+     ]
+    },
+    {
+     "text": "Colossians sets baptism beside \"the circumcision made without hands\", and says the rising is \"through the faith of the operation of God\".",
+     "refs": [
+      "Colossians 2:11-12"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "What does Paul say those \"baptized into Christ\" have put on? What differences no longer divide them?",
+   "apply": "Who do I treat as less than one with me in Christ?",
+   "refs": [
+    "Galatians 3:26-29"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1746"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"ye are all the children of God by faith\", and \"as many of you as have been baptized into Christ have put on Christ.\"",
+     "refs": [
+      "Galatians 3:26-27"
+     ]
+    },
+    {
+     "text": "\"put on\" is enduo: \"to invest with clothing\". Baptism is pictured as putting on a garment.",
+     "refs": [
+      "Galatians 3:27"
+     ],
+     "strongs": [
+      "G1746"
+     ]
+    },
+    {
+     "text": "\"There is neither Jew nor Greek, there is neither bond nor free, there is neither male nor female\".",
+     "refs": [
+      "Galatians 3:28"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Peter compares baptism with Noah's ark. What does he say baptism is, and what is it not? What was Paul told in Acts 22?",
+   "apply": "Is my conscience toward God good today?",
+   "refs": [
+    "1 Peter 3:20-21",
+    "Acts 22:16"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G1906"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"eight souls were saved by water\". Then: \"baptism doth also now save us\".",
+     "refs": [
+      "1 Peter 3:20-21"
+     ]
+    },
+    {
+     "text": "Peter says what it is not and what it is: \"not the putting away of the filth of the flesh, but the answer of a good conscience toward God\", \"by the resurrection\".",
+     "refs": [
+      "1 Peter 3:21"
+     ]
+    },
+    {
+     "text": "\"answer\" is eperotema: \"an inquiry\". The BSB reads \"pledge\".",
+     "refs": [
+      "1 Peter 3:21"
+     ],
+     "strongs": [
+      "G1906"
+     ]
+    },
+    {
+     "text": "Ananias to Paul: \"arise, and be baptized, and wash away thy sins, calling on the name of the Lord.\"",
+     "refs": [
+      "Acts 22:16"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "At Cornelius' house, what came first, the Holy Ghost or the water? What did Yeshua promise the thief on the cross? What does Paul say he was sent to do?",
+   "apply": "Do I rest on what Christ has done, or on what I have done?",
+   "refs": [
+    "Acts 10:44-48",
+    "Luke 23:42-43",
+    "1 Corinthians 1:14-17"
+   ],
+   "look_closer": {
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "\"the Holy Ghost fell on all them which heard the word\". Then Peter: \"Can any man forbid water, that these should not be baptized\"? And \"he commanded them to be baptized\".",
+     "refs": [
+      "Acts 10:44",
+      "Acts 10:47-48"
+     ]
+    },
+    {
+     "text": "The thief asked \"Lord, remember me\". The answer: \"To day shalt thou be with me in paradise.\"",
+     "refs": [
+      "Luke 23:42-43"
+     ]
+    },
+    {
+     "text": "Paul: \"Christ sent me not to baptize, but to preach the gospel\". Yet he did baptize: \"Crispus and Gaius\" and \"the household of Stephanas\".",
+     "refs": [
+      "1 Corinthians 1:14",
+      "1 Corinthians 1:16-17"
+     ]
+    },
+    {
+     "text": "Christians read steps 7 and 8 in different ways. Some say baptism is the moment God joins a person to Christ and washes away sin (Mark 16:16, Acts 2:38, Acts 22:16, 1 Peter 3:21). Others say it is the outward sign of a salvation already received by faith (Acts 10:44-48, Luke 23:43, 1 Corinthians 1:17). Many hold that it is commanded and that God is not bound by it. Each reading points to these verses; BibleChat gives no verdict.",
+     "refs": [
+      "Mark 16:16",
+      "Acts 2:38",
+      "Acts 22:16",
+      "1 Peter 3:21",
+      "Acts 10:47",
+      "Luke 23:43",
+      "1 Corinthians 1:17"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Who was baptized with Lydia and with the jailer at Philippi? Read these beside Acts 2:39 and Acts 8:12. What do the verses say, and what do they not say?",
+   "apply": "Am I passing on the faith to those in my own house?",
+   "refs": [
+    "Acts 16:14-15",
+    "Acts 16:30-34",
+    "Acts 2:39",
+    "Acts 8:12"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G3624"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "Lydia: \"when she was baptized, and her household\". The jailer: \"was baptized, he and all his, straightway\", and \"rejoiced, believing in God with all his house.\"",
+     "refs": [
+      "Acts 16:15",
+      "Acts 16:33-34"
+     ]
+    },
+    {
+     "text": "\"household\" and \"house\" are oikos: \"a dwelling\", and \"by implication, a family\".",
+     "refs": [
+      "Acts 16:15",
+      "Acts 16:31"
+     ],
+     "strongs": [
+      "G3624"
+     ]
+    },
+    {
+     "text": "The verses do not list who was in these households, and they do not say whether there were children.",
+     "refs": [
+      "Acts 16:15",
+      "Acts 16:33"
+     ]
+    },
+    {
+     "text": "Christians read this in different ways. Some baptize only those old enough to believe for themselves, pointing to \"when they believed\" and \"he that believeth and is baptized\". Others also baptize the children of believers, pointing to the households, \"to your children\", and baptism set beside circumcision in Colossians 2:11-12. BibleChat gives no verdict.",
+     "refs": [
+      "Acts 8:12",
+      "Mark 16:16",
+      "Acts 16:33",
+      "Acts 2:39",
+      "Colossians 2:11-12"
+     ]
+    }
+   ]
+  },
+  {
+   "question": "Why was John baptizing at Aenon? What does the Greek word for baptize mean, and how is it used in Luke 11:38? In whose name were people baptized in Matthew 28 and in Acts?",
+   "apply": "Have I been baptized? If not, what is holding me back; if so, do I remember what it meant?",
+   "refs": [
+    "John 3:23",
+    "Luke 11:38",
+    "Acts 19:4-5",
+    "Acts 10:48",
+    "Matthew 28:19"
+   ],
+   "look_closer": {
+    "strongs": [
+     "G907",
+     "G908"
+    ],
+    "xref_top": 5
+   },
+   "compare": [
+    "KJV",
+    "ETH",
+    "BSB"
+   ],
+   "notes": [
+    "scofield",
+    "henry"
+   ],
+   "facts": [
+    {
+     "text": "John baptized at Aenon \"because there was much water there\".",
+     "refs": [
+      "John 3:23"
+     ]
+    },
+    {
+     "text": "\"baptize\" is baptizo: \"to immerse, submerge; to make whelmed (i.e. fully wet)\". The King James also translates it \"wash\": in Luke 11:38 the Pharisee marvelled that Yeshua \"had not first washed before dinner\".",
+     "refs": [
+      "Luke 11:38"
+     ],
+     "strongs": [
+      "G907"
+     ]
+    },
+    {
+     "text": "On how: many Christians immerse, pointing to the meaning of the word, \"much water\", and \"went down both into the water\". Others also pour or sprinkle, pointing to the wider use of the word for washing. BibleChat gives no verdict.",
+     "refs": [
+      "John 3:23",
+      "Acts 8:38",
+      "Luke 11:38"
+     ]
+    },
+    {
+     "text": "On the words: Matthew 28:19 says \"in the name of the Father, and of the Son, and of the Holy Ghost\". Acts says \"in the name of Jesus Christ\", \"in the name of the Lord\", \"in the name of the Lord Jesus\". Most churches use the words of Matthew 28:19; some use the words of Acts; some say both describe the same baptism. BibleChat gives no verdict.",
+     "refs": [
+      "Matthew 28:19",
+      "Acts 2:38",
+      "Acts 10:48",
+      "Acts 19:5"
+     ]
+    }
+   ]
+  }
+ ],
+ "remember": [
+  {
+   "text": "\"thus it becometh us to fulfil all righteousness.\"",
+   "refs": [
+    "Matthew 3:15"
+   ]
+  },
+  {
+   "text": "\"teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost\"",
+   "refs": [
+    "Matthew 28:19"
+   ]
+  },
+  {
+   "text": "\"Repent, and be baptized every one of you\"",
+   "refs": [
+    "Acts 2:38"
+   ]
+  },
+  {
+   "text": "\"See, here is water; what doth hinder me to be baptized?\"",
+   "refs": [
+    "Acts 8:36"
+   ]
+  },
+  {
+   "text": "\"we are buried with him by baptism into death\", to \"walk in newness of life.\"",
+   "refs": [
+    "Romans 6:4"
+   ]
+  },
+  {
+   "text": "\"as many of you as have been baptized into Christ have put on Christ.\"",
+   "refs": [
+    "Galatians 3:27"
+   ]
+  },
+  {
+   "text": "\"the answer of a good conscience toward God\"",
+   "refs": [
+    "1 Peter 3:21"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "What did the voice from heaven say at Yeshua's baptism?",
+   "type": "multiple_choice",
+   "options": [
+    "Hear ye him",
+    "This is my beloved Son, in whom I am well pleased",
+    "Behold the Lamb of God"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "Matthew 3:17"
+   ],
+   "check": {
+    "word": "well pleased"
+   },
+   "signals": {
+    "xref": 45,
+    "votes": 383,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.371,
+    "quoted": null
+   },
+   "why": [
+    "45 cross-references point here"
+   ],
+   "score": 0.5395
+  },
+  {
+   "q": "Which verse says \"thus it becometh us to fulfil all righteousness\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Matthew 3:15"
+   ],
+   "signals": {
+    "xref": 16,
+    "votes": 74,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.563,
+    "quoted": null
+   },
+   "why": [
+    "16 cross-references point here",
+    "Translations differ here"
+   ],
+   "score": 0.4649
+  },
+  {
+   "q": "Fill in the word: \"Go ye therefore, and teach all ___, baptizing them\"",
+   "type": "fill_word",
+   "ref": "Matthew 28:19",
+   "bible": "KJV",
+   "word": "nations",
+   "answer_refs": [
+    "Matthew 28:19"
+   ],
+   "signals": {
+    "xref": 57,
+    "votes": 591,
+    "word": "G907",
+    "word_count": 35,
+    "differ": 0.236,
+    "quoted": null
+   },
+   "why": [
+    "57 cross-references point here",
+    "The Greek word baptízō (G907) is in 35 verses of this path"
+   ],
+   "score": 0.859
+  },
+  {
+   "q": "Which verse says \"He that believeth and is baptized shall be saved\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Mark 16:16"
+   ],
+   "signals": {
+    "xref": 48,
+    "votes": 650,
+    "word": "G907",
+    "word_count": 35,
+    "differ": 0.546,
+    "quoted": null
+   },
+   "why": [
+    "48 cross-references point here",
+    "The Greek word baptízō (G907) is in 35 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.9365
+  },
+  {
+   "q": "Fill in the word: \"___, and be baptized every one of you\"",
+   "type": "fill_word",
+   "ref": "Acts 2:38",
+   "bible": "KJV",
+   "word": "Repent",
+   "answer_refs": [
+    "Acts 2:38"
+   ],
+   "signals": {
+    "xref": 63,
+    "votes": 767,
+    "word": "G907",
+    "word_count": 35,
+    "differ": 0.305,
+    "quoted": null
+   },
+   "why": [
+    "63 cross-references point here",
+    "The Greek word baptízō (G907) is in 35 verses of this path"
+   ],
+   "score": 0.8763
+  },
+  {
+   "q": "About how many souls were added on the day of Pentecost?",
+   "type": "multiple_choice",
+   "options": [
+    "Five hundred",
+    "About three thousand",
+    "About five thousand"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "Acts 2:41"
+   ],
+   "check": {
+    "word": "three thousand"
+   },
+   "signals": {
+    "xref": 27,
+    "votes": 212,
+    "word": "G907",
+    "word_count": 35,
+    "differ": 0.487,
+    "quoted": null
+   },
+   "why": [
+    "27 cross-references point here",
+    "The Greek word baptízō (G907) is in 35 verses of this path"
+   ],
+   "score": 0.8743
+  },
+  {
+   "q": "Which verse says \"the promise is unto you, and to your children\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Acts 2:39"
+   ],
+   "signals": {
+    "xref": 44,
+    "votes": 771,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.379,
+    "quoted": null
+   },
+   "why": [
+    "44 cross-references point here"
+   ],
+   "score": 0.5448
+  },
+  {
+   "q": "Which verse has the eunuch ask \"what doth hinder me to be baptized?\"",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Acts 8:36"
+   ],
+   "signals": {
+    "xref": 22,
+    "votes": 184,
+    "word": "G907",
+    "word_count": 35,
+    "differ": 0.471,
+    "quoted": null
+   },
+   "why": [
+    "22 cross-references point here",
+    "The Greek word baptízō (G907) is in 35 verses of this path"
+   ],
+   "score": 0.8597
+  },
+  {
+   "q": "How did the eunuch go on his way?",
+   "type": "multiple_choice",
+   "options": [
+    "Rejoicing",
+    "Weeping",
+    "Afraid"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Acts 8:39"
+   ],
+   "check": {
+    "word": "rejoicing"
+   },
+   "signals": {
+    "xref": 18,
+    "votes": 116,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.301,
+    "quoted": null
+   },
+   "why": [
+    "18 cross-references point here"
+   ],
+   "score": 0.4328
+  },
+  {
+   "q": "Fill in the word: \"we are ___ with him by baptism into death\"",
+   "type": "fill_word",
+   "ref": "Romans 6:4",
+   "bible": "KJV",
+   "word": "buried",
+   "answer_refs": [
+    "Romans 6:4"
+   ],
+   "signals": {
+    "xref": 35,
+    "votes": 658,
+    "word": "G908",
+    "word_count": 4,
+    "differ": 0.284,
+    "quoted": null
+   },
+   "why": [
+    "35 cross-references point here",
+    "The Greek word báptisma (G908) is in 4 verses of this path"
+   ],
+   "score": 0.6377
+  },
+  {
+   "q": "Which verse says \"as many of you as have been baptized into Christ have put on Christ\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Galatians 3:27"
+   ],
+   "signals": {
+    "xref": 34,
+    "votes": 321,
+    "word": "G907",
+    "word_count": 35,
+    "differ": 0.431,
+    "quoted": null
+   },
+   "why": [
+    "34 cross-references point here",
+    "The Greek word baptízō (G907) is in 35 verses of this path"
+   ],
+   "score": 0.8913
+  },
+  {
+   "q": "How many souls were saved by water in the ark, as Peter says?",
+   "type": "multiple_choice",
+   "options": [
+    "Seven",
+    "Eight",
+    "Twelve"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "1 Peter 3:20"
+   ],
+   "check": {
+    "word": "eight"
+   },
+   "signals": {
+    "xref": 22,
+    "votes": 136,
+    "word": null,
+    "word_count": 0,
+    "differ": 0.46,
+    "quoted": null
+   },
+   "why": [
+    "22 cross-references point here"
+   ],
+   "score": 0.4844
+  },
+  {
+   "q": "Which verse says \"baptism doth also now save us\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Peter 3:21"
+   ],
+   "signals": {
+    "xref": 37,
+    "votes": 414,
+    "word": "G908",
+    "word_count": 4,
+    "differ": 0.555,
+    "quoted": null
+   },
+   "why": [
+    "37 cross-references point here",
+    "The Greek word báptisma (G908) is in 4 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.7054
+  },
+  {
+   "q": "Which verse says \"arise, and be baptized, and wash away thy sins\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "Acts 22:16"
+   ],
+   "signals": {
+    "xref": 23,
+    "votes": 250,
+    "word": "G907",
+    "word_count": 35,
+    "differ": 0.503,
+    "quoted": null
+   },
+   "why": [
+    "23 cross-references point here",
+    "The Greek word baptízō (G907) is in 35 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.8906
+  },
+  {
+   "q": "Fill in the word: \"Can any man forbid ___, that these should not be baptized\"",
+   "type": "fill_word",
+   "ref": "Acts 10:47",
+   "bible": "KJV",
+   "word": "water",
+   "answer_refs": [
+    "Acts 10:47"
+   ],
+   "signals": {
+    "xref": 13,
+    "votes": 109,
+    "word": "G907",
+    "word_count": 35,
+    "differ": 0.626,
+    "quoted": null
+   },
+   "why": [
+    "13 cross-references point here",
+    "The Greek word baptízō (G907) is in 35 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.8594
+  },
+  {
+   "q": "Which verse says \"Christ sent me not to baptize, but to preach the gospel\"?",
+   "type": "find_the_verse",
+   "answer_refs": [
+    "1 Corinthians 1:17"
+   ],
+   "signals": {
+    "xref": 15,
+    "votes": 113,
+    "word": "G907",
+    "word_count": 35,
+    "differ": 0.456,
+    "quoted": null
+   },
+   "why": [
+    "15 cross-references point here",
+    "The Greek word baptízō (G907) is in 35 verses of this path"
+   ],
+   "score": 0.8196
+  },
+  {
+   "q": "What was Lydia's trade?",
+   "type": "multiple_choice",
+   "options": [
+    "A seller of purple",
+    "A tentmaker",
+    "A weaver of linen"
+   ],
+   "answer": 0,
+   "answer_refs": [
+    "Acts 16:14"
+   ],
+   "check": {
+    "word": "purple"
+   },
+   "signals": {
+    "xref": 19,
+    "votes": 136,
+    "word": "G3686",
+    "word_count": 8,
+    "differ": 0.563,
+    "quoted": null
+   },
+   "why": [
+    "19 cross-references point here",
+    "The Greek word ónoma (G3686) is in 8 verses of this path",
+    "Translations differ here"
+   ],
+   "score": 0.7435
+  },
+  {
+   "q": "Why was John baptizing in Aenon near to Salim?",
+   "type": "multiple_choice",
+   "options": [
+    "It was near Jerusalem",
+    "There was much water there",
+    "The people lived there"
+   ],
+   "answer": 1,
+   "answer_refs": [
+    "John 3:23"
+   ],
+   "check": {
+    "word": "much water"
+   },
+   "signals": {
+    "xref": 5,
+    "votes": 21,
+    "word": "G907",
+    "word_count": 35,
+    "differ": 0.417,
+    "quoted": null
+   },
+   "why": [
+    "5 cross-references point here",
+    "The Greek word baptízō (G907) is in 35 verses of this path"
+   ],
+   "score": 0.6863
+  }
+ ],
+ "sources": [
+  "KJV",
+  "ETH",
+  "BSB",
+  "Strong's",
+  "OpenBible cross-references",
+  "Scofield (1917)",
+  "Matthew Henry"
+ ],
+ "verse_count": 58,
+ "image": "img/baptism.jpg",
+ "labels": {
+  "scofield": "Commentary (Scofield, 1917)",
+  "henry": "Commentary (Matthew Henry, Concise)"
+ },
+ "built_from": {
+  "file": "packaging/paths/baptism.json",
+  "sha": "41fc47f962fcf924",
+  "checked_in": [
+   "KJV",
+   "ETH",
+   "BSB"
+  ]
+ },
+ "red": {
+  "Luke 23:43": [
+   {
+    "n": 90,
+    "h": 149990836,
+    "s": [
+     [
+      25,
+      90
+     ]
+    ]
+   }
+  ],
+  "Mark 16:15": [
+   {
+    "n": 89,
+    "h": 3947506936,
+    "s": [
+     [
+      23,
+      89
+     ]
+    ]
+   }
+  ],
+  "Mark 16:16": [
+   {
+    "n": 92,
+    "h": 3621816528,
+    "s": [
+     [
+      0,
+      92
+     ]
+    ]
+   }
+  ],
+  "Matthew 3:15": [
+   {
+    "n": 133,
+    "h": 3566846243,
+    "s": [
+     [
+      35,
+      111
+     ]
+    ]
+   }
+  ],
+  "Matthew 28:18": [
+   {
+    "n": 94,
+    "h": 3446213715,
+    "s": [
+     [
+      44,
+      94
+     ]
+    ]
+   }
+  ],
+  "Matthew 28:19": [
+   {
+    "n": 120,
+    "h": 2882630996,
+    "s": [
+     [
+      0,
+      120
+     ]
+    ]
+   }
+  ],
+  "Matthew 28:20": [
+   {
+    "n": 136,
+    "h": 1400964264,
+    "s": [
+     [
+      0,
+      136
+     ]
+    ]
+   }
+  ]
+ }
+}
