@@ -22,7 +22,7 @@ const BCVoice = (() => {
   const MAX_VERSES = 3, MAX_REF_VERSES = 6;   // a word search reads the best 3; "Psalm 23:1-6" reads up to 6
   const GREETING = "Shalom. What's on your heart today? You can ask about any verse, topic, or start a study path.";
   const STOP_WORDS = /^(stop|stop listening|stop talking|be quiet|quiet|that's all|that is all|goodbye|good bye|bye|amen|halt|stopp|para|parar|basta|arrête|arrete)$/i;
-  let A = null, el = {}, state = "off", rec = null, tok = 0, silenceT = null, greeted = false, opts = {silenceMs: SILENCE_MS};
+  let A = null, el = {}, state = "off", rec = null, tok = 0, greeted = false, opts = {silenceMs: SILENCE_MS};   // rec: the hear() in progress
   const W = typeof window !== "undefined" ? window : globalThis;
   const T = x => (typeof tr === "function" ? tr(x) : x);
   const RecClass = () => W.SpeechRecognition || W.webkitSpeechRecognition || null;
@@ -59,43 +59,65 @@ const BCVoice = (() => {
     return t === tok;
   }
 
-  /* ---------- listening ---------- */
-  function clearSilence(){ if(silenceT){ clearTimeout(silenceT); silenceT = null; } }
-  function armSilence(t){ clearSilence(); silenceT = setTimeout(() => { if(t === tok && state === "listening") stop(true); }, opts.silenceMs); }
-  function listen(t){
-    if(t !== tok) return;
-    const R = RecClass(); if(!R){ stop(true); return; }
-    setState("listening", "");
-    let heardBy = Date.now() + opts.silenceMs, done = false;   // heardBy: 8 seconds after the last word heard
-    const deadline = () => Date.now() >= heardBy;
+  /* ---------- listening ----------
+     hear() listens once and settles with what was said: {text}, {silence} after 8 seconds without a word, {error}
+     ("blocked", "network", "start", "none") or {cancelled}. Tap and talk and 📜 guided study (web/paths.js) both use it. */
+  function hear(o){
+    o = o || {};
+    const R = RecClass(), ms = o.silenceMs || opts.silenceMs;
+    let r = null, done = false, timer = null, heardBy = 0, settle;
+    const promise = new Promise(res => { settle = res; });
+    const finish = res => {
+      if(done) return; done = true; clearTimeout(timer);
+      if(r){ const x = r; r = null; x.onend = x.onresult = x.onerror = x.onspeechstart = null; try{ x.abort(); }catch(e){} }
+      settle(res);
+    };
+    const arm = () => { clearTimeout(timer); heardBy = Date.now() + ms; timer = setTimeout(() => finish({silence: true}), ms); };   // 8 seconds after the last word heard
     const start = () => {
-      rec = new R(); rec.lang = A && A.listenLang ? A.listenLang() : "en-US";
-      rec.interimResults = true; rec.continuous = false; rec.maxAlternatives = 1;
-      rec.onspeechstart = () => { if(t === tok){ heardBy = Date.now() + opts.silenceMs; armSilence(t); } };
-      rec.onresult = e => {
-        if(t !== tok) return;
+      r = new R(); r.lang = o.lang || "en-US";
+      r.interimResults = true; r.continuous = false; r.maxAlternatives = 1;
+      r.onspeechstart = () => arm();
+      r.onresult = e => {
         let text = "", fin = false;
         for(let i = 0; i < e.results.length; i++){ text += e.results[i][0].transcript; if(e.results[i].isFinal) fin = true; }
-        heardBy = Date.now() + opts.silenceMs; armSilence(t); showHeard(text);
-        if(fin && text.trim()){ done = true; try{ rec.abort(); }catch(x){} answer(text.trim(), t); }
+        arm(); if(o.onHeard) o.onHeard(text);
+        if(fin && text.trim()) finish({text: text.trim()});
       };
-      rec.onerror = e => {
-        if(t !== tok) return;
+      r.onerror = e => {
         const err = e && e.error;
-        if(err === "not-allowed" || err === "service-not-allowed" || err === "audio-capture"){
-          done = true; stop(true); note(T("The microphone is blocked. Allow it for this site in the browser's settings, or type instead.")); }
-        else if(err === "network" || err === "language-not-supported"){
-          done = true; stop(true); note(T("Listening needs the internet. Type instead, or try again later.")); }
+        if(err === "not-allowed" || err === "service-not-allowed" || err === "audio-capture") finish({error: "blocked"});
+        else if(err === "network" || err === "language-not-supported") finish({error: "network"});
         // "no-speech" and "aborted": nothing to say; onend decides whether to keep waiting
       };
-      rec.onend = () => {
-        if(t !== tok || done || state !== "listening") return;
-        if(deadline()) stop(true);                // 8 seconds of silence: close quietly
-        else try{ start(); }catch(x){ stop(true); }   // the browser gave up early: keep waiting until the 8 seconds are up
+      r.onend = () => {
+        if(done) return;
+        if(Date.now() >= heardBy) finish({silence: true});   // 8 seconds of silence: close quietly
+        else try{ start(); }catch(x){ finish({error: "start"}); }   // the browser gave up early: keep waiting until the 8 seconds are up
       };
-      rec.start();
+      r.start();
     };
-    try{ start(); armSilence(t); }catch(e){ stop(true); note(T("Tap the microphone to talk.")); }
+    if(!R) finish({error: "none"});
+    else try{ arm(); start(); }catch(e){ finish({error: "start"}); }
+    return {promise, cancel: () => finish({cancelled: true})};
+  }
+  /* the one plain sentence for a listening problem (nothing at all for silence) */
+  function hearProblem(err){
+    return err === "blocked" ? T("The microphone is blocked. Allow it for this site in the browser's settings, or type instead.")
+      : err === "network" ? T("Listening needs the internet. Type instead, or try again later.")
+      : err === "start" ? T("Tap the microphone to talk.")
+      : err === "none" ? T("This browser can't listen. Try Chrome or Safari, or type instead.") : "";
+  }
+  function listen(t){
+    if(t !== tok) return;
+    if(!canListen()){ stop(true); return; }
+    setState("listening", "");
+    rec = hear({lang: A && A.listenLang ? A.listenLang() : "en-US", onHeard: x => { if(t === tok) showHeard(x); }});
+    rec.promise.then(res => {
+      if(t !== tok) return;
+      rec = null;
+      if(res.text) answer(res.text, t);
+      else { stop(true); const msg = hearProblem(res.error); if(msg) note(msg); }
+    });
   }
 
   /* ---------- one question, one answer ---------- */
@@ -127,8 +149,8 @@ const BCVoice = (() => {
     } else listen(t);
   }
   function stop(quiet){
-    tok++; clearSilence();
-    if(rec){ const r = rec; rec = null; r.onend = r.onresult = r.onerror = r.onspeechstart = null; try{ r.abort(); }catch(e){} }
+    tok++;
+    if(rec){ const r = rec; rec = null; r.cancel(); }
     if(canSpeak() && state !== "off") try{ W.speechSynthesis.cancel(); }catch(e){}
     setState("off", "");
   }
@@ -168,6 +190,6 @@ const BCVoice = (() => {
       document.addEventListener("visibilitychange", () => { if(document.hidden && state !== "off") stop(true); });   // the phone locked or another app opened
   }
 
-  return {mount, begin, stop, startInVoice, setStartInVoice, isStop, pick, canListen, state: () => state, SILENCE_MS, GREETING};
+  return {mount, begin, stop, hear, hearProblem, startInVoice, setStartInVoice, isStop, pick, canListen, state: () => state, SILENCE_MS, GREETING};
 })();
 if(typeof module !== "undefined") module.exports = BCVoice;

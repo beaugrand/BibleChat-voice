@@ -134,6 +134,7 @@ const BCPaths = (() => {
   function frame(title, body, back){
     stillStop();
     if(LS.on && !LS.moving) lsStop();
+    if(GD.on && !GD.moving) gdStop();   // 🎧 the reader went elsewhere: guided study ends
     root.innerHTML = `<div class="pv-in"><header class="pv-head">${back ? `<button class="pv-ib pv-back" aria-label="Back">‹</button>` : ""}<h2 class="pvx">${esc(title)}</h2>
       ${S.path && (S.view === "step" || S.view === "quiz" || S.view === "reflect") ? `<button class="pv-ib pv-share" title="Share this path">↗</button>` : ""}<button class="pv-ib pv-close" aria-label="Close">✕</button></header><div class="pv-body">${body}</div></div>`;
     root.classList.toggle("pv-wide", S.view === "list");
@@ -231,18 +232,23 @@ const BCPaths = (() => {
       add((r ? `From the ${r[1]}, chapter ${r[2]}, verse${r[4] ? "s " + r[3] + " to " + r[4] : " " + r[3]}` : plain(b.querySelector("h4"))) + ". " + T("Not Scripture."), b.querySelector("h4"));
       b.querySelectorAll(".pv-ocol").forEach(c => add(plain(c.querySelector("b")) + ": " + plain(c.querySelector("p")), c)); });
     if(root.querySelector(".pv-thebible")) add(T("The Bible."), root.querySelector(".pv-thebible"));
-    root.querySelectorAll("#pvVerses .pv-ref").forEach(r => {
-      const voice = r.dataset.key === "reader" ? "reader" : "path", vs = [...r.querySelectorAll(".pv-v")];
-      add(sayRef(r.dataset.ref) + ".", r.querySelector(".pv-refh"));
-      vs.forEach(v => add([...v.childNodes].filter(n => !(n.nodeName === "SUP")).map(n => n.textContent).join("").trim(), v, voice));
-    });
+    verseSegs(add);
     const facts = root.querySelectorAll(".pv-facts p"); if(facts.length){ add(T("Facts about the words."), root.querySelector(".pv-facts h4")); facts.forEach(f => add(plain(f.firstChild && f.firstChild.nodeType === 3 ? f.firstChild : f).replace(/\s+·.*$/, ""), f)); }
     const cn = root.querySelector(".pv-cnote"); if(cn) add(plain(cn.querySelector("h4")) + ". " + plain(cn.querySelector("div.pvx")), cn);
     root.querySelectorAll("details.pv-notesec[open] .pnote").forEach(n => { add(plain(n.querySelector("h4")) + ". " + T("The notes of a man, not Scripture."), n.querySelector("h4"));
       n.querySelectorAll(".pnote-item").forEach(it => add(plain(it), it)); });
     return segs;
   }
+  /* the step's passages as they stand on screen, in the reader's Bible: "Luke 17, verses 3 to 4." then each verse */
+  function verseSegs(add){
+    root.querySelectorAll("#pvVerses .pv-ref").forEach(r => {
+      const voice = r.dataset.key === "reader" ? "reader" : "path", vs = [...r.querySelectorAll(".pv-v")];
+      add(sayRef(r.dataset.ref) + ".", r.querySelector(".pv-refh"));
+      vs.forEach(v => add([...v.childNodes].filter(n => !(n.nodeName === "SUP")).map(n => n.textContent).join("").trim(), v, voice));
+    });
+  }
   async function lsStart(kind){
+    if(GD.on) gdStop();   // 🎧 guided study and 🔊 Listen never talk at once
     if(A.onListen) A.onListen();   // the Bible reader's own Listen stops
     speakCancel(); LS.tok++;
     Object.assign(LS, {on: true, paused: false, kind, i: 0, segs: []});
@@ -284,6 +290,131 @@ const BCPaths = (() => {
     b.querySelector(".pv-plw").textContent = "🔊 " + where;
     b.querySelector(".pv-lspause").textContent = LS.paused ? "▶ " + T("Resume") : "⏸ " + T("Pause");
   }
+
+  /* ---------- 🎧 Guided study by voice (phone; Phase 2 of the voice handover) ----------
+     One step at a time, as a conversation: "Step 2 of 9", the verses read aloud in the reader's Bible, the step's
+     question, then the microphone listens for the reader's answer (it goes into the step's "What do you see?" notes,
+     on this device), then the reflection = the step's own "Facts about the words", then its "For me" line, then on to the
+     next step. Nothing else is ever spoken: only the Bible text and the path's own words. No commentary, no AI, and the
+     answer is never judged or answered.
+     ↺ Repeat, ⏸ Pause, ⏭ Skip and ■ Stop sit in the bar at the bottom; while the microphone is open the reader can also
+     say "repeat", "skip", "pause" or "stop". The microphone is off while the phone speaks, so it never hears itself.
+     8 seconds of silence = no answer this time, and it goes on. The step it is on is saved, so "Continue guided study"
+     starts there again. Listening is the browser's (A.hear = web/voice.js on the phone); the computer has no A.hear,
+     so no button there.
+     For now one path (Hans, 17 November 2026): Forgiveness. More are added to GUIDED once he approves. */
+  const GUIDED = new Set(["forgiveness"]);
+  const canGuide = p => !!(p && !p.mine && GUIDED.has(p.id) && A && A.hear);
+  const GD = {on: false, paused: false, tok: 0, parts: [], part: 0, i: 0, ctl: null, hearing: null, moving: false, phase: "", heard: ""};
+  const GD_CMD = {repeat: /^(repeat|again|say (that|it) again|once more|wiederholen|nochmal|noch einmal|repetir|repite|otra vez)$/i,
+                  skip: /^(skip|next|go on|skip it|weiter|überspringen|siguiente|saltar|sigue)$/i,
+                  pause: /^(pause|wait|hold on|warte|pausa|espera)$/i,
+                  stop: /^(stop|stop listening|end|finish|quit|stopp|ende|para|parar|basta|fin)$/i};
+  function gdCommand(text){ const w = String(text || "").trim().replace(/[.!?,]+$/g, "").trim(); for(const k in GD_CMD) if(GD_CMD[k].test(w)) return k; return null; }
+  function gdParts(intro){
+    const p = S.path, st = p.steps[S.step], parts = [], part = (name, listen) => { const x = {name, segs: [], listen}; parts.push(x);
+      return (text, el, voice) => { text = String(text || "").trim(); if(text) x.segs.push({text, el, kind: voice || "path"}); }; };
+    let add = part("verses");
+    // spoken in English, like the path's own words and the English voice that reads them (the buttons follow the app language)
+    if(intro) add("Guided study. " + p.title + ". I read the verses and ask the question, then I listen for your answer. When I listen, you can say repeat, skip or pause.");
+    add(`Step ${S.step + 1} of ${p.steps.length}.`, root.querySelector(".pv-stepno"));
+    verseSegs(add);
+    part("question", true)(st.question, root.querySelector(".pv-q"));
+    const facts = root.querySelectorAll(".pv-facts p");
+    if((st.facts || []).length){ add = part("reflection"); add("Reflection.", root.querySelector(".pv-facts h4"));
+      st.facts.forEach((f, k) => add(f && typeof f === "object" ? f.text : f, facts[k])); }
+    if(st.apply) part("apply")("For me: " + st.apply, root.querySelector(".pv-apply"));
+    return parts;
+  }
+  async function gdBegin(intro){
+    if(!canGuide(S.path)) return;
+    if(LS.on) lsStop(); if(A.onListen) A.onListen();
+    gdCancel(); GD.tok++;
+    Object.assign(GD, {on: true, paused: false, parts: [], part: 0, i: 0, phase: T("Getting ready…"), heard: ""});
+    saveProgress(S.path.id, {guided: S.step});
+    gdBar();
+    if(S.versesP) await S.versesP;
+    if(!GD.on) return;
+    GD.parts = gdParts(intro); gdRun(GD.tok);
+  }
+  async function gdRun(tok){
+    while(GD.on && !GD.paused && tok === GD.tok){
+      const part = GD.parts[GD.part];
+      if(!part) return gdNext(tok);
+      if(GD.i < part.segs.length){
+        const sg = part.segs[GD.i];
+        root.querySelectorAll(".pv-saying").forEach(x => x.classList.remove("pv-saying"));
+        if(sg.el){ sg.el.classList.add("pv-saying"); sg.el.scrollIntoView({block: "center", behavior: "smooth"}); }
+        GD.phase = "🔊 " + T(part.name === "verses" ? "Reading the verses" : part.name === "question" ? "The question" : part.name === "reflection" ? "Reflection" : "For me"); gdBar();
+        const ctl = GD.ctl = {stop: false};
+        try{ await speakOne(sg.text, sg.kind, ctl); }catch(e){ if(tok === GD.tok){ gdStop(); A.toast(e.message || T("The voice couldn't read that.")); } return; }
+        if(tok !== GD.tok || ctl.stop) return;
+        GD.i++; continue;
+      }
+      if(part.listen && !part.answered){ await gdListen(tok, part); continue; }
+      GD.part++; GD.i = 0;
+    }
+  }
+  /* the answer: a command, or the reader's own words (saved in the step's notes), or 8 seconds of silence */
+  async function gdListen(tok, part){
+    GD.phase = "🎙 " + T("Your answer…"); GD.heard = ""; gdBar();
+    const h = GD.hearing = A.hear({lang: "en-US", onHeard: x => { if(tok === GD.tok){ GD.heard = x; gdBar(); } }});
+    const res = await h.promise;
+    if(GD.hearing === h) GD.hearing = null;
+    if(tok !== GD.tok || res.cancelled) return;
+    GD.heard = ""; gdBar();
+    if(res.text){
+      const cmd = gdCommand(res.text);
+      if(cmd === "repeat"){ GD.i = 0; return; }   // the question again
+      if(cmd === "skip"){ part.answered = true; return; }
+      if(cmd === "pause"){ gdPause(); return; }
+      if(cmd === "stop"){ gdStop(); return; }
+      gdSave(res.text); part.answered = true; return;
+    }
+    part.answered = true;   // silence: no answer this time, quietly on
+    if(res.error){ const msg = A.hearProblem ? A.hearProblem(res.error) : ""; if(msg) A.toast(msg); gdPause(); }   // no microphone: wait for ▶ Resume
+  }
+  function gdSave(text){
+    const n = get("notes", {}), id = S.path.id, mine = (n[id] = n[id] || {}), old = mine[S.step] || "";
+    mine[S.step] = old ? old.replace(/\s+$/, "") + "\n" + text : text; set("notes", n);
+    const ta = root.querySelector("#pvSee"); if(ta) ta.value = mine[S.step];
+    A.toast(T("Your answer is saved in your notes for this step."));
+  }
+  async function gdNext(tok){
+    const p = S.path; markDone(p.id, S.step);
+    if(S.step < p.steps.length - 1){
+      GD.moving = true; S.gdAuto = true;
+      try{ await showPath(p.id, S.step + 1); }finally{ GD.moving = false; }
+      return;
+    }
+    saveProgress(p.id, {guided: null});
+    GD.phase = "🔊 " + T("The end"); gdBar();
+    const ctl = GD.ctl = {stop: false};
+    try{ await speakOne("That was the last step of this path. Your answers are in your notes.", "path", ctl); }catch(e){}
+    if(tok === GD.tok) gdStop();
+  }
+  function gdCancel(){ if(GD.hearing){ const h = GD.hearing; GD.hearing = null; h.cancel(); } const c = GD.ctl; if(c) c.stop = true; speakCancel(); }
+  function gdPause(){ if(!GD.on) return; GD.tok++; gdCancel();
+    if(GD.paused){ GD.paused = false; gdRun(GD.tok); } else { GD.paused = true; GD.phase = "⏸ " + T("Paused"); } gdBar(); }
+  function gdRepeat(){ if(!GD.on) return; GD.tok++; gdCancel(); GD.paused = false; GD.i = 0; const pt = GD.parts[GD.part]; if(pt) pt.answered = false; gdRun(GD.tok); }
+  function gdSkip(){ if(!GD.on) return; GD.tok++; gdCancel(); GD.paused = false; GD.part++; GD.i = 0; gdRun(GD.tok); }
+  function gdStop(){ if(!GD.on) return; GD.on = false; GD.paused = false; GD.tok++; gdCancel();
+    if(root){ root.querySelectorAll(".pv-saying").forEach(x => x.classList.remove("pv-saying")); const b = root.querySelector(".pv-gbar"); if(b) b.remove(); const g = root.querySelector(".pv-guide"); if(g) g.textContent = gdLabel(S.path); } }
+  function gdBar(){
+    let b = root.querySelector(".pv-gbar");
+    if(!b){ b = document.createElement("div"); b.className = "pv-player pv-gbar"; b.setAttribute("role", "region"); b.setAttribute("aria-label", "Guided study"); b.setAttribute("aria-live", "polite");
+      b.innerHTML = `<div class="pv-gtxt"><span class="pv-plw"></span><span class="pv-gheard pvx"></span></div><div class="pv-gbtns"><button class="pv-btn pv-grep">↺ Repeat</button><button class="pv-btn pv-gpause"></button><button class="pv-btn pv-gskip">⏭ Skip</button><button class="pv-btn pv-gstop" title="Stop">■</button></div>`;
+      root.appendChild(b); }
+    b.querySelector(".pv-plw").textContent = (S.path ? T("Step") + " " + (S.step + 1) + " · " : "") + GD.phase;
+    b.querySelector(".pv-gheard").textContent = GD.heard ? "“" + GD.heard + "”" : "";
+    b.querySelector(".pv-gpause").textContent = GD.paused ? "▶ " + T("Resume") : "⏸ " + T("Pause");
+  }
+  function gdLabel(p){ const g = p && (progress()[p.id] || {}).guided;
+    return g != null && g > 0 ? `🎧 ${T("Continue guided study")} (${T("step")} ${g + 1})` : `🎧 ${T("Start guided study")}`; }
+  function gdButton(){ const p = S.path; if(GD.on){ gdPause(); return; }   // while it runs, the big button pauses and resumes
+    const g = (progress()[p.id] || {}).guided;
+    if(g != null && g !== S.step){ S.gdAuto = true; S.gdIntro = true; showPath(p.id, g); return; }
+    gdBegin(true); }
 
   /* ---------- 👥 Community: your own study paths, the ones readers sent in (checked by Hans), and the Bible study groups ---------- */
   const COMMUNITY = "Community";
@@ -563,6 +694,7 @@ const BCPaths = (() => {
     const arrived = S.arrived; S.arrived = false;
     frame(p.title, `${arrived ? `<div class="pv-welcome">👋 <b>Someone shared this study path with you.</b> Read the question, then the verses of each step, and press <b>Next step</b>. Your notes and answers stay on your device.</div>` : ""}${p.image ? `<div class="pv-hero">${picture(p, true)}<span class="pv-pc-cat">${esc(p.series ? "Session " + p.series.session + " of " + p.series.of : p.group ? "👥 " + p.group : p.category || "")}</span></div>` : ""}${p.series ? `<p class="pv-small pv-serline">📖 <span class="pvx">${esc(p.series.title)}</span></p>` : ""}<div class="pv-open pvx"><small>The question</small>${esc(p.opening_question)}</div>
       <div class="pv-about" id="pvAbout" hidden></div>
+      ${canGuide(p) ? `<button class="pv-btn pv-listen pv-guide">${esc(gdLabel(p))}</button>` : ""}
       <button class="pv-btn pv-listen" data-ls="step">🔊 Listen to this step</button>
       <div class="pv-stepno">Step ${S.step + 1} of ${n}</div>
       <div class="pv-track" role="navigation" aria-label="Steps">${p.steps.map((x, i) => `<button class="pv-dot${i === S.step ? " pv-dot-now" : ""}${done.has(i) ? " pv-dot-ok" : ""}" data-step="${i}" title="${esc("Step " + (i + 1) + ": " + x.question)}">${done.has(i) ? "✓" : i + 1}</button>`).join(`<i class="pv-track-line"></i>`)}</div>
@@ -585,6 +717,7 @@ const BCPaths = (() => {
     aboutBooks(p, S.step);
     S.versesP = drawVerses(s);
     if(S.lsAuto){ S.lsAuto = false; lsStart("step"); }   // 🔊 Listen goes on into the next step
+    if(S.gdAuto){ const intro = !!S.gdIntro; S.gdAuto = S.gdIntro = false; gdBegin(intro); }   // 🎧 guided study goes on into the next step
   }
   /* 📚 About these books: a path that reads a book outside the 66 (1 Enoch, Jubilees, Jasher, 1 Clement, the Apocrypha)
      says plainly what that book is, in a box anyone can see (the 📚 tag's own text only shows on hover). Step 1 lists
@@ -1147,6 +1280,11 @@ const BCPaths = (() => {
     if(t.closest(".pv-back")){ if(S.view === "edit"){ S.draft = null; showList(); return; } if(S.view === "share" && S.shareFrom === "series" && S.series) showFolder(S.folderKind || "series", S.series); else if(S.view === "request" || (S.view === "share" && S.shareFrom === "list")) showList(); else if(S.view === "word" || S.view === "share") showPath(S.path.id, S.step); else if((S.view === "step" || S.view === "quiz" || S.view === "reflect") && S.path && S.path.series) showSeries(S.path.series.id); else if((S.view === "step" || S.view === "quiz" || S.view === "reflect") && S.path && S.path.group) showFolder("group", slug(S.path.group)); else if(S.view === "step" || S.view === "quiz" || S.view === "reflect" || S.view === "quoted" || S.view === "series") showList(); else close(); return; }
     const sc = t.closest(".pv-pc-share"); if(sc){ shareFromCard(sc.dataset.id); return; }
     if(t.closest(".pv-add")){ showRequest(); return; }
+    if(t.closest(".pv-guide")){ gdButton(); return; }
+    if(t.closest(".pv-grep")){ gdRepeat(); return; }
+    if(t.closest(".pv-gpause")){ gdPause(); return; }
+    if(t.closest(".pv-gskip")){ gdSkip(); return; }
+    if(t.closest(".pv-gstop")){ gdStop(); return; }
     const lb = t.closest(".pv-listen"); if(lb){ if(LS.on && LS.kind === lb.dataset.ls && !LS.paused) lsPause(); else lsStart(lb.dataset.ls); return; }
     if(t.closest(".pv-lspause")){ lsPause(); return; }
     if(t.closest(".pv-lsskip")){ lsSkip(); return; }
@@ -1257,7 +1395,7 @@ const BCPaths = (() => {
     else if(v.id && v.view === "reflect"){ await showPath(v.id, v.step); await showReflect(); } else await showList();
     if(v.top) root.scrollTop = v.top;
   }
-  function close(){ lsStop(); if(root){ root.hidden = true; root.innerHTML = ""; S.view = "list"; S.draft = null; if(A.onClose) A.onClose(); } }
+  function close(){ lsStop(); gdStop(); if(root){ root.hidden = true; root.innerHTML = ""; S.view = "list"; S.draft = null; if(A.onClose) A.onClose(); } }
   function mount(adapter){
     A = adapter; root = adapter.container;
     root.classList.add("pv", "pv-dark"); root.hidden = true;
@@ -1417,6 +1555,10 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 .pv-listen{display:block;width:100%;margin:2px 0 10px;font-weight:700;font-size:15.5px;padding:11px;background:rgba(217,180,74,.14);border-color:rgba(217,180,74,.55)}
 .pv-player{position:sticky;bottom:0;z-index:5;display:flex;align-items:center;gap:6px;max-width:760px;margin:0 auto;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:#0f1215;border-top:1px solid var(--line);box-shadow:0 -6px 18px rgba(0,0,0,.35)}
 .pv-plw{flex:1;min-width:0;font-size:13.5px;font-weight:650;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pv-player .pv-btn{padding:7px 11px;font-weight:700}
+.pv-gbar{flex-wrap:wrap;row-gap:6px}.pv-gtxt{flex:1 1 100%;min-width:0;display:flex;flex-direction:column}
+.pv-gheard{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pv-gbtns{display:flex;gap:6px;flex:1 1 100%}.pv-gbtns .pv-btn{flex:1;min-height:44px}.pv-gbtns .pv-gstop{flex:0 0 auto}
+.pv-guide{background:rgba(217,180,74,.3);border-color:rgba(217,180,74,.8)}
 .pv-saying{background:rgba(217,180,74,.22)!important;border-radius:6px;box-shadow:0 0 0 2px rgba(217,180,74,.35)}
 .pv-seg{display:flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px;margin:10px 0 6px}
 .pv-segb{flex:1;border:0;background:none;color:var(--muted);font:inherit;font-weight:700;font-size:15px;padding:9px 6px;border-radius:10px;cursor:pointer}.pv-segon{background:var(--accent);color:var(--accent-text)}
@@ -1501,7 +1643,10 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
   /* remember where the reader is before another screen covers the path (🙏 sharing the closing prayer), so reopen() returns there */
   function remember(){ if(root && !root.hidden) lastView = {view: S.view === "quiz" || S.view === "reflect" ? S.view : S.view === "word" || S.view === "share" ? "step" : S.view, id: S.path && S.path.id, step: S.step, top: root.scrollTop}; }
   return {mount, open, close, reopen, remember, openHash, cleanHash, shortPath, linkOf, xPhone, isPhone, fromAnswer, choose, parseRef, label: LABEL, isOpen: () => root && !root.hidden,
-    findPaths, openCommunity, preload: () => loadList(), normRef, _setList: l => { list = l; }, _inLang: inLang,   // _setList: tests hand in paths/index.json
+    findPaths, openCommunity, preload: () => loadList(), normRef, _setList: l => { list = l; }, _inLang: inLang,
+    // tests/test_guided.py: what guided study would say for one step (a pretend page and adapter), and its spoken commands
+    _guided: {paths: GUIDED, command: gdCommand, parts: (adapter, page, path, step, intro) => { const o = [A, root, S.path, S.step];
+      A = adapter; root = page; S.path = path; S.step = step; try{ return gdParts(intro); }finally{ [A, root, S.path, S.step] = o; } }},   // _setList: tests hand in paths/index.json
     adapter: () => A, readVerses, title: id => { const x = (list || []).find(q => q.id === id); return x ? x.title : ""; }};   // 🙏 Prayers (web/prayers.js) borrow these
 })();
 if(typeof module !== "undefined") module.exports = BCPaths;

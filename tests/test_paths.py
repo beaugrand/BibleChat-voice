@@ -339,7 +339,7 @@ class PathPagesTest(unittest.TestCase):
             self.assertIn(part, js)
         self.assertIn("details.pv-notesec[open] .pnote", js)                     # commentary is read only when open, with its label
         phone, computer = read("web", "index.html"), read("bibleask", "web", "index.html")
-        for part in ("voice: kind =>", "onListen: () => sayStop()"):
+        for part in ("voice: kind =>", "onListen: () => { sayStop(); BCVoice.stop(true); }"):   # on the phone 🎙 Tap and talk stops too
             self.assertIn(part, phone)
         for part in ("speak: async (text, kind, me) =>", "fetchAudio(text)", "speakLocal(text, pick.lang, me)", "onListen: () => sayStop()"):
             self.assertIn(part, computer)
