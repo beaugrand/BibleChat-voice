@@ -580,6 +580,19 @@ const I18N = {
 "Tap the microphone to talk.": ["Tippe auf das Mikrofon, um zu sprechen.", "Toca el micrófono para hablar.", "Touchez le micro pour parler.", "Toque no microfone para falar.", "点按麦克风即可说话。", "Нажмите на микрофон, чтобы говорить.", "말하려면 마이크를 누르세요."],
 "This browser can't listen. Try Chrome or Safari, or type instead.": ["Dieser Browser kann nicht zuhören. Versuche Chrome oder Safari, oder tippe lieber.", "Este navegador no puede escuchar. Prueba Chrome o Safari, o escribe.", "Ce navigateur ne peut pas écouter. Essayez Chrome ou Safari, ou écrivez plutôt.", "Este navegador não consegue ouvir. Tente o Chrome ou o Safari, ou digite.", "此浏览器无法聆听。请试试 Chrome 或 Safari，或改为打字。", "Этот браузер не умеет слушать. Попробуйте Chrome или Safari или напечатайте вопрос.", "이 브라우저는 들을 수 없습니다. Chrome이나 Safari를 사용하거나 대신 입력하세요."],
 "Shalom. What's on your heart today? You can ask about any verse, topic, or start a study path.": ["Schalom. Was liegt dir heute auf dem Herzen? Du kannst nach jedem Vers oder Thema fragen oder einen Bibelpfad beginnen.", "Shalom. ¿Qué hay en tu corazón hoy? Puedes preguntar por cualquier versículo o tema, o empezar una ruta de estudio.", "Shalom. Qu'avez-vous sur le cœur aujourd'hui ? Vous pouvez poser une question sur un verset ou un sujet, ou commencer un parcours d'étude.", "Shalom. O que está no seu coração hoje? Você pode perguntar sobre qualquer versículo ou tema, ou começar uma trilha de estudo.", "平安（Shalom）。今天你心里在想什么？你可以问任何经文或主题，或开始一条查经路径。", "Шалом. Что у вас сегодня на сердце? Спросите о любом стихе или теме или начните путь изучения.", "샬롬. 오늘 마음에 무엇이 있나요? 어떤 구절이나 주제든 물어보거나 성경 공부 길을 시작할 수 있습니다."],
+"Start guided study": ["Geführtes Studium starten", "Empezar el estudio guiado", "Commencer l'étude guidée", "Começar o estudo guiado", "开始引导学习", "Начать изучение с голосом", "안내 공부 시작"],
+"Continue guided study": ["Geführtes Studium fortsetzen", "Seguir el estudio guiado", "Continuer l'étude guidée", "Continuar o estudo guiado", "继续引导学习", "Продолжить изучение с голосом", "안내 공부 계속"],
+"step": ["Schritt", "paso", "étape", "passo", "步骤", "шаг", "단계"],
+"Reading the verses": ["Die Verse werden gelesen", "Leyendo los versículos", "Lecture des versets", "Lendo os versículos", "正在朗读经文", "Читаю стихи", "구절을 읽는 중"],
+"Reflection": ["Besinnung", "Reflexión", "Réflexion", "Reflexão", "默想", "Размышление", "묵상"],
+"For me": ["Für mich", "Para mí", "Pour moi", "Para mim", "对我来说", "Для меня", "나에게"],
+"Your answer…": ["Deine Antwort…", "Tu respuesta…", "Votre réponse…", "Sua resposta…", "你的回答…", "Ваш ответ…", "당신의 대답…"],
+"Paused": ["Angehalten", "En pausa", "En pause", "Em pausa", "已暂停", "Пауза", "일시 정지됨"],
+"The end": ["Das Ende", "El final", "La fin", "O fim", "结束", "Конец", "끝"],
+"↺ Repeat": ["↺ Wiederholen", "↺ Repetir", "↺ Répéter", "↺ Repetir", "↺ 重复", "↺ Повторить", "↺ 반복"],
+"⏭ Skip": ["⏭ Weiter", "⏭ Saltar", "⏭ Passer", "⏭ Pular", "⏭ 跳过", "⏭ Пропустить", "⏭ 건너뛰기"],
+"Your answer is saved in your notes for this step.": ["Deine Antwort steht jetzt in deinen Notizen zu diesem Schritt.", "Tu respuesta está guardada en tus notas de este paso.", "Votre réponse est enregistrée dans vos notes pour cette étape.", "Sua resposta foi salva nas suas notas deste passo.", "你的回答已保存在此步骤的笔记中。", "Ваш ответ сохранён в заметках к этому шагу.", "대답이 이 단계의 메모에 저장되었습니다."],
+"Guided study": ["Geführtes Studium", "Estudio guiado", "Étude guidée", "Estudo guiado", "引导学习", "Изучение с голосом", "안내 공부"],
 };
 /* phrases with numbers or names in them */
 const I18N_RE = [
