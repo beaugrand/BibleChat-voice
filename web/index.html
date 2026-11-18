@@ -274,7 +274,7 @@ body.pen{padding-bottom:calc(var(--tabh) + 92px + env(safe-area-inset-bottom))}
 @media (max-width:420px){.lovetabs{gap:4px}.lovetabs button{font-size:12.5px;padding:6px 3px}}
 @media (max-width:340px){.lovetabs{gap:3px}.lovetabs button{font-size:11.5px;padding:6px 2px}}
 .lovetabs button.on{background:var(--accent);border-color:var(--accent);color:var(--accent-text)}
-#lvDonate,#lvAbout,#lvChurch,#lvIdeas{scroll-margin-top:calc(116px + env(safe-area-inset-top))}
+#lvDonate,#lvAbout,#lvChurch,#lvIdeas,#lvSettings{scroll-margin-top:calc(116px + env(safe-area-inset-top))}
 .lovecard h2{font-family:Georgia,serif;font-weight:500;font-size:24px;margin:0 0 6px}
 .lovecard img{width:min(270px,78vw);border-radius:14px;background:#fff;padding:6px;box-shadow:var(--shadow)}
 .lovecard .tag{font-weight:650;font-size:17px;margin:10px 0 14px}
@@ -347,7 +347,11 @@ body.has-church #top .brand{display:none}
 @media (min-width:900px){#smScreen .in{display:grid;grid-template-columns:1fr 360px;align-items:start}#smScreen .head{grid-column:1/-1}#smsQrBox{position:sticky;top:20px}.smsV{font-size:24px}#smScreen h2{font-size:38px}}
 /* suggestions */
 .suggest{border-top:1px solid var(--line);margin-top:22px;padding-top:16px;text-align:left}
-.suggest h3{font-family:Georgia,serif;font-weight:500;font-size:19px;margin:0 0 6px}
+.suggest h3,.settings h3{font-family:Georgia,serif;font-weight:500;font-size:19px;margin:0 0 6px}
+.settings{border-top:1px solid var(--line);margin-top:22px;padding-top:16px;text-align:left}
+.settings h2{font-family:Georgia,serif;font-weight:500;font-size:22px;margin:0 0 10px}
+.settings label{display:block;font-weight:600;margin:4px 0 6px}
+.settings select{width:100%;box-sizing:border-box}
 .suggest textarea{width:100%;box-sizing:border-box;min-height:84px;border:1px solid var(--line);border-radius:12px;padding:10px;font:inherit;background:var(--card);color:inherit}
 .suggest .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 #loveChurch{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:18px;text-align:center}
@@ -454,7 +458,7 @@ body.has-church #top .brand{display:none}
   <!-- LOVE -->
   <section id="v-love" hidden><div class="wrap">
     <nav class="lovetabs" id="loveTabs" aria-label="Sections of this page">
-      <button data-sec="lvDonate" class="on">♥ Donate</button><button data-sec="lvAbout">ℹ About</button><button data-sec="lvChurch">⛪ Churches</button><button data-sec="lvIdeas">💡 Ideas</button>
+      <button data-sec="lvDonate" class="on">♥ Donate</button><button data-sec="lvAbout">ℹ About</button><button data-sec="lvChurch">⛪ Churches</button><button data-sec="lvIdeas">💡 Ideas</button><button data-sec="lvSettings">⚙ Settings</button>
     </nav>
     <div class="lovecard" id="lvDonate">
     <div id="loveChurch" hidden></div>
@@ -484,6 +488,17 @@ body.has-church #top .brand{display:none}
       <input class="find" id="sgReply" type="email" maxlength="120" autocomplete="email" placeholder="Your email (optional, only if you'd like an answer)">
       <div class="row"><button class="btn primary" id="sgSend">📨 Send to Hans</button></div>
       <p class="muted" id="sgNote" style="font-size:13px">No account needed. Your idea is sent to Hans by FormSubmit.co, only when you press Send. Other ways: <a href="#" id="sgMail">email</a> · <a href="#" id="sgGit">GitHub</a></p>
+    </div>
+    <!-- ⚙ Settings. 🔊 Reading voice: which of this device's own voices reads aloud (Listen, Prayers, Study Paths, Tap and talk).
+         Saved per language on this device; "Default (automatic)" lets BibleChat choose, as before -->
+    <div class="settings" id="lvSettings">
+      <h2>⚙ Settings</h2>
+      <h3>🔊 Reading voice</h3>
+      <p class="muted">The voice that reads aloud in Listen, Prayers, Study Paths and Tap and talk. These are the voices on this device for the language of the Bible you are reading: <b id="rvLang">English</b>.</p>
+      <label for="rvSel">Choose a voice</label>
+      <select class="find" id="rvSel"></select>
+      <div class="row"><button class="btn" id="rvHear">▶ Hear a sample</button></div>
+      <p class="muted" id="rvNote" style="font-size:13px"></p>
     </div>
   </div></div></section>
 </main>
@@ -691,6 +706,7 @@ function show(t, noFocus){
   document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === t));
   if(t === "bibles") renderBibles();
   if(t === "home") homeWhere();
+  if(t === "love") rvFill();   // ⚙ Settings: the voices for the Bible that is open now
   if(t === "search" && !noFocus) setTimeout(() => $("#q").focus(), 50);
   scrollTo(0, 0);
   navNote();
@@ -943,13 +959,29 @@ let saying = false, voices = [];
 function loadVoices(){ try{ voices = speechSynthesis.getVoices() || []; }catch(e){ voices = []; } }
 function bibleMeta(){ return catalog.find(c => c.id === place.bible) || {language: "English"}; }
 function bibleLang(){ const l = bibleMeta().language; return LANG[l] || LANG[l.split(" ")[0]] || "en-US"; }
-function pickVoice(lang){
-  const norm = x => (x || "").toLowerCase().replace("_", "-"), want = norm(lang), base = want.split("-")[0];
-  let same = voices.filter(v => norm(v.lang).split("-")[0] === base);
-  if(base === "nb") same = same.concat(voices.filter(v => /^no\b|^nn\b/.test(norm(v.lang))));   // Norwegian is filed under several codes
-  if(base === "fil") same = same.concat(voices.filter(v => norm(v.lang).startsWith("tl")));
-  if(base === "zh" && want === "zh-tw") same.sort((a, b) => (/tw|hk|hant/.test(norm(b.lang)) ? 1 : 0) - (/tw|hk|hant/.test(norm(a.lang)) ? 1 : 0));
-  return same.find(v => norm(v.lang) === want) || same.find(v => v.default) || same[0] || null;
+const vNorm = x => (x || "").toLowerCase().replace("_", "-");
+function voicesFor(lang){   // every voice on this device for this language (English: all English voices, any region)
+  const want = vNorm(lang), base = want.split("-")[0];
+  let same = voices.filter(v => vNorm(v.lang).split("-")[0] === base);
+  if(base === "nb") same = same.concat(voices.filter(v => /^no\b|^nn\b/.test(vNorm(v.lang))));   // Norwegian is filed under several codes
+  if(base === "fil") same = same.concat(voices.filter(v => vNorm(v.lang).startsWith("tl")));
+  return same;
+}
+/* 🔊 Reading voice (⚙ Settings on the Love page): the voice the user chose, saved per language ("en", "de"…) */
+const voiceKey = lang => vNorm(lang).split("-")[0];
+function savedVoice(lang){
+  const s = (store.get("voicePick", {}) || {})[voiceKey(lang)];
+  if(!s) return null;
+  const list = voicesFor(lang);
+  return list.find(v => s.uri && v.voiceURI === s.uri) || list.find(v => v.name === s.name) || null;   // null when it was removed
+}
+/* All four readers use this: 🔊 Listen, 🙏 Prayers, 📜 Study Paths and 🎙 Tap and talk. A chosen voice wins while it is
+   still on the device; otherwise BibleChat picks one itself, as before ("auto": ignore the chosen voice). */
+function pickVoice(lang, auto){
+  const mine = auto ? null : savedVoice(lang); if(mine) return mine;
+  const want = vNorm(lang), same = voicesFor(lang);
+  if(want === "zh-tw") same.sort((a, b) => (/tw|hk|hant/.test(vNorm(b.lang)) ? 1 : 0) - (/tw|hk|hant/.test(vNorm(a.lang)) ? 1 : 0));
+  return same.find(v => vNorm(v.lang) === want) || same.find(v => v.default) || same[0] || null;
 }
 function intro(lang){ const w = CHAPTER[lang.split("-")[0]]; if(!w) return ""; return (lang.startsWith("en") ? place.book + ", " : "") + w + " " + place.ch + ". "; }
 /* Listen. The bar above the tabs (Pause / Resume / Stop) stays in reach while the text scrolls. The verse being read is
@@ -1007,7 +1039,54 @@ function voiceHelp(){
   $("#voiceMsg").innerHTML = `This device has no ${esc(lang)} voice yet, so Listen can't read this Bible aloud.<br><br>${esc(where)}<br><br>Then come back and press Listen again.`;
   $("#voiceSheet").hidden = false;
 }
-if("speechSynthesis" in window){ $("#say").hidden = false; $("#shareSay").hidden = false; loadVoices(); try{ speechSynthesis.addEventListener("voiceschanged", loadVoices); }catch(e){} }
+/* ⚙ Settings → 🔊 Reading voice: lists this device's voices for the open Bible's language, name and region,
+   "Default (automatic)" first. The choice is saved on this device for that language and survives reloads. */
+function rvLabel(v){
+  const region = (v.lang || "").replace("_", "-").split("-")[1];
+  let where = region || "";
+  try{ if(region) where = new Intl.DisplayNames([UI_LOCALE[typeof UI_LANG === "string" ? UI_LANG : "en"] || "en"], {type: "region"}).of(region.toUpperCase()) || region; }catch(e){}
+  const kind = /premium/i.test(v.voiceURI || "") && !/premium/i.test(v.name) ? " (Premium)" : /enhanced/i.test(v.voiceURI || "") && !/enhanced/i.test(v.name) ? " (Enhanced)" : "";
+  return v.name + kind + (where ? " · " + where : "");
+}
+function rvFill(){
+  const sel = $("#rvSel"); if(!sel) return;
+  loadVoices();
+  const lang = bibleLang(), seen = new Set(), saved = (store.get("voicePick", {}) || {})[voiceKey(lang)];
+  const list = voicesFor(lang).filter(v => { const k = v.voiceURI || v.name; if(seen.has(k)) return false; seen.add(k); return true; })
+    .sort((a, b) => rvLabel(a).localeCompare(rvLabel(b)));
+  const mine = savedVoice(lang);
+  $("#rvLang").textContent = bibleMeta().language.replace(/ \(.*\)$/, "");
+  sel.innerHTML = `<option value="">${esc(tr("Default (automatic)"))}</option>` +
+    list.map(v => `<option value="${esc(v.voiceURI || v.name)}"${mine === v ? " selected" : ""}>${esc(rvLabel(v))}</option>`).join("");
+  $("#rvHear").disabled = !("speechSynthesis" in window);
+  $("#rvNote").textContent = !("speechSynthesis" in window) ? tr("This browser can't read aloud.")
+    : !list.length ? tr("This device has no voice for this language yet. Add one in the device's settings, then come back.")
+    : saved && !mine ? tr("The voice you chose is no longer on this device, so BibleChat chooses one itself.")
+    : tr("On iPhone: more voices (such as Premium ones) are in Settings → Accessibility → Spoken Content → Voices.");
+}
+function rvChosen(){   // the voice highlighted in the list, or the automatic one
+  const val = $("#rvSel").value, lang = bibleLang();
+  return (val && voicesFor(lang).find(v => (v.voiceURI || v.name) === val)) || (val ? null : pickVoice(lang, true));
+}
+$("#rvSel").onchange = () => {
+  const lang = bibleLang(), all = store.get("voicePick", {}) || {}, val = $("#rvSel").value;
+  const v = val ? voicesFor(lang).find(x => (x.voiceURI || x.name) === val) : null;
+  if(v) all[voiceKey(lang)] = {uri: v.voiceURI || "", name: v.name}; else delete all[voiceKey(lang)];
+  store.set("voicePick", all); toast(tr("Saved")); rvFill();
+};
+function rvSample(lang){   // one short sentence: Psalm 23:1 from the open Bible, so it is in that Bible's language
+  try{ const vs = bible && bible.byName.Psalms && bible.byName.Psalms.map.get(23); if(vs && vs[0] && vs[0][1]) return vs[0][1]; }catch(e){}
+  return lang.startsWith("en") ? "The Lord is my shepherd; I shall not want." : "";
+}
+$("#rvHear").onclick = () => {
+  if(!("speechSynthesis" in window)) return;
+  sayStop(); BCVoice.stop(true); loadVoices();
+  const lang = bibleLang(), v = rvChosen(), text = rvSample(lang) || "BibleChat";
+  try{ speechSynthesis.cancel(); }catch(e){}
+  const u = new SpeechSynthesisUtterance(text); u.lang = v ? v.lang : lang; try{ if(v) u.voice = v; }catch(e){} u.rate = .95;
+  speechSynthesis.speak(u);
+};
+if("speechSynthesis" in window){ $("#say").hidden = false; $("#shareSay").hidden = false; loadVoices(); try{ speechSynthesis.addEventListener("voiceschanged", () => { loadVoices(); if(tab === "love") rvFill(); }); }catch(e){} }
 $("#say").onclick = () => saying ? sayPause() : sayStart();
 $("#plPause").onclick = () => saying ? sayPause() : sayStart();
 $("#plStop").onclick = () => sayStop();
