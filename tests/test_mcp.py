@@ -35,6 +35,21 @@ class ConnectorTest(unittest.TestCase):
         self.assertIn("Revelation 1:7", call("cross_references", reference="Daniel 7:13", to_book="Revelation")[0])
         self.assertIn("Patmos", call("bible_dictionary", term="Patmos")[0])
 
+    def test_topic_guide(self):
+        from bibleask import guide
+        t, err = call("topic_guide", topic="how do I stop worrying")
+        self.assertFalse(err)
+        self.assertIn("Fear and worry", t)
+        self.assertIn("Philippians 4:6", t)   # a key passage, quoted from the KJV
+        t, _ = call("topic_guide", topic="Prayer")
+        self.assertIn("BibleChat topic guide: Prayer", t)
+        t, _ = call("topic_guide")             # no topic: the list
+        for topic in guide.load()["topics"]:
+            self.assertIn(topic["title"], t)
+        t, err = call("topic_guide", topic="zzzz qqqq")
+        self.assertFalse(err)
+        self.assertIn("No guide topic matches", t)
+
     def test_unknown_tool(self):
         r = m.handle({"jsonrpc": "2.0", "id": 3, "method": "tools/call", "params": {"name": "nope"}})
         self.assertIn("error", r)

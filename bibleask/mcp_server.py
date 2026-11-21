@@ -23,6 +23,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Optional
 
 from . import __version__
+from . import guide
 from .henry_easton import EASTON, HENRY
 from .loaders import Bible, Verse, PROTESTANT_BOOKS
 from .search import BookIndex, Index
@@ -39,8 +40,9 @@ INSTRUCTIONS = (
     "BibleChat gives you real Bible text and classic public-domain study tools. Quote verses exactly as the tools "
     "return them and give the reference with each one; never write Scripture from memory. Use get_passage for a "
     "reference, search_bible for words or ideas, study_verse for the original Hebrew/Greek words, cross-references, "
-    "topics and Matthew Henry, strongs_word for a Strong's number, find_topic for a subject, cross_references for "
-    "links between verses or whole books, and bible_dictionary for names and places."
+    "topics and Matthew Henry, strongs_word for a Strong's number, find_topic for a subject, topic_guide for the "
+    "key passages of a broad life or doctrine topic grouped by theme (prayer, fear and worry, marriage, suffering), "
+    "cross_references for links between verses or whole books, and bible_dictionary for names and places."
 )
 
 # ---------------------------------------------------------------------------------------------- data
@@ -212,6 +214,44 @@ def t_find_topic(a: dict) -> str:
     return "\n".join(out)
 
 
+def _topic_by_name(q: str) -> Optional[dict]:
+    """A guide topic by its id or title, else by the words in the question (the same rule the app uses)."""
+    low = q.strip().lower()
+    for t in guide.load().get("topics", []):
+        if low and low in (t.get("id", "").lower(), t.get("title", "").lower()):
+            return t
+    return guide.topic_for(q)
+
+
+def t_topic_guide(a: dict) -> str:
+    q = str(a.get("topic", "")).strip()
+    topics = guide.load().get("topics", [])
+    listing = "Topics in the BibleChat guide: " + "; ".join(t["title"] for t in topics)
+    if not q:
+        return listing + "\n\nCall topic_guide again with one of them (or a question about it)."
+    t = _topic_by_name(q)
+    if not t:
+        return (f"No guide topic matches “{q}”.\n{listing}\n"
+                "Try find_topic (Nave's Topical Bible) or search_bible for other subjects.")
+    qw = set(guide.words(q))
+    themes = list(t.get("themes", []))
+    # themes whose own words appear in the question come first; the rest keep the guide's order
+    themes.sort(key=lambda th: -sum(1 for w in th.get("words", []) if set(guide.words(w)) <= qw))
+    out = [f"BibleChat topic guide: {t['title']} (King James Version; key passages by theme)"]
+    for th in themes:
+        out += ["", f"## {th['point']}"]
+        for ref in th.get("refs", []):
+            p = guide.parse_ref(ref)
+            if not p:
+                continue
+            book, ch, v1, v2 = p
+            for v in range(v1, min(v2, v1 + 7) + 1):
+                text = STRONGS.kjv_text(book, ch, v)
+                if text:
+                    out.append(f"- {book} {ch}:{v}: {text}")
+    return "\n".join(out)
+
+
 def t_cross_references(a: dict) -> str:
     ref, to_book = str(a.get("reference", "")).strip(), str(a.get("to_book") or "").strip()
     two = re.split(r"\s+(?:and|to|&|-|–|vs\.?)\s+", ref)
@@ -270,6 +310,11 @@ TOOLS = [
     _tool("find_topic", "Find a Bible topic",
           "Verses on a subject from Nave's Topical Bible (e.g. 'prayer', 'fallen angels', 'God's name').",
           {"query": {"type": "string"}}, ["query"], t_find_topic),
+    _tool("topic_guide", "Topic guide",
+          "BibleChat's key passages on a broad topic, grouped by theme so every side of it shows (e.g. 'prayer', "
+          "'fear and worry', 'marriage', 'suffering'). Leave the topic empty to list all topics.",
+          {"topic": {"type": "string", "description": "A topic or a question about it; empty lists the topics"}},
+          [], t_topic_guide),
     _tool("cross_references", "Cross-references",
           "Related verses for one verse (optionally only into one book), or every strong link between two books "
           "('Daniel and Revelation'). From OpenBible.info.",

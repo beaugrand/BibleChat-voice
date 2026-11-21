@@ -13,6 +13,7 @@ Code: [`bibleask/mcp_server.py`](../bibleask/mcp_server.py). Python standard lib
 | `study_verse` | One verse word by word with Strong's numbers, topics, cross-references, Matthew Henry |
 | `strongs_word` | A Hebrew or Greek word (`H430`, `G26`) and the verses that use it |
 | `find_topic` | Verses on a subject from Nave's Topical Bible |
+| `topic_guide` | Key passages of a broad topic (`prayer`, `fear and worry`, `marriage`) grouped by theme; empty lists the 18 topics |
 | `cross_references` | Links from one verse, or between two books (`Daniel and Revelation`) |
 | `bible_dictionary` | Easton's Bible Dictionary entry (`Patmos`) |
 | `list_bibles` | The Bibles available |
