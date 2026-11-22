@@ -500,7 +500,7 @@ class PathPagesTest(unittest.TestCase):
             self.assertIn(part, js)
         for part in ("pv-pc-share", "pv-sharewide", "📤 Send to someone", "sms:?&body=", "https://wa.me/?text=", "mailto:?subject=",
                      "shareHash(p, 0)", "Someone shared this study path with you",
-                     "Bible Study Groups", "Add your own study path", "formsubmit.co/ajax/", "issues/new?title=", "Read in ",
+                     "Bible Study Groups", "Add your own study path", "Legacy Standard Bible (LSB)", "formsubmit.co/ajax/", "issues/new?title=", "Read in ",
                      "pv-shareall", "#/paths/series/", "pv-serqr", "pv-qrbig", "prefers-reduced-motion", "pv-a-fire", "pv-a-mist", "pv-a-rainbow", "pv-ember",
                      "facebook.com/sharer", "x.com/intent", "t.me/share", "pinterest.com/pin", "linkedin.com/sharing", "reddit.com/submit", "pv-so-tt", "shareCard"):
             self.assertIn(part, js)                                                  # a path can be sent to someone

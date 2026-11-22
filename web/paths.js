@@ -147,7 +147,7 @@ const BCPaths = (() => {
   /* "+ Add your own study path": the request goes to Hans's inbox by FormSubmit.co (no account; his address isn't in the code),
      or as a GitHub issue. The group picks the Bible and the verses; Hans writes the path and it appears in the group's folder. */
   const REQ_URL = "https://formsubmit.co/ajax/56755bcbd30a076dc522b82fa44cf441";
-  const REQ_BIBLES = ["The Scriptures 2009 (TS2009)", "King James Version (KJV)", "New King James Version (NKJV)", "New International Version (NIV)", "English Standard Version (ESV)", "Berean Standard Bible (BSB)", "Ethiopian Canon", "Another Bible"];
+  const REQ_BIBLES = ["The Scriptures 2009 (TS2009)", "King James Version (KJV)", "New King James Version (NKJV)", "New International Version (NIV)", "English Standard Version (ESV)", "Legacy Standard Bible (LSB)", "Berean Standard Bible (BSB)", "Ethiopian Canon", "Another Bible"];
   function cardInfo(p, g){
     const qs = p.step_questions || (Array.isArray(p.steps) ? p.steps.map(x => x.question) : []), n = qs.length || +p.steps || 0;
     const done = new Set(g.done || []);
