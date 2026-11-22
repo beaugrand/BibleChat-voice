@@ -55,6 +55,90 @@ const BCPaths = (() => {
     return {key: null, vs: []};
   }
 
+  /* ---------- 📕 The book (PDF on demand): every study path and prayer, with the verse text, made on this device ----------
+     Scripture comes from the public-domain Yahweh Edition (a verse it lacks, such as Enoch, comes from the Bible that has it).
+     The page is laid out for printing; "Save as PDF" in the print window makes the file. Nothing leaves the device. */
+  const BOOK_BIBLES = ["YAHWEH", "KJV", "ETH", "JASHER", "BSB"];
+  async function bookVerses(ref){
+    for(const k of BOOK_BIBLES){ const x = await versesOf(k, ref).catch(() => null); if(x) return {key: k, vs: x}; }
+    return {key: null, vs: []};
+  }
+  const BOOK_NAME = {YAHWEH: "Yahweh Edition", KJV: "King James Version", ETH: "Ethiopian Canon", JASHER: "Jasher (1840)", BSB: "Berean Standard Bible"};
+  async function bookPassage(ref){
+    const {key, vs} = await bookVerses(ref);
+    const label = String(ref).replace(/-/g, "–");
+    if(!vs.length) return `<p class="bk-ref"><b>${esc(label)}</b></p><p class="bk-v"><i>(text not available)</i></p>`;
+    return `<p class="bk-ref"><b>${esc(label)}</b>${key && key !== "YAHWEH" ? ` <span class="bk-src">(${esc(BOOK_NAME[key])})</span>` : ""}</p><p class="bk-v">`
+      + vs.map(([b, c, v, t]) => `<sup>${v}</sup>${esc(t)}`).join(" ") + `</p>`;
+  }
+  function bookQr(id){
+    try{ const cv = A.qr(linkOf("#/path/" + id), 200); if(!cv) return ""; const src = cv.toDataURL ? cv.toDataURL("image/png") : cv.src; return `<img class="bk-qr" src="${src}" alt="QR code: open this path in BibleChat">`; }catch(e){ return ""; }
+  }
+  async function buildBook(opt, say){
+    const L = await loadList(), out = [];
+    const chosen = L.filter(p => opt.community || p.category !== GROUPS);
+    const order = chosen.filter(p => p.category !== GROUPS).concat(chosen.filter(p => p.category === GROUPS));
+    out.push(`<section class="bk-cover"><h1>BibleChat</h1><p class="bk-sub">Study Paths${opt.prayers ? " and Prayers" : ""}</p><p>Scripture is quoted from the Yahweh Edition, based on the World Messianic Bible (public domain). Prayers written for BibleChat are the words of people, not Scripture. Scan a path's QR code to open it in the app.</p><p class="bk-by">By Hans W. Beaugrand · beaugrand.github.io/BibleChat-voice</p></section>`);
+    out.push(`<section class="bk-toc"><h2>Contents</h2><h3>Study Paths</h3><ul>` + order.map(p => `<li>${esc(p.title)}${p.category === GROUPS ? " <i>(Community)</i>" : ""}</li>`).join("") + `</ul>${opt.prayers ? "<h3>Prayers</h3><p>The prayers follow the study paths, by topic.</p>" : ""}</section>`);
+    let n = 0;
+    for(const e of order){
+      say(`Study path ${++n} of ${order.length}…`);
+      const d = await loadPath(e.id);
+      let h = `<section class="bk-path"><div class="bk-head"><div><h2>${esc(d.title)}</h2><p class="bk-cat">${esc(e.category === GROUPS ? "Community · " + e.category : e.category)}</p><p class="bk-q">${esc(d.opening_question || "")}</p></div>${bookQr(e.id)}</div>`;
+      for(let i = 0; i < d.steps.length; i++){
+        const s = d.steps[i];
+        h += `<h3>Step ${i + 1}</h3><p class="bk-q">${esc(s.question)}</p>`;
+        for(const r of (s.refs || [])) h += await bookPassage(r);
+        if(s.apply) h += `<p class="bk-q"><b>For me:</b> ${esc(s.apply)}</p>`;
+      }
+      out.push(h + `</section>`);
+    }
+    if(opt.prayers){
+      let P = null;
+      try{ P = await (await fetch(A.base.replace(/paths\/$/, "") + "prayers.json")).json(); }catch(e){}
+      if(P){
+        say("Prayers…");
+        let h = `<section class="bk-pray"><h2>Prayers</h2><p>${esc(P.about || "")}</p>`;
+        for(const c of P.categories){
+          const items = P.prayers.filter(x => x.category === c.id); if(!items.length) continue;
+          h += `<h2 class="bk-pc">${esc(c.name)}</h2>`;
+          for(const x of items){
+            h += `<div class="bk-prayer"><h3>${esc(x.title)}</h3>${x.by ? `<p class="bk-cat">— ${esc(x.by)}</p>` : ""}`;
+            if(x.text && x.text.length) h += x.text.map(t => `<p>${esc(t)}</p>`).join("") + `<p class="bk-src">Scripture: ${esc((x.refs || []).join("; ").replace(/-/g, "–"))}</p>`;
+            else for(const r of (x.refs || [])) h += await bookPassage(r);
+            h += `</div>`;
+          }
+        }
+        out.push(h + `</section>`);
+      }
+    }
+    out.push(`<section class="bk-end"><h2>Notices</h2><p>Scripture text: Yahweh Edition, based on the World Messianic Bible (public domain). BibleChat was created by Hans W. Beaugrand. Studies that people write on their own phones stay on those phones and are not in this book.</p></section>`);
+    return out.join("");
+  }
+  function openBook(){
+    const old = document.getElementById("bkPrint"); if(old) old.remove();
+    const o = document.createElement("div"); o.id = "bkPrint";
+    o.innerHTML = `<div class="bk-bar"><b>📕 The BibleChat book</b><span class="bk-msg"></span><button class="pv-btn bk-close">✕ Close</button></div>
+      <div class="bk-opts"><p>Makes one PDF with every study path (verses, questions and a QR code for each) and every prayer. It is made on this device.</p>
+      <label><input type="checkbox" class="bk-co" checked> Include the community Bible study groups</label>
+      <label><input type="checkbox" class="bk-pr" checked> Include the prayers</label>
+      <button class="pv-btn pv-primary bk-go">Make the book</button></div><div class="bk-body"></div>`;
+    document.body.appendChild(o); document.body.classList.add("bk-on");
+    const close = () => { o.remove(); document.body.classList.remove("bk-on"); };
+    const msg = o.querySelector(".bk-msg");
+    o.querySelector(".bk-close").onclick = close;
+    o.querySelector(".bk-go").onclick = async ev => {
+      const go = ev.currentTarget; go.disabled = true;
+      try{
+        const html = await buildBook({community: o.querySelector(".bk-co").checked, prayers: o.querySelector(".bk-pr").checked}, m => { msg.textContent = m; });
+        o.querySelector(".bk-opts").hidden = true; o.querySelector(".bk-body").innerHTML = html; msg.textContent = "";
+        const pb = document.createElement("button"); pb.className = "pv-btn pv-primary"; pb.textContent = "🖨 Save as PDF"; pb.onclick = () => window.print();
+        o.querySelector(".bk-bar").insertBefore(pb, o.querySelector(".bk-close"));
+        o.scrollTop = 0;
+      }catch(e){ go.disabled = false; msg.textContent = "The book didn't finish. Check the internet connection and try again."; }
+    };
+  }
+
   /* ---------- small helpers ---------- */
   const norm = s => String(s).toLowerCase().replace(/[’‘]/g, "'").replace(/[“”]/g, '"');
   const wordsOf = s => norm(s).match(/[a-z0-9']+/g) || [];
@@ -184,7 +268,7 @@ const BCPaths = (() => {
     const sections = `<div class="pv-seg" role="tablist"><button class="pv-segb${S.section === "paths" ? " pv-segon" : ""}" data-sec="paths" role="tab">📖 Study Paths</button><button class="pv-segb${S.section === "community" ? " pv-segon" : ""}" data-sec="community" role="tab">👥 Community</button></div>`;
     if(S.section === "community"){ frame("📜 Study Paths / Community", sections + communityView(L, M, P)); return; }
     frame("📜 Study Paths / Community", sections + (arrivedList ? `<div class="pv-welcome">👋 <b>Someone shared the BibleChat Study Paths with you.</b> Pick a path below and press <b>Start</b>: every step shows the verses, the Hebrew and Greek words, and questions to think about. Free, no sign-up.</div>` : "")
-      + `<div class="pv-allshare"><button class="pv-btn pv-shareall">📱 Share all Study Paths · link or QR code</button></div>`
+      + `<div class="pv-allshare"><button class="pv-btn pv-bookpdf">📕 Make the book (PDF)</button><button class="pv-btn pv-shareall">📱 Share all Study Paths · link or QR code</button></div>`
       + `<p class="pv-lead">Each path starts with a question, walks through every main verse on it, including the ones that seem to point the other way, and ends with questions whose answer is always a verse. The path asks; you decide.</p>`
       + `<div class="pv-chips" role="toolbar" aria-label="Show">${chips.map(c => `<button class="pv-chip${c === S.filter ? " pv-chip-on" : ""}" data-f="${esc(c)}" aria-pressed="${c === S.filter}">${c === GROUPS ? "👥 " : ""}${esc(c)}</button>`).join("")}</div>`
       + (shown.length ? gridWithSeries(shown, P) : `<p class="pv-small pv-empty">${S.filter === BUSY ? "No path started yet. Pick one under All." : "No paths here yet."}</p>`)
@@ -1306,6 +1390,7 @@ const BCPaths = (() => {
     const ed = t.closest(".pv-edit"); if(ed){ const p = mine().find(x => x.id === ed.dataset.id); if(p){ const c = JSON.parse(JSON.stringify(p)); if(c.received){ c.id = "mine-" + Date.now().toString(36); delete c.received; delete c.sig; c.isNew = true; } editPath(c); } return; }
     if(t.closest(".pv-eddel")){ if(confirm(T("Delete this study path from this device?"))){ set("mine", mine().filter(x => x.id !== S.draft.id)); S.draft = null; showList(); } return; }
     const eb = t.closest("[data-ed]"); if(eb && S.view === "edit"){ e.preventDefault(); edAction(eb); return; }
+    if(t.closest(".pv-bookpdf")){ openBook(); return; }
     if(t.closest(".pv-shareall")){ share(null, "list", "all"); return; }
     const so = t.closest(".pv-sopen"); if(so){ showFolder(so.dataset.kind || "series", so.dataset.series); return; }
     const sq = t.closest(".pv-serqr"); if(sq){ const kind = sq.dataset.kind || "series"; folderPaths(kind, sq.dataset.series).then(({list}) => { if(list[0]) share(list[0], S.view === "series" ? "series" : "list", kind); }); return; }
@@ -1618,7 +1703,30 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 @keyframes pvFlash{0%,60%,64%,67%,100%{opacity:0}61%{opacity:.9}62%{opacity:.2}65%{opacity:1}}
 @keyframes pvWaves{from{background-position:0 0}to{background-position:0 18%}}
 @media (prefers-reduced-motion:reduce){.pv-anim img,.pv-anim .pv-fx,.pv-anim .pv-fx2,.pv-ember{animation:none!important}.pv-ember{display:none}}
-.pv-allshare{display:flex;justify-content:flex-end;margin:8px 0 0}
+.pv-allshare{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin:8px 0 0}
+#bkPrint{position:fixed;inset:0;z-index:99999;overflow:auto;background:#fff;color:#111;font:16px/1.55 Georgia,"Times New Roman",serif}
+#bkPrint .bk-bar{position:sticky;top:0;display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 14px;background:#1b1e24;color:#fff;font-family:system-ui,sans-serif;z-index:2}
+#bkPrint .bk-msg{flex:1;font-size:14px}
+#bkPrint .bk-opts{max-width:560px;margin:20px auto;padding:0 16px;font-family:system-ui,sans-serif}
+#bkPrint .bk-opts label{display:block;margin:10px 0}
+#bkPrint .bk-body{max-width:720px;margin:0 auto;padding:16px}
+#bkPrint h1{font-size:2.4em;text-align:center;margin:1.6em 0 .2em}.bk-sub,.bk-by{text-align:center;font-style:italic}
+#bkPrint h2{color:#8a6d1f;margin:.2em 0}#bkPrint h3{margin:1em 0 .2em;font-size:1.05em}
+#bkPrint .bk-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}#bkPrint .bk-qr{width:96px;height:96px;flex:none}
+#bkPrint .bk-cat,#bkPrint .bk-src{font-style:italic;color:#666;font-size:.85em;margin:.1em 0}#bkPrint .bk-q{font-style:italic;margin:.2em 0}
+#bkPrint .bk-ref{margin:.7em 0 .1em;color:#8a6d1f;font-size:.9em}#bkPrint .bk-v{margin:.1em 0 .4em 8px;font-size:.95em}#bkPrint sup{font-size:.65em;color:#777}
+#bkPrint section{margin-bottom:2em}#bkPrint .bk-pc{margin-top:1.6em}
+@media print{
+  @page{size:letter;margin:.8in}
+  body.bk-on > *:not(#bkPrint){display:none!important}
+  #bkPrint{position:static!important;overflow:visible!important;font-size:10.5pt}
+  #bkPrint .bk-bar,#bkPrint .bk-opts{display:none!important}
+  #bkPrint .bk-body{max-width:none;padding:0}
+  #bkPrint .bk-path,#bkPrint .bk-pray,#bkPrint .bk-toc,#bkPrint .bk-end{break-before:page}
+  #bkPrint .bk-cover{min-height:8in;padding-top:2in}
+  #bkPrint .bk-head,#bkPrint h3,#bkPrint .bk-ref,#bkPrint .bk-prayer{break-inside:avoid;page-break-inside:avoid}
+  #bkPrint h3,#bkPrint .bk-ref{break-after:avoid}
+}
 .pv-shareall{font-weight:650}
 .pv-series{margin:0 0 14px}.pv-serh{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:6px 0 10px}
 .pv-serh b{display:block;font-size:16px;color:var(--accent)}.pv-serh small{color:var(--muted)}.pv-serqr{flex:none;font-weight:700}

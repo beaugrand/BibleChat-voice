@@ -1587,7 +1587,7 @@ async function openAnywhere(book, ch, v, fromPaths){
   go(book, ch, v); retShow();
 }
 /* ---------- 📜 Study Paths (web/paths.js): guided studies with questions; everything stays on this phone ---------- */
-const PATH_BIBLES = {KJV: "eng-kjv", ETH: "eng-ethiopian-canon", BSB: "eng-bsb", JASHER: "eng-jasher-1840"};
+const PATH_BIBLES = {KJV: "eng-kjv", ETH: "eng-ethiopian-canon", BSB: "eng-bsb", JASHER: "eng-jasher-1840", YAHWEH: "eng-yahweh-edition"};   // YAHWEH: the printed book's text
 BCPaths.mount({
   container: $("#pathsView"), base: "paths/", quotedUrl: "quoted.json", chatName: "Search",
   books: async () => (sBooks = sBooks || await sGet("books.json")),

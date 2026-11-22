@@ -465,6 +465,12 @@ class PathPagesTest(unittest.TestCase):
         self.assertIn("Scriptures in this path", js)
         self.assertIn("S.step === 0 ? scriptureList(p)", js)
 
+    def test_book_pdf_button(self):
+        js = read("web", "paths.js"); page = read("web", "index.html")
+        for need in ["pv-bookpdf", "function openBook()", "async function buildBook(", "window.print()", "@media print", "body.bk-on"]:
+            self.assertIn(need, js)
+        self.assertIn('YAHWEH: "eng-yahweh-edition"', page)   # the book's verse text
+
     def test_bible_study_groups_only_under_community(self):
         js = read("web", "paths.js")
         # the Friday night (Bible Study Groups) studies are not in the Study Paths tab or its buttons; Community still lists them
