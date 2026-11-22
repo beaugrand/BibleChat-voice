@@ -175,11 +175,11 @@ const BCPaths = (() => {
     S.view = "list"; S.path = null;
     const L = await loadList(), P = progress(), M = mine();
     const cats = [...new Set(L.map(p => p.category).filter(Boolean))].filter(c => c !== GROUPS);
-    const chips = [ALL, BUSY, GROUPS].concat(cats.filter(c => c !== COMMUNITY));
+    const chips = [ALL, BUSY].concat(cats.filter(c => c !== COMMUNITY));
     if(!chips.includes(S.filter)) S.filter = ALL;
     const busy = p => { const i = cardInfo(p, P[p.id] || {}); return i.started && !i.finished; };
     const keep = p => S.filter === ALL || (S.filter === BUSY ? busy(p) : S.filter === YOURS ? p.id.startsWith("mine-") : p.category === S.filter);
-    const shown = L.filter(p => p.category !== COMMUNITY).filter(keep);
+    const shown = L.filter(p => p.category !== COMMUNITY && p.category !== GROUPS).filter(keep);  /* Bible study groups (Friday night) live under 👥 Community only */
     const arrivedList = S.arrivedList; S.arrivedList = false;
     const sections = `<div class="pv-seg" role="tablist"><button class="pv-segb${S.section === "paths" ? " pv-segon" : ""}" data-sec="paths" role="tab">📖 Study Paths</button><button class="pv-segb${S.section === "community" ? " pv-segon" : ""}" data-sec="community" role="tab">👥 Community</button></div>`;
     if(S.section === "community"){ frame("📜 Study Paths / Community", sections + communityView(L, M, P)); return; }
@@ -187,8 +187,7 @@ const BCPaths = (() => {
       + `<div class="pv-allshare"><button class="pv-btn pv-shareall">📱 Share all Study Paths · link or QR code</button></div>`
       + `<p class="pv-lead">Each path starts with a question, walks through every main verse on it, including the ones that seem to point the other way, and ends with questions whose answer is always a verse. The path asks; you decide.</p>`
       + `<div class="pv-chips" role="toolbar" aria-label="Show">${chips.map(c => `<button class="pv-chip${c === S.filter ? " pv-chip-on" : ""}" data-f="${esc(c)}" aria-pressed="${c === S.filter}">${c === GROUPS ? "👥 " : ""}${esc(c)}</button>`).join("")}</div>`
-      + (S.filter === GROUPS ? groupsView(shown, P)
-        : shown.length ? gridWithSeries(shown, P) : `<p class="pv-small pv-empty">${S.filter === BUSY ? "No path started yet. Pick one under All." : "No paths here yet."}</p>`)
+      + (shown.length ? gridWithSeries(shown, P) : `<p class="pv-small pv-empty">${S.filter === BUSY ? "No path started yet. Pick one under All." : "No paths here yet."}</p>`)
       + `<p class="pv-small">Make your own: open <b>👥 Community</b> and press <b>＋ Make your own study path</b>, or ask a question and press 📜 Make a study path under the answer.</p>`
       + `<button class="pv-card pv-quoted"><b>📚 Quoted or named in Scripture</b><span>Verses that quote or name another writing: the Book of Enoch, the Book of Jasher, lost books.</span></button>`
       + `<p class="pv-small">Your progress, notes and scores stay on this device.</p>`);
@@ -595,7 +594,7 @@ const BCPaths = (() => {
     return cards.length ? `<div class="pv-grid">${cards.join("")}</div>` : "";
   }
   function folderCard(ps, P, kind){
-    const isG = kind === "group";
+    const isG = kind === "group"; if(isG) S.section = "community";
     if(!isG) ps = ps.slice().sort((a, b) => a.series.session - b.series.session);
     const g = isG ? groupOrder(ps) : null; if(isG) ps = g.list;
     const id = isG ? slug(ps[0].group) : ps[0].series.id, title = isG ? ps[0].group : ps[0].series.title, word = isG ? (ps.length === 1 ? "study" : "studies") : "sessions";
@@ -627,7 +626,7 @@ const BCPaths = (() => {
         : `<p class="pv-lead">${ps.length}${ps.length < ps[0].series.of ? " of " + ps[0].series.of : ""} sessions, one after another. Each starts with a question and walks through the verses; the questions at the end are answered with a verse.</p>`)
       + `<button class="pv-btn pv-serqr pv-sharewide" data-kind="${kind}" data-series="${esc(id)}">↗ Share ${isG ? "this group" : "these sessions"} · link or QR code</button>`
       + `<div class="pv-grid">${ps.map(p => card(p, P[p.id] || {}, next && p.id === next.id)).join("")}${isG && ps.some(p => p.category === GROUPS) ? ADD_CARD : ""}</div>`
-      + `<div class="pv-nav"><button class="pv-btn pv-backlist">‹ All Study Paths</button></div>`, true);
+      + `<div class="pv-nav"><button class="pv-btn pv-backlist">${isG ? "‹ Community" : "‹ All Study Paths"}</button></div>`, true);
   }
   /* 👥 Bible Study Groups: one folder per group, then "+ Add your own study path" */
   function groupsView(shown, P){
@@ -671,7 +670,7 @@ const BCPaths = (() => {
           email: d.email || "(not given)", _replyto: d.email || undefined, _subject: `BibleChat study path request: ${d.passage} (${d.group})`, _template: "box", _captcha: "false"})});
       if(!r.ok) throw new Error(r.status);
       const reqs = get("requests", []); reqs.unshift({group: d.group, bible: d.bible, passage: d.passage, date: new Date().toLocaleDateString()}); set("requests", reqs.slice(0, 20));
-      S.filter = GROUPS; await showList(); A.toast(T("Thank you! Your request is on its way to Hans."));
+      S.section = "community"; await showList(); A.toast(T("Thank you! Your request is on its way to Hans."));
     }catch(e){ note.textContent = T("It couldn't be sent. Check the internet connection and try again, or open it on GitHub."); b.disabled = false; b.textContent = T("📨 Send to Hans"); }
   }
 
@@ -1250,7 +1249,7 @@ const BCPaths = (() => {
     h = cleanHash(h);
     const all = /^#\/paths(?:\/(series|group)\/([a-z0-9-]+))?\/?$/.exec(h || "");
     if(all){
-      S.arrivedList = true; S.filter = ALL; S.section = "paths";
+      S.arrivedList = true; S.filter = ALL; S.section = all[1] === "group" ? "community" : "paths";
       if(all[2]) await showFolder(all[1], all[2]); else await showList();
       return true;
     }
