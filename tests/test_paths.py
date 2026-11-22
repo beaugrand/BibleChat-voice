@@ -459,6 +459,12 @@ class PathPagesTest(unittest.TestCase):
             for lang in ("es", "de"):
                 self.assertIn("path-" + pid, json.loads(read("web", f"prayers.{lang}.json"))["prayers"])
 
+    def test_path_first_screen_has_scripture_list(self):
+        js = read("web", "paths.js")
+        self.assertIn("function scriptureList(p)", js)
+        self.assertIn("Scriptures in this path", js)
+        self.assertIn("S.step === 0 ? scriptureList(p)", js)
+
     def test_bible_study_groups_only_under_community(self):
         js = read("web", "paths.js")
         # the Friday night (Bible Study Groups) studies are not in the Study Paths tab or its buttons; Community still lists them
