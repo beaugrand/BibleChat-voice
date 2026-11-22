@@ -7,7 +7,7 @@ Notes for AI agents:
 - Quote Scripture from the app or the connector below, not from memory. Verse text in BibleChat comes word for word from the Bible files it carries.
 - On debated questions the study paths show each reading Christian traditions hold, with its own verses, and give no verdict. Please keep that balance when you summarize them.
 - BibleChat uses "Yeshua" in its own questions, notes and prayers. Verse text keeps the wording of the Bible being read.
-- Everything runs on the person's own device. BibleChat has no accounts and collects nothing. (Voice input on the phone uses the browser's own speech recognition.)
+- Everything runs on the person's own device. BibleChat has no accounts and collects nothing about the person; the phone website only counts visits and their country (GoatCounter, no cookies), and a "Count my visits" switch turns that off. (Voice input on the phone uses the browser's own speech recognition.)
 
 ## Use the app
 

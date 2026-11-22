@@ -279,6 +279,12 @@ body.pen{padding-bottom:calc(var(--tabh) + 92px + env(safe-area-inset-bottom))}
 .lovecard img{width:min(270px,78vw);border-radius:14px;background:#fff;padding:6px;box-shadow:var(--shadow)}
 .lovecard .tag{font-weight:650;font-size:17px;margin:10px 0 14px}
 .about{border-top:1px solid var(--line);margin-top:24px;padding-top:16px;font-size:14px;color:var(--muted);text-align:left}
+/* 🔢 the visit counter: old-style digits, like the hit counters on web pages of the 1990s */
+.hitc{display:flex;flex-direction:column;align-items:center;gap:4px;margin:22px auto 4px;font-size:12px;color:var(--muted)}
+.hitc-row{display:inline-flex;gap:2px;padding:3px;background:#111;border:2px solid #666;border-radius:3px;box-shadow:inset 0 0 4px #000}
+.hitc-d{display:inline-block;width:16px;height:24px;line-height:24px;text-align:center;font:bold 18px "Courier New",Courier,monospace;color:#7cfc00;background:linear-gradient(#262626 50%,#000 50%);border-radius:2px;text-shadow:0 0 4px rgba(124,252,0,.6)}
+.hitsw{display:flex;gap:8px;align-items:center;margin:10px 0 4px;color:var(--text);font-size:15px}
+.hitsw input{width:20px;height:20px}
 .welcome{padding:28px 0;text-align:center}
 .welcome h1{font-family:Georgia,serif;font-weight:500;font-size:28px;margin:0 0 6px}
 #rtext .v{cursor:pointer}
@@ -407,6 +413,7 @@ body.has-church #top .brand{display:none}
     <p class="homeHint">Tap the cover to open</p>
     <p id="homeWhere"></p>
     <p id="homePathsRow"><button class="btn pathsBtn" id="homePaths">📜 Study Paths</button></p>
+    <div class="hitc" id="homeHits" hidden></div>
   </div></section>
 
   <!-- READ -->
@@ -469,6 +476,9 @@ body.has-church #top .brand{display:none}
       <p><b>About BibleChat.</b> Read and search free Bibles right here, with no sign-up and nothing to install. Tap your browser's <b>Share → Add to Home Screen</b> to keep it like an app.</p>
       <p>On a computer, the full <a href="https://github.com/beaugrand/biblechat-voice/releases/latest" target="_blank" rel="noopener">BibleChat app</a> adds AI explanations, voice questions and your own Bible files.</p>
       <p>BibleChat is made by <b>Hans W. Beaugrand</b>. Free and open source under the <a href="https://github.com/beaugrand/BibleChat-voice/blob/main/LICENSE" target="_blank" rel="noopener">Apache License 2.0</a>; anyone who shares or builds on it keeps this credit (<a href="https://github.com/beaugrand/BibleChat-voice/blob/main/NOTICE" target="_blank" rel="noopener">NOTICE</a>). Each Bible keeps its own license, shown in the Bibles tab.</p>
+      <div class="hitc" id="aboutHits" hidden></div>
+      <label class="hitsw"><input type="checkbox" id="countMe" checked> Count my visits</label>
+      <p>A visit counter (GoatCounter) counts how often BibleChat is opened, and from which country. It uses no cookies and keeps nothing about you: your internet address is used once to find the country, then thrown away. Switch it off here and this phone is not counted. <a href="https://github.com/beaugrand/BibleChat-voice/blob/main/PRIVACY.md" target="_blank" rel="noopener">Privacy policy</a></p>
     </div>
     <div class="churchcta" id="lvChurch">
       <h3>⛪ For churches</h3>
@@ -1802,7 +1812,31 @@ $("#hlSheet").addEventListener("click", async e => {
   go(b, +c, +v);
 });
 
-/* Love → About: the visit counter can be turned off on this phone */
+/* 🔢 Visit counter (Hans, 22 November 2026). GoatCounter counts that BibleChat was opened, and the country; no cookies,
+   and nothing about the reader is kept (it uses the internet address once to find the country). Only the phone website
+   counts (not the computer app, not a test copy), once each time it is opened, and not when Love → About → "Count my
+   visits" is off on this phone. The other website a visitor came from is sent without its address details (only e.g.
+   https://www.facebook.com). The total shows as old-style digits at the bottom of Home and in Love → About; it stays
+   hidden until GoatCounter answers (the site must allow "visitor counts" in its GoatCounter settings). */
+const GC = "https://biblechat.goatcounter.com";
+const gcLive = location.hostname === "beaugrand.github.io";
+function gcCount(){
+  if(!gcLive || store.get("countVisits", true) === false) return;
+  let ref = ""; try{ const r = new URL(document.referrer); if(r.origin !== location.origin) ref = r.origin; }catch(e){}
+  const p = isStandalone() ? "/home-screen-app" : "/";
+  new Image().src = `${GC}/count?p=${encodeURIComponent(p)}&r=${encodeURIComponent(ref)}&rnd=${Math.random().toString(36).slice(2)}`;
+}
+function gcShow(){
+  if(!gcLive) return;
+  fetch(GC + "/counter/TOTAL.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => {
+    const n = j && String(j.count || "").replace(/\D/g, ""); if(!n) return;
+    const html = `<span class="hitc-row" role="img" aria-label="${n} visits">${n.padStart(7, "0").split("").map(d => `<span class="hitc-d">${d}</span>`).join("")}</span><small>visits</small>`;
+    for(const el of [$("#homeHits"), $("#aboutHits")]){ el.innerHTML = html; el.hidden = false; }
+  }).catch(() => {});
+}
+{ const cm = $("#countMe"); cm.checked = store.get("countVisits", true) !== false;
+  cm.onchange = () => { store.set("countVisits", cm.checked); toast(cm.checked ? "This phone's visits are counted" : "This phone's visits are no longer counted"); }; }
+addEventListener("load", () => { gcCount(); gcShow(); }, {once: true});
 
 /* ---------- verse of the day: on Home, above the Bible cover, in the Bible you're reading ---------- */
 function votdShow(){
