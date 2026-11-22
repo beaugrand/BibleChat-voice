@@ -173,9 +173,11 @@ console.log(JSON.stringify(out));"""
         self.assertIn('"/api/suggest"', srv); self.assertIn("formsubmit.co/ajax/", srv)
         self.assertNotIn("formsubmit.co/ajax/wbeaugrand", read(PAGES[0]) + srv)   # a private address, not the email
 
-    def test_highlights_and_no_tracking(self):
+    def test_highlights_and_visit_counter(self):
         # 🖍 Highlights: a colour row on a verse, the highlighter that stays on, a list of them all, and the
-        # colours in the Study Paths. No visit counter or analytics anywhere (Hans: "I would rather not track")
+        # colours in the Study Paths. 🔢 Visit counter: Hans decided on 22 November 2026 to count visits again
+        # (he had removed it on 25 October: "I would rather not track"). Only the phone website counts, with
+        # GoatCounter and no script of theirs, the reader can switch it off, and the privacy policy says so.
         for p, row in [(PAGES[0], 'id="hlRow"'), (PAGES[1], "function hlRow(")]:
             s = read(p)
             for part in (row, 'id="penBar"', 'id="penDone"', "function penTap(", "function hlMark(", "My Highlights", 'class="hldot',
@@ -187,11 +189,21 @@ console.log(JSON.stringify(out));"""
         self.assertIn('fetch("/api/highlights"', read(PAGES[1]))
         paths = read(os.path.join(ROOT, "web", "paths.js"))
         self.assertIn('class="pv-v${hlClass(b, c, v)}"', paths)
-        for page in (read(PAGES[0]), read(PAGES[1]), paths):
-            for bad in ("goatcounter", "gc.zgo.at", "gcEvent", "A.track", "google-analytics", "googletagmanager", "plausible.io"):
+        phone = read(PAGES[0])
+        for page in (phone, read(PAGES[1]), paths):   # no analytics script anywhere, not even GoatCounter's own
+            for bad in ("gc.zgo.at", "gcEvent", "A.track", "google-analytics", "googletagmanager", "plausible.io"):
                 self.assertNotIn(bad, page.lower() if bad.islower() else page)
+        for page in (read(PAGES[1]), paths):          # the computer app and the Study Paths count nothing
+            self.assertNotIn("goatcounter", page.lower())
+        for part in ('const GC = "https://biblechat.goatcounter.com"', 'location.hostname === "beaugrand.github.io"',
+                     'store.get("countVisits", true) === false', 'id="countMe"', 'id="homeHits"', 'id="aboutHits"',
+                     "ref = r.origin", '"/counter/TOTAL.json"', 'class="hitc-d"'):
+            self.assertIn(part, phone)
+        self.assertNotIn("document.cookie", phone)
         priv = read(os.path.join(ROOT, "PRIVACY.md"))
-        self.assertIn("no analytics and no tracking", priv); self.assertNotIn("GoatCounter", priv)
+        for part in ("GoatCounter", "Count my visits", "no cookies", "The computer app and the connector count nothing",
+                     "never the full address"):
+            self.assertIn(part, priv)
 
     def test_version_in_names(self):
         # which BibleChat is which: the Linux desktop icon and menu say "BibleChat 1.0.6", the computer app's
