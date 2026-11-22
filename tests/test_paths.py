@@ -459,6 +459,14 @@ class PathPagesTest(unittest.TestCase):
             for lang in ("es", "de"):
                 self.assertIn("path-" + pid, json.loads(read("web", f"prayers.{lang}.json"))["prayers"])
 
+    def test_bible_study_groups_only_under_community(self):
+        js = read("web", "paths.js")
+        # the Friday night (Bible Study Groups) studies are not in the Study Paths tab or its buttons; Community still lists them
+        self.assertIn("p.category !== COMMUNITY && p.category !== GROUPS", js)
+        self.assertIn("const chips = [ALL, BUSY].concat(", js)
+        self.assertNotIn("S.filter === GROUPS", js)
+        self.assertIn("groups = L.filter(p => p.category === GROUPS)", js)
+
     def test_make_your_own_and_community(self):
         js = read("web", "paths.js")
         for part in ("Study Paths / Community", "pv-segb", "communityView", "＋ Make your own study path", "editPath", "normRef", "edAddRef",

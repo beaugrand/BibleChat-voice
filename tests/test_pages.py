@@ -25,6 +25,17 @@ class LicenseTest(unittest.TestCase):
 
 
 class PagesTest(unittest.TestCase):
+    def test_llms_txt_for_agents(self):
+        txt = read(os.path.join(ROOT, "web", "llms.txt"))
+        self.assertTrue(txt.startswith("# BibleChat\n"))
+        self.assertIn("\n> ", txt)
+        import re
+        # every link into the repository points at a file that exists
+        for rel in re.findall(r"https://github\.com/beaugrand/BibleChat-voice/blob/main/([^)\s]+)", txt):
+            self.assertTrue(os.path.exists(os.path.join(ROOT, rel)), rel)
+        # the phone site build copies it, so it is served next to index.html
+        self.assertIn("web/llms.txt", read(os.path.join(ROOT, ".github", "workflows", "pages.yml")))
+
     def test_back_forward_and_church_parts(self):
         for p in PAGES:
             s = read(p)
