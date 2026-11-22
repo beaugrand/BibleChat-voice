@@ -693,6 +693,7 @@ const BCPaths = (() => {
     const arrived = S.arrived; S.arrived = false;
     frame(p.title, `${arrived ? `<div class="pv-welcome">👋 <b>Someone shared this study path with you.</b> Read the question, then the verses of each step, and press <b>Next step</b>. Your notes and answers stay on your device.</div>` : ""}${p.image ? `<div class="pv-hero">${picture(p, true)}<span class="pv-pc-cat">${esc(p.series ? "Session " + p.series.session + " of " + p.series.of : p.group ? "👥 " + p.group : p.category || "")}</span></div>` : ""}${p.series ? `<p class="pv-small pv-serline">📖 <span class="pvx">${esc(p.series.title)}</span></p>` : ""}<div class="pv-open pvx"><small>The question</small>${esc(p.opening_question)}</div>
       <div class="pv-about" id="pvAbout" hidden></div>
+      ${S.step === 0 ? scriptureList(p) : ""}
       ${canGuide(p) ? `<button class="pv-btn pv-listen pv-guide">${esc(gdLabel(p))}</button>` : ""}
       <button class="pv-btn pv-listen" data-ls="step">🔊 Listen to this step</button>
       <div class="pv-stepno">Step ${S.step + 1} of ${n}</div>
@@ -717,6 +718,18 @@ const BCPaths = (() => {
     S.versesP = drawVerses(s);
     if(S.lsAuto){ S.lsAuto = false; lsStart("step"); }   // 🔊 Listen goes on into the next step
     if(S.gdAuto){ const intro = !!S.gdIntro; S.gdAuto = S.gdIntro = false; gdBegin(intro); }   // 🎧 guided study goes on into the next step
+  }
+  /* 📜 Scriptures in this path: every reference of the path in one list, grouped by step, each one opens the verse.
+     Shown on step 1 (the page a printed-Bible QR code opens). The printed book lists the same references. */
+  function pathScriptures(p){
+    return p.steps.map((x, i) => ({n: i + 1, refs: (x.refs || []).filter(r => parseRef(r))})).filter(g => g.refs.length);
+  }
+  function scriptureList(p){
+    const groups = pathScriptures(p); if(!groups.length) return "";
+    const total = new Set(groups.flatMap(g => g.refs)).size;
+    return `<details class="pv-scrip"><summary>📜 Scriptures in this path (${total} passages)</summary><div class="pv-scripbody">`
+      + groups.map(g => `<p><b>Step ${g.n}</b> ` + g.refs.map(r => { const q = parseRef(r); return refLink(q.book, q.c1, q.v1, label(r)); }).join(" · ") + `</p>`).join("")
+      + `</div></details>`;
   }
   /* 📚 About these books: a path that reads a book outside the 66 (1 Enoch, Jubilees, Jasher, 1 Clement, the Apocrypha)
      says plainly what that book is, in a box anyone can see (the 📚 tag's own text only shows on hover). Step 1 lists
@@ -1445,6 +1458,10 @@ const BCPaths = (() => {
 .pv-facts{border:1px dashed var(--line);border-radius:10px;padding:4px 12px;margin:0 0 10px}
 .pv-facts h4{margin:8px 0 4px}
 .pv-sn{border:1px solid var(--line);background:var(--card);border-radius:7px;font-size:12.5px;padding:1px 6px;color:inherit;cursor:pointer}
+.pv-scrip{border:1px solid var(--line);border-radius:10px;margin:0 0 10px;background:var(--card)}
+.pv-scrip>summary{cursor:pointer;padding:10px 12px;font-weight:600}
+.pv-scripbody{padding:0 12px 8px}
+.pv-scripbody p{margin:6px 0;line-height:1.7}
 .pv-sec{border:1px solid var(--line);border-radius:10px;margin:0 0 10px;background:var(--card)}
 .pv-sec>summary{cursor:pointer;padding:10px 12px;font-weight:600}
 .pv-secbody{padding:0 12px 10px}
