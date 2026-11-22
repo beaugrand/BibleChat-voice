@@ -42,6 +42,44 @@
   }
  },
  {
+  "id": "crosspoint-1-corinthians-6-forgiving-instead-of-suing",
+  "title": "1 Corinthians 6:1-11: forgiving instead of suing",
+  "category": "Bible Study Groups",
+  "image": "img/crosspoint-1-corinthians-6-forgiving-instead-of-suing.jpg",
+  "opening_question": "Paul asks how a believer can take a brother to law before the unjust. What did Paul say, what did Yeshua say about the one who sues you, how often are we to forgive, and what does it ask of us? Christians read the limits of this teaching differently, and each reading is shown with its own verses.",
+  "steps": 7,
+  "step_questions": [
+   "What did Paul ask about a believer who goes to law against another believer? Before whom did he say they should not go, and who does he say will judge the world?",
+   "What did Yeshua tell His disciples to do when a brother sins against them? Who comes first, who comes second, and who comes last?",
+   "What does Paul say is better than going to law with a brother? Compare what Yeshua said about someone who would sue you and take your coat.",
+   "How many times did Peter think was enough to forgive, and what did Yeshua answer? Why does Paul say to forgive, and what does Yeshua say about the one who does not forgive?",
+   "What do Paul, Peter and Proverbs say about paying back evil? What are we told to do instead, and who will repay?",
+   "What does Paul say about who will not inherit the kingdom of God, and what does he say about the believers in Corinth? Why does Paul remind them of what they were?",
+   "Christians read this teaching differently: does it forbid every lawsuit, or only a lawsuit between believers before unbelievers? Paul also used Roman law, and Paul wrote that rulers bear the sword. What do the verses say, and what do they not say?"
+  ],
+  "books": [
+   "1 Corinthians",
+   "1 Peter",
+   "Acts",
+   "Colossians",
+   "Daniel",
+   "Ephesians",
+   "Luke",
+   "Matthew",
+   "Proverbs",
+   "Romans",
+   "Titus"
+  ],
+  "show": 8,
+  "verses": 52,
+  "minutes": 40,
+  "group": "Crosspoint Englewood",
+  "study_date": "2026-11-22",
+  "anim": {
+   "kind": "light"
+  }
+ },
+ {
   "id": "daniel-2-statue-and-stone",
   "title": "Daniel 2: the statue and the stone",
   "category": "Bible Study Groups",
