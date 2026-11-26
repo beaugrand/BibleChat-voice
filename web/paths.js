@@ -184,7 +184,7 @@ const BCPaths = (() => {
     const sections = `<div class="pv-seg" role="tablist"><button class="pv-segb${S.section === "paths" ? " pv-segon" : ""}" data-sec="paths" role="tab">📖 Study Paths</button><button class="pv-segb${S.section === "community" ? " pv-segon" : ""}" data-sec="community" role="tab">👥 Community</button></div>`;
     if(S.section === "community"){ frame("📜 Study Paths / Community", sections + communityView(L, M, P)); return; }
     frame("📜 Study Paths / Community", sections + (arrivedList ? `<div class="pv-welcome">👋 <b>Someone shared the BibleChat Study Paths with you.</b> Pick a path below and press <b>Start</b>: every step shows the verses, the Hebrew and Greek words, and questions to think about. Free, no sign-up.</div>` : "")
-      + `<div class="pv-allshare"><button class="pv-btn pv-shareall">📱 Share all Study Paths · link or QR code</button></div>`
+      + `<div class="pv-allshare"><button class="pv-btn pv-shareall">📱 Share all Study Paths · link or QR code</button>${typeof BCBook !== "undefined" ? `<button class="pv-btn pv-book">📘 Export the book (print or PDF)</button>` : ""}</div>`
       + `<p class="pv-lead">Each path starts with a question, walks through every main verse on it, including the ones that seem to point the other way, and ends with questions whose answer is always a verse. The path asks; you decide.</p>`
       + `<div class="pv-chips" role="toolbar" aria-label="Show">${chips.map(c => `<button class="pv-chip${c === S.filter ? " pv-chip-on" : ""}" data-f="${esc(c)}" aria-pressed="${c === S.filter}">${c === GROUPS ? "👥 " : ""}${esc(c)}</button>`).join("")}</div>`
       + (shown.length ? gridWithSeries(shown, P) : `<p class="pv-small pv-empty">${S.filter === BUSY ? "No path started yet. Pick one under All." : "No paths here yet."}</p>`)
@@ -694,6 +694,7 @@ const BCPaths = (() => {
     frame(p.title, `${arrived ? `<div class="pv-welcome">👋 <b>Someone shared this study path with you.</b> Read the question, then the verses of each step, and press <b>Next step</b>. Your notes and answers stay on your device.</div>` : ""}${p.image ? `<div class="pv-hero">${picture(p, true)}<span class="pv-pc-cat">${esc(p.series ? "Session " + p.series.session + " of " + p.series.of : p.group ? "👥 " + p.group : p.category || "")}</span></div>` : ""}${p.series ? `<p class="pv-small pv-serline">📖 <span class="pvx">${esc(p.series.title)}</span></p>` : ""}<div class="pv-open pvx"><small>The question</small>${esc(p.opening_question)}</div>
       <div class="pv-about" id="pvAbout" hidden></div>
       ${S.step === 0 ? scriptureList(p) : ""}
+      ${S.step === 0 && !p.mine && typeof BCBook !== "undefined" ? `<button class="pv-btn pv-bookone">🖨 Print this path for the binder</button>` : ""}
       ${canGuide(p) ? `<button class="pv-btn pv-listen pv-guide">${esc(gdLabel(p))}</button>` : ""}
       <button class="pv-btn pv-listen" data-ls="step">🔊 Listen to this step</button>
       <div class="pv-stepno">Step ${S.step + 1} of ${n}</div>
@@ -1307,6 +1308,8 @@ const BCPaths = (() => {
     if(t.closest(".pv-eddel")){ if(confirm(T("Delete this study path from this device?"))){ set("mine", mine().filter(x => x.id !== S.draft.id)); S.draft = null; showList(); } return; }
     const eb = t.closest("[data-ed]"); if(eb && S.view === "edit"){ e.preventDefault(); edAction(eb); return; }
     if(t.closest(".pv-shareall")){ share(null, "list", "all"); return; }
+    if(t.closest(".pv-book")){ BCBook.open(); return; }   // 📘 the printed book "Walking with Yeshua" (web/book.js, phone only)
+    if(t.closest(".pv-bookone")){ BCBook.open(S.path && S.path.id); return; }
     const so = t.closest(".pv-sopen"); if(so){ showFolder(so.dataset.kind || "series", so.dataset.series); return; }
     const sq = t.closest(".pv-serqr"); if(sq){ const kind = sq.dataset.kind || "series"; folderPaths(kind, sq.dataset.series).then(({list}) => { if(list[0]) share(list[0], S.view === "series" ? "series" : "list", kind); }); return; }
     if(t.closest(".pv-qrbig")){ bigQr(); return; }
@@ -1618,7 +1621,7 @@ mark.pv-diff{background:var(--hl,rgba(255,205,60,.35));color:inherit;border-radi
 @keyframes pvFlash{0%,60%,64%,67%,100%{opacity:0}61%{opacity:.9}62%{opacity:.2}65%{opacity:1}}
 @keyframes pvWaves{from{background-position:0 0}to{background-position:0 18%}}
 @media (prefers-reduced-motion:reduce){.pv-anim img,.pv-anim .pv-fx,.pv-anim .pv-fx2,.pv-ember{animation:none!important}.pv-ember{display:none}}
-.pv-allshare{display:flex;justify-content:flex-end;margin:8px 0 0}
+.pv-allshare{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;margin:8px 0 0}
 .pv-shareall{font-weight:650}
 .pv-series{margin:0 0 14px}.pv-serh{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:6px 0 10px}
 .pv-serh b{display:block;font-size:16px;color:var(--accent)}.pv-serh small{color:var(--muted)}.pv-serqr{flex:none;font-weight:700}

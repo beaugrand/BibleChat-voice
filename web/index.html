@@ -652,6 +652,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
 <script src="guide.js"></script>
 <script src="paths.js"></script>
 <script src="prayers.js"></script>
+<script src="book.js"></script>
 <script src="news.js"></script>
 <script src="voice.js"></script>
 <script>
@@ -1587,7 +1588,7 @@ async function openAnywhere(book, ch, v, fromPaths){
   go(book, ch, v); retShow();
 }
 /* ---------- 📜 Study Paths (web/paths.js): guided studies with questions; everything stays on this phone ---------- */
-const PATH_BIBLES = {KJV: "eng-kjv", ETH: "eng-ethiopian-canon", BSB: "eng-bsb", JASHER: "eng-jasher-1840"};
+const PATH_BIBLES = {KJV: "eng-kjv", ETH: "eng-ethiopian-canon", BSB: "eng-bsb", JASHER: "eng-jasher-1840", YAHWEH: "eng-yahweh-edition"};   // YAHWEH: 📘 the printed book (web/book.js)
 BCPaths.mount({
   container: $("#pathsView"), base: "paths/", quotedUrl: "quoted.json", chatName: "Search",
   books: async () => (sBooks = sBooks || await sGet("books.json")),
